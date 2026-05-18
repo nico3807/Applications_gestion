@@ -1,179 +1,332 @@
 {
   "S1": {
     "R1.20 | Soutien, remise a niveau": {
-      "enseignant": "",
+      "enseignant": "MENDEZ Nicolas",
       "cm": 0,
-      "td": 0,
+      "td": 9,
       "tp": 0,
-      "subrows": []
+      "subrows": [
+        {
+          "enseignant": "DE VELDER Sophie",
+          "cm": 0,
+          "td": 0,
+          "tp": 0
+        }
+      ]
     },
     "R1.01 | Anglais": {
-      "enseignant": "",
+      "enseignant": "BERNARD William",
       "cm": 0,
-      "td": 0,
-      "tp": 0,
+      "td": 4.5,
+      "tp": 9,
       "subrows": []
     },
     "R1.02 | Espagnol (LV2)": {
-      "enseignant": "",
-      "cm": 0,
-      "td": 0,
-      "tp": 0,
+      "enseignant": "BARON Mathilde",
+      "cm": 1.5,
+      "td": 4.5,
+      "tp": 4.5,
       "subrows": []
     },
     "R1.03 Ergonomie et Accessibilité": {
-      "enseignant": "",
-      "cm": 0,
-      "td": 0,
-      "tp": 0,
+      "enseignant": "PELISSIER Chrysta",
+      "cm": 3,
+      "td": 7.5,
+      "tp": 6,
       "subrows": []
     },
     "R1.04 Culture numérique": {
-      "enseignant": "",
-      "cm": 0,
-      "td": 0,
+      "enseignant": "DE VELDER Sophie",
+      "cm": 6,
+      "td": 12,
       "tp": 0,
       "subrows": []
     },
     "R1.05 Stratégies de communication et marketing": {
-      "enseignant": "",
-      "cm": 0,
-      "td": 0,
+      "enseignant": "DE VELDER Sophie",
+      "cm": 12,
+      "td": 13.5,
       "tp": 0,
       "subrows": []
     },
     "R1.06 Expression, communication et rhétorique": {
-      "enseignant": "",
+      "enseignant": "RAMPON Candice",
       "cm": 0,
-      "td": 0,
+      "td": 9,
       "tp": 0,
-      "subrows": []
+      "subrows": [
+        {
+          "enseignant": "KLAIBI Noel",
+          "cm": 0,
+          "td": 4.5,
+          "tp": 6
+        }
+      ]
     },
     "R1.07 Écriture multimédia et narration": {
-      "enseignant": "",
+      "enseignant": "PELISSIER Chrysta",
       "cm": 0,
-      "td": 0,
-      "tp": 0,
-      "subrows": []
+      "td": 7.5,
+      "tp": 6,
+      "subrows": [
+        {
+          "enseignant": "BLANCO Sandy",
+          "cm": 0,
+          "td": 3,
+          "tp": 0
+        }
+      ]
     },
     "R1.08 Production graphique": {
-      "enseignant": "",
+      "enseignant": "SURRIBAS Caroline",
       "cm": 0,
-      "td": 0,
-      "tp": 0,
+      "td": 6,
+      "tp": 15,
       "subrows": []
     },
     "R1.09 Culture artistique": {
-      "enseignant": "",
-      "cm": 0,
+      "enseignant": "DE VELDER Sophie",
+      "cm": 7.5,
       "td": 0,
       "tp": 0,
-      "subrows": []
+      "subrows": [
+        {
+          "enseignant": "SURRIBAS Caroline",
+          "cm": 0,
+          "td": 0,
+          "tp": 12
+        }
+      ]
     },
     "R1.10 Production audio et vidéo": {
-      "enseignant": "",
-      "cm": 0,
-      "td": 0,
-      "tp": 0,
+      "enseignant": "BLANCO Sandy",
+      "cm": 6,
+      "td": 4.5,
+      "tp": 10.5,
       "subrows": []
     },
     "R1.11 Intégration": {
-      "enseignant": "",
-      "cm": 0,
-      "td": 0,
-      "tp": 0,
-      "subrows": []
+      "enseignant": "PELISSIER Chrysta",
+      "cm": 1.5,
+      "td": 1.5,
+      "tp": 9,
+      "subrows": [
+        {
+          "enseignant": "TALLEUX Johann",
+          "cm": 0,
+          "td": 12,
+          "tp": 6
+        }
+      ]
     },
     "R1.12 Développement Web": {
-      "enseignant": "",
-      "cm": 0,
+      "enseignant": "DARTIES Benoit",
+      "cm": 1.5,
       "td": 0,
-      "tp": 0,
-      "subrows": []
+      "tp": 3,
+      "subrows": [
+        {
+          "enseignant": "MAURIN Nicolas",
+          "cm": 0,
+          "td": 0,
+          "tp": 12.75
+        }
+      ]
     },
     "R1.13 Hébergement": {
-      "enseignant": "",
-      "cm": 0,
+      "enseignant": "DARTIES Benoit",
+      "cm": 4.5,
       "td": 0,
       "tp": 0,
-      "subrows": []
+      "subrows": [
+        {
+          "enseignant": "MAURIN Nicolas",
+          "cm": 0,
+          "td": 0,
+          "tp": 9
+        }
+      ]
     },
     "R1.14 Représentation et traitement de l'information": {
-      "enseignant": "",
+      "enseignant": "GRANIER Jean-Baptiste",
       "cm": 0,
-      "td": 0,
-      "tp": 0,
-      "subrows": []
+      "td": 9,
+      "tp": 9,
+      "subrows": [
+        {
+          "enseignant": "MENDEZ Nicolas",
+          "cm": 0,
+          "td": 0,
+          "tp": 9
+        }
+      ]
     },
     "R1.15 Gestion de projet": {
-      "enseignant": "",
+      "enseignant": "TOURNIE Laetitia",
       "cm": 0,
-      "td": 0,
-      "tp": 0,
+      "td": 10.5,
+      "tp": 4.5,
       "subrows": []
     },
     "R1.16 Économie, gestion et droit du numérique": {
-      "enseignant": "",
-      "cm": 0,
-      "td": 0,
+      "enseignant": "DE VELDER Sophie",
+      "cm": 9,
+      "td": 6,
       "tp": 0,
       "subrows": []
     },
     "R1.17 Projet Personnel et Professionnel": {
-      "enseignant": "",
+      "enseignant": "DE VELDER Sophie",
       "cm": 0,
-      "td": 0,
-      "tp": 0,
-      "subrows": []
+      "td": 4.5,
+      "tp": 4.5,
+      "subrows": [
+        {
+          "enseignant": "PELISSIER Chrysta",
+          "cm": 0,
+          "td": 0,
+          "tp": 9
+        }
+      ]
     },
     "SAÉ 1.01 Auditer une communication numérique": {
-      "enseignant": "",
+      "enseignant": "BERNARD William",
       "cm": 0,
-      "td": 0,
+      "td": 3,
       "tp": 0,
-      "subrows": []
+      "subrows": [
+        {
+          "enseignant": "DE VELDER Sophie",
+          "cm": 0,
+          "td": 3,
+          "tp": 0
+        },
+        {
+          "enseignant": "ESCAIG Sylvie",
+          "cm": 0,
+          "td": 3,
+          "tp": 0
+        },
+        {
+          "enseignant": "PELISSIER Chrysta",
+          "cm": 3,
+          "td": 4.5,
+          "tp": 0
+        }
+      ]
     },
     "SAÉ 1.02 Concevoir une recommandation de communication numérique": {
-      "enseignant": "",
+      "enseignant": "DE VELDER Sophie",
       "cm": 0,
-      "td": 0,
+      "td": 3,
       "tp": 0,
-      "subrows": []
+      "subrows": [
+        {
+          "enseignant": "BLANCO Sandy",
+          "cm": 0,
+          "td": 3,
+          "tp": 0
+        },
+        {
+          "enseignant": "RAMPON Candice",
+          "cm": 3,
+          "td": 4.5,
+          "tp": 0
+        },
+        {
+          "enseignant": "SOLDEVILA Loren",
+          "cm": 0,
+          "td": 3,
+          "tp": 0
+        }
+      ]
     },
     "SAÉ 1.03 Produire les éléments d'une communication visuelle": {
-      "enseignant": "",
-      "cm": 0,
-      "td": 0,
-      "tp": 0,
-      "subrows": []
+      "enseignant": "SURRIBAS Caroline",
+      "cm": 1.5,
+      "td": 6,
+      "tp": 3,
+      "subrows": [
+        {
+          "enseignant": "ESCAIG Sylvie",
+          "cm": 0,
+          "td": 1.5,
+          "tp": 0
+        }
+      ]
     },
     "SAÉ 1.04 Produire un contenu audio et vidéo": {
-      "enseignant": "",
+      "enseignant": "BLANCO Sandy",
       "cm": 0,
-      "td": 0,
-      "tp": 0,
+      "td": 15,
+      "tp": 6,
       "subrows": []
     },
     "SAÉ 1.05 Produire un site Web": {
-      "enseignant": "",
-      "cm": 0,
-      "td": 0,
+      "enseignant": "DARTIES Benoit",
+      "cm": 1.5,
+      "td": 5,
       "tp": 0,
-      "subrows": []
+      "subrows": [
+        {
+          "enseignant": "MAURIN Nicolas",
+          "cm": 0,
+          "td": 7.5,
+          "tp": 0
+        }
+      ]
     },
     "SAÉ 1.06 Gérer un projet de communication numérique": {
-      "enseignant": "",
-      "cm": 0,
-      "td": 0,
+      "enseignant": "TOURNIE Laetitia",
+      "cm": 1.5,
+      "td": 13.5,
       "tp": 0,
-      "subrows": []
+      "subrows": [
+        {
+          "enseignant": "BARON Mathilde",
+          "cm": 0,
+          "td": 0,
+          "tp": 0
+        },
+        {
+          "enseignant": "BERNARD William",
+          "cm": 0,
+          "td": 0,
+          "tp": 0
+        }
+      ]
     },
     "PORTFOLIO | Portfolio": {
-      "enseignant": "",
+      "enseignant": "BLANCO Sandy",
       "cm": 0,
-      "td": 0,
+      "td": 1.5,
       "tp": 0,
-      "subrows": []
+      "subrows": [
+        {
+          "enseignant": "BARON Mathilde",
+          "cm": 0,
+          "td": 1.5,
+          "tp": 0
+        },
+        {
+          "enseignant": "MAURIN Nicolas",
+          "cm": 0,
+          "td": 1.5,
+          "tp": 0
+        },
+        {
+          "enseignant": "PELISSIER Chrysta",
+          "cm": 0,
+          "td": 1.5,
+          "tp": 0
+        },
+        {
+          "enseignant": "THEROND Emmanuel",
+          "cm": 0,
+          "td": 1.5,
+          "tp": 0
+        }
+      ]
     }
   },
   "S6 crea": {
