@@ -401,16 +401,58 @@ window.filterServices = function (type, btn) {
 
 /* ── Vue : Enseignants ───────────────────────────────────────────────────── */
 function renderEnseignants(root) {
+  // Calcul des heures réalisées par enseignant
+  const totals = {};
+  SEMESTRES.forEach((sem) => {
+    const sem_data = APP_DATA.affectations[sem] || {};
+    Object.keys(sem_data).forEach((res) => {
+      const data = sem_data[res];
+      const entries = [
+        { enseignant: data.enseignant, cm: data.cm, td: data.td, tp: data.tp },
+      ];
+      if (data.subrows) {
+        data.subrows.forEach((sub) =>
+          entries.push({
+            enseignant: sub.enseignant,
+            cm: sub.cm,
+            td: sub.td,
+            tp: sub.tp,
+          }),
+        );
+      }
+
+      entries.forEach((entry) => {
+        const ens = (entry.enseignant || "").trim();
+        if (!ens) return;
+        let cm = parseFloat(entry.cm) || 0;
+        let td = parseFloat(entry.td) || 0;
+        let tp = parseFloat(entry.tp) || 0;
+
+        let total = 0;
+        if (["S1", "S2", "S3"].includes(sem)) {
+          total = cm * 1 + td * 2 + tp * 4;
+        } else {
+          total = td * 1 + tp * 2;
+        }
+
+        if (!totals[ens]) totals[ens] = 0;
+        totals[ens] += total;
+      });
+    });
+  });
+
   let html = `<div class="page-header"><h1>Gestion des enseignants</h1></div>`;
   html += `<div class="table-wrapper"><table class="ressources-table">
-    <thead><tr><th>Nom complet</th><th>Statut</th><th>Service Dû</th><th>Service Max</th><th style="width:60px">Actions</th></tr></thead><tbody>`;
+    <thead><tr><th>Nom complet</th><th>Statut</th><th>Service Dû</th><th>Service Max</th><th>Total Réalisé</th><th style="width:60px">Actions</th></tr></thead><tbody>`;
 
   APP_DATA.enseignants.forEach((e, i) => {
+    const totalRealise = totals[e.id] || 0;
     html += `<tr>
             <td>${e.id}</td>
             <td>${e.is_vac ? "Vacataire" : "Titulaire"}</td>
             <td>${e.service_du || "-"}</td>
             <td>${e.service_max || "-"}</td>
+            <td><strong>${totalRealise}</strong></td>
             <td><button class="btn-remove-subrow" onclick="deleteEns(${i})" title="Supprimer">🗑</button></td>
         </tr>`;
   });
