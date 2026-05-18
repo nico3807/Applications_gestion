@@ -1,0 +1,655 @@
+"use strict";
+
+const GH_KEY = "gh_repartition_cfg";
+const GH_OWNER = "nico3807";
+const GH_REPO = "Applications_gestion"; // À ajuster selon le dépôt exact
+const GH_BRANCH = "main";
+const GH_BASE_PATH = "repartition/data"; // Dossier où se trouvent les JSON sur GitHub
+
+const SEMESTRES = [
+  "S1",
+  "S2",
+  "S3",
+  "S4 crea",
+  "S4 dev",
+  "S5 crea",
+  "S5 dev",
+  "S6 crea",
+  "S6 dev",
+];
+
+let APP_DATA = {
+  affectations: {},
+  enseignants: [],
+  maquette_overrides: {},
+};
+
+let currentView = "home";
+let currentParam = null;
+
+/* ── Navigation ──────────────────────────────────────────────────────────── */
+window.navigate = function (view, param = null) {
+  currentView = view;
+  currentParam = param;
+  renderView();
+};
+
+function renderView() {
+  const root = document.getElementById("app-root");
+
+  // Mise à jour de la navigation active
+  document
+    .querySelectorAll(".nav-link")
+    .forEach((l) => l.classList.remove("active"));
+  if (currentView === "home" || currentView === "semestre")
+    document.getElementById("nav-home").classList.add("active");
+  else if (
+    currentView === "maquette_index" ||
+    currentView === "maquette_semestre"
+  )
+    document.getElementById("nav-maquette").classList.add("active");
+  else if (currentView === "services")
+    document.getElementById("nav-services").classList.add("active");
+  else if (currentView === "enseignants")
+    document.getElementById("nav-enseignants").classList.add("active");
+
+  if (currentView === "home") renderHome(root);
+  else if (currentView === "semestre") renderSemestre(root, currentParam);
+  else if (currentView === "maquette_index") renderMaquetteIndex(root);
+  else if (currentView === "maquette_semestre")
+    renderMaquetteSemestre(root, currentParam);
+  else if (currentView === "services") renderServices(root);
+  else if (currentView === "enseignants") renderEnseignants(root);
+}
+
+/* ── Vues : Accueil & Semestres ─────────────────────────────────────────── */
+function renderHome(root) {
+  let html = `<div class="page-header"><h1>Tableau de bord</h1><p class="subtitle">Sélectionnez un semestre pour saisir la répartition</p></div>`;
+  html += `<div class="semestre-grid">`;
+  SEMESTRES.forEach((sem) => {
+    html += `<a href="#" class="semestre-card" onclick="navigate('semestre', '${sem}')">${sem} <span class="semestre-arrow">→</span></a>`;
+  });
+  html += `</div>`;
+  root.innerHTML = html;
+}
+
+function renderSemestre(root, sem) {
+  const aff = APP_DATA.affectations[sem] || {};
+  const maq = APP_DATA.maquette_overrides[sem] || {};
+  const enseignants = APP_DATA.enseignants
+    .slice()
+    .sort((a, b) => a.id.localeCompare(b.id));
+
+  let html = `
+    <div class="page-header">
+        <h1>Répartition ${sem}</h1>
+        <div class="semestre-nav-buttons">
+            ${SEMESTRES.map((s) => `<button class="sem-btn ${s === sem ? "active" : ""}" data-sem="${s}" onclick="navigate('semestre', '${s}')">${s}</button>`).join("")}
+        </div>
+    </div>
+    <div class="table-wrapper"><table class="ressources-table">
+    <thead>
+        <tr>
+            <th class="col-intitule">Ressource</th>
+            <th class="col-prev">Prévisionnel (CM/TD/TP)</th>
+            <th class="col-enseignant">Enseignant</th>
+            <th class="col-h">CM</th>
+            <th class="col-h">TD</th>
+            <th class="col-h">TP</th>
+            <th style="width:50px"></th>
+        </tr>
+    </thead>
+    <tbody>`;
+
+  Object.keys(aff).forEach((res, i) => {
+    const data = aff[res];
+    const prev = maq[res] || {};
+    const isSae = res.toLowerCase().includes("saé");
+    const isPort = res.toLowerCase().includes("portfolio");
+    const rowClass = isSae
+      ? "row-sae"
+      : isPort
+        ? "row-portfolio"
+        : i % 2 === 0
+          ? "group-even"
+          : "group-odd";
+
+    html += `<tr class="${rowClass}">
+            <td>${res}</td>
+            <td><span class="prev-badge">CM: ${prev.cm_final || 0} | TD: ${prev.td_final || 0} | TP: ${prev.tp_final || 0}</span></td>
+            <td>
+                <select class="select-enseignant" onchange="updateAff('${sem}', '${res.replace(/'/g, "\\'")}', 'enseignant', this.value)">
+                    <option value="">-</option>
+                    ${enseignants.map((e) => `<option value="${e.id}" ${e.id === data.enseignant ? "selected" : ""}>${e.id}</option>`).join("")}
+                </select>
+            </td>
+            <td><input type="number" class="input-h" value="${data.cm || 0}" onchange="updateAff('${sem}', '${res.replace(/'/g, "\\'")}', 'cm', this.value)" step="0.5"></td>
+            <td><input type="number" class="input-h" value="${data.td || 0}" onchange="updateAff('${sem}', '${res.replace(/'/g, "\\'")}', 'td', this.value)" step="0.5"></td>
+            <td><input type="number" class="input-h" value="${data.tp || 0}" onchange="updateAff('${sem}', '${res.replace(/'/g, "\\'")}', 'tp', this.value)" step="0.5"></td>
+            <td><button class="btn-add-subrow" onclick="addSubrow('${sem}', '${res.replace(/'/g, "\\'")}')">+</button></td>
+        </tr>`;
+
+    if (data.subrows && data.subrows.length > 0) {
+      data.subrows.forEach((sub, j) => {
+        html += `<tr class="row-subrow ${rowClass}">
+                    <td class="subrow-indent">↳ Sous-groupe</td>
+                    <td></td>
+                    <td>
+                        <select class="select-enseignant" onchange="updateSub('${sem}', '${res.replace(/'/g, "\\'")}', ${j}, 'enseignant', this.value)">
+                            <option value="">-</option>
+                            ${enseignants.map((e) => `<option value="${e.id}" ${e.id === sub.enseignant ? "selected" : ""}>${e.id}</option>`).join("")}
+                        </select>
+                    </td>
+                    <td><input type="number" class="input-h" value="${sub.cm || 0}" onchange="updateSub('${sem}', '${res.replace(/'/g, "\\'")}', ${j}, 'cm', this.value)" step="0.5"></td>
+                    <td><input type="number" class="input-h" value="${sub.td || 0}" onchange="updateSub('${sem}', '${res.replace(/'/g, "\\'")}', ${j}, 'td', this.value)" step="0.5"></td>
+                    <td><input type="number" class="input-h" value="${sub.tp || 0}" onchange="updateSub('${sem}', '${res.replace(/'/g, "\\'")}', ${j}, 'tp', this.value)" step="0.5"></td>
+                    <td><button class="btn-remove-subrow" onclick="removeSubrow('${sem}', '${res.replace(/'/g, "\\'")}', ${j})">-</button></td>
+                </tr>`;
+      });
+    }
+  });
+
+  html += `</tbody></table></div>
+    <div class="form-actions">
+        <button class="btn-save" onclick="saveAffectationsGH()">💾 Enregistrer les affectations sur GitHub</button>
+    </div>`;
+
+  root.innerHTML = html;
+}
+
+window.updateAff = function (sem, res, field, value) {
+  if (["cm", "td", "tp"].includes(field)) value = parseFloat(value) || 0;
+  APP_DATA.affectations[sem][res][field] = value;
+};
+window.updateSub = function (sem, res, idx, field, value) {
+  if (["cm", "td", "tp"].includes(field)) value = parseFloat(value) || 0;
+  APP_DATA.affectations[sem][res].subrows[idx][field] = value;
+};
+window.addSubrow = function (sem, res) {
+  if (!APP_DATA.affectations[sem][res].subrows)
+    APP_DATA.affectations[sem][res].subrows = [];
+  APP_DATA.affectations[sem][res].subrows.push({
+    enseignant: "",
+    cm: 0,
+    td: 0,
+    tp: 0,
+  });
+  renderView();
+};
+window.removeSubrow = function (sem, res, idx) {
+  APP_DATA.affectations[sem][res].subrows.splice(idx, 1);
+  renderView();
+};
+
+/* ── Vues : Maquette ─────────────────────────────────────────────────────── */
+function renderMaquetteIndex(root) {
+  let html = `<div class="page-header"><h1>Maquette - Prévisionnels</h1><p class="subtitle">Sélectionnez un semestre pour modifier la maquette</p></div>`;
+  html += `<div class="semestre-grid">`;
+  SEMESTRES.forEach((sem) => {
+    html += `<a href="#" class="semestre-card" onclick="navigate('maquette_semestre', '${sem}')">${sem} <span class="semestre-arrow">→</span></a>`;
+  });
+  html += `</div>`;
+  root.innerHTML = html;
+}
+
+function renderMaquetteSemestre(root, sem) {
+  const aff = APP_DATA.affectations[sem] || {};
+  const maq = APP_DATA.maquette_overrides[sem] || {};
+
+  let html = `
+    <div class="page-header">
+        <h1>Maquette ${sem}</h1>
+        <div class="semestre-nav-buttons">
+            ${SEMESTRES.map((s) => `<button class="sem-btn ${s === sem ? "active" : ""}" data-sem="${s}" onclick="navigate('maquette_semestre', '${s}')">${s}</button>`).join("")}
+        </div>
+    </div>
+    <div class="table-wrapper"><table class="ressources-table maquette-table">
+    <thead>
+        <tr>
+            <th rowspan="2" class="col-intitule">Ressource</th>
+            <th colspan="3" class="group-header editable-header">Volumes Maquette</th>
+        </tr>
+        <tr>
+            <th class="editable-col">CM final</th>
+            <th class="editable-col">TD final</th>
+            <th class="editable-col">TP final</th>
+        </tr>
+    </thead>
+    <tbody>`;
+
+  Object.keys(aff).forEach((res, i) => {
+    const m = maq[res] || { cm_final: 0, td_final: 0, tp_final: 0 };
+    const rowClass = i % 2 === 0 ? "group-even" : "group-odd";
+    html += `<tr class="${rowClass}">
+            <td>${res}</td>
+            <td><input type="number" class="input-editable" value="${m.cm_final}" onchange="updateMaq('${sem}','${res.replace(/'/g, "\\'")}','cm_final',this.value)"></td>
+            <td><input type="number" class="input-editable" value="${m.td_final}" onchange="updateMaq('${sem}','${res.replace(/'/g, "\\'")}','td_final',this.value)"></td>
+            <td><input type="number" class="input-editable" value="${m.tp_final}" onchange="updateMaq('${sem}','${res.replace(/'/g, "\\'")}','tp_final',this.value)"></td>
+        </tr>`;
+  });
+
+  html += `</tbody></table></div>
+    <div class="form-actions">
+        <button class="btn-save" onclick="saveMaquetteGH()">💾 Enregistrer la maquette sur GitHub</button>
+    </div>`;
+
+  root.innerHTML = html;
+}
+
+window.updateMaq = function (sem, res, field, value) {
+  if (!APP_DATA.maquette_overrides[sem]) APP_DATA.maquette_overrides[sem] = {};
+  if (!APP_DATA.maquette_overrides[sem][res])
+    APP_DATA.maquette_overrides[sem][res] = {
+      cm_final: 0,
+      td_final: 0,
+      tp_final: 0,
+    };
+  APP_DATA.maquette_overrides[sem][res][field] = parseFloat(value) || 0;
+};
+
+/* ── Vue : Services ──────────────────────────────────────────────────────── */
+function renderServices(root) {
+  const par_enseignant = {};
+  const ensMap = {};
+  APP_DATA.enseignants.forEach((e) => (ensMap[e.id] = e));
+
+  SEMESTRES.forEach((sem) => {
+    const sem_data = APP_DATA.affectations[sem] || {};
+    Object.keys(sem_data).forEach((res) => {
+      const data = sem_data[res];
+      const entries = [
+        { enseignant: data.enseignant, cm: data.cm, td: data.td, tp: data.tp },
+      ];
+      if (data.subrows)
+        data.subrows.forEach((sub) =>
+          entries.push({
+            enseignant: sub.enseignant,
+            cm: sub.cm,
+            td: sub.td,
+            tp: sub.tp,
+          }),
+        );
+
+      entries.forEach((entry) => {
+        const ens = (entry.enseignant || "").trim();
+        if (!ens) return;
+        let cm = parseFloat(entry.cm) || 0;
+        let td = parseFloat(entry.td) || 0;
+        let tp = parseFloat(entry.tp) || 0;
+
+        let total = 0;
+        // Reprise stricte de la règle de calcul de app.py
+        if (["S1", "S2", "S3"].includes(sem)) {
+          total = cm * 1 + td * 2 + tp * 4;
+        } else {
+          total = td * 1 + tp * 2;
+        }
+
+        if (cm === 0 && td === 0 && tp === 0) return;
+
+        if (!par_enseignant[ens]) par_enseignant[ens] = [];
+        par_enseignant[ens].push({
+          semestre: sem,
+          ressource: res,
+          cm,
+          td,
+          tp,
+          total,
+        });
+      });
+    });
+  });
+
+  let html = `<div class="page-header"><h1>Services des enseignants</h1></div>`;
+
+  html += `
+    <div class="services-filter">
+        <button class="btn-toggle-all" onclick="toggleAllServices()">Tout déployer / Tout replier</button>
+        <span style="flex:1"></span>
+        <button class="btn-filter-type active" data-type="titulaire" onclick="filterServices('titulaire', this)">Titulaires</button>
+        <button class="btn-filter-type active" data-type="vacataire" onclick="filterServices('vacataire', this)">Vacataires</button>
+    </div>`;
+
+  const sortedEns = Object.keys(par_enseignant).sort();
+
+  sortedEns.forEach((ens) => {
+    const eData = ensMap[ens] || {
+      service_du: null,
+      service_max: null,
+      is_vac: false,
+    };
+    const isVac = eData.is_vac;
+    const sDu = eData.service_du || 0;
+    const sMax = eData.service_max || 0;
+
+    let sumTotal = par_enseignant[ens].reduce(
+      (acc, curr) => acc + curr.total,
+      0,
+    );
+
+    let badgeHtml = "";
+    if (!isVac && sDu > 0) {
+      let diff = sumTotal - sDu;
+      let diffClass =
+        diff === 0 ? "diff-ok" : diff > 0 ? "diff-surplus" : "diff-manque";
+      let diffText = diff > 0 ? `+${diff}` : diff;
+      badgeHtml = `<span class="service-du-badge">Dû : ${sDu}</span> <span class="service-diff-badge ${diffClass}">${diffText}</span>`;
+    } else if (isVac && sMax > 0) {
+      badgeHtml = `<span class="service-max-badge">Max : ${sMax}</span>`;
+    }
+    badgeHtml += `<span class="service-eqtd-badge">Réalisé : ${sumTotal}</span>`;
+
+    html += `
+        <div class="service-block" data-vac="${isVac}">
+            <div class="service-nom" onclick="this.parentElement.classList.toggle('is-open')">
+                ${ens} ${badgeHtml}
+                <span class="service-toggle-btn">▼</span>
+            </div>
+            <div class="service-details table-wrapper">
+                <table class="ressources-table">
+                    <thead><tr><th class="col-semestre">Semestre</th><th>Ressource</th><th class="col-h">CM</th><th class="col-h">TD</th><th class="col-h">TP</th><th class="col-h">Total</th></tr></thead>
+                    <tbody>
+                    ${par_enseignant[ens]
+                      .map(
+                        (r) => `<tr>
+                        <td><span class="badge-semestre" data-sem="${r.semestre}">${r.semestre}</span></td>
+                        <td>${r.ressource}</td>
+                        <td class="col-h">${r.cm}</td>
+                        <td class="col-h">${r.td}</td>
+                        <td class="col-h">${r.tp}</td>
+                        <td class="col-h total-cell">${r.total}</td>
+                    </tr>`,
+                      )
+                      .join("")}
+                    </tbody>
+                </table>
+            </div>
+        </div>`;
+  });
+
+  root.innerHTML = html;
+}
+
+window.toggleAllServices = function () {
+  const blocks = document.querySelectorAll(".service-block");
+  const allOpen = Array.from(blocks).every((b) =>
+    b.classList.contains("is-open"),
+  );
+  blocks.forEach((b) => b.classList.toggle("is-open", !allOpen));
+};
+
+window.filterServices = function (type, btn) {
+  btn.classList.toggle("active");
+  const showTit = document
+    .querySelector('.btn-filter-type[data-type="titulaire"]')
+    .classList.contains("active");
+  const showVac = document
+    .querySelector('.btn-filter-type[data-type="vacataire"]')
+    .classList.contains("active");
+
+  document.querySelectorAll(".service-block").forEach((b) => {
+    const isVac = b.getAttribute("data-vac") === "true";
+    if ((isVac && showVac) || (!isVac && showTit)) b.style.display = "";
+    else b.style.display = "none";
+  });
+};
+
+/* ── Vue : Enseignants ───────────────────────────────────────────────────── */
+function renderEnseignants(root) {
+  let html = `<div class="page-header"><h1>Gestion des enseignants</h1></div>`;
+  html += `<div class="table-wrapper"><table class="ressources-table">
+    <thead><tr><th>Nom complet</th><th>Statut</th><th>Service Dû</th><th>Service Max</th><th style="width:60px">Actions</th></tr></thead><tbody>`;
+
+  APP_DATA.enseignants.forEach((e, i) => {
+    html += `<tr>
+            <td>${e.id}</td>
+            <td>${e.is_vac ? "Vacataire" : "Titulaire"}</td>
+            <td>${e.service_du || "-"}</td>
+            <td>${e.service_max || "-"}</td>
+            <td><button class="btn-remove-subrow" onclick="deleteEns(${i})" title="Supprimer">🗑</button></td>
+        </tr>`;
+  });
+
+  html += `</tbody></table></div>`;
+
+  html += `<div class="form-card" style="margin-top:2rem">
+        <h3 style="margin-bottom:1rem">Ajouter un enseignant</h3>
+        <div class="form-group"><label>Nom</label><input type="text" id="new_ens_nom" class="form-input"></div>
+        <div class="form-group"><label>Prénom</label><input type="text" id="new_ens_prenom" class="form-input"></div>
+        <div class="form-group form-group-check"><label><input type="checkbox" id="new_ens_vac"> Est vacataire</label></div>
+        <div class="form-group"><label>Service dû (Titulaires)</label><input type="number" id="new_ens_du" class="form-input"></div>
+        <div class="form-group"><label>Service max (Vacataires)</label><input type="number" id="new_ens_max" class="form-input"></div>
+        <button class="btn-save" onclick="addEns()">Ajouter</button>
+        <button class="btn-save" style="margin-left:1rem; background:#16a34a" onclick="saveEnseignantsGH()">💾 Enregistrer sur GitHub</button>
+    </div>`;
+
+  root.innerHTML = html;
+}
+
+window.addEns = function () {
+  const nom = document.getElementById("new_ens_nom").value.trim().toUpperCase();
+  const prenom = document.getElementById("new_ens_prenom").value.trim();
+  const is_vac = document.getElementById("new_ens_vac").checked;
+  const du = parseFloat(document.getElementById("new_ens_du").value) || null;
+  const max = parseFloat(document.getElementById("new_ens_max").value) || null;
+
+  if (!nom && !prenom) return alert("Le nom ou prénom est requis.");
+  const id = `${nom} ${prenom}`.trim();
+  if (APP_DATA.enseignants.find((e) => e.id === id))
+    return alert("Cet enseignant existe déjà.");
+
+  APP_DATA.enseignants.push({
+    id,
+    nom,
+    prenom,
+    is_vac,
+    service_du: du,
+    service_max: max,
+  });
+  APP_DATA.enseignants.sort((a, b) => a.id.localeCompare(b.id));
+  renderView();
+};
+
+window.deleteEns = function (i) {
+  if (confirm("Supprimer cet enseignant ?")) {
+    APP_DATA.enseignants.splice(i, 1);
+    renderView();
+  }
+};
+
+/* ── Logique GitHub & Données ────────────────────────────────────────────── */
+window.showToast = function (msg) {
+  let t = document.getElementById("toast");
+  t.textContent = msg;
+  t.classList.add("show");
+  setTimeout(() => t.classList.remove("show"), 3000);
+};
+
+window.isGHConfigured = function () {
+  return !!getGHConfig().token;
+};
+window.getGHConfig = function () {
+  try {
+    return JSON.parse(localStorage.getItem(GH_KEY)) || {};
+  } catch {
+    return {};
+  }
+};
+
+window.openGHModal = function () {
+  document.getElementById("gh-modal").style.display = "block";
+};
+window.closeGHModal = function () {
+  document.getElementById("gh-modal").style.display = "none";
+};
+window.saveGHFromModal = function () {
+  const token = document.getElementById("gh-token").value.trim();
+  if (!token) return alert("Saisissez un token.");
+  localStorage.setItem(GH_KEY, JSON.stringify({ token }));
+  const btn = document.getElementById("gh-config-btn");
+  if (btn) btn.innerHTML = "● GitHub configuré";
+  alert("Token enregistré !");
+  closeGHModal();
+};
+
+function injectGHUI() {
+  const footer = document.createElement("div");
+  footer.className = "gh-footer";
+  footer.innerHTML = `<button class="gh-footer-link" id="gh-config-btn" onclick="openGHModal()">${isGHConfigured() ? "● GitHub configuré" : "⚙ Configurer sauvegarde GitHub"}</button>`;
+  document.body.appendChild(footer);
+
+  const modal = document.createElement("div");
+  modal.id = "gh-modal";
+  modal.className = "gh-modal-overlay";
+  modal.style.display = "none";
+  modal.innerHTML = `
+    <div class="form-card" style="margin:10% auto; position:relative; max-width:400px">
+        <h3 style="margin-bottom:1rem; color:#1e3a5f">⚙ Token GitHub</h3>
+        <p style="font-size:13px; color:#6b7280; margin-bottom:1rem;">Les JSON seront sauvegardés dans <strong>${GH_OWNER}/${GH_REPO}</strong> (branche <code>${GH_BRANCH}</code>).</p>
+        <div class="form-group">
+            <label>Personal Access Token</label>
+            <input id="gh-token" class="form-input" type="password" placeholder="ghp_xxxxxxxxxxxxxxxxxxxx">
+        </div>
+        <div style="display:flex; justify-content:flex-end; gap:0.5rem; margin-top:1.5rem;">
+            <button class="btn-cancel" onclick="closeGHModal()">Annuler</button>
+            <button class="btn-save" onclick="saveGHFromModal()">Enregistrer</button>
+        </div>
+    </div>`;
+  modal.addEventListener("click", (e) => {
+    if (e.target === modal) closeGHModal();
+  });
+  document.body.appendChild(modal);
+
+  const cfg = getGHConfig();
+  if (cfg.token) document.getElementById("gh-token").value = cfg.token;
+}
+
+async function fetchGH(filename) {
+  const cfg = getGHConfig();
+  const url = `https://api.github.com/repos/${GH_OWNER}/${GH_REPO}/contents/${GH_BASE_PATH}/${filename}?ref=${GH_BRANCH}`;
+  const resp = await fetch(url, {
+    headers: {
+      Authorization: `token ${cfg.token}`,
+      Accept: "application/vnd.github.v3+json",
+    },
+  });
+  if (!resp.ok) return null;
+  const json = await resp.json();
+  return JSON.parse(
+    decodeURIComponent(escape(atob(json.content.replace(/\n/g, "")))),
+  );
+}
+
+async function saveFileGH(filename, dataObj, msg) {
+  const cfg = getGHConfig();
+  const url = `https://api.github.com/repos/${GH_OWNER}/${GH_REPO}/contents/${GH_BASE_PATH}/${filename}`;
+  const content = btoa(
+    unescape(encodeURIComponent(JSON.stringify(dataObj, null, 2))),
+  );
+  let sha = null;
+  try {
+    const r = await fetch(`${url}?ref=${GH_BRANCH}`, {
+      headers: {
+        Authorization: `token ${cfg.token}`,
+        Accept: "application/vnd.github.v3+json",
+      },
+    });
+    if (r.ok) sha = (await r.json()).sha;
+  } catch {}
+
+  const body = { message: msg, content, branch: GH_BRANCH };
+  if (sha) body.sha = sha;
+
+  const r = await fetch(url, {
+    method: "PUT",
+    headers: {
+      Authorization: `token ${cfg.token}`,
+      Accept: "application/vnd.github.v3+json",
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(body),
+  });
+  if (!r.ok) throw new Error(await r.text());
+}
+
+window.saveAffectationsGH = async function () {
+  if (!isGHConfigured()) return alert("Veuillez configurer GitHub d'abord !");
+  try {
+    await saveFileGH(
+      "affectations.json",
+      APP_DATA.affectations,
+      "Update affectations.json via Web UI",
+    );
+    showToast("Affectations sauvegardées sur GitHub !");
+  } catch (e) {
+    alert("Erreur: " + e.message);
+  }
+};
+
+window.saveEnseignantsGH = async function () {
+  if (!isGHConfigured()) return alert("Veuillez configurer GitHub d'abord !");
+  try {
+    await saveFileGH(
+      "enseignants.json",
+      APP_DATA.enseignants,
+      "Update enseignants.json via Web UI",
+    );
+    showToast("Enseignants sauvegardés sur GitHub !");
+  } catch (e) {
+    alert("Erreur: " + e.message);
+  }
+};
+
+window.saveMaquetteGH = async function () {
+  if (!isGHConfigured()) return alert("Veuillez configurer GitHub d'abord !");
+  try {
+    await saveFileGH(
+      "maquette_overrides.json",
+      APP_DATA.maquette_overrides,
+      "Update maquette_overrides.json via Web UI",
+    );
+    showToast("Maquette sauvegardée sur GitHub !");
+  } catch (e) {
+    alert("Erreur: " + e.message);
+  }
+};
+
+async function loadData() {
+  // 1. Tente de récupérer les données via GitHub
+  if (isGHConfigured()) {
+    try {
+      const [aff, ens, maq] = await Promise.all([
+        fetchGH("affectations.json"),
+        fetchGH("enseignants.json"),
+        fetchGH("maquette_overrides.json"),
+      ]);
+      if (aff) APP_DATA.affectations = aff;
+      if (ens) APP_DATA.enseignants = ens;
+      if (maq) APP_DATA.maquette_overrides = maq;
+      renderView();
+      return;
+    } catch (e) {
+      console.warn("GH load failed, fallback to local", e);
+    }
+  }
+
+  // 2. Sinon, lit localement
+  try {
+    const [aff, ens, maq] = await Promise.all([
+      fetch("data/affectations.json").then((r) => (r.ok ? r.json() : {})),
+      fetch("data/enseignants.json").then((r) => (r.ok ? r.json() : [])),
+      fetch("data/maquette_overrides.json").then((r) => (r.ok ? r.json() : {})),
+    ]);
+    APP_DATA.affectations = aff;
+    APP_DATA.enseignants = ens;
+    APP_DATA.maquette_overrides = maq;
+  } catch (e) {
+    console.error("Local load failed", e);
+  }
+  renderView();
+}
+
+document.addEventListener("DOMContentLoaded", async () => {
+  injectGHUI();
+  await loadData();
+});

@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Répartition MMI</title>
+    <link rel="stylesheet" href="static/style.css" />
+    <style>
+      /* Styles spécifiques pour le mode 100% frontend et la modale GitHub */
+      .gh-modal-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 1000;
+      }
+      .gh-footer {
+        position: fixed;
+        bottom: 0;
+        right: 0;
+        padding: 10px;
+        z-index: 900;
+      }
+      .gh-footer-link {
+        background: #1e3a5f;
+        color: #fff;
+        border: none;
+        padding: 8px 12px;
+        border-radius: 6px;
+        cursor: pointer;
+        font-size: 13px;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        font-weight: 600;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+      }
+      .toast {
+        position: fixed;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: #16a34a;
+        color: white;
+        padding: 10px 20px;
+        border-radius: 8px;
+        opacity: 0;
+        transition: opacity 0.3s;
+        pointer-events: none;
+        z-index: 2000;
+        font-weight: 600;
+      }
+      .toast.show {
+        opacity: 1;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="header-inner">
+        <a href="#" class="site-title" onclick="navigate('home')"
+          >Répartition MMI</a
+        >
+        <nav id="main-nav">
+          <a href="#" class="nav-link" id="nav-home" onclick="navigate('home')"
+            >Accueil</a
+          >
+          <a
+            href="#"
+            class="nav-link"
+            id="nav-maquette"
+            onclick="navigate('maquette_index')"
+            >Maquette</a
+          >
+          <a
+            href="#"
+            class="nav-link nav-link-services"
+            id="nav-services"
+            onclick="navigate('services')"
+            >Services</a
+          >
+          <a
+            href="#"
+            class="nav-link"
+            id="nav-enseignants"
+            onclick="navigate('enseignants')"
+            >Enseignants</a
+          >
+        </nav>
+      </div>
+    </header>
+
+    <!-- Conteneur principal géré par app.js -->
+    <main id="app-root"></main>
+
+    <footer>
+      <p>MMI Répartition — BUT MMI Béziers 2026-27 (Version Statique GitHub)</p>
+    </footer>
+
+    <!-- Conteneur des notifications -->
+    <div id="toast" class="toast"></div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
