@@ -1,8 +1,674 @@
 {
-  "S4 crea": {
-    "R4.03 | Design d'expérience": {
-      "cm_final": 4.5,
+  "S1": {
+    "R1.20 | Soutien, remise a niveau": {
+      "cm_final": 0,
+      "td_final": 12,
+      "tp_final": 15
+    },
+    "R1.01 | Anglais": {
+      "cm_final": 0,
+      "td_final": 4.5,
+      "tp_final": 9
+    },
+    "R1.02 | Espagnol (LV2)": {
+      "cm_final": 1.5,
+      "td_final": 4.5,
+      "tp_final": 4.5
+    },
+    "R1.03 Ergonomie et Accessibilité": {
+      "cm_final": 3,
+      "td_final": 7.5,
+      "tp_final": 6
+    },
+    "R1.04 Culture numérique": {
+      "cm_final": 9,
+      "td_final": 12,
+      "tp_final": 0
+    },
+    "R1.05 Stratégies de communication et marketing": {
+      "cm_final": 12,
+      "td_final": 13.5,
+      "tp_final": 0
+    },
+    "R1.06 Expression, communication et rhétorique": {
+      "cm_final": 0,
+      "td_final": 13.5,
+      "tp_final": 6
+    },
+    "R1.07 Écriture multimédia et narration": {
+      "cm_final": 0,
+      "td_final": 10.5,
+      "tp_final": 6
+    },
+    "R1.08 Production graphique": {
+      "cm_final": 0,
+      "td_final": 6,
+      "tp_final": 15
+    },
+    "R1.09 Culture artistique": {
+      "cm_final": 7.5,
+      "td_final": 0,
+      "tp_final": 10.5
+    },
+    "R1.10 Production audio et vidéo": {
+      "cm_final": 6,
+      "td_final": 4.5,
+      "tp_final": 10.5
+    },
+    "R1.11 Intégration": {
+      "cm_final": 1.5,
+      "td_final": 13.5,
+      "tp_final": 15
+    },
+    "R1.12 Développement Web": {
+      "cm_final": 1.5,
+      "td_final": 10.5,
+      "tp_final": 0
+    },
+    "R1.13 Hébergement": {
+      "cm_final": 6,
       "td_final": 3,
+      "tp_final": 3
+    },
+    "R1.14 Représentation et traitement de l'information": {
+      "cm_final": 0,
+      "td_final": 9,
+      "tp_final": 9
+    },
+    "R1.15 Gestion de projet": {
+      "cm_final": 0,
+      "td_final": 10.5,
+      "tp_final": 4.5
+    },
+    "R1.16 Économie, gestion et droit du numérique": {
+      "cm_final": 9,
+      "td_final": 6,
+      "tp_final": 0
+    },
+    "R1.17 Projet Personnel et Professionnel": {
+      "cm_final": 0,
+      "td_final": 4.5,
+      "tp_final": 13.5
+    },
+    "SAÉ 1.01 Auditer une communication numérique": {
+      "cm_final": 3,
+      "td_final": 15,
+      "tp_final": 0
+    },
+    "SAÉ 1.02 Concevoir une recommandation de communication numérique": {
+      "cm_final": 3,
+      "td_final": 12,
+      "tp_final": 4.5
+    },
+    "SAÉ 1.03 Produire les éléments d'une communication visuelle": {
+      "cm_final": 0,
+      "td_final": 7.5,
+      "tp_final": 3
+    },
+    "SAÉ 1.04 Produire un contenu audio et vidéo": {
+      "cm_final": 0,
+      "td_final": 33,
+      "tp_final": 0
+    },
+    "SAÉ 1.05 Produire un site Web": {
+      "cm_final": 1.5,
+      "td_final": 15,
+      "tp_final": 0
+    },
+    "SAÉ 1.06 Gérer un projet de communication numérique": {
+      "cm_final": 1.5,
+      "td_final": 18,
+      "tp_final": 0
+    },
+    "PORTFOLIO | Portfolio": {
+      "cm_final": 0,
+      "td_final": 7.5,
+      "tp_final": 0
+    }
+  },
+  "S2": {
+    "R2.01 | Anglais": {
+      "cm_final": 0,
+      "td_final": 4.5,
+      "tp_final": 9
+    },
+    "R2.02 | Anglais renforcé": {
+      "cm_final": 0,
+      "td_final": 4.5,
+      "tp_final": 4.5
+    },
+    "R2.03 | Ergonomie et Accessibilité": {
+      "cm_final": 0,
+      "td_final": 4.5,
+      "tp_final": 10.5
+    },
+    "R2.04 | Culture numérique": {
+      "cm_final": 0,
+      "td_final": 15,
+      "tp_final": 0
+    },
+    "R2.05 | Stratégies de communication et marketing": {
+      "cm_final": 9,
+      "td_final": 6,
+      "tp_final": 0
+    },
+    "R2.06 | Expression, communication et rhétorique": {
+      "cm_final": 0,
+      "td_final": 6,
+      "tp_final": 10.5
+    },
+    "R2.07 | Écriture multimédia et narration": {
+      "cm_final": 1.5,
+      "td_final": 7.5,
+      "tp_final": 10.5
+    },
+    "R2.08 | Production graphique": {
+      "cm_final": 1.5,
+      "td_final": 4.5,
+      "tp_final": 15
+    },
+    "R2.09 | Culture artistique": {
+      "cm_final": 6,
+      "td_final": 0,
+      "tp_final": 10.5
+    },
+    "R2.10 | Production audio et vidéo": {
+      "cm_final": 0,
+      "td_final": 4.5,
+      "tp_final": 15
+    },
+    "R2.11 | Gestion de contenus": {
+      "cm_final": 0,
+      "td_final": 4.5,
+      "tp_final": 6
+    },
+    "R2.12 | Intégration": {
+      "cm_final": 3,
+      "td_final": 3,
+      "tp_final": 15
+    },
+    "R2.13 | Développement Web": {
+      "cm_final": 0,
+      "td_final": 4.5,
+      "tp_final": 15
+    },
+    "R2.14 | Système d'information": {
+      "cm_final": 4.5,
+      "td_final": 4.5,
+      "tp_final": 4.5
+    },
+    "R2.15 | Hébergement": {
+      "cm_final": 3,
+      "td_final": 1.5,
+      "tp_final": 10.5
+    },
+    "R2.16 | Représentation et traitement de l'information": {
+      "cm_final": 0,
+      "td_final": 4.5,
+      "tp_final": 10.5
+    },
+    "R2.17 | Gestion de projet": {
+      "cm_final": 0,
+      "td_final": 0,
+      "tp_final": 0
+    },
+    "R2.18 | Économie, gestion et droit du numérique": {
+      "cm_final": 0,
+      "td_final": 0,
+      "tp_final": 0
+    },
+    "R2.19 | Projet Personnel et Professionnel": {
+      "cm_final": 0,
+      "td_final": 10.5,
+      "tp_final": 10.5
+    },
+    "SAÉ 2.01 | Explorer les usages du numérique": {
+      "cm_final": 1.5,
+      "td_final": 18,
+      "tp_final": 0
+    },
+    "SAÉ 2.02 | Concevoir un produit ou un service et sa communication": {
+      "cm_final": 6,
+      "td_final": 55.5,
+      "tp_final": 0
+    },
+    "SAÉ 2.03 | Concevoir un site web avec une source de données": {
+      "cm_final": 1.5,
+      "td_final": 0,
+      "tp_final": 0
+    },
+    "SAÉ 2.04 | Construire sa présence en ligne": {
+      "cm_final": 1.5,
+      "td_final": 0,
+      "tp_final": 0
+    },
+    "SAÉ 2.98 | Hackathon": {
+      "cm_final": 0,
+      "td_final": 0,
+      "tp_final": 0
+    },
+    "SAÉ 2.99 | Marathon MMI": {
+      "cm_final": 0,
+      "td_final": 0,
+      "tp_final": 0
+    },
+    "PORTFOLIO | Portfolio": {
+      "cm_final": 0,
+      "td_final": 7.5,
+      "tp_final": 0
+    }
+  },
+  "S3": {
+    "R3.01 | Anglais": {
+      "cm_final": 0,
+      "td_final": 4.5,
+      "tp_final": 9
+    },
+    "R3.02 | Espagnol (LV2)": {
+      "cm_final": 0,
+      "td_final": 4.5,
+      "tp_final": 4.5
+    },
+    "R3.03 | Design d'expérience": {
+      "cm_final": 3,
+      "td_final": 4.5,
+      "tp_final": 4.5
+    },
+    "R3.04 | Culture numérique": {
+      "cm_final": 0,
+      "td_final": 12,
+      "tp_final": 0
+    },
+    "R3.05 | Stratégies de communication et marketing": {
+      "cm_final": 9,
+      "td_final": 6,
+      "tp_final": 0
+    },
+    "R3.06 | Référencement": {
+      "cm_final": 4.5,
+      "td_final": 1.5,
+      "tp_final": 10.5
+    },
+    "R3.07 | Expression, communication et rhétorique": {
+      "cm_final": 0,
+      "td_final": 9,
+      "tp_final": 6
+    },
+    "R3.08 | Écriture multimédia et narration": {
+      "cm_final": 0,
+      "td_final": 4.5,
+      "tp_final": 0
+    },
+    "R3.09 | Création et design interactif (UI)": {
+      "cm_final": 0,
+      "td_final": 4.5,
+      "tp_final": 10.5
+    },
+    "R3.10 | Culture artistique": {
+      "cm_final": 10.5,
+      "td_final": 0,
+      "tp_final": 10.5
+    },
+    "R3.11 | Audiovisuel et Motion design": {
+      "cm_final": 0,
+      "td_final": 10.5,
+      "tp_final": 10.5
+    },
+    "R3.12 | Développement Front et intégration": {
+      "cm_final": 1.5,
+      "td_final": 21,
+      "tp_final": 21
+    },
+    "R3.13 | Gestion de contenus avancée / Dév Back": {
+      "cm_final": 4.5,
+      "td_final": 10.5,
+      "tp_final": 21
+    },
+    "R3.14 | Déploiement de services": {
+      "cm_final": 1.5,
+      "td_final": 7.5,
+      "tp_final": 10.5
+    },
+    "R3.15 | Représentation et traitement de l'information": {
+      "cm_final": 1.5,
+      "td_final": 9,
+      "tp_final": 10.5
+    },
+    "R3.16 | Gestion de projet": {
+      "cm_final": 3,
+      "td_final": 6,
+      "tp_final": 6
+    },
+    "R3.17 | Economie, gestion et droit du numérique": {
+      "cm_final": 7.5,
+      "td_final": 7.5,
+      "tp_final": 0
+    },
+    "R3.18 | Projet Personnel et Professionnel": {
+      "cm_final": 0,
+      "td_final": 9,
+      "tp_final": 6
+    },
+    "SAÉ 3.01 | Intégrer des interfaces utilisateurs au sein d'un système d'information": {
+      "cm_final": 1.5,
+      "td_final": 36,
+      "tp_final": 0
+    },
+    "SAÉ 3.02 | Produire des contenus pour une communication plurimédia": {
+      "cm_final": 1.5,
+      "td_final": 30,
+      "tp_final": 0
+    },
+    "SAÉ 3.03 | Concevoir des visualisations de données pour le web et un support animé": {
+      "cm_final": 1.5,
+      "td_final": 30,
+      "tp_final": 0
+    },
+    "PORTFOLIO Portfolio-Parcours Dev": {
+      "cm_final": 0,
+      "td_final": 7.5,
+      "tp_final": 0
+    }
+  },
+  "S4 dev": {
+    "R4.DWeb-DI.01 Anglais": {
+      "cm_final": 0,
+      "td_final": 4.5,
+      "tp_final": 9
+    },
+    "R4.DWeb-DI.02  Economie, gestion et Droit du numérique": {
+      "cm_final": 0,
+      "td_final": 15,
+      "tp_final": 0
+    },
+    "R4.DWeb-DI.03  Design d'expérience": {
+      "cm_final": 0,
+      "td_final": 4.5,
+      "tp_final": 10.5
+    },
+    "R4.DWeb-DI.04  Expression, communication": {
+      "cm_final": 0,
+      "td_final": 15,
+      "tp_final": 0
+    },
+    "R4.DWeb-DI.05 Création et design interactif": {
+      "cm_final": 0,
+      "td_final": 7.5,
+      "tp_final": 7.5
+    },
+    "R4.DWeb-DI.06 Développement front": {
+      "cm_final": 0,
+      "td_final": 4.5,
+      "tp_final": 10.5
+    },
+    "R4.DWeb-DI.07 Développement back": {
+      "cm_final": 0,
+      "td_final": 4.5,
+      "tp_final": 16.5
+    },
+    "R4.DWeb-DI.08 Déploiement de services": {
+      "cm_final": 0,
+      "td_final": 3,
+      "tp_final": 9
+    },
+    "SAÉ 4.DWeb-DI.01 Développer pour le Web": {
+      "cm_final": 0,
+      "td_final": 0,
+      "tp_final": 0
+    },
+    "SAÉ 4.DWeb-DI.02 Concevoir un dispositif interactif": {
+      "cm_final": 0,
+      "td_final": 0,
+      "tp_final": 0
+    },
+    "SAÉ 4.98 | Hackathon": {
+      "cm_final": 0,
+      "td_final": 6,
+      "tp_final": 0
+    },
+    "SAÉ 4.99 | Marathon MMI": {
+      "cm_final": 0,
+      "td_final": 12,
+      "tp_final": 0
+    },
+    "PORTFOLIO Portfolio-Parcours Développement Web et Dispositifs interactifs": {
+      "cm_final": 0,
+      "td_final": 7.5,
+      "tp_final": 0
+    }
+  },
+  "S4 crea": {
+    "R4.Crea.01 Anglais": {
+      "cm_final": 0,
+      "td_final": 4.5,
+      "tp_final": 9
+    },
+    "R4.02 | Economie, gestion et Droit du numérique": {
+      "cm_final": 0,
+      "td_final": 15,
+      "tp_final": 0
+    },
+    "R4.03 | Design d'expérience": {
+      "cm_final": 0,
+      "td_final": 4.5,
+      "tp_final": 10.5
+    },
+    "R4.04 | Expression, communication": {
+      "cm_final": 0,
+      "td_final": 15,
+      "tp_final": 0
+    },
+    "R4.Crea.05 | Gestion de contenus spécialisée": {
+      "cm_final": 0,
+      "td_final": 9,
+      "tp_final": 12
+    },
+    "R4.Crea.06 | Culture artistique": {
+      "cm_final": 0,
+      "td_final": 4.5,
+      "tp_final": 10.5
+    },
+    "R4.Crea.07 | Audiovisuel - Motion design": {
+      "cm_final": 0,
+      "td_final": 6,
+      "tp_final": 10.5
+    },
+    "R4.Crea.08 | Ecriture multimédia et narration": {
+      "cm_final": 0,
+      "td_final": 10.5,
+      "tp_final": 0
+    },
+    "SAÉ 4.Crea.01 | Créer pour une campagne de communication visuelle": {
+      "cm_final": 0,
+      "td_final": 27,
+      "tp_final": 0
+    },
+    "SAÉ 4.Crea.02 | Produire du contenu multimédia": {
+      "cm_final": 0,
+      "td_final": 27,
+      "tp_final": 0
+    },
+    "SAÉ 4.Crea.03 | SAE langues": {
+      "cm_final": 0,
+      "td_final": 3,
+      "tp_final": 12
+    },
+    "SAÉ 4.98 | Hackathon": {
+      "cm_final": 0,
+      "td_final": 6,
+      "tp_final": 0
+    },
+    "SAÉ 4.99 | Marathon MMI": {
+      "cm_final": 0,
+      "td_final": 12,
+      "tp_final": 0
+    },
+    "PORTFOLIO | Portfolio-Parcours Création Numérique": {
+      "cm_final": 0,
+      "td_final": 7.5,
+      "tp_final": 0
+    }
+  },
+  "S5 crea": {
+    "R5.Crea.01 | Anglais": {
+      "cm_final": 0,
+      "td_final": 6,
+      "tp_final": 12
+    },
+    "R5.crea.02 | Management et Assurance Qualité": {
+      "cm_final": 0,
+      "td_final": 15,
+      "tp_final": 0
+    },
+    "R5 crea 03 | Entrepreunariat": {
+      "cm_final": 0,
+      "td_final": 15,
+      "tp_final": 0
+    },
+    "R5. crea 04 PPP": {
+      "cm_final": 0,
+      "td_final": 9,
+      "tp_final": 0
+    },
+    "R5.Crea.05 | Définir une direction artistique": {
+      "cm_final": 0,
+      "td_final": 18,
+      "tp_final": 18
+    },
+    "R5 Crea.06 | Création numérique": {
+      "cm_final": 0,
+      "td_final": 40.5,
+      "tp_final": 30
+    },
+    "R5.Crea.07 | Ecriture Multimédia et narration": {
+      "cm_final": 0,
+      "td_final": 40.5,
+      "tp_final": 30
+    },
+    "SAÉ 5.Crea.01 | Créer par/pour le numérique": {
+      "cm_final": 0,
+      "td_final": 100,
+      "tp_final": 0
+    },
+    "PORTFOLIO | Portfolio-Parcours Création Numérique": {
+      "cm_final": 0,
+      "td_final": 7.5,
+      "tp_final": 0
+    }
+  },
+  "S6 crea": {
+    "R6 crea 01 | Entrepreunariat": {
+      "cm_final": 0,
+      "td_final": 15,
+      "tp_final": 0
+    },
+    "R6 crea 02 | Création numérique intéractive": {
+      "cm_final": 0,
+      "td_final": 37.5,
+      "tp_final": 0
+    },
+    "SAÉ 6.Crea.01 | UX / UI avancé": {
+      "cm_final": 0,
+      "td_final": 30,
+      "tp_final": 0
+    },
+    "SAÉ 4.99 | Marathon MMI": {
+      "cm_final": 0,
+      "td_final": 36,
+      "tp_final": 0
+    },
+    "PORTFOLIO Portfolio-Parcours Création Numérique": {
+      "cm_final": 0,
+      "td_final": 7.5,
+      "tp_final": 0
+    }
+  },
+  "S5 dev": {
+    "R5.DWeb-DI.01 | Anglais": {
+      "cm_final": 0,
+      "td_final": 6,
+      "tp_final": 12
+    },
+    "R5.DWeb-DI.02 | Management et Assurance Qualité": {
+      "cm_final": 0,
+      "td_final": 15,
+      "tp_final": 0
+    },
+    "R5.DWeb-DI.03 | Entrepreunariat": {
+      "cm_final": 0,
+      "td_final": 15,
+      "tp_final": 0
+    },
+    "R5.DWeb-DI.04 | PPP": {
+      "cm_final": 0,
+      "td_final": 9,
+      "tp_final": 0
+    },
+    "R5.DWeb-DI.05 | Développement front avancé": {
+      "cm_final": 0,
+      "td_final": 30,
+      "tp_final": 33
+    },
+    "R5.DWeb-DI.06 | Développement back avancé": {
+      "cm_final": 0,
+      "td_final": 18,
+      "tp_final": 15
+    },
+    "R5.DWeb-DI.07 | Dispositifs interactifs": {
+      "cm_final": 0,
+      "td_final": 36,
+      "tp_final": 25.5
+    },
+    "R5.DWeb-DI.08 | Hébergement et cybersécurité": {
+      "cm_final": 0,
+      "td_final": 15,
+      "tp_final": 18
+    },
+    "R5.DWeb-DI.09 | Mathématiques avancées, complexité algorithmique": {
+      "cm_final": 0,
+      "td_final": 12,
+      "tp_final": 0
+    },
+    "SAÉ 5D.01 | Développer pour le web": {
+      "cm_final": 0,
+      "td_final": 60,
+      "tp_final": 0
+    },
+    "SAÉ 5D.02 | SAE Management": {
+      "cm_final": 0,
+      "td_final": 30,
+      "tp_final": 0
+    },
+    "PORTFOLIO Portfolio-Parcours Dev Web": {
+      "cm_final": 0,
+      "td_final": 7.5,
+      "tp_final": 0
+    }
+  },
+  "S6 dev": {
+    "R6.DWeb-DI.01 | Entrepreunariat": {
+      "cm_final": 0,
+      "td_final": 15,
+      "tp_final": 0
+    },
+    "R6.DWeb-DI.02 | Développement Web et dispositif interactif": {
+      "cm_final": 20,
+      "td_final": 20,
+      "tp_final": 0
+    },
+    "R6.DWeb-DI.03 | Fonctionnement des IA": {
+      "cm_final": 0,
+      "td_final": 12,
+      "tp_final": 0
+    },
+    "SAÉ 6.dev.01 | Developpement avancé": {
+      "cm_final": 0,
+      "td_final": 39,
+      "tp_final": 0
+    },
+    "PORTFOLIO | Portfolio-Parcours Dev": {
+      "cm_final": 0,
+      "td_final": 7.5,
       "tp_final": 0
     }
   }
