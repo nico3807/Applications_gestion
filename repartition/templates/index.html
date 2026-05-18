@@ -1,0 +1,19 @@
+{% extends "base.html" %} {% block title %}Accueil — MMI Répartition 2026-27{%
+endblock %} {% block content %}
+<div class="page-header">
+  <h1>Répartition des enseignements BUT MMI 2026-27</h1>
+  <p class="subtitle">Parcours Création Numérique — IUT Béziers</p>
+</div>
+
+<div class="semestre-grid">
+  {% for s in semestres %}
+  <a
+    href="{{ url_for('semestre', semestre_slug=slug_fn(s)) }}"
+    class="semestre-card"
+  >
+    <span class="semestre-label">{{ s }}</span>
+    <span class="semestre-arrow">→</span>
+  </a>
+  {% endfor %}
+</div>
+{% endblock %}

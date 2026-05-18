@@ -1,0 +1,37 @@
+{% extends "base.html" %} {% block title %}Supprimer un enseignant — MMI
+Répartition 2026-27{% endblock %} {% block content %}
+<div class="page-header">
+  <h1>Supprimer un enseignant</h1>
+  <p class="subtitle">
+    L'enseignant sera retiré de la liste mais ses affectations existantes seront
+    conservées
+  </p>
+</div>
+
+<div class="form-card">
+  <form method="POST" action="{{ url_for('enseignant_supprimer') }}">
+    <div class="form-group">
+      <label for="enseignant_id"
+        >Enseignant à supprimer <span class="required">*</span></label
+      >
+      <select
+        id="enseignant_id"
+        name="enseignant_id"
+        class="select-enseignant form-input"
+        required
+      >
+        <option value="">— sélectionner —</option>
+        {% for ens in enseignants %}
+        <option value="{{ ens.id }}">
+          {{ ens.id }}{% if ens.is_vac %} (vac.){% endif %}
+        </option>
+        {% endfor %}
+      </select>
+    </div>
+    <div class="form-actions">
+      <a href="{{ url_for('services') }}" class="btn-cancel">Annuler</a>
+      <button type="submit" class="btn-delete">Supprimer</button>
+    </div>
+  </form>
+</div>
+{% endblock %}

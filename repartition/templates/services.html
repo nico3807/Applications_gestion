@@ -1,0 +1,234 @@
+{% extends "base.html" %} {% block title %}Services — MMI Répartition 2026-27{%
+endblock %} {% block content %}
+<div class="page-header">
+  <h1>Services des enseignants</h1>
+  <p class="subtitle">
+    Récapitulatif des affectations par enseignant — toutes formations
+  </p>
+</div>
+
+{% if par_enseignant %}
+
+<div class="services-filter">
+  <label for="sel-enseignant">Enseignant :</label>
+  <select id="sel-enseignant" class="select-enseignant" style="width: 300px">
+    <option value="">— tous —</option>
+    {% for nom in tous_enseignants %}
+    <option value="{{ nom }}">{{ nom }}</option>
+    {% endfor %}
+  </select>
+  <a
+    href="{{ url_for('enseignant_ajouter') }}"
+    class="btn-ens-action btn-ens-add"
+    title="Ajouter un enseignant"
+    >+</a
+  >
+  <a
+    href="{{ url_for('enseignant_modifier') }}"
+    class="btn-ens-action btn-ens-edit"
+    title="Modifier le service dû"
+    >✎</a
+  >
+  <a
+    href="{{ url_for('enseignant_supprimer') }}"
+    class="btn-ens-action btn-ens-remove"
+    title="Supprimer un enseignant"
+    >−</a
+  >
+  <div style="margin-left: auto; display: flex; gap: 8px; align-items: center">
+    <button
+      type="button"
+      id="btn-toggle-all"
+      class="btn-toggle-all"
+      onclick="toggleAll()"
+    >
+      Tout déployer
+    </button>
+    <button
+      type="button"
+      class="btn-filter-type active"
+      data-type="titulaire"
+      onclick="filterByType(this)"
+    >
+      Titulaires
+    </button>
+    <button
+      type="button"
+      class="btn-filter-type"
+      data-type="vacataire"
+      onclick="filterByType(this)"
+    >
+      Vacataires
+    </button>
+  </div>
+</div>
+
+{% for nom, lignes in par_enseignant.items() %}
+<div
+  class="service-block"
+  data-ens="{{ nom }}"
+  data-vac="{{ 'true' if is_vac_map.get(nom, false) else 'false' }}"
+>
+  <h2 class="service-nom" onclick="toggleService(this)">
+    {{ nom }} {% set sdu = service_du_map.get(nom) %} {% set smax =
+    service_max_map.get(nom) %} {% set is_vac = is_vac_map.get(nom, false) %} {%
+    set total_realise = lignes | sum(attribute='total') %} {% set ns =
+    namespace(tp_s123=0, tp_s456=0) %} {% for l in lignes %} {% if l.semestre in
+    ['S1','S2','S3'] %}{% set ns.tp_s123 = ns.tp_s123 + l.tp %} {% else %}{% set
+    ns.tp_s456 = ns.tp_s456 + l.tp %}{% endif %} {% endfor %} {% set eq_td =
+    (lignes | sum(attribute='cm')) * 1.5 + (lignes | sum(attribute='td')) +
+    ns.tp_s123 * 4 * 2 / 3 + ns.tp_s456 * 2 * 2 / 3 %} {% if not is_vac and sdu
+    %}
+    <span class="service-du-badge">Service dû : {{ sdu | int }}h</span>
+    {% set diff = sdu - total_realise %}
+    <span
+      class="service-diff-badge {% if diff < 0 %}diff-surplus{% elif diff > 0 %}diff-manque{% else %}diff-ok{% endif %}"
+    >
+      {% if diff == 0 %}À l'équilibre{% elif diff > 0 %}Manque {{ diff | abs |
+      round(1) }}h{% else %}Surplus {{ diff | abs | round(1) }}h{% endif %}
+    </span>
+    {% endif %} {% if is_vac and smax %}
+    <span class="service-max-badge">Service max : {{ smax | int }}h</span>
+    {% set diff_vac = smax - total_realise %}
+    <span
+      class="service-diff-badge {% if diff_vac < 0 %}diff-manque{% elif diff_vac > 0 %}diff-surplus{% else %}diff-ok{% endif %}"
+    >
+      {% if diff_vac == 0 %}À l'équilibre{% elif diff_vac > 0 %}Réalisé {{
+      total_realise | round(1) }}h{% else %}Surplus {{ diff_vac | abs | round(1)
+      }}h{% endif %}
+    </span>
+    {% endif %}
+    <span class="service-eqtd-badge" title="CM + TD + 0,66 × TP"
+      >Éq. TD : {{ eq_td | round(1) }}h</span
+    >
+    <button type="button" class="service-toggle-btn" tabindex="-1">▼</button>
+  </h2>
+  <div class="service-details">
+    <div class="table-wrapper">
+      <table class="ressources-table">
+        <thead>
+          <tr>
+            <th class="col-semestre">Semestre</th>
+            <th class="col-intitule">Ressource / SAÉ</th>
+            <th class="col-h">CM</th>
+            <th class="col-h">TD</th>
+            <th class="col-h">TP</th>
+            <th class="col-h">Total</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for ligne in lignes %}
+          <tr class="{{ 'group-odd' if loop.index is odd else 'group-even' }}">
+            <td class="col-semestre">
+              <span class="badge-semestre" data-sem="{{ ligne.semestre[:2] }}"
+                >{{ ligne.semestre }}</span
+              >
+            </td>
+            <td class="col-intitule">{{ ligne.ressource }}</td>
+            <td class="col-h">
+              {{ (ligne.cm * 1.5) | round(2) if ligne.cm else '—' }}
+            </td>
+            <td class="col-h">{{ ligne.td if ligne.td else '—' }}</td>
+            <td class="col-h">{{ ligne.tp if ligne.tp else '—' }}</td>
+            {% if ligne.semestre in ['S1','S2','S3'] %} {% set t = ligne.cm *
+            1.5 + ligne.td * 2 + ligne.tp * 4 %} {% else %} {% set t = ligne.td
+            * 1 + ligne.tp * 2 %} {% endif %}
+            <td class="col-h total-cell">{{ t | round(2) }}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+        <tfoot>
+          <tr>
+            <td colspan="2" class="foot-label">Sous-total {{ nom }}</td>
+            <td class="col-h">
+              {{ (lignes | sum(attribute='cm') * 1.5) | round(2) }}
+            </td>
+            <td class="col-h">{{ lignes | sum(attribute='td') }}</td>
+            <td class="col-h">{{ lignes | sum(attribute='tp') }}</td>
+            {% set total_sum = namespace(v=0) %} {% for l in lignes %} {% if
+            l.semestre in ['S1','S2','S3'] %} {% set total_sum.v = total_sum.v +
+            l.cm * 1.5 + l.td * 2 + l.tp * 4 %} {% else %} {% set total_sum.v =
+            total_sum.v + l.td * 1 + l.tp * 2 %} {% endif %} {% endfor %}
+            <td class="col-h">{{ total_sum.v | round(2) }}</td>
+          </tr>
+        </tfoot>
+      </table>
+    </div>
+  </div>
+</div>
+{% endfor %} {% else %}
+<p class="no-data">
+  Aucune affectation enregistrée. Commencez par remplir les semestres et cliquez
+  sur Enregistrer.
+</p>
+{% endif %}
+
+<script>
+  var _filterEns = "";
+  var _showTit = true;
+  var _showVac = false;
+
+  function applyVisibility() {
+    const allExpanded =
+      (document.getElementById("btn-toggle-all") || {}).textContent ===
+      "Tout replier";
+    document.querySelectorAll(".service-block").forEach(function (block) {
+      const isVac = block.dataset.vac === "true";
+      const typeOk = isVac ? _showVac : _showTit;
+      const ensOk = !_filterEns || block.dataset.ens === _filterEns;
+      const visible = typeOk && ensOk;
+      block.style.display = visible ? "" : "none";
+      if (visible && allExpanded) {
+        block.classList.add("is-open");
+        block.querySelector(".service-details").style.display = "block";
+      }
+      if (visible && _filterEns && block.dataset.ens === _filterEns) {
+        block.classList.add("is-open");
+        block.querySelector(".service-details").style.display = "block";
+      }
+    });
+  }
+
+  function filterByType(btn) {
+    const type = btn.dataset.type;
+    if (type === "titulaire") _showTit = !_showTit;
+    if (type === "vacataire") _showVac = !_showVac;
+    btn.classList.toggle("active");
+    applyVisibility();
+  }
+
+  function toggleAll() {
+    const btn = document.getElementById("btn-toggle-all");
+    const isExpanding = btn.textContent === "Tout déployer";
+    document.querySelectorAll(".service-block").forEach(function (block) {
+      if (block.style.display === "none") return;
+      const details = block.querySelector(".service-details");
+      if (isExpanding) {
+        block.classList.add("is-open");
+        details.style.display = "block";
+      } else {
+        block.classList.remove("is-open");
+        details.style.display = "none";
+      }
+    });
+    btn.textContent = isExpanding ? "Tout replier" : "Tout déployer";
+  }
+
+  function toggleService(header) {
+    const block = header.closest(".service-block");
+    const details = block.querySelector(".service-details");
+    const isOpen = block.classList.toggle("is-open");
+    details.style.display = isOpen ? "block" : "none";
+  }
+
+  (function () {
+    applyVisibility();
+    const sel = document.getElementById("sel-enseignant");
+    if (!sel) return;
+    sel.addEventListener("change", function () {
+      _filterEns = sel.value;
+      applyVisibility();
+    });
+  })();
+</script>
+{% endblock %}

@@ -1,0 +1,188 @@
+{% extends "base.html" %} {% block title %}Maquette {{ semestre }} — MMI
+Répartition 2026-27{% endblock %} {% block content %}
+<div class="page-header">
+  <h1>Maquette — {{ semestre }}</h1>
+  <p class="subtitle">Totaux issus des sous-totaux de la page {{ semestre }}</p>
+</div>
+
+<div class="semestre-nav-buttons">
+  {% for s in semestres %}
+  <a
+    href="{{ url_for('maquette_semestre', semestre_slug=slug_fn(s)) }}"
+    class="sem-btn {% if s == semestre %}active{% endif %}"
+    data-sem="{{ s[:2] }}"
+    >{{ s }}</a
+  >
+  {% endfor %}
+</div>
+
+{% if rows %}
+<form
+  method="POST"
+  action="{{ url_for('maquette_save', semestre_slug=semestre_slug) }}"
+>
+  <div class="table-wrapper" style="overflow-x: auto">
+    <table class="ressources-table maquette-table">
+      <thead>
+        <tr>
+          <th class="col-intitule" rowspan="2">Ressource / SAÉ</th>
+          <th class="col-h" rowspan="2" title="Volume horaire national">
+            Vol. nat.
+          </th>
+          <th class="col-h" rowspan="2" title="Dont TP national">Dont TP</th>
+          <th colspan="2" class="group-header editable-header">
+            Adapt. locale
+          </th>
+          <th colspan="3" class="group-header editable-header">
+            Prévisionnel final
+          </th>
+          <th colspan="3" class="group-header reel-header">Réel planifié</th>
+        </tr>
+        <tr>
+          <th class="col-h editable-col" title="Adaptation locale">Total</th>
+          <th class="col-h editable-col" title="Dont TP adaptation locale">
+            Dont TP
+          </th>
+          <th class="col-h editable-col">CM</th>
+          <th class="col-h editable-col">TD</th>
+          <th class="col-h editable-col">TP</th>
+          <th class="col-h reel-col">CM</th>
+          <th class="col-h reel-col">TD</th>
+          <th class="col-h reel-col">TP</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for row in rows %} {% set parity = 'group-odd' if loop.index is odd
+        else 'group-even' %}
+        <tr
+          class="{{ parity }} {% if 'SAÉ' in row.intitule or 'SAE' in row.intitule %}row-sae{% endif %} {% if 'PORTFOLIO' in row.intitule %}row-portfolio{% endif %}"
+        >
+          <td class="col-intitule">{{ row.intitule }}</td>
+          <td class="col-h">{{ row.vol_national or '—' }}</td>
+          <td class="col-h">{{ row.dont_tp_nat or '—' }}</td>
+          <td class="col-h">
+            <input
+              type="number"
+              name="adapt_locale_{{ loop.index0 }}"
+              value="{{ row.adapt_locale or '' }}"
+              min="0"
+              step="0.5"
+              class="input-h input-editable"
+            />
+          </td>
+          <td class="col-h">
+            <input
+              type="number"
+              name="dont_tp_adapt_{{ loop.index0 }}"
+              value="{{ row.dont_tp_adapt or '' }}"
+              min="0"
+              step="0.5"
+              class="input-h input-editable"
+            />
+          </td>
+          <td class="col-h">
+            <input
+              type="number"
+              name="cm_final_{{ loop.index0 }}"
+              value="{{ row.cm_final or '' }}"
+              min="0"
+              step="0.5"
+              class="input-h input-editable"
+            />
+          </td>
+          <td class="col-h">
+            <input
+              type="number"
+              name="td_final_{{ loop.index0 }}"
+              value="{{ row.td_final or '' }}"
+              min="0"
+              step="0.5"
+              class="input-h input-editable"
+            />
+          </td>
+          <td class="col-h">
+            <input
+              type="number"
+              name="tp_final_{{ loop.index0 }}"
+              value="{{ row.tp_final or '' }}"
+              min="0"
+              step="0.5"
+              class="input-h input-editable"
+            />
+          </td>
+          <td class="col-h reel-val">
+            {{ row.reel_cm if row.reel_cm else '—' }}
+          </td>
+          <td class="col-h reel-val">
+            {{ row.reel_td if row.reel_td else '—' }}
+          </td>
+          <td class="col-h reel-val">
+            {{ row.reel_tp if row.reel_tp else '—' }}
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+      <tfoot>
+        <tr>
+          <td colspan="3" class="foot-label">Totaux</td>
+          <td class="col-h" id="sum-adapt"></td>
+          <td class="col-h" id="sum-dont-tp"></td>
+          <td class="col-h" id="sum-cm-final"></td>
+          <td class="col-h" id="sum-td-final"></td>
+          <td class="col-h" id="sum-tp-final"></td>
+          <td class="col-h" id="sum-reel-cm">
+            {{ rows | sum(attribute='reel_cm') }}
+          </td>
+          <td class="col-h" id="sum-reel-td">
+            {{ rows | sum(attribute='reel_td') }}
+          </td>
+          <td class="col-h" id="sum-reel-tp">
+            {{ rows | sum(attribute='reel_tp') }}
+          </td>
+        </tr>
+      </tfoot>
+    </table>
+  </div>
+
+  <div class="form-actions">
+    <button type="submit" class="btn-save">Enregistrer</button>
+  </div>
+</form>
+{% else %}
+<p class="no-data">
+  Aucune ressource trouvée pour ce semestre. Vérifiez que le fichier XLSX est
+  présent.
+</p>
+{% endif %}
+
+<script>
+  (function () {
+    function sumCol(selector) {
+      let s = 0;
+      document.querySelectorAll(selector).forEach(function (inp) {
+        s += parseFloat(inp.value || 0) || 0;
+      });
+      return s;
+    }
+
+    function updateTotals() {
+      document.getElementById("sum-adapt").textContent =
+        sumCol('input[name^="adapt_locale_"]') || "—";
+      document.getElementById("sum-dont-tp").textContent =
+        sumCol('input[name^="dont_tp_adapt_"]') || "—";
+      document.getElementById("sum-cm-final").textContent =
+        sumCol('input[name^="cm_final_"]') || "—";
+      document.getElementById("sum-td-final").textContent =
+        sumCol('input[name^="td_final_"]') || "—";
+      document.getElementById("sum-tp-final").textContent =
+        sumCol('input[name^="tp_final_"]') || "—";
+    }
+
+    document.querySelectorAll(".input-editable").forEach(function (inp) {
+      inp.addEventListener("input", updateTotals);
+    });
+
+    updateTotals();
+  })();
+</script>
+{% endblock %}

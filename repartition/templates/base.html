@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      {% block title %}MMI — Répartition des enseignements 2026-27{% endblock %}
+    </title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="header-inner">
+        <a href="{{ url_for('index') }}" class="site-title"
+          >MMI Béziers — Répartition 2026-27</a
+        >
+        <nav>
+          {% for s in semestres %}
+          <a
+            href="{{ url_for('semestre', semestre_slug=slug_fn(s)) }}"
+            class="nav-link {% if request.endpoint == 'semestre' and request.view_args.semestre_slug == slug_fn(s) %}active{% endif %}"
+          >
+            {{ s }}
+          </a>
+          {% endfor %}
+          <a
+            href="{{ url_for('maquette_index') }}"
+            class="nav-link nav-link-services {% if request.endpoint in ('maquette_index','maquette_semestre') %}active{% endif %}"
+          >
+            Maquette
+          </a>
+          <a
+            href="{{ url_for('services') }}"
+            class="nav-link nav-link-services {% if request.endpoint == 'services' %}active{% endif %}"
+          >
+            Services
+          </a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      {% if not xlsx_ok %}
+      <div class="alert alert-danger">
+        ⚠ Fichier <code>BUT_MMI_2026-27.xlsx</code> introuvable. Placez-le dans
+        le même dossier que <code>app.py</code>.
+      </div>
+      {% endif %} {% with messages = get_flashed_messages(with_categories=true)
+      %} {% for category, message in messages %}
+      <div class="alert alert-{{ category }}">{{ message }}</div>
+      {% endfor %} {% endwith %} {% block content %}{% endblock %}
+    </main>
+
+    <footer>
+      <p>IUT MMI Béziers — Université de Montpellier</p>
+    </footer>
+  </body>
+</html>
