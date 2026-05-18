@@ -528,6 +528,8 @@ async function fetchGH(filename) {
   const cfg = getGHConfig();
   const url = `https://api.github.com/repos/${GH_OWNER}/${GH_REPO}/contents/${GH_BASE_PATH}/${filename}?ref=${GH_BRANCH}`;
   const resp = await fetch(url, {
+    // Ajout de no-cache pour éviter les conflits de version dus au cache du navigateur
+    cache: "no-cache",
     headers: {
       Authorization: `token ${cfg.token}`,
       Accept: "application/vnd.github.v3+json",
@@ -549,6 +551,8 @@ async function saveFileGH(filename, dataObj, msg) {
   let sha = null;
   try {
     const r = await fetch(`${url}?ref=${GH_BRANCH}`, {
+      // Ajout de no-cache pour s'assurer de récupérer le SHA le plus récent
+      cache: "no-cache",
       headers: {
         Authorization: `token ${cfg.token}`,
         Accept: "application/vnd.github.v3+json",
