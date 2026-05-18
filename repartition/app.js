@@ -64,7 +64,7 @@ function renderView() {
 
 /* ── Vues : Accueil & Semestres ─────────────────────────────────────────── */
 function renderHome(root) {
-  let html = `<div class="page-header"><h1>Tableau de bord</h1><p class="subtitle">Sélectionnez un semestre pour saisir la répartition</p></div>`;
+  let html = `<div class="page-header"><h1>Répartition</h1><p class="subtitle">Sélectionnez un semestre pour saisir la répartition</p></div>`;
   html += `<div class="semestre-grid">`;
   SEMESTRES.forEach((sem) => {
     html += `<a href="#" class="semestre-card" data-sem="${sem}" onclick="navigate('semestre', '${sem}')">${sem} <span class="semestre-arrow">→</span></a>`;
