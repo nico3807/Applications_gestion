@@ -7,7 +7,6 @@ Application Flask de gestion de la répartition des heures (CM, TD, TP) et des a
 ## Prérequis
 
 - Python 3.10 ou supérieur
-- Le fichier `BUT_MMI_2025-26.xlsx` dans le même dossier que `app.py`
 
 ---
 
@@ -42,13 +41,9 @@ repartition/
 ├── app.py                          ← serveur Flask (routes, logique métier)
 ├── requirements.txt
 ├── README.md
-├── BUT_MMI_2025-26.xlsx            ← source des ressources et enseignants
 ├── data/
 │   ├── affectations.json           ← affectations sauvegardées par semestre
-│   ├── enseignants.json            ← liste des enseignants (source unique)
-│   └── enseignants_overrides.json  ← surcharges de migration (legacy)
-├── utils/
-│   └── xlsx_parser.py              ← lecture du fichier XLSX
+│   └── enseignants.json            ← liste des enseignants (source unique)
 ├── templates/
 │   ├── base.html
 │   ├── index.html
@@ -71,7 +66,7 @@ repartition/
 
 9 semestres : S1, S2, S3, S4 crea, S4 dev, S5 crea, S5 dev, S6 crea, S6 dev.
 
-- Ressources et SAÉ chargées dynamiquement depuis le XLSX
+- Ressources et SAÉ chargées depuis les affectations existantes
 - Sélection d'un enseignant par ressource + saisie des heures CM / TD / TP
 - Lignes supplémentaires pour affecter plusieurs enseignants à la même ressource
 - Steppers +/− sur chaque champ heure (pas de 1,5h)
@@ -93,7 +88,7 @@ Récapitulatif des heures de chaque enseignant toutes formations confondues.
 
 ### Page Maquette
 
-Consultation et surcharge des volumes horaires de référence extraits du XLSX, semestre par semestre.
+Consultation et surcharge des volumes horaires de référence, semestre par semestre.
 
 ### Gestion des enseignants
 

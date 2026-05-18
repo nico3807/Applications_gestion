@@ -2,17 +2,13 @@ import os
 import json
 from flask import Flask, render_template, request, jsonify, redirect, url_for, flash
 
-from utils.xlsx_parser import get_all_ressources, get_enseignants, get_maquette_data
-
 app = Flask(__name__)
 app.secret_key = "mmi_service_2025"
 
 # ── Chemins ────────────────────────────────────────────────────────────────────
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-XLSX_PATH = os.path.join(BASE_DIR, "BUT_MMI_2025-26.xlsx")
 DATA_PATH               = os.path.join(BASE_DIR, "data", "affectations.json")
 ENSEIGNANTS_JSON_PATH   = os.path.join(BASE_DIR, "data", "enseignants.json")
-ENSEIGNANTS_OVERRIDES_PATH = os.path.join(BASE_DIR, "data", "enseignants_overrides.json")  # migration uniquement
 
 # ── Ordre d'affichage des semestres ────────────────────────────────────────────
 SEMESTRES = ["S1", "S2", "S3", "S4 crea", "S4 dev", "S5 crea", "S5 dev", "S6 crea", "S6 dev"]
@@ -26,47 +22,6 @@ def slug(semestre):
 def unslug(s):
     """'S4-crea' → 'S4 crea'"""
     return s.replace("-", " ")
-
-
-# ── Chargement initial des données XLSX ───────────────────────────────────────
-try:
-    ALL_RESSOURCES = get_all_ressources(XLSX_PATH)
-    _xlsx_enseignants = get_enseignants(XLSX_PATH)
-    XLSX_OK = True
-except FileNotFoundError:
-    ALL_RESSOURCES = {s: [] for s in SEMESTRES}
-    _xlsx_enseignants = []
-    XLSX_OK = False
-except Exception as e:
-    ALL_RESSOURCES = {s: [] for s in SEMESTRES}
-    _xlsx_enseignants = []
-    XLSX_OK = False
-    print(f"[ERREUR] Impossible de lire le fichier XLSX : {e}")
-
-
-# ── Initialisation de enseignants.json (migration depuis XLSX + overrides) ────
-def _init_enseignants_json():
-    """Crée enseignants.json à partir du XLSX + overrides si le fichier n'existe pas encore."""
-    if os.path.exists(ENSEIGNANTS_JSON_PATH):
-        return
-    overrides = {}
-    if os.path.exists(ENSEIGNANTS_OVERRIDES_PATH):
-        with open(ENSEIGNANTS_OVERRIDES_PATH, "r", encoding="utf-8") as f:
-            overrides = json.load(f)
-    suppressed = set(overrides.get("suppressions", []))
-    sdu_overrides = overrides.get("service_du_overrides", {})
-    base = [dict(e) for e in _xlsx_enseignants if e["id"] not in suppressed]
-    ajouts = [dict(e) for e in overrides.get("ajouts", []) if e["id"] not in suppressed]
-    combined = base + ajouts
-    for e in combined:
-        if e["id"] in sdu_overrides:
-            e["service_du"] = sdu_overrides[e["id"]]
-    combined.sort(key=lambda e: e["id"])
-    os.makedirs(os.path.dirname(ENSEIGNANTS_JSON_PATH), exist_ok=True)
-    with open(ENSEIGNANTS_JSON_PATH, "w", encoding="utf-8") as f:
-        json.dump(combined, f, ensure_ascii=False, indent=2)
-
-_init_enseignants_json()
 
 
 # ── Gestion de la liste d'enseignants (source unique : enseignants.json) ──────
@@ -107,7 +62,7 @@ def inject_globals():
     return {
         "semestres": SEMESTRES,
         "slug_fn": slug,
-        "xlsx_ok": XLSX_OK,
+        "xlsx_ok": True,
     }
 
 
@@ -123,23 +78,19 @@ def semestre(semestre_slug):
     if sem not in SEMESTRES:
         return "Semestre introuvable", 404
 
-    ressources = ALL_RESSOURCES.get(sem, [])
     affectations = load_affectations()
     sem_data = affectations.get(sem, {})
+    ressources = list(sem_data.keys())
 
     # Charger les prévisionnels finaux depuis la maquette (overrides inclus)
-    try:
-        maquette_rows = get_maquette_data(XLSX_PATH, sem)
-    except Exception:
-        maquette_rows = []
     maquette_overrides = load_maquette_overrides().get(sem, {})
     previsionnel = {}
-    for mr in maquette_rows:
-        ov = maquette_overrides.get(mr["intitule"], {})
-        previsionnel[mr["intitule"]] = {
-            "cm_final": ov.get("cm_final", mr["cm_final"]),
-            "td_final": ov.get("td_final", mr["td_final"]),
-            "tp_final": ov.get("tp_final", mr["tp_final"]),
+    for r in ressources:
+        ov = maquette_overrides.get(r, {})
+        previsionnel[r] = {
+            "cm_final": ov.get("cm_final", 0),
+            "td_final": ov.get("td_final", 0),
+            "tp_final": ov.get("tp_final", 0),
         }
 
     # Construire la liste des lignes pour le template
@@ -175,9 +126,10 @@ def save_semestre(semestre_slug):
         return "Semestre introuvable", 404
 
     affectations = load_affectations()
+    sem_data_old = affectations.get(sem, {})
     sem_data = {}
 
-    ressources = ALL_RESSOURCES.get(sem, [])
+    ressources = list(sem_data_old.keys())
     for r in ressources:
         key = r
         enseignant = request.form.get(f"enseignant_{ressources.index(r)}", "")
@@ -261,17 +213,13 @@ def maquette_semestre(semestre_slug):
     if sem not in SEMESTRES:
         return "Semestre introuvable", 404
 
-    try:
-        rows_xlsx = get_maquette_data(XLSX_PATH, sem)
-    except Exception as e:
-        rows_xlsx = []
-        print(f"[ERREUR maquette] {e}")
+    affectations = load_affectations()
+    sem_data = affectations.get(sem, {})
+    ressources = list(sem_data.keys())
 
     overrides = load_maquette_overrides().get(sem, {})
 
     # Récupérer les sous-totaux CM/TD/TP depuis affectations.json pour ce semestre
-    affectations = load_affectations()
-    sem_data = affectations.get(sem, {})
     sous_totaux = {}
     for ressource, data in sem_data.items():
         cm = data.get("cm", 0) + sum(s.get("cm", 0) for s in data.get("subrows", []))
@@ -281,18 +229,18 @@ def maquette_semestre(semestre_slug):
 
     # Fusionner les overrides dans les lignes
     rows = []
-    for r in rows_xlsx:
-        ov = overrides.get(r["intitule"], {})
+    for r in ressources:
+        ov = overrides.get(r, {})
         rows.append({
-            **r,
-            "adapt_locale": ov.get("adapt_locale", r["adapt_locale"]),
-            "dont_tp_adapt": ov.get("dont_tp_adapt", r["dont_tp_adapt"]),
-            "cm_final":     ov.get("cm_final",     r["cm_final"]),
-            "td_final":     ov.get("td_final",     r["td_final"]),
-            "tp_final":     ov.get("tp_final",     r["tp_final"]),
-            "reel_cm": sous_totaux.get(r["intitule"], {}).get("cm", 0),
-            "reel_td": sous_totaux.get(r["intitule"], {}).get("td", 0),
-            "reel_tp": sous_totaux.get(r["intitule"], {}).get("tp", 0),
+            "intitule": r,
+            "adapt_locale": ov.get("adapt_locale", 0),
+            "dont_tp_adapt": ov.get("dont_tp_adapt", 0),
+            "cm_final":     ov.get("cm_final",     0),
+            "td_final":     ov.get("td_final",     0),
+            "tp_final":     ov.get("tp_final",     0),
+            "reel_cm": sous_totaux.get(r, {}).get("cm", 0),
+            "reel_td": sous_totaux.get(r, {}).get("td", 0),
+            "reel_tp": sous_totaux.get(r, {}).get("tp", 0),
         })
 
     return render_template(
@@ -309,11 +257,9 @@ def maquette_save(semestre_slug):
     if sem not in SEMESTRES:
         return "Semestre introuvable", 404
 
-    try:
-        rows_xlsx = get_maquette_data(XLSX_PATH, sem)
-    except Exception:
-        rows_xlsx = []
-
+    affectations = load_affectations()
+    ressources = list(affectations.get(sem, {}).keys())
+    
     overrides = load_maquette_overrides()
     sem_overrides = {}
 
@@ -323,8 +269,8 @@ def maquette_save(semestre_slug):
         except ValueError:
             return 0.0
 
-    for i, r in enumerate(rows_xlsx):
-        sem_overrides[r["intitule"]] = {
+    for i, r in enumerate(ressources):
+        sem_overrides[r] = {
             "adapt_locale":  _f(f"adapt_locale_{i}"),
             "dont_tp_adapt": _f(f"dont_tp_adapt_{i}"),
             "cm_final":      _f(f"cm_final_{i}"),
@@ -488,12 +434,4 @@ def api_affectations(semestre_slug):
 
 # ── Lancement ──────────────────────────────────────────────────────────────────
 if __name__ == "__main__":
-    if not XLSX_OK:
-        print("=" * 60)
-        print("ATTENTION : fichier BUT_MMI_2025-26.xlsx introuvable !")
-        print(f"Chemin attendu : {XLSX_PATH}")
-        print("=" * 60)
-    
-    port = int(os.environ.get("PORT", 5000))
-    debug = os.environ.get("FLASK_DEBUG", "False") == "True"
-    app.run(host="0.0.0.0", port=port, debug=debug)
+    app.run(debug=True)
