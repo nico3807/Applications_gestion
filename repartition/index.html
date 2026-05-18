@@ -56,7 +56,25 @@
         opacity: 1;
       }
 
-      /* Styles pour les parcours Créa & Dev */
+      /* Styles pour les semestres et parcours Créa & Dev */
+      [data-sem="S1"] {
+        --parcours-color: #3b82f6;
+        --parcours-bg: #dbeafe;
+        --parcours-border: #93c5fd;
+        --parcours-text: #1e40af;
+      }
+      [data-sem="S2"] {
+        --parcours-color: #22c55e;
+        --parcours-bg: #dcfce7;
+        --parcours-border: #86efac;
+        --parcours-text: #166534;
+      }
+      [data-sem="S3"] {
+        --parcours-color: #eab308;
+        --parcours-bg: #fef9c3;
+        --parcours-border: #fde047;
+        --parcours-text: #854d0e;
+      }
       [data-sem*="crea"] {
         --parcours-color: #7c3aed;
         --parcours-bg: #ede9fe;
@@ -70,6 +88,9 @@
         --parcours-text: #075985;
       }
 
+      .semestre-card[data-sem="S1"],
+      .semestre-card[data-sem="S2"],
+      .semestre-card[data-sem="S3"],
       .semestre-card[data-sem*="crea"],
       .semestre-card[data-sem*="dev"] {
         background-color: var(--parcours-bg);
