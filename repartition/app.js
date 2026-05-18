@@ -130,9 +130,14 @@ function renderSemestre(root, sem) {
         </tr>`;
 
     if (data.subrows && data.subrows.length > 0) {
+      const teacherCount =
+        (data.enseignant ? 1 : 0) +
+        data.subrows.filter((s) => s.enseignant).length;
+      const subrowLabel = teacherCount >= 2 ? "↳" : "↳ Sous-groupe";
+
       data.subrows.forEach((sub, j) => {
         html += `<tr class="row-subrow ${rowClass}">
-                    <td class="subrow-indent">↳ Sous-groupe</td>
+                    <td class="subrow-indent">${subrowLabel}</td>
                     <td></td>
                     <td>
                         <select class="select-enseignant" onchange="updateSub('${sem}', '${res.replace(/'/g, "\\'")}', ${j}, 'enseignant', this.value)">
