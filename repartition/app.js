@@ -67,7 +67,7 @@ function renderHome(root) {
   let html = `<div class="page-header"><h1>Tableau de bord</h1><p class="subtitle">Sélectionnez un semestre pour saisir la répartition</p></div>`;
   html += `<div class="semestre-grid">`;
   SEMESTRES.forEach((sem) => {
-    html += `<a href="#" class="semestre-card" onclick="navigate('semestre', '${sem}')">${sem} <span class="semestre-arrow">→</span></a>`;
+    html += `<a href="#" class="semestre-card" data-sem="${sem}" onclick="navigate('semestre', '${sem}')">${sem} <span class="semestre-arrow">→</span></a>`;
   });
   html += `</div>`;
   root.innerHTML = html;
@@ -186,7 +186,7 @@ function renderMaquetteIndex(root) {
   let html = `<div class="page-header"><h1>Maquette - Prévisionnels</h1><p class="subtitle">Sélectionnez un semestre pour modifier la maquette</p></div>`;
   html += `<div class="semestre-grid">`;
   SEMESTRES.forEach((sem) => {
-    html += `<a href="#" class="semestre-card" onclick="navigate('maquette_semestre', '${sem}')">${sem} <span class="semestre-arrow">→</span></a>`;
+    html += `<a href="#" class="semestre-card" data-sem="${sem}" onclick="navigate('maquette_semestre', '${sem}')">${sem} <span class="semestre-arrow">→</span></a>`;
   });
   html += `</div>`;
   root.innerHTML = html;

@@ -55,6 +55,51 @@
       .toast.show {
         opacity: 1;
       }
+
+      /* Styles pour les parcours Créa & Dev */
+      [data-sem*="crea"] {
+        --parcours-color: #7c3aed;
+        --parcours-bg: #ede9fe;
+        --parcours-border: #c4b5fd;
+        --parcours-text: #5b21b6;
+      }
+      [data-sem*="dev"] {
+        --parcours-color: #0369a1;
+        --parcours-bg: #e0f2fe;
+        --parcours-border: #7dd3fc;
+        --parcours-text: #075985;
+      }
+
+      .semestre-card[data-sem*="crea"],
+      .semestre-card[data-sem*="dev"] {
+        background-color: var(--parcours-bg);
+        color: var(--parcours-text);
+        font-weight: 600;
+        border-left: 5px solid var(--parcours-color);
+      }
+
+      .sem-btn[data-sem*="crea"],
+      .sem-btn[data-sem*="dev"] {
+        background-color: var(--parcours-bg);
+        color: var(--parcours-text);
+        border: 1px solid var(--parcours-border);
+      }
+      .sem-btn[data-sem*="crea"].active,
+      .sem-btn[data-sem*="crea"]:hover,
+      .sem-btn[data-sem*="dev"].active,
+      .sem-btn[data-sem*="dev"]:hover {
+        background-color: var(--parcours-color);
+        color: white;
+        border-color: var(--parcours-color);
+      }
+
+      .badge-semestre[data-sem*="crea"],
+      .badge-semestre[data-sem*="dev"] {
+        background-color: var(--parcours-bg);
+        color: var(--parcours-text);
+        border: 1px solid var(--parcours-border);
+        font-weight: 600;
+      }
     </style>
   </head>
   <body>
