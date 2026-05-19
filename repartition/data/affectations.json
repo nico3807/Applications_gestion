@@ -454,15 +454,9 @@
     "R2.08 | Production graphique": {
       "enseignant": "SELIGHINI Valérie",
       "cm": 1.5,
-      "td": 0,
-      "tp": 0,
+      "td": 4.5,
+      "tp": 6,
       "subrows": [
-        {
-          "enseignant": "SELIGHINI Valérie",
-          "cm": 0,
-          "td": 4.5,
-          "tp": 6
-        },
         {
           "enseignant": "SURRIBAS Caroline",
           "cm": 0,
@@ -493,7 +487,7 @@
       "subrows": []
     },
     "R2.11 | Gestion de contenus": {
-      "enseignant": "",
+      "enseignant": "THEROND Emmanuel",
       "cm": 0,
       "td": 3,
       "tp": 6,
@@ -532,20 +526,7 @@
       "cm": 0,
       "td": 4.5,
       "tp": 6,
-      "subrows": [
-        {
-          "enseignant": "TALLEUX Johann",
-          "cm": 0,
-          "td": 0,
-          "tp": 0
-        },
-        {
-          "enseignant": "TALLEUX Johann",
-          "cm": 0,
-          "td": 0,
-          "tp": 0
-        }
-      ]
+      "subrows": []
     },
     "R2.15 | Hébergement": {
       "enseignant": "MAURIN Nicolas",
@@ -562,7 +543,7 @@
       ]
     },
     "R2.16 | Représentation et traitement de l'information": {
-      "enseignant": "",
+      "enseignant": "GRANIER Jean-Baptiste",
       "cm": 0,
       "td": 4.5,
       "tp": 10.5,
