@@ -326,6 +326,24 @@ footer {
   color: #9ca3af;
   border-color: #e5e7eb;
 }
+.select-enseignant.select-tit {
+  background: #d1fae5;
+  color: #065f46;
+  border-color: #6ee7b7;
+}
+.select-enseignant.select-vac {
+  background: #dbeafe;
+  color: #1e40af;
+  border-color: #93c5fd;
+}
+option.ens-option[data-vac="false"] {
+  background: #d1fae5;
+  color: #065f46;
+}
+option.ens-option[data-vac="true"] {
+  background: #dbeafe;
+  color: #1e40af;
+}
 .input-h.input-zero {
   background: #f3f4f6;
   color: #9ca3af;
