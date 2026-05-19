@@ -1161,15 +1161,9 @@
     "R5.DWeb-DI.07 | Dispositifs interactifs": {
       "enseignant": "MARZOUK Reda",
       "cm": 0,
-      "td": 30,
+      "td": 39,
       "tp": 12,
       "subrows": [
-        {
-          "enseignant": "MARZOUK Reda",
-          "cm": 0,
-          "td": 9,
-          "tp": 0
-        },
         {
           "enseignant": "AZE Jérome",
           "cm": 0,
@@ -1193,24 +1187,25 @@
       ]
     },
     "R5.DWeb-DI.09 | Mathématiques avancées, complexité algorithmique": {
-      "enseignant": "",
+      "enseignant": "DARTIES Benoit",
       "cm": 0,
-      "td": 0,
+      "td": 6,
       "tp": 0,
-      "subrows": []
+      "subrows": [
+        {
+          "enseignant": "MENDEZ Nicolas",
+          "cm": 0,
+          "td": 6,
+          "tp": 0
+        }
+      ]
     },
     "SAÉ 5D.01 | Développer pour le web": {
       "enseignant": "MARILL Damien",
       "cm": 0,
-      "td": 15,
+      "td": 27,
       "tp": 0,
       "subrows": [
-        {
-          "enseignant": "MARILL Damien",
-          "cm": 0,
-          "td": 15,
-          "tp": 0
-        },
         {
           "enseignant": "MARZOUK Reda",
           "cm": 0,
@@ -1218,15 +1213,9 @@
           "tp": 0
         },
         {
-          "enseignant": "MARILL Damien",
+          "enseignant": "SURRIBAS Caroline",
           "cm": 0,
-          "td": 12,
-          "tp": 0
-        },
-        {
-          "enseignant": "DE VELDER Sophie",
-          "cm": 0,
-          "td": 6,
+          "td": 13.5,
           "tp": 0
         }
       ]
@@ -1246,11 +1235,18 @@
       "subrows": []
     },
     "SAÉ 5D.04 | Integration d'un LLM": {
-      "enseignant": "",
+      "enseignant": "MARILL Damien",
       "cm": 0,
-      "td": 0,
+      "td": 15,
       "tp": 0,
-      "subrows": []
+      "subrows": [
+        {
+          "enseignant": "DE VELDER Sophie",
+          "cm": 0,
+          "td": 6,
+          "tp": 0
+        }
+      ]
     },
     "PORTFOLIO Portfolio-Parcours Dev Web": {
       "enseignant": "MAURIN Nicolas",
