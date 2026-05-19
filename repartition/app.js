@@ -561,10 +561,11 @@ window.addEns = function () {
   renderView();
 };
 
-window.deleteEns = function (i) {
+window.deleteEns = async function (i) {
   if (confirm("Supprimer cet enseignant ?")) {
     APP_DATA.enseignants.splice(i, 1);
     renderView();
+    if (isGHConfigured()) await saveEnseignantsGH();
   }
 };
 
@@ -608,7 +609,7 @@ window.closeEditEnsModal = function () {
   if (modal) modal.style.display = "none";
 };
 
-window.saveEditEns = function (i) {
+window.saveEditEns = async function (i) {
   const is_vac = document.getElementById("edit_ens_vac").checked;
   const du = parseFloat(document.getElementById("edit_ens_du").value) || null;
   const max = parseFloat(document.getElementById("edit_ens_max").value) || null;
@@ -619,6 +620,7 @@ window.saveEditEns = function (i) {
 
   closeEditEnsModal();
   renderView();
+  if (isGHConfigured()) await saveEnseignantsGH();
 };
 
 /* ── Logique GitHub & Données ────────────────────────────────────────────── */
