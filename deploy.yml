@@ -1,0 +1,25 @@
+name: Deploy to VM
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy to Server via SSH
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USERNAME }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          script: |
+            cd /var/www/applications_gestion
+            git pull origin main
+            
+            # Si vous avez une appli Python/Flask qui tourne comme un service (ex: repartition), 
+            # vous pouvez la redémarrer ici. Ex :
+            # source repartition/venv/bin/activate && pip install -r repartition/requirements.txt
+            # sudo systemctl restart mon_app_flask
