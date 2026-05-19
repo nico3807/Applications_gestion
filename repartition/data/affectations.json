@@ -371,13 +371,6 @@
       "td": 0,
       "tp": 0,
       "subrows": []
-    },
-    "PORTFOLIO Portfolio-Parcours Dev": {
-      "enseignant": "",
-      "cm": 0,
-      "td": 0,
-      "tp": 0,
-      "subrows": []
     }
   },
   "S2": {
@@ -681,7 +674,7 @@
       "tp": 4.5,
       "subrows": []
     },
-    "R4.02 | Economie, gestion et Droit du numérique": {
+    "R4.Crea.02 | Economie, gestion et Droit du numérique": {
       "enseignant": "MOCQUET Bertrand",
       "cm": 0,
       "td": 10.5,
@@ -695,7 +688,7 @@
         }
       ]
     },
-    "R4.03 | Design d'expérience": {
+    "R4.Crea.03 | Design d'expérience": {
       "enseignant": "RAMPON Candice",
       "cm": 0,
       "td": 4.5,
@@ -709,7 +702,7 @@
         }
       ]
     },
-    "R4.04 | Expression, communication": {
+    "R4.Crea.04 | Expression, communication": {
       "enseignant": "THEROND Emmanuel",
       "cm": 0,
       "td": 6,
@@ -851,13 +844,6 @@
           "tp": 0
         }
       ]
-    },
-    "PORTFOLIO | Portfolio-Parcours Dev": {
-      "enseignant": "",
-      "cm": 0,
-      "td": 0,
-      "tp": 0,
-      "subrows": []
     }
   },
   "S5 crea": {
@@ -1009,13 +995,6 @@
           "tp": 3
         }
       ]
-    },
-    "PORTFOLIO | Portfolio-Parcours Dev": {
-      "enseignant": "",
-      "cm": 0,
-      "td": 0,
-      "tp": 0,
-      "subrows": []
     }
   },
   "S6 dev": {
@@ -1092,13 +1071,6 @@
           "tp": 0
         }
       ]
-    },
-    "Fonctionnement des IA": {
-      "enseignant": "",
-      "cm": 0,
-      "td": 0,
-      "tp": 0,
-      "subrows": []
     }
   },
   "S5 dev": {
@@ -1261,27 +1233,6 @@
           "tp": 0
         }
       ]
-    },
-    "Mathématiques avancées, complexité algorithmique": {
-      "enseignant": "DARTIES Benoit",
-      "cm": 0,
-      "td": 6,
-      "tp": 0,
-      "subrows": [
-        {
-          "enseignant": "MENDEZ Nicolas",
-          "cm": 0,
-          "td": 6,
-          "tp": 0
-        }
-      ]
-    },
-    "PORTFOLIO Portfolio-Parcours Dev": {
-      "enseignant": "",
-      "cm": 0,
-      "td": 0,
-      "tp": 0,
-      "subrows": []
     }
   },
   "S4 dev": {
@@ -1434,13 +1385,6 @@
           "tp": 0
         }
       ]
-    },
-    "PORTFOLIO Portfolio-Parcours Dev": {
-      "enseignant": "",
-      "cm": 0,
-      "td": 0,
-      "tp": 0,
-      "subrows": []
     }
   },
   "S3": {
