@@ -480,16 +480,39 @@ function renderEnseignants(root) {
     </button>
   </div>`;
   html += `<div class="table-wrapper"><table class="ressources-table">
-    <thead><tr><th>Nom complet</th><th>Statut</th><th>Service Dû</th><th>Service Max</th><th>Total Réalisé</th><th style="width:80px; text-align:center;">Actions</th></tr></thead><tbody>`;
+    <thead><tr><th>Nom complet</th><th>Statut</th><th>Service Dû</th><th>Service Max</th><th>Total Réalisé</th><th>Différence</th><th style="width:80px; text-align:center;">Actions</th></tr></thead><tbody>`;
 
   APP_DATA.enseignants.forEach((e, i) => {
     const totalRealise = totals[e.id] || 0;
+
+    let diffHtml = "<span style='color:#9ca3af'>-</span>";
+    if (!e.is_vac && e.service_du != null) {
+      const diff = totalRealise - e.service_du;
+      const sign = diff > 0 ? "+" : "";
+      const style = diff === 0
+        ? "color:#16a34a;font-weight:700;"
+        : diff < 0
+          ? "color:#dc2626;font-weight:700;"
+          : "font-weight:600;";
+      diffHtml = `<span style="${style}">${sign}${diff}</span>`;
+    } else if (e.is_vac && e.service_max != null) {
+      const diff = totalRealise - e.service_max;
+      const sign = diff > 0 ? "+" : "";
+      const style = diff === 0
+        ? "color:#16a34a;font-weight:700;"
+        : diff > 0
+          ? "color:#dc2626;font-weight:700;"
+          : "font-weight:600;";
+      diffHtml = `<span style="${style}">${sign}${diff}</span>`;
+    }
+
     html += `<tr class="enseignant-item" data-vac="${e.is_vac ? "true" : "false"}">
             <td>${e.id}</td>
             <td>${e.is_vac ? "Vacataire" : "Titulaire"}</td>
-            <td>${e.service_du || "-"}</td>
-            <td>${e.service_max || "-"}</td>
+            <td>${e.service_du != null ? e.service_du : "-"}</td>
+            <td>${e.service_max != null ? e.service_max : "-"}</td>
             <td><strong>${totalRealise}</strong></td>
+            <td style="text-align:center;">${diffHtml}</td>
             <td>
                 <div style="display:flex; gap:6px; justify-content:center;">
                     <button class="btn-edit-subrow" onclick="openEditEnsModal(${i})" title="Modifier">✏️</button>
