@@ -5,14 +5,7 @@
       "cm": 0,
       "td": 9,
       "tp": 0,
-      "subrows": [
-        {
-          "enseignant": "DE VELDER Sophie",
-          "cm": 0,
-          "td": 0,
-          "tp": 0
-        }
-      ]
+      "subrows": []
     },
     "R1.01 | Anglais": {
       "enseignant": "BERNARD William",
@@ -281,20 +274,7 @@
       "cm": 1.5,
       "td": 13.5,
       "tp": 0,
-      "subrows": [
-        {
-          "enseignant": "BARON Mathilde",
-          "cm": 0,
-          "td": 0,
-          "tp": 0
-        },
-        {
-          "enseignant": "BERNARD William",
-          "cm": 0,
-          "td": 0,
-          "tp": 0
-        }
-      ]
+      "subrows": []
     },
     "PORTFOLIO | Portfolio": {
       "enseignant": "BLANCO Sandy",
