@@ -992,6 +992,70 @@ function exportPDF() {
   setTimeout(() => window.print(), 300);
 }
 
+/* ── XLSX export ─────────────────────────────────────────────────── */
+function exportXLSX() {
+  if (typeof XLSX === "undefined") {
+    showToast("⚠ Bibliothèque XLSX non disponible");
+    return;
+  }
+  const firstCard = document.querySelector(".jcard");
+  if (!firstCard) {
+    showToast("⚠ Aucune donnée à exporter");
+    return;
+  }
+
+  const teacherCount = Array.from(firstCard.querySelectorAll(".mrow")).filter(
+    (row) => row.querySelector(".mlbl")?.textContent.trim().startsWith("Enseignant")
+  ).length;
+
+  const headerTeachers = Array.from({ length: teacherCount }, (_, i) => `Enseignant ${i + 1}`);
+  const header = ["Jury", "Date", "Parcours", "Salle", ...headerTeachers, "Horaire", "Étudiant"];
+  const rows = [header];
+
+  document.querySelectorAll(".jcard").forEach((card) => {
+    const juryName = card.querySelector(".jury-name")?.textContent.trim() || "";
+    const juryDate = card.querySelector(".jury-date")?.textContent.trim() || "";
+    const badge = card.querySelector(".stable tbody tr td:last-child span")?.textContent.trim() || "—";
+
+    const enseignants = [];
+    card.querySelectorAll(".mrow").forEach((row) => {
+      const lbl = row.querySelector(".mlbl");
+      const sel = row.querySelector(".tselect");
+      if (lbl?.textContent.trim().startsWith("Enseignant") && sel)
+        enseignants.push(sel.value || "");
+    });
+    while (enseignants.length < teacherCount) enseignants.push("");
+
+    let salle = "";
+    card.querySelectorAll(".mrow").forEach((row) => {
+      const lbl = row.querySelector(".mlbl");
+      const sel = row.querySelector(".tselect");
+      if (lbl?.textContent.trim() === "Salle" && sel) salle = sel.value || "";
+    });
+
+    const tbodyRows = card.querySelectorAll(".stable tbody tr");
+    if (tbodyRows.length === 0) {
+      rows.push([juryName, juryDate, badge, salle, ...enseignants, "", ""]);
+    } else {
+      tbodyRows.forEach((tr) => {
+        const horaire = tr.querySelector("td:first-child span")?.textContent.trim() || "";
+        const etudiant = tr.querySelector(".sname")?.textContent.trim() || "";
+        rows.push([juryName, juryDate, badge, salle, ...enseignants, horaire, etudiant]);
+      });
+    }
+  });
+
+  const ws = XLSX.utils.aoa_to_sheet(rows);
+  ws["!cols"] = header.map((_, ci) => ({
+    wch: Math.min(rows.reduce((max, row) => Math.max(max, String(row[ci] || "").length), 8) + 2, 40),
+  }));
+
+  const wb = XLSX.utils.book_new();
+  XLSX.utils.book_append_sheet(wb, ws, PAGE_ID.toUpperCase());
+  XLSX.writeFile(wb, `soutenances_portfolio_${PAGE_ID}_${new Date().toISOString().slice(0, 10)}.xlsx`);
+  showToast("✓ Export XLSX téléchargé !");
+}
+
 /* ── Init ────────────────────────────────────────────────────────── */
 document.addEventListener("DOMContentLoaded", async () => {
   injectGHUI();
