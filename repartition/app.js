@@ -26,6 +26,7 @@ let APP_DATA = {
 
 let currentView = "home";
 let currentParam = null;
+let enseignantsSortMode = "alpha"; // "alpha" ou "status"
 
 /* ── Navigation ──────────────────────────────────────────────────────────── */
 window.navigate = function (view, param = null) {
@@ -400,7 +401,22 @@ window.filterServices = function (type, btn) {
 };
 
 /* ── Vue : Enseignants ───────────────────────────────────────────────────── */
+window.toggleSortEnseignants = function () {
+  enseignantsSortMode = enseignantsSortMode === "alpha" ? "status" : "alpha";
+  renderView();
+};
+
+window.sortEnseignantsArray = function () {
+  APP_DATA.enseignants.sort((a, b) => {
+    if (enseignantsSortMode === "status" && a.is_vac !== b.is_vac)
+      return a.is_vac ? 1 : -1;
+    return a.id.localeCompare(b.id);
+  });
+};
+
 function renderEnseignants(root) {
+  sortEnseignantsArray();
+
   // Calcul des heures réalisées par enseignant
   const totals = {};
   SEMESTRES.forEach((sem) => {
@@ -441,7 +457,12 @@ function renderEnseignants(root) {
     });
   });
 
-  let html = `<div class="page-header"><h1>Gestion des enseignants</h1></div>`;
+  let html = `<div class="page-header" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;">
+    <h1 style="margin: 0;">Gestion des enseignants</h1>
+    <button class="btn-toggle-all" onclick="toggleSortEnseignants()">
+        ⇅ Trier : ${enseignantsSortMode === "alpha" ? "Titulaires puis Vacataires" : "Alphabétique"}
+    </button>
+  </div>`;
   html += `<div class="table-wrapper"><table class="ressources-table">
     <thead><tr><th>Nom complet</th><th>Statut</th><th>Service Dû</th><th>Service Max</th><th>Total Réalisé</th><th style="width:80px; text-align:center;">Actions</th></tr></thead><tbody>`;
 
@@ -498,7 +519,6 @@ window.addEns = function () {
     service_du: du,
     service_max: max,
   });
-  APP_DATA.enseignants.sort((a, b) => a.id.localeCompare(b.id));
   renderView();
 };
 
