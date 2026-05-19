@@ -720,6 +720,12 @@
           "cm": 0,
           "td": 4.5,
           "tp": 0
+        },
+        {
+          "enseignant": "EVANO Jérome",
+          "cm": 0,
+          "td": 3,
+          "tp": 0
         }
       ]
     },
@@ -731,18 +737,11 @@
       "subrows": []
     },
     "R4.Crea.06 | Culture artistique": {
-      "enseignant": "DE VELDER Sophie",
+      "enseignant": "SURRIBAS Caroline",
       "cm": 0,
-      "td": 0,
-      "tp": 0,
-      "subrows": [
-        {
-          "enseignant": "SURRIBAS Caroline",
-          "cm": 0,
-          "td": 4.5,
-          "tp": 9
-        }
-      ]
+      "td": 4.5,
+      "tp": 9,
+      "subrows": []
     },
     "R4.Crea.07 | Audiovisuel - Motion design": {
       "enseignant": "BLANCO Sandy",
@@ -782,15 +781,9 @@
     "SAÉ 4.Crea.02 | Produire du contenu multimédia": {
       "enseignant": "THEROND Emmanuel",
       "cm": 0,
-      "td": 9,
+      "td": 21,
       "tp": 0,
       "subrows": [
-        {
-          "enseignant": "THEROND Emmanuel",
-          "cm": 0,
-          "td": 12,
-          "tp": 0
-        },
         {
           "enseignant": "BERNARD William",
           "cm": 0,
@@ -800,17 +793,11 @@
       ]
     },
     "SAÉ 4.Crea.03 | SAE langues": {
-      "enseignant": "BERNARD William",
+      "enseignant": "BLANCO Sandy",
       "cm": 0,
       "td": 0,
-      "tp": 0,
+      "tp": 6,
       "subrows": [
-        {
-          "enseignant": "BLANCO Sandy",
-          "cm": 0,
-          "td": 0,
-          "tp": 6
-        },
         {
           "enseignant": "BARON Mathilde",
           "cm": 0,
@@ -834,9 +821,9 @@
       "subrows": []
     },
     "PORTFOLIO | Portfolio-Parcours Création Numérique": {
-      "enseignant": "LAGIEWKA Arnaud",
+      "enseignant": "MAURIN Nicolas",
       "cm": 0,
-      "td": 0,
+      "td": 1.5,
       "tp": 0,
       "subrows": [
         {
@@ -847,6 +834,18 @@
         },
         {
           "enseignant": "BLANCO Sandy",
+          "cm": 0,
+          "td": 1.5,
+          "tp": 0
+        },
+        {
+          "enseignant": "BARON Mathilde",
+          "cm": 0,
+          "td": 1.5,
+          "tp": 0
+        },
+        {
+          "enseignant": "PELISSIER Chrysta",
           "cm": 0,
           "td": 1.5,
           "tp": 0
