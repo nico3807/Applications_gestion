@@ -56,6 +56,14 @@
     "service_max": null
   },
   {
+    "id": "CHOLLET Antoine",
+    "nom": "CHOLLET",
+    "prenom": "Antoine",
+    "is_vac": true,
+    "service_du": 187,
+    "service_max": null
+  },
+  {
     "id": "DARTIES Benoit",
     "nom": "DARTIES",
     "prenom": "Benoit",
