@@ -264,6 +264,14 @@
     "is_vac": true
   },
   {
+    "id": "SOLDEVILA Loren",
+    "nom": "SOLDEVILA",
+    "prenom": "Loren",
+    "is_vac": true,
+    "service_du": 187,
+    "service_max": null
+  },
+  {
     "id": "SURRIBAS Caroline",
     "nom": "SURRIBAS",
     "prenom": "Caroline",
