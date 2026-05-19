@@ -447,7 +447,7 @@ function renderEnseignants(root) {
 
   APP_DATA.enseignants.forEach((e, i) => {
     const totalRealise = totals[e.id] || 0;
-    html += `<tr>
+    html += `<tr class="enseignant-item" data-vac="${e.is_vac ? "true" : "false"}">
             <td>${e.id}</td>
             <td>${e.is_vac ? "Vacataire" : "Titulaire"}</td>
             <td>${e.service_du || "-"}</td>

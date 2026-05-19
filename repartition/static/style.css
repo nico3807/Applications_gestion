@@ -708,19 +708,21 @@ th.reel-col {
 }
 
 /* ── Liste des enseignants (Gestion) ── */
-.enseignant-item {
-  padding: 8px 12px;
-  margin-bottom: 8px;
-  border-radius: 4px;
-  background: #dce8f7; /* Bleu (vacataires) par défaut */
-  border-left: 4px solid #2563eb;
-  color: #1e3a5f;
+.ressources-table tbody tr.enseignant-item td {
+  background-color: #dce8f7 !important; /* Bleu (vacataires) */
+  color: #1e3a5f !important;
 }
 
-.enseignant-item[data-vac="false"] {
-  background: #bbf7d0; /* Vert (titulaires) */
-  border-left-color: #4ade80;
-  color: #14532d;
+.ressources-table tbody tr.enseignant-item[data-vac="false"] td {
+  background-color: #bbf7d0 !important; /* Vert (titulaires) */
+  color: #14532d !important;
+}
+
+.ressources-table tbody tr.enseignant-item td:first-child {
+  box-shadow: inset 4px 0 0 0 #2563eb !important;
+}
+.ressources-table tbody tr.enseignant-item[data-vac="false"] td:first-child {
+  box-shadow: inset 4px 0 0 0 #4ade80 !important;
 }
 
 .service-block {
