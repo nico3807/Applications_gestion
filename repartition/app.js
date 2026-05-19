@@ -115,13 +115,20 @@ function renderSemestre(root, sem) {
           ? "group-even"
           : "group-odd";
 
+    const selEns = enseignants.find((e) => e.id === data.enseignant);
+    const selClass = selEns
+      ? selEns.is_vac
+        ? "select-vac"
+        : "select-tit"
+      : "";
+
     html += `<tr class="${rowClass} row-main-resource">
             <td>${res}</td>
             <td><span class="prev-badge">CM: ${prev.cm_final || 0} | TD: ${prev.td_final || 0} | TP: ${prev.tp_final || 0}</span></td>
             <td>
-                <select class="select-enseignant" onchange="updateAff('${sem}', '${res.replace(/'/g, "\\'")}', 'enseignant', this.value)">
+                <select class="select-enseignant ${selClass}" onchange="updateAff('${sem}', '${res.replace(/'/g, "\\'")}', 'enseignant', this.value)">
                     <option value="">-</option>
-                    ${enseignants.map((e) => `<option value="${e.id}" ${e.id === data.enseignant ? "selected" : ""}>${e.id}</option>`).join("")}
+                    ${enseignants.map((e) => `<option value="${e.id}" class="ens-option" data-vac="${e.is_vac ? "true" : "false"}" ${e.id === data.enseignant ? "selected" : ""}>${e.id}</option>`).join("")}
                 </select>
             </td>
             <td><input type="number" class="input-h" value="${data.cm || 0}" onchange="updateAff('${sem}', '${res.replace(/'/g, "\\'")}', 'cm', this.value)" step="0.5"></td>
@@ -137,13 +144,20 @@ function renderSemestre(root, sem) {
       const subrowLabel = teacherCount >= 2 ? "↳" : "↳ Sous-groupe";
 
       data.subrows.forEach((sub, j) => {
+        const subEns = enseignants.find((e) => e.id === sub.enseignant);
+        const subSelClass = subEns
+          ? subEns.is_vac
+            ? "select-vac"
+            : "select-tit"
+          : "";
+
         html += `<tr class="row-subrow ${rowClass}">
                     <td class="subrow-indent">${subrowLabel}</td>
                     <td></td>
                     <td>
-                        <select class="select-enseignant" onchange="updateSub('${sem}', '${res.replace(/'/g, "\\'")}', ${j}, 'enseignant', this.value)">
+                        <select class="select-enseignant ${subSelClass}" onchange="updateSub('${sem}', '${res.replace(/'/g, "\\'")}', ${j}, 'enseignant', this.value)">
                             <option value="">-</option>
-                            ${enseignants.map((e) => `<option value="${e.id}" ${e.id === sub.enseignant ? "selected" : ""}>${e.id}</option>`).join("")}
+                            ${enseignants.map((e) => `<option value="${e.id}" class="ens-option" data-vac="${e.is_vac ? "true" : "false"}" ${e.id === sub.enseignant ? "selected" : ""}>${e.id}</option>`).join("")}
                         </select>
                     </td>
                     <td><input type="number" class="input-h" value="${sub.cm || 0}" onchange="updateSub('${sem}', '${res.replace(/'/g, "\\'")}', ${j}, 'cm', this.value)" step="0.5"></td>
@@ -166,10 +180,12 @@ function renderSemestre(root, sem) {
 window.updateAff = function (sem, res, field, value) {
   if (["cm", "td", "tp"].includes(field)) value = parseFloat(value) || 0;
   APP_DATA.affectations[sem][res][field] = value;
+  if (field === "enseignant") renderView();
 };
 window.updateSub = function (sem, res, idx, field, value) {
   if (["cm", "td", "tp"].includes(field)) value = parseFloat(value) || 0;
   APP_DATA.affectations[sem][res].subrows[idx][field] = value;
+  if (field === "enseignant") renderView();
 };
 window.addSubrow = function (sem, res) {
   if (!APP_DATA.affectations[sem][res].subrows)
