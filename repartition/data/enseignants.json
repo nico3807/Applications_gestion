@@ -184,6 +184,14 @@
     "is_vac": false
   },
   {
+    "id": "MEUNIER Dylan",
+    "nom": "MEUNIER",
+    "prenom": "Dylan",
+    "is_vac": true,
+    "service_du": 187,
+    "service_max": null
+  },
+  {
     "id": "MOCQUET Bertrand",
     "nom": "MOCQUET",
     "prenom": "Bertrand",
