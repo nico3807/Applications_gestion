@@ -5,14 +5,7 @@
       "cm": 0,
       "td": 9,
       "tp": 0,
-      "subrows": [
-        {
-          "enseignant": "DE VELDER Sophie",
-          "cm": 0,
-          "td": 0,
-          "tp": 0
-        }
-      ]
+      "subrows": []
     },
     "R1.01 | Anglais": {
       "enseignant": "BERNARD William",
@@ -281,20 +274,7 @@
       "cm": 1.5,
       "td": 13.5,
       "tp": 0,
-      "subrows": [
-        {
-          "enseignant": "BARON Mathilde",
-          "cm": 0,
-          "td": 0,
-          "tp": 0
-        },
-        {
-          "enseignant": "BERNARD William",
-          "cm": 0,
-          "td": 0,
-          "tp": 0
-        }
-      ]
+      "subrows": []
     },
     "PORTFOLIO | Portfolio": {
       "enseignant": "BLANCO Sandy",
@@ -474,15 +454,9 @@
     "R2.08 | Production graphique": {
       "enseignant": "SELIGHINI Valérie",
       "cm": 1.5,
-      "td": 0,
-      "tp": 0,
+      "td": 4.5,
+      "tp": 6,
       "subrows": [
-        {
-          "enseignant": "SELIGHINI Valérie",
-          "cm": 0,
-          "td": 4.5,
-          "tp": 6
-        },
         {
           "enseignant": "SURRIBAS Caroline",
           "cm": 0,
@@ -513,7 +487,7 @@
       "subrows": []
     },
     "R2.11 | Gestion de contenus": {
-      "enseignant": "",
+      "enseignant": "THEROND Emmanuel",
       "cm": 0,
       "td": 3,
       "tp": 6,
@@ -552,20 +526,7 @@
       "cm": 0,
       "td": 4.5,
       "tp": 6,
-      "subrows": [
-        {
-          "enseignant": "TALLEUX Johann",
-          "cm": 0,
-          "td": 0,
-          "tp": 0
-        },
-        {
-          "enseignant": "TALLEUX Johann",
-          "cm": 0,
-          "td": 0,
-          "tp": 0
-        }
-      ]
+      "subrows": []
     },
     "R2.15 | Hébergement": {
       "enseignant": "MAURIN Nicolas",
@@ -582,7 +543,7 @@
       ]
     },
     "R2.16 | Représentation et traitement de l'information": {
-      "enseignant": "",
+      "enseignant": "GRANIER Jean-Baptiste",
       "cm": 0,
       "td": 4.5,
       "tp": 10.5,
@@ -618,29 +579,10 @@
     },
     "SAÉ 2.01 | Explorer les usages du numérique": {
       "enseignant": "DE VELDER Sophie",
-      "cm": 0,
-      "td": 12,
+      "cm": 1.5,
+      "td": 21,
       "tp": 0,
-      "subrows": [
-        {
-          "enseignant": "DE VELDER Sophie",
-          "cm": 0,
-          "td": 3,
-          "tp": 0
-        },
-        {
-          "enseignant": "DARTIES Benoit",
-          "cm": 1.5,
-          "td": 7.5,
-          "tp": 0
-        },
-        {
-          "enseignant": "HERVY Dominique",
-          "cm": 0,
-          "td": 3,
-          "tp": 0
-        }
-      ]
+      "subrows": []
     },
     "SAÉ 2.02 | Concevoir un produit ou un service et sa communication": {
       "enseignant": "SURRIBAS Caroline",
@@ -657,18 +599,32 @@
       ]
     },
     "SAÉ 2.03 | Concevoir un site web avec une source de données": {
-      "enseignant": "",
+      "enseignant": "MAURIN Nicolas",
       "cm": 0,
-      "td": 0,
+      "td": 7.5,
       "tp": 0,
-      "subrows": []
+      "subrows": [
+        {
+          "enseignant": "DARTIES Benoit",
+          "cm": 1.5,
+          "td": 7.5,
+          "tp": 0
+        }
+      ]
     },
     "SAÉ 2.04 | Construire sa présence en ligne": {
-      "enseignant": "",
+      "enseignant": "DE VELDER Sophie",
       "cm": 0,
-      "td": 0,
+      "td": 12,
       "tp": 0,
-      "subrows": []
+      "subrows": [
+        {
+          "enseignant": "HERVY Dominique",
+          "cm": 0,
+          "td": 3,
+          "tp": 0
+        }
+      ]
     },
     "SAÉ 2.98 | Hackathon": {
       "enseignant": "",
@@ -1335,14 +1291,7 @@
       "cm": 0,
       "td": 13.5,
       "tp": 0,
-      "subrows": [
-        {
-          "enseignant": "GRENIER Sandrine",
-          "cm": 0,
-          "td": 0,
-          "tp": 0
-        }
-      ]
+      "subrows": []
     },
     "R4.DWeb-DI.03  Design d'expérience": {
       "enseignant": "RAMPON Candice",
@@ -1416,16 +1365,9 @@
     "SAÉ 4.DWeb-DI.01 Développer pour le Web": {
       "enseignant": "DARTIES Benoit",
       "cm": 0,
-      "td": 16.5,
+      "td": 27,
       "tp": 0,
-      "subrows": [
-        {
-          "enseignant": "DARTIES Benoit",
-          "cm": 0,
-          "td": 10.5,
-          "tp": 0
-        }
-      ]
+      "subrows": []
     },
     "SAÉ 4.DWeb-DI.02 Concevoir un dispositif interactif": {
       "enseignant": "MAURIN Nicolas",

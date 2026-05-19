@@ -48,6 +48,14 @@
     "is_vac": true
   },
   {
+    "id": "CALOMINA Léo",
+    "nom": "CALOMINA",
+    "prenom": "Léo",
+    "is_vac": true,
+    "service_du": 187,
+    "service_max": null
+  },
+  {
     "id": "DARTIES Benoit",
     "nom": "DARTIES",
     "prenom": "Benoit",
@@ -115,9 +123,9 @@
     "id": "HERVY Dominique",
     "nom": "HERVY",
     "prenom": "Dominique",
-    "service_du": null,
+    "service_du": 187,
     "service_max": null,
-    "is_vac": false
+    "is_vac": true
   },
   {
     "id": "JAECKLE Luc",
