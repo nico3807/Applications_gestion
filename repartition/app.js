@@ -114,7 +114,7 @@ function renderSemestre(root, sem) {
           ? "group-even"
           : "group-odd";
 
-    html += `<tr class="${rowClass}">
+    html += `<tr class="${rowClass} row-main-resource">
             <td>${res}</td>
             <td><span class="prev-badge">CM: ${prev.cm_final || 0} | TD: ${prev.td_final || 0} | TP: ${prev.tp_final || 0}</span></td>
             <td>
@@ -225,7 +225,7 @@ function renderMaquetteSemestre(root, sem) {
   Object.keys(aff).forEach((res, i) => {
     const m = maq[res] || { cm_final: 0, td_final: 0, tp_final: 0 };
     const rowClass = i % 2 === 0 ? "group-even" : "group-odd";
-    html += `<tr class="${rowClass}">
+    html += `<tr class="${rowClass} row-main-resource">
             <td>${res}</td>
             <td><input type="number" class="input-editable" value="${m.cm_final}" onchange="updateMaq('${sem}','${res.replace(/'/g, "\\'")}','cm_final',this.value)"></td>
             <td><input type="number" class="input-editable" value="${m.td_final}" onchange="updateMaq('${sem}','${res.replace(/'/g, "\\'")}','td_final',this.value)"></td>
@@ -443,7 +443,7 @@ function renderEnseignants(root) {
 
   let html = `<div class="page-header"><h1>Gestion des enseignants</h1></div>`;
   html += `<div class="table-wrapper"><table class="ressources-table">
-    <thead><tr><th>Nom complet</th><th>Statut</th><th>Service Dû</th><th>Service Max</th><th>Total Réalisé</th><th style="width:60px">Actions</th></tr></thead><tbody>`;
+    <thead><tr><th>Nom complet</th><th>Statut</th><th>Service Dû</th><th>Service Max</th><th>Total Réalisé</th><th style="width:80px; text-align:center;">Actions</th></tr></thead><tbody>`;
 
   APP_DATA.enseignants.forEach((e, i) => {
     const totalRealise = totals[e.id] || 0;
@@ -453,7 +453,12 @@ function renderEnseignants(root) {
             <td>${e.service_du || "-"}</td>
             <td>${e.service_max || "-"}</td>
             <td><strong>${totalRealise}</strong></td>
-            <td><button class="btn-remove-subrow" onclick="deleteEns(${i})" title="Supprimer">🗑</button></td>
+            <td>
+                <div style="display:flex; gap:6px; justify-content:center;">
+                    <button class="btn-edit-subrow" onclick="openEditEnsModal(${i})" title="Modifier">✏️</button>
+                    <button class="btn-remove-subrow" onclick="deleteEns(${i})" title="Supprimer">🗑</button>
+                </div>
+            </td>
         </tr>`;
   });
 
@@ -502,6 +507,59 @@ window.deleteEns = function (i) {
     APP_DATA.enseignants.splice(i, 1);
     renderView();
   }
+};
+
+window.openEditEnsModal = function (i) {
+  const e = APP_DATA.enseignants[i];
+  let modal = document.getElementById("edit-ens-modal");
+  if (!modal) {
+    modal = document.createElement("div");
+    modal.id = "edit-ens-modal";
+    modal.className = "gh-modal-overlay";
+    document.body.appendChild(modal);
+    modal.addEventListener("click", (evt) => {
+      if (evt.target === modal) closeEditEnsModal();
+    });
+  }
+
+  modal.innerHTML = `
+    <div class="form-card" style="margin:10% auto; position:relative; max-width:400px">
+        <h3 style="margin-bottom:1rem; color:#1e3a5f">Modifier ${e.id}</h3>
+        <div class="form-group form-group-check">
+            <label><input type="checkbox" id="edit_ens_vac" ${e.is_vac ? "checked" : ""}> Est vacataire</label>
+        </div>
+        <div class="form-group">
+            <label>Service dû (Titulaires)</label>
+            <input type="number" id="edit_ens_du" class="form-input" value="${e.service_du || ""}">
+        </div>
+        <div class="form-group">
+            <label>Service max (Vacataires)</label>
+            <input type="number" id="edit_ens_max" class="form-input" value="${e.service_max || ""}">
+        </div>
+        <div style="display:flex; justify-content:flex-end; gap:0.5rem; margin-top:1.5rem;">
+            <button class="btn-cancel" onclick="closeEditEnsModal()">Annuler</button>
+            <button class="btn-save" onclick="saveEditEns(${i})">Enregistrer</button>
+        </div>
+    </div>`;
+  modal.style.display = "block";
+};
+
+window.closeEditEnsModal = function () {
+  const modal = document.getElementById("edit-ens-modal");
+  if (modal) modal.style.display = "none";
+};
+
+window.saveEditEns = function (i) {
+  const is_vac = document.getElementById("edit_ens_vac").checked;
+  const du = parseFloat(document.getElementById("edit_ens_du").value) || null;
+  const max = parseFloat(document.getElementById("edit_ens_max").value) || null;
+
+  APP_DATA.enseignants[i].is_vac = is_vac;
+  APP_DATA.enseignants[i].service_du = du;
+  APP_DATA.enseignants[i].service_max = max;
+
+  closeEditEnsModal();
+  renderView();
 };
 
 /* ── Logique GitHub & Données ────────────────────────────────────────────── */
