@@ -1291,14 +1291,7 @@
       "cm": 0,
       "td": 13.5,
       "tp": 0,
-      "subrows": [
-        {
-          "enseignant": "GRENIER Sandrine",
-          "cm": 0,
-          "td": 0,
-          "tp": 0
-        }
-      ]
+      "subrows": []
     },
     "R4.DWeb-DI.03  Design d'expérience": {
       "enseignant": "RAMPON Candice",
@@ -1372,16 +1365,9 @@
     "SAÉ 4.DWeb-DI.01 Développer pour le Web": {
       "enseignant": "DARTIES Benoit",
       "cm": 0,
-      "td": 16.5,
+      "td": 27,
       "tp": 0,
-      "subrows": [
-        {
-          "enseignant": "DARTIES Benoit",
-          "cm": 0,
-          "td": 10.5,
-          "tp": 0
-        }
-      ]
+      "subrows": []
     },
     "SAÉ 4.DWeb-DI.02 Concevoir un dispositif interactif": {
       "enseignant": "MAURIN Nicolas",
