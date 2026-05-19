@@ -56,6 +56,14 @@
     "service_max": null
   },
   {
+    "id": "CHOLLET Antoine",
+    "nom": "CHOLLET",
+    "prenom": "Antoine",
+    "is_vac": true,
+    "service_du": 187,
+    "service_max": null
+  },
+  {
     "id": "DARTIES Benoit",
     "nom": "DARTIES",
     "prenom": "Benoit",
@@ -184,6 +192,14 @@
     "is_vac": false
   },
   {
+    "id": "MEUNIER Dylan",
+    "nom": "MEUNIER",
+    "prenom": "Dylan",
+    "is_vac": true,
+    "service_du": 187,
+    "service_max": null
+  },
+  {
     "id": "MOCQUET Bertrand",
     "nom": "MOCQUET",
     "prenom": "Bertrand",
@@ -254,6 +270,14 @@
     "service_du": null,
     "service_max": 187,
     "is_vac": true
+  },
+  {
+    "id": "SOLDEVILA Loren",
+    "nom": "SOLDEVILA",
+    "prenom": "Loren",
+    "is_vac": true,
+    "service_du": 187,
+    "service_max": null
   },
   {
     "id": "SURRIBAS Caroline",

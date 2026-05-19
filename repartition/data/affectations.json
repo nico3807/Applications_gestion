@@ -371,13 +371,6 @@
       "td": 0,
       "tp": 0,
       "subrows": []
-    },
-    "PORTFOLIO Portfolio-Parcours Dev": {
-      "enseignant": "",
-      "cm": 0,
-      "td": 0,
-      "tp": 0,
-      "subrows": []
     }
   },
   "S2": {
@@ -681,7 +674,7 @@
       "tp": 4.5,
       "subrows": []
     },
-    "R4.02 | Economie, gestion et Droit du numérique": {
+    "R4.Crea.02 | Economie, gestion et Droit du numérique": {
       "enseignant": "MOCQUET Bertrand",
       "cm": 0,
       "td": 10.5,
@@ -695,7 +688,7 @@
         }
       ]
     },
-    "R4.03 | Design d'expérience": {
+    "R4.Crea.03 | Design d'expérience": {
       "enseignant": "RAMPON Candice",
       "cm": 0,
       "td": 4.5,
@@ -709,7 +702,7 @@
         }
       ]
     },
-    "R4.04 | Expression, communication": {
+    "R4.Crea.04 | Expression, communication": {
       "enseignant": "THEROND Emmanuel",
       "cm": 0,
       "td": 6,
@@ -719,6 +712,12 @@
           "enseignant": "BARTHELEMY Veronique",
           "cm": 0,
           "td": 4.5,
+          "tp": 0
+        },
+        {
+          "enseignant": "EVANO Jérome",
+          "cm": 0,
+          "td": 3,
           "tp": 0
         }
       ]
@@ -731,18 +730,11 @@
       "subrows": []
     },
     "R4.Crea.06 | Culture artistique": {
-      "enseignant": "DE VELDER Sophie",
+      "enseignant": "SURRIBAS Caroline",
       "cm": 0,
-      "td": 0,
-      "tp": 0,
-      "subrows": [
-        {
-          "enseignant": "SURRIBAS Caroline",
-          "cm": 0,
-          "td": 4.5,
-          "tp": 9
-        }
-      ]
+      "td": 4.5,
+      "tp": 9,
+      "subrows": []
     },
     "R4.Crea.07 | Audiovisuel - Motion design": {
       "enseignant": "BLANCO Sandy",
@@ -782,15 +774,9 @@
     "SAÉ 4.Crea.02 | Produire du contenu multimédia": {
       "enseignant": "THEROND Emmanuel",
       "cm": 0,
-      "td": 9,
+      "td": 21,
       "tp": 0,
       "subrows": [
-        {
-          "enseignant": "THEROND Emmanuel",
-          "cm": 0,
-          "td": 12,
-          "tp": 0
-        },
         {
           "enseignant": "BERNARD William",
           "cm": 0,
@@ -800,17 +786,11 @@
       ]
     },
     "SAÉ 4.Crea.03 | SAE langues": {
-      "enseignant": "BERNARD William",
+      "enseignant": "BLANCO Sandy",
       "cm": 0,
       "td": 0,
-      "tp": 0,
+      "tp": 6,
       "subrows": [
-        {
-          "enseignant": "BLANCO Sandy",
-          "cm": 0,
-          "td": 0,
-          "tp": 6
-        },
         {
           "enseignant": "BARON Mathilde",
           "cm": 0,
@@ -834,9 +814,9 @@
       "subrows": []
     },
     "PORTFOLIO | Portfolio-Parcours Création Numérique": {
-      "enseignant": "LAGIEWKA Arnaud",
+      "enseignant": "MAURIN Nicolas",
       "cm": 0,
-      "td": 0,
+      "td": 1.5,
       "tp": 0,
       "subrows": [
         {
@@ -850,15 +830,20 @@
           "cm": 0,
           "td": 1.5,
           "tp": 0
+        },
+        {
+          "enseignant": "BARON Mathilde",
+          "cm": 0,
+          "td": 1.5,
+          "tp": 0
+        },
+        {
+          "enseignant": "PELISSIER Chrysta",
+          "cm": 0,
+          "td": 1.5,
+          "tp": 0
         }
       ]
-    },
-    "PORTFOLIO | Portfolio-Parcours Dev": {
-      "enseignant": "",
-      "cm": 0,
-      "td": 0,
-      "tp": 0,
-      "subrows": []
     }
   },
   "S5 crea": {
@@ -866,15 +851,8 @@
       "enseignant": "BERNARD William",
       "cm": 0,
       "td": 9,
-      "tp": 10.5,
-      "subrows": [
-        {
-          "enseignant": "BERNARD William",
-          "cm": 0,
-          "td": 0,
-          "tp": 10.5
-        }
-      ]
+      "tp": 21,
+      "subrows": []
     },
     "R5.crea.02 | Management et Assurance Qualité": {
       "enseignant": "PIEDEVACHE Magalie",
@@ -922,6 +900,18 @@
           "cm": 0,
           "td": 0,
           "tp": 6
+        },
+        {
+          "enseignant": "THEROND Emmanuel",
+          "cm": 0,
+          "td": 9,
+          "tp": 0
+        },
+        {
+          "enseignant": "",
+          "cm": 0,
+          "td": 12.5,
+          "tp": 7.5
         }
       ]
     },
@@ -933,6 +923,12 @@
       "subrows": [
         {
           "enseignant": "BARON Mathilde",
+          "cm": 0,
+          "td": 12,
+          "tp": 7.5
+        },
+        {
+          "enseignant": "RAMPON Candice",
           "cm": 0,
           "td": 12,
           "tp": 7.5
@@ -952,9 +948,9 @@
           "tp": 0
         },
         {
-          "enseignant": "ESCUROLIA Romain",
+          "enseignant": "BARON Mathilde",
           "cm": 0,
-          "td": 0,
+          "td": 3,
           "tp": 0
         },
         {
@@ -999,13 +995,6 @@
           "tp": 3
         }
       ]
-    },
-    "PORTFOLIO | Portfolio-Parcours Dev": {
-      "enseignant": "",
-      "cm": 0,
-      "td": 0,
-      "tp": 0,
-      "subrows": []
     }
   },
   "S6 dev": {
@@ -1082,13 +1071,6 @@
           "tp": 0
         }
       ]
-    },
-    "Fonctionnement des IA": {
-      "enseignant": "",
-      "cm": 0,
-      "td": 0,
-      "tp": 0,
-      "subrows": []
     }
   },
   "S5 dev": {
@@ -1151,15 +1133,9 @@
     "R5.DWeb-DI.07 | Dispositifs interactifs": {
       "enseignant": "MARZOUK Reda",
       "cm": 0,
-      "td": 30,
+      "td": 39,
       "tp": 12,
       "subrows": [
-        {
-          "enseignant": "MARZOUK Reda",
-          "cm": 0,
-          "td": 9,
-          "tp": 0
-        },
         {
           "enseignant": "AZE Jérome",
           "cm": 0,
@@ -1183,24 +1159,25 @@
       ]
     },
     "R5.DWeb-DI.09 | Mathématiques avancées, complexité algorithmique": {
-      "enseignant": "",
+      "enseignant": "DARTIES Benoit",
       "cm": 0,
-      "td": 0,
+      "td": 6,
       "tp": 0,
-      "subrows": []
+      "subrows": [
+        {
+          "enseignant": "MENDEZ Nicolas",
+          "cm": 0,
+          "td": 6,
+          "tp": 0
+        }
+      ]
     },
     "SAÉ 5D.01 | Développer pour le web": {
       "enseignant": "MARILL Damien",
       "cm": 0,
-      "td": 15,
+      "td": 27,
       "tp": 0,
       "subrows": [
-        {
-          "enseignant": "MARILL Damien",
-          "cm": 0,
-          "td": 15,
-          "tp": 0
-        },
         {
           "enseignant": "MARZOUK Reda",
           "cm": 0,
@@ -1208,15 +1185,9 @@
           "tp": 0
         },
         {
-          "enseignant": "MARILL Damien",
+          "enseignant": "SURRIBAS Caroline",
           "cm": 0,
-          "td": 12,
-          "tp": 0
-        },
-        {
-          "enseignant": "DE VELDER Sophie",
-          "cm": 0,
-          "td": 6,
+          "td": 13.5,
           "tp": 0
         }
       ]
@@ -1236,11 +1207,18 @@
       "subrows": []
     },
     "SAÉ 5D.04 | Integration d'un LLM": {
-      "enseignant": "",
+      "enseignant": "MARILL Damien",
       "cm": 0,
-      "td": 0,
+      "td": 15,
       "tp": 0,
-      "subrows": []
+      "subrows": [
+        {
+          "enseignant": "DE VELDER Sophie",
+          "cm": 0,
+          "td": 6,
+          "tp": 0
+        }
+      ]
     },
     "PORTFOLIO Portfolio-Parcours Dev Web": {
       "enseignant": "MAURIN Nicolas",
@@ -1255,27 +1233,6 @@
           "tp": 0
         }
       ]
-    },
-    "Mathématiques avancées, complexité algorithmique": {
-      "enseignant": "DARTIES Benoit",
-      "cm": 0,
-      "td": 6,
-      "tp": 0,
-      "subrows": [
-        {
-          "enseignant": "MENDEZ Nicolas",
-          "cm": 0,
-          "td": 6,
-          "tp": 0
-        }
-      ]
-    },
-    "PORTFOLIO Portfolio-Parcours Dev": {
-      "enseignant": "",
-      "cm": 0,
-      "td": 0,
-      "tp": 0,
-      "subrows": []
     }
   },
   "S4 dev": {
@@ -1428,13 +1385,6 @@
           "tp": 0
         }
       ]
-    },
-    "PORTFOLIO Portfolio-Parcours Dev": {
-      "enseignant": "",
-      "cm": 0,
-      "td": 0,
-      "tp": 0,
-      "subrows": []
     }
   },
   "S3": {
