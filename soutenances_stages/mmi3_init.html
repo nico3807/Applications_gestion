@@ -51,6 +51,12 @@
         </svg>
         Exporter PDF
       </button>
+      <button class="pdf-btn" style="background:#217346;" onclick="exportXLSX()">
+        <svg viewBox="0 0 16 16" fill="currentColor">
+          <path d="M5 8V5h1v3H5zm1 0h4V5H6v3zm4 0h1V5h-1v3zM2 2a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H2zm0 1h12a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1z"/>
+        </svg>
+        Exporter XLSX
+      </button>
       <button class="cfg-btn" onclick="openCfgModal()">
         <svg viewBox="0 0 16 16" fill="currentColor">
           <path
@@ -72,6 +78,7 @@
     </div>
     <div id="juries-root"></div>
     <div class="toast" id="toast"></div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
     <script src="app.js"></script>
   </body>
 </html>
