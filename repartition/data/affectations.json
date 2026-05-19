@@ -865,15 +865,8 @@
       "enseignant": "BERNARD William",
       "cm": 0,
       "td": 9,
-      "tp": 10.5,
-      "subrows": [
-        {
-          "enseignant": "BERNARD William",
-          "cm": 0,
-          "td": 0,
-          "tp": 10.5
-        }
-      ]
+      "tp": 21,
+      "subrows": []
     },
     "R5.crea.02 | Management et Assurance Qualité": {
       "enseignant": "PIEDEVACHE Magalie",
@@ -921,6 +914,18 @@
           "cm": 0,
           "td": 0,
           "tp": 6
+        },
+        {
+          "enseignant": "THEROND Emmanuel",
+          "cm": 0,
+          "td": 9,
+          "tp": 0
+        },
+        {
+          "enseignant": "",
+          "cm": 0,
+          "td": 12.5,
+          "tp": 7.5
         }
       ]
     },
@@ -932,6 +937,12 @@
       "subrows": [
         {
           "enseignant": "BARON Mathilde",
+          "cm": 0,
+          "td": 12,
+          "tp": 7.5
+        },
+        {
+          "enseignant": "RAMPON Candice",
           "cm": 0,
           "td": 12,
           "tp": 7.5
@@ -951,9 +962,9 @@
           "tp": 0
         },
         {
-          "enseignant": "ESCUROLIA Romain",
+          "enseignant": "BARON Mathilde",
           "cm": 0,
-          "td": 0,
+          "td": 3,
           "tp": 0
         },
         {
