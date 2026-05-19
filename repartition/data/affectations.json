@@ -618,29 +618,10 @@
     },
     "SAÉ 2.01 | Explorer les usages du numérique": {
       "enseignant": "DE VELDER Sophie",
-      "cm": 0,
-      "td": 12,
+      "cm": 1.5,
+      "td": 21,
       "tp": 0,
-      "subrows": [
-        {
-          "enseignant": "DE VELDER Sophie",
-          "cm": 0,
-          "td": 3,
-          "tp": 0
-        },
-        {
-          "enseignant": "DARTIES Benoit",
-          "cm": 1.5,
-          "td": 7.5,
-          "tp": 0
-        },
-        {
-          "enseignant": "HERVY Dominique",
-          "cm": 0,
-          "td": 3,
-          "tp": 0
-        }
-      ]
+      "subrows": []
     },
     "SAÉ 2.02 | Concevoir un produit ou un service et sa communication": {
       "enseignant": "SURRIBAS Caroline",
@@ -657,18 +638,32 @@
       ]
     },
     "SAÉ 2.03 | Concevoir un site web avec une source de données": {
-      "enseignant": "",
+      "enseignant": "MAURIN Nicolas",
       "cm": 0,
-      "td": 0,
+      "td": 7.5,
       "tp": 0,
-      "subrows": []
+      "subrows": [
+        {
+          "enseignant": "DARTIES Benoit",
+          "cm": 1.5,
+          "td": 7.5,
+          "tp": 0
+        }
+      ]
     },
     "SAÉ 2.04 | Construire sa présence en ligne": {
-      "enseignant": "",
+      "enseignant": "DE VELDER Sophie",
       "cm": 0,
-      "td": 0,
+      "td": 12,
       "tp": 0,
-      "subrows": []
+      "subrows": [
+        {
+          "enseignant": "HERVY Dominique",
+          "cm": 0,
+          "td": 3,
+          "tp": 0
+        }
+      ]
     },
     "SAÉ 2.98 | Hackathon": {
       "enseignant": "",
