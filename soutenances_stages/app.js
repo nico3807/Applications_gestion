@@ -22,7 +22,9 @@ function populateSelects() {
     const lbl = select.previousElementSibling;
     let options = null;
 
-    if (lbl && lbl.classList.contains("mlbl")) {
+    if (select.dataset.type === "tuteur") {
+      options = APP_CONFIG.enseignants;
+    } else if (lbl && lbl.classList.contains("mlbl")) {
       const labelText = lbl.textContent.trim();
       if (labelText.startsWith("Enseignant")) {
         options = APP_CONFIG.enseignants;
@@ -505,9 +507,9 @@ function renderJuries(level) {
       for (let m = 1; m <= CFG_MAX_CRENEAUX; m++) {
         const ck = `${level}_jury${juryN}_creneau${m}`;
         if (h[ck] === undefined) break;
-        rows += `<tr><td><span id="${ck}"></span></td><td><span class="sname"></span></td><td><span class="${bi.cls}">${bi.lbl}</span></td></tr>`;
+        rows += `<tr><td><span id="${ck}"></span></td><td><span class="sname"></span></td><td><span class="${bi.cls}">${bi.lbl}</span></td><td><select class="tselect tselect-tuteur" id="${ck}_tuteur" data-type="tuteur" aria-label="Tuteur" onchange="saveT(this)"><option value="">—</option></select><span class="print-val"></span></td></tr>`;
       }
-      html += `<div class="jcard"><div class="jcard-hdr"><span class="jury-name">Jury ${juryN}</span><span class="jury-date" id="${level}_jury${juryN}_date"></span></div><div class="jcard-meta">${meta}</div><table class="stable"><thead><tr><th>Horaire</th><th>Étudiant</th><th>Parcours</th></tr></thead><tbody>${rows}</tbody></table></div>`;
+      html += `<div class="jcard"><div class="jcard-hdr"><span class="jury-name">Jury ${juryN}</span><span class="jury-date" id="${level}_jury${juryN}_date"></span></div><div class="jcard-meta">${meta}</div><table class="stable"><thead><tr><th>Horaire</th><th>Étudiant</th><th>Parcours</th><th>Tuteur</th></tr></thead><tbody>${rows}</tbody></table></div>`;
     });
     html += `</div></div>`;
   }
@@ -1007,7 +1009,7 @@ function exportXLSX() {
   ).length;
 
   const headerTeachers = Array.from({ length: teacherCount }, (_, i) => `Enseignant ${i + 1}`);
-  const header = ["Jury", "Date", "Salle", ...headerTeachers, "Horaire", "Étudiant", "Parcours"];
+  const header = ["Jury", "Date", "Salle", ...headerTeachers, "Horaire", "Étudiant", "Parcours", "Tuteur"];
   const rows = [header];
 
   document.querySelectorAll(".jcard").forEach((card) => {
@@ -1032,13 +1034,14 @@ function exportXLSX() {
 
     const tbodyRows = card.querySelectorAll(".stable tbody tr");
     if (tbodyRows.length === 0) {
-      rows.push([juryName, juryDate, salle, ...enseignants, "", "", ""]);
+      rows.push([juryName, juryDate, salle, ...enseignants, "", "", "", ""]);
     } else {
       tbodyRows.forEach((tr) => {
         const horaire = tr.querySelector("td:first-child span")?.textContent.trim() || "";
         const etudiant = tr.querySelector(".sname")?.textContent.trim() || "";
-        const parcours = tr.querySelector("td:last-child span")?.textContent.trim() || "";
-        rows.push([juryName, juryDate, salle, ...enseignants, horaire, etudiant, parcours]);
+        const parcours = tr.querySelector("td:nth-child(3) span")?.textContent.trim() || "";
+        const tuteur = tr.querySelector(".tselect-tuteur")?.value || "";
+        rows.push([juryName, juryDate, salle, ...enseignants, horaire, etudiant, parcours, tuteur]);
       });
     }
   });
