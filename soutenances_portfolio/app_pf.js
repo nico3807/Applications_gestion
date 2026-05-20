@@ -1,9 +1,8 @@
 "use strict";
 const SK = "sout_v1_";
-const PAGE_ID = (location.pathname.split("/").pop() || "index").replace(
-  ".html",
-  "",
-);
+const PAGE_ID = (location.pathname.split("/").pop() || "index")
+  .replace(".html", "")
+  .replace("_pf", "");
 const GH_KEY = "gh_cfg_v1";
 const GH_OWNER = "nico3807";
 const GH_REPO = "soutenances_portfolio";
