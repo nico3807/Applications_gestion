@@ -348,7 +348,6 @@ function showGHStatus(msg, type) {
 
 /* ── Config modal ────────────────────────────────────────────────── */
 const CFG_LEVELS = {
-  mmi1: "MMI 1",
   mmi2_init: "MMI 2 — Initiaux",
   mmi2_alt: "MMI 2 — Alternants",
   mmi3_init: "MMI 3 — Initiaux",
@@ -435,7 +434,6 @@ function getTeacherCount(level) {
 }
 
 const PAGE_LEVEL_CFG = {
-  mmi1: { teachers: 3 },
   mmi2_init: { teachers: 2 },
   mmi2_alt: { teachers: 2 },
   mmi3_init: { teachers: 2 },
