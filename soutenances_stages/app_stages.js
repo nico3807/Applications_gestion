@@ -135,7 +135,7 @@ function isGHConfigured() {
 }
 
 function ghFilePath() {
-  return `donnees.json`;
+  return `donnees_stages.json`;
 }
 
 async function loadFromGitHub() {
@@ -168,7 +168,7 @@ async function loadHorairesFromGitHub() {
   const cfg = getGHConfig();
   if (!cfg || !cfg.token) return;
   try {
-    const url = `https://api.github.com/repos/${GH_OWNER}/${GH_REPO}/contents/horaires.json?ref=${GH_BRANCH}`;
+    const url = `https://api.github.com/repos/${GH_OWNER}/${GH_REPO}/contents/horaires_stages.json?ref=${GH_BRANCH}`;
     const resp = await fetch(url, {
       headers: {
         Authorization: `token ${cfg.token}`,
@@ -226,7 +226,7 @@ async function saveJsonToGitHub(filename, jsonStr, message) {
 async function saveToGitHub() {
   try {
     await saveJsonToGitHub(
-      "donnees.json",
+      "donnees_stages.json",
       buildJSON(),
       `Mise à jour ${PAGE_ID} — ${new Date().toLocaleString("fr-FR")}`,
     );
@@ -786,12 +786,12 @@ async function saveCfgModal() {
   try {
     const ts = new Date().toLocaleString("fr-FR");
     await saveJsonToGitHub(
-      "horaires.json",
+      "horaires_stages.json",
       JSON.stringify(merged, null, 2),
       `Config horaires ${level} — ${ts}`,
     );
     await saveJsonToGitHub(
-      "donnees.json",
+      "donnees_stages.json",
       buildJSON(),
       `Sync donnees ${level} — ${ts}`,
     );
@@ -821,7 +821,7 @@ async function saveCfgModal() {
       }
       Object.assign(mergedEtudiants, etudiantsEntries);
       await saveJsonToGitHub(
-        "etudiants.json",
+        "etudiants_stages.json",
         JSON.stringify(mergedEtudiants, null, 2),
         `Candidats ${level} — ${ts}`,
       );
@@ -868,12 +868,12 @@ async function saveSelectionsToFile() {
 /* ── Auto-load depuis le dossier courant (serveur local) ─────────── */
 async function loadFromServer() {
   try {
-    // Tente de récupérer donnees.json s'il est accessible à la racine
-    const resp = await fetch("donnees.json", { cache: "no-store" });
+    // Tente de récupérer donnees_stages.json s'il est accessible à la racine
+    const resp = await fetch("donnees_stages.json", { cache: "no-store" });
     if (resp.ok) {
       const text = await resp.text();
       applyJSON(text);
-      console.log("Sélections chargées depuis donnees.json (dossier courant)");
+      console.log("Sélections chargées depuis donnees_stages.json (dossier courant)");
     }
   } catch (e) {
     /* Ignore (échouera si ouvert en file:// sans serveur) */
@@ -934,7 +934,7 @@ function applyIndexDates(data) {
 
 async function loadHoraires() {
   try {
-    const resp = await fetch("horaires.json", { cache: "no-store" });
+    const resp = await fetch("horaires_stages.json", { cache: "no-store" });
     if (resp.ok) {
       const data = await resp.json();
       APP_CONFIG.horaires = data;
@@ -947,7 +947,7 @@ async function loadHoraires() {
     /* file:// or server error — try raw GitHub */
   }
   try {
-    const rawUrl = `https://raw.githubusercontent.com/${GH_OWNER}/${GH_REPO}/${GH_BRANCH}/horaires.json`;
+    const rawUrl = `https://raw.githubusercontent.com/${GH_OWNER}/${GH_REPO}/${GH_BRANCH}/horaires_stages.json`;
     const resp = await fetch(rawUrl, { cache: "no-store" });
     if (resp.ok) {
       const data = await resp.json();
@@ -957,20 +957,20 @@ async function loadHoraires() {
       if (PAGE_ID === "index") applyIndexDates(data);
     }
   } catch (e) {
-    console.warn("Impossible de charger horaires.json", e);
+    console.warn("Impossible de charger horaires_stages.json", e);
   }
 }
 
 async function loadEtudiants() {
   try {
-    const resp = await fetch("etudiants.json", { cache: "no-store" });
+    const resp = await fetch("etudiants_stages.json", { cache: "no-store" });
     if (resp.ok) {
       const data = await resp.json();
       APP_CONFIG.etudiants = data;
       applyEtudiants(data);
     }
   } catch (e) {
-    console.warn("etudiants.json non trouvé.", e);
+    console.warn("etudiants_stages.json non trouvé.", e);
   }
 }
 /* ── Toast ───────────────────────────────────────────────────────── */
