@@ -21,7 +21,20 @@
   </head>
   <body>
     <nav class="nav">
-      <a href="../index.html" title="Retour à l'accueil MMI" style="display:flex;align-items:center;flex-shrink:0;line-height:0;"><img src="../logo_mmi.jpg" alt="MMI" style="height:32px;width:auto;border-radius:3px;display:block;"></a>
+      <a
+        href="../index.html"
+        title="Retour à l'accueil MMI"
+        style="
+          display: flex;
+          align-items: center;
+          flex-shrink: 0;
+          line-height: 0;
+        "
+        ><img
+          src="../logo_mmi.jpg"
+          alt="MMI"
+          style="height: 32px; width: auto; border-radius: 3px; display: block"
+      /></a>
       <a class="nav-back" href="index.html"
         ><svg viewBox="0 0 16 16" fill="currentColor">
           <path
@@ -30,7 +43,7 @@
         </svg>
         Accueil</a
       >
-      <span class="nav-title">MMI3 — Initiaux</span>
+      <span class="nav-title">STAGES MMI3 - Initiaux</span>
       <span class="nav-spacer"></span>
       <button class="save-btn" onclick="saveSelectionsToFile()">
         <svg viewBox="0 0 16 16" fill="currentColor">
@@ -51,9 +64,15 @@
         </svg>
         Exporter PDF
       </button>
-      <button class="pdf-btn" style="background:#217346;" onclick="exportXLSX()">
+      <button
+        class="pdf-btn"
+        style="background: #217346"
+        onclick="exportXLSX()"
+      >
         <svg viewBox="0 0 16 16" fill="currentColor">
-          <path d="M5 8V5h1v3H5zm1 0h4V5H6v3zm4 0h1V5h-1v3zM2 2a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H2zm0 1h12a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1z"/>
+          <path
+            d="M5 8V5h1v3H5zm1 0h4V5H6v3zm4 0h1V5h-1v3zM2 2a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H2zm0 1h12a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1z"
+          />
         </svg>
         Exporter XLSX
       </button>
