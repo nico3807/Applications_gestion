@@ -840,9 +840,12 @@ function renderModifications(root) {
   const mods = APP_DATA.modifications.slice().reverse();
 
   let html = `
-    <div class="page-header">
-      <h1>Journal des modifications</h1>
-      <p class="subtitle">Modifications effectuées par les utilisateurs avec droits d'écriture</p>
+    <div class="page-header" style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px;">
+      <div>
+        <h1 style="margin:0;">Journal des modifications</h1>
+        <p class="subtitle">Modifications effectuées par les utilisateurs avec droits d'écriture</p>
+      </div>
+      ${mods.length > 0 ? `<button class="btn-delete" onclick="clearModificationsGH()" style="flex-shrink:0;">🗑 Vider le journal</button>` : ""}
     </div>`;
 
   if (mods.length === 0) {
@@ -879,6 +882,21 @@ function renderModifications(root) {
   html += `</tbody></table></div>`;
   root.innerHTML = html;
 }
+
+window.clearModificationsGH = async function () {
+  if (!confirm("Vider définitivement le journal des modifications ?")) return;
+  APP_DATA.modifications = [];
+  if (isGHConfigured()) {
+    try {
+      await saveFileGH("modifications.json", [], "Vider le journal des modifications via Web UI");
+      showToast("Journal vidé sur GitHub !");
+    } catch (e) {
+      alert("Erreur: " + e.message);
+      return;
+    }
+  }
+  renderView();
+};
 
 async function loadData() {
   // 1. Charge d'abord les fichiers locaux (fallback garanti)
