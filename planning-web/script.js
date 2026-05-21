@@ -1251,11 +1251,171 @@ function injectFeries() {
 }
 
 /* =====================================================================
+     GITHUB SAVE
+  ===================================================================== */
+const GH_KEY    = "gh_planning_cfg";
+const GH_OWNER  = "nico3807";
+const GH_REPO   = "Applications_gestion";
+const GH_BRANCH = "main";
+const GH_PATH   = "planning-web/calendar_data.json";
+
+function getGHConfig() {
+  try { return JSON.parse(localStorage.getItem(GH_KEY)) || {}; } catch { return {}; }
+}
+function isGHConfigured() { return !!getGHConfig().token; }
+
+async function saveJsonToGitHub(path, jsonStr, message) {
+  const cfg = getGHConfig();
+  if (!cfg.token) throw new Error("Token non configuré");
+  const url = `https://api.github.com/repos/${GH_OWNER}/${GH_REPO}/contents/${path}`;
+  const content = btoa(unescape(encodeURIComponent(jsonStr)));
+  let sha = null;
+  try {
+    const r = await fetch(`${url}?ref=${GH_BRANCH}`, {
+      cache: "no-cache",
+      headers: { Authorization: `token ${cfg.token}`, Accept: "application/vnd.github.v3+json" },
+    });
+    if (r.ok) sha = (await r.json()).sha;
+  } catch {}
+  const body = { message, content, branch: GH_BRANCH };
+  if (sha) body.sha = sha;
+  const r = await fetch(url, {
+    method: "PUT",
+    headers: {
+      Authorization: `token ${cfg.token}`,
+      Accept: "application/vnd.github.v3+json",
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(body),
+  });
+  if (!r.ok) {
+    let msg = `Erreur ${r.status}`;
+    try {
+      const j = await r.json();
+      msg = r.status === 401
+        ? "Token GitHub invalide ou expiré — reconfigurez-le."
+        : (j.message || msg);
+    } catch {}
+    throw new Error(msg);
+  }
+}
+
+function showGHToast(msg, isError = false) {
+  let t = document.getElementById("gh-toast");
+  if (!t) { t = document.createElement("div"); t.id = "gh-toast"; t.className = "gh-toast"; document.body.appendChild(t); }
+  t.textContent = msg;
+  t.style.background = isError ? "#dc2626" : "#16a34a";
+  t.classList.add("show");
+  setTimeout(() => t.classList.remove("show"), 3000);
+}
+
+async function saveCalendarGH() {
+  if (!isGHConfigured()) { openGHModal(); return; }
+  const btn = document.getElementById("gh-save-btn");
+  if (btn) { btn.disabled = true; btn.textContent = "⏳ Sauvegarde…"; }
+  try {
+    const ts = new Date().toLocaleString("fr-FR");
+    await saveJsonToGitHub(GH_PATH, JSON.stringify(CAL, null, 2), `Update calendar_data.json — ${ts}`);
+    /* La base devient l'état courant : on efface le delta */
+    CAL_BASE = JSON.parse(JSON.stringify(CAL));
+    CAL_DELTA = {};
+    try { localStorage.removeItem("cal_delta"); } catch {}
+    showGHToast("✓ Planning sauvegardé sur GitHub !");
+  } catch (e) {
+    showGHToast("✗ " + e.message, true);
+  } finally {
+    if (btn) { btn.disabled = false; btn.textContent = "💾 Sauvegarder"; }
+  }
+}
+
+function injectGHUI() {
+  /* Bouton fixe en bas à droite */
+  const footer = document.createElement("div");
+  footer.className = "gh-footer";
+  footer.innerHTML = `<button class="gh-footer-link${isGHConfigured() ? " gh-footer-link--active" : ""}" id="gh-config-btn">⚙ GitHub</button>`;
+  document.body.appendChild(footer);
+  document.getElementById("gh-config-btn").addEventListener("click", openGHModal);
+
+  /* Bouton "Sauvegarder" dans le header */
+  const headerInner = document.querySelector(".header-inner");
+  if (headerInner) {
+    const saveBtn = document.createElement("button");
+    saveBtn.id = "gh-save-btn";
+    saveBtn.className = "gh-save-btn";
+    saveBtn.textContent = "💾 Sauvegarder";
+    saveBtn.title = "Sauvegarder le planning sur GitHub";
+    saveBtn.addEventListener("click", saveCalendarGH);
+    headerInner.appendChild(saveBtn);
+  }
+
+  /* Modale de configuration */
+  const modal = document.createElement("div");
+  modal.id = "gh-modal";
+  modal.className = "gh-modal-overlay";
+  modal.innerHTML = `
+    <div class="gh-modal-box">
+      <h3>⚙ Token GitHub</h3>
+      <p class="gh-modal-desc">Le planning sera sauvegardé dans <strong>${GH_OWNER}/${GH_REPO}</strong> (branche <code>${GH_BRANCH}</code>). Entrez votre <strong>Personal Access Token</strong> (scope <code>repo</code>).</p>
+      <label for="gh-token">Token GitHub</label>
+      <input id="gh-token" type="password" placeholder="ghp_xxxxxxxxxxxxxxxxxxxx" autocomplete="off">
+      <div id="gh-status" class="gh-status" style="display:none"></div>
+      <div class="gh-modal-actions">
+        <button class="gh-btn-cancel" id="gh-modal-cancel">Annuler</button>
+        <button class="gh-btn-save-modal" id="gh-modal-save">Enregistrer</button>
+      </div>
+    </div>`;
+  document.body.appendChild(modal);
+
+  modal.addEventListener("click", (e) => { if (e.target === modal) closeGHModal(); });
+  document.getElementById("gh-modal-cancel").addEventListener("click", closeGHModal);
+  document.getElementById("gh-modal-save").addEventListener("click", saveGHFromModal);
+
+  const cfg = getGHConfig();
+  if (cfg.token) document.getElementById("gh-token").value = cfg.token;
+}
+
+function openGHModal()  { document.getElementById("gh-modal").classList.add("open"); }
+function closeGHModal() { document.getElementById("gh-modal").classList.remove("open"); }
+
+function saveGHFromModal() {
+  const token = document.getElementById("gh-token").value.trim();
+  if (!token) { showGHStatus("Saisissez un token.", "error"); return; }
+  localStorage.setItem(GH_KEY, JSON.stringify({ token }));
+  const cfgBtn = document.getElementById("gh-config-btn");
+  if (cfgBtn) cfgBtn.classList.add("gh-footer-link--active");
+  showGHStatus("Token enregistré !", "success");
+  setTimeout(closeGHModal, 900);
+}
+
+function showGHStatus(msg, type) {
+  const el = document.getElementById("gh-status");
+  if (!el) return;
+  el.textContent = msg;
+  el.className = "gh-status " + type;
+  el.style.display = "block";
+}
+
+/* =====================================================================
      INITIALISATION
   ===================================================================== */
 async function init() {
   /* 0. Charger les données depuis calendar_data.json */
   CAL_BASE = await fetch("calendar_data.json").then((r) => r.json());
+  /* Si GitHub est configuré, charger la version de référence depuis GH */
+  if (isGHConfigured()) {
+    try {
+      const cfg = getGHConfig();
+      const url = `https://api.github.com/repos/${GH_OWNER}/${GH_REPO}/contents/${GH_PATH}?ref=${GH_BRANCH}`;
+      const resp = await fetch(url, {
+        cache: "no-cache",
+        headers: { Authorization: `token ${cfg.token}`, Accept: "application/vnd.github.v3+json" },
+      });
+      if (resp.ok) {
+        const json = await resp.json();
+        CAL_BASE = JSON.parse(decodeURIComponent(escape(atob(json.content.replace(/\n/g, "")))));
+      }
+    } catch {}
+  }
   /* Copie profonde dans CAL */
   CAL = JSON.parse(JSON.stringify(CAL_BASE));
   /* Migrer l'ancienne clé cal_data si elle existe */
@@ -1264,7 +1424,10 @@ async function init() {
   CAL_DELTA = loadDelta();
   applyDelta();
 
-  /* 1. Construire les filtres de groupes */
+  /* 1. Injecter l'UI GitHub */
+  injectGHUI();
+
+  /* 2. Construire les filtres de groupes */
   buildFilters();
 
   /* 2. Construire la navigation par mois */
