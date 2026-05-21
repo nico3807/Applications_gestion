@@ -122,6 +122,52 @@
         font-weight: 600;
       }
     </style>
+    <style>
+      /* ── Écran de connexion ───────────────────────────────── */
+      #auth-overlay {
+        position: fixed; inset: 0; z-index: 9999;
+        background: linear-gradient(135deg, #1e3a5f 0%, #2563eb 100%);
+        display: flex; align-items: center; justify-content: center;
+      }
+      .auth-card {
+        background: #fff; border-radius: 16px; padding: 2.5rem 2rem;
+        width: 100%; max-width: 360px;
+        box-shadow: 0 20px 60px rgba(0,0,0,0.35);
+        display: flex; flex-direction: column; gap: 0.75rem; text-align: center;
+      }
+      .auth-logo { width: 60px; height: auto; border-radius: 8px; margin: 0 auto; }
+      .auth-title { font-size: 1.35rem; color: #1e3a5f; margin: 0; }
+      .auth-sub   { font-size: 0.82rem; color: #6b7280; margin: 0; }
+      .auth-input {
+        width: 100%; padding: 0.65rem 0.9rem; border: 1.5px solid #d1d5db;
+        border-radius: 8px; font-size: 0.95rem; outline: none; box-sizing: border-box;
+      }
+      .auth-input:focus { border-color: #2563eb; box-shadow: 0 0 0 3px rgba(37,99,235,.12); }
+      .auth-btn {
+        background: #1e3a5f; color: #fff; border: none; padding: 0.75rem;
+        border-radius: 8px; font-size: 1rem; font-weight: 600; cursor: pointer; width: 100%;
+      }
+      .auth-btn:hover:not(:disabled) { background: #2563eb; }
+      .auth-btn:disabled { opacity: 0.6; cursor: default; }
+      .auth-err { font-size: 0.85rem; color: #dc2626; margin: 0; }
+
+      /* ── Badge utilisateur dans le header ────────────────── */
+      #auth-badge {
+        display: flex; align-items: center; gap: 0.5rem;
+        margin-left: auto; font-size: 0.78rem; flex-shrink: 0;
+      }
+      .auth-badge-user   { font-weight: 700; color: #fff; text-transform: uppercase; letter-spacing: .05em; }
+      .auth-badge-role   { background: rgba(255,255,255,.15); color: #fff; padding: 2px 8px; border-radius: 12px; }
+      .auth-badge-logout {
+        background: rgba(255,255,255,.12); color: #fff;
+        border: 1px solid rgba(255,255,255,.3); padding: 3px 10px;
+        border-radius: 6px; cursor: pointer; font-size: 0.75rem;
+      }
+      .auth-badge-logout:hover { background: rgba(255,255,255,.28); }
+
+      /* ── Mode lecture seule ──────────────────────────────── */
+      body.auth-readonly select { pointer-events: none; opacity: 0.65; cursor: default; }
+    </style>
   </head>
   <body>
     <header>
@@ -169,6 +215,7 @@
     <!-- Conteneur des notifications -->
     <div id="toast" class="toast"></div>
 
+    <script src="auth.js"></script>
     <script src="app.js"></script>
   </body>
 </html>

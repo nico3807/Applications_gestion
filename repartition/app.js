@@ -61,6 +61,8 @@ function renderView() {
     renderMaquetteSemestre(root, currentParam);
   else if (currentView === "services") renderServices(root);
   else if (currentView === "enseignants") renderEnseignants(root);
+
+  AUTH.applyPermissions();
 }
 
 /* ── Vues : Accueil & Semestres ─────────────────────────────────────────── */
@@ -830,6 +832,15 @@ async function loadData() {
 }
 
 document.addEventListener("DOMContentLoaded", async () => {
-  injectGHUI();
-  await loadData();
+  AUTH.injectUI();
+  const init = async () => {
+    injectGHUI();
+    await loadData();
+    AUTH.injectBadge();
+  };
+  if (AUTH.isAuth()) {
+    await init();
+  } else {
+    window.addEventListener("auth-success", init, { once: true });
+  }
 });
