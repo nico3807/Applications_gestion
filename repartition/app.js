@@ -741,7 +741,17 @@ async function saveFileGH(filename, dataObj, msg) {
     },
     body: JSON.stringify(body),
   });
-  if (!r.ok) throw new Error(await r.text());
+  if (!r.ok) {
+    let errMsg = `Erreur ${r.status}`;
+    try {
+      const errJson = await r.json();
+      if (r.status === 401)
+        errMsg = "Token GitHub invalide ou expiré — reconfigurez-le via le bouton en bas de page.";
+      else
+        errMsg = errJson.message || errMsg;
+    } catch {}
+    throw new Error(errMsg);
+  }
 }
 
 window.saveAffectationsGH = async function () {
