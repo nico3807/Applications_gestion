@@ -296,6 +296,14 @@
     "is_vac": true
   },
   {
+    "id": "TEST Loren",
+    "nom": "TEST",
+    "prenom": "Loren",
+    "is_vac": false,
+    "service_du": null,
+    "service_max": 14
+  },
+  {
     "id": "THEROND Emmanuel",
     "nom": "THEROND",
     "prenom": "Emmanuel",
