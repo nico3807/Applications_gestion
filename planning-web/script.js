@@ -416,23 +416,8 @@ function buildMonthSection(monthName) {
 
   /* ── Rendu semaine par semaine ───────────────────────────────────── */
   for (const week of weeks) {
-    /* Collecter les événements "Entreprise" App de la semaine
-         (premier trouvé par groupe, généralement le lundi) */
-    /* { groupe: { ev, sourceDay } } — sourceDay = jour où l'événement est stocké dans CAL */
+    /* Chaque événement s'affiche uniquement sur son jour stocké */
     const appEvts = {};
-    for (const day of week) {
-      /* Seuls les événements du lundi (wi===0) s'affichent sur toute la semaine */
-      if (!day || !day.dd || !day.dd.events || day.wi !== 0) continue;
-      for (const g of Object.keys(WEEK_SPAN)) {
-        if (
-          !appEvts[g] &&
-          day.dd.events[g] &&
-          isWeekSpanning(g, day.dd.events[g])
-        ) {
-          appEvts[g] = { ev: day.dd.events[g], sourceDay: day.d };
-        }
-      }
-    }
 
     /* ── Cellules des 5 jours de la semaine ── */
     for (const day of week) {
@@ -527,30 +512,21 @@ function buildMonthSection(monthName) {
       };
 
       /* Collecter tous les événements du jour (vacances exclus) */
-      const allEvts = []; /* { g, ev, sourceDay } */
+      const allEvts = []; /* { g, ev } */
 
-      /* Événements semaine-complète */
-      for (const [g, { ev, sourceDay }] of Object.entries(appEvts)) {
-        if (getCategory(ev) === "vacances") continue;
-        allEvts.push({ g, ev, sourceDay });
-      }
-
-      /* Événements du jour */
       if (dd && dd.events) {
         Object.entries(dd.events).forEach(([g, ev]) => {
-          if (g in appEvts) return; /* déjà affiché en bandeau semaine */
           if (getCategory(ev) === "vacances") return;
-          allEvts.push({ g, ev, sourceDay: d });
+          allEvts.push({ g, ev });
         });
       }
 
       /* Trier par priorité puis rendre */
       allEvts.sort((a, b) => groupPriority(a.g) - groupPriority(b.g));
-      allEvts.forEach(({ g, ev, sourceDay }) => {
-        const isSpanning = g in appEvts;
-        const pill = isSpanning ? makeGroupPill(g, ev) : makePill(g, ev);
+      allEvts.forEach(({ g, ev }) => {
+        const pill = makePill(g, ev);
         pill.addEventListener("click", () =>
-          openEventDetail(g, ev, monthName, sourceDay),
+          openEventDetail(g, ev, monthName, d),
         );
         evDiv.appendChild(pill);
       });
