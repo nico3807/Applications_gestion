@@ -797,7 +797,23 @@ window.saveMaquetteGH = async function () {
 };
 
 async function loadData() {
-  // 1. Tente de récupérer les données via GitHub
+  // 1. Charge d'abord les fichiers locaux (fallback garanti)
+  try {
+    const [aff, ens, maq] = await Promise.all([
+      fetch("data/affectations.json").then((r) => (r.ok ? r.json() : null)),
+      fetch("data/enseignants.json").then((r) => (r.ok ? r.json() : null)),
+      fetch("data/maquette_overrides.json").then((r) =>
+        r.ok ? r.json() : null,
+      ),
+    ]);
+    if (aff) APP_DATA.affectations = aff;
+    if (ens) APP_DATA.enseignants = ens;
+    if (maq) APP_DATA.maquette_overrides = maq;
+  } catch (e) {
+    console.warn("Local load failed (file:// ?)", e);
+  }
+
+  // 2. Si GitHub est configuré, tente de récupérer les données (priorité sur local)
   if (isGHConfigured()) {
     try {
       const [aff, ens, maq] = await Promise.all([
@@ -808,26 +824,11 @@ async function loadData() {
       if (aff) APP_DATA.affectations = aff;
       if (ens) APP_DATA.enseignants = ens;
       if (maq) APP_DATA.maquette_overrides = maq;
-      renderView();
-      return;
     } catch (e) {
-      console.warn("GH load failed, fallback to local", e);
+      console.warn("GH load failed, données locales conservées", e);
     }
   }
 
-  // 2. Sinon, lit localement
-  try {
-    const [aff, ens, maq] = await Promise.all([
-      fetch("data/affectations.json").then((r) => (r.ok ? r.json() : {})),
-      fetch("data/enseignants.json").then((r) => (r.ok ? r.json() : [])),
-      fetch("data/maquette_overrides.json").then((r) => (r.ok ? r.json() : {})),
-    ]);
-    APP_DATA.affectations = aff;
-    APP_DATA.enseignants = ens;
-    APP_DATA.maquette_overrides = maq;
-  } catch (e) {
-    console.error("Local load failed", e);
-  }
   renderView();
 }
 
