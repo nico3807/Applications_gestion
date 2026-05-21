@@ -1333,7 +1333,7 @@ function injectGHUI() {
   /* Bouton fixe en bas à droite */
   const footer = document.createElement("div");
   footer.className = "gh-footer";
-  footer.innerHTML = `<button class="gh-footer-link${isGHConfigured() ? " gh-footer-link--active" : ""}" id="gh-config-btn">⚙ GitHub</button>`;
+  footer.innerHTML = `<button class="gh-footer-link" id="gh-config-btn" style="${isGHConfigured() ? "display:none" : ""}">⚙ Configurer GitHub</button>`;
   document.body.appendChild(footer);
   document.getElementById("gh-config-btn").addEventListener("click", openGHModal);
 
@@ -1345,6 +1345,7 @@ function injectGHUI() {
     saveBtn.className = "gh-save-btn";
     saveBtn.textContent = "💾 Sauvegarder";
     saveBtn.title = "Sauvegarder le planning sur GitHub";
+    saveBtn.style.display = isGHConfigured() ? "" : "none";
     saveBtn.addEventListener("click", saveCalendarGH);
     headerInner.appendChild(saveBtn);
   }
@@ -1383,7 +1384,9 @@ function saveGHFromModal() {
   if (!token) { showGHStatus("Saisissez un token.", "error"); return; }
   localStorage.setItem(GH_KEY, JSON.stringify({ token }));
   const cfgBtn = document.getElementById("gh-config-btn");
-  if (cfgBtn) cfgBtn.classList.add("gh-footer-link--active");
+  if (cfgBtn) cfgBtn.style.display = "none";
+  const saveBtn = document.getElementById("gh-save-btn");
+  if (saveBtn) saveBtn.style.display = "";
   showGHStatus("Token enregistré !", "success");
   setTimeout(closeGHModal, 900);
 }
