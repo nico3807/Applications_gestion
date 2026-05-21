@@ -1648,7 +1648,9 @@
     {
       "day": 28,
       "weekday": "Je",
-      "events": {}
+      "events": {
+        "Réunion": "Réunion d'équipe 13h30"
+      }
     },
     {
       "day": 29,
@@ -1763,7 +1765,8 @@
         "MMI2-App": "entreprise S26",
         "MMI2-Dev": "stage S11",
         "MMI3-crea": "Semaine UE TEDS",
-        "MMI3-Dev": "Semaine UE TEDS"
+        "MMI3-Dev": "Semaine UE TEDS",
+        "MMI3-App": "Semaine UE TEDS"
       },
       "week": 25
     },
@@ -1772,7 +1775,8 @@
       "weekday": "Ma",
       "events": {
         "MMI3-crea": "Semaine UE TEDS",
-        "MMI3-Dev": "Semaine UE TEDS"
+        "MMI3-Dev": "Semaine UE TEDS",
+        "MMI3-App": "Semaine UE TEDS"
       }
     },
     {
@@ -1780,7 +1784,8 @@
       "weekday": "Me",
       "events": {
         "MMI3-crea": "Semaine UE TEDS",
-        "MMI3-Dev": "Semaine UE TEDS"
+        "MMI3-Dev": "Semaine UE TEDS",
+        "MMI3-App": "Semaine UE TEDS"
       }
     },
     {
