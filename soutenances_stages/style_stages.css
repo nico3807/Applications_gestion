@@ -389,6 +389,23 @@ a {
 .sname {
   font-weight: 500;
 }
+.sname-edit {
+  cursor: text;
+  outline: none;
+  border-radius: 3px;
+  padding: 1px 4px;
+  margin: -1px -4px;
+  transition: background 0.15s;
+  min-width: 20px;
+  display: inline-block;
+}
+.sname-edit:hover {
+  background: var(--surface3);
+}
+.sname-edit:focus {
+  background: var(--surface2);
+  box-shadow: 0 0 0 2px var(--accent);
+}
 .sname-empty {
   color: var(--muted);
   font-style: italic;
@@ -970,6 +987,13 @@ a {
   }
   .sname {
     font-weight: 600;
+  }
+  .sname-edit {
+    background: none !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    cursor: default !important;
   }
   .sname-empty {
     color: #aaa;

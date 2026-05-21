@@ -507,7 +507,8 @@ function renderJuries(level) {
       for (let m = 1; m <= CFG_MAX_CRENEAUX; m++) {
         const ck = `${level}_jury${juryN}_creneau${m}`;
         if (h[ck] === undefined) break;
-        rows += `<tr><td><span id="${ck}"></span></td><td><span class="sname"></span></td>${showParcours ? `<td><span class="${bi.cls}">${bi.lbl}</span></td>` : ""}<td><select class="tselect tselect-tuteur" id="${ck}_tuteur" data-type="tuteur" aria-label="Tuteur" onchange="saveT(this)"><option value="">—</option></select><span class="print-val"></span></td></tr>`;
+        const sk = `${level}_jury${juryN}_sname${m}`;
+        rows += `<tr><td><span id="${ck}"></span></td><td><span class="sname sname-edit" contenteditable="true" data-skey="${sk}" spellcheck="false"></span></td>${showParcours ? `<td><span class="${bi.cls}">${bi.lbl}</span></td>` : ""}<td><select class="tselect tselect-tuteur" id="${ck}_tuteur" data-type="tuteur" aria-label="Tuteur" onchange="saveT(this)"><option value="">—</option></select><span class="print-val"></span></td></tr>`;
       }
       html += `<div class="jcard"><div class="jcard-hdr"><span class="jury-name">Jury ${juryN}</span><span class="jury-date" id="${level}_jury${juryN}_date"></span></div><div class="jcard-meta">${meta}</div><table class="stable"><thead><tr><th>Horaire</th><th>Étudiant</th>${showParcours ? "<th>Parcours</th>" : ""}<th>Tuteur</th></tr></thead><tbody>${rows}</tbody></table></div>`;
     });
@@ -862,7 +863,45 @@ async function saveSelectionsToFile() {
     return;
   }
 
-  await saveToGitHub();
+  // Collect edited student names from the page
+  const editedNames = {};
+  document.querySelectorAll(".sname[data-skey]").forEach((el) => {
+    const key = el.getAttribute("data-skey");
+    const val = el.textContent.trim();
+    if (key) editedNames[key] = val;
+  });
+
+  // Check if any names changed
+  const changedNames = Object.entries(editedNames).filter(
+    ([k, v]) => (APP_CONFIG.etudiants[k] || "") !== v,
+  );
+
+  const ts = new Date().toLocaleString("fr-FR");
+  try {
+    await saveJsonToGitHub(
+      "soutenances_stages/donnees_stages.json",
+      buildJSON(),
+      `Mise à jour ${PAGE_ID} — ${ts}`,
+    );
+
+    if (changedNames.length > 0) {
+      const mergedEtudiants = { ...APP_CONFIG.etudiants };
+      for (const [k, v] of changedNames) {
+        if (v) mergedEtudiants[k] = v;
+        else delete mergedEtudiants[k];
+      }
+      await saveJsonToGitHub(
+        "soutenances_stages/etudiants_stages.json",
+        JSON.stringify(mergedEtudiants, null, 2),
+        `Mise à jour noms ${PAGE_ID} — ${ts}`,
+      );
+      APP_CONFIG.etudiants = mergedEtudiants;
+    }
+
+    showToast("✓ Sauvegarde sur GitHub réussie");
+  } catch (e) {
+    showToast("✗ GitHub : " + e.message);
+  }
 }
 
 /* ── Auto-load depuis le dossier courant (serveur local) ─────────── */
