@@ -84,19 +84,14 @@ window.AUTH = {
         <img class="auth-logo" src="../logo_mmi.jpg" alt="MMI">
         <h2 class="auth-title">Répartition MMI</h2>
         <p class="auth-sub">Accès réservé — identifiez-vous</p>
-        <input id="auth-login" class="auth-input" type="text"     placeholder="Identifiant"   autocomplete="username" autofocus>
-        <input id="auth-pwd"   class="auth-input" type="password" placeholder="Mot de passe"  autocomplete="current-password">
-        <button id="auth-btn"  class="auth-btn" onclick="AUTH._doLogin()">Connexion</button>
+        <form id="auth-form" autocomplete="on" onsubmit="event.preventDefault(); AUTH._doLogin();">
+          <input id="auth-login" class="auth-input" type="text"     placeholder="Identifiant"   autocomplete="username" autofocus>
+          <input id="auth-pwd"   class="auth-input" type="password" placeholder="Mot de passe"  autocomplete="current-password">
+          <button id="auth-btn"  class="auth-btn" type="submit">Connexion</button>
+        </form>
         <p id="auth-err" class="auth-err" style="display:none">Identifiant ou mot de passe incorrect.</p>
       </div>`;
     document.body.appendChild(ov);
-
-    document.getElementById("auth-login").addEventListener("keydown", (e) => {
-      if (e.key === "Enter") document.getElementById("auth-pwd").focus();
-    });
-    document.getElementById("auth-pwd").addEventListener("keydown", (e) => {
-      if (e.key === "Enter") AUTH._doLogin();
-    });
   },
 
   async _doLogin() {
