@@ -5,7 +5,7 @@ const PAGE_ID = (location.pathname.split("/").pop() || "index")
   .replace("_stages", "");
 const GH_KEY = "gh_cfg_v1";
 const GH_OWNER = "nico3807";
-const GH_REPO = "soutenances_portfolio";
+const GH_REPO = "Applications_gestion";
 const GH_BRANCH = "main";
 let APP_CONFIG = {
   enseignants: [],
@@ -134,7 +134,7 @@ function isGHConfigured() {
 }
 
 function ghFilePath() {
-  return `donnees_stages.json`;
+  return `soutenances_stages/donnees_stages.json`;
 }
 
 async function loadFromGitHub() {
@@ -167,7 +167,7 @@ async function loadHorairesFromGitHub() {
   const cfg = getGHConfig();
   if (!cfg || !cfg.token) return;
   try {
-    const url = `https://api.github.com/repos/${GH_OWNER}/${GH_REPO}/contents/horaires_stages.json?ref=${GH_BRANCH}`;
+    const url = `https://api.github.com/repos/${GH_OWNER}/${GH_REPO}/contents/soutenances_stages/horaires_stages.json?ref=${GH_BRANCH}`;
     const resp = await fetch(url, {
       headers: {
         Authorization: `token ${cfg.token}`,
@@ -225,7 +225,7 @@ async function saveJsonToGitHub(filename, jsonStr, message) {
 async function saveToGitHub() {
   try {
     await saveJsonToGitHub(
-      "donnees_stages.json",
+      "soutenances_stages/donnees_stages.json",
       buildJSON(),
       `Mise à jour ${PAGE_ID} — ${new Date().toLocaleString("fr-FR")}`,
     );
@@ -785,12 +785,12 @@ async function saveCfgModal() {
   try {
     const ts = new Date().toLocaleString("fr-FR");
     await saveJsonToGitHub(
-      "horaires_stages.json",
+      "soutenances_stages/horaires_stages.json",
       JSON.stringify(merged, null, 2),
       `Config horaires ${level} — ${ts}`,
     );
     await saveJsonToGitHub(
-      "donnees_stages.json",
+      "soutenances_stages/donnees_stages.json",
       buildJSON(),
       `Sync donnees ${level} — ${ts}`,
     );
@@ -820,7 +820,7 @@ async function saveCfgModal() {
       }
       Object.assign(mergedEtudiants, etudiantsEntries);
       await saveJsonToGitHub(
-        "etudiants_stages.json",
+        "soutenances_stages/etudiants_stages.json",
         JSON.stringify(mergedEtudiants, null, 2),
         `Candidats ${level} — ${ts}`,
       );
@@ -946,7 +946,7 @@ async function loadHoraires() {
     /* file:// or server error — try raw GitHub */
   }
   try {
-    const rawUrl = `https://raw.githubusercontent.com/${GH_OWNER}/${GH_REPO}/${GH_BRANCH}/horaires_stages.json`;
+    const rawUrl = `https://raw.githubusercontent.com/${GH_OWNER}/${GH_REPO}/${GH_BRANCH}/soutenances_stages/horaires_stages.json`;
     const resp = await fetch(rawUrl, { cache: "no-store" });
     if (resp.ok) {
       const data = await resp.json();
