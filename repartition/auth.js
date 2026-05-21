@@ -54,6 +54,7 @@ window.AUTH = {
     const s = _sess();
     return !!s && s.rw;
   },
+  isAdmin: () => _sess()?.login === "chefdep",
   user: () => _sess()?.login ?? null,
 
   async login(login, pwd) {
@@ -130,6 +131,9 @@ window.AUTH = {
   },
 
   applyPermissions() {
+    const navMods = document.getElementById("nav-modifications");
+    if (navMods) navMods.style.display = this.isAdmin() ? "" : "none";
+
     if (this.canWrite()) {
       document.body.classList.remove("auth-readonly");
       return;

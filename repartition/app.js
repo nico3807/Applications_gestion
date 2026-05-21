@@ -22,7 +22,37 @@ let APP_DATA = {
   affectations: {},
   enseignants: [],
   maquette_overrides: {},
+  modifications: [],
 };
+
+let _pendingMods = [];
+
+function _logMod(type, description, prev, next) {
+  if (!AUTH.canWrite()) return;
+  const now = new Date();
+  _pendingMods.push({
+    date: now.toLocaleDateString("fr-FR"),
+    heure: now.toLocaleTimeString("fr-FR", { hour: "2-digit", minute: "2-digit", second: "2-digit" }),
+    utilisateur: AUTH.user() || "?",
+    type,
+    description,
+    prev: String(prev ?? "—"),
+    next: String(next ?? "—"),
+  });
+}
+
+async function _flushMods() {
+  if (_pendingMods.length === 0) return;
+  APP_DATA.modifications.push(..._pendingMods);
+  _pendingMods = [];
+  if (isGHConfigured()) {
+    try {
+      await saveFileGH("modifications.json", APP_DATA.modifications, "Update modifications.json via Web UI");
+    } catch (e) {
+      console.warn("Could not save modifications.json:", e);
+    }
+  }
+}
 
 let currentView = "home";
 let currentParam = null;
@@ -53,6 +83,10 @@ function renderView() {
     document.getElementById("nav-services").classList.add("active");
   else if (currentView === "enseignants")
     document.getElementById("nav-enseignants").classList.add("active");
+  else if (currentView === "modifications") {
+    const nm = document.getElementById("nav-modifications");
+    if (nm) nm.classList.add("active");
+  }
 
   if (currentView === "home") renderHome(root);
   else if (currentView === "semestre") renderSemestre(root, currentParam);
@@ -61,6 +95,7 @@ function renderView() {
     renderMaquetteSemestre(root, currentParam);
   else if (currentView === "services") renderServices(root);
   else if (currentView === "enseignants") renderEnseignants(root);
+  else if (currentView === "modifications") renderModifications(root);
 
   AUTH.applyPermissions();
 }
@@ -180,12 +215,16 @@ function renderSemestre(root, sem) {
 }
 
 window.updateAff = function (sem, res, field, value) {
+  const prev = APP_DATA.affectations[sem]?.[res]?.[field] ?? "";
   if (["cm", "td", "tp"].includes(field)) value = parseFloat(value) || 0;
+  _logMod("Répartition", `${sem} / ${res} / ${field}`, prev, value);
   APP_DATA.affectations[sem][res][field] = value;
   if (field === "enseignant") renderView();
 };
 window.updateSub = function (sem, res, idx, field, value) {
+  const prev = APP_DATA.affectations[sem]?.[res]?.subrows?.[idx]?.[field] ?? "";
   if (["cm", "td", "tp"].includes(field)) value = parseFloat(value) || 0;
+  _logMod("Répartition", `${sem} / ${res} / sous-groupe ${idx + 1} / ${field}`, prev, value);
   APP_DATA.affectations[sem][res].subrows[idx][field] = value;
   if (field === "enseignant") renderView();
 };
@@ -263,12 +302,11 @@ function renderMaquetteSemestre(root, sem) {
 window.updateMaq = function (sem, res, field, value) {
   if (!APP_DATA.maquette_overrides[sem]) APP_DATA.maquette_overrides[sem] = {};
   if (!APP_DATA.maquette_overrides[sem][res])
-    APP_DATA.maquette_overrides[sem][res] = {
-      cm_final: 0,
-      td_final: 0,
-      tp_final: 0,
-    };
-  APP_DATA.maquette_overrides[sem][res][field] = parseFloat(value) || 0;
+    APP_DATA.maquette_overrides[sem][res] = { cm_final: 0, td_final: 0, tp_final: 0 };
+  const prev = APP_DATA.maquette_overrides[sem][res][field] ?? 0;
+  const newVal = parseFloat(value) || 0;
+  _logMod("Maquette", `${sem} / ${res} / ${field}`, prev, newVal);
+  APP_DATA.maquette_overrides[sem][res][field] = newVal;
 };
 
 /* ── Vue : Services ──────────────────────────────────────────────────────── */
@@ -552,19 +590,14 @@ window.addEns = function () {
   if (APP_DATA.enseignants.find((e) => e.id === id))
     return alert("Cet enseignant existe déjà.");
 
-  APP_DATA.enseignants.push({
-    id,
-    nom,
-    prenom,
-    is_vac,
-    service_du: du,
-    service_max: max,
-  });
+  APP_DATA.enseignants.push({ id, nom, prenom, is_vac, service_du: du, service_max: max });
+  _logMod("Enseignants", "Ajout", "—", id);
   renderView();
 };
 
 window.deleteEns = async function (i) {
   if (confirm("Supprimer cet enseignant ?")) {
+    _logMod("Enseignants", "Suppression", APP_DATA.enseignants[i].id, "—");
     APP_DATA.enseignants.splice(i, 1);
     renderView();
     if (isGHConfigured()) await saveEnseignantsGH();
@@ -615,6 +648,11 @@ window.saveEditEns = async function (i) {
   const is_vac = document.getElementById("edit_ens_vac").checked;
   const du = parseFloat(document.getElementById("edit_ens_du").value) || null;
   const max = parseFloat(document.getElementById("edit_ens_max").value) || null;
+
+  const e = APP_DATA.enseignants[i];
+  const prev = `${e.is_vac ? "Vacataire" : "Titulaire"}, dû:${e.service_du ?? "—"}, max:${e.service_max ?? "—"}`;
+  const next = `${is_vac ? "Vacataire" : "Titulaire"}, dû:${du ?? "—"}, max:${max ?? "—"}`;
+  _logMod("Enseignants", `Modification ${e.id}`, prev, next);
 
   APP_DATA.enseignants[i].is_vac = is_vac;
   APP_DATA.enseignants[i].service_du = du;
@@ -757,11 +795,8 @@ async function saveFileGH(filename, dataObj, msg) {
 window.saveAffectationsGH = async function () {
   if (!isGHConfigured()) return alert("Veuillez configurer GitHub d'abord !");
   try {
-    await saveFileGH(
-      "affectations.json",
-      APP_DATA.affectations,
-      "Update affectations.json via Web UI",
-    );
+    await _flushMods();
+    await saveFileGH("affectations.json", APP_DATA.affectations, "Update affectations.json via Web UI");
     showToast("Affectations sauvegardées sur GitHub !");
   } catch (e) {
     alert("Erreur: " + e.message);
@@ -781,11 +816,8 @@ window.saveEnseignantsGH = async function () {
   }
 
   try {
-    await saveFileGH(
-      "enseignants.json",
-      APP_DATA.enseignants,
-      "Update enseignants.json via Web UI",
-    );
+    await _flushMods();
+    await saveFileGH("enseignants.json", APP_DATA.enseignants, "Update enseignants.json via Web UI");
     showToast("Enseignants sauvegardés sur GitHub !");
   } catch (e) {
     alert("Erreur: " + e.message);
@@ -795,30 +827,72 @@ window.saveEnseignantsGH = async function () {
 window.saveMaquetteGH = async function () {
   if (!isGHConfigured()) return alert("Veuillez configurer GitHub d'abord !");
   try {
-    await saveFileGH(
-      "maquette_overrides.json",
-      APP_DATA.maquette_overrides,
-      "Update maquette_overrides.json via Web UI",
-    );
+    await _flushMods();
+    await saveFileGH("maquette_overrides.json", APP_DATA.maquette_overrides, "Update maquette_overrides.json via Web UI");
     showToast("Maquette sauvegardée sur GitHub !");
   } catch (e) {
     alert("Erreur: " + e.message);
   }
 };
 
+/* ── Vue : Journal des modifications ────────────────────────────────────── */
+function renderModifications(root) {
+  const mods = APP_DATA.modifications.slice().reverse();
+
+  let html = `
+    <div class="page-header">
+      <h1>Journal des modifications</h1>
+      <p class="subtitle">Modifications effectuées par les utilisateurs avec droits d'écriture</p>
+    </div>`;
+
+  if (mods.length === 0) {
+    html += `<p style="text-align:center; color:#6b7280; padding:3rem 0;">Aucune modification enregistrée.</p>`;
+    root.innerHTML = html;
+    return;
+  }
+
+  html += `<div class="table-wrapper"><table class="ressources-table">
+    <thead>
+      <tr>
+        <th style="width:90px">Date</th>
+        <th style="width:70px">Heure</th>
+        <th style="width:100px">Utilisateur</th>
+        <th>Type</th>
+        <th>Valeur précédente</th>
+        <th>Valeur modifiée</th>
+      </tr>
+    </thead>
+    <tbody>`;
+
+  mods.forEach((m, i) => {
+    const rowClass = i % 2 === 0 ? "mod-row-blue" : "mod-row-green";
+    html += `<tr class="${rowClass}">
+      <td>${m.date}</td>
+      <td>${m.heure}</td>
+      <td><strong>${m.utilisateur}</strong></td>
+      <td>${m.type}${m.description ? `<br><small class="mod-desc">${m.description}</small>` : ""}</td>
+      <td>${m.prev}</td>
+      <td>${m.next}</td>
+    </tr>`;
+  });
+
+  html += `</tbody></table></div>`;
+  root.innerHTML = html;
+}
+
 async function loadData() {
   // 1. Charge d'abord les fichiers locaux (fallback garanti)
   try {
-    const [aff, ens, maq] = await Promise.all([
+    const [aff, ens, maq, mods] = await Promise.all([
       fetch("data/affectations.json").then((r) => (r.ok ? r.json() : null)),
       fetch("data/enseignants.json").then((r) => (r.ok ? r.json() : null)),
-      fetch("data/maquette_overrides.json").then((r) =>
-        r.ok ? r.json() : null,
-      ),
+      fetch("data/maquette_overrides.json").then((r) => (r.ok ? r.json() : null)),
+      fetch("data/modifications.json").then((r) => (r.ok ? r.json() : null)),
     ]);
     if (aff) APP_DATA.affectations = aff;
     if (ens) APP_DATA.enseignants = ens;
     if (maq) APP_DATA.maquette_overrides = maq;
+    if (mods) APP_DATA.modifications = mods;
   } catch (e) {
     console.warn("Local load failed (file:// ?)", e);
   }
@@ -826,14 +900,16 @@ async function loadData() {
   // 2. Si GitHub est configuré, tente de récupérer les données (priorité sur local)
   if (isGHConfigured()) {
     try {
-      const [aff, ens, maq] = await Promise.all([
+      const [aff, ens, maq, mods] = await Promise.all([
         fetchGH("affectations.json"),
         fetchGH("enseignants.json"),
         fetchGH("maquette_overrides.json"),
+        fetchGH("modifications.json"),
       ]);
       if (aff) APP_DATA.affectations = aff;
       if (ens) APP_DATA.enseignants = ens;
       if (maq) APP_DATA.maquette_overrides = maq;
+      if (mods) APP_DATA.modifications = mods;
     } catch (e) {
       console.warn("GH load failed, données locales conservées", e);
     }

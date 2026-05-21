@@ -1028,6 +1028,41 @@ th.reel-col {
   font-style: italic;
 }
 
+/* ── Journal des modifications ── */
+.mod-row-blue {
+  background-color: #dce8f7;
+  color: #1e3a5f;
+  box-shadow: inset 4px 0 0 0 #2563eb;
+}
+.mod-row-blue td {
+  border-bottom: 1px solid #b8cfe8;
+}
+.mod-row-green {
+  background-color: #bbf7d0;
+  color: #14532d;
+  box-shadow: inset 4px 0 0 0 #4ade80;
+}
+.mod-row-green td {
+  border-bottom: 1px solid #86efac;
+}
+.mod-desc {
+  color: #6b7280;
+  font-size: 0.78rem;
+  font-weight: normal;
+  display: block;
+  margin-top: 2px;
+}
+
+/* ── Lien Journal dans la nav (admin) ── */
+.nav-link-admin {
+  margin-left: 0.5rem;
+  border: 1.5px solid rgba(255, 255, 255, 0.5);
+  font-weight: 600;
+}
+.nav-link-admin:hover {
+  background: rgba(255, 255, 255, 0.25);
+}
+
 /* ── Responsive ── */
 @media (max-width: 768px) {
   header {
