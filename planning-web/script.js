@@ -421,7 +421,8 @@ function buildMonthSection(monthName) {
     /* { groupe: { ev, sourceDay } } — sourceDay = jour où l'événement est stocké dans CAL */
     const appEvts = {};
     for (const day of week) {
-      if (!day || !day.dd || !day.dd.events) continue;
+      /* Seuls les événements du lundi (wi===0) s'affichent sur toute la semaine */
+      if (!day || !day.dd || !day.dd.events || day.wi !== 0) continue;
       for (const g of Object.keys(WEEK_SPAN)) {
         if (
           !appEvts[g] &&
@@ -537,7 +538,7 @@ function buildMonthSection(monthName) {
       /* Événements du jour */
       if (dd && dd.events) {
         Object.entries(dd.events).forEach(([g, ev]) => {
-          if (isWeekSpanning(g, ev)) return;
+          if (g in appEvts) return; /* déjà affiché en bandeau semaine */
           if (getCategory(ev) === "vacances") return;
           allEvts.push({ g, ev, sourceDay: d });
         });
