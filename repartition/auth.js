@@ -6,7 +6,7 @@
    Remplacer ensuite chaque "HASH_..." par la valeur retournée.
    ─────────────────────────────────────────────────────────────────────────── */
 const _U = {
-  chedep: {
+  chefdep: {
     h: "eeb705ce8d0aa8255bea1e65ac2633938eb36bb496b92695f8475428ef5313f1",
     rw: true,
   },
