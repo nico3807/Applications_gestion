@@ -361,7 +361,8 @@
       "day": 1,
       "weekday": "Sa",
       "events": {
-        "MMI1": "Tousaint"
+        "MMI1": "Tousaint",
+        "Férié": "Toussaint"
       }
     },
     {
@@ -421,7 +422,8 @@
       "day": 11,
       "weekday": "Ma",
       "events": {
-        "MMI1": "Armistice 1918"
+        "MMI1": "Armistice 1918",
+        "Férié": "Armistice"
       }
     },
     {
@@ -728,7 +730,8 @@
       "day": 1,
       "weekday": "Je",
       "events": {
-        "MMI1": "Jour de l'an"
+        "MMI1": "Jour de l'an",
+        "Férié": "Jour de l'an"
       }
     },
     {
@@ -1301,7 +1304,8 @@
       "day": 6,
       "weekday": "Lu",
       "events": {
-        "MMI1": "Paques"
+        "MMI1": "Paques",
+        "Férié": "Lundi de Pâques"
       },
       "week": 15
     },
@@ -1467,7 +1471,8 @@
       "day": 1,
       "weekday": "Ve",
       "events": {
-        "MMI1": "Fete du travail"
+        "MMI1": "Fete du travail",
+        "Férié": "Fête du Travail"
       }
     },
     {
@@ -1509,7 +1514,8 @@
       "day": 8,
       "weekday": "Ve",
       "events": {
-        "MMI1": "Victoire 8 mai"
+        "MMI1": "Victoire 8 mai",
+        "Férié": "Victoire 1945"
       }
     },
     {
@@ -1546,7 +1552,8 @@
       "day": 14,
       "weekday": "Je",
       "events": {
-        "MMI1": "ascension"
+        "MMI1": "ascension",
+        "Férié": "Ascension"
       }
     },
     {
@@ -1587,7 +1594,9 @@
     {
       "day": 20,
       "weekday": "Me",
-      "events": {}
+      "events": {
+        "MMI3-crea": "Soutenance Portfolio"
+      }
     },
     {
       "day": 21,
@@ -1613,7 +1622,9 @@
       "day": 25,
       "weekday": "Lu",
       "events": {
-        "MMI1": "Lundi de pentecote"
+        "MMI1": "Lundi de pentecote",
+        "Férié": "Lundi de Pentecôte",
+        "MMI3-crea": "Soutenance stage"
       }
     },
     {
@@ -1622,28 +1633,30 @@
       "events": {
         "MMI2-crea": "stage S08",
         "MMI2-App": "Entreprise",
-        "MMI3-crea": "Soutenances stages MMI3",
         "MMI3-App": "Entreprise",
         "MMI2-Dev": "stage S08",
-        "MMI3-Dev": "Soutenances stages MMI3"
+        "MMI3-crea": "Soutenance stage"
       }
     },
     {
       "day": 27,
       "weekday": "Me",
-      "events": {}
+      "events": {
+        "MMI3-crea": "Soutenance Portfolio"
+      }
     },
     {
       "day": 28,
       "weekday": "Je",
-      "events": {}
+      "events": {
+        "Réunion": "Réunion d'équipe 13h30"
+      }
     },
     {
       "day": 29,
       "weekday": "Ve",
       "events": {
         "MMI1": "journée d'appui",
-        "MMI3-crea": "Soutenances stages MMI3",
         "MMI3-Dev": "Soutenances stages MMI3"
       }
     },
@@ -1750,20 +1763,30 @@
         "MMI1": "SAE 2.03 Dev Web (DARTIES / TALLEUX)",
         "MMI2-crea": "stage S11",
         "MMI2-App": "entreprise S26",
+        "MMI2-Dev": "stage S11",
         "MMI3-crea": "Semaine UE TEDS",
-        "MMI2-Dev": "stage S11"
+        "MMI3-Dev": "Semaine UE TEDS",
+        "MMI3-App": "Semaine UE TEDS"
       },
       "week": 25
     },
     {
       "day": 16,
       "weekday": "Ma",
-      "events": {}
+      "events": {
+        "MMI3-crea": "Semaine UE TEDS",
+        "MMI3-Dev": "Semaine UE TEDS",
+        "MMI3-App": "Semaine UE TEDS"
+      }
     },
     {
       "day": 17,
       "weekday": "Me",
-      "events": {}
+      "events": {
+        "MMI3-crea": "Semaine UE TEDS",
+        "MMI3-Dev": "Semaine UE TEDS",
+        "MMI3-App": "Semaine UE TEDS"
+      }
     },
     {
       "day": 18,
@@ -1791,8 +1814,7 @@
       "day": 22,
       "weekday": "Lu",
       "events": {
-        "MMI1": "soutenances portfolio MMI1",
-        "MMI2-App": "rattrapages /+ préparation rapport d'alternance",
+        "MMI2-App": "Soutenances Porfolio",
         "MMI3-App": "Entreprise S27"
       },
       "week": 26
@@ -1800,28 +1822,35 @@
     {
       "day": 23,
       "weekday": "Ma",
-      "events": {}
+      "events": {
+        "MMI3-crea": "Soutenances Portfolio MMI3",
+        "MMI3-Dev": "Soutenances Portfolio"
+      }
     },
     {
       "day": 24,
       "weekday": "Me",
       "events": {
-        "MMI2-App": "portfolio MMI2"
+        "MMI2-App": "Soutenances alt-Canada",
+        "MMI1": "Soutenances portfolio MMI1"
       }
     },
     {
       "day": 25,
       "weekday": "Je",
       "events": {
-        "MMI2-crea": "Soutenances stages",
         "MMI2-App": "rattrapages /+ préparation rapport d'alternance",
-        "MMI2-Dev": "Soutenances stages"
+        "MMI2-crea": "Soutenances Portfolio MMI2",
+        "MMI2-Dev": "Soutenances Portfolio MMI2"
       }
     },
     {
       "day": 26,
       "weekday": "Ve",
-      "events": {}
+      "events": {
+        "MMI2-crea": "Soutenances Portfolio MMI2",
+        "MMI2-Dev": "Soutenances Portfolio MMI2"
+      }
     },
     {
       "day": 27,
@@ -1838,18 +1867,15 @@
       "weekday": "Lu",
       "events": {
         "MMI2-App": "Entreprise S27",
-        "MMI3-crea": "Soutenances Portfolio MMI3",
-        "MMI3-App": "Entreprise S28"
+        "MMI3-App": "Entreprise S28",
+        "MMI1": "Soutenances portfolio MMI1"
       },
       "week": 27
     },
     {
       "day": 30,
       "weekday": "ma",
-      "events": {
-        "MMI2-crea": "Soutenances Portfolio MMI2",
-        "MMI2-Dev": "Soutenances Portfolio MMI2"
-      }
+      "events": {}
     }
   ],
   "Juillet 2026": [
@@ -1857,10 +1883,8 @@
       "day": 1,
       "weekday": "Me",
       "events": {
-        "MMI2-crea": "Soutenances Portfolio MMI2",
         "MMI2-App": "Entreprise S27",
-        "MMI3-App": "Entreprise S28",
-        "MMI2-Dev": "Soutenances Portfolio MMI2"
+        "MMI3-App": "Entreprise S28"
       }
     },
     {
@@ -2219,7 +2243,9 @@
     {
       "day": 26,
       "weekday": "Me",
-      "events": {}
+      "events": {
+        "MMI3-App": "Soutenance alternance"
+      }
     },
     {
       "day": 27,
@@ -2232,9 +2258,7 @@
     {
       "day": 28,
       "weekday": "Ve",
-      "events": {
-        "MMI3-App": "soutenances"
-      }
+      "events": {}
     },
     {
       "day": 29,
