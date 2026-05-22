@@ -883,12 +883,14 @@ function deleteEvent() {
 
 /** Bascule vers la vue de duplication */
 function openDuplicateView() {
-  const { group, text } = currentDetailEvt;
+  const { group, text, monthName, day } = currentDetailEvt;
+  const [y, mo] = META[monthName];
+  const srcDate = `${y}-${String(mo).padStart(2, "0")}-${String(day).padStart(2, "0")}`;
 
   document.getElementById("dupGroup").textContent = group;
   document.getElementById("dupGroup").dataset.g = group;
   document.getElementById("dupTitle").textContent = text;
-  document.getElementById("dupStart").value = "";
+  document.getElementById("dupStart").value = srcDate;
   document.getElementById("dupEnd").value = "";
   document.getElementById("dupError").textContent = "";
   const _mmiGroups = ["MMI1","MMI2-crea","MMI2-Dev","MMI2-App","MMI3-crea","MMI3-Dev","MMI3-App"];
