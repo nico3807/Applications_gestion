@@ -1726,10 +1726,10 @@
       "day": 1,
       "weekday": "Lu",
       "events": {
+        "MMI1": "SAE 2.4 constuire sa présence en ligne / part 2",
         "MMI2-crea": "stage S09",
-        "MMI2-App": "Entreprise S17",
         "MMI2-Dev": "stage S09",
-        "MMI1": "SAE 2.4 constuire sa présence en ligne / part 2"
+        "MMI2-App": "Entreprise S17"
       },
       "week": 23
     },
@@ -1737,28 +1737,40 @@
       "day": 2,
       "weekday": "Ma",
       "events": {
-        "MMI1": "SAE 2.4 constuire sa présence en ligne / part 2"
+        "MMI1": "SAE 2.4 constuire sa présence en ligne / part 2",
+        "MMI2-crea": "stage S09",
+        "MMI2-Dev": "stage S09",
+        "MMI2-App": "Entreprise S17"
       }
     },
     {
       "day": 3,
       "weekday": "Me",
       "events": {
-        "MMI1": "SAE 2.4 constuire sa présence en ligne / part 2"
+        "MMI1": "SAE 2.4 constuire sa présence en ligne / part 2",
+        "MMI2-crea": "stage S09",
+        "MMI2-Dev": "stage S09",
+        "MMI2-App": "Entreprise S17"
       }
     },
     {
       "day": 4,
       "weekday": "Je",
       "events": {
-        "MMI1": "SAE 2.4 constuire sa présence en ligne / part 2"
+        "MMI1": "SAE 2.4 constuire sa présence en ligne / part 2",
+        "MMI2-crea": "stage S09",
+        "MMI2-Dev": "stage S09",
+        "MMI2-App": "Entreprise S17"
       }
     },
     {
       "day": 5,
       "weekday": "Ve",
       "events": {
-        "MMI1": "SAE 2.4 constuire sa présence en ligne / part 2"
+        "MMI1": "SAE 2.4 constuire sa présence en ligne / part 2",
+        "MMI2-crea": "stage S09",
+        "MMI2-Dev": "stage S09",
+        "MMI2-App": "Entreprise S17"
       }
     },
     {
@@ -1918,7 +1930,8 @@
       "weekday": "Ma",
       "events": {
         "MMI3-crea": "Soutenances Portfolio MMI3",
-        "MMI3-Dev": "Soutenances Portfolio"
+        "MMI3-Dev": "Soutenances Portfolio",
+        "MMI3-App": "Entreprise S27"
       }
     },
     {
@@ -1926,7 +1939,8 @@
       "weekday": "Me",
       "events": {
         "MMI2-App": "Soutenances alt-Canada",
-        "MMI1": "Soutenances portfolio MMI1"
+        "MMI1": "Soutenances portfolio MMI1",
+        "MMI3-App": "Entreprise S27"
       }
     },
     {
@@ -1935,7 +1949,8 @@
       "events": {
         "MMI2-App": "rattrapages /+ préparation rapport d'alternance",
         "MMI2-crea": "Soutenance stage",
-        "MMI2-Dev": "Soutenance stage"
+        "MMI2-Dev": "Soutenance stage",
+        "MMI3-App": "Entreprise S27"
       }
     },
     {
@@ -1943,7 +1958,8 @@
       "weekday": "Ve",
       "events": {
         "MMI2-crea": "Soutenance stage",
-        "MMI2-Dev": "Soutenance stage"
+        "MMI2-Dev": "Soutenance stage",
+        "MMI3-App": "Entreprise S27"
       }
     },
     {
