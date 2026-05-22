@@ -1471,7 +1471,6 @@
       "day": 1,
       "weekday": "Ve",
       "events": {
-        "MMI1": "Fete du travail",
         "Férié": "Fête du Travail"
       }
     },
@@ -1490,31 +1489,42 @@
       "weekday": "Lu",
       "events": {
         "MMI2-crea": "stage S05",
-        "MMI2-App": "Entreprise S11",
-        "MMI2-Dev": "stage S05"
+        "MMI2-Dev": "stage S05",
+        "MMI2-App": "Entreprise S11"
       },
       "week": 19
     },
     {
       "day": 5,
       "weekday": "Ma",
-      "events": {}
+      "events": {
+        "MMI2-crea": "stage S05",
+        "MMI2-Dev": "stage S05",
+        "MMI2-App": "Entreprise S11"
+      }
     },
     {
       "day": 6,
       "weekday": "Me",
-      "events": {}
+      "events": {
+        "MMI2-crea": "stage S05",
+        "MMI2-Dev": "stage S05",
+        "MMI2-App": "Entreprise S11"
+      }
     },
     {
       "day": 7,
       "weekday": "Je",
-      "events": {}
+      "events": {
+        "MMI2-crea": "stage S05",
+        "MMI2-Dev": "stage S05",
+        "MMI2-App": "Entreprise S11"
+      }
     },
     {
       "day": 8,
       "weekday": "Ve",
       "events": {
-        "MMI1": "Victoire 8 mai",
         "Férié": "Victoire 1945"
       }
     },
@@ -1541,14 +1551,16 @@
       "day": 12,
       "weekday": "Ma",
       "events": {
-        "MMI2-crea": "Stage"
+        "MMI2-crea": "Stage",
+        "MMI2-App": "Entreprise S11"
       }
     },
     {
       "day": 13,
       "weekday": "Me",
       "events": {
-        "MMI2-crea": "Stage"
+        "MMI2-crea": "Stage",
+        "MMI2-App": "Entreprise S11"
       }
     },
     {
@@ -1563,7 +1575,8 @@
       "weekday": "Ve",
       "events": {
         "MMI1": "journée d'appui",
-        "MMI3-crea": "journée d'appui"
+        "MMI3-crea": "journée d'appui",
+        "MMI2-App": "Entreprise S11"
       }
     },
     {
@@ -1582,34 +1595,57 @@
       "events": {
         "MMI1": "SAE 2.01 S. De Velder",
         "MMI2-crea": "stage S07",
+        "MMI2-Dev": "stage S07",
         "MMI2-App": "Entreprise S11",
-        "MMI3-App": "Entreprise S24",
-        "MMI2-Dev": "stage S07"
+        "MMI3-App": "Entreprise S24"
       },
       "week": 21
     },
     {
       "day": 19,
       "weekday": "Ma",
-      "events": {}
+      "events": {
+        "MMI1": "SAE 2.01 S. De Velder",
+        "MMI2-crea": "stage S07",
+        "MMI2-Dev": "stage S07",
+        "MMI2-App": "Entreprise S11",
+        "MMI3-App": "Entreprise S24"
+      }
     },
     {
       "day": 20,
       "weekday": "Me",
       "events": {
         "MMI3-Dev": "Soutenance stage",
-        "MMI3-crea": "Soutenance stage"
+        "MMI3-crea": "Soutenance stage",
+        "MMI1": "SAE 2.01 S. De Velder",
+        "MMI2-crea": "stage S07",
+        "MMI2-Dev": "stage S07",
+        "MMI2-App": "Entreprise S11",
+        "MMI3-App": "Entreprise S24"
       }
     },
     {
       "day": 21,
       "weekday": "Je",
-      "events": {}
+      "events": {
+        "MMI1": "SAE 2.01 S. De Velder",
+        "MMI2-crea": "stage S07",
+        "MMI2-Dev": "stage S07",
+        "MMI2-App": "Entreprise S11",
+        "MMI3-App": "Entreprise S24"
+      }
     },
     {
       "day": 22,
       "weekday": "Ve",
-      "events": {}
+      "events": {
+        "MMI1": "SAE 2.01 S. De Velder",
+        "MMI2-crea": "stage S07",
+        "MMI2-Dev": "stage S07",
+        "MMI2-App": "Entreprise S11",
+        "MMI3-App": "Entreprise S24"
+      }
     },
     {
       "day": 23,
