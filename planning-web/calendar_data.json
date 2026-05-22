@@ -1532,27 +1532,29 @@
       "day": 11,
       "weekday": "Lu",
       "events": {
-        "MMI2-crea": "stage S06",
-        "MMI2-App": "Entreprise S11",
-        "MMI2-Dev": "stage S06"
+        "MMI2-crea": "Stage",
+        "MMI2-App": "Entreprise S11"
       },
       "week": 20
     },
     {
       "day": 12,
       "weekday": "Ma",
-      "events": {}
+      "events": {
+        "MMI2-crea": "Stage"
+      }
     },
     {
       "day": 13,
       "weekday": "Me",
-      "events": {}
+      "events": {
+        "MMI2-crea": "Stage"
+      }
     },
     {
       "day": 14,
       "weekday": "Je",
       "events": {
-        "MMI1": "ascension",
         "Férié": "Ascension"
       }
     },
@@ -1595,7 +1597,8 @@
       "day": 20,
       "weekday": "Me",
       "events": {
-        "MMI3-crea": "Soutenance Portfolio"
+        "MMI3-Dev": "Soutenance stage",
+        "MMI3-crea": "Soutenance stage"
       }
     },
     {
@@ -1623,33 +1626,42 @@
       "weekday": "Lu",
       "events": {
         "MMI1": "Lundi de pentecote",
-        "Férié": "Lundi de Pentecôte",
-        "MMI3-crea": "Soutenance stage"
+        "Férié": "Lundi de Pentecôte"
       }
     },
     {
       "day": 26,
       "weekday": "Ma",
       "events": {
-        "MMI2-crea": "stage S08",
-        "MMI2-App": "Entreprise",
+        "MMI3-crea": "Soutenance stage",
+        "MMI3-Dev": "Soutenance stage",
         "MMI3-App": "Entreprise",
+        "MMI2-App": "Entreprise",
         "MMI2-Dev": "stage S08",
-        "MMI3-crea": "Soutenance stage"
+        "MMI2-crea": "stage S08"
       }
     },
     {
       "day": 27,
       "weekday": "Me",
       "events": {
-        "MMI3-crea": "Soutenance Portfolio"
+        "MMI3-crea": "Soutenance Portfolio",
+        "MMI3-Dev": "Soutenance stage",
+        "MMI3-App": "Entreprise",
+        "MMI2-App": "Entreprise",
+        "MMI2-Dev": "stage S08",
+        "MMI2-crea": "stage S08"
       }
     },
     {
       "day": 28,
       "weekday": "Je",
       "events": {
-        "Réunion": "Réunion d'équipe 13h30"
+        "Réunion": "Réunion d'équipe 13h30",
+        "MMI3-App": "Entreprise",
+        "MMI2-App": "Entreprise",
+        "MMI2-Dev": "stage S08",
+        "MMI2-crea": "stage S08"
       }
     },
     {
@@ -1657,7 +1669,10 @@
       "weekday": "Ve",
       "events": {
         "MMI1": "journée d'appui",
-        "MMI3-Dev": "Soutenances stages MMI3"
+        "MMI3-App": "Entreprise",
+        "MMI2-App": "Entreprise",
+        "MMI2-Dev": "stage S08",
+        "MMI2-crea": "stage S08"
       }
     },
     {
@@ -1676,32 +1691,40 @@
       "day": 1,
       "weekday": "Lu",
       "events": {
-        "MMI1": "SAE 2.4 constuire sa présence en ligne / part 2",
         "MMI2-crea": "stage S09",
         "MMI2-App": "Entreprise S17",
-        "MMI2-Dev": "stage S09"
+        "MMI2-Dev": "stage S09",
+        "MMI1": "SAE 2.4 constuire sa présence en ligne / part 2"
       },
       "week": 23
     },
     {
       "day": 2,
       "weekday": "Ma",
-      "events": {}
+      "events": {
+        "MMI1": "SAE 2.4 constuire sa présence en ligne / part 2"
+      }
     },
     {
       "day": 3,
       "weekday": "Me",
-      "events": {}
+      "events": {
+        "MMI1": "SAE 2.4 constuire sa présence en ligne / part 2"
+      }
     },
     {
       "day": 4,
       "weekday": "Je",
-      "events": {}
+      "events": {
+        "MMI1": "SAE 2.4 constuire sa présence en ligne / part 2"
+      }
     },
     {
       "day": 5,
       "weekday": "Ve",
-      "events": {}
+      "events": {
+        "MMI1": "SAE 2.4 constuire sa présence en ligne / part 2"
+      }
     },
     {
       "day": 6,
@@ -1717,7 +1740,10 @@
       "day": 8,
       "weekday": "Lu",
       "events": {
-        "MMI1": "Pentecote"
+        "MMI2-crea": "stage S10",
+        "MMI2-Dev": "stage S10",
+        "MMI2-App": "Entreprise S26",
+        "MMI3-App": "Entreprise S26"
       },
       "week": 24
     },
@@ -1725,26 +1751,42 @@
       "day": 9,
       "weekday": "Ma",
       "events": {
+        "Autre": "Visite CCN",
         "MMI2-crea": "stage S10",
+        "MMI2-Dev": "stage S10",
         "MMI2-App": "Entreprise S26",
-        "MMI3-App": "Entreprise S26",
-        "MMI2-Dev": "stage S10"
+        "MMI3-App": "Entreprise S26"
       }
     },
     {
       "day": 10,
       "weekday": "Me",
-      "events": {}
+      "events": {
+        "MMI2-crea": "stage S10",
+        "MMI2-Dev": "stage S10",
+        "MMI2-App": "Entreprise S26",
+        "MMI3-App": "Entreprise S26"
+      }
     },
     {
       "day": 11,
       "weekday": "Je",
-      "events": {}
+      "events": {
+        "MMI2-crea": "stage S10",
+        "MMI2-Dev": "stage S10",
+        "MMI2-App": "Entreprise S26",
+        "MMI3-App": "Entreprise S26"
+      }
     },
     {
       "day": 12,
       "weekday": "Ve",
-      "events": {}
+      "events": {
+        "MMI2-crea": "stage S10",
+        "MMI2-Dev": "stage S10",
+        "MMI2-App": "Entreprise S26",
+        "MMI3-App": "Entreprise S26"
+      }
     },
     {
       "day": 13,
@@ -1840,17 +1882,13 @@
       "weekday": "Je",
       "events": {
         "MMI2-App": "rattrapages /+ préparation rapport d'alternance",
-        "MMI2-crea": "Soutenances Portfolio MMI2",
-        "MMI2-Dev": "Soutenances Portfolio MMI2"
+        "MMI2-crea": "Soutenance stage"
       }
     },
     {
       "day": 26,
       "weekday": "Ve",
-      "events": {
-        "MMI2-crea": "Soutenances Portfolio MMI2",
-        "MMI2-Dev": "Soutenances Portfolio MMI2"
-      }
+      "events": {}
     },
     {
       "day": 27,
