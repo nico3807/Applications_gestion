@@ -1,281 +1,2587 @@
 {
   "Septembre 2026": [
-    {"day": 1, "weekday": "Tu", "events": {}},
-    {"day": 2, "weekday": "We", "events": {}},
-    {"day": 3, "weekday": "Th", "events": {}},
-    {"day": 4, "weekday": "Fr", "events": {}},
-    {"day": 5, "weekday": "Sa", "events": {}},
-    {"day": 6, "weekday": "Su", "events": {}},
-    {"day": 7, "weekday": "Mo", "events": {}, "week": 37},
-    {"day": 8, "weekday": "Tu", "events": {}},
-    {"day": 9, "weekday": "We", "events": {}},
-    {"day": 10, "weekday": "Th", "events": {}},
-    {"day": 11, "weekday": "Fr", "events": {}},
-    {"day": 12, "weekday": "Sa", "events": {}},
-    {"day": 13, "weekday": "Su", "events": {}},
-    {"day": 14, "weekday": "Mo", "events": {}, "week": 38},
-    {"day": 15, "weekday": "Tu", "events": {}},
-    {"day": 16, "weekday": "We", "events": {}},
-    {"day": 17, "weekday": "Th", "events": {}},
-    {"day": 18, "weekday": "Fr", "events": {}},
-    {"day": 19, "weekday": "Sa", "events": {}},
-    {"day": 20, "weekday": "Su", "events": {}},
-    {"day": 21, "weekday": "Mo", "events": {"MMI3-App": "Alternance"}, "week": 39},
-    {"day": 22, "weekday": "Tu", "events": {"MMI3-App": "Alternance"}},
-    {"day": 23, "weekday": "We", "events": {"MMI3-App": "Alternance"}},
-    {"day": 24, "weekday": "Th", "events": {"MMI3-App": "Alternance"}},
-    {"day": 25, "weekday": "Fr", "events": {"MMI3-App": "Alternance"}},
-    {"day": 26, "weekday": "Sa", "events": {}},
-    {"day": 27, "weekday": "Su", "events": {}},
-    {"day": 28, "weekday": "Mo", "events": {"MMI-App": "Alternance"}, "week": 40},
-    {"day": 29, "weekday": "Tu", "events": {"MMI-App": "Alternance"}},
-    {"day": 30, "weekday": "We", "events": {"MMI-App": "Alternance"}}
+    {
+      "day": 1,
+      "weekday": "Tu",
+      "events": {}
+    },
+    {
+      "day": 2,
+      "weekday": "We",
+      "events": {}
+    },
+    {
+      "day": 3,
+      "weekday": "Th",
+      "events": {}
+    },
+    {
+      "day": 4,
+      "weekday": "Fr",
+      "events": {}
+    },
+    {
+      "day": 5,
+      "weekday": "Sa",
+      "events": {}
+    },
+    {
+      "day": 6,
+      "weekday": "Su",
+      "events": {}
+    },
+    {
+      "day": 7,
+      "weekday": "Mo",
+      "events": {},
+      "week": 37
+    },
+    {
+      "day": 8,
+      "weekday": "Tu",
+      "events": {}
+    },
+    {
+      "day": 9,
+      "weekday": "We",
+      "events": {}
+    },
+    {
+      "day": 10,
+      "weekday": "Th",
+      "events": {}
+    },
+    {
+      "day": 11,
+      "weekday": "Fr",
+      "events": {}
+    },
+    {
+      "day": 12,
+      "weekday": "Sa",
+      "events": {}
+    },
+    {
+      "day": 13,
+      "weekday": "Su",
+      "events": {}
+    },
+    {
+      "day": 14,
+      "weekday": "Mo",
+      "events": {},
+      "week": 38
+    },
+    {
+      "day": 15,
+      "weekday": "Tu",
+      "events": {}
+    },
+    {
+      "day": 16,
+      "weekday": "We",
+      "events": {}
+    },
+    {
+      "day": 17,
+      "weekday": "Th",
+      "events": {}
+    },
+    {
+      "day": 18,
+      "weekday": "Fr",
+      "events": {}
+    },
+    {
+      "day": 19,
+      "weekday": "Sa",
+      "events": {}
+    },
+    {
+      "day": 20,
+      "weekday": "Su",
+      "events": {}
+    },
+    {
+      "day": 21,
+      "weekday": "Mo",
+      "events": {
+        "MMI3-App": "Alternance"
+      },
+      "week": 39
+    },
+    {
+      "day": 22,
+      "weekday": "Tu",
+      "events": {
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 23,
+      "weekday": "We",
+      "events": {
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 24,
+      "weekday": "Th",
+      "events": {
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 25,
+      "weekday": "Fr",
+      "events": {
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 26,
+      "weekday": "Sa",
+      "events": {}
+    },
+    {
+      "day": 27,
+      "weekday": "Su",
+      "events": {}
+    },
+    {
+      "day": 28,
+      "weekday": "Mo",
+      "events": {
+        "MMI-App": "Alternance"
+      },
+      "week": 40
+    },
+    {
+      "day": 29,
+      "weekday": "Tu",
+      "events": {
+        "MMI-App": "Alternance"
+      }
+    },
+    {
+      "day": 30,
+      "weekday": "We",
+      "events": {
+        "MMI-App": "Alternance"
+      }
+    }
   ],
   "Octobre 2026": [
-    {"day": 1, "weekday": "Th", "events": {"MMI-App": "Alternance"}},
-    {"day": 2, "weekday": "Fr", "events": {"MMI-App": "Alternance"}},
-    {"day": 3, "weekday": "Sa", "events": {}},
-    {"day": 4, "weekday": "Su", "events": {}},
-    {"day": 5, "weekday": "Mo", "events": {"MMI3-App": "Alternance"}, "week": 41},
-    {"day": 6, "weekday": "Tu", "events": {"MMI3-App": "Alternance"}},
-    {"day": 7, "weekday": "We", "events": {"MMI3-App": "Alternance"}},
-    {"day": 8, "weekday": "Th", "events": {"MMI3-App": "Alternance"}},
-    {"day": 9, "weekday": "Fr", "events": {"MMI3-App": "Alternance"}},
-    {"day": 10, "weekday": "Sa", "events": {}},
-    {"day": 11, "weekday": "Su", "events": {}},
-    {"day": 12, "weekday": "Mo", "events": {"MMI-App": "Alternance"}, "week": 42},
-    {"day": 13, "weekday": "Tu", "events": {"MMI-App": "Alternance"}},
-    {"day": 14, "weekday": "We", "events": {"MMI-App": "Alternance"}},
-    {"day": 15, "weekday": "Th", "events": {"MMI-App": "Alternance"}},
-    {"day": 16, "weekday": "Fr", "events": {"MMI-App": "Alternance"}},
-    {"day": 17, "weekday": "Sa", "events": {}},
-    {"day": 18, "weekday": "Su", "events": {}},
-    {"day": 19, "weekday": "Mo", "events": {"MMI3-App": "Alternance"}, "week": 43},
-    {"day": 20, "weekday": "Tu", "events": {"MMI3-App": "Alternance"}},
-    {"day": 21, "weekday": "We", "events": {"MMI3-App": "Alternance"}},
-    {"day": 22, "weekday": "Th", "events": {"MMI3-App": "Alternance"}},
-    {"day": 23, "weekday": "Fr", "events": {"MMI3-App": "Alternance"}},
-    {"day": 24, "weekday": "Sa", "events": {}},
-    {"day": 25, "weekday": "Su", "events": {}},
-    {"day": 26, "weekday": "Mo", "events": {"MMI-App": "Alternance", "MMI3-App": "Alternance"}, "week": 44},
-    {"day": 27, "weekday": "Tu", "events": {"MMI-App": "Alternance", "MMI3-App": "Alternance"}},
-    {"day": 28, "weekday": "We", "events": {"MMI-App": "Alternance", "MMI3-App": "Alternance"}},
-    {"day": 29, "weekday": "Th", "events": {"MMI-App": "Alternance", "MMI3-App": "Alternance"}},
-    {"day": 30, "weekday": "Fr", "events": {"MMI-App": "Alternance", "MMI3-App": "Alternance"}},
-    {"day": 31, "weekday": "Sa", "events": {}}
+    {
+      "day": 1,
+      "weekday": "Th",
+      "events": {
+        "MMI-App": "Alternance"
+      }
+    },
+    {
+      "day": 2,
+      "weekday": "Fr",
+      "events": {
+        "MMI-App": "Alternance"
+      }
+    },
+    {
+      "day": 3,
+      "weekday": "Sa",
+      "events": {}
+    },
+    {
+      "day": 4,
+      "weekday": "Su",
+      "events": {}
+    },
+    {
+      "day": 5,
+      "weekday": "Mo",
+      "events": {
+        "MMI3-App": "Alternance"
+      },
+      "week": 41
+    },
+    {
+      "day": 6,
+      "weekday": "Tu",
+      "events": {
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 7,
+      "weekday": "We",
+      "events": {
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 8,
+      "weekday": "Th",
+      "events": {
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 9,
+      "weekday": "Fr",
+      "events": {
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 10,
+      "weekday": "Sa",
+      "events": {}
+    },
+    {
+      "day": 11,
+      "weekday": "Su",
+      "events": {}
+    },
+    {
+      "day": 12,
+      "weekday": "Mo",
+      "events": {
+        "MMI-App": "Alternance"
+      },
+      "week": 42
+    },
+    {
+      "day": 13,
+      "weekday": "Tu",
+      "events": {
+        "MMI-App": "Alternance"
+      }
+    },
+    {
+      "day": 14,
+      "weekday": "We",
+      "events": {
+        "MMI-App": "Alternance"
+      }
+    },
+    {
+      "day": 15,
+      "weekday": "Th",
+      "events": {
+        "MMI-App": "Alternance"
+      }
+    },
+    {
+      "day": 16,
+      "weekday": "Fr",
+      "events": {
+        "MMI-App": "Alternance"
+      }
+    },
+    {
+      "day": 17,
+      "weekday": "Sa",
+      "events": {}
+    },
+    {
+      "day": 18,
+      "weekday": "Su",
+      "events": {}
+    },
+    {
+      "day": 19,
+      "weekday": "Mo",
+      "events": {
+        "MMI3-App": "Alternance"
+      },
+      "week": 43
+    },
+    {
+      "day": 20,
+      "weekday": "Tu",
+      "events": {
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 21,
+      "weekday": "We",
+      "events": {
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 22,
+      "weekday": "Th",
+      "events": {
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 23,
+      "weekday": "Fr",
+      "events": {
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 24,
+      "weekday": "Sa",
+      "events": {
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 25,
+      "weekday": "Su",
+      "events": {
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 26,
+      "weekday": "Mo",
+      "events": {
+        "MMI-App": "Alternance",
+        "MMI3-App": "Alternance"
+      },
+      "week": 44
+    },
+    {
+      "day": 27,
+      "weekday": "Tu",
+      "events": {
+        "MMI-App": "Alternance",
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 28,
+      "weekday": "We",
+      "events": {
+        "MMI-App": "Alternance",
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 29,
+      "weekday": "Th",
+      "events": {
+        "MMI-App": "Alternance",
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 30,
+      "weekday": "Fr",
+      "events": {
+        "MMI-App": "Alternance",
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 31,
+      "weekday": "Sa",
+      "events": {}
+    }
   ],
   "Novembre 2026": [
-    {"day": 1, "weekday": "Su", "events": {}},
-    {"day": 2, "weekday": "Mo", "events": {}, "week": 45},
-    {"day": 3, "weekday": "Tu", "events": {}},
-    {"day": 4, "weekday": "We", "events": {}},
-    {"day": 5, "weekday": "Th", "events": {}},
-    {"day": 6, "weekday": "Fr", "events": {}},
-    {"day": 7, "weekday": "Sa", "events": {}},
-    {"day": 8, "weekday": "Su", "events": {}},
-    {"day": 9, "weekday": "Mo", "events": {"MMI3-App": "Alternance"}, "week": 46},
-    {"day": 10, "weekday": "Tu", "events": {"MMI3-App": "Alternance"}},
-    {"day": 11, "weekday": "We", "events": {"Férié": "Toussaint"}},
-    {"day": 12, "weekday": "Th", "events": {"MMI3-App": "Alternance"}},
-    {"day": 13, "weekday": "Fr", "events": {"MMI3-App": "Alternance"}},
-    {"day": 14, "weekday": "Sa", "events": {}},
-    {"day": 15, "weekday": "Su", "events": {}},
-    {"day": 16, "weekday": "Mo", "events": {"MMI-App": "Alternance"}, "week": 47},
-    {"day": 17, "weekday": "Tu", "events": {"MMI-App": "Alternance"}},
-    {"day": 18, "weekday": "We", "events": {"MMI-App": "Alternance"}},
-    {"day": 19, "weekday": "Th", "events": {"MMI-App": "Alternance"}},
-    {"day": 20, "weekday": "Fr", "events": {"MMI-App": "Alternance"}},
-    {"day": 21, "weekday": "Sa", "events": {}},
-    {"day": 22, "weekday": "Su", "events": {}},
-    {"day": 23, "weekday": "Mo", "events": {"MMI3-App": "Alternance"}, "week": 48},
-    {"day": 24, "weekday": "Tu", "events": {"MMI3-App": "Alternance"}},
-    {"day": 25, "weekday": "We", "events": {"MMI3-App": "Alternance"}},
-    {"day": 26, "weekday": "Th", "events": {"MMI3-App": "Alternance"}},
-    {"day": 27, "weekday": "Fr", "events": {"MMI3-App": "Alternance"}},
-    {"day": 28, "weekday": "Sa", "events": {}},
-    {"day": 29, "weekday": "Su", "events": {}},
-    {"day": 30, "weekday": "Mo", "events": {"MMI-App": "Alternance"}, "week": 49}
+    {
+      "day": 1,
+      "weekday": "Su",
+      "events": {}
+    },
+    {
+      "day": 2,
+      "weekday": "Mo",
+      "events": {},
+      "week": 45
+    },
+    {
+      "day": 3,
+      "weekday": "Tu",
+      "events": {}
+    },
+    {
+      "day": 4,
+      "weekday": "We",
+      "events": {}
+    },
+    {
+      "day": 5,
+      "weekday": "Th",
+      "events": {}
+    },
+    {
+      "day": 6,
+      "weekday": "Fr",
+      "events": {}
+    },
+    {
+      "day": 7,
+      "weekday": "Sa",
+      "events": {}
+    },
+    {
+      "day": 8,
+      "weekday": "Su",
+      "events": {}
+    },
+    {
+      "day": 9,
+      "weekday": "Mo",
+      "events": {
+        "MMI3-App": "Alternance"
+      },
+      "week": 46
+    },
+    {
+      "day": 10,
+      "weekday": "Tu",
+      "events": {
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 11,
+      "weekday": "We",
+      "events": {
+        "Férié": "Toussaint"
+      }
+    },
+    {
+      "day": 12,
+      "weekday": "Th",
+      "events": {
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 13,
+      "weekday": "Fr",
+      "events": {
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 14,
+      "weekday": "Sa",
+      "events": {}
+    },
+    {
+      "day": 15,
+      "weekday": "Su",
+      "events": {}
+    },
+    {
+      "day": 16,
+      "weekday": "Mo",
+      "events": {
+        "MMI-App": "Alternance"
+      },
+      "week": 47
+    },
+    {
+      "day": 17,
+      "weekday": "Tu",
+      "events": {
+        "MMI-App": "Alternance"
+      }
+    },
+    {
+      "day": 18,
+      "weekday": "We",
+      "events": {
+        "MMI-App": "Alternance"
+      }
+    },
+    {
+      "day": 19,
+      "weekday": "Th",
+      "events": {
+        "MMI-App": "Alternance"
+      }
+    },
+    {
+      "day": 20,
+      "weekday": "Fr",
+      "events": {
+        "MMI-App": "Alternance"
+      }
+    },
+    {
+      "day": 21,
+      "weekday": "Sa",
+      "events": {}
+    },
+    {
+      "day": 22,
+      "weekday": "Su",
+      "events": {}
+    },
+    {
+      "day": 23,
+      "weekday": "Mo",
+      "events": {
+        "MMI3-App": "Alternance"
+      },
+      "week": 48
+    },
+    {
+      "day": 24,
+      "weekday": "Tu",
+      "events": {
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 25,
+      "weekday": "We",
+      "events": {
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 26,
+      "weekday": "Th",
+      "events": {
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 27,
+      "weekday": "Fr",
+      "events": {
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 28,
+      "weekday": "Sa",
+      "events": {}
+    },
+    {
+      "day": 29,
+      "weekday": "Su",
+      "events": {}
+    },
+    {
+      "day": 30,
+      "weekday": "Mo",
+      "events": {
+        "MMI-App": "Alternance"
+      },
+      "week": 49
+    }
   ],
   "Décembre 2026": [
-    {"day": 1, "weekday": "Tu", "events": {"MMI-App": "Alternance"}},
-    {"day": 2, "weekday": "We", "events": {"MMI-App": "Alternance"}},
-    {"day": 3, "weekday": "Th", "events": {"MMI-App": "Alternance"}},
-    {"day": 4, "weekday": "Fr", "events": {"MMI-App": "Alternance"}},
-    {"day": 5, "weekday": "Sa", "events": {}},
-    {"day": 6, "weekday": "Su", "events": {}},
-    {"day": 7, "weekday": "Mo", "events": {"MMI3-App": "Alternance"}, "week": 50},
-    {"day": 8, "weekday": "Tu", "events": {"MMI3-App": "Alternance"}},
-    {"day": 9, "weekday": "We", "events": {"MMI3-App": "Alternance"}},
-    {"day": 10, "weekday": "Th", "events": {"MMI3-App": "Alternance"}},
-    {"day": 11, "weekday": "Fr", "events": {"MMI3-App": "Alternance"}},
-    {"day": 12, "weekday": "Sa", "events": {}},
-    {"day": 13, "weekday": "Su", "events": {}},
-    {"day": 14, "weekday": "Mo", "events": {}, "week": 51},
-    {"day": 15, "weekday": "Tu", "events": {}},
-    {"day": 16, "weekday": "We", "events": {}},
-    {"day": 17, "weekday": "Th", "events": {}},
-    {"day": 18, "weekday": "Fr", "events": {}},
-    {"day": 19, "weekday": "Sa", "events": {}},
-    {"day": 20, "weekday": "Su", "events": {}},
-    {"day": 21, "weekday": "Mo", "events": {"MMI3-App": "Alternance"}, "week": 52},
-    {"day": 22, "weekday": "Tu", "events": {"MMI-App": "Alternance", "MMI3-App": "Alternance"}},
-    {"day": 23, "weekday": "We", "events": {"MMI-App": "Alternance", "MMI3-App": "Alternance"}},
-    {"day": 24, "weekday": "Th", "events": {"MMI-App": "Alternance", "MMI3-App": "Alternance"}},
-    {"day": 25, "weekday": "Fr", "events": {"Férié": "Noël"}},
-    {"day": 26, "weekday": "Sa", "events": {"MMI-App": "Alternance", "MMI3-App": "Alternance"}},
-    {"day": 27, "weekday": "Su", "events": {}},
-    {"day": 28, "weekday": "Mo", "events": {"MMI-App": "Alternance", "MMI3-App": "Alternance"}, "week": 53},
-    {"day": 29, "weekday": "Tu", "events": {"MMI-App": "Alternance", "MMI3-App": "Alternance"}},
-    {"day": 30, "weekday": "We", "events": {"MMI-App": "Alternance", "MMI3-App": "Alternance"}},
-    {"day": 31, "weekday": "Th", "events": {"MMI-App": "Alternance", "MMI3-App": "Alternance"}}
+    {
+      "day": 1,
+      "weekday": "Tu",
+      "events": {
+        "MMI-App": "Alternance"
+      }
+    },
+    {
+      "day": 2,
+      "weekday": "We",
+      "events": {
+        "MMI-App": "Alternance"
+      }
+    },
+    {
+      "day": 3,
+      "weekday": "Th",
+      "events": {
+        "MMI-App": "Alternance"
+      }
+    },
+    {
+      "day": 4,
+      "weekday": "Fr",
+      "events": {
+        "MMI-App": "Alternance"
+      }
+    },
+    {
+      "day": 5,
+      "weekday": "Sa",
+      "events": {}
+    },
+    {
+      "day": 6,
+      "weekday": "Su",
+      "events": {}
+    },
+    {
+      "day": 7,
+      "weekday": "Mo",
+      "events": {
+        "MMI3-App": "Alternance"
+      },
+      "week": 50
+    },
+    {
+      "day": 8,
+      "weekday": "Tu",
+      "events": {
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 9,
+      "weekday": "We",
+      "events": {
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 10,
+      "weekday": "Th",
+      "events": {
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 11,
+      "weekday": "Fr",
+      "events": {
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 12,
+      "weekday": "Sa",
+      "events": {}
+    },
+    {
+      "day": 13,
+      "weekday": "Su",
+      "events": {}
+    },
+    {
+      "day": 14,
+      "weekday": "Mo",
+      "events": {},
+      "week": 51
+    },
+    {
+      "day": 15,
+      "weekday": "Tu",
+      "events": {}
+    },
+    {
+      "day": 16,
+      "weekday": "We",
+      "events": {}
+    },
+    {
+      "day": 17,
+      "weekday": "Th",
+      "events": {}
+    },
+    {
+      "day": 18,
+      "weekday": "Fr",
+      "events": {}
+    },
+    {
+      "day": 19,
+      "weekday": "Sa",
+      "events": {}
+    },
+    {
+      "day": 20,
+      "weekday": "Su",
+      "events": {}
+    },
+    {
+      "day": 21,
+      "weekday": "Mo",
+      "events": {
+        "MMI3-App": "Alternance"
+      },
+      "week": 52
+    },
+    {
+      "day": 22,
+      "weekday": "Tu",
+      "events": {
+        "MMI-App": "Alternance",
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 23,
+      "weekday": "We",
+      "events": {
+        "MMI-App": "Alternance",
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 24,
+      "weekday": "Th",
+      "events": {
+        "MMI-App": "Alternance",
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 25,
+      "weekday": "Fr",
+      "events": {
+        "Férié": "Noël"
+      }
+    },
+    {
+      "day": 26,
+      "weekday": "Sa",
+      "events": {
+        "MMI-App": "Alternance",
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 27,
+      "weekday": "Su",
+      "events": {
+        "MMI-App": "Alternance",
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 28,
+      "weekday": "Mo",
+      "events": {
+        "MMI-App": "Alternance",
+        "MMI3-App": "Alternance"
+      },
+      "week": 53
+    },
+    {
+      "day": 29,
+      "weekday": "Tu",
+      "events": {
+        "MMI-App": "Alternance",
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 30,
+      "weekday": "We",
+      "events": {
+        "MMI-App": "Alternance",
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 31,
+      "weekday": "Th",
+      "events": {
+        "MMI-App": "Alternance",
+        "MMI3-App": "Alternance"
+      }
+    }
   ],
   "Janvier 2027": [
-    {"day": 1, "weekday": "Fr", "events": {"Férié": "Jour de l'an"}},
-    {"day": 2, "weekday": "Sa", "events": {}},
-    {"day": 3, "weekday": "Su", "events": {}},
-    {"day": 4, "weekday": "Mo", "events": {}, "week": 1},
-    {"day": 5, "weekday": "Tu", "events": {}},
-    {"day": 6, "weekday": "We", "events": {}},
-    {"day": 7, "weekday": "Th", "events": {}},
-    {"day": 8, "weekday": "Fr", "events": {}},
-    {"day": 9, "weekday": "Sa", "events": {}},
-    {"day": 10, "weekday": "Su", "events": {}},
-    {"day": 11, "weekday": "Mo", "events": {"MMI3-App": "Alternance"}, "week": 2},
-    {"day": 12, "weekday": "Tu", "events": {"MMI3-App": "Alternance"}},
-    {"day": 13, "weekday": "We", "events": {"MMI3-App": "Alternance"}},
-    {"day": 14, "weekday": "Th", "events": {"MMI3-App": "Alternance"}},
-    {"day": 15, "weekday": "Fr", "events": {"MMI3-App": "Alternance"}},
-    {"day": 16, "weekday": "Sa", "events": {}},
-    {"day": 17, "weekday": "Su", "events": {}},
-    {"day": 18, "weekday": "Mo", "events": {"MMI-App": "Alternance"}, "week": 3},
-    {"day": 19, "weekday": "Tu", "events": {"MMI-App": "Alternance"}},
-    {"day": 20, "weekday": "We", "events": {"MMI-App": "Alternance"}},
-    {"day": 21, "weekday": "Th", "events": {"MMI-App": "Alternance"}},
-    {"day": 22, "weekday": "Fr", "events": {"MMI-App": "Alternance"}},
-    {"day": 23, "weekday": "Sa", "events": {}},
-    {"day": 24, "weekday": "Su", "events": {}},
-    {"day": 25, "weekday": "Mo", "events": {}, "week": 4},
-    {"day": 26, "weekday": "Tu", "events": {}},
-    {"day": 27, "weekday": "We", "events": {}},
-    {"day": 28, "weekday": "Th", "events": {}},
-    {"day": 29, "weekday": "Fr", "events": {}},
-    {"day": 30, "weekday": "Sa", "events": {}},
-    {"day": 31, "weekday": "Su", "events": {}}
+    {
+      "day": 1,
+      "weekday": "Fr",
+      "events": {
+        "Férié": "Jour de l'an"
+      }
+    },
+    {
+      "day": 2,
+      "weekday": "Sa",
+      "events": {}
+    },
+    {
+      "day": 3,
+      "weekday": "Su",
+      "events": {}
+    },
+    {
+      "day": 4,
+      "weekday": "Mo",
+      "events": {},
+      "week": 1
+    },
+    {
+      "day": 5,
+      "weekday": "Tu",
+      "events": {}
+    },
+    {
+      "day": 6,
+      "weekday": "We",
+      "events": {}
+    },
+    {
+      "day": 7,
+      "weekday": "Th",
+      "events": {}
+    },
+    {
+      "day": 8,
+      "weekday": "Fr",
+      "events": {}
+    },
+    {
+      "day": 9,
+      "weekday": "Sa",
+      "events": {}
+    },
+    {
+      "day": 10,
+      "weekday": "Su",
+      "events": {}
+    },
+    {
+      "day": 11,
+      "weekday": "Mo",
+      "events": {
+        "MMI3-App": "Alternance"
+      },
+      "week": 2
+    },
+    {
+      "day": 12,
+      "weekday": "Tu",
+      "events": {
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 13,
+      "weekday": "We",
+      "events": {
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 14,
+      "weekday": "Th",
+      "events": {
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 15,
+      "weekday": "Fr",
+      "events": {
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 16,
+      "weekday": "Sa",
+      "events": {}
+    },
+    {
+      "day": 17,
+      "weekday": "Su",
+      "events": {}
+    },
+    {
+      "day": 18,
+      "weekday": "Mo",
+      "events": {
+        "MMI-App": "Alternance"
+      },
+      "week": 3
+    },
+    {
+      "day": 19,
+      "weekday": "Tu",
+      "events": {
+        "MMI-App": "Alternance"
+      }
+    },
+    {
+      "day": 20,
+      "weekday": "We",
+      "events": {
+        "MMI-App": "Alternance"
+      }
+    },
+    {
+      "day": 21,
+      "weekday": "Th",
+      "events": {
+        "MMI-App": "Alternance"
+      }
+    },
+    {
+      "day": 22,
+      "weekday": "Fr",
+      "events": {
+        "MMI-App": "Alternance"
+      }
+    },
+    {
+      "day": 23,
+      "weekday": "Sa",
+      "events": {}
+    },
+    {
+      "day": 24,
+      "weekday": "Su",
+      "events": {}
+    },
+    {
+      "day": 25,
+      "weekday": "Mo",
+      "events": {},
+      "week": 4
+    },
+    {
+      "day": 26,
+      "weekday": "Tu",
+      "events": {}
+    },
+    {
+      "day": 27,
+      "weekday": "We",
+      "events": {}
+    },
+    {
+      "day": 28,
+      "weekday": "Th",
+      "events": {}
+    },
+    {
+      "day": 29,
+      "weekday": "Fr",
+      "events": {}
+    },
+    {
+      "day": 30,
+      "weekday": "Sa",
+      "events": {}
+    },
+    {
+      "day": 31,
+      "weekday": "Su",
+      "events": {}
+    }
   ],
   "Février 2027": [
-    {"day": 1, "weekday": "Mo", "events": {"MMI-App": "Alternance", "MMI3-App": "Alternance"}, "week": 5},
-    {"day": 2, "weekday": "Tu", "events": {"MMI-App": "Alternance", "MMI3-App": "Alternance"}},
-    {"day": 3, "weekday": "We", "events": {"MMI-App": "Alternance", "MMI3-App": "Alternance"}},
-    {"day": 4, "weekday": "Th", "events": {"MMI-App": "Alternance", "MMI3-App": "Alternance"}},
-    {"day": 5, "weekday": "Fr", "events": {"MMI-App": "Alternance", "MMI3-App": "Alternance"}},
-    {"day": 6, "weekday": "Sa", "events": {}},
-    {"day": 7, "weekday": "Su", "events": {}},
-    {"day": 8, "weekday": "Mo", "events": {"MMI3-App": "Alternance"}, "week": 6},
-    {"day": 9, "weekday": "Tu", "events": {"MMI3-App": "Alternance"}},
-    {"day": 10, "weekday": "We", "events": {"MMI3-App": "Alternance"}},
-    {"day": 11, "weekday": "Th", "events": {"MMI3-App": "Alternance"}},
-    {"day": 12, "weekday": "Fr", "events": {"MMI3-App": "Alternance"}},
-    {"day": 13, "weekday": "Sa", "events": {}},
-    {"day": 14, "weekday": "Su", "events": {}},
-    {"day": 15, "weekday": "Mo", "events": {"MMI-App": "Alternance", "MMI3-App": "Alternance"}, "week": 7},
-    {"day": 16, "weekday": "Tu", "events": {"MMI-App": "Alternance", "MMI3-App": "Alternance"}},
-    {"day": 17, "weekday": "We", "events": {"MMI-App": "Alternance", "MMI3-App": "Alternance"}},
-    {"day": 18, "weekday": "Th", "events": {"MMI-App": "Alternance", "MMI3-App": "Alternance"}},
-    {"day": 19, "weekday": "Fr", "events": {"MMI-App": "Alternance", "MMI3-App": "Alternance"}},
-    {"day": 20, "weekday": "Sa", "events": {}},
-    {"day": 21, "weekday": "Su", "events": {}},
-    {"day": 22, "weekday": "Mo", "events": {"MMI3-App": "Alternance"}, "week": 8},
-    {"day": 23, "weekday": "Tu", "events": {"MMI3-App": "Alternance"}},
-    {"day": 24, "weekday": "We", "events": {"MMI3-App": "Alternance"}},
-    {"day": 25, "weekday": "Th", "events": {"MMI3-App": "Alternance"}},
-    {"day": 26, "weekday": "Fr", "events": {"MMI3-App": "Alternance"}},
-    {"day": 27, "weekday": "Sa", "events": {}},
-    {"day": 28, "weekday": "Su", "events": {}}
+    {
+      "day": 1,
+      "weekday": "Mo",
+      "events": {
+        "MMI-App": "Alternance",
+        "MMI3-App": "Alternance"
+      },
+      "week": 5
+    },
+    {
+      "day": 2,
+      "weekday": "Tu",
+      "events": {
+        "MMI-App": "Alternance",
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 3,
+      "weekday": "We",
+      "events": {
+        "MMI-App": "Alternance",
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 4,
+      "weekday": "Th",
+      "events": {
+        "MMI-App": "Alternance",
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 5,
+      "weekday": "Fr",
+      "events": {
+        "MMI-App": "Alternance",
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 6,
+      "weekday": "Sa",
+      "events": {
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 7,
+      "weekday": "Su",
+      "events": {
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 8,
+      "weekday": "Mo",
+      "events": {
+        "MMI3-App": "Alternance"
+      },
+      "week": 6
+    },
+    {
+      "day": 9,
+      "weekday": "Tu",
+      "events": {
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 10,
+      "weekday": "We",
+      "events": {
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 11,
+      "weekday": "Th",
+      "events": {
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 12,
+      "weekday": "Fr",
+      "events": {
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 13,
+      "weekday": "Sa",
+      "events": {
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 14,
+      "weekday": "Su",
+      "events": {
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 15,
+      "weekday": "Mo",
+      "events": {
+        "MMI-App": "Alternance",
+        "MMI3-App": "Alternance"
+      },
+      "week": 7
+    },
+    {
+      "day": 16,
+      "weekday": "Tu",
+      "events": {
+        "MMI-App": "Alternance",
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 17,
+      "weekday": "We",
+      "events": {
+        "MMI-App": "Alternance",
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 18,
+      "weekday": "Th",
+      "events": {
+        "MMI-App": "Alternance",
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 19,
+      "weekday": "Fr",
+      "events": {
+        "MMI-App": "Alternance",
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 20,
+      "weekday": "Sa",
+      "events": {
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 21,
+      "weekday": "Su",
+      "events": {
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 22,
+      "weekday": "Mo",
+      "events": {
+        "MMI3-App": "Alternance"
+      },
+      "week": 8
+    },
+    {
+      "day": 23,
+      "weekday": "Tu",
+      "events": {
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 24,
+      "weekday": "We",
+      "events": {
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 25,
+      "weekday": "Th",
+      "events": {
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 26,
+      "weekday": "Fr",
+      "events": {
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 27,
+      "weekday": "Sa",
+      "events": {
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 28,
+      "weekday": "Su",
+      "events": {
+        "MMI3-App": "Alternance"
+      }
+    }
   ],
   "Mars 2027": [
-    {"day": 1, "weekday": "Mo", "events": {"MMI-App": "Alternance", "MMI3-App": "Alternance"}, "week": 9},
-    {"day": 2, "weekday": "Tu", "events": {"MMI-App": "Alternance", "MMI3-App": "Alternance"}},
-    {"day": 3, "weekday": "We", "events": {"MMI-App": "Alternance", "MMI3-App": "Alternance"}},
-    {"day": 4, "weekday": "Th", "events": {"MMI-App": "Alternance", "MMI3-App": "Alternance"}},
-    {"day": 5, "weekday": "Fr", "events": {"MMI-App": "Alternance", "MMI3-App": "Alternance"}},
-    {"day": 6, "weekday": "Sa", "events": {}},
-    {"day": 7, "weekday": "Su", "events": {}},
-    {"day": 8, "weekday": "Mo", "events": {"MMI3-App": "Alternance"}, "week": 10},
-    {"day": 9, "weekday": "Tu", "events": {"MMI3-App": "Alternance"}},
-    {"day": 10, "weekday": "We", "events": {"MMI3-App": "Alternance"}},
-    {"day": 11, "weekday": "Th", "events": {"MMI3-App": "Alternance"}},
-    {"day": 12, "weekday": "Fr", "events": {"MMI3-App": "Alternance"}},
-    {"day": 13, "weekday": "Sa", "events": {}},
-    {"day": 14, "weekday": "Su", "events": {}},
-    {"day": 15, "weekday": "Mo", "events": {"MMI-App": "Alternance", "MMI3-App": "Alternance"}, "week": 11},
-    {"day": 16, "weekday": "Tu", "events": {"MMI-App": "Alternance", "MMI3-App": "Alternance"}},
-    {"day": 17, "weekday": "We", "events": {"MMI-App": "Alternance", "MMI3-App": "Alternance"}},
-    {"day": 18, "weekday": "Th", "events": {"MMI-App": "Alternance", "MMI3-App": "Alternance"}},
-    {"day": 19, "weekday": "Fr", "events": {"MMI-App": "Alternance", "MMI3-App": "Alternance"}},
-    {"day": 20, "weekday": "Sa", "events": {}},
-    {"day": 21, "weekday": "Su", "events": {}},
-    {"day": 22, "weekday": "Mo", "events": {"MMI3-App": "Alternance"}, "week": 12},
-    {"day": 23, "weekday": "Tu", "events": {"MMI3-App": "Alternance"}},
-    {"day": 24, "weekday": "We", "events": {"MMI3-App": "Alternance"}},
-    {"day": 25, "weekday": "Th", "events": {"MMI3-App": "Alternance"}},
-    {"day": 26, "weekday": "Fr", "events": {"MMI3-App": "Alternance"}},
-    {"day": 27, "weekday": "Sa", "events": {}},
-    {"day": 28, "weekday": "Su", "events": {}},
-    {"day": 29, "weekday": "Mo", "events": {"Férié": "Pâques"}, "week": 13},
-    {"day": 30, "weekday": "Tu", "events": {"MMI-App": "Alternance", "MMI3-App": "Alternance"}},
-    {"day": 31, "weekday": "We", "events": {"MMI-App": "Alternance", "MMI3-App": "Alternance"}}
+    {
+      "day": 1,
+      "weekday": "Mo",
+      "events": {
+        "MMI-App": "Alternance",
+        "MMI3-App": "Alternance"
+      },
+      "week": 9
+    },
+    {
+      "day": 2,
+      "weekday": "Tu",
+      "events": {
+        "MMI-App": "Alternance",
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 3,
+      "weekday": "We",
+      "events": {
+        "MMI-App": "Alternance",
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 4,
+      "weekday": "Th",
+      "events": {
+        "MMI-App": "Alternance",
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 5,
+      "weekday": "Fr",
+      "events": {
+        "MMI-App": "Alternance",
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 6,
+      "weekday": "Sa",
+      "events": {
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 7,
+      "weekday": "Su",
+      "events": {
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 8,
+      "weekday": "Mo",
+      "events": {
+        "MMI3-App": "Alternance"
+      },
+      "week": 10
+    },
+    {
+      "day": 9,
+      "weekday": "Tu",
+      "events": {
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 10,
+      "weekday": "We",
+      "events": {
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 11,
+      "weekday": "Th",
+      "events": {
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 12,
+      "weekday": "Fr",
+      "events": {
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 13,
+      "weekday": "Sa",
+      "events": {
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 14,
+      "weekday": "Su",
+      "events": {
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 15,
+      "weekday": "Mo",
+      "events": {
+        "MMI-App": "Alternance",
+        "MMI3-App": "Alternance"
+      },
+      "week": 11
+    },
+    {
+      "day": 16,
+      "weekday": "Tu",
+      "events": {
+        "MMI-App": "Alternance",
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 17,
+      "weekday": "We",
+      "events": {
+        "MMI-App": "Alternance",
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 18,
+      "weekday": "Th",
+      "events": {
+        "MMI-App": "Alternance",
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 19,
+      "weekday": "Fr",
+      "events": {
+        "MMI-App": "Alternance",
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 20,
+      "weekday": "Sa",
+      "events": {
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 21,
+      "weekday": "Su",
+      "events": {
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 22,
+      "weekday": "Mo",
+      "events": {
+        "MMI3-App": "Alternance"
+      },
+      "week": 12
+    },
+    {
+      "day": 23,
+      "weekday": "Tu",
+      "events": {
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 24,
+      "weekday": "We",
+      "events": {
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 25,
+      "weekday": "Th",
+      "events": {
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 26,
+      "weekday": "Fr",
+      "events": {
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 27,
+      "weekday": "Sa",
+      "events": {
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 28,
+      "weekday": "Su",
+      "events": {
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 29,
+      "weekday": "Mo",
+      "events": {
+        "Férié": "Pâques"
+      },
+      "week": 13
+    },
+    {
+      "day": 30,
+      "weekday": "Tu",
+      "events": {
+        "MMI-App": "Alternance",
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 31,
+      "weekday": "We",
+      "events": {
+        "MMI-App": "Alternance",
+        "MMI3-App": "Alternance"
+      }
+    }
   ],
   "Avril 2027": [
-    {"day": 1, "weekday": "Th", "events": {"MMI-App": "Alternance", "MMI3-App": "Alternance"}},
-    {"day": 2, "weekday": "Fr", "events": {"MMI-App": "Alternance", "MMI3-App": "Alternance"}},
-    {"day": 3, "weekday": "Sa", "events": {}},
-    {"day": 4, "weekday": "Su", "events": {}},
-    {"day": 5, "weekday": "Mo", "events": {"MMI3-App": "Alternance"}, "week": 14},
-    {"day": 6, "weekday": "Tu", "events": {"MMI3-App": "Alternance"}},
-    {"day": 7, "weekday": "We", "events": {"MMI3-App": "Alternance"}},
-    {"day": 8, "weekday": "Th", "events": {"MMI3-App": "Alternance"}},
-    {"day": 9, "weekday": "Fr", "events": {"MMI3-App": "Alternance"}},
-    {"day": 10, "weekday": "Sa", "events": {}},
-    {"day": 11, "weekday": "Su", "events": {}},
-    {"day": 12, "weekday": "Mo", "events": {"MMI-App": "Alternance", "MMI3-App": "Alternance"}, "week": 15},
-    {"day": 13, "weekday": "Tu", "events": {"MMI-App": "Alternance", "MMI3-App": "Alternance"}},
-    {"day": 14, "weekday": "We", "events": {"MMI-App": "Alternance", "MMI3-App": "Alternance"}},
-    {"day": 15, "weekday": "Th", "events": {"MMI-App": "Alternance", "MMI3-App": "Alternance"}},
-    {"day": 16, "weekday": "Fr", "events": {"MMI-App": "Alternance", "MMI3-App": "Alternance"}},
-    {"day": 17, "weekday": "Sa", "events": {"MMI-App": "Alternance", "MMI3-App": "Alternance"}},
-    {"day": 18, "weekday": "Su", "events": {"MMI-App": "Alternance", "MMI3-App": "Alternance"}},
-    {"day": 19, "weekday": "Mo", "events": {"MMI-App": "Alternance", "MMI3-App": "Alternance"}, "week": 16},
-    {"day": 20, "weekday": "Tu", "events": {"MMI-App": "Alternance", "MMI3-App": "Alternance"}},
-    {"day": 21, "weekday": "We", "events": {"MMI-App": "Alternance", "MMI3-App": "Alternance"}},
-    {"day": 22, "weekday": "Th", "events": {"MMI-App": "Alternance", "MMI3-App": "Alternance"}},
-    {"day": 23, "weekday": "Fr", "events": {"MMI-App": "Alternance", "MMI3-App": "Alternance"}},
-    {"day": 24, "weekday": "Sa", "events": {"MMI-App": "Alternance", "MMI3-App": "Alternance"}},
-    {"day": 25, "weekday": "Su", "events": {"MMI-App": "Alternance", "MMI3-App": "Alternance"}},
-    {"day": 26, "weekday": "Mo", "events": {"MMI-App": "Alternance", "MMI3-App": "Alternance"}, "week": 17},
-    {"day": 27, "weekday": "Tu", "events": {"MMI-App": "Alternance", "MMI3-App": "Alternance"}},
-    {"day": 28, "weekday": "We", "events": {"MMI-App": "Alternance", "MMI3-App": "Alternance"}},
-    {"day": 29, "weekday": "Th", "events": {"MMI-App": "Alternance", "MMI3-App": "Alternance"}},
-    {"day": 30, "weekday": "Fr", "events": {"MMI-App": "Alternance", "MMI3-App": "Alternance"}}
+    {
+      "day": 1,
+      "weekday": "Th",
+      "events": {
+        "MMI-App": "Alternance",
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 2,
+      "weekday": "Fr",
+      "events": {
+        "MMI-App": "Alternance",
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 3,
+      "weekday": "Sa",
+      "events": {
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 4,
+      "weekday": "Su",
+      "events": {
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 5,
+      "weekday": "Mo",
+      "events": {
+        "MMI3-App": "Alternance"
+      },
+      "week": 14
+    },
+    {
+      "day": 6,
+      "weekday": "Tu",
+      "events": {
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 7,
+      "weekday": "We",
+      "events": {
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 8,
+      "weekday": "Th",
+      "events": {
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 9,
+      "weekday": "Fr",
+      "events": {
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 10,
+      "weekday": "Sa",
+      "events": {
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 11,
+      "weekday": "Su",
+      "events": {
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 12,
+      "weekday": "Mo",
+      "events": {
+        "MMI-App": "Alternance",
+        "MMI3-App": "Alternance"
+      },
+      "week": 15
+    },
+    {
+      "day": 13,
+      "weekday": "Tu",
+      "events": {
+        "MMI-App": "Alternance",
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 14,
+      "weekday": "We",
+      "events": {
+        "MMI-App": "Alternance",
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 15,
+      "weekday": "Th",
+      "events": {
+        "MMI-App": "Alternance",
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 16,
+      "weekday": "Fr",
+      "events": {
+        "MMI-App": "Alternance",
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 17,
+      "weekday": "Sa",
+      "events": {
+        "MMI-App": "Alternance",
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 18,
+      "weekday": "Su",
+      "events": {
+        "MMI-App": "Alternance",
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 19,
+      "weekday": "Mo",
+      "events": {
+        "MMI-App": "Alternance",
+        "MMI3-App": "Alternance"
+      },
+      "week": 16
+    },
+    {
+      "day": 20,
+      "weekday": "Tu",
+      "events": {
+        "MMI-App": "Alternance",
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 21,
+      "weekday": "We",
+      "events": {
+        "MMI-App": "Alternance",
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 22,
+      "weekday": "Th",
+      "events": {
+        "MMI-App": "Alternance",
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 23,
+      "weekday": "Fr",
+      "events": {
+        "MMI-App": "Alternance",
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 24,
+      "weekday": "Sa",
+      "events": {
+        "MMI-App": "Alternance",
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 25,
+      "weekday": "Su",
+      "events": {
+        "MMI-App": "Alternance",
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 26,
+      "weekday": "Mo",
+      "events": {
+        "MMI-App": "Alternance",
+        "MMI3-App": "Alternance"
+      },
+      "week": 17
+    },
+    {
+      "day": 27,
+      "weekday": "Tu",
+      "events": {
+        "MMI-App": "Alternance",
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 28,
+      "weekday": "We",
+      "events": {
+        "MMI-App": "Alternance",
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 29,
+      "weekday": "Th",
+      "events": {
+        "MMI-App": "Alternance",
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 30,
+      "weekday": "Fr",
+      "events": {
+        "MMI-App": "Alternance",
+        "MMI3-App": "Alternance"
+      }
+    }
   ],
   "Mai 2027": [
-    {"day": 1, "weekday": "Sa", "events": {"MMI-App": "Alternance"}},
-    {"day": 2, "weekday": "Su", "events": {"MMI-App": "Alternance"}},
-    {"day": 3, "weekday": "Mo", "events": {"MMI-App": "Alternance"}, "week": 18},
-    {"day": 4, "weekday": "Tu", "events": {"MMI-App": "Alternance"}},
-    {"day": 5, "weekday": "We", "events": {"MMI-App": "Alternance"}},
-    {"day": 6, "weekday": "Th", "events": {"Férié": "Ascension"}},
-    {"day": 7, "weekday": "Fr", "events": {"MMI-App": "Alternance"}},
-    {"day": 8, "weekday": "Sa", "events": {"MMI-App": "Alternance"}},
-    {"day": 9, "weekday": "Su", "events": {"MMI-App": "Alternance"}},
-    {"day": 10, "weekday": "Mo", "events": {"MMI-App": "Alternance"}, "week": 19},
-    {"day": 11, "weekday": "Tu", "events": {"MMI-App": "Alternance"}},
-    {"day": 12, "weekday": "We", "events": {"MMI-App": "Alternance"}},
-    {"day": 13, "weekday": "Th", "events": {"MMI-App": "Alternance"}},
-    {"day": 14, "weekday": "Fr", "events": {"MMI-App": "Alternance"}},
-    {"day": 15, "weekday": "Sa", "events": {"MMI-App": "Alternance"}},
-    {"day": 16, "weekday": "Su", "events": {"MMI-App": "Alternance"}},
-    {"day": 17, "weekday": "Mo", "events": {"Férié": "Pentecôte"}, "week": 20},
-    {"day": 18, "weekday": "Tu", "events": {"MMI-App": "Alternance", "MMI3-App": "Alternance"}},
-    {"day": 19, "weekday": "We", "events": {"MMI-App": "Alternance", "MMI3-App": "Alternance"}},
-    {"day": 20, "weekday": "Th", "events": {"MMI-App": "Alternance", "MMI3-App": "Alternance"}},
-    {"
+    {
+      "day": 1,
+      "weekday": "Sa",
+      "events": {
+        "MMI-App": "Alternance"
+      }
+    },
+    {
+      "day": 2,
+      "weekday": "Su",
+      "events": {
+        "MMI-App": "Alternance"
+      }
+    },
+    {
+      "day": 3,
+      "weekday": "Mo",
+      "events": {
+        "MMI-App": "Alternance"
+      },
+      "week": 18
+    },
+    {
+      "day": 4,
+      "weekday": "Tu",
+      "events": {
+        "MMI-App": "Alternance"
+      }
+    },
+    {
+      "day": 5,
+      "weekday": "We",
+      "events": {
+        "MMI-App": "Alternance"
+      }
+    },
+    {
+      "day": 6,
+      "weekday": "Th",
+      "events": {
+        "Férié": "Ascension"
+      }
+    },
+    {
+      "day": 7,
+      "weekday": "Fr",
+      "events": {
+        "MMI-App": "Alternance"
+      }
+    },
+    {
+      "day": 8,
+      "weekday": "Sa",
+      "events": {
+        "MMI-App": "Alternance"
+      }
+    },
+    {
+      "day": 9,
+      "weekday": "Su",
+      "events": {
+        "MMI-App": "Alternance"
+      }
+    },
+    {
+      "day": 10,
+      "weekday": "Mo",
+      "events": {
+        "MMI-App": "Alternance"
+      },
+      "week": 19
+    },
+    {
+      "day": 11,
+      "weekday": "Tu",
+      "events": {
+        "MMI-App": "Alternance"
+      }
+    },
+    {
+      "day": 12,
+      "weekday": "We",
+      "events": {
+        "MMI-App": "Alternance"
+      }
+    },
+    {
+      "day": 13,
+      "weekday": "Th",
+      "events": {
+        "MMI-App": "Alternance"
+      }
+    },
+    {
+      "day": 14,
+      "weekday": "Fr",
+      "events": {
+        "MMI-App": "Alternance"
+      }
+    },
+    {
+      "day": 15,
+      "weekday": "Sa",
+      "events": {
+        "MMI-App": "Alternance"
+      }
+    },
+    {
+      "day": 16,
+      "weekday": "Su",
+      "events": {
+        "MMI-App": "Alternance"
+      }
+    },
+    {
+      "day": 17,
+      "weekday": "Mo",
+      "events": {
+        "Férié": "Pentecôte"
+      },
+      "week": 20
+    },
+    {
+      "day": 18,
+      "weekday": "Tu",
+      "events": {
+        "MMI-App": "Alternance",
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 19,
+      "weekday": "We",
+      "events": {
+        "MMI-App": "Alternance",
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 20,
+      "weekday": "Th",
+      "events": {
+        "MMI-App": "Alternance",
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 21,
+      "weekday": "Fr",
+      "events": {
+        "MMI-App": "Alternance",
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 22,
+      "weekday": "Sa",
+      "events": {
+        "MMI-App": "Alternance",
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 23,
+      "weekday": "Su",
+      "events": {
+        "MMI-App": "Alternance",
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 24,
+      "weekday": "Mo",
+      "events": {
+        "MMI-App": "Alternance",
+        "MMI3-App": "Alternance"
+      },
+      "week": 21
+    },
+    {
+      "day": 25,
+      "weekday": "Tu",
+      "events": {
+        "MMI-App": "Alternance",
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 26,
+      "weekday": "We",
+      "events": {
+        "MMI-App": "Alternance",
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 27,
+      "weekday": "Th",
+      "events": {
+        "MMI-App": "Alternance",
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 28,
+      "weekday": "Fr",
+      "events": {
+        "MMI-App": "Alternance",
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 29,
+      "weekday": "Sa",
+      "events": {
+        "MMI-App": "Alternance"
+      }
+    },
+    {
+      "day": 30,
+      "weekday": "Su",
+      "events": {
+        "MMI-App": "Alternance"
+      }
+    },
+    {
+      "day": 31,
+      "weekday": "Mo",
+      "events": {
+        "MMI-App": "Alternance"
+      },
+      "week": 22
+    }
+  ],
+  "Juin 2027": [
+    {
+      "day": 1,
+      "weekday": "Tu",
+      "events": {
+        "MMI-App": "Alternance"
+      }
+    },
+    {
+      "day": 2,
+      "weekday": "We",
+      "events": {
+        "MMI-App": "Alternance"
+      }
+    },
+    {
+      "day": 3,
+      "weekday": "Th",
+      "events": {
+        "MMI-App": "Alternance"
+      }
+    },
+    {
+      "day": 4,
+      "weekday": "Fr",
+      "events": {
+        "MMI-App": "Alternance"
+      }
+    },
+    {
+      "day": 5,
+      "weekday": "Sa",
+      "events": {
+        "MMI-App": "Alternance"
+      }
+    },
+    {
+      "day": 6,
+      "weekday": "Su",
+      "events": {
+        "MMI-App": "Alternance"
+      }
+    },
+    {
+      "day": 7,
+      "weekday": "Mo",
+      "events": {
+        "MMI-App": "Alternance"
+      },
+      "week": 23
+    },
+    {
+      "day": 8,
+      "weekday": "Tu",
+      "events": {
+        "MMI-App": "Alternance",
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 9,
+      "weekday": "We",
+      "events": {
+        "MMI-App": "Alternance",
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 10,
+      "weekday": "Th",
+      "events": {
+        "MMI-App": "Alternance",
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 11,
+      "weekday": "Fr",
+      "events": {
+        "MMI-App": "Alternance",
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 12,
+      "weekday": "Sa",
+      "events": {
+        "MMI-App": "Alternance"
+      }
+    },
+    {
+      "day": 13,
+      "weekday": "Su",
+      "events": {
+        "MMI-App": "Alternance"
+      }
+    },
+    {
+      "day": 14,
+      "weekday": "Mo",
+      "events": {
+        "MMI-App": "Alternance"
+      },
+      "week": 24
+    },
+    {
+      "day": 15,
+      "weekday": "Tu",
+      "events": {
+        "MMI-App": "Alternance"
+      }
+    },
+    {
+      "day": 16,
+      "weekday": "We",
+      "events": {
+        "MMI-App": "Alternance"
+      }
+    },
+    {
+      "day": 17,
+      "weekday": "Th",
+      "events": {
+        "MMI-App": "Alternance"
+      }
+    },
+    {
+      "day": 18,
+      "weekday": "Fr",
+      "events": {
+        "MMI-App": "Alternance"
+      }
+    },
+    {
+      "day": 19,
+      "weekday": "Sa",
+      "events": {}
+    },
+    {
+      "day": 20,
+      "weekday": "Su",
+      "events": {}
+    },
+    {
+      "day": 21,
+      "weekday": "Mo",
+      "events": {
+        "MMI3-App": "Alternance"
+      },
+      "week": 25
+    },
+    {
+      "day": 22,
+      "weekday": "Tu",
+      "events": {
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 23,
+      "weekday": "We",
+      "events": {
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 24,
+      "weekday": "Th",
+      "events": {
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 25,
+      "weekday": "Fr",
+      "events": {
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 26,
+      "weekday": "Sa",
+      "events": {}
+    },
+    {
+      "day": 27,
+      "weekday": "Su",
+      "events": {}
+    },
+    {
+      "day": 28,
+      "weekday": "Mo",
+      "events": {
+        "MMI-App": "Alternance"
+      },
+      "week": 26
+    },
+    {
+      "day": 29,
+      "weekday": "Tu",
+      "events": {
+        "MMI-App": "Alternance"
+      }
+    },
+    {
+      "day": 30,
+      "weekday": "We",
+      "events": {
+        "MMI-App": "Alternance"
+      }
+    }
+  ],
+  "Juillet 2027": [
+    {
+      "day": 1,
+      "weekday": "Th",
+      "events": {
+        "MMI-App": "Alternance"
+      }
+    },
+    {
+      "day": 2,
+      "weekday": "Fr",
+      "events": {
+        "MMI-App": "Alternance"
+      }
+    },
+    {
+      "day": 3,
+      "weekday": "Sa",
+      "events": {
+        "MMI-App": "Alternance"
+      }
+    },
+    {
+      "day": 4,
+      "weekday": "Su",
+      "events": {
+        "MMI-App": "Alternance"
+      }
+    },
+    {
+      "day": 5,
+      "weekday": "Mo",
+      "events": {
+        "MMI-App": "Alternance",
+        "MMI3-App": "Alternance"
+      },
+      "week": 27
+    },
+    {
+      "day": 6,
+      "weekday": "Tu",
+      "events": {
+        "MMI-App": "Alternance",
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 7,
+      "weekday": "We",
+      "events": {
+        "MMI-App": "Alternance",
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 8,
+      "weekday": "Th",
+      "events": {
+        "MMI-App": "Alternance",
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 9,
+      "weekday": "Fr",
+      "events": {
+        "MMI-App": "Alternance",
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 10,
+      "weekday": "Sa",
+      "events": {
+        "MMI-App": "Alternance",
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 11,
+      "weekday": "Su",
+      "events": {
+        "MMI-App": "Alternance",
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 12,
+      "weekday": "Mo",
+      "events": {
+        "MMI-App": "Alternance",
+        "MMI3-App": "Alternance"
+      },
+      "week": 28
+    },
+    {
+      "day": 13,
+      "weekday": "Tu",
+      "events": {
+        "MMI-App": "Alternance",
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 14,
+      "weekday": "We",
+      "events": {
+        "Férié": "Fête nationale"
+      }
+    },
+    {
+      "day": 15,
+      "weekday": "Th",
+      "events": {
+        "MMI-App": "Alternance",
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 16,
+      "weekday": "Fr",
+      "events": {
+        "MMI-App": "Alternance",
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 17,
+      "weekday": "Sa",
+      "events": {
+        "MMI-App": "Alternance",
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 18,
+      "weekday": "Su",
+      "events": {
+        "MMI-App": "Alternance",
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 19,
+      "weekday": "Mo",
+      "events": {
+        "MMI-App": "Alternance",
+        "MMI3-App": "Alternance"
+      },
+      "week": 29
+    },
+    {
+      "day": 20,
+      "weekday": "Tu",
+      "events": {
+        "MMI-App": "Alternance",
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 21,
+      "weekday": "We",
+      "events": {
+        "MMI-App": "Alternance",
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 22,
+      "weekday": "Th",
+      "events": {
+        "MMI-App": "Alternance",
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 23,
+      "weekday": "Fr",
+      "events": {
+        "MMI-App": "Alternance",
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 24,
+      "weekday": "Sa",
+      "events": {
+        "MMI-App": "Alternance",
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 25,
+      "weekday": "Su",
+      "events": {
+        "MMI-App": "Alternance",
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 26,
+      "weekday": "Mo",
+      "events": {
+        "MMI-App": "Alternance",
+        "MMI3-App": "Alternance"
+      },
+      "week": 30
+    },
+    {
+      "day": 27,
+      "weekday": "Tu",
+      "events": {
+        "MMI-App": "Alternance",
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 28,
+      "weekday": "We",
+      "events": {
+        "MMI-App": "Alternance",
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 29,
+      "weekday": "Th",
+      "events": {
+        "MMI-App": "Alternance",
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 30,
+      "weekday": "Fr",
+      "events": {
+        "MMI-App": "Alternance",
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 31,
+      "weekday": "Sa",
+      "events": {
+        "MMI-App": "Alternance",
+        "MMI3-App": "Alternance"
+      }
+    }
+  ],
+  "Août 2027": [
+    {
+      "day": 1,
+      "weekday": "Su",
+      "events": {
+        "MMI-App": "Alternance",
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 2,
+      "weekday": "Mo",
+      "events": {
+        "MMI-App": "Alternance",
+        "MMI3-App": "Alternance"
+      },
+      "week": 31
+    },
+    {
+      "day": 3,
+      "weekday": "Tu",
+      "events": {
+        "MMI-App": "Alternance",
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 4,
+      "weekday": "We",
+      "events": {
+        "MMI-App": "Alternance",
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 5,
+      "weekday": "Th",
+      "events": {
+        "MMI-App": "Alternance",
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 6,
+      "weekday": "Fr",
+      "events": {
+        "MMI-App": "Alternance",
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 7,
+      "weekday": "Sa",
+      "events": {
+        "MMI-App": "Alternance",
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 8,
+      "weekday": "Su",
+      "events": {
+        "MMI-App": "Alternance",
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 9,
+      "weekday": "Mo",
+      "events": {
+        "MMI-App": "Alternance",
+        "MMI3-App": "Alternance"
+      },
+      "week": 32
+    },
+    {
+      "day": 10,
+      "weekday": "Tu",
+      "events": {
+        "MMI-App": "Alternance",
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 11,
+      "weekday": "We",
+      "events": {
+        "MMI-App": "Alternance",
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 12,
+      "weekday": "Th",
+      "events": {
+        "MMI-App": "Alternance",
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 13,
+      "weekday": "Fr",
+      "events": {
+        "MMI-App": "Alternance",
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 14,
+      "weekday": "Sa",
+      "events": {
+        "MMI-App": "Alternance",
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 15,
+      "weekday": "Su",
+      "events": {
+        "MMI-App": "Alternance",
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 16,
+      "weekday": "Mo",
+      "events": {
+        "MMI-App": "Alternance",
+        "MMI3-App": "Alternance"
+      },
+      "week": 33
+    },
+    {
+      "day": 17,
+      "weekday": "Tu",
+      "events": {
+        "MMI-App": "Alternance",
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 18,
+      "weekday": "We",
+      "events": {
+        "MMI-App": "Alternance",
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 19,
+      "weekday": "Th",
+      "events": {
+        "MMI-App": "Alternance",
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 20,
+      "weekday": "Fr",
+      "events": {
+        "MMI-App": "Alternance",
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 21,
+      "weekday": "Sa",
+      "events": {
+        "MMI-App": "Alternance",
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 22,
+      "weekday": "Su",
+      "events": {
+        "MMI-App": "Alternance",
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 23,
+      "weekday": "Mo",
+      "events": {
+        "MMI-App": "Alternance",
+        "MMI3-App": "Alternance"
+      },
+      "week": 34
+    },
+    {
+      "day": 24,
+      "weekday": "Tu",
+      "events": {
+        "MMI-App": "Alternance",
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 25,
+      "weekday": "We",
+      "events": {
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 26,
+      "weekday": "Th",
+      "events": {}
+    },
+    {
+      "day": 27,
+      "weekday": "Fr",
+      "events": {}
+    },
+    {
+      "day": 28,
+      "weekday": "Sa",
+      "events": {}
+    },
+    {
+      "day": 29,
+      "weekday": "Su",
+      "events": {}
+    },
+    {
+      "day": 30,
+      "weekday": "Mo",
+      "events": {},
+      "week": 35
+    },
+    {
+      "day": 31,
+      "weekday": "Tu",
+      "events": {}
+    }
+  ]
+}
