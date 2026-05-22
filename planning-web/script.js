@@ -1,8 +1,21 @@
 /* =====================================================================
      DONNÉES : récupération des JSON embarqués
   ===================================================================== */
-const META = JSON.parse(document.getElementById("jsMeta").textContent);
-const ORDER = JSON.parse(document.getElementById("jsOrder").textContent);
+let META = JSON.parse(document.getElementById("jsMeta").textContent);
+let ORDER = JSON.parse(document.getElementById("jsOrder").textContent);
+const META_DEFAULT = META;
+const ORDER_DEFAULT = ORDER;
+
+/* Tableau de correspondance nom de mois français → numéro */
+const _FR_MONTHS = {
+  Janvier:1, Février:2, Mars:3, Avril:4, Mai:5, Juin:6,
+  Juillet:7, Août:8, Septembre:9, Octobre:10, Novembre:11, Décembre:12,
+};
+/** Parse une clé "Septembre 2025" → [2025, 9] */
+function _parseMonthKey(key) {
+  const [name, year] = key.split(" ");
+  return [parseInt(year, 10), _FR_MONTHS[name] || 1];
+}
 
 /* CAL est initialisé après le fetch() dans init() */
 let CAL = {};
@@ -256,11 +269,11 @@ function buildFilters() {
 /** Construit les boutons de navigation rapide */
 function buildNav() {
   const nav = document.getElementById("monthNav");
+  nav.innerHTML = "";
   ORDER.forEach((m) => {
     const btn = document.createElement("button");
     btn.className = "month-btn";
-    /* Libellé court : "Sept '25" */
-    btn.textContent = m.replace(" 2026", " '26").replace(" 2027", " '27");
+    btn.textContent = m.replace(" 2025", " '25").replace(" 2026", " '26").replace(" 2027", " '27");
     btn.dataset.m = m;
     btn.setAttribute("aria-label", "Aller à " + m);
     btn.addEventListener("click", () => goToMonth(m));
@@ -1410,6 +1423,17 @@ async function _loadCalAndRebuild(localPath, ghPath) {
   CAL_BASE = newBase;
   CAL = JSON.parse(JSON.stringify(CAL_BASE));
 
+  // Mettre à jour ORDER/META selon le mode
+  if (ARCHIVE_MODE) {
+    const keys = Object.keys(CAL_BASE);
+    ORDER = keys;
+    META = {};
+    keys.forEach((k) => { META[k] = _parseMonthKey(k); });
+  } else {
+    ORDER = ORDER_DEFAULT;
+    META = META_DEFAULT;
+  }
+
   if (!ARCHIVE_MODE) {
     CAL_DELTA = loadDelta();
     applyDelta();
@@ -1427,6 +1451,7 @@ function _rebuildCalendar() {
   const ygrid = document.getElementById("yearGrid");
   ygrid.innerHTML = "";
 
+  buildNav();
   injectFeries();
   vacanceDates = buildVacanceDates();
 
