@@ -1454,7 +1454,7 @@ window.switchToArchive = async function () {
   if (!banner) {
     banner = document.createElement("div");
     banner.id = "archive-banner";
-    banner.textContent = "📦 Mode Archive 2025-2026 — Consultation uniquement";
+    banner.textContent = "🗂 Mode archive 2025-2026 — consultation uniquement, aucune modification possible";
     document.querySelector(".app-header").insertAdjacentElement("afterend", banner);
   }
   banner.style.display = "";
