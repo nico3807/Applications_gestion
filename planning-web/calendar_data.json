@@ -2006,10 +2006,9 @@
       "day": 2,
       "weekday": "Je",
       "events": {
-        "MMI1": "Conseil pédagogique S2, S4, S6",
-        "MMI3-crea": "Conseil pédagogique S2, S4, S6",
         "MMI2-App": "Entreprise S27",
-        "MMI3-App": "Entreprise S28"
+        "MMI3-App": "Entreprise S28",
+        "Autre": "Conseil pédagogique S2, S4, S6"
       }
     },
     {
@@ -2034,7 +2033,6 @@
       "day": 6,
       "weekday": "Lu",
       "events": {
-        "MMI1": "Grand Jury",
         "MMI2-App": "entreprise S28",
         "MMI3-App": "entreprise S29"
       },
@@ -2048,23 +2046,35 @@
         "MMI2-crea": "vacances",
         "MMI2-Dev": "vacances",
         "MMI3-crea": "vacances",
-        "MMI3-Dev": "vacances"
+        "MMI3-Dev": "vacances",
+        "Autre": "Grand Jury",
+        "MMI2-App": "entreprise S28",
+        "MMI3-App": "entreprise S29"
       }
     },
     {
       "day": 8,
       "weekday": "Me",
-      "events": {}
+      "events": {
+        "MMI2-App": "entreprise S28",
+        "MMI3-App": "entreprise S29"
+      }
     },
     {
       "day": 9,
       "weekday": "Je",
-      "events": {}
+      "events": {
+        "MMI2-App": "entreprise S28",
+        "MMI3-App": "entreprise S29"
+      }
     },
     {
       "day": 10,
       "weekday": "Ve",
-      "events": {}
+      "events": {
+        "MMI2-App": "entreprise S28",
+        "MMI3-App": "entreprise S29"
+      }
     },
     {
       "day": 11,
@@ -2083,9 +2093,9 @@
         "MMI1": "vacances",
         "MMI2-crea": "vacances",
         "MMI2-Dev": "vacances",
-        "MMI2-App": "entreprise S29",
         "MMI3-crea": "vacances",
         "MMI3-Dev": "vacances",
+        "MMI2-App": "entreprise S29",
         "MMI3-App": "entreprise S30"
       },
       "week": 29
@@ -2093,22 +2103,33 @@
     {
       "day": 14,
       "weekday": "Ma",
-      "events": {}
+      "events": {
+        "Férié": "14 juillet"
+      }
     },
     {
       "day": 15,
       "weekday": "Me",
-      "events": {}
+      "events": {
+        "MMI2-App": "entreprise S29",
+        "MMI3-App": "entreprise S30"
+      }
     },
     {
       "day": 16,
       "weekday": "Je",
-      "events": {}
+      "events": {
+        "MMI2-App": "entreprise S29",
+        "MMI3-App": "entreprise S30"
+      }
     },
     {
       "day": 17,
       "weekday": "Ve",
-      "events": {}
+      "events": {
+        "MMI2-App": "entreprise S29",
+        "MMI3-App": "entreprise S30"
+      }
     },
     {
       "day": 18,
@@ -2127,32 +2148,44 @@
         "MMI1": "vacances",
         "MMI2-crea": "vacances",
         "MMI2-Dev": "vacances",
-        "MMI2-App": "entreprise S30",
         "MMI3-crea": "vacances",
         "MMI3-Dev": "vacances",
-        "MMI3-App": "entreprise S31"
+        "MMI3-App": "entreprise S31",
+        "MMI2-App": "entreprise S30"
       },
       "week": 30
     },
     {
       "day": 21,
       "weekday": "Ma",
-      "events": {}
+      "events": {
+        "MMI3-App": "entreprise S31",
+        "MMI2-App": "entreprise S30"
+      }
     },
     {
       "day": 22,
       "weekday": "Me",
-      "events": {}
+      "events": {
+        "MMI3-App": "entreprise S31",
+        "MMI2-App": "entreprise S30"
+      }
     },
     {
       "day": 23,
       "weekday": "Je",
-      "events": {}
+      "events": {
+        "MMI3-App": "entreprise S31",
+        "MMI2-App": "entreprise S30"
+      }
     },
     {
       "day": 24,
       "weekday": "Ve",
-      "events": {}
+      "events": {
+        "MMI3-App": "entreprise S31",
+        "MMI2-App": "entreprise S30"
+      }
     },
     {
       "day": 25,
@@ -2171,9 +2204,9 @@
         "MMI1": "vacances",
         "MMI2-crea": "vacances",
         "MMI2-Dev": "vacances",
-        "MMI2-App": "entreprise S31",
         "MMI3-crea": "vacances",
         "MMI3-Dev": "vacances",
+        "MMI2-App": "entreprise S31",
         "MMI3-App": "entreprise S32"
       },
       "week": 31
@@ -2181,22 +2214,34 @@
     {
       "day": 28,
       "weekday": "Ma",
-      "events": {}
+      "events": {
+        "MMI2-App": "entreprise S31",
+        "MMI3-App": "entreprise S32"
+      }
     },
     {
       "day": 29,
       "weekday": "Me",
-      "events": {}
+      "events": {
+        "MMI2-App": "entreprise S31",
+        "MMI3-App": "entreprise S32"
+      }
     },
     {
       "day": 30,
       "weekday": "Je",
-      "events": {}
+      "events": {
+        "MMI2-App": "entreprise S31",
+        "MMI3-App": "entreprise S32"
+      }
     },
     {
       "day": 31,
       "weekday": "ve",
-      "events": {}
+      "events": {
+        "MMI2-App": "entreprise S31",
+        "MMI3-App": "entreprise S32"
+      }
     }
   ],
   "Août 2026": [
