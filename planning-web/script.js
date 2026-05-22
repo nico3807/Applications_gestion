@@ -891,7 +891,7 @@ function openDuplicateView() {
   document.getElementById("dupGroup").dataset.g = group;
   document.getElementById("dupTitle").textContent = text;
   document.getElementById("dupStart").value = srcDate;
-  document.getElementById("dupEnd").value = "";
+  document.getElementById("dupEnd").value = srcDate;
   document.getElementById("dupError").textContent = "";
   const _mmiGroups = ["MMI1","MMI2-crea","MMI2-Dev","MMI2-App","MMI3-crea","MMI3-Dev","MMI3-App"];
   const targetSel = document.getElementById("dupTargetGroup");
