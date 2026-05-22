@@ -1226,3 +1226,80 @@ body.archive-readonly #detailDeleteBtn,
 body.archive-readonly #detailDuplicateBtn,
 body.archive-readonly #detailEditBtn { display: none !important; }
 body.archive-readonly .gh-footer { display: none !important; }
+
+/* ===== BOUTON IMPRIMER ===== */
+.toolbar-hdr-actions {
+  position: absolute;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.28rem;
+}
+.toolbar-hdr-actions .btn-toggle-all {
+  position: static;
+}
+.btn-print {
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 0.18rem 0.55rem;
+  border-radius: 999px;
+  border: 1.5px solid var(--clr-border);
+  background: transparent;
+  color: var(--clr-muted);
+  cursor: pointer;
+  transition: all var(--trans);
+}
+.btn-print:hover {
+  border-color: var(--clr-primary);
+  color: var(--clr-primary);
+  background: var(--clr-primary-lt);
+}
+
+/* ===== TITRE D'IMPRESSION (masqué à l'écran) ===== */
+#print-title { display: none; }
+
+/* ===== IMPRESSION PAYSAGE ===== */
+@media print {
+  @page { size: A4 landscape; margin: 1.2cm; }
+
+  /* Masquer chrome de la page */
+  .app-header, .toolbar, #archive-banner,
+  .skip-link, .gh-footer, dialog { display: none !important; }
+
+  /* Titre en haut de la page imprimée */
+  #print-title {
+    display: block !important;
+    font-size: 1.15rem;
+    font-weight: 700;
+    text-align: center;
+    color: #1e3a5f;
+    margin-bottom: 0.8rem;
+    padding-bottom: 0.4rem;
+    border-bottom: 2px solid #1e3a5f;
+    letter-spacing: 0.03em;
+  }
+
+  /* Afficher uniquement le mois actif */
+  .month-section { display: none !important; }
+  .month-section.active { display: block !important; animation: none !important; }
+
+  /* Sticky → static pour l'impression */
+  .month-hdr { position: static !important; top: auto !important; }
+
+  /* Masquer le + d'ajout et le numéro de mois (déjà dans le titre) */
+  .add-evt-btn { display: none !important; }
+  .month-hdr h2 { display: none !important; }
+
+  /* Réduire la hauteur des cellules pour tenir en une page */
+  .cal-cell { min-height: 60px !important; }
+
+  /* Forcer les couleurs d'arrière-plan et les polices */
+  * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+
+  /* Pas de tooltip au survol */
+  .pill[title]:hover::after { display: none !important; }
+
+  /* Reset marges du contenu principal */
+  #main-content { padding: 0 !important; margin: 0 !important; }
+}

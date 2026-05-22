@@ -1519,6 +1519,16 @@ window.switchToCurrent = async function () {
 };
 
 /* =====================================================================
+     IMPRESSION
+  ===================================================================== */
+
+window.printMonth = function () {
+  const titleEl = document.getElementById("print-title");
+  if (titleEl) titleEl.textContent = `Planning MMI — ${currentMonth}`;
+  window.print();
+};
+
+/* =====================================================================
      INITIALISATION
   ===================================================================== */
 async function init() {

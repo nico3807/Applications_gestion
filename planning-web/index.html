@@ -86,7 +86,10 @@
     <div class="toolbar-card toolbar-card--full">
       <div class="toolbar-filter-hdr">
         <p class="toolbar-title" id="lbl-groups">Filtrer par groupe</p>
-        <button class="btn-toggle-all" id="btnToggleAll" type="button">Tout décocher</button>
+        <div class="toolbar-hdr-actions">
+          <button class="btn-toggle-all" id="btnToggleAll" type="button">Tout décocher</button>
+          <button class="btn-print" id="btnPrint" type="button" onclick="printMonth()">🖨 Imprimer</button>
+        </div>
       </div>
       <div class="filter-groups" id="filterGroups"
            role="group" aria-labelledby="lbl-groups">
@@ -94,6 +97,9 @@
       </div>
     </div>
   </div>
+
+  <!-- Titre visible uniquement à l'impression -->
+  <div id="print-title"></div>
 
   <!-- ==================== CONTENU PRINCIPAL ==================== -->
   <main id="main-content" tabindex="-1">
