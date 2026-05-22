@@ -1,2444 +1,2868 @@
 {
-  "Septembre 2025": [
+  "Septembre 2026": [
     {
       "day": 1,
-      "weekday": "Lu",
+      "weekday": "Tu",
       "events": {
-        "MMI3-App": "examen souteannces"
-      },
-      "week": 36
-    },
-    {
-      "day": 2,
-      "weekday": "Ma",
-      "events": {
-        "MMI1": "Rentrée"
+        "MMI1": "Rentrée 09h30",
+        "MMI2-crea": "Rentrée 11h",
+        "MMI2-Dev": "Rentrée 11h",
+        "MMI2-App": "Rentrée 11h",
+        "Réunion": "Réunion équipe rentrée"
       }
     },
     {
-      "day": 3,
-      "weekday": "Me",
+      "day": 2,
+      "weekday": "We",
       "events": {}
     },
     {
+      "day": 3,
+      "weekday": "Th",
+      "events": {
+        "MMI3-crea": "Rentrée 11h",
+        "MMI3-Dev": "Rentrée 11h",
+        "MMI3-App": "Rentrée 11h"
+      }
+    },
+    {
       "day": 4,
-      "weekday": "Je",
+      "weekday": "Fr",
       "events": {}
     },
     {
       "day": 5,
-      "weekday": "Ve",
-      "events": {}
-    },
-    {
-      "day": 6,
       "weekday": "Sa",
       "events": {}
     },
     {
-      "day": 7,
-      "weekday": "Di",
+      "day": 6,
+      "weekday": "Su",
       "events": {}
     },
     {
-      "day": 8,
-      "weekday": "Lu",
+      "day": 7,
+      "weekday": "Mo",
       "events": {},
       "week": 37
     },
     {
+      "day": 8,
+      "weekday": "Tu",
+      "events": {}
+    },
+    {
       "day": 9,
-      "weekday": "Ma",
+      "weekday": "We",
       "events": {}
     },
     {
       "day": 10,
-      "weekday": "Me",
+      "weekday": "Th",
       "events": {}
     },
     {
       "day": 11,
-      "weekday": "Je",
+      "weekday": "Fr",
       "events": {}
     },
     {
       "day": 12,
-      "weekday": "Ve",
+      "weekday": "Sa",
       "events": {}
     },
     {
       "day": 13,
-      "weekday": "Sa",
+      "weekday": "Su",
       "events": {}
     },
     {
       "day": 14,
-      "weekday": "Di",
-      "events": {}
-    },
-    {
-      "day": 15,
-      "weekday": "Lu",
-      "events": {
-        "MMI2-App": "Entreprise S01"
-      },
+      "weekday": "Mo",
+      "events": {},
       "week": 38
     },
     {
+      "day": 15,
+      "weekday": "Tu",
+      "events": {}
+    },
+    {
       "day": 16,
-      "weekday": "Ma",
+      "weekday": "We",
       "events": {}
     },
     {
       "day": 17,
-      "weekday": "Me",
+      "weekday": "Th",
       "events": {}
     },
     {
       "day": 18,
-      "weekday": "Je",
+      "weekday": "Fr",
       "events": {}
     },
     {
       "day": 19,
-      "weekday": "Ve",
-      "events": {}
-    },
-    {
-      "day": 20,
       "weekday": "Sa",
       "events": {}
     },
     {
-      "day": 21,
-      "weekday": "Di",
+      "day": 20,
+      "weekday": "Su",
       "events": {}
     },
     {
-      "day": 22,
-      "weekday": "Lu",
+      "day": 21,
+      "weekday": "Mo",
       "events": {
-        "MMI3-crea": "SAE 5C.01 R.ESCURIOLADOCU-FICTION",
-        "MMI3-Dev": "SAE 5D.01  Dev Avancé (D. Marill / B. Darties)",
-        "MMI3-App": "Entreprise S01"
+        "MMI3-App": "Alternance"
       },
       "week": 39
     },
     {
+      "day": 22,
+      "weekday": "Tu",
+      "events": {
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
       "day": 23,
-      "weekday": "Ma",
-      "events": {}
+      "weekday": "We",
+      "events": {
+        "MMI3-App": "Alternance"
+      }
     },
     {
       "day": 24,
-      "weekday": "Me",
-      "events": {}
+      "weekday": "Th",
+      "events": {
+        "MMI3-App": "Alternance",
+        "Autre": "Journée Bienvenue 2026"
+      }
     },
     {
       "day": 25,
-      "weekday": "Je",
+      "weekday": "Fr",
       "events": {
-        "MMI1": "Journée Bienvenue 2025"
+        "MMI3-App": "Alternance"
       }
     },
     {
       "day": 26,
-      "weekday": "Ve",
+      "weekday": "Sa",
       "events": {}
     },
     {
       "day": 27,
-      "weekday": "Sa",
+      "weekday": "Su",
       "events": {}
     },
     {
       "day": 28,
-      "weekday": "Di",
-      "events": {}
+      "weekday": "Mo",
+      "events": {
+        "MMI2-App": "Alternance",
+        "MMI2-crea": "SAE",
+        "MMI2-Dev": "SAE"
+      },
+      "week": 40
     },
     {
       "day": 29,
-      "weekday": "Lu",
+      "weekday": "Tu",
       "events": {
-        "MMI2-crea": "SAE 301  part 1  (B. Darties/N. Maurin)",
-        "MMI2-App": "Entreprise S02"
+        "MMI2-App": "Alternance",
+        "MMI2-crea": "SAE",
+        "MMI2-Dev": "SAE"
       }
     },
     {
       "day": 30,
-      "weekday": "Ma",
-      "events": {},
-      "week": 40
+      "weekday": "We",
+      "events": {
+        "MMI2-App": "Alternance",
+        "MMI2-crea": "SAE",
+        "MMI2-Dev": "SAE"
+      }
     }
   ],
-  "Octobre 2025": [
+  "Octobre 2026": [
     {
       "day": 1,
-      "weekday": "Me",
+      "weekday": "Th",
       "events": {
-        "MMI2-crea": "SAE 301  part 1  (B. Darties/N. Maurin)",
-        "MMI2-App": "Entreprise S08"
+        "MMI2-App": "Alternance",
+        "MMI2-crea": "SAE",
+        "MMI2-Dev": "SAE"
       }
     },
     {
       "day": 2,
-      "weekday": "Je",
-      "events": {}
+      "weekday": "Fr",
+      "events": {
+        "MMI2-App": "Alternance",
+        "MMI2-crea": "SAE",
+        "MMI2-Dev": "SAE"
+      }
     },
     {
       "day": 3,
-      "weekday": "Ve",
-      "events": {}
-    },
-    {
-      "day": 4,
       "weekday": "Sa",
       "events": {}
     },
     {
-      "day": 5,
-      "weekday": "Di",
+      "day": 4,
+      "weekday": "Su",
       "events": {}
     },
     {
-      "day": 6,
-      "weekday": "Lu",
+      "day": 5,
+      "weekday": "Mo",
       "events": {
-        "MMI1": "SAE 1.01 Audit Comm. Numérique  (C. Pellissier)",
-        "MMI3-crea": "SAE 5C.01  Stop Motion (C. Surribas)",
-        "MMI3-Dev": "SAE 5D.01  Dev Avancé (D. Marill / B. Darties)",
-        "MMI3-App": "Entreprise S02"
+        "MMI3-App": "Alternance"
       },
       "week": 41
     },
     {
+      "day": 6,
+      "weekday": "Tu",
+      "events": {
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
       "day": 7,
-      "weekday": "Ma",
-      "events": {}
+      "weekday": "We",
+      "events": {
+        "MMI3-App": "Alternance"
+      }
     },
     {
       "day": 8,
-      "weekday": "Me",
-      "events": {}
+      "weekday": "Th",
+      "events": {
+        "MMI3-App": "Alternance"
+      }
     },
     {
       "day": 9,
-      "weekday": "Je",
-      "events": {}
+      "weekday": "Fr",
+      "events": {
+        "MMI3-App": "Alternance"
+      }
     },
     {
       "day": 10,
-      "weekday": "Ve",
+      "weekday": "Sa",
       "events": {}
     },
     {
       "day": 11,
-      "weekday": "Sa",
+      "weekday": "Su",
       "events": {}
     },
     {
       "day": 12,
-      "weekday": "Di",
-      "events": {}
-    },
-    {
-      "day": 13,
-      "weekday": "Lu",
+      "weekday": "Mo",
       "events": {
-        "MMI2-crea": "Semaine  SAE 301  part 2  (B. Darties/N. Maurin)",
-        "MMI2-App": "Entreprise S03"
+        "MMI2-App": "Alternance",
+        "MMI2-crea": "SAE",
+        "MMI2-Dev": "SAE"
       },
       "week": 42
     },
     {
+      "day": 13,
+      "weekday": "Tu",
+      "events": {
+        "MMI2-App": "Alternance",
+        "MMI2-crea": "SAE",
+        "MMI2-Dev": "SAE"
+      }
+    },
+    {
       "day": 14,
-      "weekday": "Ma",
-      "events": {}
+      "weekday": "We",
+      "events": {
+        "MMI2-App": "Alternance",
+        "MMI2-crea": "SAE",
+        "MMI2-Dev": "SAE"
+      }
     },
     {
       "day": 15,
-      "weekday": "Me",
-      "events": {}
+      "weekday": "Th",
+      "events": {
+        "MMI2-App": "Alternance",
+        "MMI2-crea": "SAE",
+        "MMI2-Dev": "SAE"
+      }
     },
     {
       "day": 16,
-      "weekday": "Je",
-      "events": {}
+      "weekday": "Fr",
+      "events": {
+        "MMI2-App": "Alternance",
+        "MMI2-crea": "SAE",
+        "MMI2-Dev": "SAE"
+      }
     },
     {
       "day": 17,
-      "weekday": "Ve",
+      "weekday": "Sa",
       "events": {}
     },
     {
       "day": 18,
-      "weekday": "Sa",
+      "weekday": "Su",
       "events": {}
     },
     {
       "day": 19,
-      "weekday": "Di",
-      "events": {}
-    },
-    {
-      "day": 20,
-      "weekday": "Lu",
+      "weekday": "Mo",
       "events": {
-        "MMI1": "SAE 1.04 (S. Blanco) 1/2",
-        "MMI3-crea": "SAE 5C.01 R.ESCURIOLA Docu Fiction",
-        "MMI3-Dev": "SAE 5D.01  Dev Avancé (D. Marill / B. Darties)",
-        "MMI3-App": "Entreprise S03"
+        "MMI3-App": "Alternance"
       },
       "week": 43
     },
     {
+      "day": 20,
+      "weekday": "Tu",
+      "events": {
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
       "day": 21,
-      "weekday": "Ma",
-      "events": {}
+      "weekday": "We",
+      "events": {
+        "MMI3-App": "Alternance"
+      }
     },
     {
       "day": 22,
-      "weekday": "Me",
-      "events": {}
+      "weekday": "Th",
+      "events": {
+        "MMI3-App": "Alternance"
+      }
     },
     {
       "day": 23,
-      "weekday": "Je",
-      "events": {}
+      "weekday": "Fr",
+      "events": {
+        "MMI3-App": "Alternance"
+      }
     },
     {
       "day": 24,
-      "weekday": "Ve",
-      "events": {}
+      "weekday": "Sa",
+      "events": {
+        "MMI3-App": "Alternance"
+      }
     },
     {
       "day": 25,
-      "weekday": "Sa",
-      "events": {}
+      "weekday": "Su",
+      "events": {
+        "MMI3-App": "Alternance"
+      }
     },
     {
       "day": 26,
-      "weekday": "Di",
-      "events": {}
-    },
-    {
-      "day": 27,
-      "weekday": "Lu",
+      "weekday": "Mo",
       "events": {
         "MMI1": "vacances",
-        "MMI2-crea": "vacances",
-        "MMI2-Dev": "vacances",
-        "MMI2-App": "Entreprise S04",
-        "MMI3-crea": "vacances",
-        "MMI3-Dev": "vacances",
-        "MMI3-App": "Entreprise S04"
+        "MMI2-App": "Alternance",
+        "MMI3-App": "Alternance"
       },
       "week": 44
     },
     {
-      "day": 28,
-      "weekday": "Ma",
-      "events": {}
-    },
-    {
-      "day": 29,
-      "weekday": "Me",
-      "events": {}
-    },
-    {
-      "day": 30,
-      "weekday": "Je",
-      "events": {}
-    },
-    {
-      "day": 31,
-      "weekday": "Ve",
-      "events": {}
-    }
-  ],
-  "Novembre 2025": [
-    {
-      "day": 1,
-      "weekday": "Sa",
+      "day": 27,
+      "weekday": "Tu",
       "events": {
-        "MMI1": "Tousaint",
-        "Férié": "Toussaint"
+        "MMI2-App": "Alternance",
+        "MMI3-App": "Alternance"
       }
     },
     {
-      "day": 2,
-      "weekday": "Di",
+      "day": 28,
+      "weekday": "We",
+      "events": {
+        "MMI2-App": "Alternance",
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 29,
+      "weekday": "Th",
+      "events": {
+        "MMI2-App": "Alternance",
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 30,
+      "weekday": "Fr",
+      "events": {
+        "MMI2-App": "Alternance",
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 31,
+      "weekday": "Sa",
+      "events": {}
+    }
+  ],
+  "Novembre 2026": [
+    {
+      "day": 1,
+      "weekday": "Su",
       "events": {}
     },
     {
-      "day": 3,
-      "weekday": "Lu",
-      "events": {
-        "MMI1": "SAE 1.04 (S. Blanco) 2/2"
-      },
+      "day": 2,
+      "weekday": "Mo",
+      "events": {},
       "week": 45
     },
     {
+      "day": 3,
+      "weekday": "Tu",
+      "events": {}
+    },
+    {
       "day": 4,
-      "weekday": "Ma",
+      "weekday": "We",
       "events": {}
     },
     {
       "day": 5,
-      "weekday": "Me",
+      "weekday": "Th",
       "events": {}
     },
     {
       "day": 6,
-      "weekday": "Je",
+      "weekday": "Fr",
       "events": {}
     },
     {
       "day": 7,
-      "weekday": "Ve",
-      "events": {}
-    },
-    {
-      "day": 8,
       "weekday": "Sa",
       "events": {}
     },
     {
-      "day": 9,
-      "weekday": "Di",
+      "day": 8,
+      "weekday": "Su",
       "events": {}
     },
     {
-      "day": 10,
-      "weekday": "Lu",
+      "day": 9,
+      "weekday": "Mo",
       "events": {
-        "MMI3-crea": "SAE 5C.01 Comm 360 (A. Petit)",
-        "MMI3-Dev": "SAE 5D.03 Dispo Interactif (S. Besga 1/3)",
-        "MMI3-App": "Entreprise S05"
+        "MMI3-App": "Alternance"
       },
       "week": 46
     },
     {
-      "day": 11,
-      "weekday": "Ma",
+      "day": 10,
+      "weekday": "Tu",
       "events": {
-        "MMI1": "Armistice 1918",
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 11,
+      "weekday": "We",
+      "events": {
         "Férié": "Armistice"
       }
     },
     {
       "day": 12,
-      "weekday": "Me",
+      "weekday": "Th",
       "events": {
-        "MMI3-crea": "SAE 5C.01 Comm 360 (A. Petit)",
-        "MMI3-Dev": "SAE 5D.03 Dispo Interactif (S. Besga 1/3)",
-        "MMI3-App": "Entreprise S05"
+        "MMI3-App": "Alternance"
       }
     },
     {
       "day": 13,
-      "weekday": "Je",
-      "events": {}
+      "weekday": "Fr",
+      "events": {
+        "MMI3-App": "Alternance"
+      }
     },
     {
       "day": 14,
-      "weekday": "Ve",
-      "events": {}
-    },
-    {
-      "day": 15,
       "weekday": "Sa",
       "events": {}
     },
     {
-      "day": 16,
-      "weekday": "Di",
+      "day": 15,
+      "weekday": "Su",
       "events": {}
     },
     {
-      "day": 17,
-      "weekday": "Lu",
+      "day": 16,
+      "weekday": "Mo",
       "events": {
-        "MMI2-crea": "SAE 3.02 part 1 (C. Surribas)",
-        "MMI2-App": "Entreprise S05"
+        "MMI2-App": "Alternance",
+        "MMI2-crea": "SAE",
+        "MMI2-Dev": "SAE"
       },
       "week": 47
     },
     {
+      "day": 17,
+      "weekday": "Tu",
+      "events": {
+        "MMI2-App": "Alternance",
+        "MMI2-crea": "SAE",
+        "MMI2-Dev": "SAE"
+      }
+    },
+    {
       "day": 18,
-      "weekday": "Ma",
-      "events": {}
+      "weekday": "We",
+      "events": {
+        "MMI2-App": "Alternance",
+        "MMI2-crea": "SAE",
+        "MMI2-Dev": "SAE"
+      }
     },
     {
       "day": 19,
-      "weekday": "Me",
-      "events": {}
+      "weekday": "Th",
+      "events": {
+        "MMI2-App": "Alternance",
+        "MMI2-crea": "SAE",
+        "MMI2-Dev": "SAE"
+      }
     },
     {
       "day": 20,
-      "weekday": "Je",
-      "events": {}
+      "weekday": "Fr",
+      "events": {
+        "MMI2-App": "Alternance",
+        "MMI2-crea": "SAE",
+        "MMI2-Dev": "SAE"
+      }
     },
     {
       "day": 21,
-      "weekday": "Ve",
-      "events": {}
-    },
-    {
-      "day": 22,
       "weekday": "Sa",
       "events": {}
     },
     {
-      "day": 23,
-      "weekday": "Di",
+      "day": 22,
+      "weekday": "Su",
       "events": {}
     },
     {
-      "day": 24,
-      "weekday": "Lu",
+      "day": 23,
+      "weekday": "Mo",
       "events": {
-        "MMI1": "SAE 1.02 recomm Numerique (C. Rampon)",
-        "MMI3-crea": "SAE 5D.02 Management (M. Piedevache)",
-        "MMI3-Dev": "SAE 5D.02 Management (M. Piedevache)",
-        "MMI3-App": "Entreprise S06"
+        "MMI3-App": "Alternance"
       },
       "week": 48
     },
     {
-      "day": 25,
-      "weekday": "Ma",
-      "events": {}
-    },
-    {
-      "day": 26,
-      "weekday": "Me",
-      "events": {}
-    },
-    {
-      "day": 27,
-      "weekday": "Je",
-      "events": {}
-    },
-    {
-      "day": 28,
-      "weekday": "Ve",
-      "events": {}
-    },
-    {
-      "day": 29,
-      "weekday": "Sa",
-      "events": {}
-    },
-    {
-      "day": 30,
-      "weekday": "Di",
-      "events": {}
-    }
-  ],
-  "Décembre 2025": [
-    {
-      "day": 1,
-      "weekday": "Lu",
-      "events": {
-        "MMI2-crea": "SAE 3.02 part 2 (S. Blanco)",
-        "MMI2-App": "Entreprise S06"
-      },
-      "week": 49
-    },
-    {
-      "day": 2,
-      "weekday": "Ma",
-      "events": {}
-    },
-    {
-      "day": 3,
-      "weekday": "Me",
-      "events": {}
-    },
-    {
-      "day": 4,
-      "weekday": "Je",
-      "events": {}
-    },
-    {
-      "day": 5,
-      "weekday": "Ve",
-      "events": {}
-    },
-    {
-      "day": 6,
-      "weekday": "Sa",
-      "events": {}
-    },
-    {
-      "day": 7,
-      "weekday": "Di",
-      "events": {}
-    },
-    {
-      "day": 8,
-      "weekday": "Lu",
-      "events": {
-        "MMI3-crea": "SAE 5C.01 L.CALOMINA FX/AFTER EFFECT",
-        "MMI3-Dev": "SAE 5D.03 S. Besga  (2/3)",
-        "MMI3-App": "Entreprise S07"
-      },
-      "week": 50
-    },
-    {
-      "day": 9,
-      "weekday": "Ma",
-      "events": {}
-    },
-    {
-      "day": 10,
-      "weekday": "Me",
-      "events": {}
-    },
-    {
-      "day": 11,
-      "weekday": "Je",
-      "events": {}
-    },
-    {
-      "day": 12,
-      "weekday": "Ve",
-      "events": {}
-    },
-    {
-      "day": 13,
-      "weekday": "Sa",
-      "events": {}
-    },
-    {
-      "day": 14,
-      "weekday": "Di",
-      "events": {}
-    },
-    {
-      "day": 15,
-      "weekday": "Lu",
-      "events": {
-        "MMI1": "SAE 1.05 Site Web (B. Darties)"
-      },
-      "week": 51
-    },
-    {
-      "day": 16,
-      "weekday": "Ma",
-      "events": {}
-    },
-    {
-      "day": 17,
-      "weekday": "Me",
-      "events": {}
-    },
-    {
-      "day": 18,
-      "weekday": "Je",
-      "events": {}
-    },
-    {
-      "day": 19,
-      "weekday": "Ve",
-      "events": {}
-    },
-    {
-      "day": 20,
-      "weekday": "Sa",
-      "events": {}
-    },
-    {
-      "day": 21,
-      "weekday": "Di",
-      "events": {}
-    },
-    {
-      "day": 22,
-      "weekday": "Lu",
-      "events": {
-        "MMI1": "vacances",
-        "MMI2-crea": "vacances",
-        "MMI2-Dev": "vacances",
-        "MMI2-App": "Entreprise S07",
-        "MMI3-crea": "vacances",
-        "MMI3-Dev": "vacances",
-        "MMI3-App": "entreprise S08"
-      },
-      "week": 52
-    },
-    {
-      "day": 23,
-      "weekday": "Ma",
-      "events": {}
-    },
-    {
       "day": 24,
-      "weekday": "Me",
-      "events": {}
+      "weekday": "Tu",
+      "events": {
+        "MMI3-App": "Alternance"
+      }
     },
     {
       "day": 25,
-      "weekday": "Je",
+      "weekday": "We",
       "events": {
-        "MMI1": "Noel"
+        "MMI3-App": "Alternance"
       }
     },
     {
       "day": 26,
-      "weekday": "Ve",
-      "events": {}
+      "weekday": "Th",
+      "events": {
+        "MMI3-App": "Alternance"
+      }
     },
     {
       "day": 27,
+      "weekday": "Fr",
+      "events": {
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 28,
       "weekday": "Sa",
       "events": {}
     },
     {
-      "day": 28,
-      "weekday": "Di",
-      "events": {}
-    },
-    {
       "day": 29,
-      "weekday": "Lu",
-      "events": {
-        "MMI1": "vacances",
-        "MMI2-crea": "vacances",
-        "MMI2-Dev": "vacances",
-        "MMI2-App": "Entreprise S08",
-        "MMI3-crea": "vacances",
-        "MMI3-Dev": "vacances",
-        "MMI3-App": "entreprise S09"
-      },
-      "week": 1
+      "weekday": "Su",
+      "events": {}
     },
     {
       "day": 30,
-      "weekday": "Ma",
+      "weekday": "Mo",
+      "events": {
+        "MMI2-App": "Alternance",
+        "MMI2-crea": "SAE",
+        "MMI2-Dev": "SAE"
+      },
+      "week": 49
+    }
+  ],
+  "Décembre 2026": [
+    {
+      "day": 1,
+      "weekday": "Tu",
+      "events": {
+        "MMI2-App": "Alternance",
+        "MMI2-crea": "SAE",
+        "MMI2-Dev": "SAE"
+      }
+    },
+    {
+      "day": 2,
+      "weekday": "We",
+      "events": {
+        "MMI2-App": "Alternance",
+        "MMI2-crea": "SAE",
+        "MMI2-Dev": "SAE"
+      }
+    },
+    {
+      "day": 3,
+      "weekday": "Th",
+      "events": {
+        "MMI2-App": "Alternance",
+        "MMI2-crea": "SAE",
+        "MMI2-Dev": "SAE"
+      }
+    },
+    {
+      "day": 4,
+      "weekday": "Fr",
+      "events": {
+        "MMI2-App": "Alternance",
+        "MMI2-crea": "SAE",
+        "MMI2-Dev": "SAE"
+      }
+    },
+    {
+      "day": 5,
+      "weekday": "Sa",
       "events": {}
     },
     {
-      "day": 31,
-      "weekday": "Me",
+      "day": 6,
+      "weekday": "Su",
       "events": {}
+    },
+    {
+      "day": 7,
+      "weekday": "Mo",
+      "events": {
+        "MMI3-App": "Alternance"
+      },
+      "week": 50
+    },
+    {
+      "day": 8,
+      "weekday": "Tu",
+      "events": {
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 9,
+      "weekday": "We",
+      "events": {
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 10,
+      "weekday": "Th",
+      "events": {
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 11,
+      "weekday": "Fr",
+      "events": {
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 12,
+      "weekday": "Sa",
+      "events": {}
+    },
+    {
+      "day": 13,
+      "weekday": "Su",
+      "events": {}
+    },
+    {
+      "day": 14,
+      "weekday": "Mo",
+      "events": {},
+      "week": 51
+    },
+    {
+      "day": 15,
+      "weekday": "Tu",
+      "events": {}
+    },
+    {
+      "day": 16,
+      "weekday": "We",
+      "events": {}
+    },
+    {
+      "day": 17,
+      "weekday": "Th",
+      "events": {}
+    },
+    {
+      "day": 18,
+      "weekday": "Fr",
+      "events": {}
+    },
+    {
+      "day": 19,
+      "weekday": "Sa",
+      "events": {}
+    },
+    {
+      "day": 20,
+      "weekday": "Su",
+      "events": {}
+    },
+    {
+      "day": 21,
+      "weekday": "Mo",
+      "events": {
+        "MMI1": "vacances",
+        "MMI3-App": "Alternance"
+      },
+      "week": 52
+    },
+    {
+      "day": 22,
+      "weekday": "Tu",
+      "events": {
+        "MMI2-App": "Alternance",
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 23,
+      "weekday": "We",
+      "events": {
+        "MMI2-App": "Alternance",
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 24,
+      "weekday": "Th",
+      "events": {
+        "MMI2-App": "Alternance",
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 25,
+      "weekday": "Fr",
+      "events": {
+        "Férié": "Noël"
+      }
+    },
+    {
+      "day": 26,
+      "weekday": "Sa",
+      "events": {
+        "MMI2-App": "Alternance",
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 27,
+      "weekday": "Su",
+      "events": {
+        "MMI2-App": "Alternance",
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 28,
+      "weekday": "Mo",
+      "events": {
+        "MMI1": "vacances",
+        "MMI2-App": "Alternance",
+        "MMI3-App": "Alternance"
+      },
+      "week": 53
+    },
+    {
+      "day": 29,
+      "weekday": "Tu",
+      "events": {
+        "MMI2-App": "Alternance",
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 30,
+      "weekday": "We",
+      "events": {
+        "MMI2-App": "Alternance",
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 31,
+      "weekday": "Th",
+      "events": {
+        "MMI2-App": "Alternance",
+        "MMI3-App": "Alternance"
+      }
     }
   ],
-  "Janvier 2026": [
+  "Janvier 2027": [
     {
       "day": 1,
-      "weekday": "Je",
+      "weekday": "Fr",
       "events": {
-        "MMI1": "Jour de l'an",
         "Férié": "Jour de l'an"
       }
     },
     {
       "day": 2,
-      "weekday": "Ve",
-      "events": {}
-    },
-    {
-      "day": 3,
       "weekday": "Sa",
       "events": {}
     },
     {
-      "day": 4,
-      "weekday": "Di",
+      "day": 3,
+      "weekday": "Su",
       "events": {}
     },
     {
+      "day": 4,
+      "weekday": "Mo",
+      "events": {},
+      "week": 1
+    },
+    {
       "day": 5,
-      "weekday": "Lu",
+      "weekday": "Tu",
+      "events": {}
+    },
+    {
+      "day": 6,
+      "weekday": "We",
+      "events": {}
+    },
+    {
+      "day": 7,
+      "weekday": "Th",
+      "events": {}
+    },
+    {
+      "day": 8,
+      "weekday": "Fr",
+      "events": {}
+    },
+    {
+      "day": 9,
+      "weekday": "Sa",
+      "events": {}
+    },
+    {
+      "day": 10,
+      "weekday": "Su",
+      "events": {}
+    },
+    {
+      "day": 11,
+      "weekday": "Mo",
       "events": {
-        "MMI1": "SAE 103 - Comm Visuelle (V. SELIGHINI)"
+        "MMI3-App": "Alternance"
       },
       "week": 2
     },
     {
-      "day": 6,
-      "weekday": "Ma",
-      "events": {}
+      "day": 12,
+      "weekday": "Tu",
+      "events": {
+        "MMI3-App": "Alternance"
+      }
     },
     {
-      "day": 7,
-      "weekday": "Me",
-      "events": {}
+      "day": 13,
+      "weekday": "We",
+      "events": {
+        "MMI3-App": "Alternance"
+      }
     },
     {
-      "day": 8,
-      "weekday": "Je",
-      "events": {}
+      "day": 14,
+      "weekday": "Th",
+      "events": {
+        "MMI3-App": "Alternance"
+      }
     },
     {
-      "day": 9,
-      "weekday": "Ve",
-      "events": {}
+      "day": 15,
+      "weekday": "Fr",
+      "events": {
+        "MMI3-App": "Alternance"
+      }
     },
     {
-      "day": 10,
+      "day": 16,
       "weekday": "Sa",
       "events": {}
     },
     {
-      "day": 11,
-      "weekday": "Di",
+      "day": 17,
+      "weekday": "Su",
       "events": {}
     },
     {
-      "day": 12,
-      "weekday": "Lu",
+      "day": 18,
+      "weekday": "Mo",
       "events": {
-        "MMI2-crea": "SAE 3.03  (C. Surribas & A. Lagiewka)",
-        "MMI2-App": "Entreprise S11",
-        "MMI3-crea": "SAE 5C.01 Figma  (A. lagiewka)",
-        "MMI3-Dev": "SAE 5D.03 S. Besga  (3/3)",
-        "MMI3-App": "Entreprise S10"
+        "MMI2-App": "Alternance",
+        "MMI2-crea": "SAE",
+        "MMI2-Dev": "SAE"
       },
       "week": 3
     },
     {
-      "day": 13,
-      "weekday": "Ma",
-      "events": {}
+      "day": 19,
+      "weekday": "Tu",
+      "events": {
+        "MMI2-App": "Alternance",
+        "MMI2-crea": "SAE",
+        "MMI2-Dev": "SAE"
+      }
     },
     {
-      "day": 14,
-      "weekday": "Me",
-      "events": {}
+      "day": 20,
+      "weekday": "We",
+      "events": {
+        "MMI2-App": "Alternance",
+        "MMI2-crea": "SAE",
+        "MMI2-Dev": "SAE"
+      }
     },
     {
-      "day": 15,
-      "weekday": "Je",
-      "events": {}
+      "day": 21,
+      "weekday": "Th",
+      "events": {
+        "MMI2-App": "Alternance",
+        "MMI2-crea": "SAE",
+        "MMI2-Dev": "SAE"
+      }
     },
     {
-      "day": 16,
-      "weekday": "Ve",
-      "events": {}
+      "day": 22,
+      "weekday": "Fr",
+      "events": {
+        "MMI2-App": "Alternance",
+        "MMI2-crea": "SAE",
+        "MMI2-Dev": "SAE"
+      }
     },
     {
-      "day": 17,
+      "day": 23,
       "weekday": "Sa",
       "events": {}
     },
     {
-      "day": 18,
-      "weekday": "Di",
+      "day": 24,
+      "weekday": "Su",
       "events": {}
     },
     {
-      "day": 19,
-      "weekday": "Lu",
+      "day": 25,
+      "weekday": "Mo",
       "events": {
-        "MMI1": "SAE 1.06 comm numerique (L. Tournie)"
+        "Autre": "MARATHON MMI 2027"
       },
       "week": 4
     },
     {
-      "day": 20,
-      "weekday": "Ma",
-      "events": {}
-    },
-    {
-      "day": 21,
-      "weekday": "Me",
-      "events": {}
-    },
-    {
-      "day": 22,
-      "weekday": "Je",
-      "events": {}
-    },
-    {
-      "day": 23,
-      "weekday": "Ve",
-      "events": {
-        "MMI3-crea": "Code Game Jam?? (jeudi aprem -> samedi)"
-      }
-    },
-    {
-      "day": 24,
-      "weekday": "Sa",
-      "events": {
-        "MMI1": "Fin S1 - S3 / début S2 - S4"
-      }
-    },
-    {
-      "day": 25,
-      "weekday": "Di",
-      "events": {}
-    },
-    {
       "day": 26,
-      "weekday": "Lu",
+      "weekday": "Tu",
       "events": {
-        "MMI1": "Marathon MMI"
+        "Autre": "MARATHON MMI 2027"
+      }
+    },
+    {
+      "day": 27,
+      "weekday": "We",
+      "events": {
+        "Autre": "MARATHON MMI 2027"
+      }
+    },
+    {
+      "day": 28,
+      "weekday": "Th",
+      "events": {
+        "Autre": "MARATHON MMI 2027"
+      }
+    },
+    {
+      "day": 29,
+      "weekday": "Fr",
+      "events": {
+        "Autre": "MARATHON MMI 2027"
+      }
+    },
+    {
+      "day": 30,
+      "weekday": "Sa",
+      "events": {}
+    },
+    {
+      "day": 31,
+      "weekday": "Su",
+      "events": {}
+    }
+  ],
+  "Février 2027": [
+    {
+      "day": 1,
+      "weekday": "Mo",
+      "events": {
+        "MMI2-App": "Alternance",
+        "MMI3-App": "Alternance",
+        "MMI2-crea": "SAE",
+        "MMI2-Dev": "SAE"
       },
       "week": 5
     },
     {
-      "day": 27,
-      "weekday": "Ma",
-      "events": {}
-    },
-    {
-      "day": 28,
-      "weekday": "Me",
-      "events": {}
-    },
-    {
-      "day": 29,
-      "weekday": "Je",
-      "events": {}
-    },
-    {
-      "day": 30,
-      "weekday": "Ve",
-      "events": {}
-    },
-    {
-      "day": 31,
-      "weekday": "Sa",
-      "events": {}
-    }
-  ],
-  "Février 2026": [
-    {
-      "day": 1,
-      "weekday": "Di",
-      "events": {}
-    },
-    {
       "day": 2,
-      "weekday": "Lu",
+      "weekday": "Tu",
       "events": {
-        "MMI3-crea": "stage S01",
-        "MMI3-App": "Entreprise S11",
-        "MMI3-Dev": "stage S01"
+        "MMI2-App": "Alternance",
+        "MMI3-App": "Alternance",
+        "MMI2-crea": "SAE",
+        "MMI2-Dev": "SAE"
+      }
+    },
+    {
+      "day": 3,
+      "weekday": "We",
+      "events": {
+        "MMI2-App": "Alternance",
+        "MMI3-App": "Alternance",
+        "MMI2-crea": "SAE",
+        "MMI2-Dev": "SAE"
+      }
+    },
+    {
+      "day": 4,
+      "weekday": "Th",
+      "events": {
+        "MMI2-App": "Alternance",
+        "MMI3-App": "Alternance",
+        "MMI2-crea": "SAE",
+        "MMI2-Dev": "SAE"
+      }
+    },
+    {
+      "day": 5,
+      "weekday": "Fr",
+      "events": {
+        "MMI2-App": "Alternance",
+        "MMI3-App": "Alternance",
+        "MMI2-crea": "SAE",
+        "MMI2-Dev": "SAE"
+      }
+    },
+    {
+      "day": 6,
+      "weekday": "Sa",
+      "events": {
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 7,
+      "weekday": "Su",
+      "events": {
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 8,
+      "weekday": "Mo",
+      "events": {
+        "MMI3-App": "Alternance"
       },
       "week": 6
     },
     {
-      "day": 3,
-      "weekday": "Ma",
-      "events": {}
-    },
-    {
-      "day": 4,
-      "weekday": "Me",
-      "events": {}
-    },
-    {
-      "day": 5,
-      "weekday": "Je",
-      "events": {}
-    },
-    {
-      "day": 6,
-      "weekday": "Ve",
-      "events": {}
-    },
-    {
-      "day": 7,
-      "weekday": "Sa",
-      "events": {}
-    },
-    {
-      "day": 8,
-      "weekday": "Di",
-      "events": {}
-    },
-    {
       "day": 9,
-      "weekday": "Lu",
+      "weekday": "Tu",
       "events": {
-        "MMI2-crea": "SAE Langues (M. Baron / W. Bernard / S. Blanco)",
-        "MMI2-Dev": "SAE 4D.01 Developpement Web avancé (B. Darties)",
-        "MMI2-App": "Entreprise S11",
-        "MMI3-crea": "stage S02",
-        "MMI3-App": "Entreprise S12",
-        "MMI3-Dev": "stage S02"
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 10,
+      "weekday": "We",
+      "events": {
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 11,
+      "weekday": "Th",
+      "events": {
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 12,
+      "weekday": "Fr",
+      "events": {
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 13,
+      "weekday": "Sa",
+      "events": {
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 14,
+      "weekday": "Su",
+      "events": {
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 15,
+      "weekday": "Mo",
+      "events": {
+        "MMI1": "vacances",
+        "MMI2-App": "Alternance",
+        "MMI3-App": "Alternance"
       },
       "week": 7
     },
     {
-      "day": 10,
-      "weekday": "Ma",
-      "events": {}
-    },
-    {
-      "day": 11,
-      "weekday": "Me",
-      "events": {}
-    },
-    {
-      "day": 12,
-      "weekday": "Je",
-      "events": {}
-    },
-    {
-      "day": 13,
-      "weekday": "Ve",
-      "events": {}
-    },
-    {
-      "day": 14,
-      "weekday": "Sa",
-      "events": {}
-    },
-    {
-      "day": 15,
-      "weekday": "Di",
-      "events": {}
-    },
-    {
       "day": 16,
-      "weekday": "Lu",
+      "weekday": "Tu",
       "events": {
-        "MMI1": "SAE 2.4 constuire sa présence en ligne / part 1 (B. Darties)",
-        "MMI3-crea": "stage S03",
-        "MMI3-App": "Entreprise S13",
-        "MMI3-Dev": "stage S03"
+        "MMI2-App": "Alternance",
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 17,
+      "weekday": "We",
+      "events": {
+        "MMI2-App": "Alternance",
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 18,
+      "weekday": "Th",
+      "events": {
+        "MMI2-App": "Alternance",
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 19,
+      "weekday": "Fr",
+      "events": {
+        "MMI2-App": "Alternance",
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 20,
+      "weekday": "Sa",
+      "events": {
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 21,
+      "weekday": "Su",
+      "events": {
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 22,
+      "weekday": "Mo",
+      "events": {
+        "MMI3-App": "Alternance"
       },
       "week": 8
     },
     {
-      "day": 17,
-      "weekday": "Ma",
-      "events": {}
-    },
-    {
-      "day": 18,
-      "weekday": "Me",
-      "events": {}
-    },
-    {
-      "day": 19,
-      "weekday": "Je",
-      "events": {}
-    },
-    {
-      "day": 20,
-      "weekday": "Ve",
-      "events": {}
-    },
-    {
-      "day": 21,
-      "weekday": "Sa",
-      "events": {}
-    },
-    {
-      "day": 22,
-      "weekday": "Di",
-      "events": {}
-    },
-    {
       "day": 23,
-      "weekday": "Lu",
+      "weekday": "Tu",
       "events": {
-        "MMI3-crea": "stage S04",
-        "MMI3-App": "entreprise S14",
-        "MMI3-Dev": "stage S04"
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 24,
+      "weekday": "We",
+      "events": {
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 25,
+      "weekday": "Th",
+      "events": {
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 26,
+      "weekday": "Fr",
+      "events": {
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 27,
+      "weekday": "Sa",
+      "events": {
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 28,
+      "weekday": "Su",
+      "events": {
+        "MMI3-App": "Alternance"
+      }
+    }
+  ],
+  "Mars 2027": [
+    {
+      "day": 1,
+      "weekday": "Mo",
+      "events": {
+        "MMI2-App": "Alternance",
+        "MMI3-App": "Alternance"
       },
       "week": 9
     },
     {
-      "day": 24,
-      "weekday": "Ma",
-      "events": {}
-    },
-    {
-      "day": 25,
-      "weekday": "Me",
-      "events": {}
-    },
-    {
-      "day": 26,
-      "weekday": "Je",
-      "events": {}
-    },
-    {
-      "day": 27,
-      "weekday": "Ve",
-      "events": {}
-    },
-    {
-      "day": 28,
-      "weekday": "Sa",
-      "events": {}
-    }
-  ],
-  "Mars 2026": [
-    {
-      "day": 1,
-      "weekday": "Di",
-      "events": {}
-    },
-    {
       "day": 2,
-      "weekday": "Lu",
+      "weekday": "Tu",
       "events": {
-        "MMI1": "vacances",
-        "MMI2-crea": "vacances",
-        "MMI2-Dev": "vacances",
-        "MMI2-App": "Entreprise S11",
-        "MMI3-crea": "stage S05",
-        "MMI3-App": "Entreprise S15",
-        "MMI3-Dev": "stage S05"
+        "MMI2-App": "Alternance",
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 3,
+      "weekday": "We",
+      "events": {
+        "MMI2-App": "Alternance",
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 4,
+      "weekday": "Th",
+      "events": {
+        "MMI2-App": "Alternance",
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 5,
+      "weekday": "Fr",
+      "events": {
+        "MMI2-App": "Alternance",
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 6,
+      "weekday": "Sa",
+      "events": {
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 7,
+      "weekday": "Su",
+      "events": {
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 8,
+      "weekday": "Mo",
+      "events": {
+        "MMI3-App": "Alternance"
       },
       "week": 10
     },
     {
-      "day": 3,
-      "weekday": "Ma",
-      "events": {}
-    },
-    {
-      "day": 4,
-      "weekday": "Me",
-      "events": {}
-    },
-    {
-      "day": 5,
-      "weekday": "Je",
-      "events": {}
-    },
-    {
-      "day": 6,
-      "weekday": "Ve",
-      "events": {}
-    },
-    {
-      "day": 7,
-      "weekday": "Sa",
-      "events": {}
-    },
-    {
-      "day": 8,
-      "weekday": "Di",
-      "events": {}
-    },
-    {
       "day": 9,
-      "weekday": "Lu",
+      "weekday": "Tu",
       "events": {
-        "MMI2-crea": "SAE 4C.01 crééer une campagne de comm (V.Selighini+S.Blanco)",
-        "MMI3-crea": "stage S06",
-        "MMI3-App": "Entreprise S16",
-        "MMI3-Dev": "stage S06"
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 10,
+      "weekday": "We",
+      "events": {
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 11,
+      "weekday": "Th",
+      "events": {
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 12,
+      "weekday": "Fr",
+      "events": {
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 13,
+      "weekday": "Sa",
+      "events": {
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 14,
+      "weekday": "Su",
+      "events": {
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 15,
+      "weekday": "Mo",
+      "events": {
+        "MMI2-App": "Alternance",
+        "MMI3-App": "Alternance",
+        "MMI2-crea": "SAE",
+        "MMI2-Dev": "SAE"
       },
       "week": 11
     },
     {
-      "day": 10,
-      "weekday": "Ma",
-      "events": {}
-    },
-    {
-      "day": 11,
-      "weekday": "Me",
-      "events": {}
-    },
-    {
-      "day": 12,
-      "weekday": "Je",
-      "events": {}
-    },
-    {
-      "day": 13,
-      "weekday": "Ve",
-      "events": {}
-    },
-    {
-      "day": 14,
-      "weekday": "Sa",
-      "events": {}
-    },
-    {
-      "day": 15,
-      "weekday": "Di",
-      "events": {}
-    },
-    {
       "day": 16,
-      "weekday": "Lu",
+      "weekday": "Tu",
       "events": {
-        "MMI2-App": "Entreprise S11",
-        "MMI3-crea": "stage S07",
-        "MMI3-App": "Entreprise S17",
-        "MMI3-Dev": "stage S07"
+        "MMI2-App": "Alternance",
+        "MMI3-App": "Alternance",
+        "MMI2-crea": "SAE",
+        "MMI2-Dev": "SAE"
+      }
+    },
+    {
+      "day": 17,
+      "weekday": "We",
+      "events": {
+        "MMI2-App": "Alternance",
+        "MMI3-App": "Alternance",
+        "MMI2-crea": "SAE",
+        "MMI2-Dev": "SAE"
+      }
+    },
+    {
+      "day": 18,
+      "weekday": "Th",
+      "events": {
+        "MMI2-App": "Alternance",
+        "MMI3-App": "Alternance",
+        "MMI2-crea": "SAE",
+        "MMI2-Dev": "SAE"
+      }
+    },
+    {
+      "day": 19,
+      "weekday": "Fr",
+      "events": {
+        "MMI2-App": "Alternance",
+        "MMI3-App": "Alternance",
+        "MMI2-crea": "SAE",
+        "MMI2-Dev": "SAE"
+      }
+    },
+    {
+      "day": 20,
+      "weekday": "Sa",
+      "events": {
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 21,
+      "weekday": "Su",
+      "events": {
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 22,
+      "weekday": "Mo",
+      "events": {
+        "MMI3-App": "Alternance"
       },
       "week": 12
     },
     {
-      "day": 17,
-      "weekday": "Ma",
+      "day": 23,
+      "weekday": "Tu",
       "events": {
-        "MMI1": "Hackathon (?)"
+        "MMI3-App": "Alternance"
       }
     },
     {
-      "day": 18,
-      "weekday": "Me",
-      "events": {}
-    },
-    {
-      "day": 19,
-      "weekday": "Je",
-      "events": {}
-    },
-    {
-      "day": 20,
-      "weekday": "Ve",
-      "events": {}
-    },
-    {
-      "day": 21,
-      "weekday": "Sa",
-      "events": {}
-    },
-    {
-      "day": 22,
-      "weekday": "Di",
-      "events": {}
-    },
-    {
-      "day": 23,
-      "weekday": "Lu",
+      "day": 24,
+      "weekday": "We",
       "events": {
-        "MMI1": "SAE 2.02 Game Jam MMI Semaine 1 (C. Surribas / B. Darties)",
-        "MMI3-crea": "stage S08",
-        "MMI3-App": "Entreprise S17",
-        "MMI3-Dev": "stage S08"
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 25,
+      "weekday": "Th",
+      "events": {
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 26,
+      "weekday": "Fr",
+      "events": {
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 27,
+      "weekday": "Sa",
+      "events": {
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 28,
+      "weekday": "Su",
+      "events": {
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 29,
+      "weekday": "Mo",
+      "events": {
+        "Férié": "Lundi de Pâques"
       },
       "week": 13
     },
     {
-      "day": 24,
-      "weekday": "Ma",
-      "events": {
-        "MMI1": "202"
-      }
-    },
-    {
-      "day": 25,
-      "weekday": "Me",
-      "events": {
-        "MMI1": "(copier coller an dernier, a modifier / replanifier)"
-      }
-    },
-    {
-      "day": 26,
-      "weekday": "Je",
-      "events": {}
-    },
-    {
-      "day": 27,
-      "weekday": "Ve",
-      "events": {}
-    },
-    {
-      "day": 28,
-      "weekday": "Sa",
-      "events": {}
-    },
-    {
-      "day": 29,
-      "weekday": "Di",
-      "events": {}
-    },
-    {
       "day": 30,
-      "weekday": "Lu",
+      "weekday": "Tu",
       "events": {
-        "MMI2-Dev": "SAE 4D.02 Dispositifs Intéractifs (N. Maurin / D. Marill)",
-        "MMI3-crea": "stage S09",
-        "MMI3-App": "Entreprise S17",
-        "MMI3-Dev": "stage S09"
-      },
-      "week": 14
+        "MMI2-App": "Alternance",
+        "MMI3-App": "Alternance",
+        "MMI2-crea": "SAE",
+        "MMI2-Dev": "SAE"
+      }
     },
     {
       "day": 31,
-      "weekday": "Ma",
+      "weekday": "We",
       "events": {
-        "MMI2-crea": "SAE 4C.02 produire du contenu multimedia (A. LAGIEWKA)"
+        "MMI2-App": "Alternance",
+        "MMI3-App": "Alternance",
+        "MMI2-crea": "SAE",
+        "MMI2-Dev": "SAE"
       }
     }
   ],
-  "Avril 2026": [
+  "Avril 2027": [
     {
       "day": 1,
-      "weekday": "Me",
+      "weekday": "Th",
       "events": {
-        "MMI2-crea": "SAE Langues (M. Baron / W. Bernard / S. Blanco)",
-        "MMI2-Dev": "SAE 4D.02 Dispositifs Intéractifs (N. Maurin / D. Marill)",
-        "MMI3-crea": "stage S09",
-        "MMI3-Dev": "stage S09"
+        "MMI2-App": "Alternance",
+        "MMI3-App": "Alternance",
+        "MMI2-crea": "SAE",
+        "MMI2-Dev": "SAE"
       }
     },
     {
       "day": 2,
-      "weekday": "Je",
-      "events": {}
+      "weekday": "Fr",
+      "events": {
+        "MMI2-App": "Alternance",
+        "MMI3-App": "Alternance",
+        "MMI2-crea": "SAE",
+        "MMI2-Dev": "SAE"
+      }
     },
     {
       "day": 3,
-      "weekday": "Ve",
-      "events": {}
+      "weekday": "Sa",
+      "events": {
+        "MMI3-App": "Alternance"
+      }
     },
     {
       "day": 4,
-      "weekday": "Sa",
-      "events": {}
+      "weekday": "Su",
+      "events": {
+        "MMI3-App": "Alternance"
+      }
     },
     {
       "day": 5,
-      "weekday": "Di",
-      "events": {}
+      "weekday": "Mo",
+      "events": {
+        "MMI3-App": "Alternance",
+        "MMI2-crea": "Stage",
+        "MMI2-Dev": "Stage"
+      },
+      "week": 14
     },
     {
       "day": 6,
-      "weekday": "Lu",
+      "weekday": "Tu",
       "events": {
-        "MMI1": "Paques",
-        "Férié": "Lundi de Pâques"
-      },
-      "week": 15
+        "MMI3-App": "Alternance",
+        "MMI2-crea": "Stage",
+        "MMI2-Dev": "Stage"
+      }
     },
     {
       "day": 7,
-      "weekday": "Ma",
+      "weekday": "We",
       "events": {
-        "MMI2-crea": "stage S01",
-        "MMI3-crea": "stage S10",
-        "MMI2-Dev": "stage S01",
-        "MMI3-Dev": "stage S10"
+        "MMI3-App": "Alternance",
+        "MMI2-crea": "Stage",
+        "MMI2-Dev": "Stage"
       }
     },
     {
       "day": 8,
-      "weekday": "Me",
-      "events": {}
+      "weekday": "Th",
+      "events": {
+        "MMI3-App": "Alternance",
+        "MMI2-crea": "Stage",
+        "MMI2-Dev": "Stage"
+      }
     },
     {
       "day": 9,
-      "weekday": "Je",
+      "weekday": "Fr",
       "events": {
-        "MMI1": "forum de l'apprentisage"
+        "MMI3-App": "Alternance",
+        "MMI2-crea": "Stage",
+        "MMI2-Dev": "Stage"
       }
     },
     {
       "day": 10,
-      "weekday": "Ve",
-      "events": {}
+      "weekday": "Sa",
+      "events": {
+        "MMI3-App": "Alternance"
+      }
     },
     {
       "day": 11,
-      "weekday": "Sa",
-      "events": {}
+      "weekday": "Su",
+      "events": {
+        "MMI3-App": "Alternance"
+      }
     },
     {
       "day": 12,
-      "weekday": "Di",
-      "events": {}
+      "weekday": "Mo",
+      "events": {
+        "MMI1": "vacances",
+        "MMI2-App": "Alternance",
+        "MMI3-App": "Alternance",
+        "MMI2-crea": "Stage",
+        "MMI2-Dev": "Stage"
+      },
+      "week": 15
     },
     {
       "day": 13,
-      "weekday": "Lu",
+      "weekday": "Tu",
       "events": {
-        "MMI2-crea": "stage S02",
-        "MMI2-App": "Entreprise S11",
-        "MMI3-crea": "stage S11",
-        "MMI3-App": "Entreprise S21",
-        "MMI2-Dev": "stage S02",
-        "MMI3-Dev": "stage S11"
-      },
-      "week": 16
+        "MMI2-App": "Alternance",
+        "MMI3-App": "Alternance",
+        "MMI2-crea": "Stage",
+        "MMI2-Dev": "Stage"
+      }
     },
     {
       "day": 14,
-      "weekday": "Ma",
+      "weekday": "We",
       "events": {
-        "MMI1": "202"
+        "MMI2-App": "Alternance",
+        "MMI3-App": "Alternance",
+        "MMI2-crea": "Stage",
+        "MMI2-Dev": "Stage"
       }
     },
     {
       "day": 15,
-      "weekday": "Me",
-      "events": {}
+      "weekday": "Th",
+      "events": {
+        "MMI2-App": "Alternance",
+        "MMI3-App": "Alternance",
+        "MMI2-crea": "Stage",
+        "MMI2-Dev": "Stage"
+      }
     },
     {
       "day": 16,
-      "weekday": "Je",
-      "events": {}
+      "weekday": "Fr",
+      "events": {
+        "MMI2-App": "Alternance",
+        "MMI3-App": "Alternance",
+        "MMI2-crea": "Stage",
+        "MMI2-Dev": "Stage"
+      }
     },
     {
       "day": 17,
-      "weekday": "Ve",
-      "events": {}
+      "weekday": "Sa",
+      "events": {
+        "MMI2-App": "Alternance",
+        "MMI3-App": "Alternance"
+      }
     },
     {
       "day": 18,
-      "weekday": "Sa",
-      "events": {}
+      "weekday": "Su",
+      "events": {
+        "MMI2-App": "Alternance",
+        "MMI3-App": "Alternance"
+      }
     },
     {
       "day": 19,
-      "weekday": "Di",
-      "events": {}
+      "weekday": "Mo",
+      "events": {
+        "MMI2-App": "Alternance",
+        "MMI3-App": "Alternance",
+        "MMI2-crea": "Stage",
+        "MMI2-Dev": "Stage"
+      },
+      "week": 16
     },
     {
       "day": 20,
-      "weekday": "Lu",
+      "weekday": "Tu",
       "events": {
-        "MMI2-crea": "stage S03",
-        "MMI2-App": "Entreprise S11",
-        "MMI3-crea": "stage S12",
-        "MMI3-App": "entreprise S22",
-        "MMI2-Dev": "stage S03",
-        "MMI3-Dev": "stage S12"
-      },
-      "week": 17
+        "MMI2-App": "Alternance",
+        "MMI3-App": "Alternance",
+        "MMI2-crea": "Stage",
+        "MMI2-Dev": "Stage"
+      }
     },
     {
       "day": 21,
-      "weekday": "Ma",
+      "weekday": "We",
       "events": {
-        "MMI3-App": "entreprise S22"
+        "MMI2-App": "Alternance",
+        "MMI3-App": "Alternance",
+        "MMI2-crea": "Stage",
+        "MMI2-Dev": "Stage"
       }
     },
     {
       "day": 22,
-      "weekday": "Me",
-      "events": {}
+      "weekday": "Th",
+      "events": {
+        "MMI2-App": "Alternance",
+        "MMI3-App": "Alternance",
+        "MMI2-crea": "Stage",
+        "MMI2-Dev": "Stage"
+      }
     },
     {
       "day": 23,
-      "weekday": "Je",
-      "events": {}
+      "weekday": "Fr",
+      "events": {
+        "MMI2-App": "Alternance",
+        "MMI3-App": "Alternance",
+        "MMI2-crea": "Stage",
+        "MMI2-Dev": "Stage"
+      }
     },
     {
       "day": 24,
-      "weekday": "Ve",
-      "events": {}
+      "weekday": "Sa",
+      "events": {
+        "MMI2-App": "Alternance",
+        "MMI3-App": "Alternance"
+      }
     },
     {
       "day": 25,
-      "weekday": "Sa",
-      "events": {}
+      "weekday": "Su",
+      "events": {
+        "MMI2-App": "Alternance",
+        "MMI3-App": "Alternance"
+      }
     },
     {
       "day": 26,
-      "weekday": "Di",
-      "events": {}
+      "weekday": "Mo",
+      "events": {
+        "MMI2-App": "Alternance",
+        "MMI3-App": "Alternance",
+        "MMI2-crea": "Stage",
+        "MMI2-Dev": "Stage"
+      },
+      "week": 17
     },
     {
       "day": 27,
-      "weekday": "Lu",
+      "weekday": "Tu",
       "events": {
-        "MMI1": "vacances",
-        "MMI2-crea": "stage S04",
-        "MMI2-App": "Entreprise S11",
-        "MMI3-crea": "vacances",
-        "MMI3-Dev": "vacances",
-        "MMI3-App": "entreprise S23",
-        "MMI2-Dev": "stage S04"
-      },
-      "week": 18
+        "MMI2-App": "Alternance",
+        "MMI3-App": "Alternance",
+        "MMI2-crea": "Stage",
+        "MMI2-Dev": "Stage"
+      }
     },
     {
       "day": 28,
-      "weekday": "Ma",
-      "events": {}
+      "weekday": "We",
+      "events": {
+        "MMI2-App": "Alternance",
+        "MMI3-App": "Alternance",
+        "MMI2-crea": "Stage",
+        "MMI2-Dev": "Stage"
+      }
     },
     {
       "day": 29,
-      "weekday": "Me",
-      "events": {}
+      "weekday": "Th",
+      "events": {
+        "MMI2-App": "Alternance",
+        "MMI3-App": "Alternance",
+        "MMI2-crea": "Stage",
+        "MMI2-Dev": "Stage"
+      }
     },
     {
       "day": 30,
-      "weekday": "jeu",
-      "events": {}
+      "weekday": "Fr",
+      "events": {
+        "MMI2-App": "Alternance",
+        "MMI3-App": "Alternance",
+        "MMI2-crea": "Stage",
+        "MMI2-Dev": "Stage"
+      }
     }
   ],
-  "Mai 2026": [
+  "Mai 2027": [
     {
       "day": 1,
-      "weekday": "Ve",
+      "weekday": "Sa",
       "events": {
+        "MMI2-App": "Alternance",
         "Férié": "Fête du Travail"
       }
     },
     {
       "day": 2,
-      "weekday": "Sa",
-      "events": {}
+      "weekday": "Su",
+      "events": {
+        "MMI2-App": "Alternance"
+      }
     },
     {
       "day": 3,
-      "weekday": "Di",
-      "events": {}
+      "weekday": "Mo",
+      "events": {
+        "MMI2-App": "Alternance",
+        "MMI2-crea": "Stage",
+        "MMI2-Dev": "Stage"
+      },
+      "week": 18
     },
     {
       "day": 4,
-      "weekday": "Lu",
+      "weekday": "Tu",
       "events": {
-        "MMI2-crea": "stage S05",
-        "MMI2-Dev": "stage S05",
-        "MMI2-App": "Entreprise S11"
-      },
-      "week": 19
+        "MMI2-App": "Alternance",
+        "MMI2-crea": "Stage",
+        "MMI2-Dev": "Stage"
+      }
     },
     {
       "day": 5,
-      "weekday": "Ma",
+      "weekday": "We",
       "events": {
-        "MMI2-crea": "stage S05",
-        "MMI2-Dev": "stage S05",
-        "MMI2-App": "Entreprise S11"
+        "MMI2-App": "Alternance",
+        "MMI2-crea": "Stage",
+        "MMI2-Dev": "Stage"
       }
     },
     {
       "day": 6,
-      "weekday": "Me",
+      "weekday": "Th",
       "events": {
-        "MMI2-crea": "stage S05",
-        "MMI2-Dev": "stage S05",
-        "MMI2-App": "Entreprise S11"
+        "Férié": "Ascension",
+        "MMI2-crea": "Stage",
+        "MMI2-Dev": "Stage"
       }
     },
     {
       "day": 7,
-      "weekday": "Je",
+      "weekday": "Fr",
       "events": {
-        "MMI2-crea": "stage S05",
-        "MMI2-Dev": "stage S05",
-        "MMI2-App": "Entreprise S11"
+        "MMI2-App": "Alternance",
+        "MMI2-crea": "Stage",
+        "MMI2-Dev": "Stage"
       }
     },
     {
       "day": 8,
-      "weekday": "Ve",
+      "weekday": "Sa",
       "events": {
+        "MMI2-App": "Alternance",
         "Férié": "Victoire 1945"
       }
     },
     {
       "day": 9,
-      "weekday": "Sa",
-      "events": {}
+      "weekday": "Su",
+      "events": {
+        "MMI2-App": "Alternance"
+      }
     },
     {
       "day": 10,
-      "weekday": "Di",
-      "events": {}
+      "weekday": "Mo",
+      "events": {
+        "MMI2-App": "Alternance",
+        "MMI2-crea": "Stage",
+        "MMI2-Dev": "Stage"
+      },
+      "week": 19
     },
     {
       "day": 11,
-      "weekday": "Lu",
+      "weekday": "Tu",
       "events": {
+        "MMI2-App": "Alternance",
         "MMI2-crea": "Stage",
-        "MMI2-App": "Entreprise S11"
+        "MMI2-Dev": "Stage"
+      }
+    },
+    {
+      "day": 12,
+      "weekday": "We",
+      "events": {
+        "MMI2-App": "Alternance",
+        "MMI2-crea": "Stage",
+        "MMI2-Dev": "Stage"
+      }
+    },
+    {
+      "day": 13,
+      "weekday": "Th",
+      "events": {
+        "MMI2-App": "Alternance",
+        "MMI2-crea": "Stage",
+        "MMI2-Dev": "Stage"
+      }
+    },
+    {
+      "day": 14,
+      "weekday": "Fr",
+      "events": {
+        "MMI2-App": "Alternance",
+        "MMI2-crea": "Stage",
+        "MMI2-Dev": "Stage"
+      }
+    },
+    {
+      "day": 15,
+      "weekday": "Sa",
+      "events": {
+        "MMI2-App": "Alternance"
+      }
+    },
+    {
+      "day": 16,
+      "weekday": "Su",
+      "events": {
+        "MMI2-App": "Alternance"
+      }
+    },
+    {
+      "day": 17,
+      "weekday": "Mo",
+      "events": {
+        "Férié": "Lundi de Pentecôte",
+        "MMI2-crea": "Stage",
+        "MMI2-Dev": "Stage"
       },
       "week": 20
     },
     {
-      "day": 12,
-      "weekday": "Ma",
-      "events": {
-        "MMI2-crea": "Stage",
-        "MMI2-App": "Entreprise S11"
-      }
-    },
-    {
-      "day": 13,
-      "weekday": "Me",
-      "events": {
-        "MMI2-crea": "Stage",
-        "MMI2-App": "Entreprise S11"
-      }
-    },
-    {
-      "day": 14,
-      "weekday": "Je",
-      "events": {
-        "Férié": "Ascension"
-      }
-    },
-    {
-      "day": 15,
-      "weekday": "Ve",
-      "events": {
-        "MMI1": "journée d'appui",
-        "MMI3-crea": "journée d'appui",
-        "MMI2-App": "Entreprise S11"
-      }
-    },
-    {
-      "day": 16,
-      "weekday": "Sa",
-      "events": {}
-    },
-    {
-      "day": 17,
-      "weekday": "Di",
-      "events": {}
-    },
-    {
       "day": 18,
-      "weekday": "Lu",
+      "weekday": "Tu",
       "events": {
-        "MMI1": "SAE 2.01 S. De Velder",
-        "MMI2-crea": "stage S07",
-        "MMI2-Dev": "stage S07",
-        "MMI2-App": "Entreprise S11",
-        "MMI3-App": "Entreprise S24"
+        "MMI2-App": "Alternance",
+        "MMI3-App": "Alternance",
+        "MMI2-crea": "Stage",
+        "MMI2-Dev": "Stage"
+      }
+    },
+    {
+      "day": 19,
+      "weekday": "We",
+      "events": {
+        "MMI2-App": "Alternance",
+        "MMI3-App": "Alternance",
+        "MMI2-crea": "Stage",
+        "MMI2-Dev": "Stage"
+      }
+    },
+    {
+      "day": 20,
+      "weekday": "Th",
+      "events": {
+        "MMI2-App": "Alternance",
+        "MMI3-App": "Alternance",
+        "MMI2-crea": "Stage",
+        "MMI2-Dev": "Stage"
+      }
+    },
+    {
+      "day": 21,
+      "weekday": "Fr",
+      "events": {
+        "MMI2-App": "Alternance",
+        "MMI3-App": "Alternance",
+        "MMI2-crea": "Stage",
+        "MMI2-Dev": "Stage"
+      }
+    },
+    {
+      "day": 22,
+      "weekday": "Sa",
+      "events": {
+        "MMI2-App": "Alternance",
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 23,
+      "weekday": "Su",
+      "events": {
+        "MMI2-App": "Alternance",
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 24,
+      "weekday": "Mo",
+      "events": {
+        "MMI2-App": "Alternance",
+        "MMI3-App": "Alternance",
+        "MMI2-crea": "Stage",
+        "MMI2-Dev": "Stage"
       },
       "week": 21
     },
     {
-      "day": 19,
-      "weekday": "Ma",
-      "events": {
-        "MMI1": "SAE 2.01 S. De Velder",
-        "MMI2-crea": "stage S07",
-        "MMI2-Dev": "stage S07",
-        "MMI2-App": "Entreprise S11",
-        "MMI3-App": "Entreprise S24"
-      }
-    },
-    {
-      "day": 20,
-      "weekday": "Me",
-      "events": {
-        "MMI3-Dev": "Soutenance stage",
-        "MMI3-crea": "Soutenance stage",
-        "MMI1": "SAE 2.01 S. De Velder",
-        "MMI2-crea": "stage S07",
-        "MMI2-Dev": "stage S07",
-        "MMI2-App": "Entreprise S11",
-        "MMI3-App": "Entreprise S24"
-      }
-    },
-    {
-      "day": 21,
-      "weekday": "Je",
-      "events": {
-        "MMI1": "SAE 2.01 S. De Velder",
-        "MMI2-crea": "stage S07",
-        "MMI2-Dev": "stage S07",
-        "MMI2-App": "Entreprise S11",
-        "MMI3-App": "Entreprise S24"
-      }
-    },
-    {
-      "day": 22,
-      "weekday": "Ve",
-      "events": {
-        "MMI1": "SAE 2.01 S. De Velder",
-        "MMI2-crea": "stage S07",
-        "MMI2-Dev": "stage S07",
-        "MMI2-App": "Entreprise S11",
-        "MMI3-App": "Entreprise S24"
-      }
-    },
-    {
-      "day": 23,
-      "weekday": "Sa",
-      "events": {}
-    },
-    {
-      "day": 24,
-      "weekday": "Di",
-      "events": {}
-    },
-    {
       "day": 25,
-      "weekday": "Lu",
+      "weekday": "Tu",
       "events": {
-        "Férié": "Lundi de Pentecôte"
+        "MMI2-App": "Alternance",
+        "MMI3-App": "Alternance",
+        "MMI2-crea": "Stage",
+        "MMI2-Dev": "Stage"
       }
     },
     {
       "day": 26,
-      "weekday": "Ma",
+      "weekday": "We",
       "events": {
-        "MMI3-crea": "Soutenance stage",
-        "MMI3-Dev": "Soutenance stage",
-        "MMI3-App": "Entreprise",
-        "MMI2-App": "Entreprise",
-        "MMI2-Dev": "stage S08",
-        "MMI2-crea": "stage S08"
+        "MMI2-App": "Alternance",
+        "MMI3-App": "Alternance",
+        "MMI2-crea": "Stage",
+        "MMI2-Dev": "Stage"
       }
     },
     {
       "day": 27,
-      "weekday": "Me",
+      "weekday": "Th",
       "events": {
-        "MMI3-Dev": "Soutenance stage",
-        "MMI3-App": "Entreprise",
-        "MMI2-App": "Entreprise",
-        "MMI2-Dev": "stage S08",
-        "MMI2-crea": "stage S08",
-        "MMI3-crea": "Soutenance stage"
+        "MMI2-App": "Alternance",
+        "MMI3-App": "Alternance",
+        "MMI2-crea": "Stage",
+        "MMI2-Dev": "Stage"
       }
     },
     {
       "day": 28,
-      "weekday": "Je",
+      "weekday": "Fr",
       "events": {
-        "Réunion": "Réunion d'équipe 13h30",
-        "MMI3-App": "Entreprise",
-        "MMI2-App": "Entreprise",
-        "MMI2-Dev": "stage S08",
-        "MMI2-crea": "stage S08"
+        "MMI2-App": "Alternance",
+        "MMI3-App": "Alternance",
+        "MMI2-crea": "Stage",
+        "MMI2-Dev": "Stage"
       }
     },
     {
       "day": 29,
-      "weekday": "Ve",
+      "weekday": "Sa",
       "events": {
-        "MMI1": "journée d'appui",
-        "MMI3-App": "Entreprise",
-        "MMI2-App": "Entreprise",
-        "MMI2-Dev": "stage S08",
-        "MMI2-crea": "stage S08"
+        "MMI2-App": "Alternance"
       }
     },
     {
       "day": 30,
-      "weekday": "Sa",
-      "events": {}
+      "weekday": "Su",
+      "events": {
+        "MMI2-App": "Alternance"
+      }
     },
     {
       "day": 31,
-      "weekday": "Di",
-      "events": {}
+      "weekday": "Mo",
+      "events": {
+        "MMI2-App": "Alternance",
+        "MMI2-crea": "Stage",
+        "MMI2-Dev": "Stage"
+      },
+      "week": 22
     }
   ],
-  "Juin 2026": [
+  "Juin 2027": [
     {
       "day": 1,
-      "weekday": "Lu",
+      "weekday": "Tu",
       "events": {
-        "MMI1": "SAE 2.4 constuire sa présence en ligne / part 2",
-        "MMI2-crea": "stage S09",
-        "MMI2-Dev": "stage S09",
-        "MMI2-App": "Entreprise S17"
+        "MMI2-App": "Alternance",
+        "MMI2-crea": "Stage",
+        "MMI2-Dev": "Stage"
+      }
+    },
+    {
+      "day": 2,
+      "weekday": "We",
+      "events": {
+        "MMI2-App": "Alternance",
+        "MMI2-crea": "Stage",
+        "MMI2-Dev": "Stage"
+      }
+    },
+    {
+      "day": 3,
+      "weekday": "Th",
+      "events": {
+        "MMI2-App": "Alternance",
+        "MMI2-crea": "Stage",
+        "MMI2-Dev": "Stage"
+      }
+    },
+    {
+      "day": 4,
+      "weekday": "Fr",
+      "events": {
+        "MMI2-App": "Alternance",
+        "MMI2-crea": "Stage",
+        "MMI2-Dev": "Stage"
+      }
+    },
+    {
+      "day": 5,
+      "weekday": "Sa",
+      "events": {
+        "MMI2-App": "Alternance"
+      }
+    },
+    {
+      "day": 6,
+      "weekday": "Su",
+      "events": {
+        "MMI2-App": "Alternance"
+      }
+    },
+    {
+      "day": 7,
+      "weekday": "Mo",
+      "events": {
+        "MMI2-App": "Alternance",
+        "MMI2-crea": "Stage",
+        "MMI2-Dev": "Stage"
       },
       "week": 23
     },
     {
-      "day": 2,
-      "weekday": "Ma",
-      "events": {
-        "MMI1": "SAE 2.4 constuire sa présence en ligne / part 2",
-        "MMI2-crea": "stage S09",
-        "MMI2-Dev": "stage S09",
-        "MMI2-App": "Entreprise S17"
-      }
-    },
-    {
-      "day": 3,
-      "weekday": "Me",
-      "events": {
-        "MMI1": "SAE 2.4 constuire sa présence en ligne / part 2",
-        "MMI2-crea": "stage S09",
-        "MMI2-Dev": "stage S09",
-        "MMI2-App": "Entreprise S17"
-      }
-    },
-    {
-      "day": 4,
-      "weekday": "Je",
-      "events": {
-        "MMI1": "SAE 2.4 constuire sa présence en ligne / part 2",
-        "MMI2-crea": "stage S09",
-        "MMI2-Dev": "stage S09",
-        "MMI2-App": "Entreprise S17"
-      }
-    },
-    {
-      "day": 5,
-      "weekday": "Ve",
-      "events": {
-        "MMI1": "SAE 2.4 constuire sa présence en ligne / part 2",
-        "MMI2-crea": "stage S09",
-        "MMI2-Dev": "stage S09",
-        "MMI2-App": "Entreprise S17"
-      }
-    },
-    {
-      "day": 6,
-      "weekday": "Sa",
-      "events": {}
-    },
-    {
-      "day": 7,
-      "weekday": "Di",
-      "events": {}
-    },
-    {
       "day": 8,
-      "weekday": "Lu",
+      "weekday": "Tu",
       "events": {
-        "MMI2-crea": "stage S10",
-        "MMI2-Dev": "stage S10",
-        "MMI2-App": "Entreprise S26",
-        "MMI3-App": "Entreprise S26"
+        "MMI2-App": "Alternance",
+        "MMI3-App": "Alternance",
+        "MMI2-crea": "Stage",
+        "MMI2-Dev": "Stage"
+      }
+    },
+    {
+      "day": 9,
+      "weekday": "We",
+      "events": {
+        "MMI2-App": "Alternance",
+        "MMI3-App": "Alternance",
+        "MMI2-crea": "Stage",
+        "MMI2-Dev": "Stage"
+      }
+    },
+    {
+      "day": 10,
+      "weekday": "Th",
+      "events": {
+        "MMI2-App": "Alternance",
+        "MMI3-App": "Alternance",
+        "MMI2-crea": "Stage",
+        "MMI2-Dev": "Stage"
+      }
+    },
+    {
+      "day": 11,
+      "weekday": "Fr",
+      "events": {
+        "MMI2-App": "Alternance",
+        "MMI3-App": "Alternance",
+        "MMI2-crea": "Stage",
+        "MMI2-Dev": "Stage"
+      }
+    },
+    {
+      "day": 12,
+      "weekday": "Sa",
+      "events": {
+        "MMI2-App": "Alternance"
+      }
+    },
+    {
+      "day": 13,
+      "weekday": "Su",
+      "events": {
+        "MMI2-App": "Alternance"
+      }
+    },
+    {
+      "day": 14,
+      "weekday": "Mo",
+      "events": {
+        "MMI2-App": "Alternance",
+        "MMI2-crea": "Stage",
+        "MMI2-Dev": "Stage"
       },
       "week": 24
     },
     {
-      "day": 9,
-      "weekday": "Ma",
+      "day": 15,
+      "weekday": "Tu",
       "events": {
-        "Autre": "Visite CCN",
-        "MMI2-crea": "stage S10",
-        "MMI2-Dev": "stage S10",
-        "MMI2-App": "Entreprise S26",
-        "MMI3-App": "Entreprise S26"
+        "MMI2-App": "Alternance",
+        "MMI2-crea": "Stage",
+        "MMI2-Dev": "Stage"
       }
     },
     {
-      "day": 10,
-      "weekday": "Me",
+      "day": 16,
+      "weekday": "We",
       "events": {
-        "MMI2-crea": "stage S10",
-        "MMI2-Dev": "stage S10",
-        "MMI2-App": "Entreprise S26",
-        "MMI3-App": "Entreprise S26"
+        "MMI2-App": "Alternance",
+        "MMI2-crea": "Stage",
+        "MMI2-Dev": "Stage"
       }
     },
     {
-      "day": 11,
-      "weekday": "Je",
+      "day": 17,
+      "weekday": "Th",
       "events": {
-        "MMI2-crea": "stage S10",
-        "MMI2-Dev": "stage S10",
-        "MMI2-App": "Entreprise S26",
-        "MMI3-App": "Entreprise S26"
+        "MMI2-App": "Alternance",
+        "MMI2-crea": "Stage",
+        "MMI2-Dev": "Stage"
       }
     },
     {
-      "day": 12,
-      "weekday": "Ve",
+      "day": 18,
+      "weekday": "Fr",
       "events": {
-        "MMI2-crea": "stage S10",
-        "MMI2-Dev": "stage S10",
-        "MMI2-App": "Entreprise S26",
-        "MMI3-App": "Entreprise S26"
+        "MMI2-App": "Alternance",
+        "MMI2-crea": "Stage",
+        "MMI2-Dev": "Stage"
       }
     },
     {
-      "day": 13,
+      "day": 19,
       "weekday": "Sa",
       "events": {}
     },
     {
-      "day": 14,
-      "weekday": "Di",
+      "day": 20,
+      "weekday": "Su",
       "events": {}
     },
     {
-      "day": 15,
-      "weekday": "Lu",
+      "day": 21,
+      "weekday": "Mo",
       "events": {
-        "MMI3-crea": "Semaine UE TEDS",
-        "MMI3-Dev": "Semaine UE TEDS",
-        "MMI3-App": "Semaine UE TEDS",
-        "MMI1": "SAE 2.03 Dev Web (DARTIES / TALLEUX)",
-        "MMI2-crea": "stage S11",
-        "MMI2-Dev": "stage S11",
-        "MMI2-App": "entreprise S26"
+        "MMI3-App": "Alternance"
       },
       "week": 25
     },
     {
-      "day": 16,
-      "weekday": "Ma",
+      "day": 22,
+      "weekday": "Tu",
       "events": {
-        "MMI3-crea": "Semaine UE TEDS",
-        "MMI3-Dev": "Semaine UE TEDS",
-        "MMI3-App": "Semaine UE TEDS",
-        "MMI1": "SAE 2.03 Dev Web (DARTIES / TALLEUX)",
-        "MMI2-crea": "stage S11",
-        "MMI2-Dev": "stage S11",
-        "MMI2-App": "entreprise S26"
+        "MMI3-App": "Alternance"
       }
     },
     {
-      "day": 17,
-      "weekday": "Me",
+      "day": 23,
+      "weekday": "We",
       "events": {
-        "MMI3-crea": "Semaine UE TEDS",
-        "MMI3-Dev": "Semaine UE TEDS",
-        "MMI3-App": "Semaine UE TEDS",
-        "MMI1": "SAE 2.03 Dev Web (DARTIES / TALLEUX)",
-        "MMI2-crea": "stage S11",
-        "MMI2-Dev": "stage S11",
-        "MMI2-App": "entreprise S26"
+        "MMI3-App": "Alternance"
       }
     },
     {
-      "day": 18,
-      "weekday": "Je",
+      "day": 24,
+      "weekday": "Th",
       "events": {
-        "MMI3-App": "soutenance portfolio",
-        "MMI1": "SAE 2.03 Dev Web (DARTIES / TALLEUX)",
-        "MMI2-crea": "stage S11",
-        "MMI2-Dev": "stage S11",
-        "MMI2-App": "entreprise S26"
+        "MMI3-App": "Alternance"
       }
     },
     {
-      "day": 19,
-      "weekday": "Ve",
+      "day": 25,
+      "weekday": "Fr",
       "events": {
-        "MMI1": "SAE 2.03 Dev Web (DARTIES / TALLEUX)",
-        "MMI2-crea": "stage S11",
-        "MMI2-Dev": "stage S11",
-        "MMI2-App": "entreprise S26"
+        "MMI3-App": "Alternance"
       }
     },
     {
-      "day": 20,
+      "day": 26,
       "weekday": "Sa",
       "events": {}
     },
     {
-      "day": 21,
-      "weekday": "Di",
+      "day": 27,
+      "weekday": "Su",
       "events": {}
     },
     {
-      "day": 22,
-      "weekday": "Lu",
+      "day": 28,
+      "weekday": "Mo",
       "events": {
-        "MMI2-App": "Soutenances Porfolio",
-        "MMI3-App": "Entreprise S27"
+        "MMI2-App": "Alternance"
       },
       "week": 26
     },
     {
-      "day": 23,
-      "weekday": "Ma",
-      "events": {
-        "MMI3-crea": "Soutenances Portfolio MMI3",
-        "MMI3-Dev": "Soutenances Portfolio",
-        "MMI3-App": "Entreprise S27"
-      }
-    },
-    {
-      "day": 24,
-      "weekday": "Me",
-      "events": {
-        "MMI2-App": "Soutenances alt-Canada",
-        "MMI1": "Soutenances portfolio MMI1",
-        "MMI3-App": "Entreprise S27"
-      }
-    },
-    {
-      "day": 25,
-      "weekday": "Je",
-      "events": {
-        "MMI2-App": "rattrapages /+ préparation rapport d'alternance",
-        "MMI2-crea": "Soutenance stage",
-        "MMI2-Dev": "Soutenance stage",
-        "MMI3-App": "Entreprise S27"
-      }
-    },
-    {
-      "day": 26,
-      "weekday": "Ve",
-      "events": {
-        "MMI2-crea": "Soutenance stage",
-        "MMI2-Dev": "Soutenance stage",
-        "MMI3-App": "Entreprise S27"
-      }
-    },
-    {
-      "day": 27,
-      "weekday": "Sa",
-      "events": {}
-    },
-    {
-      "day": 28,
-      "weekday": "Di",
-      "events": {}
-    },
-    {
       "day": 29,
-      "weekday": "Lu",
+      "weekday": "Tu",
       "events": {
-        "MMI1": "Soutenances portfolio MMI1",
-        "MMI2-App": "Entreprise S27",
-        "MMI3-App": "Entreprise S28"
+        "MMI2-App": "Alternance"
+      }
+    },
+    {
+      "day": 30,
+      "weekday": "We",
+      "events": {
+        "MMI2-App": "Alternance"
+      }
+    }
+  ],
+  "Juillet 2027": [
+    {
+      "day": 1,
+      "weekday": "Th",
+      "events": {
+        "MMI2-App": "Alternance"
+      }
+    },
+    {
+      "day": 2,
+      "weekday": "Fr",
+      "events": {
+        "MMI2-App": "Alternance"
+      }
+    },
+    {
+      "day": 3,
+      "weekday": "Sa",
+      "events": {
+        "MMI2-App": "Alternance"
+      }
+    },
+    {
+      "day": 4,
+      "weekday": "Su",
+      "events": {
+        "MMI2-App": "Alternance"
+      }
+    },
+    {
+      "day": 5,
+      "weekday": "Mo",
+      "events": {
+        "MMI2-App": "Alternance",
+        "MMI3-App": "Alternance"
       },
       "week": 27
     },
     {
-      "day": 30,
-      "weekday": "ma",
-      "events": {
-        "MMI2-App": "Entreprise S27",
-        "MMI3-App": "Entreprise S28",
-        "MMI2-crea": "Soutenance Portfolio",
-        "MMI2-Dev": "Soutenance Portfolio"
-      }
-    }
-  ],
-  "Juillet 2026": [
-    {
-      "day": 1,
-      "weekday": "Me",
-      "events": {
-        "MMI2-App": "Entreprise S27",
-        "MMI3-App": "Entreprise S28"
-      }
-    },
-    {
-      "day": 2,
-      "weekday": "Je",
-      "events": {
-        "MMI2-App": "Entreprise S27",
-        "MMI3-App": "Entreprise S28",
-        "Autre": "Conseil pédagogique S2, S4, S6"
-      }
-    },
-    {
-      "day": 3,
-      "weekday": "Ve",
-      "events": {
-        "MMI2-App": "Entreprise S27",
-        "MMI3-App": "Entreprise S28"
-      }
-    },
-    {
-      "day": 4,
-      "weekday": "Sa",
-      "events": {}
-    },
-    {
-      "day": 5,
-      "weekday": "Di",
-      "events": {}
-    },
-    {
       "day": 6,
-      "weekday": "Lu",
+      "weekday": "Tu",
       "events": {
-        "MMI2-App": "entreprise S28",
-        "MMI3-App": "entreprise S29"
+        "MMI2-App": "Alternance",
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 7,
+      "weekday": "We",
+      "events": {
+        "MMI2-App": "Alternance",
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 8,
+      "weekday": "Th",
+      "events": {
+        "MMI2-App": "Alternance",
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 9,
+      "weekday": "Fr",
+      "events": {
+        "MMI2-App": "Alternance",
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 10,
+      "weekday": "Sa",
+      "events": {
+        "MMI2-App": "Alternance",
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 11,
+      "weekday": "Su",
+      "events": {
+        "MMI2-App": "Alternance",
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 12,
+      "weekday": "Mo",
+      "events": {
+        "MMI2-App": "Alternance",
+        "MMI3-App": "Alternance"
       },
       "week": 28
     },
     {
-      "day": 7,
-      "weekday": "Ma",
-      "events": {
-        "MMI1": "vacances",
-        "MMI2-crea": "vacances",
-        "MMI2-Dev": "vacances",
-        "MMI3-crea": "vacances",
-        "MMI3-Dev": "vacances",
-        "Autre": "Grand Jury",
-        "MMI2-App": "entreprise S28",
-        "MMI3-App": "entreprise S29"
-      }
-    },
-    {
-      "day": 8,
-      "weekday": "Me",
-      "events": {
-        "MMI2-App": "entreprise S28",
-        "MMI3-App": "entreprise S29"
-      }
-    },
-    {
-      "day": 9,
-      "weekday": "Je",
-      "events": {
-        "MMI2-App": "entreprise S28",
-        "MMI3-App": "entreprise S29"
-      }
-    },
-    {
-      "day": 10,
-      "weekday": "Ve",
-      "events": {
-        "MMI2-App": "entreprise S28",
-        "MMI3-App": "entreprise S29"
-      }
-    },
-    {
-      "day": 11,
-      "weekday": "Sa",
-      "events": {}
-    },
-    {
-      "day": 12,
-      "weekday": "Di",
-      "events": {}
-    },
-    {
       "day": 13,
-      "weekday": "Lu",
+      "weekday": "Tu",
       "events": {
-        "MMI1": "vacances",
-        "MMI2-crea": "vacances",
-        "MMI2-Dev": "vacances",
-        "MMI3-crea": "vacances",
-        "MMI3-Dev": "vacances",
-        "MMI2-App": "entreprise S29",
-        "MMI3-App": "entreprise S30"
+        "MMI2-App": "Alternance",
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 14,
+      "weekday": "We",
+      "events": {
+        "Férié": "Fête nationale"
+      }
+    },
+    {
+      "day": 15,
+      "weekday": "Th",
+      "events": {
+        "MMI2-App": "Alternance",
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 16,
+      "weekday": "Fr",
+      "events": {
+        "MMI2-App": "Alternance",
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 17,
+      "weekday": "Sa",
+      "events": {
+        "MMI2-App": "Alternance",
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 18,
+      "weekday": "Su",
+      "events": {
+        "MMI2-App": "Alternance",
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 19,
+      "weekday": "Mo",
+      "events": {
+        "MMI2-App": "Alternance",
+        "MMI3-App": "Alternance"
       },
       "week": 29
     },
     {
-      "day": 14,
-      "weekday": "Ma",
-      "events": {
-        "Férié": "14 juillet"
-      }
-    },
-    {
-      "day": 15,
-      "weekday": "Me",
-      "events": {
-        "MMI2-App": "entreprise S29",
-        "MMI3-App": "entreprise S30"
-      }
-    },
-    {
-      "day": 16,
-      "weekday": "Je",
-      "events": {
-        "MMI2-App": "entreprise S29",
-        "MMI3-App": "entreprise S30"
-      }
-    },
-    {
-      "day": 17,
-      "weekday": "Ve",
-      "events": {
-        "MMI2-App": "entreprise S29",
-        "MMI3-App": "entreprise S30"
-      }
-    },
-    {
-      "day": 18,
-      "weekday": "Sa",
-      "events": {}
-    },
-    {
-      "day": 19,
-      "weekday": "Di",
-      "events": {}
-    },
-    {
       "day": 20,
-      "weekday": "Lu",
+      "weekday": "Tu",
       "events": {
-        "MMI1": "vacances",
-        "MMI2-crea": "vacances",
-        "MMI2-Dev": "vacances",
-        "MMI3-crea": "vacances",
-        "MMI3-Dev": "vacances",
-        "MMI3-App": "entreprise S31",
-        "MMI2-App": "entreprise S30"
+        "MMI2-App": "Alternance",
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 21,
+      "weekday": "We",
+      "events": {
+        "MMI2-App": "Alternance",
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 22,
+      "weekday": "Th",
+      "events": {
+        "MMI2-App": "Alternance",
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 23,
+      "weekday": "Fr",
+      "events": {
+        "MMI2-App": "Alternance",
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 24,
+      "weekday": "Sa",
+      "events": {
+        "MMI2-App": "Alternance",
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 25,
+      "weekday": "Su",
+      "events": {
+        "MMI2-App": "Alternance",
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 26,
+      "weekday": "Mo",
+      "events": {
+        "MMI2-App": "Alternance",
+        "MMI3-App": "Alternance"
       },
       "week": 30
     },
     {
-      "day": 21,
-      "weekday": "Ma",
-      "events": {
-        "MMI3-App": "entreprise S31",
-        "MMI2-App": "entreprise S30"
-      }
-    },
-    {
-      "day": 22,
-      "weekday": "Me",
-      "events": {
-        "MMI3-App": "entreprise S31",
-        "MMI2-App": "entreprise S30"
-      }
-    },
-    {
-      "day": 23,
-      "weekday": "Je",
-      "events": {
-        "MMI3-App": "entreprise S31",
-        "MMI2-App": "entreprise S30"
-      }
-    },
-    {
-      "day": 24,
-      "weekday": "Ve",
-      "events": {
-        "MMI3-App": "entreprise S31",
-        "MMI2-App": "entreprise S30"
-      }
-    },
-    {
-      "day": 25,
-      "weekday": "Sa",
-      "events": {}
-    },
-    {
-      "day": 26,
-      "weekday": "Di",
-      "events": {}
-    },
-    {
       "day": 27,
-      "weekday": "Lu",
+      "weekday": "Tu",
       "events": {
-        "MMI1": "vacances",
-        "MMI2-crea": "vacances",
-        "MMI2-Dev": "vacances",
-        "MMI3-crea": "vacances",
-        "MMI3-Dev": "vacances",
-        "MMI2-App": "entreprise S31",
-        "MMI3-App": "entreprise S32"
+        "MMI2-App": "Alternance",
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 28,
+      "weekday": "We",
+      "events": {
+        "MMI2-App": "Alternance",
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 29,
+      "weekday": "Th",
+      "events": {
+        "MMI2-App": "Alternance",
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 30,
+      "weekday": "Fr",
+      "events": {
+        "MMI2-App": "Alternance",
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 31,
+      "weekday": "Sa",
+      "events": {
+        "MMI2-App": "Alternance",
+        "MMI3-App": "Alternance"
+      }
+    }
+  ],
+  "Août 2027": [
+    {
+      "day": 1,
+      "weekday": "Su",
+      "events": {
+        "MMI2-App": "Alternance",
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 2,
+      "weekday": "Mo",
+      "events": {
+        "MMI2-App": "Alternance",
+        "MMI3-App": "Alternance"
       },
       "week": 31
     },
     {
-      "day": 28,
-      "weekday": "Ma",
-      "events": {
-        "MMI2-App": "entreprise S31",
-        "MMI3-App": "entreprise S32"
-      }
-    },
-    {
-      "day": 29,
-      "weekday": "Me",
-      "events": {
-        "MMI2-App": "entreprise S31",
-        "MMI3-App": "entreprise S32"
-      }
-    },
-    {
-      "day": 30,
-      "weekday": "Je",
-      "events": {
-        "MMI2-App": "entreprise S31",
-        "MMI3-App": "entreprise S32"
-      }
-    },
-    {
-      "day": 31,
-      "weekday": "ve",
-      "events": {
-        "MMI2-App": "entreprise S31",
-        "MMI3-App": "entreprise S32"
-      }
-    }
-  ],
-  "Août 2026": [
-    {
-      "day": 1,
-      "weekday": "Sa",
-      "events": {}
-    },
-    {
-      "day": 2,
-      "weekday": "Di",
-      "events": {}
-    },
-    {
       "day": 3,
-      "weekday": "Lu",
+      "weekday": "Tu",
       "events": {
-        "MMI1": "vacances",
-        "MMI2-crea": "vacances",
-        "MMI2-Dev": "vacances",
-        "MMI2-App": "entreprise S29",
-        "MMI3-crea": "vacances",
-        "MMI3-Dev": "vacances",
-        "MMI3-App": "entreprise S33"
+        "MMI2-App": "Alternance",
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 4,
+      "weekday": "We",
+      "events": {
+        "MMI2-App": "Alternance",
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 5,
+      "weekday": "Th",
+      "events": {
+        "MMI2-App": "Alternance",
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 6,
+      "weekday": "Fr",
+      "events": {
+        "MMI2-App": "Alternance",
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 7,
+      "weekday": "Sa",
+      "events": {
+        "MMI2-App": "Alternance",
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 8,
+      "weekday": "Su",
+      "events": {
+        "MMI2-App": "Alternance",
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 9,
+      "weekday": "Mo",
+      "events": {
+        "MMI2-App": "Alternance",
+        "MMI3-App": "Alternance"
       },
       "week": 32
     },
     {
-      "day": 4,
-      "weekday": "Ma",
-      "events": {}
-    },
-    {
-      "day": 5,
-      "weekday": "Me",
-      "events": {}
-    },
-    {
-      "day": 6,
-      "weekday": "Je",
-      "events": {}
-    },
-    {
-      "day": 7,
-      "weekday": "Ve",
-      "events": {}
-    },
-    {
-      "day": 8,
-      "weekday": "Sa",
-      "events": {}
-    },
-    {
-      "day": 9,
-      "weekday": "Di",
-      "events": {}
-    },
-    {
       "day": 10,
-      "weekday": "Lu",
+      "weekday": "Tu",
       "events": {
-        "MMI1": "vacances",
-        "MMI2-crea": "vacances",
-        "MMI2-Dev": "vacances",
-        "MMI2-App": "entreprise S30",
-        "MMI3-crea": "vacances",
-        "MMI3-Dev": "vacances",
-        "MMI3-App": "entreprise S34"
+        "MMI2-App": "Alternance",
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 11,
+      "weekday": "We",
+      "events": {
+        "MMI2-App": "Alternance",
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 12,
+      "weekday": "Th",
+      "events": {
+        "MMI2-App": "Alternance",
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 13,
+      "weekday": "Fr",
+      "events": {
+        "MMI2-App": "Alternance",
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 14,
+      "weekday": "Sa",
+      "events": {
+        "MMI2-App": "Alternance",
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 15,
+      "weekday": "Su",
+      "events": {
+        "MMI2-App": "Alternance",
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 16,
+      "weekday": "Mo",
+      "events": {
+        "MMI2-App": "Alternance",
+        "MMI3-App": "Alternance"
       },
       "week": 33
     },
     {
-      "day": 11,
-      "weekday": "Ma",
-      "events": {}
-    },
-    {
-      "day": 12,
-      "weekday": "Me",
-      "events": {}
-    },
-    {
-      "day": 13,
-      "weekday": "Je",
-      "events": {}
-    },
-    {
-      "day": 14,
-      "weekday": "Ve",
-      "events": {}
-    },
-    {
-      "day": 15,
-      "weekday": "Sa",
-      "events": {}
-    },
-    {
-      "day": 16,
-      "weekday": "Di",
-      "events": {}
-    },
-    {
       "day": 17,
-      "weekday": "Lu",
+      "weekday": "Tu",
       "events": {
-        "MMI1": "vacances",
-        "MMI2-crea": "vacances",
-        "MMI2-Dev": "vacances",
-        "MMI2-App": "entreprise S31",
-        "MMI3-crea": "vacances",
-        "MMI3-Dev": "vacances",
-        "MMI3-App": "entreprise S35"
+        "MMI2-App": "Alternance",
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 18,
+      "weekday": "We",
+      "events": {
+        "MMI2-App": "Alternance",
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 19,
+      "weekday": "Th",
+      "events": {
+        "MMI2-App": "Alternance",
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 20,
+      "weekday": "Fr",
+      "events": {
+        "MMI2-App": "Alternance",
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 21,
+      "weekday": "Sa",
+      "events": {
+        "MMI2-App": "Alternance",
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 22,
+      "weekday": "Su",
+      "events": {
+        "MMI2-App": "Alternance",
+        "MMI3-App": "Alternance"
+      }
+    },
+    {
+      "day": 23,
+      "weekday": "Mo",
+      "events": {
+        "MMI2-App": "Alternance",
+        "MMI3-App": "Alternance"
       },
       "week": 34
     },
     {
-      "day": 18,
-      "weekday": "Ma",
-      "events": {}
-    },
-    {
-      "day": 19,
-      "weekday": "Me",
-      "events": {}
-    },
-    {
-      "day": 20,
-      "weekday": "Je",
-      "events": {}
-    },
-    {
-      "day": 21,
-      "weekday": "Ve",
-      "events": {}
-    },
-    {
-      "day": 22,
-      "weekday": "Sa",
-      "events": {}
-    },
-    {
-      "day": 23,
-      "weekday": "Di",
-      "events": {}
-    },
-    {
       "day": 24,
-      "weekday": "Lu",
+      "weekday": "Tu",
       "events": {
-        "MMI1": "vacances",
-        "MMI2-crea": "vacances",
-        "MMI2-Dev": "vacances",
-        "MMI2-App": "entreprise S32",
-        "MMI3-crea": "vacances",
-        "MMI3-Dev": "vacances"
-      },
-      "week": 35
+        "MMI2-App": "Alternance",
+        "MMI3-App": "Alternance"
+      }
     },
     {
       "day": 25,
-      "weekday": "Ma",
-      "events": {}
+      "weekday": "We",
+      "events": {
+        "MMI3-App": "Alternance"
+      }
     },
     {
       "day": 26,
-      "weekday": "Me",
-      "events": {
-        "MMI3-App": "Soutenance alternance"
-      }
+      "weekday": "Th",
+      "events": {}
     },
     {
       "day": 27,
-      "weekday": "Je",
-      "events": {
-        "MMI2-App": "soutenances",
-        "MMI3-App": "soutenances"
-      }
+      "weekday": "Fr",
+      "events": {}
     },
     {
       "day": 28,
-      "weekday": "Ve",
+      "weekday": "Sa",
       "events": {}
     },
     {
       "day": 29,
-      "weekday": "Sa",
+      "weekday": "Su",
       "events": {}
     },
     {
       "day": 30,
-      "weekday": "Di",
-      "events": {}
+      "weekday": "Mo",
+      "events": {},
+      "week": 35
     },
     {
       "day": 31,
-      "weekday": "lu",
+      "weekday": "Tu",
       "events": {}
+    }
+  ],
+  "Août 2026": [
+    {
+      "day": 11,
+      "events": {
+        "MMI2-App": "entreprise S30",
+        "MMI3-App": "entreprise S34"
+      }
+    },
+    {
+      "day": 12,
+      "events": {
+        "MMI2-App": "entreprise S30",
+        "MMI3-App": "entreprise S34"
+      }
+    },
+    {
+      "day": 13,
+      "events": {
+        "MMI2-App": "entreprise S30",
+        "MMI3-App": "entreprise S34"
+      }
+    },
+    {
+      "day": 14,
+      "events": {
+        "MMI2-App": "entreprise S30",
+        "MMI3-App": "entreprise S34"
+      }
+    },
+    {
+      "day": 18,
+      "events": {
+        "MMI2-App": "entreprise S31",
+        "MMI3-App": "entreprise S35"
+      }
+    },
+    {
+      "day": 19,
+      "events": {
+        "MMI2-App": "entreprise S31",
+        "MMI3-App": "entreprise S35"
+      }
+    },
+    {
+      "day": 20,
+      "events": {
+        "MMI2-App": "entreprise S31",
+        "MMI3-App": "entreprise S35"
+      }
+    },
+    {
+      "day": 21,
+      "events": {
+        "MMI2-App": "entreprise S31",
+        "MMI3-App": "entreprise S35"
+      }
+    },
+    {
+      "day": 27,
+      "events": {
+        "MMI2-App": "soutenances alternance",
+        "MMI3-App": "soutenances alternance"
+      }
     }
   ]
 }
