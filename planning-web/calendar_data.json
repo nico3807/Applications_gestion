@@ -342,6 +342,7 @@
       "day": 26,
       "weekday": "Mo",
       "events": {
+        "MMI1": "vacances",
         "MMI2-App": "Alternance",
         "MMI3-App": "Alternance"
       },
@@ -699,6 +700,7 @@
       "day": 21,
       "weekday": "Mo",
       "events": {
+        "MMI1": "vacances",
         "MMI3-App": "Alternance"
       },
       "week": 52
@@ -754,6 +756,7 @@
       "day": 28,
       "weekday": "Mo",
       "events": {
+        "MMI1": "vacances",
         "MMI2-App": "Alternance",
         "MMI3-App": "Alternance"
       },
@@ -1077,6 +1080,7 @@
       "day": 15,
       "weekday": "Mo",
       "events": {
+        "MMI1": "vacances",
         "MMI2-App": "Alternance",
         "MMI3-App": "Alternance"
       },
@@ -1500,6 +1504,7 @@
       "day": 12,
       "weekday": "Mo",
       "events": {
+        "MMI1": "vacances",
         "MMI2-App": "Alternance",
         "MMI3-App": "Alternance"
       },
