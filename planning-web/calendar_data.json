@@ -3,7 +3,12 @@
     {
       "day": 1,
       "weekday": "Tu",
-      "events": {}
+      "events": {
+        "MMI1": "Rentrée 09h30",
+        "MMI2-crea": "Rentrée 11h",
+        "MMI2-Dev": "Rentrée 11h",
+        "MMI2-App": "Rentrée 11h"
+      }
     },
     {
       "day": 2,
@@ -13,7 +18,11 @@
     {
       "day": 3,
       "weekday": "Th",
-      "events": {}
+      "events": {
+        "MMI3-crea": "Rentrée 11h",
+        "MMI3-Dev": "Rentrée 11h",
+        "MMI3-App": "Rentrée 11h"
+      }
     },
     {
       "day": 4,
@@ -447,7 +456,7 @@
       "day": 11,
       "weekday": "We",
       "events": {
-        "Férié": "Toussaint"
+        "Férié": "Armistice"
       }
     },
     {
@@ -1398,7 +1407,7 @@
       "day": 29,
       "weekday": "Mo",
       "events": {
-        "Férié": "Pâques"
+        "Férié": "Lundi de Pâques"
       },
       "week": 13
     },
@@ -1662,7 +1671,8 @@
       "day": 1,
       "weekday": "Sa",
       "events": {
-        "MMI2-App": "Alternance"
+        "MMI2-App": "Alternance",
+        "Férié": "Fête du Travail"
       }
     },
     {
@@ -1712,7 +1722,8 @@
       "day": 8,
       "weekday": "Sa",
       "events": {
-        "MMI2-App": "Alternance"
+        "MMI2-App": "Alternance",
+        "Férié": "Victoire 1945"
       }
     },
     {
@@ -1776,7 +1787,7 @@
       "day": 17,
       "weekday": "Mo",
       "events": {
-        "Férié": "Pentecôte"
+        "Férié": "Lundi de Pentecôte"
       },
       "week": 20
     },
@@ -2587,6 +2598,71 @@
       "day": 31,
       "weekday": "Tu",
       "events": {}
+    }
+  ],
+  "Août 2026": [
+    {
+      "day": 11,
+      "events": {
+        "MMI2-App": "entreprise S30",
+        "MMI3-App": "entreprise S34"
+      }
+    },
+    {
+      "day": 12,
+      "events": {
+        "MMI2-App": "entreprise S30",
+        "MMI3-App": "entreprise S34"
+      }
+    },
+    {
+      "day": 13,
+      "events": {
+        "MMI2-App": "entreprise S30",
+        "MMI3-App": "entreprise S34"
+      }
+    },
+    {
+      "day": 14,
+      "events": {
+        "MMI2-App": "entreprise S30",
+        "MMI3-App": "entreprise S34"
+      }
+    },
+    {
+      "day": 18,
+      "events": {
+        "MMI2-App": "entreprise S31",
+        "MMI3-App": "entreprise S35"
+      }
+    },
+    {
+      "day": 19,
+      "events": {
+        "MMI2-App": "entreprise S31",
+        "MMI3-App": "entreprise S35"
+      }
+    },
+    {
+      "day": 20,
+      "events": {
+        "MMI2-App": "entreprise S31",
+        "MMI3-App": "entreprise S35"
+      }
+    },
+    {
+      "day": 21,
+      "events": {
+        "MMI2-App": "entreprise S31",
+        "MMI3-App": "entreprise S35"
+      }
+    },
+    {
+      "day": 27,
+      "events": {
+        "MMI2-App": "soutenances alternance",
+        "MMI3-App": "soutenances alternance"
+      }
     }
   ]
 }
