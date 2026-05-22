@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Répartition MMI</title>
+    <title>Répartition MMI 2026-2027</title>
     <link rel="stylesheet" href="static/style.css" />
     <style>
       /* Styles spécifiques pour le mode 100% frontend et la modale GitHub */
@@ -167,6 +167,40 @@
 
       /* ── Mode lecture seule ──────────────────────────────── */
       body.auth-readonly select { pointer-events: none; opacity: 0.65; cursor: default; }
+
+      /* ── Bouton Archive ──────────────────────────────────── */
+      .nav-link-archive {
+        margin-left: 0.75rem;
+        background: rgba(217,119,6,.18);
+        color: #fde68a !important;
+        border: 1px solid rgba(217,119,6,.4);
+        border-radius: 6px;
+        font-size: 0.78rem;
+      }
+      .nav-link-archive:hover { background: rgba(217,119,6,.32) !important; }
+      .nav-link-current {
+        margin-left: 0.75rem;
+        background: rgba(34,197,94,.18);
+        color: #bbf7d0 !important;
+        border: 1px solid rgba(34,197,94,.4);
+        border-radius: 6px;
+        font-size: 0.78rem;
+      }
+      .nav-link-current:hover { background: rgba(34,197,94,.32) !important; }
+
+      /* ── Bandeau archive ─────────────────────────────────── */
+      #archive-banner {
+        background: linear-gradient(90deg, #92400e, #b45309);
+        color: #fef3c7;
+        text-align: center;
+        padding: 6px 1rem;
+        font-size: 0.85rem;
+        font-weight: 600;
+        letter-spacing: .03em;
+        position: sticky;
+        top: 54px;
+        z-index: 90;
+      }
     </style>
   </head>
   <body>
@@ -174,7 +208,7 @@
       <div class="header-inner">
         <a href="../index.html" title="Retour à l'accueil MMI" style="display:flex;align-items:center;flex-shrink:0;line-height:0;"><img src="../logo_mmi.jpg" alt="MMI" style="height:32px;width:auto;border-radius:4px;display:block;opacity:0.9;"></a>
         <a href="#" class="site-title" onclick="navigate('home')"
-          >Répartition MMI</a
+          >Répartition MMI — <span id="app-year">2026-2027</span></a
         >
         <nav id="main-nav">
           <a href="#" class="nav-link" id="nav-home" onclick="navigate('home')"
@@ -208,6 +242,21 @@
             onclick="navigate('modifications')"
             style="display:none"
             >Journal</a
+          >
+          <a
+            href="#"
+            class="nav-link nav-link-archive"
+            id="nav-archive"
+            onclick="switchToArchive()"
+            >🗂 Archive 2025-2026</a
+          >
+          <a
+            href="#"
+            class="nav-link nav-link-current"
+            id="nav-current"
+            onclick="switchToCurrent()"
+            style="display:none"
+            >↩ 2026-2027</a
           >
         </nav>
       </div>

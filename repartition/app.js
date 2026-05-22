@@ -5,6 +5,9 @@ const GH_OWNER = "nico3807";
 const GH_REPO = "Applications_gestion"; // À ajuster selon le dépôt exact
 const GH_BRANCH = "main";
 const GH_BASE_PATH = "repartition/data"; // Dossier où se trouvent les JSON sur GitHub
+const GH_ARCHIVE_PATH = "repartition/archive_25-26/data";
+
+let ARCHIVE_MODE = false;
 
 const SEMESTRES = [
   "S1",
@@ -68,6 +71,27 @@ window.navigate = function (view, param = null) {
 function renderView() {
   const root = document.getElementById("app-root");
 
+  // Titre et boutons archive / retour
+  const yearEl = document.getElementById("app-year");
+  if (yearEl) yearEl.textContent = ARCHIVE_MODE ? "2025-2026" : "2026-2027";
+  const navArchive = document.getElementById("nav-archive");
+  const navCurrent = document.getElementById("nav-current");
+  if (navArchive) navArchive.style.display = ARCHIVE_MODE ? "none" : "";
+  if (navCurrent) navCurrent.style.display = ARCHIVE_MODE ? "" : "none";
+
+  // Bandeau archive
+  let banner = document.getElementById("archive-banner");
+  if (ARCHIVE_MODE) {
+    if (!banner) {
+      banner = document.createElement("div");
+      banner.id = "archive-banner";
+      banner.textContent = "🗂 Mode archive 2025-2026 — consultation uniquement, aucune modification possible";
+      document.querySelector("header").insertAdjacentElement("afterend", banner);
+    }
+  } else if (banner) {
+    banner.remove();
+  }
+
   // Mise à jour de la navigation active
   document
     .querySelectorAll(".nav-link")
@@ -98,6 +122,7 @@ function renderView() {
   else if (currentView === "modifications") renderModifications(root);
 
   AUTH.applyPermissions();
+  if (ARCHIVE_MODE) document.body.classList.add("auth-readonly");
 }
 
 /* ── Vues : Accueil & Semestres ─────────────────────────────────────────── */
@@ -730,9 +755,9 @@ function injectGHUI() {
   if (cfg.token) document.getElementById("gh-token").value = cfg.token;
 }
 
-async function fetchGH(filename) {
+async function fetchGH(filename, basePath = GH_BASE_PATH) {
   const cfg = getGHConfig();
-  const url = `https://api.github.com/repos/${GH_OWNER}/${GH_REPO}/contents/${GH_BASE_PATH}/${filename}?ref=${GH_BRANCH}`;
+  const url = `https://api.github.com/repos/${GH_OWNER}/${GH_REPO}/contents/${basePath}/${filename}?ref=${GH_BRANCH}`;
   const resp = await fetch(url, {
     // Ajout de no-cache pour éviter les conflits de version dus au cache du navigateur
     cache: "no-cache",
@@ -793,6 +818,7 @@ async function saveFileGH(filename, dataObj, msg) {
 }
 
 window.saveAffectationsGH = async function () {
+  if (ARCHIVE_MODE) return showToast("Archives 2025-2026 — consultation uniquement");
   if (!isGHConfigured()) return alert("Veuillez configurer GitHub d'abord !");
   try {
     await _flushMods();
@@ -804,6 +830,7 @@ window.saveAffectationsGH = async function () {
 };
 
 window.saveEnseignantsGH = async function () {
+  if (ARCHIVE_MODE) return showToast("Archives 2025-2026 — consultation uniquement");
   if (!isGHConfigured()) return alert("Veuillez configurer GitHub d'abord !");
 
   // Si le formulaire contient des données non encore ajoutées, les ajouter d'abord
@@ -825,6 +852,7 @@ window.saveEnseignantsGH = async function () {
 };
 
 window.saveMaquetteGH = async function () {
+  if (ARCHIVE_MODE) return showToast("Archives 2025-2026 — consultation uniquement");
   if (!isGHConfigured()) return alert("Veuillez configurer GitHub d'abord !");
   try {
     await _flushMods();
@@ -898,14 +926,31 @@ window.clearModificationsGH = async function () {
   renderView();
 };
 
+window.switchToArchive = async function () {
+  ARCHIVE_MODE = true;
+  APP_DATA = { affectations: {}, enseignants: [], maquette_overrides: {}, modifications: [] };
+  currentView = "home";
+  await loadData();
+};
+
+window.switchToCurrent = async function () {
+  ARCHIVE_MODE = false;
+  APP_DATA = { affectations: {}, enseignants: [], maquette_overrides: {}, modifications: [] };
+  currentView = "home";
+  await loadData();
+};
+
 async function loadData() {
+  const localBase = ARCHIVE_MODE ? "archive_25-26/data" : "data";
+  const ghBase   = ARCHIVE_MODE ? GH_ARCHIVE_PATH : GH_BASE_PATH;
+
   // 1. Charge d'abord les fichiers locaux (fallback garanti)
   try {
     const [aff, ens, maq, mods] = await Promise.all([
-      fetch("data/affectations.json").then((r) => (r.ok ? r.json() : null)),
-      fetch("data/enseignants.json").then((r) => (r.ok ? r.json() : null)),
-      fetch("data/maquette_overrides.json").then((r) => (r.ok ? r.json() : null)),
-      fetch("data/modifications.json").then((r) => (r.ok ? r.json() : null)),
+      fetch(`${localBase}/affectations.json`).then((r) => (r.ok ? r.json() : null)),
+      fetch(`${localBase}/enseignants.json`).then((r) => (r.ok ? r.json() : null)),
+      fetch(`${localBase}/maquette_overrides.json`).then((r) => (r.ok ? r.json() : null)),
+      fetch(`${localBase}/modifications.json`).then((r) => (r.ok ? r.json() : null)),
     ]);
     if (aff) APP_DATA.affectations = aff;
     if (ens) APP_DATA.enseignants = ens;
@@ -919,10 +964,10 @@ async function loadData() {
   if (isGHConfigured()) {
     try {
       const [aff, ens, maq, mods] = await Promise.all([
-        fetchGH("affectations.json"),
-        fetchGH("enseignants.json"),
-        fetchGH("maquette_overrides.json"),
-        fetchGH("modifications.json"),
+        fetchGH("affectations.json", ghBase),
+        fetchGH("enseignants.json", ghBase),
+        fetchGH("maquette_overrides.json", ghBase),
+        fetchGH("modifications.json", ghBase),
       ]);
       if (aff) APP_DATA.affectations = aff;
       if (ens) APP_DATA.enseignants = ens;
