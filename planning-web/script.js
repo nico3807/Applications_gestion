@@ -1466,6 +1466,7 @@ window.switchToArchive = async function () {
   if (cfgBtn) cfgBtn.style.display = "none";
 
   await _loadCalAndRebuild("archive_25-26/calendar_data_25-26.json", GH_ARCHIVE_PATH);
+  window.scrollTo({ top: 0, behavior: "instant" });
 };
 
 window.switchToCurrent = async function () {
