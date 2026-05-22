@@ -152,7 +152,7 @@
       "day": 28,
       "weekday": "Mo",
       "events": {
-        "MMI-App": "Alternance"
+        "MMI2-App": "Alternance"
       },
       "week": 40
     },
@@ -160,14 +160,14 @@
       "day": 29,
       "weekday": "Tu",
       "events": {
-        "MMI-App": "Alternance"
+        "MMI2-App": "Alternance"
       }
     },
     {
       "day": 30,
       "weekday": "We",
       "events": {
-        "MMI-App": "Alternance"
+        "MMI2-App": "Alternance"
       }
     }
   ],
@@ -176,14 +176,14 @@
       "day": 1,
       "weekday": "Th",
       "events": {
-        "MMI-App": "Alternance"
+        "MMI2-App": "Alternance"
       }
     },
     {
       "day": 2,
       "weekday": "Fr",
       "events": {
-        "MMI-App": "Alternance"
+        "MMI2-App": "Alternance"
       }
     },
     {
@@ -246,7 +246,7 @@
       "day": 12,
       "weekday": "Mo",
       "events": {
-        "MMI-App": "Alternance"
+        "MMI2-App": "Alternance"
       },
       "week": 42
     },
@@ -254,28 +254,28 @@
       "day": 13,
       "weekday": "Tu",
       "events": {
-        "MMI-App": "Alternance"
+        "MMI2-App": "Alternance"
       }
     },
     {
       "day": 14,
       "weekday": "We",
       "events": {
-        "MMI-App": "Alternance"
+        "MMI2-App": "Alternance"
       }
     },
     {
       "day": 15,
       "weekday": "Th",
       "events": {
-        "MMI-App": "Alternance"
+        "MMI2-App": "Alternance"
       }
     },
     {
       "day": 16,
       "weekday": "Fr",
       "events": {
-        "MMI-App": "Alternance"
+        "MMI2-App": "Alternance"
       }
     },
     {
@@ -342,7 +342,7 @@
       "day": 26,
       "weekday": "Mo",
       "events": {
-        "MMI-App": "Alternance",
+        "MMI2-App": "Alternance",
         "MMI3-App": "Alternance"
       },
       "week": 44
@@ -351,7 +351,7 @@
       "day": 27,
       "weekday": "Tu",
       "events": {
-        "MMI-App": "Alternance",
+        "MMI2-App": "Alternance",
         "MMI3-App": "Alternance"
       }
     },
@@ -359,7 +359,7 @@
       "day": 28,
       "weekday": "We",
       "events": {
-        "MMI-App": "Alternance",
+        "MMI2-App": "Alternance",
         "MMI3-App": "Alternance"
       }
     },
@@ -367,7 +367,7 @@
       "day": 29,
       "weekday": "Th",
       "events": {
-        "MMI-App": "Alternance",
+        "MMI2-App": "Alternance",
         "MMI3-App": "Alternance"
       }
     },
@@ -375,7 +375,7 @@
       "day": 30,
       "weekday": "Fr",
       "events": {
-        "MMI-App": "Alternance",
+        "MMI2-App": "Alternance",
         "MMI3-App": "Alternance"
       }
     },
@@ -477,7 +477,7 @@
       "day": 16,
       "weekday": "Mo",
       "events": {
-        "MMI-App": "Alternance"
+        "MMI2-App": "Alternance"
       },
       "week": 47
     },
@@ -485,28 +485,28 @@
       "day": 17,
       "weekday": "Tu",
       "events": {
-        "MMI-App": "Alternance"
+        "MMI2-App": "Alternance"
       }
     },
     {
       "day": 18,
       "weekday": "We",
       "events": {
-        "MMI-App": "Alternance"
+        "MMI2-App": "Alternance"
       }
     },
     {
       "day": 19,
       "weekday": "Th",
       "events": {
-        "MMI-App": "Alternance"
+        "MMI2-App": "Alternance"
       }
     },
     {
       "day": 20,
       "weekday": "Fr",
       "events": {
-        "MMI-App": "Alternance"
+        "MMI2-App": "Alternance"
       }
     },
     {
@@ -569,7 +569,7 @@
       "day": 30,
       "weekday": "Mo",
       "events": {
-        "MMI-App": "Alternance"
+        "MMI2-App": "Alternance"
       },
       "week": 49
     }
@@ -579,28 +579,28 @@
       "day": 1,
       "weekday": "Tu",
       "events": {
-        "MMI-App": "Alternance"
+        "MMI2-App": "Alternance"
       }
     },
     {
       "day": 2,
       "weekday": "We",
       "events": {
-        "MMI-App": "Alternance"
+        "MMI2-App": "Alternance"
       }
     },
     {
       "day": 3,
       "weekday": "Th",
       "events": {
-        "MMI-App": "Alternance"
+        "MMI2-App": "Alternance"
       }
     },
     {
       "day": 4,
       "weekday": "Fr",
       "events": {
-        "MMI-App": "Alternance"
+        "MMI2-App": "Alternance"
       }
     },
     {
@@ -707,7 +707,7 @@
       "day": 22,
       "weekday": "Tu",
       "events": {
-        "MMI-App": "Alternance",
+        "MMI2-App": "Alternance",
         "MMI3-App": "Alternance"
       }
     },
@@ -715,7 +715,7 @@
       "day": 23,
       "weekday": "We",
       "events": {
-        "MMI-App": "Alternance",
+        "MMI2-App": "Alternance",
         "MMI3-App": "Alternance"
       }
     },
@@ -723,7 +723,7 @@
       "day": 24,
       "weekday": "Th",
       "events": {
-        "MMI-App": "Alternance",
+        "MMI2-App": "Alternance",
         "MMI3-App": "Alternance"
       }
     },
@@ -738,7 +738,7 @@
       "day": 26,
       "weekday": "Sa",
       "events": {
-        "MMI-App": "Alternance",
+        "MMI2-App": "Alternance",
         "MMI3-App": "Alternance"
       }
     },
@@ -746,7 +746,7 @@
       "day": 27,
       "weekday": "Su",
       "events": {
-        "MMI-App": "Alternance",
+        "MMI2-App": "Alternance",
         "MMI3-App": "Alternance"
       }
     },
@@ -754,7 +754,7 @@
       "day": 28,
       "weekday": "Mo",
       "events": {
-        "MMI-App": "Alternance",
+        "MMI2-App": "Alternance",
         "MMI3-App": "Alternance"
       },
       "week": 53
@@ -763,7 +763,7 @@
       "day": 29,
       "weekday": "Tu",
       "events": {
-        "MMI-App": "Alternance",
+        "MMI2-App": "Alternance",
         "MMI3-App": "Alternance"
       }
     },
@@ -771,7 +771,7 @@
       "day": 30,
       "weekday": "We",
       "events": {
-        "MMI-App": "Alternance",
+        "MMI2-App": "Alternance",
         "MMI3-App": "Alternance"
       }
     },
@@ -779,7 +779,7 @@
       "day": 31,
       "weekday": "Th",
       "events": {
-        "MMI-App": "Alternance",
+        "MMI2-App": "Alternance",
         "MMI3-App": "Alternance"
       }
     }
@@ -888,7 +888,7 @@
       "day": 18,
       "weekday": "Mo",
       "events": {
-        "MMI-App": "Alternance"
+        "MMI2-App": "Alternance"
       },
       "week": 3
     },
@@ -896,28 +896,28 @@
       "day": 19,
       "weekday": "Tu",
       "events": {
-        "MMI-App": "Alternance"
+        "MMI2-App": "Alternance"
       }
     },
     {
       "day": 20,
       "weekday": "We",
       "events": {
-        "MMI-App": "Alternance"
+        "MMI2-App": "Alternance"
       }
     },
     {
       "day": 21,
       "weekday": "Th",
       "events": {
-        "MMI-App": "Alternance"
+        "MMI2-App": "Alternance"
       }
     },
     {
       "day": 22,
       "weekday": "Fr",
       "events": {
-        "MMI-App": "Alternance"
+        "MMI2-App": "Alternance"
       }
     },
     {
@@ -972,7 +972,7 @@
       "day": 1,
       "weekday": "Mo",
       "events": {
-        "MMI-App": "Alternance",
+        "MMI2-App": "Alternance",
         "MMI3-App": "Alternance"
       },
       "week": 5
@@ -981,7 +981,7 @@
       "day": 2,
       "weekday": "Tu",
       "events": {
-        "MMI-App": "Alternance",
+        "MMI2-App": "Alternance",
         "MMI3-App": "Alternance"
       }
     },
@@ -989,7 +989,7 @@
       "day": 3,
       "weekday": "We",
       "events": {
-        "MMI-App": "Alternance",
+        "MMI2-App": "Alternance",
         "MMI3-App": "Alternance"
       }
     },
@@ -997,7 +997,7 @@
       "day": 4,
       "weekday": "Th",
       "events": {
-        "MMI-App": "Alternance",
+        "MMI2-App": "Alternance",
         "MMI3-App": "Alternance"
       }
     },
@@ -1005,7 +1005,7 @@
       "day": 5,
       "weekday": "Fr",
       "events": {
-        "MMI-App": "Alternance",
+        "MMI2-App": "Alternance",
         "MMI3-App": "Alternance"
       }
     },
@@ -1077,7 +1077,7 @@
       "day": 15,
       "weekday": "Mo",
       "events": {
-        "MMI-App": "Alternance",
+        "MMI2-App": "Alternance",
         "MMI3-App": "Alternance"
       },
       "week": 7
@@ -1086,7 +1086,7 @@
       "day": 16,
       "weekday": "Tu",
       "events": {
-        "MMI-App": "Alternance",
+        "MMI2-App": "Alternance",
         "MMI3-App": "Alternance"
       }
     },
@@ -1094,7 +1094,7 @@
       "day": 17,
       "weekday": "We",
       "events": {
-        "MMI-App": "Alternance",
+        "MMI2-App": "Alternance",
         "MMI3-App": "Alternance"
       }
     },
@@ -1102,7 +1102,7 @@
       "day": 18,
       "weekday": "Th",
       "events": {
-        "MMI-App": "Alternance",
+        "MMI2-App": "Alternance",
         "MMI3-App": "Alternance"
       }
     },
@@ -1110,7 +1110,7 @@
       "day": 19,
       "weekday": "Fr",
       "events": {
-        "MMI-App": "Alternance",
+        "MMI2-App": "Alternance",
         "MMI3-App": "Alternance"
       }
     },
@@ -1184,7 +1184,7 @@
       "day": 1,
       "weekday": "Mo",
       "events": {
-        "MMI-App": "Alternance",
+        "MMI2-App": "Alternance",
         "MMI3-App": "Alternance"
       },
       "week": 9
@@ -1193,7 +1193,7 @@
       "day": 2,
       "weekday": "Tu",
       "events": {
-        "MMI-App": "Alternance",
+        "MMI2-App": "Alternance",
         "MMI3-App": "Alternance"
       }
     },
@@ -1201,7 +1201,7 @@
       "day": 3,
       "weekday": "We",
       "events": {
-        "MMI-App": "Alternance",
+        "MMI2-App": "Alternance",
         "MMI3-App": "Alternance"
       }
     },
@@ -1209,7 +1209,7 @@
       "day": 4,
       "weekday": "Th",
       "events": {
-        "MMI-App": "Alternance",
+        "MMI2-App": "Alternance",
         "MMI3-App": "Alternance"
       }
     },
@@ -1217,7 +1217,7 @@
       "day": 5,
       "weekday": "Fr",
       "events": {
-        "MMI-App": "Alternance",
+        "MMI2-App": "Alternance",
         "MMI3-App": "Alternance"
       }
     },
@@ -1289,7 +1289,7 @@
       "day": 15,
       "weekday": "Mo",
       "events": {
-        "MMI-App": "Alternance",
+        "MMI2-App": "Alternance",
         "MMI3-App": "Alternance"
       },
       "week": 11
@@ -1298,7 +1298,7 @@
       "day": 16,
       "weekday": "Tu",
       "events": {
-        "MMI-App": "Alternance",
+        "MMI2-App": "Alternance",
         "MMI3-App": "Alternance"
       }
     },
@@ -1306,7 +1306,7 @@
       "day": 17,
       "weekday": "We",
       "events": {
-        "MMI-App": "Alternance",
+        "MMI2-App": "Alternance",
         "MMI3-App": "Alternance"
       }
     },
@@ -1314,7 +1314,7 @@
       "day": 18,
       "weekday": "Th",
       "events": {
-        "MMI-App": "Alternance",
+        "MMI2-App": "Alternance",
         "MMI3-App": "Alternance"
       }
     },
@@ -1322,7 +1322,7 @@
       "day": 19,
       "weekday": "Fr",
       "events": {
-        "MMI-App": "Alternance",
+        "MMI2-App": "Alternance",
         "MMI3-App": "Alternance"
       }
     },
@@ -1402,7 +1402,7 @@
       "day": 30,
       "weekday": "Tu",
       "events": {
-        "MMI-App": "Alternance",
+        "MMI2-App": "Alternance",
         "MMI3-App": "Alternance"
       }
     },
@@ -1410,7 +1410,7 @@
       "day": 31,
       "weekday": "We",
       "events": {
-        "MMI-App": "Alternance",
+        "MMI2-App": "Alternance",
         "MMI3-App": "Alternance"
       }
     }
@@ -1420,7 +1420,7 @@
       "day": 1,
       "weekday": "Th",
       "events": {
-        "MMI-App": "Alternance",
+        "MMI2-App": "Alternance",
         "MMI3-App": "Alternance"
       }
     },
@@ -1428,7 +1428,7 @@
       "day": 2,
       "weekday": "Fr",
       "events": {
-        "MMI-App": "Alternance",
+        "MMI2-App": "Alternance",
         "MMI3-App": "Alternance"
       }
     },
@@ -1500,7 +1500,7 @@
       "day": 12,
       "weekday": "Mo",
       "events": {
-        "MMI-App": "Alternance",
+        "MMI2-App": "Alternance",
         "MMI3-App": "Alternance"
       },
       "week": 15
@@ -1509,7 +1509,7 @@
       "day": 13,
       "weekday": "Tu",
       "events": {
-        "MMI-App": "Alternance",
+        "MMI2-App": "Alternance",
         "MMI3-App": "Alternance"
       }
     },
@@ -1517,7 +1517,7 @@
       "day": 14,
       "weekday": "We",
       "events": {
-        "MMI-App": "Alternance",
+        "MMI2-App": "Alternance",
         "MMI3-App": "Alternance"
       }
     },
@@ -1525,7 +1525,7 @@
       "day": 15,
       "weekday": "Th",
       "events": {
-        "MMI-App": "Alternance",
+        "MMI2-App": "Alternance",
         "MMI3-App": "Alternance"
       }
     },
@@ -1533,7 +1533,7 @@
       "day": 16,
       "weekday": "Fr",
       "events": {
-        "MMI-App": "Alternance",
+        "MMI2-App": "Alternance",
         "MMI3-App": "Alternance"
       }
     },
@@ -1541,7 +1541,7 @@
       "day": 17,
       "weekday": "Sa",
       "events": {
-        "MMI-App": "Alternance",
+        "MMI2-App": "Alternance",
         "MMI3-App": "Alternance"
       }
     },
@@ -1549,7 +1549,7 @@
       "day": 18,
       "weekday": "Su",
       "events": {
-        "MMI-App": "Alternance",
+        "MMI2-App": "Alternance",
         "MMI3-App": "Alternance"
       }
     },
@@ -1557,7 +1557,7 @@
       "day": 19,
       "weekday": "Mo",
       "events": {
-        "MMI-App": "Alternance",
+        "MMI2-App": "Alternance",
         "MMI3-App": "Alternance"
       },
       "week": 16
@@ -1566,7 +1566,7 @@
       "day": 20,
       "weekday": "Tu",
       "events": {
-        "MMI-App": "Alternance",
+        "MMI2-App": "Alternance",
         "MMI3-App": "Alternance"
       }
     },
@@ -1574,7 +1574,7 @@
       "day": 21,
       "weekday": "We",
       "events": {
-        "MMI-App": "Alternance",
+        "MMI2-App": "Alternance",
         "MMI3-App": "Alternance"
       }
     },
@@ -1582,7 +1582,7 @@
       "day": 22,
       "weekday": "Th",
       "events": {
-        "MMI-App": "Alternance",
+        "MMI2-App": "Alternance",
         "MMI3-App": "Alternance"
       }
     },
@@ -1590,7 +1590,7 @@
       "day": 23,
       "weekday": "Fr",
       "events": {
-        "MMI-App": "Alternance",
+        "MMI2-App": "Alternance",
         "MMI3-App": "Alternance"
       }
     },
@@ -1598,7 +1598,7 @@
       "day": 24,
       "weekday": "Sa",
       "events": {
-        "MMI-App": "Alternance",
+        "MMI2-App": "Alternance",
         "MMI3-App": "Alternance"
       }
     },
@@ -1606,7 +1606,7 @@
       "day": 25,
       "weekday": "Su",
       "events": {
-        "MMI-App": "Alternance",
+        "MMI2-App": "Alternance",
         "MMI3-App": "Alternance"
       }
     },
@@ -1614,7 +1614,7 @@
       "day": 26,
       "weekday": "Mo",
       "events": {
-        "MMI-App": "Alternance",
+        "MMI2-App": "Alternance",
         "MMI3-App": "Alternance"
       },
       "week": 17
@@ -1623,7 +1623,7 @@
       "day": 27,
       "weekday": "Tu",
       "events": {
-        "MMI-App": "Alternance",
+        "MMI2-App": "Alternance",
         "MMI3-App": "Alternance"
       }
     },
@@ -1631,7 +1631,7 @@
       "day": 28,
       "weekday": "We",
       "events": {
-        "MMI-App": "Alternance",
+        "MMI2-App": "Alternance",
         "MMI3-App": "Alternance"
       }
     },
@@ -1639,7 +1639,7 @@
       "day": 29,
       "weekday": "Th",
       "events": {
-        "MMI-App": "Alternance",
+        "MMI2-App": "Alternance",
         "MMI3-App": "Alternance"
       }
     },
@@ -1647,7 +1647,7 @@
       "day": 30,
       "weekday": "Fr",
       "events": {
-        "MMI-App": "Alternance",
+        "MMI2-App": "Alternance",
         "MMI3-App": "Alternance"
       }
     }
@@ -1657,21 +1657,21 @@
       "day": 1,
       "weekday": "Sa",
       "events": {
-        "MMI-App": "Alternance"
+        "MMI2-App": "Alternance"
       }
     },
     {
       "day": 2,
       "weekday": "Su",
       "events": {
-        "MMI-App": "Alternance"
+        "MMI2-App": "Alternance"
       }
     },
     {
       "day": 3,
       "weekday": "Mo",
       "events": {
-        "MMI-App": "Alternance"
+        "MMI2-App": "Alternance"
       },
       "week": 18
     },
@@ -1679,14 +1679,14 @@
       "day": 4,
       "weekday": "Tu",
       "events": {
-        "MMI-App": "Alternance"
+        "MMI2-App": "Alternance"
       }
     },
     {
       "day": 5,
       "weekday": "We",
       "events": {
-        "MMI-App": "Alternance"
+        "MMI2-App": "Alternance"
       }
     },
     {
@@ -1700,28 +1700,28 @@
       "day": 7,
       "weekday": "Fr",
       "events": {
-        "MMI-App": "Alternance"
+        "MMI2-App": "Alternance"
       }
     },
     {
       "day": 8,
       "weekday": "Sa",
       "events": {
-        "MMI-App": "Alternance"
+        "MMI2-App": "Alternance"
       }
     },
     {
       "day": 9,
       "weekday": "Su",
       "events": {
-        "MMI-App": "Alternance"
+        "MMI2-App": "Alternance"
       }
     },
     {
       "day": 10,
       "weekday": "Mo",
       "events": {
-        "MMI-App": "Alternance"
+        "MMI2-App": "Alternance"
       },
       "week": 19
     },
@@ -1729,42 +1729,42 @@
       "day": 11,
       "weekday": "Tu",
       "events": {
-        "MMI-App": "Alternance"
+        "MMI2-App": "Alternance"
       }
     },
     {
       "day": 12,
       "weekday": "We",
       "events": {
-        "MMI-App": "Alternance"
+        "MMI2-App": "Alternance"
       }
     },
     {
       "day": 13,
       "weekday": "Th",
       "events": {
-        "MMI-App": "Alternance"
+        "MMI2-App": "Alternance"
       }
     },
     {
       "day": 14,
       "weekday": "Fr",
       "events": {
-        "MMI-App": "Alternance"
+        "MMI2-App": "Alternance"
       }
     },
     {
       "day": 15,
       "weekday": "Sa",
       "events": {
-        "MMI-App": "Alternance"
+        "MMI2-App": "Alternance"
       }
     },
     {
       "day": 16,
       "weekday": "Su",
       "events": {
-        "MMI-App": "Alternance"
+        "MMI2-App": "Alternance"
       }
     },
     {
@@ -1779,7 +1779,7 @@
       "day": 18,
       "weekday": "Tu",
       "events": {
-        "MMI-App": "Alternance",
+        "MMI2-App": "Alternance",
         "MMI3-App": "Alternance"
       }
     },
@@ -1787,7 +1787,7 @@
       "day": 19,
       "weekday": "We",
       "events": {
-        "MMI-App": "Alternance",
+        "MMI2-App": "Alternance",
         "MMI3-App": "Alternance"
       }
     },
@@ -1795,7 +1795,7 @@
       "day": 20,
       "weekday": "Th",
       "events": {
-        "MMI-App": "Alternance",
+        "MMI2-App": "Alternance",
         "MMI3-App": "Alternance"
       }
     },
@@ -1803,7 +1803,7 @@
       "day": 21,
       "weekday": "Fr",
       "events": {
-        "MMI-App": "Alternance",
+        "MMI2-App": "Alternance",
         "MMI3-App": "Alternance"
       }
     },
@@ -1811,7 +1811,7 @@
       "day": 22,
       "weekday": "Sa",
       "events": {
-        "MMI-App": "Alternance",
+        "MMI2-App": "Alternance",
         "MMI3-App": "Alternance"
       }
     },
@@ -1819,7 +1819,7 @@
       "day": 23,
       "weekday": "Su",
       "events": {
-        "MMI-App": "Alternance",
+        "MMI2-App": "Alternance",
         "MMI3-App": "Alternance"
       }
     },
@@ -1827,7 +1827,7 @@
       "day": 24,
       "weekday": "Mo",
       "events": {
-        "MMI-App": "Alternance",
+        "MMI2-App": "Alternance",
         "MMI3-App": "Alternance"
       },
       "week": 21
@@ -1836,7 +1836,7 @@
       "day": 25,
       "weekday": "Tu",
       "events": {
-        "MMI-App": "Alternance",
+        "MMI2-App": "Alternance",
         "MMI3-App": "Alternance"
       }
     },
@@ -1844,7 +1844,7 @@
       "day": 26,
       "weekday": "We",
       "events": {
-        "MMI-App": "Alternance",
+        "MMI2-App": "Alternance",
         "MMI3-App": "Alternance"
       }
     },
@@ -1852,7 +1852,7 @@
       "day": 27,
       "weekday": "Th",
       "events": {
-        "MMI-App": "Alternance",
+        "MMI2-App": "Alternance",
         "MMI3-App": "Alternance"
       }
     },
@@ -1860,7 +1860,7 @@
       "day": 28,
       "weekday": "Fr",
       "events": {
-        "MMI-App": "Alternance",
+        "MMI2-App": "Alternance",
         "MMI3-App": "Alternance"
       }
     },
@@ -1868,21 +1868,21 @@
       "day": 29,
       "weekday": "Sa",
       "events": {
-        "MMI-App": "Alternance"
+        "MMI2-App": "Alternance"
       }
     },
     {
       "day": 30,
       "weekday": "Su",
       "events": {
-        "MMI-App": "Alternance"
+        "MMI2-App": "Alternance"
       }
     },
     {
       "day": 31,
       "weekday": "Mo",
       "events": {
-        "MMI-App": "Alternance"
+        "MMI2-App": "Alternance"
       },
       "week": 22
     }
@@ -1892,49 +1892,49 @@
       "day": 1,
       "weekday": "Tu",
       "events": {
-        "MMI-App": "Alternance"
+        "MMI2-App": "Alternance"
       }
     },
     {
       "day": 2,
       "weekday": "We",
       "events": {
-        "MMI-App": "Alternance"
+        "MMI2-App": "Alternance"
       }
     },
     {
       "day": 3,
       "weekday": "Th",
       "events": {
-        "MMI-App": "Alternance"
+        "MMI2-App": "Alternance"
       }
     },
     {
       "day": 4,
       "weekday": "Fr",
       "events": {
-        "MMI-App": "Alternance"
+        "MMI2-App": "Alternance"
       }
     },
     {
       "day": 5,
       "weekday": "Sa",
       "events": {
-        "MMI-App": "Alternance"
+        "MMI2-App": "Alternance"
       }
     },
     {
       "day": 6,
       "weekday": "Su",
       "events": {
-        "MMI-App": "Alternance"
+        "MMI2-App": "Alternance"
       }
     },
     {
       "day": 7,
       "weekday": "Mo",
       "events": {
-        "MMI-App": "Alternance"
+        "MMI2-App": "Alternance"
       },
       "week": 23
     },
@@ -1942,7 +1942,7 @@
       "day": 8,
       "weekday": "Tu",
       "events": {
-        "MMI-App": "Alternance",
+        "MMI2-App": "Alternance",
         "MMI3-App": "Alternance"
       }
     },
@@ -1950,7 +1950,7 @@
       "day": 9,
       "weekday": "We",
       "events": {
-        "MMI-App": "Alternance",
+        "MMI2-App": "Alternance",
         "MMI3-App": "Alternance"
       }
     },
@@ -1958,7 +1958,7 @@
       "day": 10,
       "weekday": "Th",
       "events": {
-        "MMI-App": "Alternance",
+        "MMI2-App": "Alternance",
         "MMI3-App": "Alternance"
       }
     },
@@ -1966,7 +1966,7 @@
       "day": 11,
       "weekday": "Fr",
       "events": {
-        "MMI-App": "Alternance",
+        "MMI2-App": "Alternance",
         "MMI3-App": "Alternance"
       }
     },
@@ -1974,21 +1974,21 @@
       "day": 12,
       "weekday": "Sa",
       "events": {
-        "MMI-App": "Alternance"
+        "MMI2-App": "Alternance"
       }
     },
     {
       "day": 13,
       "weekday": "Su",
       "events": {
-        "MMI-App": "Alternance"
+        "MMI2-App": "Alternance"
       }
     },
     {
       "day": 14,
       "weekday": "Mo",
       "events": {
-        "MMI-App": "Alternance"
+        "MMI2-App": "Alternance"
       },
       "week": 24
     },
@@ -1996,28 +1996,28 @@
       "day": 15,
       "weekday": "Tu",
       "events": {
-        "MMI-App": "Alternance"
+        "MMI2-App": "Alternance"
       }
     },
     {
       "day": 16,
       "weekday": "We",
       "events": {
-        "MMI-App": "Alternance"
+        "MMI2-App": "Alternance"
       }
     },
     {
       "day": 17,
       "weekday": "Th",
       "events": {
-        "MMI-App": "Alternance"
+        "MMI2-App": "Alternance"
       }
     },
     {
       "day": 18,
       "weekday": "Fr",
       "events": {
-        "MMI-App": "Alternance"
+        "MMI2-App": "Alternance"
       }
     },
     {
@@ -2080,7 +2080,7 @@
       "day": 28,
       "weekday": "Mo",
       "events": {
-        "MMI-App": "Alternance"
+        "MMI2-App": "Alternance"
       },
       "week": 26
     },
@@ -2088,14 +2088,14 @@
       "day": 29,
       "weekday": "Tu",
       "events": {
-        "MMI-App": "Alternance"
+        "MMI2-App": "Alternance"
       }
     },
     {
       "day": 30,
       "weekday": "We",
       "events": {
-        "MMI-App": "Alternance"
+        "MMI2-App": "Alternance"
       }
     }
   ],
@@ -2104,35 +2104,35 @@
       "day": 1,
       "weekday": "Th",
       "events": {
-        "MMI-App": "Alternance"
+        "MMI2-App": "Alternance"
       }
     },
     {
       "day": 2,
       "weekday": "Fr",
       "events": {
-        "MMI-App": "Alternance"
+        "MMI2-App": "Alternance"
       }
     },
     {
       "day": 3,
       "weekday": "Sa",
       "events": {
-        "MMI-App": "Alternance"
+        "MMI2-App": "Alternance"
       }
     },
     {
       "day": 4,
       "weekday": "Su",
       "events": {
-        "MMI-App": "Alternance"
+        "MMI2-App": "Alternance"
       }
     },
     {
       "day": 5,
       "weekday": "Mo",
       "events": {
-        "MMI-App": "Alternance",
+        "MMI2-App": "Alternance",
         "MMI3-App": "Alternance"
       },
       "week": 27
@@ -2141,7 +2141,7 @@
       "day": 6,
       "weekday": "Tu",
       "events": {
-        "MMI-App": "Alternance",
+        "MMI2-App": "Alternance",
         "MMI3-App": "Alternance"
       }
     },
@@ -2149,7 +2149,7 @@
       "day": 7,
       "weekday": "We",
       "events": {
-        "MMI-App": "Alternance",
+        "MMI2-App": "Alternance",
         "MMI3-App": "Alternance"
       }
     },
@@ -2157,7 +2157,7 @@
       "day": 8,
       "weekday": "Th",
       "events": {
-        "MMI-App": "Alternance",
+        "MMI2-App": "Alternance",
         "MMI3-App": "Alternance"
       }
     },
@@ -2165,7 +2165,7 @@
       "day": 9,
       "weekday": "Fr",
       "events": {
-        "MMI-App": "Alternance",
+        "MMI2-App": "Alternance",
         "MMI3-App": "Alternance"
       }
     },
@@ -2173,7 +2173,7 @@
       "day": 10,
       "weekday": "Sa",
       "events": {
-        "MMI-App": "Alternance",
+        "MMI2-App": "Alternance",
         "MMI3-App": "Alternance"
       }
     },
@@ -2181,7 +2181,7 @@
       "day": 11,
       "weekday": "Su",
       "events": {
-        "MMI-App": "Alternance",
+        "MMI2-App": "Alternance",
         "MMI3-App": "Alternance"
       }
     },
@@ -2189,7 +2189,7 @@
       "day": 12,
       "weekday": "Mo",
       "events": {
-        "MMI-App": "Alternance",
+        "MMI2-App": "Alternance",
         "MMI3-App": "Alternance"
       },
       "week": 28
@@ -2198,7 +2198,7 @@
       "day": 13,
       "weekday": "Tu",
       "events": {
-        "MMI-App": "Alternance",
+        "MMI2-App": "Alternance",
         "MMI3-App": "Alternance"
       }
     },
@@ -2213,7 +2213,7 @@
       "day": 15,
       "weekday": "Th",
       "events": {
-        "MMI-App": "Alternance",
+        "MMI2-App": "Alternance",
         "MMI3-App": "Alternance"
       }
     },
@@ -2221,7 +2221,7 @@
       "day": 16,
       "weekday": "Fr",
       "events": {
-        "MMI-App": "Alternance",
+        "MMI2-App": "Alternance",
         "MMI3-App": "Alternance"
       }
     },
@@ -2229,7 +2229,7 @@
       "day": 17,
       "weekday": "Sa",
       "events": {
-        "MMI-App": "Alternance",
+        "MMI2-App": "Alternance",
         "MMI3-App": "Alternance"
       }
     },
@@ -2237,7 +2237,7 @@
       "day": 18,
       "weekday": "Su",
       "events": {
-        "MMI-App": "Alternance",
+        "MMI2-App": "Alternance",
         "MMI3-App": "Alternance"
       }
     },
@@ -2245,7 +2245,7 @@
       "day": 19,
       "weekday": "Mo",
       "events": {
-        "MMI-App": "Alternance",
+        "MMI2-App": "Alternance",
         "MMI3-App": "Alternance"
       },
       "week": 29
@@ -2254,7 +2254,7 @@
       "day": 20,
       "weekday": "Tu",
       "events": {
-        "MMI-App": "Alternance",
+        "MMI2-App": "Alternance",
         "MMI3-App": "Alternance"
       }
     },
@@ -2262,7 +2262,7 @@
       "day": 21,
       "weekday": "We",
       "events": {
-        "MMI-App": "Alternance",
+        "MMI2-App": "Alternance",
         "MMI3-App": "Alternance"
       }
     },
@@ -2270,7 +2270,7 @@
       "day": 22,
       "weekday": "Th",
       "events": {
-        "MMI-App": "Alternance",
+        "MMI2-App": "Alternance",
         "MMI3-App": "Alternance"
       }
     },
@@ -2278,7 +2278,7 @@
       "day": 23,
       "weekday": "Fr",
       "events": {
-        "MMI-App": "Alternance",
+        "MMI2-App": "Alternance",
         "MMI3-App": "Alternance"
       }
     },
@@ -2286,7 +2286,7 @@
       "day": 24,
       "weekday": "Sa",
       "events": {
-        "MMI-App": "Alternance",
+        "MMI2-App": "Alternance",
         "MMI3-App": "Alternance"
       }
     },
@@ -2294,7 +2294,7 @@
       "day": 25,
       "weekday": "Su",
       "events": {
-        "MMI-App": "Alternance",
+        "MMI2-App": "Alternance",
         "MMI3-App": "Alternance"
       }
     },
@@ -2302,7 +2302,7 @@
       "day": 26,
       "weekday": "Mo",
       "events": {
-        "MMI-App": "Alternance",
+        "MMI2-App": "Alternance",
         "MMI3-App": "Alternance"
       },
       "week": 30
@@ -2311,7 +2311,7 @@
       "day": 27,
       "weekday": "Tu",
       "events": {
-        "MMI-App": "Alternance",
+        "MMI2-App": "Alternance",
         "MMI3-App": "Alternance"
       }
     },
@@ -2319,7 +2319,7 @@
       "day": 28,
       "weekday": "We",
       "events": {
-        "MMI-App": "Alternance",
+        "MMI2-App": "Alternance",
         "MMI3-App": "Alternance"
       }
     },
@@ -2327,7 +2327,7 @@
       "day": 29,
       "weekday": "Th",
       "events": {
-        "MMI-App": "Alternance",
+        "MMI2-App": "Alternance",
         "MMI3-App": "Alternance"
       }
     },
@@ -2335,7 +2335,7 @@
       "day": 30,
       "weekday": "Fr",
       "events": {
-        "MMI-App": "Alternance",
+        "MMI2-App": "Alternance",
         "MMI3-App": "Alternance"
       }
     },
@@ -2343,7 +2343,7 @@
       "day": 31,
       "weekday": "Sa",
       "events": {
-        "MMI-App": "Alternance",
+        "MMI2-App": "Alternance",
         "MMI3-App": "Alternance"
       }
     }
@@ -2353,7 +2353,7 @@
       "day": 1,
       "weekday": "Su",
       "events": {
-        "MMI-App": "Alternance",
+        "MMI2-App": "Alternance",
         "MMI3-App": "Alternance"
       }
     },
@@ -2361,7 +2361,7 @@
       "day": 2,
       "weekday": "Mo",
       "events": {
-        "MMI-App": "Alternance",
+        "MMI2-App": "Alternance",
         "MMI3-App": "Alternance"
       },
       "week": 31
@@ -2370,7 +2370,7 @@
       "day": 3,
       "weekday": "Tu",
       "events": {
-        "MMI-App": "Alternance",
+        "MMI2-App": "Alternance",
         "MMI3-App": "Alternance"
       }
     },
@@ -2378,7 +2378,7 @@
       "day": 4,
       "weekday": "We",
       "events": {
-        "MMI-App": "Alternance",
+        "MMI2-App": "Alternance",
         "MMI3-App": "Alternance"
       }
     },
@@ -2386,7 +2386,7 @@
       "day": 5,
       "weekday": "Th",
       "events": {
-        "MMI-App": "Alternance",
+        "MMI2-App": "Alternance",
         "MMI3-App": "Alternance"
       }
     },
@@ -2394,7 +2394,7 @@
       "day": 6,
       "weekday": "Fr",
       "events": {
-        "MMI-App": "Alternance",
+        "MMI2-App": "Alternance",
         "MMI3-App": "Alternance"
       }
     },
@@ -2402,7 +2402,7 @@
       "day": 7,
       "weekday": "Sa",
       "events": {
-        "MMI-App": "Alternance",
+        "MMI2-App": "Alternance",
         "MMI3-App": "Alternance"
       }
     },
@@ -2410,7 +2410,7 @@
       "day": 8,
       "weekday": "Su",
       "events": {
-        "MMI-App": "Alternance",
+        "MMI2-App": "Alternance",
         "MMI3-App": "Alternance"
       }
     },
@@ -2418,7 +2418,7 @@
       "day": 9,
       "weekday": "Mo",
       "events": {
-        "MMI-App": "Alternance",
+        "MMI2-App": "Alternance",
         "MMI3-App": "Alternance"
       },
       "week": 32
@@ -2427,7 +2427,7 @@
       "day": 10,
       "weekday": "Tu",
       "events": {
-        "MMI-App": "Alternance",
+        "MMI2-App": "Alternance",
         "MMI3-App": "Alternance"
       }
     },
@@ -2435,7 +2435,7 @@
       "day": 11,
       "weekday": "We",
       "events": {
-        "MMI-App": "Alternance",
+        "MMI2-App": "Alternance",
         "MMI3-App": "Alternance"
       }
     },
@@ -2443,7 +2443,7 @@
       "day": 12,
       "weekday": "Th",
       "events": {
-        "MMI-App": "Alternance",
+        "MMI2-App": "Alternance",
         "MMI3-App": "Alternance"
       }
     },
@@ -2451,7 +2451,7 @@
       "day": 13,
       "weekday": "Fr",
       "events": {
-        "MMI-App": "Alternance",
+        "MMI2-App": "Alternance",
         "MMI3-App": "Alternance"
       }
     },
@@ -2459,7 +2459,7 @@
       "day": 14,
       "weekday": "Sa",
       "events": {
-        "MMI-App": "Alternance",
+        "MMI2-App": "Alternance",
         "MMI3-App": "Alternance"
       }
     },
@@ -2467,7 +2467,7 @@
       "day": 15,
       "weekday": "Su",
       "events": {
-        "MMI-App": "Alternance",
+        "MMI2-App": "Alternance",
         "MMI3-App": "Alternance"
       }
     },
@@ -2475,7 +2475,7 @@
       "day": 16,
       "weekday": "Mo",
       "events": {
-        "MMI-App": "Alternance",
+        "MMI2-App": "Alternance",
         "MMI3-App": "Alternance"
       },
       "week": 33
@@ -2484,7 +2484,7 @@
       "day": 17,
       "weekday": "Tu",
       "events": {
-        "MMI-App": "Alternance",
+        "MMI2-App": "Alternance",
         "MMI3-App": "Alternance"
       }
     },
@@ -2492,7 +2492,7 @@
       "day": 18,
       "weekday": "We",
       "events": {
-        "MMI-App": "Alternance",
+        "MMI2-App": "Alternance",
         "MMI3-App": "Alternance"
       }
     },
@@ -2500,7 +2500,7 @@
       "day": 19,
       "weekday": "Th",
       "events": {
-        "MMI-App": "Alternance",
+        "MMI2-App": "Alternance",
         "MMI3-App": "Alternance"
       }
     },
@@ -2508,7 +2508,7 @@
       "day": 20,
       "weekday": "Fr",
       "events": {
-        "MMI-App": "Alternance",
+        "MMI2-App": "Alternance",
         "MMI3-App": "Alternance"
       }
     },
@@ -2516,7 +2516,7 @@
       "day": 21,
       "weekday": "Sa",
       "events": {
-        "MMI-App": "Alternance",
+        "MMI2-App": "Alternance",
         "MMI3-App": "Alternance"
       }
     },
@@ -2524,7 +2524,7 @@
       "day": 22,
       "weekday": "Su",
       "events": {
-        "MMI-App": "Alternance",
+        "MMI2-App": "Alternance",
         "MMI3-App": "Alternance"
       }
     },
@@ -2532,7 +2532,7 @@
       "day": 23,
       "weekday": "Mo",
       "events": {
-        "MMI-App": "Alternance",
+        "MMI2-App": "Alternance",
         "MMI3-App": "Alternance"
       },
       "week": 34
@@ -2541,7 +2541,7 @@
       "day": 24,
       "weekday": "Tu",
       "events": {
-        "MMI-App": "Alternance",
+        "MMI2-App": "Alternance",
         "MMI3-App": "Alternance"
       }
     },
