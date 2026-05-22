@@ -7,7 +7,8 @@
         "MMI1": "Rentrée 09h30",
         "MMI2-crea": "Rentrée 11h",
         "MMI2-Dev": "Rentrée 11h",
-        "MMI2-App": "Rentrée 11h"
+        "MMI2-App": "Rentrée 11h",
+        "Réunion": "Réunion équipe rentrée"
       }
     },
     {
@@ -137,7 +138,8 @@
       "day": 24,
       "weekday": "Th",
       "events": {
-        "MMI3-App": "Entreprise"
+        "MMI3-App": "Alternance",
+        "Autre": "Journée Bienvenue 2026"
       }
     },
     {
@@ -161,7 +163,9 @@
       "day": 28,
       "weekday": "Mo",
       "events": {
-        "MMI2-App": "Entreprise"
+        "MMI2-App": "Alternance",
+        "MMI2-crea": "SAE",
+        "MMI2-Dev": "SAE"
       },
       "week": 40
     },
@@ -169,14 +173,18 @@
       "day": 29,
       "weekday": "Tu",
       "events": {
-        "MMI2-App": "Entreprise"
+        "MMI2-App": "Alternance",
+        "MMI2-crea": "SAE",
+        "MMI2-Dev": "SAE"
       }
     },
     {
       "day": 30,
       "weekday": "We",
       "events": {
-        "MMI2-App": "Entreprise"
+        "MMI2-App": "Alternance",
+        "MMI2-crea": "SAE",
+        "MMI2-Dev": "SAE"
       }
     }
   ],
@@ -185,14 +193,18 @@
       "day": 1,
       "weekday": "Th",
       "events": {
-        "MMI2-App": "Entreprise"
+        "MMI2-App": "Alternance",
+        "MMI2-crea": "SAE",
+        "MMI2-Dev": "SAE"
       }
     },
     {
       "day": 2,
       "weekday": "Fr",
       "events": {
-        "MMI2-App": "Entreprise"
+        "MMI2-App": "Alternance",
+        "MMI2-crea": "SAE",
+        "MMI2-Dev": "SAE"
       }
     },
     {
@@ -255,7 +267,9 @@
       "day": 12,
       "weekday": "Mo",
       "events": {
-        "MMI2-App": "Entreprise"
+        "MMI2-App": "Alternance",
+        "MMI2-crea": "SAE",
+        "MMI2-Dev": "SAE"
       },
       "week": 42
     },
@@ -263,28 +277,36 @@
       "day": 13,
       "weekday": "Tu",
       "events": {
-        "MMI2-App": "Entreprise"
+        "MMI2-App": "Alternance",
+        "MMI2-crea": "SAE",
+        "MMI2-Dev": "SAE"
       }
     },
     {
       "day": 14,
       "weekday": "We",
       "events": {
-        "MMI2-App": "Entreprise"
+        "MMI2-App": "Alternance",
+        "MMI2-crea": "SAE",
+        "MMI2-Dev": "SAE"
       }
     },
     {
       "day": 15,
       "weekday": "Th",
       "events": {
-        "MMI2-App": "Entreprise"
+        "MMI2-App": "Alternance",
+        "MMI2-crea": "SAE",
+        "MMI2-Dev": "SAE"
       }
     },
     {
       "day": 16,
       "weekday": "Fr",
       "events": {
-        "MMI2-App": "Entreprise"
+        "MMI2-App": "Alternance",
+        "MMI2-crea": "SAE",
+        "MMI2-Dev": "SAE"
       }
     },
     {
@@ -487,7 +509,9 @@
       "day": 16,
       "weekday": "Mo",
       "events": {
-        "MMI2-App": "Entreprise"
+        "MMI2-App": "Alternance",
+        "MMI2-crea": "SAE",
+        "MMI2-Dev": "SAE"
       },
       "week": 47
     },
@@ -495,28 +519,36 @@
       "day": 17,
       "weekday": "Tu",
       "events": {
-        "MMI2-App": "Entreprise"
+        "MMI2-App": "Alternance",
+        "MMI2-crea": "SAE",
+        "MMI2-Dev": "SAE"
       }
     },
     {
       "day": 18,
       "weekday": "We",
       "events": {
-        "MMI2-App": "Entreprise"
+        "MMI2-App": "Alternance",
+        "MMI2-crea": "SAE",
+        "MMI2-Dev": "SAE"
       }
     },
     {
       "day": 19,
       "weekday": "Th",
       "events": {
-        "MMI2-App": "Entreprise"
+        "MMI2-App": "Alternance",
+        "MMI2-crea": "SAE",
+        "MMI2-Dev": "SAE"
       }
     },
     {
       "day": 20,
       "weekday": "Fr",
       "events": {
-        "MMI2-App": "Entreprise"
+        "MMI2-App": "Alternance",
+        "MMI2-crea": "SAE",
+        "MMI2-Dev": "SAE"
       }
     },
     {
@@ -579,7 +611,9 @@
       "day": 30,
       "weekday": "Mo",
       "events": {
-        "MMI2-App": "Entreprise"
+        "MMI2-App": "Alternance",
+        "MMI2-crea": "SAE",
+        "MMI2-Dev": "SAE"
       },
       "week": 49
     }
@@ -589,28 +623,36 @@
       "day": 1,
       "weekday": "Tu",
       "events": {
-        "MMI2-App": "Entreprise"
+        "MMI2-App": "Alternance",
+        "MMI2-crea": "SAE",
+        "MMI2-Dev": "SAE"
       }
     },
     {
       "day": 2,
       "weekday": "We",
       "events": {
-        "MMI2-App": "Entreprise"
+        "MMI2-App": "Alternance",
+        "MMI2-crea": "SAE",
+        "MMI2-Dev": "SAE"
       }
     },
     {
       "day": 3,
       "weekday": "Th",
       "events": {
-        "MMI2-App": "Entreprise"
+        "MMI2-App": "Alternance",
+        "MMI2-crea": "SAE",
+        "MMI2-Dev": "SAE"
       }
     },
     {
       "day": 4,
       "weekday": "Fr",
       "events": {
-        "MMI2-App": "Entreprise"
+        "MMI2-App": "Alternance",
+        "MMI2-crea": "SAE",
+        "MMI2-Dev": "SAE"
       }
     },
     {
@@ -900,7 +942,9 @@
       "day": 18,
       "weekday": "Mo",
       "events": {
-        "MMI2-App": "Entreprise"
+        "MMI2-App": "Alternance",
+        "MMI2-crea": "SAE",
+        "MMI2-Dev": "SAE"
       },
       "week": 3
     },
@@ -908,28 +952,36 @@
       "day": 19,
       "weekday": "Tu",
       "events": {
-        "MMI2-App": "Entreprise"
+        "MMI2-App": "Alternance",
+        "MMI2-crea": "SAE",
+        "MMI2-Dev": "SAE"
       }
     },
     {
       "day": 20,
       "weekday": "We",
       "events": {
-        "MMI2-App": "Entreprise"
+        "MMI2-App": "Alternance",
+        "MMI2-crea": "SAE",
+        "MMI2-Dev": "SAE"
       }
     },
     {
       "day": 21,
       "weekday": "Th",
       "events": {
-        "MMI2-App": "Entreprise"
+        "MMI2-App": "Alternance",
+        "MMI2-crea": "SAE",
+        "MMI2-Dev": "SAE"
       }
     },
     {
       "day": 22,
       "weekday": "Fr",
       "events": {
-        "MMI2-App": "Entreprise"
+        "MMI2-App": "Alternance",
+        "MMI2-crea": "SAE",
+        "MMI2-Dev": "SAE"
       }
     },
     {
@@ -945,28 +997,38 @@
     {
       "day": 25,
       "weekday": "Mo",
-      "events": {},
+      "events": {
+        "Autre": "MARATHON MMI 2027"
+      },
       "week": 4
     },
     {
       "day": 26,
       "weekday": "Tu",
-      "events": {}
+      "events": {
+        "Autre": "MARATHON MMI 2027"
+      }
     },
     {
       "day": 27,
       "weekday": "We",
-      "events": {}
+      "events": {
+        "Autre": "MARATHON MMI 2027"
+      }
     },
     {
       "day": 28,
       "weekday": "Th",
-      "events": {}
+      "events": {
+        "Autre": "MARATHON MMI 2027"
+      }
     },
     {
       "day": 29,
       "weekday": "Fr",
-      "events": {}
+      "events": {
+        "Autre": "MARATHON MMI 2027"
+      }
     },
     {
       "day": 30,
@@ -984,8 +1046,10 @@
       "day": 1,
       "weekday": "Mo",
       "events": {
-        "MMI2-App": "Entreprise",
-        "MMI3-App": "Entreprise"
+        "MMI2-App": "Alternance",
+        "MMI3-App": "Alternance",
+        "MMI2-crea": "SAE",
+        "MMI2-Dev": "SAE"
       },
       "week": 5
     },
@@ -993,32 +1057,40 @@
       "day": 2,
       "weekday": "Tu",
       "events": {
-        "MMI2-App": "Entreprise",
-        "MMI3-App": "Entreprise"
+        "MMI2-App": "Alternance",
+        "MMI3-App": "Alternance",
+        "MMI2-crea": "SAE",
+        "MMI2-Dev": "SAE"
       }
     },
     {
       "day": 3,
       "weekday": "We",
       "events": {
-        "MMI2-App": "Entreprise",
-        "MMI3-App": "Entreprise"
+        "MMI2-App": "Alternance",
+        "MMI3-App": "Alternance",
+        "MMI2-crea": "SAE",
+        "MMI2-Dev": "SAE"
       }
     },
     {
       "day": 4,
       "weekday": "Th",
       "events": {
-        "MMI2-App": "Entreprise",
-        "MMI3-App": "Entreprise"
+        "MMI2-App": "Alternance",
+        "MMI3-App": "Alternance",
+        "MMI2-crea": "SAE",
+        "MMI2-Dev": "SAE"
       }
     },
     {
       "day": 5,
       "weekday": "Fr",
       "events": {
-        "MMI2-App": "Entreprise",
-        "MMI3-App": "Entreprise"
+        "MMI2-App": "Alternance",
+        "MMI3-App": "Alternance",
+        "MMI2-crea": "SAE",
+        "MMI2-Dev": "SAE"
       }
     },
     {
@@ -1302,8 +1374,10 @@
       "day": 15,
       "weekday": "Mo",
       "events": {
-        "MMI2-App": "Entreprise",
-        "MMI3-App": "Entreprise"
+        "MMI2-App": "Alternance",
+        "MMI3-App": "Alternance",
+        "MMI2-crea": "SAE",
+        "MMI2-Dev": "SAE"
       },
       "week": 11
     },
@@ -1311,32 +1385,40 @@
       "day": 16,
       "weekday": "Tu",
       "events": {
-        "MMI2-App": "Entreprise",
-        "MMI3-App": "Entreprise"
+        "MMI2-App": "Alternance",
+        "MMI3-App": "Alternance",
+        "MMI2-crea": "SAE",
+        "MMI2-Dev": "SAE"
       }
     },
     {
       "day": 17,
       "weekday": "We",
       "events": {
-        "MMI2-App": "Entreprise",
-        "MMI3-App": "Entreprise"
+        "MMI2-App": "Alternance",
+        "MMI3-App": "Alternance",
+        "MMI2-crea": "SAE",
+        "MMI2-Dev": "SAE"
       }
     },
     {
       "day": 18,
       "weekday": "Th",
       "events": {
-        "MMI2-App": "Entreprise",
-        "MMI3-App": "Entreprise"
+        "MMI2-App": "Alternance",
+        "MMI3-App": "Alternance",
+        "MMI2-crea": "SAE",
+        "MMI2-Dev": "SAE"
       }
     },
     {
       "day": 19,
       "weekday": "Fr",
       "events": {
-        "MMI2-App": "Entreprise",
-        "MMI3-App": "Entreprise"
+        "MMI2-App": "Alternance",
+        "MMI3-App": "Alternance",
+        "MMI2-crea": "SAE",
+        "MMI2-Dev": "SAE"
       }
     },
     {
@@ -1415,16 +1497,20 @@
       "day": 30,
       "weekday": "Tu",
       "events": {
-        "MMI2-App": "Entreprise",
-        "MMI3-App": "Entreprise"
+        "MMI2-App": "Alternance",
+        "MMI3-App": "Alternance",
+        "MMI2-crea": "SAE",
+        "MMI2-Dev": "SAE"
       }
     },
     {
       "day": 31,
       "weekday": "We",
       "events": {
-        "MMI2-App": "Entreprise",
-        "MMI3-App": "Entreprise"
+        "MMI2-App": "Alternance",
+        "MMI3-App": "Alternance",
+        "MMI2-crea": "SAE",
+        "MMI2-Dev": "SAE"
       }
     }
   ],
@@ -1433,16 +1519,20 @@
       "day": 1,
       "weekday": "Th",
       "events": {
-        "MMI2-App": "Entreprise",
-        "MMI3-App": "Entreprise"
+        "MMI2-App": "Alternance",
+        "MMI3-App": "Alternance",
+        "MMI2-crea": "SAE",
+        "MMI2-Dev": "SAE"
       }
     },
     {
       "day": 2,
       "weekday": "Fr",
       "events": {
-        "MMI2-App": "Entreprise",
-        "MMI3-App": "Entreprise"
+        "MMI2-App": "Alternance",
+        "MMI3-App": "Alternance",
+        "MMI2-crea": "SAE",
+        "MMI2-Dev": "SAE"
       }
     },
     {
@@ -1463,7 +1553,9 @@
       "day": 5,
       "weekday": "Mo",
       "events": {
-        "MMI3-App": "Entreprise"
+        "MMI3-App": "Alternance",
+        "MMI2-crea": "Stage",
+        "MMI2-Dev": "Stage"
       },
       "week": 14
     },
@@ -1471,28 +1563,36 @@
       "day": 6,
       "weekday": "Tu",
       "events": {
-        "MMI3-App": "Entreprise"
+        "MMI3-App": "Alternance",
+        "MMI2-crea": "Stage",
+        "MMI2-Dev": "Stage"
       }
     },
     {
       "day": 7,
       "weekday": "We",
       "events": {
-        "MMI3-App": "Entreprise"
+        "MMI3-App": "Alternance",
+        "MMI2-crea": "Stage",
+        "MMI2-Dev": "Stage"
       }
     },
     {
       "day": 8,
       "weekday": "Th",
       "events": {
-        "MMI3-App": "Entreprise"
+        "MMI3-App": "Alternance",
+        "MMI2-crea": "Stage",
+        "MMI2-Dev": "Stage"
       }
     },
     {
       "day": 9,
       "weekday": "Fr",
       "events": {
-        "MMI3-App": "Entreprise"
+        "MMI3-App": "Alternance",
+        "MMI2-crea": "Stage",
+        "MMI2-Dev": "Stage"
       }
     },
     {
@@ -1514,8 +1614,10 @@
       "weekday": "Mo",
       "events": {
         "MMI1": "vacances",
-        "MMI2-App": "Entreprise",
-        "MMI3-App": "Entreprise"
+        "MMI2-App": "Alternance",
+        "MMI3-App": "Alternance",
+        "MMI2-crea": "Stage",
+        "MMI2-Dev": "Stage"
       },
       "week": 15
     },
@@ -1523,32 +1625,40 @@
       "day": 13,
       "weekday": "Tu",
       "events": {
-        "MMI2-App": "Entreprise",
-        "MMI3-App": "Entreprise"
+        "MMI2-App": "Alternance",
+        "MMI3-App": "Alternance",
+        "MMI2-crea": "Stage",
+        "MMI2-Dev": "Stage"
       }
     },
     {
       "day": 14,
       "weekday": "We",
       "events": {
-        "MMI2-App": "Entreprise",
-        "MMI3-App": "Entreprise"
+        "MMI2-App": "Alternance",
+        "MMI3-App": "Alternance",
+        "MMI2-crea": "Stage",
+        "MMI2-Dev": "Stage"
       }
     },
     {
       "day": 15,
       "weekday": "Th",
       "events": {
-        "MMI2-App": "Entreprise",
-        "MMI3-App": "Entreprise"
+        "MMI2-App": "Alternance",
+        "MMI3-App": "Alternance",
+        "MMI2-crea": "Stage",
+        "MMI2-Dev": "Stage"
       }
     },
     {
       "day": 16,
       "weekday": "Fr",
       "events": {
-        "MMI2-App": "Entreprise",
-        "MMI3-App": "Entreprise"
+        "MMI2-App": "Alternance",
+        "MMI3-App": "Alternance",
+        "MMI2-crea": "Stage",
+        "MMI2-Dev": "Stage"
       }
     },
     {
@@ -1571,8 +1681,10 @@
       "day": 19,
       "weekday": "Mo",
       "events": {
-        "MMI2-App": "Entreprise",
-        "MMI3-App": "Entreprise"
+        "MMI2-App": "Alternance",
+        "MMI3-App": "Alternance",
+        "MMI2-crea": "Stage",
+        "MMI2-Dev": "Stage"
       },
       "week": 16
     },
@@ -1580,32 +1692,40 @@
       "day": 20,
       "weekday": "Tu",
       "events": {
-        "MMI2-App": "Entreprise",
-        "MMI3-App": "Entreprise"
+        "MMI2-App": "Alternance",
+        "MMI3-App": "Alternance",
+        "MMI2-crea": "Stage",
+        "MMI2-Dev": "Stage"
       }
     },
     {
       "day": 21,
       "weekday": "We",
       "events": {
-        "MMI2-App": "Entreprise",
-        "MMI3-App": "Entreprise"
+        "MMI2-App": "Alternance",
+        "MMI3-App": "Alternance",
+        "MMI2-crea": "Stage",
+        "MMI2-Dev": "Stage"
       }
     },
     {
       "day": 22,
       "weekday": "Th",
       "events": {
-        "MMI2-App": "Entreprise",
-        "MMI3-App": "Entreprise"
+        "MMI2-App": "Alternance",
+        "MMI3-App": "Alternance",
+        "MMI2-crea": "Stage",
+        "MMI2-Dev": "Stage"
       }
     },
     {
       "day": 23,
       "weekday": "Fr",
       "events": {
-        "MMI2-App": "Entreprise",
-        "MMI3-App": "Entreprise"
+        "MMI2-App": "Alternance",
+        "MMI3-App": "Alternance",
+        "MMI2-crea": "Stage",
+        "MMI2-Dev": "Stage"
       }
     },
     {
@@ -1628,8 +1748,10 @@
       "day": 26,
       "weekday": "Mo",
       "events": {
-        "MMI2-App": "Entreprise",
-        "MMI3-App": "Entreprise"
+        "MMI2-App": "Alternance",
+        "MMI3-App": "Alternance",
+        "MMI2-crea": "Stage",
+        "MMI2-Dev": "Stage"
       },
       "week": 17
     },
@@ -1637,32 +1759,40 @@
       "day": 27,
       "weekday": "Tu",
       "events": {
-        "MMI2-App": "Entreprise",
-        "MMI3-App": "Entreprise"
+        "MMI2-App": "Alternance",
+        "MMI3-App": "Alternance",
+        "MMI2-crea": "Stage",
+        "MMI2-Dev": "Stage"
       }
     },
     {
       "day": 28,
       "weekday": "We",
       "events": {
-        "MMI2-App": "Entreprise",
-        "MMI3-App": "Entreprise"
+        "MMI2-App": "Alternance",
+        "MMI3-App": "Alternance",
+        "MMI2-crea": "Stage",
+        "MMI2-Dev": "Stage"
       }
     },
     {
       "day": 29,
       "weekday": "Th",
       "events": {
-        "MMI2-App": "Entreprise",
-        "MMI3-App": "Entreprise"
+        "MMI2-App": "Alternance",
+        "MMI3-App": "Alternance",
+        "MMI2-crea": "Stage",
+        "MMI2-Dev": "Stage"
       }
     },
     {
       "day": 30,
       "weekday": "Fr",
       "events": {
-        "MMI2-App": "Entreprise",
-        "MMI3-App": "Entreprise"
+        "MMI2-App": "Alternance",
+        "MMI3-App": "Alternance",
+        "MMI2-crea": "Stage",
+        "MMI2-Dev": "Stage"
       }
     }
   ],
@@ -1686,7 +1816,9 @@
       "day": 3,
       "weekday": "Mo",
       "events": {
-        "MMI2-App": "Entreprise"
+        "MMI2-App": "Alternance",
+        "MMI2-crea": "Stage",
+        "MMI2-Dev": "Stage"
       },
       "week": 18
     },
@@ -1694,28 +1826,36 @@
       "day": 4,
       "weekday": "Tu",
       "events": {
-        "MMI2-App": "Entreprise"
+        "MMI2-App": "Alternance",
+        "MMI2-crea": "Stage",
+        "MMI2-Dev": "Stage"
       }
     },
     {
       "day": 5,
       "weekday": "We",
       "events": {
-        "MMI2-App": "Entreprise"
+        "MMI2-App": "Alternance",
+        "MMI2-crea": "Stage",
+        "MMI2-Dev": "Stage"
       }
     },
     {
       "day": 6,
       "weekday": "Th",
       "events": {
-        "Férié": "Ascension"
+        "Férié": "Ascension",
+        "MMI2-crea": "Stage",
+        "MMI2-Dev": "Stage"
       }
     },
     {
       "day": 7,
       "weekday": "Fr",
       "events": {
-        "MMI2-App": "Entreprise"
+        "MMI2-App": "Alternance",
+        "MMI2-crea": "Stage",
+        "MMI2-Dev": "Stage"
       }
     },
     {
@@ -1737,7 +1877,9 @@
       "day": 10,
       "weekday": "Mo",
       "events": {
-        "MMI2-App": "Entreprise"
+        "MMI2-App": "Alternance",
+        "MMI2-crea": "Stage",
+        "MMI2-Dev": "Stage"
       },
       "week": 19
     },
@@ -1745,28 +1887,36 @@
       "day": 11,
       "weekday": "Tu",
       "events": {
-        "MMI2-App": "Entreprise"
+        "MMI2-App": "Alternance",
+        "MMI2-crea": "Stage",
+        "MMI2-Dev": "Stage"
       }
     },
     {
       "day": 12,
       "weekday": "We",
       "events": {
-        "MMI2-App": "Entreprise"
+        "MMI2-App": "Alternance",
+        "MMI2-crea": "Stage",
+        "MMI2-Dev": "Stage"
       }
     },
     {
       "day": 13,
       "weekday": "Th",
       "events": {
-        "MMI2-App": "Entreprise"
+        "MMI2-App": "Alternance",
+        "MMI2-crea": "Stage",
+        "MMI2-Dev": "Stage"
       }
     },
     {
       "day": 14,
       "weekday": "Fr",
       "events": {
-        "MMI2-App": "Entreprise"
+        "MMI2-App": "Alternance",
+        "MMI2-crea": "Stage",
+        "MMI2-Dev": "Stage"
       }
     },
     {
@@ -1787,7 +1937,9 @@
       "day": 17,
       "weekday": "Mo",
       "events": {
-        "Férié": "Lundi de Pentecôte"
+        "Férié": "Lundi de Pentecôte",
+        "MMI2-crea": "Stage",
+        "MMI2-Dev": "Stage"
       },
       "week": 20
     },
@@ -1795,32 +1947,40 @@
       "day": 18,
       "weekday": "Tu",
       "events": {
-        "MMI2-App": "Entreprise",
-        "MMI3-App": "Entreprise"
+        "MMI2-App": "Alternance",
+        "MMI3-App": "Alternance",
+        "MMI2-crea": "Stage",
+        "MMI2-Dev": "Stage"
       }
     },
     {
       "day": 19,
       "weekday": "We",
       "events": {
-        "MMI2-App": "Entreprise",
-        "MMI3-App": "Entreprise"
+        "MMI2-App": "Alternance",
+        "MMI3-App": "Alternance",
+        "MMI2-crea": "Stage",
+        "MMI2-Dev": "Stage"
       }
     },
     {
       "day": 20,
       "weekday": "Th",
       "events": {
-        "MMI2-App": "Entreprise",
-        "MMI3-App": "Entreprise"
+        "MMI2-App": "Alternance",
+        "MMI3-App": "Alternance",
+        "MMI2-crea": "Stage",
+        "MMI2-Dev": "Stage"
       }
     },
     {
       "day": 21,
       "weekday": "Fr",
       "events": {
-        "MMI2-App": "Entreprise",
-        "MMI3-App": "Entreprise"
+        "MMI2-App": "Alternance",
+        "MMI3-App": "Alternance",
+        "MMI2-crea": "Stage",
+        "MMI2-Dev": "Stage"
       }
     },
     {
@@ -1843,8 +2003,10 @@
       "day": 24,
       "weekday": "Mo",
       "events": {
-        "MMI2-App": "Entreprise",
-        "MMI3-App": "Entreprise"
+        "MMI2-App": "Alternance",
+        "MMI3-App": "Alternance",
+        "MMI2-crea": "Stage",
+        "MMI2-Dev": "Stage"
       },
       "week": 21
     },
@@ -1852,32 +2014,40 @@
       "day": 25,
       "weekday": "Tu",
       "events": {
-        "MMI2-App": "Entreprise",
-        "MMI3-App": "Entreprise"
+        "MMI2-App": "Alternance",
+        "MMI3-App": "Alternance",
+        "MMI2-crea": "Stage",
+        "MMI2-Dev": "Stage"
       }
     },
     {
       "day": 26,
       "weekday": "We",
       "events": {
-        "MMI2-App": "Entreprise",
-        "MMI3-App": "Entreprise"
+        "MMI2-App": "Alternance",
+        "MMI3-App": "Alternance",
+        "MMI2-crea": "Stage",
+        "MMI2-Dev": "Stage"
       }
     },
     {
       "day": 27,
       "weekday": "Th",
       "events": {
-        "MMI2-App": "Entreprise",
-        "MMI3-App": "Entreprise"
+        "MMI2-App": "Alternance",
+        "MMI3-App": "Alternance",
+        "MMI2-crea": "Stage",
+        "MMI2-Dev": "Stage"
       }
     },
     {
       "day": 28,
       "weekday": "Fr",
       "events": {
-        "MMI2-App": "Entreprise",
-        "MMI3-App": "Entreprise"
+        "MMI2-App": "Alternance",
+        "MMI3-App": "Alternance",
+        "MMI2-crea": "Stage",
+        "MMI2-Dev": "Stage"
       }
     },
     {
@@ -1898,7 +2068,9 @@
       "day": 31,
       "weekday": "Mo",
       "events": {
-        "MMI2-App": "Entreprise"
+        "MMI2-App": "Alternance",
+        "MMI2-crea": "Stage",
+        "MMI2-Dev": "Stage"
       },
       "week": 22
     }
@@ -1908,28 +2080,36 @@
       "day": 1,
       "weekday": "Tu",
       "events": {
-        "MMI2-App": "Entreprise"
+        "MMI2-App": "Alternance",
+        "MMI2-crea": "Stage",
+        "MMI2-Dev": "Stage"
       }
     },
     {
       "day": 2,
       "weekday": "We",
       "events": {
-        "MMI2-App": "Entreprise"
+        "MMI2-App": "Alternance",
+        "MMI2-crea": "Stage",
+        "MMI2-Dev": "Stage"
       }
     },
     {
       "day": 3,
       "weekday": "Th",
       "events": {
-        "MMI2-App": "Entreprise"
+        "MMI2-App": "Alternance",
+        "MMI2-crea": "Stage",
+        "MMI2-Dev": "Stage"
       }
     },
     {
       "day": 4,
       "weekday": "Fr",
       "events": {
-        "MMI2-App": "Entreprise"
+        "MMI2-App": "Alternance",
+        "MMI2-crea": "Stage",
+        "MMI2-Dev": "Stage"
       }
     },
     {
@@ -1950,7 +2130,9 @@
       "day": 7,
       "weekday": "Mo",
       "events": {
-        "MMI2-App": "Entreprise"
+        "MMI2-App": "Alternance",
+        "MMI2-crea": "Stage",
+        "MMI2-Dev": "Stage"
       },
       "week": 23
     },
@@ -1958,32 +2140,40 @@
       "day": 8,
       "weekday": "Tu",
       "events": {
-        "MMI2-App": "Entreprise",
-        "MMI3-App": "Entreprise"
+        "MMI2-App": "Alternance",
+        "MMI3-App": "Alternance",
+        "MMI2-crea": "Stage",
+        "MMI2-Dev": "Stage"
       }
     },
     {
       "day": 9,
       "weekday": "We",
       "events": {
-        "MMI2-App": "Entreprise",
-        "MMI3-App": "Entreprise"
+        "MMI2-App": "Alternance",
+        "MMI3-App": "Alternance",
+        "MMI2-crea": "Stage",
+        "MMI2-Dev": "Stage"
       }
     },
     {
       "day": 10,
       "weekday": "Th",
       "events": {
-        "MMI2-App": "Entreprise",
-        "MMI3-App": "Entreprise"
+        "MMI2-App": "Alternance",
+        "MMI3-App": "Alternance",
+        "MMI2-crea": "Stage",
+        "MMI2-Dev": "Stage"
       }
     },
     {
       "day": 11,
       "weekday": "Fr",
       "events": {
-        "MMI2-App": "Entreprise",
-        "MMI3-App": "Entreprise"
+        "MMI2-App": "Alternance",
+        "MMI3-App": "Alternance",
+        "MMI2-crea": "Stage",
+        "MMI2-Dev": "Stage"
       }
     },
     {
@@ -2004,7 +2194,9 @@
       "day": 14,
       "weekday": "Mo",
       "events": {
-        "MMI2-App": "Entreprise"
+        "MMI2-App": "Alternance",
+        "MMI2-crea": "Stage",
+        "MMI2-Dev": "Stage"
       },
       "week": 24
     },
@@ -2012,28 +2204,36 @@
       "day": 15,
       "weekday": "Tu",
       "events": {
-        "MMI2-App": "Entreprise"
+        "MMI2-App": "Alternance",
+        "MMI2-crea": "Stage",
+        "MMI2-Dev": "Stage"
       }
     },
     {
       "day": 16,
       "weekday": "We",
       "events": {
-        "MMI2-App": "Entreprise"
+        "MMI2-App": "Alternance",
+        "MMI2-crea": "Stage",
+        "MMI2-Dev": "Stage"
       }
     },
     {
       "day": 17,
       "weekday": "Th",
       "events": {
-        "MMI2-App": "Entreprise"
+        "MMI2-App": "Alternance",
+        "MMI2-crea": "Stage",
+        "MMI2-Dev": "Stage"
       }
     },
     {
       "day": 18,
       "weekday": "Fr",
       "events": {
-        "MMI2-App": "Entreprise"
+        "MMI2-App": "Alternance",
+        "MMI2-crea": "Stage",
+        "MMI2-Dev": "Stage"
       }
     },
     {
