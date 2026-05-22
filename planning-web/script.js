@@ -891,6 +891,9 @@ function openDuplicateView() {
   document.getElementById("dupStart").value = "";
   document.getElementById("dupEnd").value = "";
   document.getElementById("dupError").textContent = "";
+  const _mmiGroups = ["MMI1","MMI2-crea","MMI2-Dev","MMI2-App","MMI3-crea","MMI3-Dev","MMI3-App"];
+  const targetSel = document.getElementById("dupTargetGroup");
+  targetSel.value = _mmiGroups.includes(group) ? group : _mmiGroups[0];
   document
     .querySelectorAll("#dupForm .form-ctrl")
     .forEach((el) => el.classList.remove("invalid"));
@@ -932,6 +935,7 @@ function saveDuplicate() {
   }
 
   const { group, text } = currentDetailEvt;
+  const targetGroup = document.getElementById("dupTargetGroup").value || group;
   const affectedMonths = new Set();
   const cur = new Date(start + "T00:00:00");
   const last = new Date(end + "T00:00:00");
@@ -956,7 +960,7 @@ function saveDuplicate() {
           CAL[monthName].sort((a, b) => a.day - b.day);
         }
         if (!entry.events) entry.events = {};
-        entry.events[group] = text;
+        entry.events[targetGroup] = text;
         affectedMonths.add(monthName);
       }
     }
