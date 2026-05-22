@@ -943,14 +943,15 @@ window.switchToCurrent = async function () {
 async function loadData() {
   const localBase = ARCHIVE_MODE ? "archive_25-26/data" : "data";
   const ghBase   = ARCHIVE_MODE ? GH_ARCHIVE_PATH : GH_BASE_PATH;
+  const sfx      = ARCHIVE_MODE ? "_25-26" : "";
 
   // 1. Charge d'abord les fichiers locaux (fallback garanti)
   try {
     const [aff, ens, maq, mods] = await Promise.all([
-      fetch(`${localBase}/affectations.json`).then((r) => (r.ok ? r.json() : null)),
-      fetch(`${localBase}/enseignants.json`).then((r) => (r.ok ? r.json() : null)),
-      fetch(`${localBase}/maquette_overrides.json`).then((r) => (r.ok ? r.json() : null)),
-      fetch(`${localBase}/modifications.json`).then((r) => (r.ok ? r.json() : null)),
+      fetch(`${localBase}/affectations${sfx}.json`).then((r) => (r.ok ? r.json() : null)),
+      fetch(`${localBase}/enseignants${sfx}.json`).then((r) => (r.ok ? r.json() : null)),
+      fetch(`${localBase}/maquette_overrides${sfx}.json`).then((r) => (r.ok ? r.json() : null)),
+      fetch(`${localBase}/modifications${sfx}.json`).then((r) => (r.ok ? r.json() : null)),
     ]);
     if (aff) APP_DATA.affectations = aff;
     if (ens) APP_DATA.enseignants = ens;
@@ -964,10 +965,10 @@ async function loadData() {
   if (isGHConfigured()) {
     try {
       const [aff, ens, maq, mods] = await Promise.all([
-        fetchGH("affectations.json", ghBase),
-        fetchGH("enseignants.json", ghBase),
-        fetchGH("maquette_overrides.json", ghBase),
-        fetchGH("modifications.json", ghBase),
+        fetchGH(`affectations${sfx}.json`, ghBase),
+        fetchGH(`enseignants${sfx}.json`, ghBase),
+        fetchGH(`maquette_overrides${sfx}.json`, ghBase),
+        fetchGH(`modifications${sfx}.json`, ghBase),
       ]);
       if (aff) APP_DATA.affectations = aff;
       if (ens) APP_DATA.enseignants = ens;
