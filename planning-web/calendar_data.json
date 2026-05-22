@@ -1625,7 +1625,6 @@
       "day": 25,
       "weekday": "Lu",
       "events": {
-        "MMI1": "Lundi de pentecote",
         "Férié": "Lundi de Pentecôte"
       }
     },
@@ -1645,12 +1644,12 @@
       "day": 27,
       "weekday": "Me",
       "events": {
-        "MMI3-crea": "Soutenance Portfolio",
         "MMI3-Dev": "Soutenance stage",
         "MMI3-App": "Entreprise",
         "MMI2-App": "Entreprise",
         "MMI2-Dev": "stage S08",
-        "MMI2-crea": "stage S08"
+        "MMI2-crea": "stage S08",
+        "MMI3-crea": "Soutenance stage"
       }
     },
     {
