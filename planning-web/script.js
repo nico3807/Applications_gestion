@@ -260,7 +260,7 @@ function buildNav() {
     const btn = document.createElement("button");
     btn.className = "month-btn";
     /* Libellé court : "Sept '25" */
-    btn.textContent = m.replace(" 2025", " '25").replace(" 2026", " '26");
+    btn.textContent = m.replace(" 2026", " '26").replace(" 2027", " '27");
     btn.dataset.m = m;
     btn.setAttribute("aria-label", "Aller à " + m);
     btn.addEventListener("click", () => goToMonth(m));
@@ -720,21 +720,19 @@ function setView(v) {
 
 /* Jours fériés à griser comme les vacances (format "YYYY-M-D") */
 const FERIES = new Set([
-  "2025-11-1",  /* Toussaint */
-  "2025-11-11", /* Armistice */
-  "2026-1-1",   /* Jour de l'an */
-  "2026-4-6",   /* Lundi de Pâques */
-  "2026-5-1",   /* Fête du Travail */
-  "2026-5-8",   /* Victoire 1945 */
-  "2026-5-14",  /* Ascension */
-  "2026-5-25",  /* Lundi de Pentecôte */
+  "2026-11-11", /* Armistice */
+  "2026-12-25", /* Noël */
+  "2027-1-1",   /* Jour de l'an */
+  "2027-3-29",  /* Lundi de Pâques */
+  "2027-5-1",   /* Fête du Travail */
+  "2027-5-6",   /* Ascension */
+  "2027-5-8",   /* Victoire 1945 */
+  "2027-5-17",  /* Lundi de Pentecôte */
+  "2027-7-14",  /* Fête nationale */
 ]);
 
 /* Dates explicitement exclues du grisé vacances (format "YYYY-M-D") */
-const VACANCE_EXCLUSIONS = new Set([
-  "2026-3-8" /* 8 mars — Journée internationale des droits des femmes */,
-  "2026-4-8"   /* 8 avril — hors vacances */,
-]);
+const VACANCE_EXCLUSIONS = new Set([]);
 
 /**
  * Parcourt tous les jours du calendrier et, pour chaque jour marqué "vacances",
@@ -1196,14 +1194,15 @@ function saveEvent() {
  */
 function injectFeries() {
   const ferieEvents = new Map([
-    ["2025-11-1",  "Toussaint"],
-    ["2025-11-11", "Armistice"],
-    ["2026-1-1",   "Jour de l'an"],
-    ["2026-4-6",   "Lundi de Pâques"],
-    ["2026-5-1",   "Fête du Travail"],
-    ["2026-5-8",   "Victoire 1945"],
-    ["2026-5-14",  "Ascension"],
-    ["2026-5-25",  "Lundi de Pentecôte"],
+    ["2026-11-11", "Armistice"],
+    ["2026-12-25", "Noël"],
+    ["2027-1-1",   "Jour de l'an"],
+    ["2027-3-29",  "Lundi de Pâques"],
+    ["2027-5-1",   "Fête du Travail"],
+    ["2027-5-6",   "Ascension"],
+    ["2027-5-8",   "Victoire 1945"],
+    ["2027-5-17",  "Lundi de Pentecôte"],
+    ["2027-7-14",  "Fête nationale"],
   ]);
 
   /* Table de correspondance "YYYY-M" → nom du mois */
@@ -1399,7 +1398,11 @@ async function _loadCalAndRebuild(localPath, ghPath) {
       });
       if (resp.ok) {
         const json = await resp.json();
-        newBase = JSON.parse(decodeURIComponent(escape(atob(json.content.replace(/\n/g, "")))));
+        const ghData = JSON.parse(decodeURIComponent(escape(atob(json.content.replace(/\n/g, "")))));
+        // N'utiliser les données GH que si elles correspondent à l'année courante
+        if (ORDER.some((m) => ghData[m] !== undefined)) {
+          newBase = ghData;
+        }
       }
     } catch {}
   }
@@ -1507,7 +1510,11 @@ async function init() {
       });
       if (resp.ok) {
         const json = await resp.json();
-        CAL_BASE = JSON.parse(decodeURIComponent(escape(atob(json.content.replace(/\n/g, "")))));
+        const ghData = JSON.parse(decodeURIComponent(escape(atob(json.content.replace(/\n/g, "")))));
+        // N'utiliser les données GH que si elles correspondent à l'année courante
+        if (ORDER.some((m) => ghData[m] !== undefined)) {
+          CAL_BASE = ghData;
+        }
       }
     } catch {}
   }
