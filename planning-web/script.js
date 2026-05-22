@@ -47,6 +47,7 @@ function recordDelta(monthName, day, group, val) {
 
 /** Sauvegarde (appelée après chaque modification de CAL) — enregistre le delta */
 function persistCAL() {
+  if (ARCHIVE_MODE) return;
   /* Recalculer le delta complet par rapport à CAL_BASE */
   CAL_DELTA = {};
   ORDER.forEach((month) => {
@@ -109,6 +110,7 @@ const WD_L_FULL = [
 let activeGroups = new Set(GROUPS); /* Groupes actuellement affichés */
 let currentView = "month";
 let currentMonth = ORDER[0];
+let ARCHIVE_MODE = false;
 
 /* =====================================================================
      UTILITAIRES
@@ -1230,11 +1232,12 @@ function injectFeries() {
 /* =====================================================================
      GITHUB SAVE
   ===================================================================== */
-const GH_KEY    = "gh_planning_cfg";
-const GH_OWNER  = "nico3807";
-const GH_REPO   = "Applications_gestion";
-const GH_BRANCH = "main";
-const GH_PATH   = "planning-web/calendar_data.json";
+const GH_KEY          = "gh_planning_cfg";
+const GH_OWNER        = "nico3807";
+const GH_REPO         = "Applications_gestion";
+const GH_BRANCH       = "main";
+const GH_PATH         = "planning-web/calendar_data.json";
+const GH_ARCHIVE_PATH = "planning-web/archive_25-26/calendar_data_25-26.json";
 
 function getGHConfig() {
   try { return JSON.parse(localStorage.getItem(GH_KEY)) || {}; } catch { return {}; }
@@ -1287,6 +1290,7 @@ function showGHToast(msg, isError = false) {
 }
 
 async function saveCalendarGH() {
+  if (ARCHIVE_MODE) { showGHToast("Archives 2025-2026 — consultation uniquement", true); return; }
   if (!isGHConfigured()) { openGHModal(); return; }
   const btn = document.getElementById("gh-save-btn");
   if (btn) { btn.disabled = true; btn.textContent = "⏳ Sauvegarde…"; }
@@ -1374,6 +1378,116 @@ function showGHStatus(msg, type) {
   el.className = "gh-status " + type;
   el.style.display = "block";
 }
+
+/* =====================================================================
+     ARCHIVE 2025-2026
+  ===================================================================== */
+
+/** Recharge les données depuis localPath (et GH si configuré et hors archive),
+ *  puis reconstruit tout le calendrier. */
+async function _loadCalAndRebuild(localPath, ghPath) {
+  let newBase = {};
+  try { newBase = await fetch(localPath).then((r) => r.json()); } catch {}
+
+  if (!ARCHIVE_MODE && isGHConfigured()) {
+    try {
+      const cfg = getGHConfig();
+      const url = `https://api.github.com/repos/${GH_OWNER}/${GH_REPO}/contents/${ghPath}?ref=${GH_BRANCH}`;
+      const resp = await fetch(url, {
+        cache: "no-cache",
+        headers: { Authorization: `token ${cfg.token}`, Accept: "application/vnd.github.v3+json" },
+      });
+      if (resp.ok) {
+        const json = await resp.json();
+        newBase = JSON.parse(decodeURIComponent(escape(atob(json.content.replace(/\n/g, "")))));
+      }
+    } catch {}
+  }
+
+  CAL_BASE = newBase;
+  CAL = JSON.parse(JSON.stringify(CAL_BASE));
+
+  if (!ARCHIVE_MODE) {
+    CAL_DELTA = loadDelta();
+    applyDelta();
+  } else {
+    CAL_DELTA = {};
+  }
+
+  _rebuildCalendar();
+}
+
+/** Vide et reconstruit le calendrier complet (mois + année). */
+function _rebuildCalendar() {
+  const mc = document.getElementById("monthsContainer");
+  mc.innerHTML = "";
+  const ygrid = document.getElementById("yearGrid");
+  ygrid.innerHTML = "";
+
+  injectFeries();
+  vacanceDates = buildVacanceDates();
+
+  ORDER.forEach((month) => mc.appendChild(buildMonthSection(month)));
+  buildYearView();
+
+  const now = new Date();
+  let initMonth = ORDER[0];
+  ORDER.forEach((m) => {
+    const [y, mo] = META[m];
+    if (now.getFullYear() === y && now.getMonth() + 1 === mo) initMonth = m;
+  });
+  currentMonth = initMonth;
+  setView(currentView);
+  syncStickyTops();
+}
+
+window.switchToArchive = async function () {
+  ARCHIVE_MODE = true;
+
+  const yearEl = document.getElementById("app-year");
+  if (yearEl) yearEl.textContent = "2025-2026";
+
+  document.getElementById("nav-archive-btn").style.display = "none";
+  document.getElementById("nav-current-btn").style.display = "";
+
+  let banner = document.getElementById("archive-banner");
+  if (!banner) {
+    banner = document.createElement("div");
+    banner.id = "archive-banner";
+    banner.textContent = "📦 Mode Archive 2025-2026 — Consultation uniquement";
+    document.querySelector(".app-header").insertAdjacentElement("afterend", banner);
+  }
+  banner.style.display = "";
+
+  document.body.classList.add("archive-readonly");
+  const saveBtn = document.getElementById("gh-save-btn");
+  if (saveBtn) saveBtn.style.display = "none";
+  const cfgBtn = document.getElementById("gh-config-btn");
+  if (cfgBtn) cfgBtn.style.display = "none";
+
+  await _loadCalAndRebuild("archive_25-26/calendar_data_25-26.json", GH_ARCHIVE_PATH);
+};
+
+window.switchToCurrent = async function () {
+  ARCHIVE_MODE = false;
+
+  const yearEl = document.getElementById("app-year");
+  if (yearEl) yearEl.textContent = "2026-2027";
+
+  document.getElementById("nav-archive-btn").style.display = "";
+  document.getElementById("nav-current-btn").style.display = "none";
+
+  const banner = document.getElementById("archive-banner");
+  if (banner) banner.style.display = "none";
+
+  document.body.classList.remove("archive-readonly");
+  const saveBtn = document.getElementById("gh-save-btn");
+  if (saveBtn) saveBtn.style.display = isGHConfigured() ? "" : "none";
+  const cfgBtn = document.getElementById("gh-config-btn");
+  if (cfgBtn) cfgBtn.style.display = isGHConfigured() ? "none" : "";
+
+  await _loadCalAndRebuild("calendar_data.json", GH_PATH);
+};
 
 /* =====================================================================
      INITIALISATION

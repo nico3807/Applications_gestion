@@ -1219,3 +1219,10 @@ main {
   white-space: nowrap;
 }
 .gh-toast.show { opacity: 1; }
+
+/* ===== MODE ARCHIVE (lecture seule) ===== */
+body.archive-readonly .add-evt-btn { display: none !important; }
+body.archive-readonly #detailDeleteBtn,
+body.archive-readonly #detailDuplicateBtn,
+body.archive-readonly #detailEditBtn { display: none !important; }
+body.archive-readonly .gh-footer { display: none !important; }

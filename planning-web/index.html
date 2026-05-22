@@ -3,9 +3,48 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Planning MMI_IUT de Béziers</title>
+  <title>Planning MMI 2026-2027 — IUT de Béziers</title>
+  <style>
+    .nav-archive-btn {
+      margin-left: 1.5rem;
+      padding: 5px 12px;
+      border-radius: 6px;
+      border: 1px solid rgba(217,119,6,.5);
+      background: rgba(217,119,6,.15);
+      color: #fde68a;
+      font-size: 12px;
+      font-weight: 600;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+    .nav-archive-btn:hover { background: rgba(217,119,6,.3); }
+    .nav-current-btn {
+      margin-left: 1.5rem;
+      padding: 5px 12px;
+      border-radius: 6px;
+      border: 1px solid rgba(34,197,94,.5);
+      background: rgba(34,197,94,.15);
+      color: #bbf7d0;
+      font-size: 12px;
+      font-weight: 600;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+    .nav-current-btn:hover { background: rgba(34,197,94,.3); }
+    #archive-banner {
+      background: linear-gradient(90deg, #92400e, #b45309);
+      color: #fef3c7;
+      text-align: center;
+      padding: 7px 1rem;
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: .03em;
+      position: sticky;
+      top: 54px;
+      z-index: 90;
+    }
+  </style>
   <link rel="stylesheet" href="style.css?v=2">
-</head>
 </head>
 <body>
 
@@ -17,7 +56,7 @@
     <div class="header-inner">
       <a href="../index.html" title="Retour à l'accueil MMI" style="display:flex;align-items:center;flex-shrink:0;line-height:0;"><img src="../logo_mmi.jpg" alt="MMI" style="height:32px;width:auto;border-radius:4px;display:block;"></a>
       <div>
-        <h1 class="app-title">Planning MMI 2025-2026</h1>
+        <h1 class="app-title">Planning MMI <span id="app-year">2026-2027</span></h1>
         <p class="app-sub" aria-label="Département MMI, IUT">Département MMI - IUT</p>
       </div>
 
@@ -31,6 +70,10 @@
         <button class="view-btn" id="btnYear"
                 aria-pressed="false" onclick="setView('year')">Année</button>
       </div>
+
+      <!-- Boutons archive / retour -->
+      <button class="nav-archive-btn" id="nav-archive-btn" onclick="switchToArchive()">🗂 Archive 2025-2026</button>
+      <button class="nav-current-btn" id="nav-current-btn" onclick="switchToCurrent()" style="display:none">↩ 2026-2027</button>
     </div>
   </header>
 
