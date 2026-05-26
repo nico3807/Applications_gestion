@@ -912,7 +912,9 @@ async function loadFromServer() {
     if (resp.ok) {
       const text = await resp.text();
       applyJSON(text);
-      console.log("Sélections chargées depuis donnees_stages.json (dossier courant)");
+      console.log(
+        "Sélections chargées depuis donnees_stages.json (dossier courant)",
+      );
     }
   } catch (e) {
     /* Ignore (échouera si ouvert en file:// sans serveur) */
@@ -1044,11 +1046,24 @@ function exportXLSX() {
   }
 
   const teacherCount = Array.from(firstCard.querySelectorAll(".mrow")).filter(
-    (row) => row.querySelector(".mlbl")?.textContent.trim().startsWith("Enseignant")
+    (row) =>
+      row.querySelector(".mlbl")?.textContent.trim().startsWith("Enseignant"),
   ).length;
 
-  const headerTeachers = Array.from({ length: teacherCount }, (_, i) => `Enseignant ${i + 1}`);
-  const header = ["Jury", "Date", "Salle", ...headerTeachers, "Horaire", "Étudiant", "Parcours", "Tuteur"];
+  const headerTeachers = Array.from(
+    { length: teacherCount },
+    (_, i) => `Enseignant ${i + 1}`,
+  );
+  const header = [
+    "Jury",
+    "Date",
+    "Salle",
+    ...headerTeachers,
+    "Horaire",
+    "Étudiant",
+    "Parcours",
+    "Tuteur",
+  ];
   const rows = [header];
 
   document.querySelectorAll(".jcard").forEach((card) => {
@@ -1076,29 +1091,68 @@ function exportXLSX() {
       rows.push([juryName, juryDate, salle, ...enseignants, "", "", "", ""]);
     } else {
       tbodyRows.forEach((tr) => {
-        const horaire = tr.querySelector("td:first-child span")?.textContent.trim() || "";
+        const horaire =
+          tr.querySelector("td:first-child span")?.textContent.trim() || "";
         const etudiant = tr.querySelector(".sname")?.textContent.trim() || "";
-        const parcours = tr.querySelector("span.badge-crea, span.badge-dweb")?.textContent.trim() || "";
+        const parcours =
+          tr
+            .querySelector("span.badge-crea, span.badge-dweb")
+            ?.textContent.trim() || "";
         const tuteur = tr.querySelector(".tselect-tuteur")?.value || "";
-        rows.push([juryName, juryDate, salle, ...enseignants, horaire, etudiant, parcours, tuteur]);
+        rows.push([
+          juryName,
+          juryDate,
+          salle,
+          ...enseignants,
+          horaire,
+          etudiant,
+          parcours,
+          tuteur,
+        ]);
       });
     }
   });
 
   const ws = XLSX.utils.aoa_to_sheet(rows);
   ws["!cols"] = header.map((_, ci) => ({
-    wch: Math.min(rows.reduce((max, row) => Math.max(max, String(row[ci] || "").length), 8) + 2, 40),
+    wch: Math.min(
+      rows.reduce(
+        (max, row) => Math.max(max, String(row[ci] || "").length),
+        8,
+      ) + 2,
+      40,
+    ),
   }));
 
   const wb = XLSX.utils.book_new();
   XLSX.utils.book_append_sheet(wb, ws, PAGE_ID.toUpperCase());
-  XLSX.writeFile(wb, `soutenances_stages_${PAGE_ID}_${new Date().toISOString().slice(0, 10)}.xlsx`);
+  XLSX.writeFile(
+    wb,
+    `soutenances_stages_${PAGE_ID}_${new Date().toISOString().slice(0, 10)}.xlsx`,
+  );
   showToast("✓ Export XLSX téléchargé !");
+}
+
+/**
+ * Injecte du CSS spécifique pour l'impression afin de supprimer
+ * les informations de bordure du navigateur (URL, titre, date).
+ */
+function injectPrintStyles() {
+  const style = document.createElement("style");
+  style.textContent = `
+    @media print {
+      @page { margin: 0; }
+      body { margin: 1.5cm; }
+      .gh-footer, .gh-modal-overlay, #toast { display: none !important; }
+    }
+  `;
+  document.head.appendChild(style);
 }
 
 /* ── Init ────────────────────────────────────────────────────────── */
 document.addEventListener("DOMContentLoaded", async () => {
   injectGHUI();
+  injectPrintStyles();
   injectCfgUI();
   await loadHoraires();
   await loadFromServer();
