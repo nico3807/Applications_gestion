@@ -21,7 +21,8 @@
     "prenom": "Veronique",
     "service_du": null,
     "service_max": 187,
-    "is_vac": true
+    "is_vac": true,
+    "is_cev": false
   },
   {
     "id": "BERNARD William",
@@ -45,7 +46,8 @@
     "prenom": "Caroline",
     "service_du": null,
     "service_max": 187,
-    "is_vac": true
+    "is_vac": true,
+    "is_cev": false
   },
   {
     "id": "CALOMINA Léo",
@@ -53,7 +55,8 @@
     "prenom": "Léo",
     "is_vac": true,
     "service_du": 187,
-    "service_max": null
+    "service_max": null,
+    "is_cev": false
   },
   {
     "id": "CHOLLET Antoine",
@@ -61,7 +64,8 @@
     "prenom": "Antoine",
     "is_vac": true,
     "service_du": 187,
-    "service_max": null
+    "service_max": null,
+    "is_cev": false
   },
   {
     "id": "DARTIES Benoit",
@@ -93,7 +97,8 @@
     "prenom": "Jérome",
     "service_du": null,
     "service_max": 187,
-    "is_vac": true
+    "is_vac": true,
+    "is_cev": false
   },
   {
     "id": "GIMENO Charline",
@@ -101,7 +106,8 @@
     "prenom": "Charline",
     "service_du": null,
     "service_max": 187,
-    "is_vac": true
+    "is_vac": true,
+    "is_cev": false
   },
   {
     "id": "GRANIER Jean-Baptiste",
@@ -109,7 +115,8 @@
     "prenom": "Jean-Baptiste",
     "service_du": null,
     "service_max": 187,
-    "is_vac": true
+    "is_vac": true,
+    "is_cev": false
   },
   {
     "id": "GRENIER Sandrine",
@@ -125,7 +132,8 @@
     "prenom": "Gatien",
     "service_du": null,
     "service_max": 187,
-    "is_vac": true
+    "is_vac": true,
+    "is_cev": false
   },
   {
     "id": "HERVY Dominique",
@@ -133,7 +141,8 @@
     "prenom": "Dominique",
     "service_du": 187,
     "service_max": null,
-    "is_vac": true
+    "is_vac": true,
+    "is_cev": false
   },
   {
     "id": "JAECKLE Luc",
@@ -149,7 +158,8 @@
     "prenom": "Noel",
     "service_du": null,
     "service_max": 187,
-    "is_vac": true
+    "is_vac": true,
+    "is_cev": false
   },
   {
     "id": "LAGIEWKA Arnaud",
@@ -157,7 +167,8 @@
     "prenom": "Arnaud",
     "service_du": null,
     "service_max": 187,
-    "is_vac": true
+    "is_vac": true,
+    "is_cev": false
   },
   {
     "id": "MARILL Damien",
@@ -165,7 +176,8 @@
     "prenom": "Damien",
     "service_du": null,
     "service_max": 171,
-    "is_vac": true
+    "is_vac": true,
+    "is_cev": false
   },
   {
     "id": "MARZOUK Reda",
@@ -197,7 +209,8 @@
     "prenom": "Dylan",
     "is_vac": true,
     "service_du": 187,
-    "service_max": null
+    "service_max": null,
+    "is_cev": false
   },
   {
     "id": "MOCQUET Bertrand",
@@ -205,7 +218,8 @@
     "prenom": "Bertrand",
     "service_du": null,
     "service_max": 187,
-    "is_vac": true
+    "is_vac": true,
+    "is_cev": false
   },
   {
     "id": "MORICEAU Maryvonne",
@@ -213,7 +227,8 @@
     "prenom": "Maryvonne",
     "service_du": null,
     "service_max": 187,
-    "is_vac": true
+    "is_vac": true,
+    "is_cev": false
   },
   {
     "id": "PELISSIER Chrysta",
@@ -229,7 +244,8 @@
     "prenom": "Philippe",
     "service_du": null,
     "service_max": 187,
-    "is_vac": true
+    "is_vac": true,
+    "is_cev": false
   },
   {
     "id": "PETIT Alexandre",
@@ -237,7 +253,8 @@
     "prenom": "Alexandre",
     "service_du": null,
     "service_max": 187,
-    "is_vac": true
+    "is_vac": true,
+    "is_cev": false
   },
   {
     "id": "PIEDEVACHE Magalie",
@@ -245,7 +262,8 @@
     "prenom": "Magalie",
     "service_du": null,
     "service_max": 187,
-    "is_vac": true
+    "is_vac": true,
+    "is_cev": false
   },
   {
     "id": "RAMPON Candice",
@@ -253,7 +271,8 @@
     "prenom": "Candice",
     "service_du": null,
     "service_max": 187,
-    "is_vac": true
+    "is_vac": true,
+    "is_cev": false
   },
   {
     "id": "ROMAIN Celine",
@@ -261,7 +280,8 @@
     "prenom": "Celine",
     "service_du": null,
     "service_max": 187,
-    "is_vac": true
+    "is_vac": true,
+    "is_cev": false
   },
   {
     "id": "SELIGHINI Valérie",
@@ -269,7 +289,8 @@
     "prenom": "Valérie",
     "service_du": null,
     "service_max": 187,
-    "is_vac": true
+    "is_vac": true,
+    "is_cev": false
   },
   {
     "id": "SOLDEVILA Loren",
@@ -277,7 +298,8 @@
     "prenom": "Loren",
     "is_vac": true,
     "service_du": 187,
-    "service_max": null
+    "service_max": null,
+    "is_cev": false
   },
   {
     "id": "SURRIBAS Caroline",
@@ -293,7 +315,8 @@
     "prenom": "Johann",
     "service_du": null,
     "service_max": 187,
-    "is_vac": true
+    "is_vac": true,
+    "is_cev": false
   },
   {
     "id": "THEROND Emmanuel",
@@ -309,7 +332,8 @@
     "prenom": "Laetitia",
     "service_du": null,
     "service_max": 187,
-    "is_vac": true
+    "is_vac": true,
+    "is_cev": false
   },
   {
     "id": "WILLEMS Eric",
@@ -317,6 +341,7 @@
     "prenom": "Eric",
     "service_du": null,
     "service_max": 187,
-    "is_vac": true
+    "is_vac": true,
+    "is_cev": false
   }
 ]

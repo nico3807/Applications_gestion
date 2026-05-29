@@ -588,7 +588,7 @@ function renderEnseignants(root) {
 
     html += `<tr class="enseignant-item" data-vac="${e.is_vac ? "true" : "false"}">
             <td>${e.id}</td>
-            <td>${e.is_vac ? "Vacataire" : "Titulaire"}</td>
+            <td>${e.is_vac ? (e.is_cev ? "Vacataire (CEV)" : "Vacataire") : "Titulaire"}</td>
             <td>${e.service_du != null ? e.service_du : "-"}</td>
             <td>${e.service_max != null ? e.service_max : "-"}</td>
             <td><strong>${totalRealise}</strong></td>
@@ -604,16 +604,45 @@ function renderEnseignants(root) {
 
   html += `</tbody></table></div>`;
 
-  html += `<div class="form-card" style="margin-top:2rem">
+  // Calcul du pourcentage de vacataire
+  const ensMapStat = {};
+  APP_DATA.enseignants.forEach((e) => (ensMapStat[e.id] = e));
+  let heuresPermanents = 0, heuresCEV = 0, heuresVacSimples = 0;
+  Object.keys(totals).forEach((id) => {
+    const e = ensMapStat[id];
+    if (!e) return;
+    if (!e.is_vac) heuresPermanents += totals[id];
+    else if (e.is_cev) heuresCEV += totals[id];
+    else heuresVacSimples += totals[id];
+  });
+  const grandTotal = heuresPermanents + heuresCEV + heuresVacSimples;
+  const pctVac = grandTotal > 0 ? (heuresVacSimples / grandTotal * 100) : 0;
+  const pctColor = pctVac < 25 ? "#dc2626" : "#16a34a";
+  const pctBg = pctVac < 25 ? "#fef2f2" : "#f0fdf4";
+  const pctBorder = pctVac < 25 ? "#fecaca" : "#bbf7d0";
+
+  html += `<div style="display:flex; gap:1.5rem; align-items:flex-start; flex-wrap:wrap; margin-top:2rem">
+    <div class="form-card">
         <h3 style="margin-bottom:1rem">Ajouter un enseignant</h3>
         <div class="form-group"><label>Nom</label><input type="text" id="new_ens_nom" class="form-input"></div>
         <div class="form-group"><label>Prénom</label><input type="text" id="new_ens_prenom" class="form-input"></div>
-        <div class="form-group form-group-check"><label><input type="checkbox" id="new_ens_vac"> Est vacataire</label></div>
+        <div class="form-group form-group-check"><label><input type="checkbox" id="new_ens_vac" onchange="document.getElementById('new_cev_group').style.display = this.checked ? 'block' : 'none'; if (!this.checked) document.getElementById('new_ens_cev').checked = false;"> Est vacataire</label></div>
+        <div class="form-group form-group-check" id="new_cev_group" style="display:none; padding-left:1.5rem"><label><input type="checkbox" id="new_ens_cev"> Chargé d'enseignement vacataire (CEV)</label></div>
         <div class="form-group"><label>Service dû (Titulaires)</label><input type="number" id="new_ens_du" class="form-input"></div>
         <div class="form-group"><label>Service max (Vacataires)</label><input type="number" id="new_ens_max" class="form-input"></div>
         <button class="btn-save" onclick="addEns()">Ajouter</button>
         <button class="btn-save" style="margin-left:1rem; background:#16a34a" onclick="saveEnseignantsGH()">💾 Enregistrer sur GitHub</button>
-    </div>`;
+    </div>
+    <div class="form-card" style="max-width:280px; background:${pctBg}; border-color:${pctBorder}">
+        <h3 style="margin-bottom:1.25rem; color:#1e3a5f">Pourcentage de vacataire</h3>
+        <div style="font-size:3rem; font-weight:800; color:${pctColor}; text-align:center; line-height:1; margin-bottom:1.25rem">${pctVac.toFixed(1)}<span style="font-size:1.5rem">%</span></div>
+        <div style="font-size:13px; color:#374151; display:flex; flex-direction:column; gap:6px; border-top:1px solid ${pctBorder}; padding-top:1rem">
+            <div style="display:flex; justify-content:space-between; gap:1rem"><span>Titulaires + CEV</span><strong>${(heuresPermanents + heuresCEV).toFixed(1)} h</strong></div>
+            <div style="display:flex; justify-content:space-between; gap:1rem"><span>Vacataires simples</span><strong>${heuresVacSimples.toFixed(1)} h</strong></div>
+            <div style="display:flex; justify-content:space-between; gap:1rem; margin-top:4px; border-top:1px solid ${pctBorder}; padding-top:6px; font-weight:600"><span>Total</span><strong>${grandTotal.toFixed(1)} h</strong></div>
+        </div>
+    </div>
+  </div>`;
 
   root.innerHTML = html;
 }
@@ -622,6 +651,7 @@ window.addEns = function () {
   const nom = document.getElementById("new_ens_nom").value.trim().toUpperCase();
   const prenom = document.getElementById("new_ens_prenom").value.trim();
   const is_vac = document.getElementById("new_ens_vac").checked;
+  const is_cev = is_vac && document.getElementById("new_ens_cev").checked;
   const du = parseFloat(document.getElementById("new_ens_du").value) || null;
   const max = parseFloat(document.getElementById("new_ens_max").value) || null;
 
@@ -630,7 +660,7 @@ window.addEns = function () {
   if (APP_DATA.enseignants.find((e) => e.id === id))
     return alert("Cet enseignant existe déjà.");
 
-  APP_DATA.enseignants.push({ id, nom, prenom, is_vac, service_du: du, service_max: max });
+  APP_DATA.enseignants.push({ id, nom, prenom, is_vac, ...(is_vac ? { is_cev } : {}), service_du: du, service_max: max });
   _logMod("Enseignants", "Ajout", "—", id);
   renderView();
 };
@@ -661,7 +691,10 @@ window.openEditEnsModal = function (i) {
     <div class="form-card" style="margin:10% auto; position:relative; max-width:400px">
         <h3 style="margin-bottom:1rem; color:#1e3a5f">Modifier ${e.id}</h3>
         <div class="form-group form-group-check">
-            <label><input type="checkbox" id="edit_ens_vac" ${e.is_vac ? "checked" : ""}> Est vacataire</label>
+            <label><input type="checkbox" id="edit_ens_vac" ${e.is_vac ? "checked" : ""} onchange="document.getElementById('edit_cev_group').style.display = this.checked ? 'block' : 'none'; if (!this.checked) document.getElementById('edit_ens_cev').checked = false;"> Est vacataire</label>
+        </div>
+        <div class="form-group form-group-check" id="edit_cev_group" style="display:${e.is_vac ? "block" : "none"}; padding-left:1.5rem">
+            <label><input type="checkbox" id="edit_ens_cev" ${e.is_cev ? "checked" : ""}> Chargé d'enseignement vacataire (CEV)</label>
         </div>
         <div class="form-group">
             <label>Service dû (Titulaires)</label>
@@ -686,15 +719,18 @@ window.closeEditEnsModal = function () {
 
 window.saveEditEns = async function (i) {
   const is_vac = document.getElementById("edit_ens_vac").checked;
+  const is_cev = is_vac && document.getElementById("edit_ens_cev").checked;
   const du = parseFloat(document.getElementById("edit_ens_du").value) || null;
   const max = parseFloat(document.getElementById("edit_ens_max").value) || null;
 
   const e = APP_DATA.enseignants[i];
-  const prev = `${e.is_vac ? "Vacataire" : "Titulaire"}, dû:${e.service_du ?? "—"}, max:${e.service_max ?? "—"}`;
-  const next = `${is_vac ? "Vacataire" : "Titulaire"}, dû:${du ?? "—"}, max:${max ?? "—"}`;
+  const prev = `${e.is_vac ? (e.is_cev ? "Vacataire (CEV)" : "Vacataire") : "Titulaire"}, dû:${e.service_du ?? "—"}, max:${e.service_max ?? "—"}`;
+  const next = `${is_vac ? (is_cev ? "Vacataire (CEV)" : "Vacataire") : "Titulaire"}, dû:${du ?? "—"}, max:${max ?? "—"}`;
   _logMod("Enseignants", `Modification ${e.id}`, prev, next);
 
   APP_DATA.enseignants[i].is_vac = is_vac;
+  if (is_vac) APP_DATA.enseignants[i].is_cev = is_cev;
+  else delete APP_DATA.enseignants[i].is_cev;
   APP_DATA.enseignants[i].service_du = du;
   APP_DATA.enseignants[i].service_max = max;
 
