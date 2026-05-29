@@ -515,6 +515,7 @@ function renderEnseignants(root) {
 
   // Calcul des heures réalisées par enseignant
   const totals = {};
+  const rawHours = {}; // cm/td/tp bruts pour Eq TD
   SEMESTRES.forEach((sem) => {
     const sem_data = APP_DATA.affectations[sem] || {};
     Object.keys(sem_data).forEach((res) => {
@@ -549,6 +550,11 @@ function renderEnseignants(root) {
 
         if (!totals[ens]) totals[ens] = 0;
         totals[ens] += total;
+
+        if (!rawHours[ens]) rawHours[ens] = { cm: 0, td: 0, tp: 0 };
+        rawHours[ens].cm += cm;
+        rawHours[ens].td += td;
+        rawHours[ens].tp += tp;
       });
     });
   });
@@ -560,7 +566,7 @@ function renderEnseignants(root) {
     </button>
   </div>`;
   html += `<div class="table-wrapper"><table class="ressources-table">
-    <thead><tr><th>Nom complet</th><th>Statut</th><th>Service Dû</th><th>Service Max</th><th>Total Réalisé</th><th>Différence</th><th style="width:80px; text-align:center;">Actions</th></tr></thead><tbody>`;
+    <thead><tr><th>Nom complet</th><th>Statut</th><th>Service Dû</th><th>Service Max</th><th>Total Réalisé</th><th>Différence</th><th class="col-h">CM</th><th class="col-h">TD</th><th class="col-h">TP</th><th>Eq TD</th><th style="width:80px; text-align:center;">Actions</th></tr></thead><tbody>`;
 
   APP_DATA.enseignants.forEach((e, i) => {
     const totalRealise = totals[e.id] || 0;
@@ -586,6 +592,11 @@ function renderEnseignants(root) {
       diffHtml = `<span style="${style}">${sign}${diff}</span>`;
     }
 
+    const raw = rawHours[e.id] || { cm: 0, td: 0, tp: 0 };
+    const eqTdHtml = !e.is_vac
+      ? `<strong>${(raw.cm * 1.5 + raw.td + (2 / 3) * raw.tp).toFixed(2)}</strong>`
+      : `<span style="color:#9ca3af">-</span>`;
+
     html += `<tr class="enseignant-item" data-vac="${e.is_vac ? "true" : "false"}">
             <td>${e.id}</td>
             <td>${e.is_vac ? (e.is_cev ? "Vacataire (CEV)" : "Vacataire") : "Titulaire"}</td>
@@ -593,6 +604,10 @@ function renderEnseignants(root) {
             <td>${e.service_max != null ? e.service_max : "-"}</td>
             <td><strong>${totalRealise}</strong></td>
             <td style="text-align:center;">${diffHtml}</td>
+            <td style="text-align:center;">${!e.is_vac ? raw.cm || "-" : "<span style='color:#9ca3af'>-</span>"}</td>
+            <td style="text-align:center;">${!e.is_vac ? raw.td || "-" : "<span style='color:#9ca3af'>-</span>"}</td>
+            <td style="text-align:center;">${!e.is_vac ? raw.tp || "-" : "<span style='color:#9ca3af'>-</span>"}</td>
+            <td style="text-align:center;">${eqTdHtml}</td>
             <td>
                 <div style="display:flex; gap:6px; justify-content:center;">
                     <button class="btn-edit-subrow" onclick="openEditEnsModal(${i})" title="Modifier">✏️</button>
