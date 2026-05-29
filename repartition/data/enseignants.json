@@ -13,7 +13,8 @@
     "prenom": "Mathilde",
     "service_du": null,
     "service_max": null,
-    "is_vac": false
+    "is_vac": true,
+    "is_cev": true
   },
   {
     "id": "BARTHELEMY Veronique",
