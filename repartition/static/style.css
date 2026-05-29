@@ -1096,6 +1096,36 @@ th.reel-col {
   background: rgba(255, 255, 255, 0.25);
 }
 
+/* ── Bandeau archive ── */
+#archive-banner {
+  background: #fef3c7;
+  border-bottom: 2px solid #f59e0b;
+  color: #92400e;
+  padding: 8px 1.5rem;
+  font-size: 13px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.btn-archive-version {
+  padding: 4px 14px;
+  border-radius: 14px;
+  border: 1.5px solid #f59e0b;
+  background: #fff;
+  color: #92400e;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.15s;
+}
+.btn-archive-version:hover {
+  background: #fde68a;
+}
+
 /* ── Responsive ── */
 @media (max-width: 768px) {
   header {

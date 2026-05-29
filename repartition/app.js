@@ -8,6 +8,7 @@ const GH_BASE_PATH = "repartition/data"; // Dossier où se trouvent les JSON sur
 const GH_ARCHIVE_PATH = "repartition/archive_25-26/data";
 
 let ARCHIVE_MODE = false;
+let ARCHIVE_VERSION = "planifiee"; // "planifiee" | "realisee"
 
 const SEMESTRES = [
   "S1",
@@ -85,9 +86,15 @@ function renderView() {
     if (!banner) {
       banner = document.createElement("div");
       banner.id = "archive-banner";
-      banner.textContent = "🗂 Mode archive 2025-2026 — consultation uniquement, aucune modification possible";
       document.querySelector("header").insertAdjacentElement("afterend", banner);
     }
+    const versionLabel = ARCHIVE_VERSION === "realisee" ? "Version réalisée" : "Version planifiée";
+    const btnLabel = ARCHIVE_VERSION === "realisee" ? "Voir la version planifiée" : "Voir la version réalisée";
+    banner.innerHTML = `
+      <span>🗂 Mode archive 2025-2026 — consultation uniquement, aucune modification possible
+        &nbsp;|&nbsp; <strong>${versionLabel}</strong>
+      </span>
+      <button class="btn-archive-version" onclick="switchArchiveVersion()">${btnLabel}</button>`;
   } else if (banner) {
     banner.remove();
   }
@@ -1006,6 +1013,7 @@ window.clearModificationsGH = async function () {
 
 window.switchToArchive = async function () {
   ARCHIVE_MODE = true;
+  ARCHIVE_VERSION = "planifiee";
   APP_DATA = { affectations: {}, enseignants: [], maquette_overrides: {}, modifications: [] };
   currentView = "home";
   await loadData();
@@ -1013,8 +1021,15 @@ window.switchToArchive = async function () {
 
 window.switchToCurrent = async function () {
   ARCHIVE_MODE = false;
+  ARCHIVE_VERSION = "planifiee";
   APP_DATA = { affectations: {}, enseignants: [], maquette_overrides: {}, modifications: [] };
   currentView = "home";
+  await loadData();
+};
+
+window.switchArchiveVersion = async function () {
+  ARCHIVE_VERSION = ARCHIVE_VERSION === "planifiee" ? "realisee" : "planifiee";
+  APP_DATA.affectations = {};
   await loadData();
 };
 
@@ -1022,11 +1037,12 @@ async function loadData() {
   const localBase = ARCHIVE_MODE ? "archive_25-26/data" : "data";
   const ghBase   = ARCHIVE_MODE ? GH_ARCHIVE_PATH : GH_BASE_PATH;
   const sfx      = ARCHIVE_MODE ? "_25-26" : "";
+  const affSfx   = ARCHIVE_MODE && ARCHIVE_VERSION === "realisee" ? "_25-26_realise" : sfx;
 
   // 1. Charge d'abord les fichiers locaux (fallback garanti)
   try {
     const [aff, ens, maq, mods] = await Promise.all([
-      fetch(`${localBase}/affectations${sfx}.json`).then((r) => (r.ok ? r.json() : null)),
+      fetch(`${localBase}/affectations${affSfx}.json`).then((r) => (r.ok ? r.json() : null)),
       fetch(`${localBase}/enseignants${sfx}.json`).then((r) => (r.ok ? r.json() : null)),
       fetch(`${localBase}/maquette_overrides${sfx}.json`).then((r) => (r.ok ? r.json() : null)),
       fetch(`${localBase}/modifications${sfx}.json`).then((r) => (r.ok ? r.json() : null)),
@@ -1043,7 +1059,7 @@ async function loadData() {
   if (isGHConfigured()) {
     try {
       const [aff, ens, maq, mods] = await Promise.all([
-        fetchGH(`affectations${sfx}.json`, ghBase),
+        fetchGH(`affectations${affSfx}.json`, ghBase),
         fetchGH(`enseignants${sfx}.json`, ghBase),
         fetchGH(`maquette_overrides${sfx}.json`, ghBase),
         fetchGH(`modifications${sfx}.json`, ghBase),
