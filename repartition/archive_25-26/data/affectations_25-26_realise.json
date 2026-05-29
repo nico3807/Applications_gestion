@@ -3,69 +3,69 @@
     "R1.20 | Soutien, remise a niveau": {
       "enseignant": "MENDEZ Nicolas",
       "cm": 0,
-      "td": 18,
+      "td": 9,
       "tp": 0,
       "subrows": []
     },
     "R1.01 | Anglais": {
       "enseignant": "BERNARD William",
       "cm": 0,
-      "td": 9,
-      "tp": 36,
+      "td": 4.5,
+      "tp": 9,
       "subrows": []
     },
     "R1.02 | Espagnol (LV2)": {
       "enseignant": "BARON Mathilde",
       "cm": 1.5,
-      "td": 9,
-      "tp": 13.5,
+      "td": 4.5,
+      "tp": 3.375,
       "subrows": []
     },
     "R1.03 Ergonomie et Accessibilité": {
       "enseignant": "PELISSIER Chrysta",
       "cm": 3,
-      "td": 15,
-      "tp": 24,
+      "td": 7.5,
+      "tp": 6,
       "subrows": []
     },
     "R1.04 Culture numérique": {
       "enseignant": "DE VELDER Sophie",
       "cm": 9,
-      "td": 24,
+      "td": 12,
       "tp": 0,
       "subrows": []
     },
     "R1.05 Stratégies de communication et marketing": {
       "enseignant": "DE VELDER Sophie",
       "cm": 12,
-      "td": 21,
+      "td": 10.5,
       "tp": 0,
       "subrows": []
     },
     "R1.06 Expression, communication et rhétorique": {
       "enseignant": "RAMPON Candice",
       "cm": 0,
-      "td": 18,
+      "td": 9,
       "tp": 0,
       "subrows": [
         {
           "enseignant": "KLAIBI Noel",
           "cm": 0,
-          "td": 6,
-          "tp": 24
+          "td": 3,
+          "tp": 6
         }
       ]
     },
     "R1.07 Écriture multimédia et narration": {
       "enseignant": "PELISSIER Chrysta",
       "cm": 0,
-      "td": 15,
-      "tp": 12,
+      "td": 7.5,
+      "tp": 3,
       "subrows": [
         {
           "enseignant": "BLANCO Sandy",
           "cm": 0,
-          "td": 6,
+          "td": 3,
           "tp": 0
         }
       ]
@@ -73,8 +73,8 @@
     "R1.08 Production graphique": {
       "enseignant": "SURRIBAS Caroline",
       "cm": 0,
-      "td": 12,
-      "tp": 60,
+      "td": 6,
+      "tp": 15,
       "subrows": []
     },
     "R1.09 Culture artistique": {
@@ -87,28 +87,28 @@
           "enseignant": "SURRIBAS Caroline",
           "cm": 0,
           "td": 0,
-          "tp": 48
+          "tp": 12
         }
       ]
     },
     "R1.10 Production audio et vidéo": {
       "enseignant": "BLANCO Sandy",
       "cm": 6,
-      "td": 9,
-      "tp": 42,
+      "td": 4.5,
+      "tp": 10.5,
       "subrows": []
     },
     "R1.11 Intégration": {
       "enseignant": "PELISSIER Chrysta",
       "cm": 1.5,
-      "td": 3,
-      "tp": 36,
+      "td": 1.5,
+      "tp": 9,
       "subrows": [
         {
           "enseignant": "TALLEUX Johann",
           "cm": 0,
-          "td": 24,
-          "tp": 24
+          "td": 12,
+          "tp": 6
         }
       ]
     },
@@ -116,13 +116,13 @@
       "enseignant": "DARTIES Benoit",
       "cm": 1.5,
       "td": 0,
-      "tp": 6,
+      "tp": 1.5,
       "subrows": [
         {
           "enseignant": "MAURIN Nicolas",
           "cm": 0,
           "td": 0,
-          "tp": 51
+          "tp": 12.75
         }
       ]
     },
@@ -136,74 +136,74 @@
           "enseignant": "MAURIN Nicolas",
           "cm": 0,
           "td": 0,
-          "tp": 36
+          "tp": 9
         }
       ]
     },
     "R1.14 Représentation et traitement de l'information": {
       "enseignant": "GRANIER Jean-Baptiste",
       "cm": 0,
-      "td": 9,
-      "tp": 9,
+      "td": 0,
+      "tp": 0,
       "subrows": [
         {
           "enseignant": "MENDEZ Nicolas",
           "cm": 0,
           "td": 0,
-          "tp": 7.5
+          "tp": 1.875
         }
       ]
     },
     "R1.15 Gestion de projet": {
       "enseignant": "TOURNIE Laetitia",
       "cm": 0,
-      "td": 21,
-      "tp": 18,
+      "td": 10.5,
+      "tp": 4.5,
       "subrows": []
     },
     "R1.16 Économie, gestion et droit du numérique": {
       "enseignant": "DE VELDER Sophie",
       "cm": 9,
-      "td": 12,
+      "td": 6,
       "tp": 0,
       "subrows": []
     },
     "R1.17 Projet Personnel et Professionnel": {
       "enseignant": "DE VELDER Sophie",
       "cm": 0,
-      "td": 9,
-      "tp": 18,
+      "td": 4.5,
+      "tp": 4.5,
       "subrows": [
         {
           "enseignant": "PELISSIER Chrysta",
           "cm": 0,
-          "td": 3,
-          "tp": 36
+          "td": 1.5,
+          "tp": 9
         }
       ]
     },
     "SAÉ 1.01 Auditer une communication numérique": {
       "enseignant": "BERNARD William",
       "cm": 0,
-      "td": 6,
-      "tp": 6,
+      "td": 3,
+      "tp": 1.5,
       "subrows": [
         {
           "enseignant": "DE VELDER Sophie",
-          "cm": 0,
-          "td": 6,
-          "tp": 0
-        },
-        {
-          "enseignant": "ESCAIG Sylvie",
           "cm": 0,
           "td": 3,
           "tp": 0
         },
         {
+          "enseignant": "ESCAIG Sylvie",
+          "cm": 0,
+          "td": 0,
+          "tp": 0
+        },
+        {
           "enseignant": "PELISSIER Chrysta",
           "cm": 3,
-          "td": 9,
+          "td": 4.5,
           "tp": 0
         }
       ]
@@ -211,25 +211,25 @@
     "SAÉ 1.02 Concevoir une recommandation de communication numérique": {
       "enseignant": "DE VELDER Sophie",
       "cm": 1.5,
-      "td": 6,
-      "tp": 6,
+      "td": 3,
+      "tp": 1.5,
       "subrows": [
         {
           "enseignant": "BLANCO Sandy",
           "cm": 0,
-          "td": 6,
-          "tp": 6
+          "td": 3,
+          "tp": 1.5
         },
         {
           "enseignant": "RAMPON Candice",
           "cm": 1.5,
-          "td": 9,
-          "tp": 6
+          "td": 4.5,
+          "tp": 1.5
         },
         {
           "enseignant": "SOLDEVILA Loren",
           "cm": 0,
-          "td": 3,
+          "td": 0,
           "tp": 0
         }
       ]
@@ -237,13 +237,13 @@
     "SAÉ 1.03 Produire les éléments d'une communication visuelle": {
       "enseignant": "SURRIBAS Caroline",
       "cm": 1.5,
-      "td": 12,
-      "tp": 12,
+      "td": 6,
+      "tp": 3,
       "subrows": [
         {
           "enseignant": "ESCAIG Sylvie",
           "cm": 0,
-          "td": 1.5,
+          "td": 0,
           "tp": 0
         }
       ]
@@ -251,20 +251,20 @@
     "SAÉ 1.04 Produire un contenu audio et vidéo": {
       "enseignant": "BLANCO Sandy",
       "cm": 0,
-      "td": 30,
-      "tp": 24,
+      "td": 15,
+      "tp": 6,
       "subrows": []
     },
     "SAÉ 1.05 Produire un site Web": {
       "enseignant": "DARTIES Benoit",
       "cm": 0.5,
-      "td": 15,
+      "td": 7.5,
       "tp": 0,
       "subrows": [
         {
           "enseignant": "MAURIN Nicolas",
           "cm": 0,
-          "td": 15,
+          "td": 7.5,
           "tp": 0
         }
       ]
@@ -272,7 +272,7 @@
     "SAÉ 1.06 Gérer un projet de communication numérique": {
       "enseignant": "TOURNIE Laetitia",
       "cm": 1.5,
-      "td": 27,
+      "td": 13.5,
       "tp": 0,
       "subrows": []
     },
@@ -280,31 +280,31 @@
       "enseignant": "BLANCO Sandy",
       "cm": 0,
       "td": 0,
-      "tp": 6,
+      "tp": 0,
       "subrows": [
         {
           "enseignant": "BARON Mathilde",
           "cm": 0,
-          "td": 1.5,
+          "td": 0,
           "tp": 0
         },
         {
           "enseignant": "MAURIN Nicolas",
           "cm": 0,
-          "td": 1.5,
+          "td": 0,
           "tp": 0
         },
         {
           "enseignant": "PELISSIER Chrysta",
           "cm": 0,
-          "td": 1.5,
+          "td": 0,
           "tp": 0
         },
         {
           "enseignant": "THEROND Emmanuel",
           "cm": 0,
           "td": 0,
-          "tp": 3
+          "tp": 0
         }
       ]
     }
@@ -340,7 +340,7 @@
         {
           "enseignant": "HERVY Dominique",
           "cm": 0,
-          "td": 7.5,
+          "td": 0,
           "tp": 0
         },
         {
@@ -354,13 +354,13 @@
     "PORTFOLIO Portfolio-Parcours Création Numérique": {
       "enseignant": "THEROND Emmanuel",
       "cm": 0,
-      "td": 1.5,
+      "td": 0,
       "tp": 0,
       "subrows": [
         {
           "enseignant": "BLANCO Sandy",
           "cm": 0,
-          "td": 1.5,
+          "td": 0,
           "tp": 0
         }
       ]
@@ -377,35 +377,35 @@
     "R2.01 | Anglais": {
       "enseignant": "BERNARD William",
       "cm": 0,
-      "td": 3,
-      "tp": 36,
+      "td": 1.5,
+      "tp": 9,
       "subrows": []
     },
     "R2.02 | Anglais renforcé": {
       "enseignant": "BARON Mathilde",
       "cm": 0,
-      "td": 9,
-      "tp": 13.5,
+      "td": 4.5,
+      "tp": 3.375,
       "subrows": [
         {
           "enseignant": "BERNARD William",
           "cm": 0,
           "td": 0,
-          "tp": 4.5
+          "tp": 1.125
         }
       ]
     },
     "R2.03 | Ergonomie et Accessibilité": {
       "enseignant": "PELISSIER Chrysta",
       "cm": 0,
-      "td": 9,
-      "tp": 42,
+      "td": 4.5,
+      "tp": 10.5,
       "subrows": []
     },
     "R2.04 | Culture numérique": {
       "enseignant": "DE VELDER Sophie",
       "cm": 0,
-      "td": 30,
+      "td": 15,
       "tp": 0,
       "subrows": []
     },
@@ -413,48 +413,48 @@
       "enseignant": "DE VELDER Sophie",
       "cm": 9,
       "td": 0,
-      "tp": 6,
+      "tp": 1.5,
       "subrows": [
         {
           "enseignant": "THEROND Emmanuel",
           "cm": 0,
           "td": 0,
-          "tp": 6
+          "tp": 1.5
         }
       ]
     },
     "R2.06 | Expression, communication et rhétorique": {
       "enseignant": "DE VELDER Sophie",
       "cm": 0,
-      "td": 12,
-      "tp": 30,
+      "td": 6,
+      "tp": 7.5,
       "subrows": []
     },
     "R2.07 | Écriture multimédia et narration": {
       "enseignant": "MOCQUET Bertrand",
       "cm": 3,
       "td": 0,
-      "tp": 36,
+      "tp": 9,
       "subrows": [
         {
           "enseignant": "RAMPON Candice",
           "cm": 0,
           "td": 0,
-          "tp": 36
+          "tp": 9
         }
       ]
     },
     "R2.08 | Production graphique": {
       "enseignant": "SELIGHINI Valérie",
       "cm": 1.5,
-      "td": 9,
-      "tp": 24,
+      "td": 4.5,
+      "tp": 6,
       "subrows": [
         {
           "enseignant": "SURRIBAS Caroline",
           "cm": 0,
           "td": 0,
-          "tp": 36
+          "tp": 9
         }
       ]
     },
@@ -468,7 +468,7 @@
           "enseignant": "SURRIBAS Caroline",
           "cm": 0,
           "td": 0,
-          "tp": 42
+          "tp": 10.5
         }
       ]
     },
@@ -476,83 +476,83 @@
       "enseignant": "BLANCO Sandy",
       "cm": 4.5,
       "td": 0,
-      "tp": 60,
+      "tp": 15,
       "subrows": []
     },
     "R2.11 | Gestion de contenus": {
       "enseignant": "THEROND Emmanuel",
       "cm": 0,
-      "td": 9,
-      "tp": 24,
+      "td": 4.5,
+      "tp": 6,
       "subrows": []
     },
     "R2.12 | Intégration": {
       "enseignant": "MARILL Damien",
       "cm": 0,
-      "td": 3,
-      "tp": 24,
+      "td": 1.5,
+      "tp": 6,
       "subrows": [
         {
           "enseignant": "THEROND Emmanuel",
           "cm": 0,
-          "td": 3,
-          "tp": 30
+          "td": 1.5,
+          "tp": 7.5
         }
       ]
     },
     "R2.13 | Développement Web": {
       "enseignant": "DARTIES Benoit",
       "cm": 0,
-      "td": 6,
-      "tp": 30,
+      "td": 3,
+      "tp": 7.5,
       "subrows": [
         {
           "enseignant": "ESCAIG Sylvie",
           "cm": 0,
           "td": 0,
-          "tp": 15
+          "tp": 0
         }
       ]
     },
     "R2.14 | Système d'information": {
       "enseignant": "TALLEUX Johann",
       "cm": 0,
-      "td": 9,
-      "tp": 24,
+      "td": 4.5,
+      "tp": 6,
       "subrows": []
     },
     "R2.15 | Hébergement": {
       "enseignant": "MAURIN Nicolas",
       "cm": 3,
-      "td": 3,
-      "tp": 24,
+      "td": 1.5,
+      "tp": 6,
       "subrows": [
         {
           "enseignant": "DARTIES Benoit",
           "cm": 0,
           "td": 0,
-          "tp": 6
+          "tp": 1.5
         }
       ]
     },
     "R2.16 | Représentation et traitement de l'information": {
       "enseignant": "GRANIER Jean-Baptiste",
       "cm": 0,
-      "td": 4.5,
-      "tp": 10.5,
+      "td": 0,
+      "tp": 0,
       "subrows": []
     },
     "R2.17 | Gestion de projet": {
       "enseignant": "TOURNIE Laetitia",
       "cm": 0,
-      "td": 9,
-      "tp": 42,
+      "td": 4.5,
+      "tp": 10.5,
       "subrows": []
     },
     "R2.18 | Économie, gestion et droit du numérique": {
       "enseignant": "GIMENO Charline",
       "cm": 4.5,
-      "td": 12,
+      "td": 6,
       "tp": 0,
       "subrows": []
     },
@@ -560,33 +560,33 @@
       "enseignant": "DE VELDER Sophie",
       "cm": 0,
       "td": 0,
-      "tp": 42,
+      "tp": 10.5,
       "subrows": [
         {
           "enseignant": "PELISSIER Chrysta",
           "cm": 0,
-          "td": 12,
-          "tp": 6
+          "td": 6,
+          "tp": 1.5
         }
       ]
     },
     "SAÉ 2.01 | Explorer les usages du numérique": {
       "enseignant": "DE VELDER Sophie",
       "cm": 1.5,
-      "td": 27,
+      "td": 13.5,
       "tp": 0,
       "subrows": []
     },
     "SAÉ 2.02 | Concevoir un produit ou un service et sa communication": {
       "enseignant": "SURRIBAS Caroline",
       "cm": 0,
-      "td": 15,
+      "td": 7.5,
       "tp": 0,
       "subrows": [
         {
           "enseignant": "DARTIES Benoit",
           "cm": 1.5,
-          "td": 18,
+          "td": 9,
           "tp": 0
         }
       ]
@@ -594,13 +594,13 @@
     "SAÉ 2.03 | Concevoir un site web avec une source de données": {
       "enseignant": "MAURIN Nicolas",
       "cm": 0,
-      "td": 15,
+      "td": 7.5,
       "tp": 0,
       "subrows": [
         {
           "enseignant": "DARTIES Benoit",
           "cm": 1.5,
-          "td": 15,
+          "td": 7.5,
           "tp": 0
         }
       ]
@@ -608,13 +608,13 @@
     "SAÉ 2.04 | Construire sa présence en ligne": {
       "enseignant": "DE VELDER Sophie",
       "cm": 3,
-      "td": 33,
+      "td": 16.5,
       "tp": 0,
       "subrows": [
         {
           "enseignant": "HERVY Dominique",
           "cm": 0,
-          "td": 6,
+          "td": 3,
           "tp": 0
         }
       ]
@@ -636,31 +636,31 @@
     "PORTFOLIO | Portfolio": {
       "enseignant": "BLANCO Sandy",
       "cm": 0,
-      "td": 3,
+      "td": 0,
       "tp": 0,
       "subrows": [
         {
           "enseignant": "BARON Mathilde",
           "cm": 0,
-          "td": 3,
+          "td": 0,
           "tp": 0
         },
         {
           "enseignant": "MAURIN Nicolas",
           "cm": 0,
-          "td": 3,
+          "td": 0,
           "tp": 0
         },
         {
           "enseignant": "PELISSIER Chrysta",
           "cm": 0,
-          "td": 3,
+          "td": 0,
           "tp": 0
         },
         {
           "enseignant": "THEROND Emmanuel",
           "cm": 0,
-          "td": 3,
+          "td": 0,
           "tp": 0
         }
       ]
@@ -671,7 +671,7 @@
       "enseignant": "BERNARD William",
       "cm": 0,
       "td": 4.5,
-      "tp": 18,
+      "tp": 9,
       "subrows": []
     },
     "R4.Crea.02 | Economie, gestion et Droit du numérique": {
@@ -692,13 +692,13 @@
       "enseignant": "RAMPON Candice",
       "cm": 0,
       "td": 4.5,
-      "tp": 6,
+      "tp": 3,
       "subrows": [
         {
           "enseignant": "LAGIEWKA Arnaud",
           "cm": 0,
           "td": 4.5,
-          "tp": 3
+          "tp": 1.5
         }
       ]
     },
@@ -711,13 +711,13 @@
         {
           "enseignant": "BARTHELEMY Veronique",
           "cm": 0,
-          "td": 4.5,
+          "td": 0,
           "tp": 0
         },
         {
           "enseignant": "EVANO Jérome",
           "cm": 0,
-          "td": 3,
+          "td": 0,
           "tp": 0
         }
       ]
@@ -726,27 +726,27 @@
       "enseignant": "THEROND Emmanuel",
       "cm": 0,
       "td": 12,
-      "tp": 12,
+      "tp": 6,
       "subrows": []
     },
     "R4.Crea.06 | Culture artistique": {
       "enseignant": "SURRIBAS Caroline",
       "cm": 0,
       "td": 4.5,
-      "tp": 21,
+      "tp": 10.5,
       "subrows": []
     },
     "R4.Crea.07 | Audiovisuel - Motion design": {
       "enseignant": "BLANCO Sandy",
       "cm": 0,
       "td": 1.5,
-      "tp": 9,
+      "tp": 4.5,
       "subrows": [
         {
           "enseignant": "THEROND Emmanuel",
           "cm": 0,
           "td": 3,
-          "tp": 9
+          "tp": 4.5
         }
       ]
     },
@@ -761,13 +761,13 @@
       "enseignant": "SURRIBAS Caroline",
       "cm": 0,
       "td": 10.5,
-      "tp": 3,
+      "tp": 1.5,
       "subrows": [
         {
           "enseignant": "THEROND Emmanuel",
           "cm": 0,
           "td": 9,
-          "tp": 3
+          "tp": 1.5
         }
       ]
     },
@@ -789,13 +789,13 @@
       "enseignant": "BLANCO Sandy",
       "cm": 0,
       "td": 1.5,
-      "tp": 9,
+      "tp": 4.5,
       "subrows": [
         {
           "enseignant": "BARON Mathilde",
           "cm": 0,
           "td": 1.5,
-          "tp": 9
+          "tp": 4.5
         }
       ]
     },
@@ -816,31 +816,31 @@
     "PORTFOLIO | Portfolio-Parcours Création Numérique": {
       "enseignant": "MAURIN Nicolas",
       "cm": 0,
-      "td": 1.5,
+      "td": 0,
       "tp": 0,
       "subrows": [
         {
           "enseignant": "THEROND Emmanuel",
           "cm": 0,
-          "td": 1.5,
+          "td": 0,
           "tp": 0
         },
         {
           "enseignant": "BLANCO Sandy",
           "cm": 0,
-          "td": 1.5,
+          "td": 0,
           "tp": 0
         },
         {
           "enseignant": "BARON Mathilde",
           "cm": 0,
-          "td": 1.5,
+          "td": 0,
           "tp": 0
         },
         {
           "enseignant": "PELISSIER Chrysta",
           "cm": 0,
-          "td": 1.5,
+          "td": 0,
           "tp": 0
         }
       ]
@@ -851,7 +851,7 @@
       "enseignant": "BERNARD William",
       "cm": 0,
       "td": 7.5,
-      "tp": 10.5,
+      "tp": 5.25,
       "subrows": []
     },
     "R5.crea.02 | Management et Assurance Qualité": {
@@ -879,13 +879,13 @@
       "enseignant": "THEROND Emmanuel",
       "cm": 0,
       "td": 30,
-      "tp": 18,
+      "tp": 9,
       "subrows": [
         {
           "enseignant": "GRENIER Sandrine",
           "cm": 0,
           "td": 9,
-          "tp": 18
+          "tp": 9
         }
       ]
     },
@@ -893,13 +893,13 @@
       "enseignant": "BLANCO Sandy",
       "cm": 0,
       "td": 21,
-      "tp": 60,
+      "tp": 30,
       "subrows": [
         {
           "enseignant": "LAGIEWKA Arnaud",
           "cm": 0,
           "td": 0,
-          "tp": 12
+          "tp": 6
         },
         {
           "enseignant": "THEROND Emmanuel",
@@ -910,8 +910,8 @@
         {
           "enseignant": "",
           "cm": 0,
-          "td": 12.5,
-          "tp": 7.5
+          "td": 0,
+          "tp": 0
         }
       ]
     },
@@ -919,19 +919,19 @@
       "enseignant": "BLANCO Sandy",
       "cm": 0,
       "td": 18,
-      "tp": 28.5,
+      "tp": 14.25,
       "subrows": [
         {
           "enseignant": "BARON Mathilde",
           "cm": 0,
           "td": 12,
-          "tp": 15
+          "tp": 7.5
         },
         {
           "enseignant": "RAMPON Candice",
           "cm": 0,
           "td": 12,
-          "tp": 15
+          "tp": 7.5
         }
       ]
     },
@@ -944,7 +944,7 @@
         {
           "enseignant": "CALOMINA Léo",
           "cm": 0,
-          "td": 18,
+          "td": 0,
           "tp": 0
         },
         {
@@ -964,7 +964,7 @@
     "SAÉ 5.Crea.02 | SAE Management": {
       "enseignant": "PIEDEVACHE Magalie",
       "cm": 0,
-      "td": 9,
+      "td": 0,
       "tp": 0,
       "subrows": []
     },
@@ -972,13 +972,13 @@
       "enseignant": "LAGIEWKA Arnaud",
       "cm": 0,
       "td": 0,
-      "tp": 6,
+      "tp": 3,
       "subrows": [
         {
           "enseignant": "THEROND Emmanuel",
           "cm": 0,
           "td": 9,
-          "tp": 6
+          "tp": 3
         }
       ]
     },
@@ -986,13 +986,13 @@
       "enseignant": "BLANCO Sandy",
       "cm": 0,
       "td": 0,
-      "tp": 3,
+      "tp": 0,
       "subrows": [
         {
           "enseignant": "THEROND Emmanuel",
           "cm": 0,
           "td": 0,
-          "tp": 3
+          "tp": 0
         }
       ]
     }
@@ -1035,7 +1035,7 @@
     "SAÉ 6.dev.01 | Developpement avancé": {
       "enseignant": "HADDAD Gatien",
       "cm": 0,
-      "td": 13.5,
+      "td": 0,
       "tp": 0,
       "subrows": [
         {
@@ -1061,13 +1061,13 @@
     "PORTFOLIO | Portfolio-Parcours Dev": {
       "enseignant": "THEROND Emmanuel",
       "cm": 0,
-      "td": 1.5,
+      "td": 0,
       "tp": 0,
       "subrows": [
         {
           "enseignant": "MAURIN Nicolas",
           "cm": 0,
-          "td": 3,
+          "td": 0,
           "tp": 0
         }
       ]
@@ -1078,7 +1078,7 @@
       "enseignant": "BERNARD William",
       "cm": 0,
       "td": 0,
-      "tp": 10.5,
+      "tp": 5.25,
       "subrows": []
     },
     "R5.DWeb-DI.02 | Management et Assurance Qualité": {
@@ -1091,7 +1091,7 @@
     "R5.DWeb-DI.03 | Entrepreunariat": {
       "enseignant": "ROMAIN Celine",
       "cm": 0,
-      "td": 10.5,
+      "td": 0,
       "tp": 0,
       "subrows": []
     },
@@ -1106,13 +1106,13 @@
       "enseignant": "MARILL Damien",
       "cm": 0,
       "td": 30,
-      "tp": 3,
+      "tp": 1.5,
       "subrows": [
         {
           "enseignant": "LAGIEWKA Arnaud",
           "cm": 0,
           "td": 0,
-          "tp": 12
+          "tp": 6
         }
       ]
     },
@@ -1120,13 +1120,13 @@
       "enseignant": "MARILL Damien",
       "cm": 0,
       "td": 22.5,
-      "tp": 6,
+      "tp": 3,
       "subrows": [
         {
           "enseignant": "MARZOUK Reda",
           "cm": 0,
           "td": 21,
-          "tp": 30
+          "tp": 15
         }
       ]
     },
@@ -1134,13 +1134,13 @@
       "enseignant": "MARZOUK Reda",
       "cm": 0,
       "td": 37.5,
-      "tp": 24,
+      "tp": 12,
       "subrows": [
         {
           "enseignant": "AZE Jérome",
           "cm": 0,
           "td": 10.5,
-          "tp": 24
+          "tp": 12
         }
       ]
     },
@@ -1148,7 +1148,7 @@
       "enseignant": "WILLEMS Eric",
       "cm": 0,
       "td": 27,
-      "tp": 16,
+      "tp": 8,
       "subrows": [
         {
           "enseignant": "MARILL Damien",
@@ -1195,7 +1195,7 @@
     "SAÉ 5D.02 | SAE Management": {
       "enseignant": "PIEDEVACHE Magalie",
       "cm": 0,
-      "td": 6,
+      "td": 0,
       "tp": 0,
       "subrows": []
     },
@@ -1223,13 +1223,13 @@
     "PORTFOLIO Portfolio-Parcours Dev Web": {
       "enseignant": "MAURIN Nicolas",
       "cm": 0,
-      "td": 3,
+      "td": 0,
       "tp": 0,
       "subrows": [
         {
           "enseignant": "THEROND Emmanuel",
           "cm": 0,
-          "td": 1.5,
+          "td": 0,
           "tp": 0
         }
       ]
@@ -1240,7 +1240,7 @@
       "enseignant": "BERNARD William",
       "cm": 0,
       "td": 4.5,
-      "tp": 18,
+      "tp": 9,
       "subrows": []
     },
     "R4.DWeb-DI.02  Economie, gestion et Droit du numérique": {
@@ -1254,13 +1254,13 @@
       "enseignant": "RAMPON Candice",
       "cm": 0,
       "td": 4.5,
-      "tp": 6,
+      "tp": 3,
       "subrows": [
         {
           "enseignant": "LAGIEWKA Arnaud",
           "cm": 0,
           "td": 3,
-          "tp": 3
+          "tp": 1.5
         }
       ]
     },
@@ -1273,7 +1273,7 @@
         {
           "enseignant": "EVANO Jérome",
           "cm": 0,
-          "td": 3,
+          "td": 0,
           "tp": 0
         },
         {
@@ -1295,7 +1295,7 @@
       "enseignant": "TALLEUX Johann",
       "cm": 0,
       "td": 4.5,
-      "tp": 21,
+      "tp": 10.5,
       "subrows": []
     },
     "R4.DWeb-DI.07 Développement back": {
@@ -1308,7 +1308,7 @@
           "enseignant": "DARTIES Benoit",
           "cm": 0,
           "td": 3,
-          "tp": 9
+          "tp": 4.5
         }
       ]
     },
@@ -1316,7 +1316,7 @@
       "enseignant": "WILLEMS Eric",
       "cm": 0,
       "td": 3,
-      "tp": 18,
+      "tp": 9,
       "subrows": []
     },
     "SAÉ 4.DWeb-DI.01 Développer pour le Web": {
@@ -1330,13 +1330,13 @@
       "enseignant": "MAURIN Nicolas",
       "cm": 0,
       "td": 15,
-      "tp": 6,
+      "tp": 3,
       "subrows": [
         {
           "enseignant": "MARILL Damien",
           "cm": 0,
           "td": 0,
-          "tp": 9
+          "tp": 4.5
         }
       ]
     },
@@ -1357,31 +1357,31 @@
     "PORTFOLIO Portfolio-Parcours Développement Web et Dispositifs interactifs": {
       "enseignant": "THEROND Emmanuel",
       "cm": 0,
-      "td": 1.5,
+      "td": 0,
       "tp": 0,
       "subrows": [
         {
           "enseignant": "MAURIN Nicolas",
           "cm": 0,
-          "td": 1.5,
+          "td": 0,
           "tp": 0
         },
         {
           "enseignant": "PELISSIER Chrysta",
           "cm": 0,
-          "td": 1.5,
+          "td": 0,
           "tp": 0
         },
         {
           "enseignant": "BARON Mathilde",
           "cm": 0,
-          "td": 1.5,
+          "td": 0,
           "tp": 0
         },
         {
           "enseignant": "BLANCO Sandy",
           "cm": 0,
-          "td": 1.5,
+          "td": 0,
           "tp": 0
         }
       ]
@@ -1391,77 +1391,77 @@
     "R3.01 | Anglais": {
       "enseignant": "BERNARD William",
       "cm": 0,
-      "td": 9,
-      "tp": 36,
+      "td": 4.5,
+      "tp": 9,
       "subrows": []
     },
     "R3.02 | Espagnol (LV2)": {
       "enseignant": "CALLET Caroline",
       "cm": 0,
-      "td": 9,
-      "tp": 18,
+      "td": 4.5,
+      "tp": 4.5,
       "subrows": []
     },
     "R3.03 | Design d'expérience": {
       "enseignant": "RAMPON Candice",
       "cm": 3,
-      "td": 9,
-      "tp": 18,
+      "td": 4.5,
+      "tp": 4.5,
       "subrows": [
         {
           "enseignant": "DE VELDER Sophie",
           "cm": 0,
-          "td": 9,
-          "tp": 18
+          "td": 4.5,
+          "tp": 4.5
         }
       ]
     },
     "R3.04 | Culture numérique": {
       "enseignant": "DE VELDER Sophie",
       "cm": 0,
-      "td": 24,
+      "td": 12,
       "tp": 0,
       "subrows": []
     },
     "R3.05 | Stratégies de communication et marketing": {
       "enseignant": "DE VELDER Sophie",
       "cm": 4.5,
-      "td": 6,
+      "td": 3,
       "tp": 0,
       "subrows": [
         {
           "enseignant": "RAMPON Candice",
           "cm": 4.5,
-          "td": 6,
+          "td": 3,
           "tp": 0
         }
       ]
     },
     "R3.06 | Référencement": {
       "enseignant": "EVANO Jérome",
-      "cm": 4.5,
-      "td": 1.5,
-      "tp": 10.5,
+      "cm": 0,
+      "td": 0,
+      "tp": 0,
       "subrows": []
     },
     "R3.07 | Expression, communication et rhétorique": {
       "enseignant": "RAMPON Candice",
       "cm": 0,
-      "td": 18,
-      "tp": 24,
+      "td": 9,
+      "tp": 6,
       "subrows": []
     },
     "R3.08 | Écriture multimédia et narration": {
       "enseignant": "RAMPON Candice",
       "cm": 3,
       "td": 0,
-      "tp": 12,
+      "tp": 3,
       "subrows": [
         {
           "enseignant": "KLAIBI Noel",
           "cm": 1.5,
           "td": 0,
-          "tp": 12
+          "tp": 3
         }
       ]
     },
@@ -1469,13 +1469,13 @@
       "enseignant": "LAGIEWKA Arnaud",
       "cm": 0,
       "td": 0,
-      "tp": 18,
+      "tp": 4.5,
       "subrows": [
         {
           "enseignant": "THEROND Emmanuel",
           "cm": 0,
-          "td": 12,
-          "tp": 28.5
+          "td": 6,
+          "tp": 7.125
         }
       ]
     },
@@ -1489,69 +1489,69 @@
           "enseignant": "SURRIBAS Caroline",
           "cm": 0,
           "td": 0,
-          "tp": 42
+          "tp": 10.5
         }
       ]
     },
     "R3.11 | Audiovisuel et Motion design": {
       "enseignant": "BLANCO Sandy",
       "cm": 0,
-      "td": 9,
-      "tp": 24,
+      "td": 4.5,
+      "tp": 6,
       "subrows": [
         {
           "enseignant": "THEROND Emmanuel",
           "cm": 0,
-          "td": 12,
-          "tp": 24
+          "td": 6,
+          "tp": 6
         }
       ]
     },
     "R3.12 | Développement Front et intégration": {
       "enseignant": "MAURIN Nicolas",
       "cm": 0,
-      "td": 10.5,
-      "tp": 53,
+      "td": 5.25,
+      "tp": 13.25,
       "subrows": [
         {
           "enseignant": "DARTIES Benoit",
           "cm": 0,
-          "td": 13.5,
-          "tp": 12
+          "td": 6.75,
+          "tp": 3
         }
       ]
     },
     "R3.13 | Gestion de contenus avancée / Dév Back": {
       "enseignant": "DARTIES Benoit",
       "cm": 4.5,
-      "td": 9,
-      "tp": 19.5,
+      "td": 4.5,
+      "tp": 4.875,
       "subrows": [
         {
           "enseignant": "MAURIN Nicolas",
           "cm": 0,
-          "td": 9,
-          "tp": 24
+          "td": 4.5,
+          "tp": 6
         },
         {
           "enseignant": "TALLEUX Johann",
           "cm": 0,
-          "td": 12,
-          "tp": 42
+          "td": 6,
+          "tp": 10.5
         }
       ]
     },
     "R3.14 | Déploiement de services": {
       "enseignant": "MAURIN Nicolas",
       "cm": 0,
-      "td": 12,
-      "tp": 30,
+      "td": 6,
+      "tp": 7.5,
       "subrows": [
         {
           "enseignant": "PELTRIAUX Philippe",
-          "cm": 1.5,
-          "td": 4.5,
-          "tp": 3
+          "cm": 0,
+          "td": 0,
+          "tp": 0
         }
       ]
     },
@@ -1559,47 +1559,47 @@
       "enseignant": "ESCAIG Sylvie",
       "cm": 0,
       "td": 0,
-      "tp": 6,
+      "tp": 0,
       "subrows": [
         {
           "enseignant": "MENDEZ Nicolas",
           "cm": 0,
           "td": 0,
-          "tp": 12
+          "tp": 3
         },
         {
           "enseignant": "MORICEAU Maryvonne",
           "cm": 0,
-          "td": 9,
-          "tp": 24
+          "td": 4.5,
+          "tp": 6
         }
       ]
     },
     "R3.16 | Gestion de projet": {
       "enseignant": "TOURNIE Laetitia",
       "cm": 3,
-      "td": 12,
-      "tp": 24,
+      "td": 6,
+      "tp": 6,
       "subrows": []
     },
     "R3.17 | Economie, gestion et droit du numérique": {
       "enseignant": "GIMENO Charline",
       "cm": 6,
-      "td": 12,
+      "td": 6,
       "tp": 0,
       "subrows": []
     },
     "R3.18 | Projet Personnel et Professionnel": {
       "enseignant": "DE VELDER Sophie",
       "cm": 0,
-      "td": 15,
-      "tp": 18,
+      "td": 7.5,
+      "tp": 4.5,
       "subrows": [
         {
           "enseignant": "KLAIBI Noel",
           "cm": 0,
-          "td": 3,
-          "tp": 6
+          "td": 1.5,
+          "tp": 1.5
         }
       ]
     },
@@ -1607,40 +1607,40 @@
       "enseignant": "DARTIES Benoit",
       "cm": 1.5,
       "td": 0,
-      "tp": 34.5,
+      "tp": 8.625,
       "subrows": [
         {
           "enseignant": "MAURIN Nicolas",
           "cm": 0,
           "td": 0,
-          "tp": 45
+          "tp": 11.25
         }
       ]
     },
     "SAÉ 3.02 | Produire des contenus pour une communication plurimédia": {
       "enseignant": "SURRIBAS Caroline",
       "cm": 0,
-      "td": 12,
-      "tp": 6,
+      "td": 6,
+      "tp": 1.5,
       "subrows": [
         {
           "enseignant": "BLANCO Sandy",
           "cm": 0,
-          "td": 13.5,
-          "tp": 18
+          "td": 6.75,
+          "tp": 4.5
         }
       ]
     },
     "SAÉ 3.03 | Concevoir des visualisations de données pour le web et un support animé": {
       "enseignant": "SURRIBAS Caroline",
       "cm": 1.5,
-      "td": 15,
+      "td": 7.5,
       "tp": 0,
       "subrows": [
         {
           "enseignant": "MARILL Damien",
           "cm": 0,
-          "td": 15,
+          "td": 7.5,
           "tp": 0
         }
       ]
@@ -1648,31 +1648,31 @@
     "PORTFOLIO Portfolio-Parcours Dev": {
       "enseignant": "BLANCO Sandy",
       "cm": 0,
-      "td": 3,
+      "td": 0,
       "tp": 0,
       "subrows": [
         {
           "enseignant": "BARON Mathilde",
           "cm": 0,
-          "td": 3,
+          "td": 0,
           "tp": 0
         },
         {
           "enseignant": "MAURIN Nicolas",
           "cm": 0,
-          "td": 3,
+          "td": 0,
           "tp": 0
         },
         {
           "enseignant": "PELISSIER Chrysta",
           "cm": 0,
-          "td": 3,
+          "td": 0,
           "tp": 0
         },
         {
           "enseignant": "THEROND Emmanuel",
           "cm": 0,
-          "td": 3,
+          "td": 0,
           "tp": 0
         }
       ]
