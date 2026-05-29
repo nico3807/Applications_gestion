@@ -229,6 +229,21 @@ function renderSemestre(root, sem) {
                 </tr>`;
       });
     }
+
+    const respEns = enseignants.find((e) => e.id === data.responsable);
+    const respSelClass = respEns
+      ? respEns.is_vac
+        ? "select-vac"
+        : "select-tit"
+      : "";
+    html += `<tr class="row-responsable ${rowClass}">
+            <td colspan="7" class="responsable-label">Responsable :
+                <select class="select-enseignant ${respSelClass}" onchange="updateAff('${sem}', '${res.replace(/'/g, "\\'")}', 'responsable', this.value)">
+                    <option value="">-</option>
+                    ${enseignants.map((e) => `<option value="${e.id}" class="ens-option" data-vac="${e.is_vac ? "true" : "false"}" ${e.id === data.responsable ? "selected" : ""}>${e.id}</option>`).join("")}
+                </select>
+            </td>
+        </tr>`;
   });
 
   html += `</tbody></table></div>
@@ -244,7 +259,7 @@ window.updateAff = function (sem, res, field, value) {
   if (["cm", "td", "tp"].includes(field)) value = parseFloat(value) || 0;
   _logMod("Répartition", `${sem} / ${res} / ${field}`, prev, value);
   APP_DATA.affectations[sem][res][field] = value;
-  if (field === "enseignant") renderView();
+  if (field === "enseignant" || field === "responsable") renderView();
 };
 window.updateSub = function (sem, res, idx, field, value) {
   const prev = APP_DATA.affectations[sem]?.[res]?.subrows?.[idx]?.[field] ?? "";

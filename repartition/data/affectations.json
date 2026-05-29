@@ -5,42 +5,48 @@
       "cm": 0.5,
       "td": 9,
       "tp": 0,
-      "subrows": []
+      "subrows": [],
+      "responsable": ""
     },
     "R1.01 | Anglais": {
       "enseignant": "BERNARD William",
       "cm": 0,
       "td": 4.5,
       "tp": 9,
-      "subrows": []
+      "subrows": [],
+      "responsable": ""
     },
     "R1.02 | Espagnol (LV2)": {
       "enseignant": "BARON Mathilde",
       "cm": 1.5,
       "td": 4.5,
       "tp": 4.5,
-      "subrows": []
+      "subrows": [],
+      "responsable": ""
     },
     "R1.03 Ergonomie et Accessibilité": {
       "enseignant": "PELISSIER Chrysta",
       "cm": 3,
       "td": 7.5,
       "tp": 6,
-      "subrows": []
+      "subrows": [],
+      "responsable": ""
     },
     "R1.04 Culture numérique": {
       "enseignant": "DE VELDER Sophie",
       "cm": 6,
       "td": 12,
       "tp": 0,
-      "subrows": []
+      "subrows": [],
+      "responsable": ""
     },
     "R1.05 Stratégies de communication et marketing": {
       "enseignant": "DE VELDER Sophie",
       "cm": 12,
       "td": 13.5,
       "tp": 0,
-      "subrows": []
+      "subrows": [],
+      "responsable": ""
     },
     "R1.06 Expression, communication et rhétorique": {
       "enseignant": "RAMPON Candice",
@@ -54,7 +60,8 @@
           "td": 4.5,
           "tp": 6
         }
-      ]
+      ],
+      "responsable": ""
     },
     "R1.07 Écriture multimédia et narration": {
       "enseignant": "PELISSIER Chrysta",
@@ -68,14 +75,16 @@
           "td": 3,
           "tp": 0
         }
-      ]
+      ],
+      "responsable": ""
     },
     "R1.08 Production graphique": {
       "enseignant": "SURRIBAS Caroline",
       "cm": 0,
       "td": 6,
       "tp": 15,
-      "subrows": []
+      "subrows": [],
+      "responsable": ""
     },
     "R1.09 Culture artistique": {
       "enseignant": "DE VELDER Sophie",
@@ -89,14 +98,16 @@
           "td": 0,
           "tp": 12
         }
-      ]
+      ],
+      "responsable": ""
     },
     "R1.10 Production audio et vidéo": {
       "enseignant": "BLANCO Sandy",
       "cm": 6,
       "td": 4.5,
       "tp": 10.5,
-      "subrows": []
+      "subrows": [],
+      "responsable": ""
     },
     "R1.11 Intégration": {
       "enseignant": "PELISSIER Chrysta",
@@ -110,7 +121,8 @@
           "td": 12,
           "tp": 6
         }
-      ]
+      ],
+      "responsable": ""
     },
     "R1.12 Développement Web": {
       "enseignant": "DARTIES Benoit",
@@ -124,7 +136,8 @@
           "td": 0,
           "tp": 12.75
         }
-      ]
+      ],
+      "responsable": ""
     },
     "R1.13 Hébergement": {
       "enseignant": "DARTIES Benoit",
@@ -138,7 +151,8 @@
           "td": 0,
           "tp": 9
         }
-      ]
+      ],
+      "responsable": ""
     },
     "R1.14 Représentation et traitement de l'information": {
       "enseignant": "GRANIER Jean-Baptiste",
@@ -152,21 +166,24 @@
           "td": 0,
           "tp": 9
         }
-      ]
+      ],
+      "responsable": ""
     },
     "R1.15 Gestion de projet": {
       "enseignant": "TOURNIE Laetitia",
       "cm": 0,
       "td": 10.5,
       "tp": 4.5,
-      "subrows": []
+      "subrows": [],
+      "responsable": ""
     },
     "R1.16 Économie, gestion et droit du numérique": {
       "enseignant": "DE VELDER Sophie",
       "cm": 9,
       "td": 6,
       "tp": 0,
-      "subrows": []
+      "subrows": [],
+      "responsable": ""
     },
     "R1.17 Projet Personnel et Professionnel": {
       "enseignant": "DE VELDER Sophie",
@@ -180,7 +197,8 @@
           "td": 0,
           "tp": 9
         }
-      ]
+      ],
+      "responsable": ""
     },
     "SAÉ 1.01 Auditer une communication numérique": {
       "enseignant": "BERNARD William",
@@ -206,7 +224,8 @@
           "td": 4.5,
           "tp": 0
         }
-      ]
+      ],
+      "responsable": ""
     },
     "SAÉ 1.02 Concevoir une recommandation de communication numérique": {
       "enseignant": "DE VELDER Sophie",
@@ -232,7 +251,8 @@
           "td": 3,
           "tp": 0
         }
-      ]
+      ],
+      "responsable": ""
     },
     "SAÉ 1.03 Produire les éléments d'une communication visuelle": {
       "enseignant": "SURRIBAS Caroline",
@@ -246,14 +266,16 @@
           "td": 1.5,
           "tp": 0
         }
-      ]
+      ],
+      "responsable": ""
     },
     "SAÉ 1.04 Produire un contenu audio et vidéo": {
       "enseignant": "BLANCO Sandy",
       "cm": 0,
       "td": 15,
       "tp": 6,
-      "subrows": []
+      "subrows": [],
+      "responsable": ""
     },
     "SAÉ 1.05 Produire un site Web": {
       "enseignant": "DARTIES Benoit",
@@ -267,14 +289,16 @@
           "td": 7.5,
           "tp": 0
         }
-      ]
+      ],
+      "responsable": ""
     },
     "SAÉ 1.06 Gérer un projet de communication numérique": {
       "enseignant": "TOURNIE Laetitia",
       "cm": 1.5,
       "td": 13.5,
       "tp": 0,
-      "subrows": []
+      "subrows": [],
+      "responsable": ""
     },
     "PORTFOLIO | Portfolio": {
       "enseignant": "BLANCO Sandy",
@@ -306,7 +330,8 @@
           "td": 1.5,
           "tp": 0
         }
-      ]
+      ],
+      "responsable": ""
     }
   },
   "S6 crea": {
@@ -315,7 +340,8 @@
       "cm": 0,
       "td": 13.5,
       "tp": 0,
-      "subrows": []
+      "subrows": [],
+      "responsable": ""
     },
     "R6 crea 02 | Création numérique intéractive": {
       "enseignant": "THEROND Emmanuel",
@@ -329,7 +355,8 @@
           "td": 12,
           "tp": 0
         }
-      ]
+      ],
+      "responsable": ""
     },
     "SAÉ 6.Crea.01 | UX / UI avancé": {
       "enseignant": "SELIGHINI Valérie",
@@ -349,7 +376,8 @@
           "td": 21,
           "tp": 0
         }
-      ]
+      ],
+      "responsable": ""
     },
     "PORTFOLIO Portfolio-Parcours Création Numérique": {
       "enseignant": "THEROND Emmanuel",
@@ -363,14 +391,16 @@
           "td": 1.5,
           "tp": 0
         }
-      ]
+      ],
+      "responsable": ""
     },
     "SAÉ 4.99 | Marathon MMI": {
       "enseignant": "",
       "cm": 0,
       "td": 0,
       "tp": 0,
-      "subrows": []
+      "subrows": [],
+      "responsable": ""
     }
   },
   "S2": {
@@ -379,7 +409,8 @@
       "cm": 0,
       "td": 4.5,
       "tp": 9,
-      "subrows": []
+      "subrows": [],
+      "responsable": ""
     },
     "R2.02 | Anglais renforcé": {
       "enseignant": "BARON Mathilde",
@@ -393,21 +424,24 @@
           "td": 4.5,
           "tp": 4.5
         }
-      ]
+      ],
+      "responsable": ""
     },
     "R2.03 | Ergonomie et Accessibilité": {
       "enseignant": "PELISSIER Chrysta",
       "cm": 0,
       "td": 4.5,
       "tp": 10.5,
-      "subrows": []
+      "subrows": [],
+      "responsable": ""
     },
     "R2.04 | Culture numérique": {
       "enseignant": "DE VELDER Sophie",
       "cm": 0,
       "td": 15,
       "tp": 0,
-      "subrows": []
+      "subrows": [],
+      "responsable": ""
     },
     "R2.05 | Stratégies de communication et marketing": {
       "enseignant": "DE VELDER Sophie",
@@ -421,14 +455,16 @@
           "td": 3,
           "tp": 0
         }
-      ]
+      ],
+      "responsable": ""
     },
     "R2.06 | Expression, communication et rhétorique": {
       "enseignant": "DE VELDER Sophie",
       "cm": 0,
       "td": 6,
       "tp": 7.5,
-      "subrows": []
+      "subrows": [],
+      "responsable": ""
     },
     "R2.07 | Écriture multimédia et narration": {
       "enseignant": "MOCQUET Bertrand",
@@ -442,7 +478,8 @@
           "td": 0,
           "tp": 9
         }
-      ]
+      ],
+      "responsable": ""
     },
     "R2.08 | Production graphique": {
       "enseignant": "SELIGHINI Valérie",
@@ -456,7 +493,8 @@
           "td": 0,
           "tp": 9
         }
-      ]
+      ],
+      "responsable": ""
     },
     "R2.09 | Culture artistique": {
       "enseignant": "DE VELDER Sophie",
@@ -470,21 +508,24 @@
           "td": 0,
           "tp": 10.5
         }
-      ]
+      ],
+      "responsable": ""
     },
     "R2.10 | Production audio et vidéo": {
       "enseignant": "BLANCO Sandy",
       "cm": 4.5,
       "td": 0,
       "tp": 15,
-      "subrows": []
+      "subrows": [],
+      "responsable": ""
     },
     "R2.11 | Gestion de contenus": {
       "enseignant": "THEROND Emmanuel",
       "cm": 0,
       "td": 3,
       "tp": 6,
-      "subrows": []
+      "subrows": [],
+      "responsable": ""
     },
     "R2.12 | Intégration": {
       "enseignant": "MARILL Damien",
@@ -498,7 +539,8 @@
           "td": 1.5,
           "tp": 7.5
         }
-      ]
+      ],
+      "responsable": ""
     },
     "R2.13 | Développement Web": {
       "enseignant": "DARTIES Benoit",
@@ -512,14 +554,16 @@
           "td": 0,
           "tp": 15
         }
-      ]
+      ],
+      "responsable": ""
     },
     "R2.14 | Système d'information": {
       "enseignant": "TALLEUX Johann",
       "cm": 0,
       "td": 4.5,
       "tp": 6,
-      "subrows": []
+      "subrows": [],
+      "responsable": ""
     },
     "R2.15 | Hébergement": {
       "enseignant": "MAURIN Nicolas",
@@ -533,28 +577,32 @@
           "td": 0,
           "tp": 4.5
         }
-      ]
+      ],
+      "responsable": ""
     },
     "R2.16 | Représentation et traitement de l'information": {
       "enseignant": "GRANIER Jean-Baptiste",
       "cm": 0,
       "td": 4.5,
       "tp": 10.5,
-      "subrows": []
+      "subrows": [],
+      "responsable": ""
     },
     "R2.17 | Gestion de projet": {
       "enseignant": "TOURNIE Laetitia",
       "cm": 0,
       "td": 4.5,
       "tp": 10.5,
-      "subrows": []
+      "subrows": [],
+      "responsable": ""
     },
     "R2.18 | Économie, gestion et droit du numérique": {
       "enseignant": "GIMENO Charline",
       "cm": 6,
       "td": 6,
       "tp": 0,
-      "subrows": []
+      "subrows": [],
+      "responsable": ""
     },
     "R2.19 | Projet Personnel et Professionnel": {
       "enseignant": "DE VELDER Sophie",
@@ -568,14 +616,16 @@
           "td": 7.5,
           "tp": 1.5
         }
-      ]
+      ],
+      "responsable": ""
     },
     "SAÉ 2.01 | Explorer les usages du numérique": {
       "enseignant": "DE VELDER Sophie",
       "cm": 1.5,
       "td": 21,
       "tp": 0,
-      "subrows": []
+      "subrows": [],
+      "responsable": ""
     },
     "SAÉ 2.02 | Concevoir un produit ou un service et sa communication": {
       "enseignant": "SURRIBAS Caroline",
@@ -589,7 +639,8 @@
           "td": 1.5,
           "tp": 0
         }
-      ]
+      ],
+      "responsable": ""
     },
     "SAÉ 2.03 | Concevoir un site web avec une source de données": {
       "enseignant": "MAURIN Nicolas",
@@ -603,7 +654,8 @@
           "td": 7.5,
           "tp": 0
         }
-      ]
+      ],
+      "responsable": ""
     },
     "SAÉ 2.04 | Construire sa présence en ligne": {
       "enseignant": "DE VELDER Sophie",
@@ -617,21 +669,24 @@
           "td": 3,
           "tp": 0
         }
-      ]
+      ],
+      "responsable": ""
     },
     "SAÉ 2.98 | Hackathon": {
       "enseignant": "",
       "cm": 0,
       "td": 0,
       "tp": 0,
-      "subrows": []
+      "subrows": [],
+      "responsable": ""
     },
     "SAÉ 2.99 | Marathon MMI": {
       "enseignant": "",
       "cm": 0,
       "td": 0,
       "tp": 0,
-      "subrows": []
+      "subrows": [],
+      "responsable": ""
     },
     "PORTFOLIO | Portfolio": {
       "enseignant": "BLANCO Sandy",
@@ -663,7 +718,8 @@
           "td": 1.5,
           "tp": 0
         }
-      ]
+      ],
+      "responsable": ""
     }
   },
   "S4 crea": {
@@ -672,7 +728,8 @@
       "cm": 0,
       "td": 9,
       "tp": 4.5,
-      "subrows": []
+      "subrows": [],
+      "responsable": ""
     },
     "R4.Crea.02 | Economie, gestion et Droit du numérique": {
       "enseignant": "MOCQUET Bertrand",
@@ -686,7 +743,8 @@
           "td": 3,
           "tp": 0
         }
-      ]
+      ],
+      "responsable": ""
     },
     "R4.Crea.03 | Design d'expérience": {
       "enseignant": "RAMPON Candice",
@@ -700,7 +758,8 @@
           "td": 4.5,
           "tp": 1.5
         }
-      ]
+      ],
+      "responsable": ""
     },
     "R4.Crea.04 | Expression, communication": {
       "enseignant": "THEROND Emmanuel",
@@ -720,21 +779,24 @@
           "td": 3,
           "tp": 0
         }
-      ]
+      ],
+      "responsable": ""
     },
     "R4.Crea.05 | Gestion de contenus spécialisée": {
       "enseignant": "THEROND Emmanuel",
       "cm": 0,
       "td": 9,
       "tp": 9,
-      "subrows": []
+      "subrows": [],
+      "responsable": ""
     },
     "R4.Crea.06 | Culture artistique": {
       "enseignant": "SURRIBAS Caroline",
       "cm": 0,
       "td": 4.5,
       "tp": 9,
-      "subrows": []
+      "subrows": [],
+      "responsable": ""
     },
     "R4.Crea.07 | Audiovisuel - Motion design": {
       "enseignant": "BLANCO Sandy",
@@ -748,14 +810,16 @@
           "td": 3,
           "tp": 4.5
         }
-      ]
+      ],
+      "responsable": ""
     },
     "R4.Crea.08 | Ecriture multimédia et narration": {
       "enseignant": "DE VELDER Sophie",
       "cm": 0,
       "td": 9,
       "tp": 0,
-      "subrows": []
+      "subrows": [],
+      "responsable": ""
     },
     "SAÉ 4.Crea.01 | Créer pour une campagne de communication visuelle": {
       "enseignant": "SURRIBAS Caroline",
@@ -769,7 +833,8 @@
           "td": 9,
           "tp": 1.5
         }
-      ]
+      ],
+      "responsable": ""
     },
     "SAÉ 4.Crea.02 | Produire du contenu multimédia": {
       "enseignant": "THEROND Emmanuel",
@@ -783,7 +848,8 @@
           "td": 3,
           "tp": 0
         }
-      ]
+      ],
+      "responsable": ""
     },
     "SAÉ 4.Crea.03 | SAE langues": {
       "enseignant": "BLANCO Sandy",
@@ -797,21 +863,24 @@
           "td": 0,
           "tp": 6
         }
-      ]
+      ],
+      "responsable": ""
     },
     "SAÉ 4.98 | Hackathon": {
       "enseignant": "",
       "cm": 0,
       "td": 0,
       "tp": 0,
-      "subrows": []
+      "subrows": [],
+      "responsable": ""
     },
     "SAÉ 4.99 | Marathon MMI": {
       "enseignant": "",
       "cm": 0,
       "td": 0,
       "tp": 0,
-      "subrows": []
+      "subrows": [],
+      "responsable": ""
     },
     "PORTFOLIO | Portfolio-Parcours Création Numérique": {
       "enseignant": "MAURIN Nicolas",
@@ -843,7 +912,8 @@
           "td": 1.5,
           "tp": 0
         }
-      ]
+      ],
+      "responsable": ""
     }
   },
   "S5 crea": {
@@ -852,28 +922,32 @@
       "cm": 0,
       "td": 9,
       "tp": 21,
-      "subrows": []
+      "subrows": [],
+      "responsable": ""
     },
     "R5.crea.02 | Management et Assurance Qualité": {
       "enseignant": "PIEDEVACHE Magalie",
       "cm": 0,
       "td": 10.5,
       "tp": 4.5,
-      "subrows": []
+      "subrows": [],
+      "responsable": ""
     },
     "R5 crea 03 | Entrepreunariat": {
       "enseignant": "ROMAIN Celine",
       "cm": 0,
       "td": 10.5,
       "tp": 4.5,
-      "subrows": []
+      "subrows": [],
+      "responsable": ""
     },
     "R5. crea 04 PPP": {
       "enseignant": "PIEDEVACHE Magalie",
       "cm": 0,
       "td": 9,
       "tp": 0,
-      "subrows": []
+      "subrows": [],
+      "responsable": ""
     },
     "R5.Crea.05 | Définir une direction artistique": {
       "enseignant": "THEROND Emmanuel",
@@ -887,7 +961,8 @@
           "td": 9,
           "tp": 9
         }
-      ]
+      ],
+      "responsable": ""
     },
     "R5 Crea.06 | Création numérique": {
       "enseignant": "BLANCO Sandy",
@@ -913,7 +988,8 @@
           "td": 12.5,
           "tp": 7.5
         }
-      ]
+      ],
+      "responsable": ""
     },
     "R5.Crea.07 | Ecriture Multimédia et narration": {
       "enseignant": "BLANCO Sandy",
@@ -933,7 +1009,8 @@
           "td": 12,
           "tp": 7.5
         }
-      ]
+      ],
+      "responsable": ""
     },
     "SAÉ 5.Crea.01 | Créer par/pour le numérique": {
       "enseignant": "BLANCO Sandy",
@@ -959,14 +1036,16 @@
           "td": 18,
           "tp": 0
         }
-      ]
+      ],
+      "responsable": ""
     },
     "SAÉ 5.Crea.02 | SAE Management": {
       "enseignant": "PIEDEVACHE Magalie",
       "cm": 0,
       "td": 9,
       "tp": 0,
-      "subrows": []
+      "subrows": [],
+      "responsable": ""
     },
     "SAÉ 5.Crea.03 | SAE Conception d'interface": {
       "enseignant": "LAGIEWKA Arnaud",
@@ -980,7 +1059,8 @@
           "td": 0,
           "tp": 12
         }
-      ]
+      ],
+      "responsable": ""
     },
     "PORTFOLIO | Portfolio-Parcours Création Numérique": {
       "enseignant": "BLANCO Sandy",
@@ -994,7 +1074,8 @@
           "td": 0,
           "tp": 3
         }
-      ]
+      ],
+      "responsable": ""
     }
   },
   "S6 dev": {
@@ -1003,7 +1084,8 @@
       "cm": 0,
       "td": 13.5,
       "tp": 0,
-      "subrows": []
+      "subrows": [],
+      "responsable": ""
     },
     "R6.DWeb-DI.02 | Développement Web et dispositif interactif": {
       "enseignant": "MARZOUK Reda",
@@ -1023,14 +1105,16 @@
           "td": 7.5,
           "tp": 9
         }
-      ]
+      ],
+      "responsable": ""
     },
     "R6.DWeb-DI.03 | Fonctionnement des IA": {
       "enseignant": "MAURIN Nicolas",
       "cm": 0,
       "td": 12,
       "tp": 0,
-      "subrows": []
+      "subrows": [],
+      "responsable": ""
     },
     "SAÉ 6.dev.01 | Developpement avancé": {
       "enseignant": "HADDAD Gatien",
@@ -1056,7 +1140,8 @@
           "td": 6,
           "tp": 0
         }
-      ]
+      ],
+      "responsable": ""
     },
     "PORTFOLIO | Portfolio-Parcours Dev": {
       "enseignant": "THEROND Emmanuel",
@@ -1070,7 +1155,8 @@
           "td": 1.5,
           "tp": 0
         }
-      ]
+      ],
+      "responsable": ""
     }
   },
   "S5 dev": {
@@ -1079,28 +1165,32 @@
       "cm": 0,
       "td": 6,
       "tp": 12,
-      "subrows": []
+      "subrows": [],
+      "responsable": ""
     },
     "R5.DWeb-DI.02 | Management et Assurance Qualité": {
       "enseignant": "PIEDEVACHE Magalie",
       "cm": 0,
       "td": 15,
       "tp": 0,
-      "subrows": []
+      "subrows": [],
+      "responsable": ""
     },
     "R5.DWeb-DI.03 | Entrepreunariat": {
       "enseignant": "ROMAIN Celine",
       "cm": 0,
       "td": 10.5,
       "tp": 0,
-      "subrows": []
+      "subrows": [],
+      "responsable": ""
     },
     "R5.DWeb-DI.04 | PPP": {
       "enseignant": "PIEDEVACHE Magalie",
       "cm": 0,
       "td": 9,
       "tp": 0,
-      "subrows": []
+      "subrows": [],
+      "responsable": ""
     },
     "R5.DWeb-DI.05 | Développement front avancé": {
       "enseignant": "MARILL Damien",
@@ -1114,7 +1204,8 @@
           "td": 0,
           "tp": 6
         }
-      ]
+      ],
+      "responsable": ""
     },
     "R5.DWeb-DI.06 | Développement back avancé": {
       "enseignant": "MARILL Damien",
@@ -1128,7 +1219,8 @@
           "td": 21,
           "tp": 15
         }
-      ]
+      ],
+      "responsable": ""
     },
     "R5.DWeb-DI.07 | Dispositifs interactifs": {
       "enseignant": "MARZOUK Reda",
@@ -1142,7 +1234,8 @@
           "td": 3,
           "tp": 12
         }
-      ]
+      ],
+      "responsable": ""
     },
     "R5.DWeb-DI.08 | Hébergement et cybersécurité": {
       "enseignant": "WILLEMS Eric",
@@ -1156,7 +1249,8 @@
           "td": 7.5,
           "tp": 0
         }
-      ]
+      ],
+      "responsable": ""
     },
     "R5.DWeb-DI.09 | Mathématiques avancées, complexité algorithmique": {
       "enseignant": "DARTIES Benoit",
@@ -1170,7 +1264,8 @@
           "td": 6,
           "tp": 0
         }
-      ]
+      ],
+      "responsable": ""
     },
     "SAÉ 5D.01 | Développer pour le web": {
       "enseignant": "MARILL Damien",
@@ -1190,21 +1285,24 @@
           "td": 13.5,
           "tp": 0
         }
-      ]
+      ],
+      "responsable": ""
     },
     "SAÉ 5D.02 | SAE Management": {
       "enseignant": "PIEDEVACHE Magalie",
       "cm": 0,
       "td": 6,
       "tp": 0,
-      "subrows": []
+      "subrows": [],
+      "responsable": ""
     },
     "SAÉ 5D.03 | Concevoir un dispositif interactif": {
       "enseignant": "MARZOUK Reda",
       "cm": 0,
       "td": 34.5,
       "tp": 0,
-      "subrows": []
+      "subrows": [],
+      "responsable": ""
     },
     "SAÉ 5D.04 | Integration d'un LLM": {
       "enseignant": "MARILL Damien",
@@ -1218,7 +1316,8 @@
           "td": 6,
           "tp": 0
         }
-      ]
+      ],
+      "responsable": ""
     },
     "PORTFOLIO Portfolio-Parcours Dev Web": {
       "enseignant": "MAURIN Nicolas",
@@ -1232,7 +1331,8 @@
           "td": 1.5,
           "tp": 0
         }
-      ]
+      ],
+      "responsable": ""
     }
   },
   "S4 dev": {
@@ -1241,14 +1341,16 @@
       "cm": 0,
       "td": 9,
       "tp": 4.5,
-      "subrows": []
+      "subrows": [],
+      "responsable": ""
     },
     "R4.DWeb-DI.02  Economie, gestion et Droit du numérique": {
       "enseignant": "MOCQUET Bertrand",
       "cm": 0,
       "td": 13.5,
       "tp": 0,
-      "subrows": []
+      "subrows": [],
+      "responsable": ""
     },
     "R4.DWeb-DI.03  Design d'expérience": {
       "enseignant": "RAMPON Candice",
@@ -1262,7 +1364,8 @@
           "td": 4.5,
           "tp": 1.5
         }
-      ]
+      ],
+      "responsable": ""
     },
     "R4.DWeb-DI.04  Expression, communication": {
       "enseignant": "BARTHELEMY Veronique",
@@ -1282,21 +1385,24 @@
           "td": 6,
           "tp": 0
         }
-      ]
+      ],
+      "responsable": ""
     },
     "R4.DWeb-DI.05 Création et design interactif": {
       "enseignant": "MAURIN Nicolas",
       "cm": 0,
       "td": 7.5,
       "tp": 7.5,
-      "subrows": []
+      "subrows": [],
+      "responsable": ""
     },
     "R4.DWeb-DI.06 Développement front": {
       "enseignant": "TALLEUX Johann",
       "cm": 0,
       "td": 4.5,
       "tp": 10.5,
-      "subrows": []
+      "subrows": [],
+      "responsable": ""
     },
     "R4.DWeb-DI.07 Développement back": {
       "enseignant": "MARZOUK Reda",
@@ -1310,21 +1416,24 @@
           "td": 0,
           "tp": 7.5
         }
-      ]
+      ],
+      "responsable": ""
     },
     "R4.DWeb-DI.08 Déploiement de services": {
       "enseignant": "WILLEMS Eric",
       "cm": 0,
       "td": 3,
       "tp": 9,
-      "subrows": []
+      "subrows": [],
+      "responsable": ""
     },
     "SAÉ 4.DWeb-DI.01 Développer pour le Web": {
       "enseignant": "DARTIES Benoit",
       "cm": 0,
       "td": 27,
       "tp": 0,
-      "subrows": []
+      "subrows": [],
+      "responsable": ""
     },
     "SAÉ 4.DWeb-DI.02 Concevoir un dispositif interactif": {
       "enseignant": "MAURIN Nicolas",
@@ -1338,21 +1447,24 @@
           "td": 0,
           "tp": 4.5
         }
-      ]
+      ],
+      "responsable": ""
     },
     "SAÉ 4.98 | Hackathon": {
       "enseignant": "",
       "cm": 0,
       "td": 0,
       "tp": 0,
-      "subrows": []
+      "subrows": [],
+      "responsable": ""
     },
     "SAÉ 4.99 | Marathon MMI": {
       "enseignant": "",
       "cm": 0,
       "td": 0,
       "tp": 0,
-      "subrows": []
+      "subrows": [],
+      "responsable": ""
     },
     "PORTFOLIO Portfolio-Parcours Développement Web et Dispositifs interactifs": {
       "enseignant": "THEROND Emmanuel",
@@ -1384,7 +1496,8 @@
           "td": 1.5,
           "tp": 0
         }
-      ]
+      ],
+      "responsable": ""
     }
   },
   "S3": {
@@ -1393,14 +1506,16 @@
       "cm": 0,
       "td": 4.5,
       "tp": 9,
-      "subrows": []
+      "subrows": [],
+      "responsable": ""
     },
     "R3.02 | Espagnol (LV2)": {
       "enseignant": "CALLET Caroline",
       "cm": 0,
       "td": 4.5,
       "tp": 4.5,
-      "subrows": []
+      "subrows": [],
+      "responsable": ""
     },
     "R3.03 | Design d'expérience": {
       "enseignant": "RAMPON Candice",
@@ -1414,14 +1529,16 @@
           "td": 4.5,
           "tp": 4.5
         }
-      ]
+      ],
+      "responsable": ""
     },
     "R3.04 | Culture numérique": {
       "enseignant": "DE VELDER Sophie",
       "cm": 0,
       "td": 12,
       "tp": 0,
-      "subrows": []
+      "subrows": [],
+      "responsable": ""
     },
     "R3.05 | Stratégies de communication et marketing": {
       "enseignant": "DE VELDER Sophie",
@@ -1435,21 +1552,24 @@
           "td": 2,
           "tp": 0
         }
-      ]
+      ],
+      "responsable": ""
     },
     "R3.06 | Référencement": {
       "enseignant": "EVANO Jérome",
       "cm": 4.5,
       "td": 1.5,
       "tp": 10.5,
-      "subrows": []
+      "subrows": [],
+      "responsable": ""
     },
     "R3.07 | Expression, communication et rhétorique": {
       "enseignant": "RAMPON Candice",
       "cm": 0,
       "td": 9,
       "tp": 6,
-      "subrows": []
+      "subrows": [],
+      "responsable": ""
     },
     "R3.08 | Écriture multimédia et narration": {
       "enseignant": "RAMPON Candice",
@@ -1463,7 +1583,8 @@
           "td": 0,
           "tp": 3
         }
-      ]
+      ],
+      "responsable": ""
     },
     "R3.09 | Création et design interactif (UI)": {
       "enseignant": "LAGIEWKA Arnaud",
@@ -1477,7 +1598,8 @@
           "td": 4.5,
           "tp": 7.5
         }
-      ]
+      ],
+      "responsable": ""
     },
     "R3.10 | Culture artistique": {
       "enseignant": "DE VELDER Sophie",
@@ -1491,7 +1613,8 @@
           "td": 0,
           "tp": 10.5
         }
-      ]
+      ],
+      "responsable": ""
     },
     "R3.11 | Audiovisuel et Motion design": {
       "enseignant": "BLANCO Sandy",
@@ -1505,7 +1628,8 @@
           "td": 6,
           "tp": 6
         }
-      ]
+      ],
+      "responsable": ""
     },
     "R3.12 | Développement Front et intégration": {
       "enseignant": "MAURIN Nicolas",
@@ -1519,7 +1643,8 @@
           "td": 6,
           "tp": 6
         }
-      ]
+      ],
+      "responsable": ""
     },
     "R3.13 | Gestion de contenus avancée / Dév Back": {
       "enseignant": "DARTIES Benoit",
@@ -1539,7 +1664,8 @@
           "td": 6,
           "tp": 10.5
         }
-      ]
+      ],
+      "responsable": ""
     },
     "R3.14 | Déploiement de services": {
       "enseignant": "MAURIN Nicolas",
@@ -1553,7 +1679,8 @@
           "td": 4.5,
           "tp": 3
         }
-      ]
+      ],
+      "responsable": ""
     },
     "R3.15 | Représentation et traitement de l'information": {
       "enseignant": "ESCAIG Sylvie",
@@ -1573,21 +1700,24 @@
           "td": 4.5,
           "tp": 6
         }
-      ]
+      ],
+      "responsable": ""
     },
     "R3.16 | Gestion de projet": {
       "enseignant": "TOURNIE Laetitia",
       "cm": 3,
       "td": 6,
       "tp": 6,
-      "subrows": []
+      "subrows": [],
+      "responsable": ""
     },
     "R3.17 | Economie, gestion et droit du numérique": {
       "enseignant": "GIMENO Charline",
       "cm": 7.5,
       "td": 7.5,
       "tp": 0,
-      "subrows": []
+      "subrows": [],
+      "responsable": ""
     },
     "R3.18 | Projet Personnel et Professionnel": {
       "enseignant": "DE VELDER Sophie",
@@ -1601,7 +1731,8 @@
           "td": 1.5,
           "tp": 1.5
         }
-      ]
+      ],
+      "responsable": ""
     },
     "SAÉ 3.01 | Intégrer des interfaces utilisateurs au sein d'un système d'information": {
       "enseignant": "DARTIES Benoit",
@@ -1615,7 +1746,8 @@
           "td": 0,
           "tp": 22.5
         }
-      ]
+      ],
+      "responsable": ""
     },
     "SAÉ 3.02 | Produire des contenus pour une communication plurimédia": {
       "enseignant": "SURRIBAS Caroline",
@@ -1629,7 +1761,8 @@
           "td": 7.5,
           "tp": 4.5
         }
-      ]
+      ],
+      "responsable": ""
     },
     "SAÉ 3.03 | Concevoir des visualisations de données pour le web et un support animé": {
       "enseignant": "SURRIBAS Caroline",
@@ -1643,7 +1776,8 @@
           "td": 7.5,
           "tp": 0
         }
-      ]
+      ],
+      "responsable": ""
     },
     "PORTFOLIO Portfolio-Parcours Dev": {
       "enseignant": "BLANCO Sandy",
@@ -1675,7 +1809,8 @@
           "td": 1.5,
           "tp": 0
         }
-      ]
+      ],
+      "responsable": ""
     }
   }
 }
