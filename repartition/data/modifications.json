@@ -457,5 +457,23 @@
     "description": "Modification JAECKLE Luc",
     "prev": "Titulaire, dû:0, max:—",
     "next": "Titulaire, dû:192, max:—"
+  },
+  {
+    "date": "30/05/2026",
+    "heure": "16:55:37",
+    "utilisateur": "chefdep",
+    "type": "Enseignants",
+    "description": "Modification DI PIERRO Davide",
+    "prev": "Titulaire, dû:128, max:—",
+    "next": "Titulaire, dû:1280, max:—"
+  },
+  {
+    "date": "30/05/2026",
+    "heure": "16:56:00",
+    "utilisateur": "chefdep",
+    "type": "Enseignants",
+    "description": "Modification DI PIERRO Davide",
+    "prev": "Titulaire, dû:1280, max:—",
+    "next": "Titulaire, dû:128, max:—"
   }
 ]
