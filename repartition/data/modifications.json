@@ -448,5 +448,14 @@
     "description": "Suppression",
     "prev": "QDFQDF qdf",
     "next": "—"
+  },
+  {
+    "date": "30/05/2026",
+    "heure": "16:50:35",
+    "utilisateur": "chefdep",
+    "type": "Enseignants",
+    "description": "Modification JAECKLE Luc",
+    "prev": "Titulaire, dû:0, max:—",
+    "next": "Titulaire, dû:192, max:—"
   }
 ]
