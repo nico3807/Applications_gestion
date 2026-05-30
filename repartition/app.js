@@ -727,7 +727,7 @@ function renderEnseignants(root) {
   const pctBg = pctVac < 25 ? "#fef2f2" : "#f0fdf4";
   const pctBorder = pctVac < 25 ? "#fecaca" : "#bbf7d0";
 
-  html += `<div style="display:flex; gap:1.5rem; align-items:flex-start; flex-wrap:wrap; margin-top:2rem">
+  html += `<div style="display:flex; justify-content:center; margin-top:2rem">
     <div class="form-card" style="max-width:280px; background:${pctBg}; border-color:${pctBorder}">
         <h3 style="margin-bottom:1.25rem; color:#1e3a5f">Pourcentage de vacataire</h3>
         <div style="font-size:3rem; font-weight:800; color:${pctColor}; text-align:center; line-height:1; margin-bottom:1.25rem">${pctVac.toFixed(1)}<span style="font-size:1.5rem">%</span></div>
