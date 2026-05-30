@@ -133,6 +133,8 @@ window.AUTH = {
   applyPermissions() {
     const navMods = document.getElementById("nav-modifications");
     if (navMods) navMods.style.display = this.isAdmin() ? "" : "none";
+    const navPilotage = document.getElementById("nav-pilotage");
+    if (navPilotage) navPilotage.style.display = this.isAdmin() ? "" : "none";
 
     if (this.canWrite()) {
       document.body.classList.remove("auth-readonly");

@@ -119,6 +119,10 @@ function renderView() {
     const nm = document.getElementById("nav-modifications");
     if (nm) nm.classList.add("active");
   }
+  else if (currentView === "pilotage") {
+    const np = document.getElementById("nav-pilotage");
+    if (np) np.classList.add("active");
+  }
 
   if (currentView === "home") renderHome(root);
   else if (currentView === "semestre") renderSemestre(root, currentParam);
@@ -128,6 +132,7 @@ function renderView() {
   else if (currentView === "services") renderServices(root);
   else if (currentView === "enseignants") renderEnseignants(root);
   else if (currentView === "modifications") renderModifications(root);
+  else if (currentView === "pilotage") renderPilotage(root);
 
   AUTH.applyPermissions();
   if (ARCHIVE_MODE) document.body.classList.add("auth-readonly");
@@ -985,6 +990,93 @@ window.saveMaquetteGH = async function () {
     alert("Erreur: " + e.message);
   }
 };
+
+/* ── Vue : Pilotage (chefdep uniquement) ─────────────────────────────────── */
+function renderPilotage(root) {
+  if (!AUTH.isAdmin()) {
+    root.innerHTML = `<div class="page-header"><h1>Accès refusé</h1></div>`;
+    return;
+  }
+
+  let totalCM = 0, totalTD = 0, totalTP = 0;
+
+  const isS123 = (sem) => ["S1", "S2", "S3"].includes(sem);
+
+  const rows = SEMESTRES.map((sem) => {
+    let rawCM = 0, rawTD = 0, rawTP = 0;
+    const sem_data = APP_DATA.affectations[sem] || {};
+    Object.keys(sem_data).forEach((res) => {
+      const data = sem_data[res];
+      const entries = [{ cm: data.cm, td: data.td, tp: data.tp }];
+      if (data.subrows) data.subrows.forEach((sub) => entries.push({ cm: sub.cm, td: sub.td, tp: sub.tp }));
+      entries.forEach((e) => {
+        rawCM += parseFloat(e.cm) || 0;
+        rawTD += parseFloat(e.td) || 0;
+        rawTP += parseFloat(e.tp) || 0;
+      });
+    });
+    const coefTD = isS123(sem) ? 2 : 1;
+    const coefTP = isS123(sem) ? 4 : 2;
+    const cm = rawCM;
+    const td = rawTD * coefTD;
+    const tp = rawTP * coefTP;
+    const total = 1.5 * cm + td + (2 / 3) * tp;
+    totalCM += cm;
+    totalTD += td;
+    totalTP += tp;
+    return { sem, cm, td, tp, total };
+  });
+
+  const grandTotal = 1.5 * totalCM + totalTD + (2 / 3) * totalTP;
+
+  const fmt = (n) => n % 1 === 0 ? n : n.toFixed(2).replace(/\.?0+$/, "");
+
+  let html = `
+    <div class="page-header">
+      <h1>Pilotage</h1>
+      <p class="subtitle">Volumes horaires agrégés par semestre (répartition effectuée)</p>
+    </div>
+    <div class="table-wrapper">
+      <table class="ressources-table pilotage-table">
+        <thead>
+          <tr>
+            <th class="pilotage-sem-col">Semestre</th>
+            <th class="pilotage-h-col">CM</th>
+            <th class="pilotage-h-col">TD</th>
+            <th class="pilotage-h-col">TP</th>
+            <th class="pilotage-total-col">Total<br><small>1,5 CM + TD + 2/3 TP</small></th>
+          </tr>
+        </thead>
+        <tbody>`;
+
+  rows.forEach(({ sem, cm, td, tp, total }, i) => {
+    const rowClass = i % 2 === 0 ? "group-even" : "group-odd";
+    html += `
+          <tr class="${rowClass}">
+            <td><span class="badge-semestre" data-sem="${sem}">${sem}</span></td>
+            <td class="pilotage-h-val">${fmt(cm)}</td>
+            <td class="pilotage-h-val">${fmt(td)}</td>
+            <td class="pilotage-h-val">${fmt(tp)}</td>
+            <td class="pilotage-total-val">${fmt(total)}</td>
+          </tr>`;
+  });
+
+  html += `
+        </tbody>
+        <tfoot>
+          <tr class="pilotage-total-row">
+            <td><strong>Total</strong></td>
+            <td class="pilotage-h-val"><strong>${fmt(totalCM)}</strong></td>
+            <td class="pilotage-h-val"><strong>${fmt(totalTD)}</strong></td>
+            <td class="pilotage-h-val"><strong>${fmt(totalTP)}</strong></td>
+            <td class="pilotage-total-val"><strong>${fmt(grandTotal)}</strong></td>
+          </tr>
+        </tfoot>
+      </table>
+    </div>`;
+
+  root.innerHTML = html;
+}
 
 /* ── Vue : Journal des modifications ────────────────────────────────────── */
 function renderModifications(root) {
