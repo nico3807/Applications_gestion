@@ -72,7 +72,7 @@
   "mmi2_init_jury5_sname4": "MORALES",
   "mmi2_init_jury5_sname5": "OLIVER",
   "mmi2_init_jury5_sname6": "PONTET--BRUN",
-  "mmi3_init_jury1_sname1": "ZANG ZONQIU",
+  "mmi3_init_jury1_sname1": "ZANG Yancheng",
   "mmi3_init_jury1_sname2": "BEAUJOU",
   "mmi3_init_jury1_sname3": "BEAUMONT",
   "mmi3_init_jury1_sname4": "BESSON",
@@ -135,5 +135,6 @@
   "mmi2_alt_jury2_sname6": "LUNA",
   "mmi2_alt_jury2_sname7": "MOTA",
   "mmi2_alt_jury2_sname8": "YELLET",
-  "mmi2_alt_jury1_sname8": "PERIGOT"
+  "mmi2_alt_jury1_sname8": "PERIGOT",
+  "mmi3_init_jury6_sname6": "ZHANG Zhongqiu"
 }
