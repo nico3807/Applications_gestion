@@ -177,6 +177,24 @@ function renderSemestre(root, sem) {
     </thead>
     <tbody>`;
 
+  // Calcul des totaux
+  let totPrevCM = 0, totPrevTD = 0, totPrevTP = 0;
+  let totCM = 0, totTD = 0, totTP = 0;
+  Object.keys(aff).forEach((res) => {
+    const data = aff[res];
+    const prev = maq[res] || {};
+    totPrevCM += parseFloat(prev.cm_final) || 0;
+    totPrevTD += parseFloat(prev.td_final) || 0;
+    totPrevTP += parseFloat(prev.tp_final) || 0;
+    const entries = [{ cm: data.cm, td: data.td, tp: data.tp }];
+    if (data.subrows) data.subrows.forEach((s) => entries.push({ cm: s.cm, td: s.td, tp: s.tp }));
+    entries.forEach((e) => {
+      totCM += parseFloat(e.cm) || 0;
+      totTD += parseFloat(e.td) || 0;
+      totTP += parseFloat(e.tp) || 0;
+    });
+  });
+
   Object.keys(aff).forEach((res, i) => {
     const data = aff[res];
     const prev = maq[res] || {};
@@ -258,6 +276,17 @@ function renderSemestre(root, sem) {
             </td>
         </tr>`;
   });
+
+  const fmtT = (n) => n % 1 === 0 ? n : n.toFixed(1).replace(/\.0$/, "");
+  html += `<tr class="row-total-pose">
+        <td><strong>Total posé</strong></td>
+        <td><span class="prev-badge">CM: ${fmtT(totPrevCM)} | TD: ${fmtT(totPrevTD)} | TP: ${fmtT(totPrevTP)}</span></td>
+        <td></td>
+        <td class="total-pose-val">${fmtT(totCM)}</td>
+        <td class="total-pose-val">${fmtT(totTD)}</td>
+        <td class="total-pose-val">${fmtT(totTP)}</td>
+        <td></td>
+    </tr>`;
 
   html += `</tbody></table></div>
     <div class="form-actions">
