@@ -277,6 +277,14 @@
     "is_cev": false
   },
   {
+    "id": "QDFQDF qdf",
+    "nom": "QDFQDF",
+    "prenom": "qdf",
+    "is_vac": false,
+    "service_du": null,
+    "service_max": null
+  },
+  {
     "id": "RAMPON Candice",
     "nom": "RAMPON",
     "prenom": "Candice",
