@@ -439,5 +439,14 @@
     "description": "Modification QDFQDF qdf",
     "prev": "Titulaire, dû:—, max:—",
     "next": "Vacataire (CEV), dû:22, max:—"
+  },
+  {
+    "date": "30/05/2026",
+    "heure": "16:49:09",
+    "utilisateur": "chefdep",
+    "type": "Enseignants",
+    "description": "Suppression",
+    "prev": "QDFQDF qdf",
+    "next": "—"
   }
 ]
