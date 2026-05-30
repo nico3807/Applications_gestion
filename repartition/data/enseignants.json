@@ -280,9 +280,10 @@
     "id": "QDFQDF qdf",
     "nom": "QDFQDF",
     "prenom": "qdf",
-    "is_vac": false,
-    "service_du": null,
-    "service_max": null
+    "is_vac": true,
+    "service_du": 22,
+    "service_max": null,
+    "is_cev": true
   },
   {
     "id": "RAMPON Candice",
