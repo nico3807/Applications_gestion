@@ -410,7 +410,7 @@
       "td": 4.5,
       "tp": 9,
       "subrows": [],
-      "responsable": ""
+      "responsable": "BERNARD William"
     },
     "R2.02 | Anglais renforcé": {
       "enseignant": "BARON Mathilde",
@@ -425,7 +425,7 @@
           "tp": 4.5
         }
       ],
-      "responsable": ""
+      "responsable": "BERNARD William"
     },
     "R2.03 | Ergonomie et Accessibilité": {
       "enseignant": "PELISSIER Chrysta",
@@ -433,7 +433,7 @@
       "td": 4.5,
       "tp": 10.5,
       "subrows": [],
-      "responsable": ""
+      "responsable": "PELISSIER Chrysta"
     },
     "R2.04 | Culture numérique": {
       "enseignant": "DE VELDER Sophie",
@@ -441,7 +441,7 @@
       "td": 15,
       "tp": 0,
       "subrows": [],
-      "responsable": ""
+      "responsable": "DE VELDER Sophie"
     },
     "R2.05 | Stratégies de communication et marketing": {
       "enseignant": "DE VELDER Sophie",
@@ -464,7 +464,7 @@
       "td": 6,
       "tp": 7.5,
       "subrows": [],
-      "responsable": ""
+      "responsable": "DE VELDER Sophie"
     },
     "R2.07 | Écriture multimédia et narration": {
       "enseignant": "MOCQUET Bertrand",
@@ -479,7 +479,7 @@
           "tp": 9
         }
       ],
-      "responsable": ""
+      "responsable": "BLANCO Sandy"
     },
     "R2.08 | Production graphique": {
       "enseignant": "SELIGHINI Valérie",
@@ -517,7 +517,7 @@
       "td": 0,
       "tp": 15,
       "subrows": [],
-      "responsable": ""
+      "responsable": "BLANCO Sandy"
     },
     "R2.11 | Gestion de contenus": {
       "enseignant": "THEROND Emmanuel",
@@ -525,7 +525,7 @@
       "td": 3,
       "tp": 6,
       "subrows": [],
-      "responsable": ""
+      "responsable": "THEROND Emmanuel"
     },
     "R2.12 | Intégration": {
       "enseignant": "MARILL Damien",
@@ -540,7 +540,7 @@
           "tp": 7.5
         }
       ],
-      "responsable": ""
+      "responsable": "THEROND Emmanuel"
     },
     "R2.13 | Développement Web": {
       "enseignant": "DARTIES Benoit",
@@ -555,7 +555,7 @@
           "tp": 15
         }
       ],
-      "responsable": ""
+      "responsable": "DARTIES Benoit"
     },
     "R2.14 | Système d'information": {
       "enseignant": "TALLEUX Johann",
@@ -578,7 +578,7 @@
           "tp": 4.5
         }
       ],
-      "responsable": ""
+      "responsable": "MAURIN Nicolas"
     },
     "R2.16 | Représentation et traitement de l'information": {
       "enseignant": "GRANIER Jean-Baptiste",
@@ -586,7 +586,7 @@
       "td": 4.5,
       "tp": 10.5,
       "subrows": [],
-      "responsable": ""
+      "responsable": "ESCAIG Sylvie"
     },
     "R2.17 | Gestion de projet": {
       "enseignant": "TOURNIE Laetitia",
@@ -617,7 +617,7 @@
           "tp": 1.5
         }
       ],
-      "responsable": ""
+      "responsable": "DE VELDER Sophie"
     },
     "SAÉ 2.01 | Explorer les usages du numérique": {
       "enseignant": "DE VELDER Sophie",
@@ -625,7 +625,7 @@
       "td": 21,
       "tp": 0,
       "subrows": [],
-      "responsable": ""
+      "responsable": "DE VELDER Sophie"
     },
     "SAÉ 2.02 | Concevoir un produit ou un service et sa communication": {
       "enseignant": "SURRIBAS Caroline",
@@ -640,7 +640,7 @@
           "tp": 0
         }
       ],
-      "responsable": ""
+      "responsable": "SURRIBAS Caroline"
     },
     "SAÉ 2.03 | Concevoir un site web avec une source de données": {
       "enseignant": "MAURIN Nicolas",
@@ -655,7 +655,7 @@
           "tp": 0
         }
       ],
-      "responsable": ""
+      "responsable": "DARTIES Benoit"
     },
     "SAÉ 2.04 | Construire sa présence en ligne": {
       "enseignant": "DE VELDER Sophie",
@@ -670,7 +670,7 @@
           "tp": 0
         }
       ],
-      "responsable": ""
+      "responsable": "DE VELDER Sophie"
     },
     "SAÉ 2.98 | Hackathon": {
       "enseignant": "",
