@@ -380,7 +380,7 @@ function renderMaquetteSemestre(root, sem) {
             ${SEMESTRES.map((s) => `<button class="sem-btn ${s === sem ? "active" : ""}" data-sem="${s}" onclick="navigate('maquette_semestre', '${s}')">${s}</button>`).join("")}
         </div>
     </div>
-    <div class="table-wrapper"><table class="ressources-table maquette-table">
+    <div class="table-wrapper table-wrapper--semestre"><table class="ressources-table maquette-table">
     <thead>
         <tr>
             <th rowspan="2" class="col-intitule">Ressource</th>
