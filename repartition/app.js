@@ -27,6 +27,7 @@ let APP_DATA = {
   enseignants: [],
   maquette_overrides: {},
   modifications: [],
+  volume_horaire_national: {},
 };
 
 let _pendingMods = [];
@@ -305,6 +306,7 @@ function renderMaquetteIndex(root) {
 function renderMaquetteSemestre(root, sem) {
   const aff = APP_DATA.affectations[sem] || {};
   const maq = APP_DATA.maquette_overrides[sem] || {};
+  const vhn = APP_DATA.volume_horaire_national[sem] || {};
 
   let html = `
     <div class="page-header">
@@ -318,23 +320,46 @@ function renderMaquetteSemestre(root, sem) {
         <tr>
             <th rowspan="2" class="col-intitule">Ressource</th>
             <th colspan="3" class="group-header editable-header">Volumes Maquette</th>
+            <th colspan="4" class="group-header pn-header">PN + Adaptation locale</th>
+            <th rowspan="2" class="pct-header">% réalisation<br>/ PN</th>
         </tr>
         <tr>
             <th class="editable-col">CM final</th>
             <th class="editable-col">TD final</th>
             <th class="editable-col">TP final</th>
+            <th class="pn-readonly-col">Vol horaire PN<br>(CM+TD+TP)</th>
+            <th class="pn-readonly-col">Dont TP</th>
+            <th class="pn-editable-col">Adapt locale</th>
+            <th class="pn-editable-col">Dont TP</th>
         </tr>
     </thead>
     <tbody>`;
 
   Object.keys(aff).forEach((res, i) => {
     const m = maq[res] || { cm_final: 0, td_final: 0, tp_final: 0 };
+    const v = vhn[res] || { vol_hn: 0, dont_tp_hn: 0, adapt_locale: 0, dont_tp_al: 0 };
     const rowClass = i % 2 === 0 ? "group-even" : "group-odd";
+    const resEsc = res.replace(/'/g, "\\'");
+    const totalMaq = (m.cm_final || 0) + (m.td_final || 0) + (m.tp_final || 0);
+    const volHn = v.vol_hn || 0;
+    let pctHtml;
+    if (volHn === 0) {
+      pctHtml = `<span class="pct-na">—</span>`;
+    } else {
+      const pct = (totalMaq / volHn) * 100;
+      const pctClass = pct < 95 ? "pct-low" : "pct-ok";
+      pctHtml = `<span class="${pctClass}">${pct.toFixed(0)} %</span>`;
+    }
     html += `<tr class="${rowClass} row-main-resource">
             <td>${res}</td>
-            <td><input type="number" class="input-editable" value="${m.cm_final}" onchange="updateMaq('${sem}','${res.replace(/'/g, "\\'")}','cm_final',this.value)"></td>
-            <td><input type="number" class="input-editable" value="${m.td_final}" onchange="updateMaq('${sem}','${res.replace(/'/g, "\\'")}','td_final',this.value)"></td>
-            <td><input type="number" class="input-editable" value="${m.tp_final}" onchange="updateMaq('${sem}','${res.replace(/'/g, "\\'")}','tp_final',this.value)"></td>
+            <td><input type="number" class="input-editable" value="${m.cm_final}" onchange="updateMaq('${sem}','${resEsc}','cm_final',this.value)"></td>
+            <td><input type="number" class="input-editable" value="${m.td_final}" onchange="updateMaq('${sem}','${resEsc}','td_final',this.value)"></td>
+            <td><input type="number" class="input-editable" value="${m.tp_final}" onchange="updateMaq('${sem}','${resEsc}','tp_final',this.value)"></td>
+            <td class="pn-readonly-val">${v.vol_hn}</td>
+            <td class="pn-readonly-val">${v.dont_tp_hn}</td>
+            <td><input type="number" class="input-pn-editable" value="${v.adapt_locale}" onchange="updateVolHN('${sem}','${resEsc}','adapt_locale',this.value)" step="0.5"></td>
+            <td><input type="number" class="input-pn-editable" value="${v.dont_tp_al}" onchange="updateVolHN('${sem}','${resEsc}','dont_tp_al',this.value)" step="0.5"></td>
+            <td class="pct-cell">${pctHtml}</td>
         </tr>`;
   });
 
@@ -354,6 +379,16 @@ window.updateMaq = function (sem, res, field, value) {
   const newVal = parseFloat(value) || 0;
   _logMod("Maquette", `${sem} / ${res} / ${field}`, prev, newVal);
   APP_DATA.maquette_overrides[sem][res][field] = newVal;
+};
+
+window.updateVolHN = function (sem, res, field, value) {
+  if (!APP_DATA.volume_horaire_national[sem]) APP_DATA.volume_horaire_national[sem] = {};
+  if (!APP_DATA.volume_horaire_national[sem][res])
+    APP_DATA.volume_horaire_national[sem][res] = { vol_hn: 0, dont_tp_hn: 0, adapt_locale: 0, dont_tp_al: 0 };
+  const prev = APP_DATA.volume_horaire_national[sem][res][field] ?? 0;
+  const newVal = parseFloat(value) || 0;
+  _logMod("Maquette PN", `${sem} / ${res} / ${field}`, prev, newVal);
+  APP_DATA.volume_horaire_national[sem][res][field] = newVal;
 };
 
 /* ── Vue : Services ──────────────────────────────────────────────────────── */
@@ -941,7 +976,10 @@ window.saveMaquetteGH = async function () {
   if (!isGHConfigured()) return alert("Veuillez configurer GitHub d'abord !");
   try {
     await _flushMods();
-    await saveFileGH("maquette_overrides.json", APP_DATA.maquette_overrides, "Update maquette_overrides.json via Web UI");
+    await Promise.all([
+      saveFileGH("maquette_overrides.json", APP_DATA.maquette_overrides, "Update maquette_overrides.json via Web UI"),
+      saveFileGH("volume_horaire_national.json", APP_DATA.volume_horaire_national, "Update volume_horaire_national.json via Web UI"),
+    ]);
     showToast("Maquette sauvegardée sur GitHub !");
   } catch (e) {
     alert("Erreur: " + e.message);
@@ -1014,7 +1052,7 @@ window.clearModificationsGH = async function () {
 window.switchToArchive = async function () {
   ARCHIVE_MODE = true;
   ARCHIVE_VERSION = "planifiee";
-  APP_DATA = { affectations: {}, enseignants: [], maquette_overrides: {}, modifications: [] };
+  APP_DATA = { affectations: {}, enseignants: [], maquette_overrides: {}, modifications: [], volume_horaire_national: {} };
   currentView = "home";
   await loadData();
 };
@@ -1022,7 +1060,7 @@ window.switchToArchive = async function () {
 window.switchToCurrent = async function () {
   ARCHIVE_MODE = false;
   ARCHIVE_VERSION = "planifiee";
-  APP_DATA = { affectations: {}, enseignants: [], maquette_overrides: {}, modifications: [] };
+  APP_DATA = { affectations: {}, enseignants: [], maquette_overrides: {}, modifications: [], volume_horaire_national: {} };
   currentView = "home";
   await loadData();
 };
@@ -1041,16 +1079,18 @@ async function loadData() {
 
   // 1. Charge d'abord les fichiers locaux (fallback garanti)
   try {
-    const [aff, ens, maq, mods] = await Promise.all([
+    const [aff, ens, maq, mods, vhn] = await Promise.all([
       fetch(`${localBase}/affectations${affSfx}.json`).then((r) => (r.ok ? r.json() : null)),
       fetch(`${localBase}/enseignants${sfx}.json`).then((r) => (r.ok ? r.json() : null)),
       fetch(`${localBase}/maquette_overrides${sfx}.json`).then((r) => (r.ok ? r.json() : null)),
       fetch(`${localBase}/modifications${sfx}.json`).then((r) => (r.ok ? r.json() : null)),
+      fetch(`${localBase}/volume_horaire_national.json`).then((r) => (r.ok ? r.json() : null)),
     ]);
     if (aff) APP_DATA.affectations = aff;
     if (ens) APP_DATA.enseignants = ens;
     if (maq) APP_DATA.maquette_overrides = maq;
     if (mods) APP_DATA.modifications = mods;
+    if (vhn) APP_DATA.volume_horaire_national = vhn;
   } catch (e) {
     console.warn("Local load failed (file:// ?)", e);
   }
@@ -1058,16 +1098,18 @@ async function loadData() {
   // 2. Si GitHub est configuré, tente de récupérer les données (priorité sur local)
   if (isGHConfigured()) {
     try {
-      const [aff, ens, maq, mods] = await Promise.all([
+      const [aff, ens, maq, mods, vhn] = await Promise.all([
         fetchGH(`affectations${affSfx}.json`, ghBase),
         fetchGH(`enseignants${sfx}.json`, ghBase),
         fetchGH(`maquette_overrides${sfx}.json`, ghBase),
         fetchGH(`modifications${sfx}.json`, ghBase),
+        fetchGH(`volume_horaire_national.json`, ghBase),
       ]);
       if (aff) APP_DATA.affectations = aff;
       if (ens) APP_DATA.enseignants = ens;
       if (maq) APP_DATA.maquette_overrides = maq;
       if (mods) APP_DATA.modifications = mods;
+      if (vhn) APP_DATA.volume_horaire_national = vhn;
     } catch (e) {
       console.warn("GH load failed, données locales conservées", e);
     }

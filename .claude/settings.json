@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(findstr /n \"maquette\\\\|table\\\\|ressources\" \"c:\\\\Users\\\\Nicolas\\\\kDrive\\\\1- IUT\\\\4- Gestion département\\\\Applications_gestion\\\\repartition\\\\static\\\\style.css\")"
+    ]
+  }
+}
