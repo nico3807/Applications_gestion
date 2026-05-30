@@ -338,14 +338,6 @@
     "is_cev": false
   },
   {
-    "id": "TEST test",
-    "nom": "TEST",
-    "prenom": "test",
-    "is_vac": false,
-    "service_du": 111,
-    "service_max": null
-  },
-  {
     "id": "THEROND Emmanuel",
     "nom": "THEROND",
     "prenom": "Emmanuel",
