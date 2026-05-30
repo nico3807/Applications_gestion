@@ -648,9 +648,12 @@ function renderEnseignants(root) {
 
   let html = `<div class="page-header" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;">
     <h1 style="margin: 0;">Gestion des enseignants</h1>
-    <button class="btn-toggle-all" onclick="toggleSortEnseignants()">
-        ⇅ Trier : ${enseignantsSortMode === "alpha" ? "Titulaires puis Vacataires" : "Alphabétique"}
-    </button>
+    <div style="display:flex; gap:8px; align-items:center;">
+      <button class="btn-save" style="margin:0" onclick="openAddEnsModal()">➕ Ajouter un enseignant</button>
+      <button class="btn-toggle-all" onclick="toggleSortEnseignants()">
+          ⇅ Trier : ${enseignantsSortMode === "alpha" ? "Titulaires puis Vacataires" : "Alphabétique"}
+      </button>
+    </div>
   </div>`;
   html += `<div class="table-wrapper"><table class="ressources-table">
     <thead><tr><th>Nom complet</th><th>Statut</th><th>Service Dû</th><th>Service Max</th><th>Total Réalisé</th><th>Différence</th><th class="col-h">CM</th><th class="col-h">TD</th><th class="col-h">TP</th><th>Eq TD</th><th style="width:80px; text-align:center;">Actions</th></tr></thead><tbody>`;
@@ -725,17 +728,6 @@ function renderEnseignants(root) {
   const pctBorder = pctVac < 25 ? "#fecaca" : "#bbf7d0";
 
   html += `<div style="display:flex; gap:1.5rem; align-items:flex-start; flex-wrap:wrap; margin-top:2rem">
-    <div class="form-card">
-        <h3 style="margin-bottom:1rem">Ajouter un enseignant</h3>
-        <div class="form-group"><label>Nom</label><input type="text" id="new_ens_nom" class="form-input"></div>
-        <div class="form-group"><label>Prénom</label><input type="text" id="new_ens_prenom" class="form-input"></div>
-        <div class="form-group form-group-check"><label><input type="checkbox" id="new_ens_vac" onchange="document.getElementById('new_cev_group').style.display = this.checked ? 'block' : 'none'; if (!this.checked) document.getElementById('new_ens_cev').checked = false;"> Est vacataire</label></div>
-        <div class="form-group form-group-check" id="new_cev_group" style="display:none; padding-left:1.5rem"><label><input type="checkbox" id="new_ens_cev"> Chargé d'enseignement vacataire (CEV)</label></div>
-        <div class="form-group"><label>Service dû (Titulaires)</label><input type="number" id="new_ens_du" class="form-input"></div>
-        <div class="form-group"><label>Service max (Vacataires)</label><input type="number" id="new_ens_max" class="form-input"></div>
-        <button class="btn-save" onclick="addEns()">Ajouter</button>
-        <button class="btn-save" style="margin-left:1rem; background:#16a34a" onclick="saveEnseignantsGH()">💾 Enregistrer sur GitHub</button>
-    </div>
     <div class="form-card" style="max-width:280px; background:${pctBg}; border-color:${pctBorder}">
         <h3 style="margin-bottom:1.25rem; color:#1e3a5f">Pourcentage de vacataire</h3>
         <div style="font-size:3rem; font-weight:800; color:${pctColor}; text-align:center; line-height:1; margin-bottom:1.25rem">${pctVac.toFixed(1)}<span style="font-size:1.5rem">%</span></div>
@@ -750,7 +742,41 @@ function renderEnseignants(root) {
   root.innerHTML = html;
 }
 
-window.addEns = function () {
+window.openAddEnsModal = function () {
+  let modal = document.getElementById("add-ens-modal");
+  if (!modal) {
+    modal = document.createElement("div");
+    modal.id = "add-ens-modal";
+    modal.className = "gh-modal-overlay";
+    document.body.appendChild(modal);
+    modal.addEventListener("click", (evt) => {
+      if (evt.target === modal) closeAddEnsModal();
+    });
+  }
+
+  modal.innerHTML = `
+    <div class="form-card" style="margin:10% auto; position:relative; max-width:400px">
+        <h3 style="margin-bottom:1rem; color:#1e3a5f">Ajouter un enseignant</h3>
+        <div class="form-group"><label>Nom</label><input type="text" id="new_ens_nom" class="form-input" placeholder="NOM"></div>
+        <div class="form-group"><label>Prénom</label><input type="text" id="new_ens_prenom" class="form-input" placeholder="Prénom"></div>
+        <div class="form-group form-group-check"><label><input type="checkbox" id="new_ens_vac" onchange="document.getElementById('new_cev_group').style.display = this.checked ? 'block' : 'none'; if (!this.checked) document.getElementById('new_ens_cev').checked = false;"> Est vacataire</label></div>
+        <div class="form-group form-group-check" id="new_cev_group" style="display:none; padding-left:1.5rem"><label><input type="checkbox" id="new_ens_cev"> Chargé d'enseignement vacataire (CEV)</label></div>
+        <div class="form-group"><label>Service dû (Titulaires)</label><input type="number" id="new_ens_du" class="form-input"></div>
+        <div class="form-group"><label>Service max (Vacataires)</label><input type="number" id="new_ens_max" class="form-input"></div>
+        <div style="display:flex; justify-content:flex-end; gap:0.5rem; margin-top:1.5rem;">
+            <button class="btn-cancel" onclick="closeAddEnsModal()">Annuler</button>
+            <button class="btn-save" onclick="addEns()">Ajouter</button>
+        </div>
+    </div>`;
+  modal.style.display = "block";
+};
+
+window.closeAddEnsModal = function () {
+  const modal = document.getElementById("add-ens-modal");
+  if (modal) modal.style.display = "none";
+};
+
+window.addEns = async function () {
   const nom = document.getElementById("new_ens_nom").value.trim().toUpperCase();
   const prenom = document.getElementById("new_ens_prenom").value.trim();
   const is_vac = document.getElementById("new_ens_vac").checked;
@@ -765,7 +791,9 @@ window.addEns = function () {
 
   APP_DATA.enseignants.push({ id, nom, prenom, is_vac, ...(is_vac ? { is_cev } : {}), service_du: du, service_max: max });
   _logMod("Enseignants", "Ajout", "—", id);
+  closeAddEnsModal();
   renderView();
+  if (isGHConfigured()) await saveEnseignantsGH();
 };
 
 window.deleteEns = async function (i) {
