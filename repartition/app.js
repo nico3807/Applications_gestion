@@ -176,7 +176,7 @@ function renderSemestre(root, sem) {
             ${SEMESTRES.map((s) => `<button class="sem-btn ${s === sem ? "active" : ""}" data-sem="${s}" onclick="navigate('semestre', '${s}')">${s}</button>`).join("")}
         </div>
     </div>
-    <div class="table-wrapper"><table class="ressources-table">
+    <div class="table-wrapper table-wrapper--semestre"><table class="ressources-table">
     <thead>
         <tr>
             <th class="col-intitule">Ressource</th>

@@ -207,6 +207,11 @@ footer {
   border: 1px solid #e0e0d8;
 }
 
+.table-wrapper--semestre {
+  overflow-y: auto;
+  max-height: calc(100vh - 200px);
+}
+
 .ressources-table {
   width: 100%;
   border-collapse: collapse;
@@ -221,6 +226,11 @@ footer {
   font-weight: 500;
   font-size: 13px;
   white-space: nowrap;
+}
+.table-wrapper--semestre .ressources-table th {
+  position: sticky;
+  top: 0;
+  z-index: 2;
 }
 .ressources-table th.col-h {
   text-align: center;
