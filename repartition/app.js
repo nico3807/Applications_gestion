@@ -253,7 +253,7 @@ function renderSemestre(root, sem) {
             <td colspan="7" class="responsable-label">Responsable :
                 <select class="select-enseignant ${respSelClass}" onchange="updateAff('${sem}', '${res.replace(/'/g, "\\'")}', 'responsable', this.value)">
                     <option value="">-</option>
-                    ${enseignants.map((e) => `<option value="${e.id}" class="ens-option" data-vac="${e.is_vac ? "true" : "false"}" ${e.id === data.responsable ? "selected" : ""}>${e.id}</option>`).join("")}
+                    ${enseignants.filter((e) => !e.is_vac).map((e) => `<option value="${e.id}" class="ens-option" ${e.id === data.responsable ? "selected" : ""}>${e.id}</option>`).join("")}
                 </select>
             </td>
         </tr>`;
