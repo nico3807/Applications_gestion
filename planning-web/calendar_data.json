@@ -165,8 +165,8 @@
       "weekday": "Mo",
       "events": {
         "MMI2-App": "Entreprise S01",
-        "MMI2-crea": "SAE",
-        "MMI2-Dev": "SAE"
+        "MMI2-crea": "SAÉ 3xx",
+        "MMI2-Dev": "SAÉ 3xx"
       },
       "week": 40
     },
@@ -175,8 +175,8 @@
       "weekday": "Tu",
       "events": {
         "MMI2-App": "Entreprise S01",
-        "MMI2-crea": "SAE",
-        "MMI2-Dev": "SAE"
+        "MMI2-crea": "SAÉ 3xx",
+        "MMI2-Dev": "SAÉ 3xx"
       }
     },
     {
@@ -184,8 +184,8 @@
       "weekday": "We",
       "events": {
         "MMI2-App": "Entreprise S01",
-        "MMI2-crea": "SAE",
-        "MMI2-Dev": "SAE"
+        "MMI2-crea": "SAÉ 3xx",
+        "MMI2-Dev": "SAÉ 3xx"
       }
     }
   ],
@@ -195,8 +195,8 @@
       "weekday": "Th",
       "events": {
         "MMI2-App": "Entreprise S01",
-        "MMI2-crea": "SAE",
-        "MMI2-Dev": "SAE"
+        "MMI2-crea": "SAÉ 3xx",
+        "MMI2-Dev": "SAÉ 3xx"
       }
     },
     {
@@ -204,8 +204,8 @@
       "weekday": "Fr",
       "events": {
         "MMI2-App": "Entreprise S01",
-        "MMI2-crea": "SAE",
-        "MMI2-Dev": "SAE"
+        "MMI2-crea": "SAÉ 3xx",
+        "MMI2-Dev": "SAÉ 3xx"
       }
     },
     {
@@ -269,8 +269,8 @@
       "weekday": "Mo",
       "events": {
         "MMI2-App": "Entreprise S02",
-        "MMI2-crea": "SAE",
-        "MMI2-Dev": "SAE"
+        "MMI2-crea": "SAÉ 3xx",
+        "MMI2-Dev": "SAÉ 3xx"
       },
       "week": 42
     },
@@ -279,8 +279,8 @@
       "weekday": "Tu",
       "events": {
         "MMI2-App": "Entreprise S02",
-        "MMI2-crea": "SAE",
-        "MMI2-Dev": "SAE"
+        "MMI2-crea": "SAÉ 3xx",
+        "MMI2-Dev": "SAÉ 3xx"
       }
     },
     {
@@ -288,8 +288,8 @@
       "weekday": "We",
       "events": {
         "MMI2-App": "Entreprise S02",
-        "MMI2-crea": "SAE",
-        "MMI2-Dev": "SAE"
+        "MMI2-crea": "SAÉ 3xx",
+        "MMI2-Dev": "SAÉ 3xx"
       }
     },
     {
@@ -297,8 +297,8 @@
       "weekday": "Th",
       "events": {
         "MMI2-App": "Entreprise S02",
-        "MMI2-crea": "SAE",
-        "MMI2-Dev": "SAE"
+        "MMI2-crea": "SAÉ 3xx",
+        "MMI2-Dev": "SAÉ 3xx"
       }
     },
     {
@@ -306,8 +306,8 @@
       "weekday": "Fr",
       "events": {
         "MMI2-App": "Entreprise S02",
-        "MMI2-crea": "SAE",
-        "MMI2-Dev": "SAE"
+        "MMI2-crea": "SAÉ 3xx",
+        "MMI2-Dev": "SAÉ 3xx"
       }
     },
     {
