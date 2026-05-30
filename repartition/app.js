@@ -37,7 +37,11 @@ function _logMod(type, description, prev, next) {
   const now = new Date();
   _pendingMods.push({
     date: now.toLocaleDateString("fr-FR"),
-    heure: now.toLocaleTimeString("fr-FR", { hour: "2-digit", minute: "2-digit", second: "2-digit" }),
+    heure: now.toLocaleTimeString("fr-FR", {
+      hour: "2-digit",
+      minute: "2-digit",
+      second: "2-digit",
+    }),
     utilisateur: AUTH.user() || "?",
     type,
     description,
@@ -52,7 +56,11 @@ async function _flushMods() {
   _pendingMods = [];
   if (isGHConfigured()) {
     try {
-      await saveFileGH("modifications.json", APP_DATA.modifications, "Update modifications.json via Web UI");
+      await saveFileGH(
+        "modifications.json",
+        APP_DATA.modifications,
+        "Update modifications.json via Web UI",
+      );
     } catch (e) {
       console.warn("Could not save modifications.json:", e);
     }
@@ -87,10 +95,16 @@ function renderView() {
     if (!banner) {
       banner = document.createElement("div");
       banner.id = "archive-banner";
-      document.querySelector("header").insertAdjacentElement("afterend", banner);
+      document
+        .querySelector("header")
+        .insertAdjacentElement("afterend", banner);
     }
-    const versionLabel = ARCHIVE_VERSION === "realisee" ? "Version réalisée" : "Version planifiée";
-    const btnLabel = ARCHIVE_VERSION === "realisee" ? "Voir la version planifiée" : "Voir la version réalisée";
+    const versionLabel =
+      ARCHIVE_VERSION === "realisee" ? "Version réalisée" : "Version planifiée";
+    const btnLabel =
+      ARCHIVE_VERSION === "realisee"
+        ? "Voir la version planifiée"
+        : "Voir la version réalisée";
     banner.innerHTML = `
       <span>🗂 Mode archive 2025-2026 — consultation uniquement, aucune modification possible
         &nbsp;|&nbsp; <strong>${versionLabel}</strong>
@@ -118,8 +132,7 @@ function renderView() {
   else if (currentView === "modifications") {
     const nm = document.getElementById("nav-modifications");
     if (nm) nm.classList.add("active");
-  }
-  else if (currentView === "pilotage") {
+  } else if (currentView === "pilotage") {
     const np = document.getElementById("nav-pilotage");
     if (np) np.classList.add("active");
   }
@@ -178,8 +191,12 @@ function renderSemestre(root, sem) {
     <tbody>`;
 
   // Calcul des totaux
-  let totPrevCM = 0, totPrevTD = 0, totPrevTP = 0;
-  let totCM = 0, totTD = 0, totTP = 0;
+  let totPrevCM = 0,
+    totPrevTD = 0,
+    totPrevTP = 0;
+  let totCM = 0,
+    totTD = 0,
+    totTP = 0;
   Object.keys(aff).forEach((res) => {
     const data = aff[res];
     const prev = maq[res] || {};
@@ -187,7 +204,10 @@ function renderSemestre(root, sem) {
     totPrevTD += parseFloat(prev.td_final) || 0;
     totPrevTP += parseFloat(prev.tp_final) || 0;
     const entries = [{ cm: data.cm, td: data.td, tp: data.tp }];
-    if (data.subrows) data.subrows.forEach((s) => entries.push({ cm: s.cm, td: s.td, tp: s.tp }));
+    if (data.subrows)
+      data.subrows.forEach((s) =>
+        entries.push({ cm: s.cm, td: s.td, tp: s.tp }),
+      );
     entries.forEach((e) => {
       totCM += parseFloat(e.cm) || 0;
       totTD += parseFloat(e.td) || 0;
@@ -271,13 +291,19 @@ function renderSemestre(root, sem) {
             <td colspan="7" class="responsable-label">Responsable :
                 <select class="select-enseignant ${respSelClass}" onchange="updateAff('${sem}', '${res.replace(/'/g, "\\'")}', 'responsable', this.value)">
                     <option value="">-</option>
-                    ${enseignants.filter((e) => !e.is_vac).map((e) => `<option value="${e.id}" class="ens-option" ${e.id === data.responsable ? "selected" : ""}>${e.id}</option>`).join("")}
+                    ${enseignants
+                      .filter((e) => !e.is_vac)
+                      .map(
+                        (e) =>
+                          `<option value="${e.id}" class="ens-option" ${e.id === data.responsable ? "selected" : ""}>${e.id}</option>`,
+                      )
+                      .join("")}
                 </select>
             </td>
         </tr>`;
   });
 
-  const fmtT = (n) => n % 1 === 0 ? n : n.toFixed(1).replace(/\.0$/, "");
+  const fmtT = (n) => (n % 1 === 0 ? n : n.toFixed(1).replace(/\.0$/, ""));
   html += `<tr class="row-total-pose">
         <td><strong>Total posé</strong></td>
         <td><span class="prev-badge">CM: ${fmtT(totPrevCM)} | TD: ${fmtT(totPrevTD)} | TP: ${fmtT(totPrevTP)}</span></td>
@@ -306,7 +332,12 @@ window.updateAff = function (sem, res, field, value) {
 window.updateSub = function (sem, res, idx, field, value) {
   const prev = APP_DATA.affectations[sem]?.[res]?.subrows?.[idx]?.[field] ?? "";
   if (["cm", "td", "tp"].includes(field)) value = parseFloat(value) || 0;
-  _logMod("Répartition", `${sem} / ${res} / sous-groupe ${idx + 1} / ${field}`, prev, value);
+  _logMod(
+    "Répartition",
+    `${sem} / ${res} / sous-groupe ${idx + 1} / ${field}`,
+    prev,
+    value,
+  );
   APP_DATA.affectations[sem][res].subrows[idx][field] = value;
   if (field === "enseignant") renderView();
 };
@@ -371,7 +402,12 @@ function renderMaquetteSemestre(root, sem) {
 
   Object.keys(aff).forEach((res, i) => {
     const m = maq[res] || { cm_final: 0, td_final: 0, tp_final: 0 };
-    const v = vhn[res] || { vol_hn: 0, dont_tp_hn: 0, adapt_locale: 0, dont_tp_al: 0 };
+    const v = vhn[res] || {
+      vol_hn: 0,
+      dont_tp_hn: 0,
+      adapt_locale: 0,
+      dont_tp_al: 0,
+    };
     const rowClass = i % 2 === 0 ? "group-even" : "group-odd";
     const resEsc = res.replace(/'/g, "\\'");
     const totalMaq = (m.cm_final || 0) + (m.td_final || 0) + (m.tp_final || 0);
@@ -408,7 +444,11 @@ function renderMaquetteSemestre(root, sem) {
 window.updateMaq = function (sem, res, field, value) {
   if (!APP_DATA.maquette_overrides[sem]) APP_DATA.maquette_overrides[sem] = {};
   if (!APP_DATA.maquette_overrides[sem][res])
-    APP_DATA.maquette_overrides[sem][res] = { cm_final: 0, td_final: 0, tp_final: 0 };
+    APP_DATA.maquette_overrides[sem][res] = {
+      cm_final: 0,
+      td_final: 0,
+      tp_final: 0,
+    };
   const prev = APP_DATA.maquette_overrides[sem][res][field] ?? 0;
   const newVal = parseFloat(value) || 0;
   _logMod("Maquette", `${sem} / ${res} / ${field}`, prev, newVal);
@@ -416,9 +456,15 @@ window.updateMaq = function (sem, res, field, value) {
 };
 
 window.updateVolHN = function (sem, res, field, value) {
-  if (!APP_DATA.volume_horaire_national[sem]) APP_DATA.volume_horaire_national[sem] = {};
+  if (!APP_DATA.volume_horaire_national[sem])
+    APP_DATA.volume_horaire_national[sem] = {};
   if (!APP_DATA.volume_horaire_national[sem][res])
-    APP_DATA.volume_horaire_national[sem][res] = { vol_hn: 0, dont_tp_hn: 0, adapt_locale: 0, dont_tp_al: 0 };
+    APP_DATA.volume_horaire_national[sem][res] = {
+      vol_hn: 0,
+      dont_tp_hn: 0,
+      adapt_locale: 0,
+      dont_tp_al: 0,
+    };
   const prev = APP_DATA.volume_horaire_national[sem][res][field] ?? 0;
   const newVal = parseFloat(value) || 0;
   _logMod("Maquette PN", `${sem} / ${res} / ${field}`, prev, newVal);
@@ -592,7 +638,7 @@ function renderEnseignants(root) {
   // Calcul des heures réalisées par enseignant
   const totals = {};
   const rawHours = {}; // cm/td/tp bruts pour Eq TD
-  const wHours = {};   // cm/td/tp pondérés par semestre pour colonnes CM/TD/TP
+  const wHours = {}; // cm/td/tp pondérés par semestre pour colonnes CM/TD/TP
   SEMESTRES.forEach((sem) => {
     const sem_data = APP_DATA.affectations[sem] || {};
     Object.keys(sem_data).forEach((res) => {
@@ -665,20 +711,22 @@ function renderEnseignants(root) {
     if (!e.is_vac && e.service_du != null) {
       const diff = totalRealise - e.service_du;
       const sign = diff > 0 ? "+" : "";
-      const style = diff === 0
-        ? "color:#16a34a;font-weight:700;"
-        : diff < 0
-          ? "color:#dc2626;font-weight:700;"
-          : "font-weight:600;";
+      const style =
+        diff === 0
+          ? "color:#16a34a;font-weight:700;"
+          : diff < 0
+            ? "color:#dc2626;font-weight:700;"
+            : "font-weight:600;";
       diffHtml = `<span style="${style}">${sign}${diff}</span>`;
     } else if (e.is_vac && e.service_max != null) {
       const diff = totalRealise - e.service_max;
       const sign = diff > 0 ? "+" : "";
-      const style = diff === 0
-        ? "color:#16a34a;font-weight:700;"
-        : diff > 0
-          ? "color:#dc2626;font-weight:700;"
-          : "font-weight:600;";
+      const style =
+        diff === 0
+          ? "color:#16a34a;font-weight:700;"
+          : diff > 0
+            ? "color:#dc2626;font-weight:700;"
+            : "font-weight:600;";
       diffHtml = `<span style="${style}">${sign}${diff}</span>`;
     }
 
@@ -695,9 +743,9 @@ function renderEnseignants(root) {
             <td>${e.service_max != null ? e.service_max : "-"}</td>
             <td><strong>${totalRealise}</strong></td>
             <td style="text-align:center;">${diffHtml}</td>
-            <td style="text-align:center;">${!e.is_vac ? (w.cm || "-") : "<span style='color:#9ca3af'>-</span>"}</td>
-            <td style="text-align:center;">${!e.is_vac ? (w.td || "-") : "<span style='color:#9ca3af'>-</span>"}</td>
-            <td style="text-align:center;">${!e.is_vac ? (w.tp || "-") : "<span style='color:#9ca3af'>-</span>"}</td>
+            <td style="text-align:center;">${!e.is_vac ? w.cm || "-" : "<span style='color:#9ca3af'>-</span>"}</td>
+            <td style="text-align:center;">${!e.is_vac ? w.td || "-" : "<span style='color:#9ca3af'>-</span>"}</td>
+            <td style="text-align:center;">${!e.is_vac ? w.tp || "-" : "<span style='color:#9ca3af'>-</span>"}</td>
             <td style="text-align:center;">${eqTdHtml}</td>
             <td>
                 <div style="display:flex; gap:6px; justify-content:center;">
@@ -713,7 +761,9 @@ function renderEnseignants(root) {
   // Calcul du pourcentage de vacataire
   const ensMapStat = {};
   APP_DATA.enseignants.forEach((e) => (ensMapStat[e.id] = e));
-  let heuresPermanents = 0, heuresCEV = 0, heuresVacSimples = 0;
+  let heuresPermanents = 0,
+    heuresCEV = 0,
+    heuresVacSimples = 0;
   Object.keys(totals).forEach((id) => {
     const e = ensMapStat[id];
     if (!e) return;
@@ -722,14 +772,14 @@ function renderEnseignants(root) {
     else heuresVacSimples += totals[id];
   });
   const grandTotal = heuresPermanents + heuresCEV + heuresVacSimples;
-  const pctVac = grandTotal > 0 ? (heuresVacSimples / grandTotal * 100) : 0;
+  const pctVac = grandTotal > 0 ? (heuresVacSimples / grandTotal) * 100 : 0;
   const pctColor = pctVac < 25 ? "#dc2626" : "#16a34a";
   const pctBg = pctVac < 25 ? "#fef2f2" : "#f0fdf4";
   const pctBorder = pctVac < 25 ? "#fecaca" : "#bbf7d0";
 
   html += `<div style="display:flex; justify-content:center; margin-top:2rem">
     <div class="form-card" style="max-width:280px; background:${pctBg}; border-color:${pctBorder}">
-        <h3 style="margin-bottom:1.25rem; color:#1e3a5f">Pourcentage de vacataire</h3>
+        <h3 style="margin-bottom:1.25rem; color:#1e3a5f">Pourcentage de vacataires</h3>
         <div style="font-size:3rem; font-weight:800; color:${pctColor}; text-align:center; line-height:1; margin-bottom:1.25rem">${pctVac.toFixed(1)}<span style="font-size:1.5rem">%</span></div>
         <div style="font-size:13px; color:#374151; display:flex; flex-direction:column; gap:6px; border-top:1px solid ${pctBorder}; padding-top:1rem">
             <div style="display:flex; justify-content:space-between; gap:1rem"><span>Titulaires + CEV</span><strong>${(heuresPermanents + heuresCEV).toFixed(1)} h</strong></div>
@@ -789,7 +839,15 @@ window.addEns = async function () {
   if (APP_DATA.enseignants.find((e) => e.id === id))
     return alert("Cet enseignant existe déjà.");
 
-  APP_DATA.enseignants.push({ id, nom, prenom, is_vac, ...(is_vac ? { is_cev } : {}), service_du: du, service_max: max });
+  APP_DATA.enseignants.push({
+    id,
+    nom,
+    prenom,
+    is_vac,
+    ...(is_vac ? { is_cev } : {}),
+    service_du: du,
+    service_max: max,
+  });
   _logMod("Enseignants", "Ajout", "—", id);
   closeAddEnsModal();
   renderView();
@@ -992,20 +1050,25 @@ async function saveFileGH(filename, dataObj, msg) {
     try {
       const errJson = await r.json();
       if (r.status === 401)
-        errMsg = "Token GitHub invalide ou expiré — reconfigurez-le via le bouton en bas de page.";
-      else
-        errMsg = errJson.message || errMsg;
+        errMsg =
+          "Token GitHub invalide ou expiré — reconfigurez-le via le bouton en bas de page.";
+      else errMsg = errJson.message || errMsg;
     } catch {}
     throw new Error(errMsg);
   }
 }
 
 window.saveAffectationsGH = async function () {
-  if (ARCHIVE_MODE) return showToast("Archives 2025-2026 — consultation uniquement");
+  if (ARCHIVE_MODE)
+    return showToast("Archives 2025-2026 — consultation uniquement");
   if (!isGHConfigured()) return alert("Veuillez configurer GitHub d'abord !");
   try {
     await _flushMods();
-    await saveFileGH("affectations.json", APP_DATA.affectations, "Update affectations.json via Web UI");
+    await saveFileGH(
+      "affectations.json",
+      APP_DATA.affectations,
+      "Update affectations.json via Web UI",
+    );
     showToast("Affectations sauvegardées sur GitHub !");
   } catch (e) {
     alert("Erreur: " + e.message);
@@ -1013,12 +1076,17 @@ window.saveAffectationsGH = async function () {
 };
 
 window.saveEnseignantsGH = async function () {
-  if (ARCHIVE_MODE) return showToast("Archives 2025-2026 — consultation uniquement");
+  if (ARCHIVE_MODE)
+    return showToast("Archives 2025-2026 — consultation uniquement");
   if (!isGHConfigured()) return alert("Veuillez configurer GitHub d'abord !");
 
   try {
     await _flushMods();
-    await saveFileGH("enseignants.json", APP_DATA.enseignants, "Update enseignants.json via Web UI");
+    await saveFileGH(
+      "enseignants.json",
+      APP_DATA.enseignants,
+      "Update enseignants.json via Web UI",
+    );
     showToast("Enseignants sauvegardés sur GitHub !");
   } catch (e) {
     alert("Erreur: " + e.message);
@@ -1026,13 +1094,22 @@ window.saveEnseignantsGH = async function () {
 };
 
 window.saveMaquetteGH = async function () {
-  if (ARCHIVE_MODE) return showToast("Archives 2025-2026 — consultation uniquement");
+  if (ARCHIVE_MODE)
+    return showToast("Archives 2025-2026 — consultation uniquement");
   if (!isGHConfigured()) return alert("Veuillez configurer GitHub d'abord !");
   try {
     await _flushMods();
     await Promise.all([
-      saveFileGH("maquette_overrides.json", APP_DATA.maquette_overrides, "Update maquette_overrides.json via Web UI"),
-      saveFileGH("volume_horaire_national.json", APP_DATA.volume_horaire_national, "Update volume_horaire_national.json via Web UI"),
+      saveFileGH(
+        "maquette_overrides.json",
+        APP_DATA.maquette_overrides,
+        "Update maquette_overrides.json via Web UI",
+      ),
+      saveFileGH(
+        "volume_horaire_national.json",
+        APP_DATA.volume_horaire_national,
+        "Update volume_horaire_national.json via Web UI",
+      ),
     ]);
     showToast("Maquette sauvegardée sur GitHub !");
   } catch (e) {
@@ -1047,17 +1124,24 @@ function renderPilotage(root) {
     return;
   }
 
-  let totalCM = 0, totalTD = 0, totalTP = 0;
+  let totalCM = 0,
+    totalTD = 0,
+    totalTP = 0;
 
   const isS123 = (sem) => ["S1", "S2", "S3"].includes(sem);
 
   const rows = SEMESTRES.map((sem) => {
-    let rawCM = 0, rawTD = 0, rawTP = 0;
+    let rawCM = 0,
+      rawTD = 0,
+      rawTP = 0;
     const sem_data = APP_DATA.affectations[sem] || {};
     Object.keys(sem_data).forEach((res) => {
       const data = sem_data[res];
       const entries = [{ cm: data.cm, td: data.td, tp: data.tp }];
-      if (data.subrows) data.subrows.forEach((sub) => entries.push({ cm: sub.cm, td: sub.td, tp: sub.tp }));
+      if (data.subrows)
+        data.subrows.forEach((sub) =>
+          entries.push({ cm: sub.cm, td: sub.td, tp: sub.tp }),
+        );
       entries.forEach((e) => {
         rawCM += parseFloat(e.cm) || 0;
         rawTD += parseFloat(e.td) || 0;
@@ -1078,7 +1162,7 @@ function renderPilotage(root) {
 
   const grandTotal = 1.5 * totalCM + totalTD + (2 / 3) * totalTP;
 
-  const fmt = (n) => n % 1 === 0 ? n : n.toFixed(2).replace(/\.?0+$/, "");
+  const fmt = (n) => (n % 1 === 0 ? n : n.toFixed(2).replace(/\.?0+$/, ""));
 
   let html = `
     <div class="page-header">
@@ -1180,7 +1264,11 @@ window.clearModificationsGH = async function () {
   APP_DATA.modifications = [];
   if (isGHConfigured()) {
     try {
-      await saveFileGH("modifications.json", [], "Vider le journal des modifications via Web UI");
+      await saveFileGH(
+        "modifications.json",
+        [],
+        "Vider le journal des modifications via Web UI",
+      );
       showToast("Journal vidé sur GitHub !");
     } catch (e) {
       alert("Erreur: " + e.message);
@@ -1193,7 +1281,13 @@ window.clearModificationsGH = async function () {
 window.switchToArchive = async function () {
   ARCHIVE_MODE = true;
   ARCHIVE_VERSION = "planifiee";
-  APP_DATA = { affectations: {}, enseignants: [], maquette_overrides: {}, modifications: [], volume_horaire_national: {} };
+  APP_DATA = {
+    affectations: {},
+    enseignants: [],
+    maquette_overrides: {},
+    modifications: [],
+    volume_horaire_national: {},
+  };
   currentView = "home";
   await loadData();
 };
@@ -1201,7 +1295,13 @@ window.switchToArchive = async function () {
 window.switchToCurrent = async function () {
   ARCHIVE_MODE = false;
   ARCHIVE_VERSION = "planifiee";
-  APP_DATA = { affectations: {}, enseignants: [], maquette_overrides: {}, modifications: [], volume_horaire_national: {} };
+  APP_DATA = {
+    affectations: {},
+    enseignants: [],
+    maquette_overrides: {},
+    modifications: [],
+    volume_horaire_national: {},
+  };
   currentView = "home";
   await loadData();
 };
@@ -1214,18 +1314,29 @@ window.switchArchiveVersion = async function () {
 
 async function loadData() {
   const localBase = ARCHIVE_MODE ? "archive_25-26/data" : "data";
-  const ghBase   = ARCHIVE_MODE ? GH_ARCHIVE_PATH : GH_BASE_PATH;
-  const sfx      = ARCHIVE_MODE ? "_25-26" : "";
-  const affSfx   = ARCHIVE_MODE && ARCHIVE_VERSION === "realisee" ? "_25-26_realise" : sfx;
+  const ghBase = ARCHIVE_MODE ? GH_ARCHIVE_PATH : GH_BASE_PATH;
+  const sfx = ARCHIVE_MODE ? "_25-26" : "";
+  const affSfx =
+    ARCHIVE_MODE && ARCHIVE_VERSION === "realisee" ? "_25-26_realise" : sfx;
 
   // 1. Charge d'abord les fichiers locaux (fallback garanti)
   try {
     const [aff, ens, maq, mods, vhn] = await Promise.all([
-      fetch(`${localBase}/affectations${affSfx}.json`).then((r) => (r.ok ? r.json() : null)),
-      fetch(`${localBase}/enseignants${sfx}.json`).then((r) => (r.ok ? r.json() : null)),
-      fetch(`${localBase}/maquette_overrides${sfx}.json`).then((r) => (r.ok ? r.json() : null)),
-      fetch(`${localBase}/modifications${sfx}.json`).then((r) => (r.ok ? r.json() : null)),
-      fetch(`${localBase}/volume_horaire_national.json`).then((r) => (r.ok ? r.json() : null)),
+      fetch(`${localBase}/affectations${affSfx}.json`).then((r) =>
+        r.ok ? r.json() : null,
+      ),
+      fetch(`${localBase}/enseignants${sfx}.json`).then((r) =>
+        r.ok ? r.json() : null,
+      ),
+      fetch(`${localBase}/maquette_overrides${sfx}.json`).then((r) =>
+        r.ok ? r.json() : null,
+      ),
+      fetch(`${localBase}/modifications${sfx}.json`).then((r) =>
+        r.ok ? r.json() : null,
+      ),
+      fetch(`${localBase}/volume_horaire_national.json`).then((r) =>
+        r.ok ? r.json() : null,
+      ),
     ]);
     if (aff) APP_DATA.affectations = aff;
     if (ens) APP_DATA.enseignants = ens;
