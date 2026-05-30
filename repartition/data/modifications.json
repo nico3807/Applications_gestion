@@ -223,5 +223,158 @@
     "description": "S6 dev / SAÉ 6.dev.01 | Developpement avancé / td",
     "prev": "9.5",
     "next": "9"
+  },
+  {
+    "date": "30/05/2026",
+    "heure": "15:38:31",
+    "utilisateur": "chefdep",
+    "type": "Répartition",
+    "description": "S2 / R2.01 | Anglais / responsable",
+    "prev": "",
+    "next": "BERNARD William"
+  },
+  {
+    "date": "30/05/2026",
+    "heure": "15:38:38",
+    "utilisateur": "chefdep",
+    "type": "Répartition",
+    "description": "S2 / R2.02 | Anglais renforcé / responsable",
+    "prev": "",
+    "next": "BERNARD William"
+  },
+  {
+    "date": "30/05/2026",
+    "heure": "15:38:53",
+    "utilisateur": "chefdep",
+    "type": "Répartition",
+    "description": "S2 / R2.03 | Ergonomie et Accessibilité / responsable",
+    "prev": "",
+    "next": "PELISSIER Chrysta"
+  },
+  {
+    "date": "30/05/2026",
+    "heure": "15:38:57",
+    "utilisateur": "chefdep",
+    "type": "Répartition",
+    "description": "S2 / R2.04 | Culture numérique / responsable",
+    "prev": "",
+    "next": "DE VELDER Sophie"
+  },
+  {
+    "date": "30/05/2026",
+    "heure": "15:39:10",
+    "utilisateur": "chefdep",
+    "type": "Répartition",
+    "description": "S2 / R2.06 | Expression, communication et rhétorique / responsable",
+    "prev": "",
+    "next": "DE VELDER Sophie"
+  },
+  {
+    "date": "30/05/2026",
+    "heure": "15:39:16",
+    "utilisateur": "chefdep",
+    "type": "Répartition",
+    "description": "S2 / R2.07 | Écriture multimédia et narration / responsable",
+    "prev": "",
+    "next": "BLANCO Sandy"
+  },
+  {
+    "date": "30/05/2026",
+    "heure": "15:40:58",
+    "utilisateur": "chefdep",
+    "type": "Répartition",
+    "description": "S2 / R2.10 | Production audio et vidéo / responsable",
+    "prev": "",
+    "next": "BLANCO Sandy"
+  },
+  {
+    "date": "30/05/2026",
+    "heure": "15:41:04",
+    "utilisateur": "chefdep",
+    "type": "Répartition",
+    "description": "S2 / R2.11 | Gestion de contenus / responsable",
+    "prev": "",
+    "next": "THEROND Emmanuel"
+  },
+  {
+    "date": "30/05/2026",
+    "heure": "15:41:13",
+    "utilisateur": "chefdep",
+    "type": "Répartition",
+    "description": "S2 / R2.12 | Intégration / responsable",
+    "prev": "",
+    "next": "THEROND Emmanuel"
+  },
+  {
+    "date": "30/05/2026",
+    "heure": "15:41:24",
+    "utilisateur": "chefdep",
+    "type": "Répartition",
+    "description": "S2 / R2.13 | Développement Web / responsable",
+    "prev": "",
+    "next": "DARTIES Benoit"
+  },
+  {
+    "date": "30/05/2026",
+    "heure": "15:42:08",
+    "utilisateur": "chefdep",
+    "type": "Répartition",
+    "description": "S2 / R2.15 | Hébergement / responsable",
+    "prev": "",
+    "next": "MAURIN Nicolas"
+  },
+  {
+    "date": "30/05/2026",
+    "heure": "15:42:16",
+    "utilisateur": "chefdep",
+    "type": "Répartition",
+    "description": "S2 / R2.16 | Représentation et traitement de l'information / responsable",
+    "prev": "",
+    "next": "ESCAIG Sylvie"
+  },
+  {
+    "date": "30/05/2026",
+    "heure": "15:43:02",
+    "utilisateur": "chefdep",
+    "type": "Répartition",
+    "description": "S2 / R2.19 | Projet Personnel et Professionnel / responsable",
+    "prev": "",
+    "next": "DE VELDER Sophie"
+  },
+  {
+    "date": "30/05/2026",
+    "heure": "15:43:08",
+    "utilisateur": "chefdep",
+    "type": "Répartition",
+    "description": "S2 / SAÉ 2.01 | Explorer les usages du numérique / responsable",
+    "prev": "",
+    "next": "DE VELDER Sophie"
+  },
+  {
+    "date": "30/05/2026",
+    "heure": "15:43:14",
+    "utilisateur": "chefdep",
+    "type": "Répartition",
+    "description": "S2 / SAÉ 2.02 | Concevoir un produit ou un service et sa communication / responsable",
+    "prev": "",
+    "next": "SURRIBAS Caroline"
+  },
+  {
+    "date": "30/05/2026",
+    "heure": "15:43:21",
+    "utilisateur": "chefdep",
+    "type": "Répartition",
+    "description": "S2 / SAÉ 2.03 | Concevoir un site web avec une source de données / responsable",
+    "prev": "",
+    "next": "DARTIES Benoit"
+  },
+  {
+    "date": "30/05/2026",
+    "heure": "15:43:27",
+    "utilisateur": "chefdep",
+    "type": "Répartition",
+    "description": "S2 / SAÉ 2.04 | Construire sa présence en ligne / responsable",
+    "prev": "",
+    "next": "DE VELDER Sophie"
   }
 ]
