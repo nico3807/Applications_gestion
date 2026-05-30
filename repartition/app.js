@@ -793,6 +793,7 @@ window.addEns = async function () {
   _logMod("Enseignants", "Ajout", "—", id);
   closeAddEnsModal();
   renderView();
+  showToast(`Enseignant "${id}" ajouté.`);
   if (isGHConfigured()) await saveEnseignantsGH();
 };
 
@@ -1014,15 +1015,6 @@ window.saveAffectationsGH = async function () {
 window.saveEnseignantsGH = async function () {
   if (ARCHIVE_MODE) return showToast("Archives 2025-2026 — consultation uniquement");
   if (!isGHConfigured()) return alert("Veuillez configurer GitHub d'abord !");
-
-  // Si le formulaire contient des données non encore ajoutées, les ajouter d'abord
-  const nomField = document.getElementById("new_ens_nom");
-  const prenomField = document.getElementById("new_ens_prenom");
-  if (nomField && prenomField && (nomField.value.trim() || prenomField.value.trim())) {
-    const countBefore = APP_DATA.enseignants.length;
-    addEns();
-    if (APP_DATA.enseignants.length === countBefore) return; // addEns a échoué (doublon ou champ vide)
-  }
 
   try {
     await _flushMods();
