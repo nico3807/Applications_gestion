@@ -89,7 +89,7 @@
     "nom": "DI PIERRO",
     "prenom": "Davide",
     "is_vac": false,
-    "service_du": 1280,
+    "service_du": 128,
     "service_max": null
   },
   {
