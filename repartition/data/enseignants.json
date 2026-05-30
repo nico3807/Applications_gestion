@@ -8,24 +8,6 @@
     "is_vac": false
   },
   {
-    "id": "BARON Mathilde",
-    "nom": "BARON",
-    "prenom": "Mathilde",
-    "service_du": null,
-    "service_max": null,
-    "is_vac": true,
-    "is_cev": true
-  },
-  {
-    "id": "BARTHELEMY Veronique",
-    "nom": "BARTHELEMY",
-    "prenom": "Veronique",
-    "service_du": null,
-    "service_max": 187,
-    "is_vac": true,
-    "is_cev": false
-  },
-  {
     "id": "BERNARD William",
     "nom": "BERNARD",
     "prenom": "William",
@@ -40,33 +22,6 @@
     "service_du": 384,
     "service_max": null,
     "is_vac": false
-  },
-  {
-    "id": "CALLET Caroline",
-    "nom": "CALLET",
-    "prenom": "Caroline",
-    "service_du": null,
-    "service_max": 187,
-    "is_vac": true,
-    "is_cev": false
-  },
-  {
-    "id": "CALOMINA Léo",
-    "nom": "CALOMINA",
-    "prenom": "Léo",
-    "is_vac": true,
-    "service_du": 187,
-    "service_max": null,
-    "is_cev": false
-  },
-  {
-    "id": "CHOLLET Antoine",
-    "nom": "CHOLLET",
-    "prenom": "Antoine",
-    "is_vac": true,
-    "service_du": 187,
-    "service_max": null,
-    "is_cev": false
   },
   {
     "id": "DARTIES Benoit",
@@ -99,6 +54,99 @@
     "service_du": 307.2,
     "service_max": null,
     "is_vac": false
+  },
+  {
+    "id": "JAECKLE Luc",
+    "nom": "JAECKLE",
+    "prenom": "Luc",
+    "service_du": 192,
+    "service_max": null,
+    "is_vac": false
+  },
+  {
+    "id": "MARZOUK Reda",
+    "nom": "MARZOUK",
+    "prenom": "Reda",
+    "service_du": 192,
+    "service_max": null,
+    "is_vac": false
+  },
+  {
+    "id": "MAURIN Nicolas",
+    "nom": "MAURIN",
+    "prenom": "Nicolas",
+    "service_du": 384,
+    "service_max": null,
+    "is_vac": false
+  },
+  {
+    "id": "PELISSIER Chrysta",
+    "nom": "PELISSIER",
+    "prenom": "Chrysta",
+    "service_du": 192,
+    "service_max": null,
+    "is_vac": false
+  },
+  {
+    "id": "SURRIBAS Caroline",
+    "nom": "SURRIBAS",
+    "prenom": "Caroline",
+    "service_du": 384,
+    "service_max": null,
+    "is_vac": false
+  },
+  {
+    "id": "THEROND Emmanuel",
+    "nom": "THEROND",
+    "prenom": "Emmanuel",
+    "service_du": 384,
+    "service_max": null,
+    "is_vac": false
+  },
+  {
+    "id": "BARON Mathilde",
+    "nom": "BARON",
+    "prenom": "Mathilde",
+    "service_du": null,
+    "service_max": null,
+    "is_vac": true,
+    "is_cev": true
+  },
+  {
+    "id": "BARTHELEMY Veronique",
+    "nom": "BARTHELEMY",
+    "prenom": "Veronique",
+    "service_du": null,
+    "service_max": 187,
+    "is_vac": true,
+    "is_cev": false
+  },
+  {
+    "id": "CALLET Caroline",
+    "nom": "CALLET",
+    "prenom": "Caroline",
+    "service_du": null,
+    "service_max": 187,
+    "is_vac": true,
+    "is_cev": false
+  },
+  {
+    "id": "CALOMINA Léo",
+    "nom": "CALOMINA",
+    "prenom": "Léo",
+    "is_vac": true,
+    "service_du": 187,
+    "service_max": null,
+    "is_cev": false
+  },
+  {
+    "id": "CHOLLET Antoine",
+    "nom": "CHOLLET",
+    "prenom": "Antoine",
+    "is_vac": true,
+    "service_du": 187,
+    "service_max": null,
+    "is_cev": false
   },
   {
     "id": "EVANO Jérome",
@@ -155,14 +203,6 @@
     "is_cev": false
   },
   {
-    "id": "JAECKLE Luc",
-    "nom": "JAECKLE",
-    "prenom": "Luc",
-    "service_du": 0,
-    "service_max": null,
-    "is_vac": false
-  },
-  {
     "id": "KLAIBI Noel",
     "nom": "KLAIBI",
     "prenom": "Noel",
@@ -188,22 +228,6 @@
     "service_max": 171,
     "is_vac": true,
     "is_cev": false
-  },
-  {
-    "id": "MARZOUK Reda",
-    "nom": "MARZOUK",
-    "prenom": "Reda",
-    "service_du": 192,
-    "service_max": null,
-    "is_vac": false
-  },
-  {
-    "id": "MAURIN Nicolas",
-    "nom": "MAURIN",
-    "prenom": "Nicolas",
-    "service_du": 384,
-    "service_max": null,
-    "is_vac": false
   },
   {
     "id": "MENDEZ Nicolas",
@@ -240,14 +264,6 @@
     "service_max": 187,
     "is_vac": true,
     "is_cev": false
-  },
-  {
-    "id": "PELISSIER Chrysta",
-    "nom": "PELISSIER",
-    "prenom": "Chrysta",
-    "service_du": 192,
-    "service_max": null,
-    "is_vac": false
   },
   {
     "id": "PELTRIAUX Philippe",
@@ -313,14 +329,6 @@
     "is_cev": false
   },
   {
-    "id": "SURRIBAS Caroline",
-    "nom": "SURRIBAS",
-    "prenom": "Caroline",
-    "service_du": 384,
-    "service_max": null,
-    "is_vac": false
-  },
-  {
     "id": "TALLEUX Johann",
     "nom": "TALLEUX",
     "prenom": "Johann",
@@ -328,14 +336,6 @@
     "service_max": 187,
     "is_vac": true,
     "is_cev": false
-  },
-  {
-    "id": "THEROND Emmanuel",
-    "nom": "THEROND",
-    "prenom": "Emmanuel",
-    "service_du": 384,
-    "service_max": null,
-    "is_vac": false
   },
   {
     "id": "TOURNIE Laetitia",
