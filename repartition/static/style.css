@@ -232,6 +232,9 @@ footer {
   top: 0;
   z-index: 2;
 }
+.table-wrapper--semestre .maquette-table thead tr:nth-child(2) th {
+  top: 37px;
+}
 .ressources-table th.col-h {
   text-align: center;
 }
