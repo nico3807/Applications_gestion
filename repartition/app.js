@@ -757,12 +757,12 @@ window.openAddEnsModal = function () {
   modal.innerHTML = `
     <div class="form-card" style="margin:10% auto; position:relative; max-width:400px">
         <h3 style="margin-bottom:1rem; color:#1e3a5f">Ajouter un enseignant</h3>
-        <div class="form-group"><label>Nom</label><input type="text" id="new_ens_nom" class="form-input" placeholder="NOM"></div>
-        <div class="form-group"><label>Prénom</label><input type="text" id="new_ens_prenom" class="form-input" placeholder="Prénom"></div>
+        <div class="form-group"><label>Nom</label><input type="text" id="new_ens_nom" class="form-input" placeholder="NOM" autocomplete="off"></div>
+        <div class="form-group"><label>Prénom</label><input type="text" id="new_ens_prenom" class="form-input" placeholder="Prénom" autocomplete="off"></div>
         <div class="form-group form-group-check"><label><input type="checkbox" id="new_ens_vac" onchange="document.getElementById('new_cev_group').style.display = this.checked ? 'block' : 'none'; if (!this.checked) document.getElementById('new_ens_cev').checked = false;"> Est vacataire</label></div>
         <div class="form-group form-group-check" id="new_cev_group" style="display:none; padding-left:1.5rem"><label><input type="checkbox" id="new_ens_cev"> Chargé d'enseignement vacataire (CEV)</label></div>
-        <div class="form-group"><label>Service dû (Titulaires)</label><input type="number" id="new_ens_du" class="form-input"></div>
-        <div class="form-group"><label>Service max (Vacataires)</label><input type="number" id="new_ens_max" class="form-input"></div>
+        <div class="form-group"><label>Service dû (Titulaires)</label><input type="number" id="new_ens_du" class="form-input" autocomplete="off"></div>
+        <div class="form-group"><label>Service max (Vacataires)</label><input type="number" id="new_ens_max" class="form-input" autocomplete="off"></div>
         <div style="display:flex; justify-content:flex-end; gap:0.5rem; margin-top:1.5rem;">
             <button class="btn-cancel" onclick="closeAddEnsModal()">Annuler</button>
             <button class="btn-save" onclick="addEns()">Ajouter</button>
