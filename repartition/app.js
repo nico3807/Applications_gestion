@@ -830,11 +830,11 @@ window.openEditEnsModal = function (i) {
         </div>
         <div class="form-group">
             <label>Service dû (Titulaires)</label>
-            <input type="number" id="edit_ens_du" class="form-input" value="${e.service_du || ""}">
+            <input type="number" id="edit_ens_du" class="form-input" value="${e.service_du || ""}" autocomplete="off">
         </div>
         <div class="form-group">
             <label>Service max (Vacataires)</label>
-            <input type="number" id="edit_ens_max" class="form-input" value="${e.service_max || ""}">
+            <input type="number" id="edit_ens_max" class="form-input" value="${e.service_max || ""}" autocomplete="off">
         </div>
         <div style="display:flex; justify-content:flex-end; gap:0.5rem; margin-top:1.5rem;">
             <button class="btn-cancel" onclick="closeEditEnsModal()">Annuler</button>
