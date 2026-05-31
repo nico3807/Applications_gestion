@@ -164,6 +164,7 @@
   "mmi3_init_jury2_creneau3": "10h45-11h10",
   "mmi3_init_jury2_creneau4": "11h10-11h35",
   "mmi3_init_jury2_creneau5": "11h35-12h00",
+  "mmi3_init_jury2_creneau6": "12h00-12h25",
   "mmi3_init_jury3_date": "Mardi 23 juin 2026 matin",
   "mmi3_init_jury3_badge": "dweb",
   "mmi3_init_jury3_creneau1": "09h55-10h20",
@@ -192,7 +193,6 @@
   "mmi3_init_jury6_creneau3": "14h20-14h45",
   "mmi3_init_jury6_creneau4": "14h45-15h10",
   "mmi3_init_jury6_creneau5": "15h10-15h35",
-  "mmi3_init_jury6_creneau6": "15h35-16h00",
   "mmi3_init_date1": "Mardi 23 juin 2026 matin",
   "mmi3_init_date2": "Mardi 23 juin 2026 après-midi"
 }
