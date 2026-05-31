@@ -8,7 +8,16 @@ const _U = {
   "damien.marill":  { h: "e9f6d4e3a860db8eec3bfc8dcf84186e7cfb24216f8c191d6f423a159250c7ec", rw: false, rwApps: ["planning-web", "repartition"] },
   crea:             { h: "92bbadd93a744ec77a19eef8d0df9bbb354ced75ceefa18581a2c7a37c880746", rw: false, rwApps: ["planning-web", "repartition"] },
   "william.bernard":{ h: "08bd382e37e89970a9fc8dcb6cc9392b49daf28f6cc0c37c7fe8f7c3d5a331e3", rw: false },
-  "carole.pitot":   { h: "651452ffac1d672f0bcb9fc86436fbca73f88fa3e416102b5f8b52992e5c33fd", rw: false, rwApps: ["soutenances_portfolio", "soutenances_stages"] },
+  "carole.pitot":    { h: "651452ffac1d672f0bcb9fc86436fbca73f88fa3e416102b5f8b52992e5c33fd", rw: false, rwApps: ["soutenances_portfolio", "soutenances_stages"] },
+  "luc.jaeckle":     { h: "5187678470b8facb096482bc99a6d857a8656e28c39d085531b406c8588c962d", rw: false, denyApps: ["repartition"] },
+  "benoit.darties":  { h: "db5935ec700d4fd3aed91c7e460e435daeb935a2e4960738fcab6e5e7ff3513c", rw: false, denyApps: ["repartition"] },
+  "sophie.de-velder":{ h: "ff5bca8ef5bc9e099a4bf06910f881e4b4679f1fb44f0d011df917b3b92cad3d", rw: false, denyApps: ["repartition"] },
+  "davide.di-pierro":{ h: "df3c8fcaace96c75735a4a521ec2f663e703eaa0b4a473bd6b470ee8f0ae0c03", rw: false, denyApps: ["repartition"] },
+  "chrysta.pelissier":{ h: "2982f410475a0eb8ac99b83f24d96249c49b757c322bab4596b7b31ba6c321c2", rw: false, denyApps: ["repartition"] },
+  "caroline.surribas":{ h: "d6420023b4acd0198010b2f7e53aa422498afe39d06ffe8379f46fca46640ce4", rw: false, denyApps: ["repartition"] },
+  "laeticia.tournie":{ h: "c4b68d8a9ad3c363bfcd40373641e844a1269e76255904abaf7c9b5f9d6f4fd2", rw: false, denyApps: ["repartition"] },
+  "jerome.aze":      { h: "e48494a5aa2f86cbee52d39a85b51e5f76c30b4069c1daca7779cbb253862db1", rw: false },
+  "sylvie.escaig":   { h: "afd6ad2d7374c59bc880b837386effab0357dd9177538a3625ba299a643efe19", rw: false },
 };
 
 const _SK = "mmi_auth_v1";
@@ -148,6 +157,12 @@ window.AUTH = {
       return s.rwApps.some(app => location.href.includes(app));
     return false;
   },
+  canAccess: (app) => {
+    const s = _sess();
+    if (!s) return false;
+    if (s.denyApps && s.denyApps.includes(app)) return false;
+    return true;
+  },
   isAdmin:  () => _sess()?.login === "nicolas.maurin",
   user:     () => _sess()?.login ?? null,
 
@@ -155,7 +170,7 @@ window.AUTH = {
     const u = _U[login.trim().toLowerCase()];
     if (!u) return false;
     if ((await _sha256(pwd)) !== u.h) return false;
-    sessionStorage.setItem(_SK, JSON.stringify({ login: login.trim().toLowerCase(), rw: u.rw, rwApps: u.rwApps || [] }));
+    sessionStorage.setItem(_SK, JSON.stringify({ login: login.trim().toLowerCase(), rw: u.rw, rwApps: u.rwApps || [], denyApps: u.denyApps || [] }));
     return true;
   },
 
