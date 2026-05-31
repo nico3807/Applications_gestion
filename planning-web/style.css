@@ -419,9 +419,12 @@ main {
   top: calc(var(--h-header) + var(--h-toolbar));
   z-index: 85;
   background: var(--clr-bg);
+}
+.month-hdr-title {
   display: flex;
   align-items: center;
   gap: 0.5rem;
+  margin-bottom: 0.35rem;
 }
 .month-hdr h2 {
   font-size: 1.3rem;

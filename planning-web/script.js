@@ -435,9 +435,12 @@ function buildMonthSection(monthName) {
   nextBtn.disabled = _idx >= ORDER.length - 1;
   nextBtn.addEventListener("click", (e) => { e.stopPropagation(); navigateMonth(monthName, 1); });
 
-  hdr.appendChild(prevBtn);
-  hdr.appendChild(_h2);
-  hdr.appendChild(nextBtn);
+  const _titleRow = document.createElement("div");
+  _titleRow.className = "month-hdr-title";
+  _titleRow.appendChild(prevBtn);
+  _titleRow.appendChild(_h2);
+  _titleRow.appendChild(nextBtn);
+  hdr.appendChild(_titleRow);
 
   /* En-têtes Lu–Ve — dans month-hdr (sticky) pour qu'ils restent visibles
        au scroll, et hors du cal-grid (overflow:hidden casserait le sticky) */
