@@ -82,6 +82,20 @@ function _sess() {
   try { return JSON.parse(sessionStorage.getItem(_SK)); } catch { return null; }
 }
 
+function _loginCardHTML() {
+  return `
+    <img class="auth-logo" src="logo_mmi.jpg" alt="MMI">
+    <h2 class="auth-title">Gestion MMI</h2>
+    <p class="auth-sub">IUT de Béziers — Accès réservé</p>
+    <form id="auth-form" autocomplete="on" onsubmit="event.preventDefault(); AUTH._doLogin();">
+      <input id="auth-login" class="auth-input" type="text"     placeholder="Identifiant"  autocomplete="username" autofocus>
+      <input id="auth-pwd"   class="auth-input" type="password" placeholder="Mot de passe" autocomplete="current-password">
+      <button id="auth-btn"  class="auth-btn" type="submit">Connexion</button>
+    </form>
+    <p id="auth-err" class="auth-err" style="display:none">Identifiant ou mot de passe incorrect.</p>
+    <button type="button" class="auth-link" onclick="AUTH._showChangePwdForm()">Modifier mon mot de passe</button>`;
+}
+
 /* ── Injection CSS (appelée immédiatement au chargement du module) ─────────── */
 (function _injectStyles() {
   if (document.getElementById("mmi-auth-styles")) return;
@@ -143,6 +157,14 @@ function _sess() {
     body.auth-readonly #confirmOkBtn    { display: none !important; }
     body.auth-readonly .save-btn,
     body.auth-readonly .cfg-btn         { display: none !important; }
+
+    /* Lien modifier mot de passe */
+    .auth-link {
+      background: none; border: none; color: #6b7280;
+      font-size: 0.78rem; cursor: pointer; text-decoration: underline;
+      padding: 0; margin-top: 0.25rem;
+    }
+    .auth-link:hover { color: #2563eb; }
   `;
   document.head.appendChild(s);
 })();
@@ -167,10 +189,12 @@ window.AUTH = {
   user:     () => _sess()?.login ?? null,
 
   async login(login, pwd) {
-    const u = _U[login.trim().toLowerCase()];
+    const key = login.trim().toLowerCase();
+    const u = _U[key];
     if (!u) return false;
-    if ((await _sha256(pwd)) !== u.h) return false;
-    sessionStorage.setItem(_SK, JSON.stringify({ login: login.trim().toLowerCase(), rw: u.rw, rwApps: u.rwApps || [], denyApps: u.denyApps || [] }));
+    const currentHash = localStorage.getItem("mmi_pwd_" + key) || u.h;
+    if ((await _sha256(pwd)) !== currentHash) return false;
+    sessionStorage.setItem(_SK, JSON.stringify({ login: key, rw: u.rw, rwApps: u.rwApps || [], denyApps: u.denyApps || [] }));
     return true;
   },
 
@@ -187,19 +211,80 @@ window.AUTH = {
 
     const ov = document.createElement("div");
     ov.id = "auth-overlay";
-    ov.innerHTML = `
-      <div class="auth-card">
-        <img class="auth-logo" src="logo_mmi.jpg" alt="MMI">
-        <h2 class="auth-title">Gestion MMI</h2>
-        <p class="auth-sub">IUT de Béziers — Accès réservé</p>
-        <form id="auth-form" autocomplete="on" onsubmit="event.preventDefault(); AUTH._doLogin();">
-          <input id="auth-login" class="auth-input" type="text"     placeholder="Identifiant"   autocomplete="username" autofocus>
-          <input id="auth-pwd"   class="auth-input" type="password" placeholder="Mot de passe"  autocomplete="current-password">
-          <button id="auth-btn"  class="auth-btn" type="submit">Connexion</button>
-        </form>
-        <p id="auth-err" class="auth-err" style="display:none">Identifiant ou mot de passe incorrect.</p>
-      </div>`;
+    ov.innerHTML = `<div class="auth-card">${_loginCardHTML()}</div>`;
     document.body.appendChild(ov);
+  },
+
+  _showLoginForm() {
+    const card = document.querySelector(".auth-card");
+    if (card) card.innerHTML = _loginCardHTML();
+  },
+
+  _showChangePwdForm() {
+    const card = document.querySelector(".auth-card");
+    if (!card) return;
+    card.innerHTML = `
+      <img class="auth-logo" src="logo_mmi.jpg" alt="MMI">
+      <h2 class="auth-title">Modifier le mot de passe</h2>
+      <p class="auth-sub">Saisissez votre identifiant et votre ancien mot de passe</p>
+      <form id="chpwd-form" autocomplete="on" onsubmit="event.preventDefault(); AUTH._doChangePwd();">
+        <input id="chpwd-login"   class="auth-input" type="text"     placeholder="Identifiant"                     autocomplete="username" autofocus>
+        <input id="chpwd-old"     class="auth-input" type="password" placeholder="Ancien mot de passe"             autocomplete="current-password">
+        <input id="chpwd-new"     class="auth-input" type="password" placeholder="Nouveau mot de passe"            autocomplete="new-password">
+        <input id="chpwd-confirm" class="auth-input" type="password" placeholder="Confirmer le nouveau mot de passe" autocomplete="new-password">
+        <button id="chpwd-btn" class="auth-btn" type="submit">Modifier</button>
+      </form>
+      <p id="chpwd-msg" style="display:none; font-size:0.85rem; margin:0;"></p>
+      <button type="button" class="auth-link" onclick="AUTH._showLoginForm()">← Retour à la connexion</button>`;
+  },
+
+  async _doChangePwd() {
+    const login   = (document.getElementById("chpwd-login").value   || "").trim().toLowerCase();
+    const oldPwd  =  document.getElementById("chpwd-old").value;
+    const newPwd  =  document.getElementById("chpwd-new").value;
+    const confirm =  document.getElementById("chpwd-confirm").value;
+    const msg     =  document.getElementById("chpwd-msg");
+    const btn     =  document.getElementById("chpwd-btn");
+
+    function _msg(text, ok = false) {
+      msg.textContent   = text;
+      msg.style.color   = ok ? "#16a34a" : "#dc2626";
+      msg.style.display = "block";
+    }
+
+    if (!login || !oldPwd || !newPwd || !confirm) { _msg("Tous les champs sont obligatoires."); return; }
+    if (newPwd !== confirm)  { _msg("Les nouveaux mots de passe ne correspondent pas."); return; }
+    if (newPwd.length < 6)   { _msg("Le nouveau mot de passe doit comporter au moins 6 caractères."); return; }
+
+    const u = _U[login];
+    if (!u) { _msg("Identifiant ou mot de passe incorrect."); return; }
+
+    btn.disabled = true;
+    btn.textContent = "…";
+
+    try {
+      const currentHash = localStorage.getItem("mmi_pwd_" + login) || u.h;
+      if ((await _sha256(oldPwd)) !== currentHash) {
+        _msg("Ancien mot de passe incorrect.");
+        document.getElementById("chpwd-old").value = "";
+        document.getElementById("chpwd-old").focus();
+        btn.disabled = false;
+        btn.textContent = "Modifier";
+        return;
+      }
+      localStorage.setItem("mmi_pwd_" + login, await _sha256(newPwd));
+      _msg("Mot de passe modifié avec succès !", true);
+      btn.disabled = false;
+      btn.textContent = "Modifier";
+      document.getElementById("chpwd-old").value    = "";
+      document.getElementById("chpwd-new").value    = "";
+      document.getElementById("chpwd-confirm").value = "";
+      setTimeout(() => AUTH._showLoginForm(), 2000);
+    } catch (e) {
+      _msg("Erreur : " + e.message);
+      btn.disabled = false;
+      btn.textContent = "Modifier";
+    }
   },
 
   async _doLogin() {
