@@ -8,7 +8,7 @@ const _U = {
   "damien.marill":  { h: "e9f6d4e3a860db8eec3bfc8dcf84186e7cfb24216f8c191d6f423a159250c7ec", rw: true  },
   crea:             { h: "92bbadd93a744ec77a19eef8d0df9bbb354ced75ceefa18581a2c7a37c880746", rw: true  },
   "william.bernard":{ h: "08bd382e37e89970a9fc8dcb6cc9392b49daf28f6cc0c37c7fe8f7c3d5a331e3", rw: false },
-  "carole.pitot":   { h: "651452ffac1d672f0bcb9fc86436fbca73f88fa3e416102b5f8b52992e5c33fd", rw: false },
+  "carole.pitot":   { h: "651452ffac1d672f0bcb9fc86436fbca73f88fa3e416102b5f8b52992e5c33fd", rw: false, rwApps: ["soutenances_portfolio", "soutenances_stages"] },
 };
 
 const _SK = "mmi_auth_v1";
@@ -140,7 +140,14 @@ function _sess() {
 
 window.AUTH = {
   isAuth:   () => _sess() !== null,
-  canWrite: () => { const s = _sess(); return !!s && s.rw; },
+  canWrite: () => {
+    const s = _sess();
+    if (!s) return false;
+    if (s.rw) return true;
+    if (s.rwApps && s.rwApps.length > 0)
+      return s.rwApps.some(app => location.href.includes(app));
+    return false;
+  },
   isAdmin:  () => _sess()?.login === "nicolas.maurin",
   user:     () => _sess()?.login ?? null,
 
@@ -148,7 +155,7 @@ window.AUTH = {
     const u = _U[login.trim().toLowerCase()];
     if (!u) return false;
     if ((await _sha256(pwd)) !== u.h) return false;
-    sessionStorage.setItem(_SK, JSON.stringify({ login: login.trim().toLowerCase(), rw: u.rw }));
+    sessionStorage.setItem(_SK, JSON.stringify({ login: login.trim().toLowerCase(), rw: u.rw, rwApps: u.rwApps || [] }));
     return true;
   },
 
@@ -216,7 +223,7 @@ window.AUTH = {
     badge.id = "auth-badge";
     badge.innerHTML = `
       <span class="auth-badge-user">${s.login}</span>
-      <span class="auth-badge-role">${s.rw ? "Lecture/Écriture" : "Lecture seule"}</span>
+      <span class="auth-badge-role">${AUTH.canWrite() ? "Lecture/Écriture" : "Lecture seule"}</span>
       <button class="auth-badge-logout" onclick="AUTH.logout()">Déconnexion</button>`;
     const hdr = document.querySelector(".header-inner");
     if (hdr) hdr.appendChild(badge);
