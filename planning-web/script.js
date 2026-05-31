@@ -105,6 +105,22 @@ const GROUPS = [
   "Férié",
 ];
 
+/* Couleurs des groupes pour les points de la vue année */
+const GROUP_CLR = {
+  "MMI1":     "var(--clr-MMI1)",
+  "MMI2-crea":"var(--clr-MMI2c)",
+  "MMI2-Dev": "var(--clr-MMI2d)",
+  "MMI2-App": "var(--clr-MMI2a)",
+  "MMI3-crea":"var(--clr-MMI3c)",
+  "MMI3-Dev": "var(--clr-MMI3d)",
+  "MMI3-App": "var(--clr-MMI3a)",
+  "Salons":   "#059669",
+  "JPO":      "#a21caf",
+  "Autre":    "#475569",
+  "Réunion":  "#4338ca",
+  "Férié":    "#9d174d",
+};
+
 /* Libellés courts et longs des jours ouvrés uniquement (Lu–Ve) */
 const WD_S = ["Lu", "Ma", "Me", "Je", "Ve"];
 const WD_L = ["Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi"];
@@ -645,15 +661,17 @@ function buildYearView() {
       n.textContent = d;
       c.appendChild(n);
 
-      /* Points colorés (un par catégorie d'événement) */
-      if (evs.length > 0) {
+      /* Points colorés (un par groupe actif ayant un événement ce jour) */
+      const dayGroups = dd && dd.events
+        ? Object.keys(dd.events).filter((g) => activeGroups.has(g))
+        : [];
+      if (dayGroups.length > 0) {
         const dots = document.createElement("div");
         dots.className = "mini-dots";
-        const cats = new Set(evs.map(getCategory));
-        cats.forEach((cat) => {
+        dayGroups.forEach((grp) => {
           const dot = document.createElement("span");
           dot.className = "mini-dot";
-          dot.style.background = "var(--clr-" + cat + ")";
+          dot.style.background = GROUP_CLR[grp] || "#6b7280";
           dot.setAttribute("aria-hidden", "true");
           dots.appendChild(dot);
         });
