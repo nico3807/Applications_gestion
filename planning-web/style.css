@@ -1302,4 +1302,22 @@ body.archive-readonly .gh-footer { display: none !important; }
 
   /* Reset marges du contenu principal */
   #main-content { padding: 0 !important; margin: 0 !important; }
+
+  /* ── Vue annuelle : 6 mois par page, 3 colonnes ── */
+  body[data-view="year"] #monthsContainer { display: none !important; }
+  body[data-view="year"] .month-section   { display: none !important; }
+  body[data-view="year"] #yearContainer  { display: block !important; }
+  body[data-view="year"] .year-grid {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 0.5rem !important;
+    margin-top: 0 !important;
+  }
+  body[data-view="year"] .mini-card {
+    break-inside: avoid;
+  }
+  body[data-view="year"] .mini-card:nth-child(6) {
+    break-after: page;
+    page-break-after: always;
+  }
 }

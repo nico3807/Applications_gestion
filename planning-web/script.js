@@ -727,6 +727,7 @@ function goToMonth(m) {
  */
 function setView(v) {
   currentView = v;
+  document.body.dataset.view = v;
   const mc = document.getElementById("monthsContainer");
   const yc = document.getElementById("yearContainer");
   const bm = document.getElementById("btnMonth");
