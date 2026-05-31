@@ -78,6 +78,17 @@ window.navigate = function (view, param = null) {
   renderView();
 };
 
+const _PRINTABLE_VIEWS = new Set(["home","semestre","maquette_semestre","services","pilotage"]);
+
+function _injectPrintBar(root) {
+  const bar = document.createElement("div");
+  bar.className = "print-bar";
+  bar.innerHTML = `
+    <button class="btn-print-action" onclick="window.print()">🖨 Imprimer</button>
+    <button class="btn-pdf-action"   onclick="window.print()">⬇ Exporter PDF</button>`;
+  root.insertBefore(bar, root.firstChild);
+}
+
 function renderView() {
   const root = document.getElementById("app-root");
 
@@ -146,6 +157,8 @@ function renderView() {
   else if (currentView === "enseignants") renderEnseignants(root);
   else if (currentView === "modifications") renderModifications(root);
   else if (currentView === "pilotage") renderPilotage(root);
+
+  if (_PRINTABLE_VIEWS.has(currentView)) _injectPrintBar(root);
 
   AUTH.applyPermissions();
   if (ARCHIVE_MODE) document.body.classList.add("auth-readonly");

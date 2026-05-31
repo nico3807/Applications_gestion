@@ -1260,6 +1260,60 @@ th.pilotage-total-col small {
   background: #fde68a;
 }
 
+/* ── Barre impression / export ── */
+.print-bar {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: flex-end;
+  margin-bottom: 1rem;
+}
+.btn-print-action {
+  background: #1e3a5f;
+  color: #fff;
+  border: none;
+  padding: 6px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 600;
+  transition: background 0.15s;
+}
+.btn-print-action:hover { background: #2563eb; }
+.btn-pdf-action {
+  background: #16a34a;
+  color: #fff;
+  border: none;
+  padding: 6px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 600;
+  transition: background 0.15s;
+}
+.btn-pdf-action:hover { background: #15803d; }
+
+/* ── Impression ── */
+@media print {
+  * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+  @page { size: A4 landscape; margin: 1cm; }
+
+  header, footer, .gh-footer, .toast, .print-bar,
+  #archive-banner { display: none !important; }
+
+  #app-root button { display: none !important; }
+  #app-root select { border: none !important; background: transparent !important; }
+
+  body   { background: #fff !important; }
+  main   { padding: 0.5rem !important; max-width: 100% !important; }
+
+  .table-wrapper { overflow: visible !important; box-shadow: none !important; }
+  .ressources-table { font-size: 9px !important; width: 100% !important; }
+  .page-header  { margin-bottom: 0.75rem !important; }
+  .page-header h1 { font-size: 16px !important; }
+
+  .semestre-grid, .semestre-nav-buttons { display: none !important; }
+}
+
 /* ── Responsive ── */
 @media (max-width: 768px) {
   header {
