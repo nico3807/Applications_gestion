@@ -419,10 +419,35 @@ main {
   top: calc(var(--h-header) + var(--h-toolbar));
   z-index: 85;
   background: var(--clr-bg);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 }
 .month-hdr h2 {
   font-size: 1.3rem;
   font-weight: 700;
+}
+.month-nav-btn {
+  background: none;
+  border: 1px solid rgba(30,58,95,0.3);
+  border-radius: 4px;
+  padding: 0.1rem 0.55rem;
+  cursor: pointer;
+  color: #1e3a5f;
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.5;
+  transition: all var(--trans);
+  flex-shrink: 0;
+}
+.month-nav-btn:hover:not(:disabled) {
+  background: #1e3a5f;
+  color: #fff;
+  border-color: #1e3a5f;
+}
+.month-nav-btn:disabled {
+  opacity: 0.2;
+  cursor: default;
 }
 
 /* ===== GRILLE CALENDRIER ===== */
@@ -1291,7 +1316,7 @@ body.archive-readonly .gh-footer { display: none !important; }
 
   /* Masquer le + d'ajout et le numéro de mois (déjà dans le titre) */
   .add-evt-btn { display: none !important; }
-  .month-hdr h2 { display: none !important; }
+  .month-hdr h2, .month-nav-btn { display: none !important; }
 
   /* Réduire la hauteur des cellules pour tenir en une page */
   .cal-cell { min-height: 60px !important; }

@@ -400,7 +400,28 @@ function buildMonthSection(monthName) {
 
   const hdr = document.createElement("div");
   hdr.className = "month-hdr";
-  hdr.innerHTML = "<h2>" + monthName + "</h2>";
+
+  const _idx = ORDER.indexOf(monthName);
+  const prevBtn = document.createElement("button");
+  prevBtn.className = "month-nav-btn";
+  prevBtn.innerHTML = "&#8592;";
+  prevBtn.setAttribute("aria-label", "Mois précédent");
+  prevBtn.disabled = _idx <= 0;
+  prevBtn.addEventListener("click", (e) => { e.stopPropagation(); navigateMonth(monthName, -1); });
+
+  const _h2 = document.createElement("h2");
+  _h2.textContent = monthName;
+
+  const nextBtn = document.createElement("button");
+  nextBtn.className = "month-nav-btn";
+  nextBtn.innerHTML = "&#8594;";
+  nextBtn.setAttribute("aria-label", "Mois suivant");
+  nextBtn.disabled = _idx >= ORDER.length - 1;
+  nextBtn.addEventListener("click", (e) => { e.stopPropagation(); navigateMonth(monthName, 1); });
+
+  hdr.appendChild(prevBtn);
+  hdr.appendChild(_h2);
+  hdr.appendChild(nextBtn);
 
   /* En-têtes Lu–Ve — dans month-hdr (sticky) pour qu'ils restent visibles
        au scroll, et hors du cal-grid (overflow:hidden casserait le sticky) */
@@ -706,6 +727,13 @@ function buildYearView() {
  * Affiche le mois sélectionné dans la vue mois.
  * @param {string} m - Nom du mois
  */
+function navigateMonth(monthName, direction) {
+  const idx = ORDER.indexOf(monthName);
+  const target = idx + direction;
+  if (target < 0 || target >= ORDER.length) return;
+  goToMonth(ORDER[target]);
+}
+
 function goToMonth(m) {
   currentMonth = m;
   /* Masquer tous les mois sauf le sélectionné */
