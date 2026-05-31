@@ -1593,6 +1593,9 @@ async function init() {
 
   /* 1. Badge utilisateur + droits lecture seule */
   AUTH.injectBadge();
+  const _badge = document.getElementById("auth-badge");
+  const _archBtn = document.getElementById("nav-archive-btn");
+  if (_badge && _archBtn) _archBtn.before(_badge);
   if (!AUTH.canWrite()) document.body.classList.add("auth-readonly");
 
   /* 2. Injecter l'UI GitHub */
