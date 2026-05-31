@@ -86,7 +86,9 @@ function _injectPrintBar(root) {
   bar.innerHTML = `
     <button class="btn-print-action" onclick="window.print()">🖨 Imprimer</button>
     <button class="btn-pdf-action"   onclick="window.print()">⬇ Exporter PDF</button>`;
-  root.insertBefore(bar, root.firstChild);
+  const pageHeader = root.querySelector(".page-header");
+  if (pageHeader) pageHeader.appendChild(bar);
+  else root.insertBefore(bar, root.firstChild);
 }
 
 function renderView() {
