@@ -565,6 +565,7 @@ function buildMonthSection(monthName) {
 /** Construit la grille annuelle avec 12 mini-calendriers */
 function buildYearView() {
   const ygrid = document.getElementById("yearGrid");
+  ygrid.innerHTML = "";
 
   ORDER.forEach((monthName) => {
     const [y, m] = META[monthName];
