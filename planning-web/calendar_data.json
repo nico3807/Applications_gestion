@@ -50,7 +50,9 @@
     {
       "day": 8,
       "weekday": "Tu",
-      "events": {}
+      "events": {
+        "MMI2-Dev": "Test rajout"
+      }
     },
     {
       "day": 9,
