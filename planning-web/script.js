@@ -228,6 +228,7 @@ function buildFilters() {
       document.querySelectorAll(".pill[data-g]").forEach((p) => {
         p.classList.toggle("hidden", !activeGroups.has(p.dataset.g));
       });
+      if (currentView === "year") buildYearView();
     });
 
     /* Label stylisé associé à la checkbox */
@@ -259,6 +260,7 @@ function buildFilters() {
     document.querySelectorAll(".pill[data-g]").forEach((p) => {
       p.classList.toggle("hidden", !activeGroups.has(p.dataset.g));
     });
+    if (currentView === "year") buildYearView();
   });
 }
 
@@ -625,7 +627,9 @@ function buildYearView() {
       if (wi >= 5) continue; /* Ignorer Sa et Di */
 
       const dd = getDayData(monthName, d);
-      const evs = dd && dd.events ? Object.values(dd.events) : [];
+      const evs = dd && dd.events
+        ? Object.entries(dd.events).filter(([g]) => activeGroups.has(g)).map(([, ev]) => ev)
+        : [];
 
       const c = document.createElement("div");
       c.className = "mini-c";
