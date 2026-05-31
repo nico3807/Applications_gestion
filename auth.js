@@ -132,6 +132,8 @@ function _sess() {
     body.auth-readonly #dupOkBtn,
     body.auth-readonly #editOkBtn,
     body.auth-readonly #confirmOkBtn    { display: none !important; }
+    body.auth-readonly .save-btn,
+    body.auth-readonly .cfg-btn         { display: none !important; }
   `;
   document.head.appendChild(s);
 })();

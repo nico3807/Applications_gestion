@@ -97,6 +97,11 @@
     </div>
     <div id="juries-root"></div>
     <div class="toast" id="toast"></div>
+    <script src="../auth.js"></script>
+    <script>
+      if (!AUTH.isAuth()) { location.href = '../index.html'; }
+      else if (!AUTH.canWrite()) { document.body.classList.add('auth-readonly'); }
+    </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
     <script src="app_pf.js"></script>
   </body>

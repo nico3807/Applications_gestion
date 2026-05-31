@@ -42,6 +42,11 @@
       </div>
     </div>
 
+    <script src="../auth.js"></script>
+    <script>
+      if (!AUTH.isAuth()) { location.href = '../index.html'; }
+      else if (!AUTH.canWrite()) { document.body.classList.add('auth-readonly'); }
+    </script>
     <script src="app_stages.js"></script>
   </body>
 </html>
