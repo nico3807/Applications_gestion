@@ -284,6 +284,22 @@ function buildFilters() {
      NAVIGATION MENSUELLE
   ===================================================================== */
 
+const _MONTH_ABBREV = {
+  "Septembre":"Sept","Octobre":"Oct","Novembre":"Nov","Décembre":"Déc",
+  "Janvier":"Janv","Février":"Fév","Mars":"Mars","Avril":"Avr",
+  "Mai":"Mai","Juin":"Juin","Juillet":"Juil","Août":"Août",
+};
+const _MONTHS_JAN_AUG = new Set(["Janvier","Février","Mars","Avril","Mai","Juin","Juillet","Août"]);
+
+/** Retourne le libellé court d'un mois selon la convention d'année universitaire.
+ *  Ex: "Septembre 2026" → "Sept 26", "Janvier 2027" → "Janv 26" */
+function _monthShortLabel(monthName) {
+  const [name, yearStr] = monthName.split(" ");
+  const year = parseInt(yearStr, 10);
+  const acYear = _MONTHS_JAN_AUG.has(name) ? year - 1 : year;
+  return (_MONTH_ABBREV[name] || name) + " " + String(acYear).slice(-2);
+}
+
 /** Construit les boutons de navigation rapide */
 function buildNav() {
   const nav = document.getElementById("monthNav");
@@ -291,7 +307,7 @@ function buildNav() {
   ORDER.forEach((m) => {
     const btn = document.createElement("button");
     btn.className = "month-btn";
-    btn.textContent = m.replace(" 2025", " '25").replace(" 2026", " '26").replace(" 2027", " '27");
+    btn.textContent = _monthShortLabel(m);
     btn.dataset.m = m;
     btn.setAttribute("aria-label", "Aller à " + m);
     btn.addEventListener("click", () => goToMonth(m));
