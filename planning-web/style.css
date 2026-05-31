@@ -100,13 +100,12 @@ body {
 
 /* ===== EN-TÊTE PRINCIPAL ===== */
 .app-header {
-  background: var(--clr-surface);
-  border-bottom: 1px solid var(--clr-border);
-  padding: 0.6rem 1rem;
+  background: #1e3a5f;
+  padding: 0 1rem;
   position: sticky;
   top: 0;
   z-index: 100;
-  box-shadow: var(--shadow);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.25);
 }
 .header-inner {
   max-width: 1400px;
@@ -115,16 +114,17 @@ body {
   align-items: center;
   gap: 1rem;
   flex-wrap: wrap;
+  min-height: 54px;
 }
 .app-title {
   font-size: 1.15rem;
   font-weight: 700;
-  color: var(--clr-primary);
+  color: #fff;
   white-space: nowrap;
 }
 .app-sub {
   font-size: 0.78rem;
-  color: var(--clr-muted);
+  color: rgba(255,255,255,0.65);
 }
 
 /* ===== NAVIGATION MENSUELLE ===== */
@@ -138,29 +138,29 @@ body {
 /* Bouton mois individuel */
 .month-btn {
   background: none;
-  border: 1px solid var(--clr-border);
+  border: 1px solid rgba(255,255,255,0.25);
   border-radius: 4px;
   padding: 0.28rem 0.55rem;
   font-size: 0.74rem;
   font-weight: 500;
   cursor: pointer;
-  color: var(--clr-muted);
+  color: rgba(255,255,255,0.75);
   transition: all var(--trans);
   white-space: nowrap;
 }
 .month-btn:hover,
 .month-btn:focus-visible {
-  background: var(--clr-primary-lt);
-  border-color: var(--clr-primary);
-  color: var(--clr-primary);
+  background: rgba(255,255,255,0.15);
+  border-color: rgba(255,255,255,0.5);
+  color: #fff;
   outline: none;
 }
 /* Mois actif/sélectionné */
 .month-btn[aria-current="true"] {
-  background: var(--clr-primary);
-  border-color: var(--clr-primary);
-  color: #fff;
-  font-weight: 600;
+  background: #fff;
+  border-color: #fff;
+  color: #1e3a5f;
+  font-weight: 700;
 }
 
 /* ===== BOUTONS VUE (mois / année) ===== */
@@ -169,23 +169,23 @@ body {
   gap: 0.25rem;
 }
 .view-btn {
-  background: var(--clr-bg);
-  border: 1px solid var(--clr-border);
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.25);
   border-radius: 4px;
   padding: 0.28rem 0.6rem;
   font-size: 0.78rem;
   cursor: pointer;
-  color: var(--clr-muted);
+  color: rgba(255,255,255,0.75);
   transition: all var(--trans);
 }
 .view-btn.active {
-  background: var(--clr-primary);
-  border-color: var(--clr-primary);
-  color: #fff;
-  font-weight: 600;
+  background: #fff;
+  border-color: #fff;
+  color: #1e3a5f;
+  font-weight: 700;
 }
 .view-btn:focus-visible {
-  outline: 3px solid var(--clr-primary);
+  outline: 3px solid rgba(255,255,255,0.5);
   outline-offset: 2px;
 }
 
