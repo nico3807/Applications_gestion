@@ -1231,9 +1231,11 @@ body.archive-readonly .gh-footer { display: none !important; }
 .toolbar-hdr-actions {
   position: absolute;
   right: 0;
+  top: 50%;
+  transform: translateY(-50%);
   display: flex;
-  flex-direction: column;
-  align-items: flex-end;
+  flex-direction: row;
+  align-items: center;
   gap: 0.28rem;
 }
 .toolbar-hdr-actions .btn-toggle-all {
