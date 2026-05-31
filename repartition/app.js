@@ -78,7 +78,7 @@ window.navigate = function (view, param = null) {
   renderView();
 };
 
-const _PRINTABLE_VIEWS = new Set(["home","semestre","maquette_semestre","services","pilotage"]);
+const _PRINTABLE_VIEWS = new Set(["semestre","maquette_semestre","services","pilotage"]);
 
 function _injectPrintBar(root) {
   const bar = document.createElement("div");
