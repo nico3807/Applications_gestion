@@ -425,8 +425,8 @@ function renderMaquetteSemestre(root, sem) {
             <td><input type="number" class="input-editable" value="${m.cm_final}" onchange="updateMaq('${sem}','${resEsc}','cm_final',this.value)"></td>
             <td><input type="number" class="input-editable" value="${m.td_final}" onchange="updateMaq('${sem}','${resEsc}','td_final',this.value)"></td>
             <td><input type="number" class="input-editable" value="${m.tp_final}" onchange="updateMaq('${sem}','${resEsc}','tp_final',this.value)"></td>
-            <td class="pn-readonly-val">${v.vol_hn}</td>
-            <td class="pn-readonly-val">${v.dont_tp_hn}</td>
+            <td class="pn-readonly-val">${v.vol_hn || '-'}</td>
+            <td class="pn-readonly-val">${v.dont_tp_hn || '-'}</td>
             <td><input type="number" class="input-pn-editable" value="${v.adapt_locale}" onchange="updateVolHN('${sem}','${resEsc}','adapt_locale',this.value)" step="0.5"></td>
             <td><input type="number" class="input-pn-editable" value="${v.dont_tp_al}" onchange="updateVolHN('${sem}','${resEsc}','dont_tp_al',this.value)" step="0.5"></td>
             <td class="pct-cell">${pctHtml}</td>
