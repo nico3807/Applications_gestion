@@ -1234,7 +1234,7 @@ function renderModifications(root) {
   const mods = APP_DATA.modifications.slice().reverse();
 
   let html = `
-    <div class="page-header" style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px;">
+    <div class="page-header journal-page-hdr" style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px; margin-bottom:0;">
       <div>
         <h1 style="margin:0;">Journal des modifications</h1>
         <p class="subtitle">Modifications effectuées par les utilisateurs avec droits d'écriture</p>
@@ -1248,8 +1248,9 @@ function renderModifications(root) {
     return;
   }
 
-  html += `<div class="table-wrapper"><table class="ressources-table">
-    <thead>
+  /* Pas de .table-wrapper ici : overflow-x bloquerait position:sticky sur thead */
+  html += `<table class="ressources-table" style="width:100%;">
+    <thead class="journal-thead">
       <tr>
         <th style="width:90px">Date</th>
         <th style="width:70px">Heure</th>
@@ -1273,8 +1274,18 @@ function renderModifications(root) {
     </tr>`;
   });
 
-  html += `</tbody></table></div>`;
+  html += `</tbody></table>`;
   root.innerHTML = html;
+
+  /* Calcul des tops sticky après rendu (mesure réelle des hauteurs) */
+  requestAnimationFrame(() => {
+    const navH    = document.querySelector("header")?.offsetHeight || 54;
+    const pageHdr = root.querySelector(".journal-page-hdr");
+    const thead   = root.querySelector(".journal-thead");
+    if (!pageHdr || !thead) return;
+    pageHdr.style.cssText += `position:sticky;top:${navH}px;z-index:50;background:#fafaf8;padding-bottom:0.6rem;`;
+    thead.style.cssText   += `position:sticky;top:${navH + pageHdr.offsetHeight}px;z-index:49;`;
+  });
 }
 
 window.clearModificationsGH = async function () {
