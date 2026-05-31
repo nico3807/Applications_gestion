@@ -258,6 +258,9 @@ footer {
 .ressources-table tbody tr.row-main-resource td {
   border-top: 2px solid #9ca3af;
 }
+.ressources-table tbody tr.row-main-resource td:first-child {
+  font-weight: 600;
+}
 .ressources-table tbody tr.row-main-resource:first-child td {
   border-top: none !important;
 }
