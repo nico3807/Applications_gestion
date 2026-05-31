@@ -167,9 +167,9 @@ function renderView() {
 /* ── Vues : Accueil & Semestres ─────────────────────────────────────────── */
 function renderHome(root) {
   let html = `<div class="page-header"><h1>Répartition</h1><p class="subtitle">Sélectionnez un semestre pour saisir la répartition</p></div>`;
-  html += `<div class="semestre-grid">`;
+  html += `<div class="semestre-nav-buttons">`;
   SEMESTRES.forEach((sem) => {
-    html += `<a href="#" class="semestre-card" data-sem="${sem}" onclick="navigate('semestre', '${sem}')">${sem} <span class="semestre-arrow">→</span></a>`;
+    html += `<button class="sem-btn" data-sem="${sem}" onclick="navigate('semestre', '${sem}')">${sem}</button>`;
   });
   html += `</div>`;
   root.innerHTML = html;
@@ -373,9 +373,9 @@ window.removeSubrow = function (sem, res, idx) {
 /* ── Vues : Maquette ─────────────────────────────────────────────────────── */
 function renderMaquetteIndex(root) {
   let html = `<div class="page-header"><h1>Maquette - Prévisionnels</h1><p class="subtitle">Sélectionnez un semestre pour modifier la maquette</p></div>`;
-  html += `<div class="semestre-grid">`;
+  html += `<div class="semestre-nav-buttons">`;
   SEMESTRES.forEach((sem) => {
-    html += `<a href="#" class="semestre-card" data-sem="${sem}" onclick="navigate('maquette_semestre', '${sem}')">${sem} <span class="semestre-arrow">→</span></a>`;
+    html += `<button class="sem-btn" data-sem="${sem}" onclick="navigate('maquette_semestre', '${sem}')">${sem}</button>`;
   });
   html += `</div>`;
   root.innerHTML = html;
