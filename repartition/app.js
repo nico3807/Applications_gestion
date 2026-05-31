@@ -553,15 +553,18 @@ function renderServices(root) {
 
     let badgeHtml = "";
     if (!isVac && sDu > 0) {
-      let diff = sumTotal - sDu;
-      let diffClass =
-        diff === 0 ? "diff-ok" : diff > 0 ? "diff-surplus" : "diff-manque";
-      let diffText = diff > 0 ? `+${diff}` : diff;
-      badgeHtml = `<span class="service-du-badge">Dû : ${sDu}</span> <span class="service-diff-badge ${diffClass}">${diffText}</span>`;
+      const diff = sumTotal - sDu;
+      const diffClass = diff === 0 ? "diff-ok" : diff > 0 ? "diff-surplus" : "diff-manque";
+      const diffText = diff > 0 ? `+${diff}` : diff;
+      badgeHtml = `<span class="service-du-badge">Dû : ${sDu}</span> ` +
+                  `<span class="service-eqtd-badge">Réalisé : ${sumTotal}</span> ` +
+                  `<span class="service-diff-badge ${diffClass}">${diffText}</span>`;
     } else if (isVac && sMax > 0) {
-      badgeHtml = `<span class="service-max-badge">Max : ${sMax}</span>`;
+      badgeHtml = `<span class="service-max-badge">Max : ${sMax}</span> ` +
+                  `<span class="service-eqtd-badge">Réalisé : ${sumTotal}</span>`;
+    } else {
+      badgeHtml = `<span class="service-eqtd-badge">Réalisé : ${sumTotal}</span>`;
     }
-    badgeHtml += `<span class="service-eqtd-badge">Réalisé : ${sumTotal}</span>`;
 
     html += `
         <div class="service-block" data-vac="${isVac}">
