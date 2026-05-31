@@ -443,7 +443,7 @@ main {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   gap: 2px;
-  background: var(--clr-primary);
+  background: #fff;
   border: 1px solid var(--clr-primary);
   border-radius: var(--radius) var(--radius) 0 0;
   overflow: hidden;
