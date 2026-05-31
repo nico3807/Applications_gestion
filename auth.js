@@ -5,8 +5,8 @@
    ─────────────────────────────────────────────────────────────────────────── */
 const _U = {
   "nicolas.maurin": { h: "eeb705ce8d0aa8255bea1e65ac2633938eb36bb496b92695f8475428ef5313f1", rw: true  },
-  "damien.marill":  { h: "e9f6d4e3a860db8eec3bfc8dcf84186e7cfb24216f8c191d6f423a159250c7ec", rw: true  },
-  crea:             { h: "92bbadd93a744ec77a19eef8d0df9bbb354ced75ceefa18581a2c7a37c880746", rw: true  },
+  "damien.marill":  { h: "e9f6d4e3a860db8eec3bfc8dcf84186e7cfb24216f8c191d6f423a159250c7ec", rw: false, rwApps: ["planning-web", "repartition"] },
+  crea:             { h: "92bbadd93a744ec77a19eef8d0df9bbb354ced75ceefa18581a2c7a37c880746", rw: false, rwApps: ["planning-web", "repartition"] },
   "william.bernard":{ h: "08bd382e37e89970a9fc8dcb6cc9392b49daf28f6cc0c37c7fe8f7c3d5a331e3", rw: false },
   "carole.pitot":   { h: "651452ffac1d672f0bcb9fc86436fbca73f88fa3e416102b5f8b52992e5c33fd", rw: false, rwApps: ["soutenances_portfolio", "soutenances_stages"] },
 };
