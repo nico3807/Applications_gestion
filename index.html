@@ -5,47 +5,82 @@
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>Gestion MMI - Applications</title>
     <link rel="stylesheet" href="style.css" />
+    <style>
+      .root-header {
+        background: #1e3a5f;
+        padding: 0 1.5rem;
+        position: sticky;
+        top: 0;
+        z-index: 100;
+      }
+      .root-header .header-inner {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        min-height: 40px;
+      }
+    </style>
   </head>
   <body>
-    <div class="hero">
-      <div class="hero-title-row">
-        <img src="logo_IUT.png" alt="IUT" class="hero-logo" />
-        <h1>Gestion Département MMI</h1>
-        <img src="logo_mmi.jpg" alt="MMI" class="hero-logo" />
-      </div>
-      <p>Applications de gestion - BUT MMI - IUT de Béziers</p>
-    </div>
+    <div id="app-root">
+      <header class="root-header">
+        <div class="header-inner">
+          <!-- Badge utilisateur injecté ici par auth.js -->
+        </div>
+      </header>
 
-    <div class="index-grid">
-      <div class="index-row">
-        <a href="planning-web/index.html" class="icard">
-          <div class="icard-icon">📅</div>
-          <h2>Planning MMI</h2>
-          <div class="icard-sub">Calendrier des événements</div>
-          <div class="icard-arrow">Accéder <span>→</span></div>
-        </a>
-        <a href="repartition/index.html" class="icard">
-          <div class="icard-icon">👥</div>
-          <h2>Répartition MMI</h2>
-          <div class="icard-sub">Gestion des enseignants</div>
-          <div class="icard-arrow">Accéder <span>→</span></div>
-        </a>
+      <div class="hero">
+        <div class="hero-title-row">
+          <img src="logo_IUT.png" alt="IUT" class="hero-logo" />
+          <h1>Gestion Département MMI</h1>
+          <img src="logo_mmi.jpg" alt="MMI" class="hero-logo" />
+        </div>
+        <p>Applications de gestion - BUT MMI - IUT de Béziers</p>
       </div>
 
-      <div class="index-row">
-        <a href="soutenances_stages/index.html" class="icard">
-          <div class="icard-icon">🎤</div>
-          <h2>Soutenances Stages</h2>
-          <div class="icard-sub">Gestion des jurys de stage</div>
-          <div class="icard-arrow">Accéder <span>→</span></div>
-        </a>
-        <a href="soutenances_portfolio/index.html" class="icard">
-          <div class="icard-icon">🎯</div>
-          <h2>Soutenances Portfolio</h2>
-          <div class="icard-sub">Gestion des jurys de portfolio</div>
-          <div class="icard-arrow">Accéder <span>→</span></div>
-        </a>
+      <div class="index-grid">
+        <div class="index-row">
+          <a href="planning-web/index.html" class="icard">
+            <div class="icard-icon">📅</div>
+            <h2>Planning MMI</h2>
+            <div class="icard-sub">Calendrier des événements</div>
+            <div class="icard-arrow">Accéder <span>→</span></div>
+          </a>
+          <a href="repartition/index.html" class="icard">
+            <div class="icard-icon">👥</div>
+            <h2>Répartition MMI</h2>
+            <div class="icard-sub">Gestion des enseignants</div>
+            <div class="icard-arrow">Accéder <span>→</span></div>
+          </a>
+        </div>
+
+        <div class="index-row">
+          <a href="soutenances_stages/index.html" class="icard">
+            <div class="icard-icon">🎤</div>
+            <h2>Soutenances Stages</h2>
+            <div class="icard-sub">Gestion des jurys de stage</div>
+            <div class="icard-arrow">Accéder <span>→</span></div>
+          </a>
+          <a href="soutenances_portfolio/index.html" class="icard">
+            <div class="icard-icon">🎯</div>
+            <h2>Soutenances Portfolio</h2>
+            <div class="icard-sub">Gestion des jurys de portfolio</div>
+            <div class="icard-arrow">Accéder <span>→</span></div>
+          </a>
+        </div>
       </div>
     </div>
+
+    <script src="auth.js"></script>
+    <script>
+      AUTH.injectUI();
+      if (AUTH.isAuth()) {
+        AUTH.injectBadge();
+      } else {
+        window.addEventListener("auth-success", function () {
+          AUTH.injectBadge();
+        }, { once: true });
+      }
+    </script>
   </body>
 </html>

@@ -1591,7 +1591,11 @@ async function init() {
   CAL_DELTA = loadDelta();
   applyDelta();
 
-  /* 1. Injecter l'UI GitHub */
+  /* 1. Badge utilisateur + droits lecture seule */
+  AUTH.injectBadge();
+  if (!AUTH.canWrite()) document.body.classList.add("auth-readonly");
+
+  /* 2. Injecter l'UI GitHub */
   injectGHUI();
 
   /* 2. Construire les filtres de groupes */

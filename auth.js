@@ -1,36 +1,19 @@
 "use strict";
 
 /* ── Utilisateurs (hachages SHA-256) ─────────────────────────────────────────
-   Pour générer les hachages, ouvrir la console du navigateur sur cette page et
-   coller la commande fournie dans le README ou le message de déploiement.
-   Remplacer ensuite chaque "HASH_..." par la valeur retournée.
+   Clé de session partagée entre toutes les applications de la suite MMI.
    ─────────────────────────────────────────────────────────────────────────── */
 const _U = {
-  chefdep: {
-    h: "eeb705ce8d0aa8255bea1e65ac2633938eb36bb496b92695f8475428ef5313f1",
-    rw: true,
-  },
-  dev: {
-    h: "e9f6d4e3a860db8eec3bfc8dcf84186e7cfb24216f8c191d6f423a159250c7ec",
-    rw: true,
-  },
-  crea: {
-    h: "92bbadd93a744ec77a19eef8d0df9bbb354ced75ceefa18581a2c7a37c880746",
-    rw: true,
-  },
-  edt: {
-    h: "08bd382e37e89970a9fc8dcb6cc9392b49daf28f6cc0c37c7fe8f7c3d5a331e3",
-    rw: false,
-  },
-  sec: {
-    h: "651452ffac1d672f0bcb9fc86436fbca73f88fa3e416102b5f8b52992e5c33fd",
-    rw: false,
-  },
+  chefdep: { h: "eeb705ce8d0aa8255bea1e65ac2633938eb36bb496b92695f8475428ef5313f1", rw: true  },
+  dev:     { h: "e9f6d4e3a860db8eec3bfc8dcf84186e7cfb24216f8c191d6f423a159250c7ec", rw: true  },
+  crea:    { h: "92bbadd93a744ec77a19eef8d0df9bbb354ced75ceefa18581a2c7a37c880746", rw: true  },
+  edt:     { h: "08bd382e37e89970a9fc8dcb6cc9392b49daf28f6cc0c37c7fe8f7c3d5a331e3", rw: false },
+  sec:     { h: "651452ffac1d672f0bcb9fc86436fbca73f88fa3e416102b5f8b52992e5c33fd", rw: false },
 };
 
-const _SK = "rep_auth_v1";
+const _SK = "mmi_auth_v1";
 
-/* Fallback SHA-256 pur JS (contexte non-HTTPS où crypto.subtle est absent) */
+/* ── SHA-256 pur JS (fallback quand crypto.subtle est absent, ex. HTTP) ────── */
 function _sha256Pure(bytes) {
   function w(n) { return n >>> 0; }
   function ror(n, b) { return w((n >>> b) | (n << (32 - b))); }
@@ -81,36 +64,89 @@ async function _sha256(s) {
   const bytes = new TextEncoder().encode(s);
   if (window.crypto?.subtle) {
     const buf = await crypto.subtle.digest("SHA-256", bytes);
-    return [...new Uint8Array(buf)].map((x) => x.toString(16).padStart(2, "0")).join("");
+    return [...new Uint8Array(buf)].map(x => x.toString(16).padStart(2, "0")).join("");
   }
   return _sha256Pure(bytes);
 }
 
 function _sess() {
-  try {
-    return JSON.parse(sessionStorage.getItem(_SK));
-  } catch {
-    return null;
-  }
+  try { return JSON.parse(sessionStorage.getItem(_SK)); } catch { return null; }
 }
 
+/* ── Injection CSS (appelée immédiatement au chargement du module) ─────────── */
+(function _injectStyles() {
+  if (document.getElementById("mmi-auth-styles")) return;
+  const s = document.createElement("style");
+  s.id = "mmi-auth-styles";
+  s.textContent = `
+    /* Overlay de connexion */
+    #auth-overlay {
+      position: fixed; inset: 0; z-index: 9999;
+      background: linear-gradient(135deg, #1e3a5f 0%, #2563eb 100%);
+      display: flex; align-items: center; justify-content: center;
+    }
+    .auth-card {
+      background: #fff; border-radius: 16px; padding: 2.5rem 2rem;
+      width: 100%; max-width: 360px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.35);
+      display: flex; flex-direction: column; gap: 0.75rem; text-align: center;
+    }
+    .auth-logo  { width: 60px; height: auto; border-radius: 8px; margin: 0 auto; }
+    .auth-title { font-size: 1.35rem; color: #1e3a5f; margin: 0; }
+    .auth-sub   { font-size: 0.82rem; color: #6b7280; margin: 0; }
+    .auth-input {
+      width: 100%; padding: 0.65rem 0.9rem; border: 1.5px solid #d1d5db;
+      border-radius: 8px; font-size: 0.95rem; outline: none; box-sizing: border-box;
+    }
+    .auth-input:focus { border-color: #2563eb; box-shadow: 0 0 0 3px rgba(37,99,235,.12); }
+    .auth-btn {
+      background: #1e3a5f; color: #fff; border: none; padding: 0.75rem;
+      border-radius: 8px; font-size: 1rem; font-weight: 600; cursor: pointer; width: 100%;
+    }
+    .auth-btn:hover:not(:disabled) { background: #2563eb; }
+    .auth-btn:disabled { opacity: 0.6; cursor: default; }
+    .auth-err { font-size: 0.85rem; color: #dc2626; margin: 0; }
+
+    /* Badge utilisateur */
+    #auth-badge {
+      display: flex; align-items: center; gap: 0.5rem;
+      margin-left: auto; font-size: 0.78rem; flex-shrink: 0;
+    }
+    .auth-badge-user   { font-weight: 700; color: #fff; text-transform: uppercase; letter-spacing: .05em; }
+    .auth-badge-role   { background: rgba(255,255,255,.15); color: #fff; padding: 2px 8px; border-radius: 12px; }
+    .auth-badge-logout {
+      background: rgba(255,255,255,.12); color: #fff;
+      border: 1px solid rgba(255,255,255,.3); padding: 3px 10px;
+      border-radius: 6px; cursor: pointer; font-size: 0.75rem;
+    }
+    .auth-badge-logout:hover { background: rgba(255,255,255,.28); }
+
+    /* Mode lecture seule */
+    body.auth-readonly select { pointer-events: none; opacity: 0.65; cursor: default; }
+    body.auth-readonly .gh-save-btn,
+    body.auth-readonly #gh-config-btn   { display: none !important; }
+    body.auth-readonly .add-evt-btn     { display: none !important; }
+    body.auth-readonly #detailEditBtn,
+    body.auth-readonly #detailDeleteBtn,
+    body.auth-readonly #detailDuplicateBtn { display: none !important; }
+    body.auth-readonly #dupOkBtn,
+    body.auth-readonly #editOkBtn,
+    body.auth-readonly #confirmOkBtn    { display: none !important; }
+  `;
+  document.head.appendChild(s);
+})();
+
 window.AUTH = {
-  isAuth: () => _sess() !== null,
-  canWrite: () => {
-    const s = _sess();
-    return !!s && s.rw;
-  },
-  isAdmin: () => _sess()?.login === "chefdep",
-  user: () => _sess()?.login ?? null,
+  isAuth:   () => _sess() !== null,
+  canWrite: () => { const s = _sess(); return !!s && s.rw; },
+  isAdmin:  () => _sess()?.login === "chefdep",
+  user:     () => _sess()?.login ?? null,
 
   async login(login, pwd) {
     const u = _U[login.trim().toLowerCase()];
     if (!u) return false;
     if ((await _sha256(pwd)) !== u.h) return false;
-    sessionStorage.setItem(
-      _SK,
-      JSON.stringify({ login: login.trim().toLowerCase(), rw: u.rw }),
-    );
+    sessionStorage.setItem(_SK, JSON.stringify({ login: login.trim().toLowerCase(), rw: u.rw }));
     return true;
   },
 
@@ -119,6 +155,7 @@ window.AUTH = {
     location.reload();
   },
 
+  /* Affiche la modale de connexion (appelée uniquement depuis index.html racine) */
   injectUI() {
     if (_sess()) return;
     const appRoot = document.getElementById("app-root");
@@ -128,9 +165,9 @@ window.AUTH = {
     ov.id = "auth-overlay";
     ov.innerHTML = `
       <div class="auth-card">
-        <img class="auth-logo" src="../logo_mmi.jpg" alt="MMI">
-        <h2 class="auth-title">Répartition MMI</h2>
-        <p class="auth-sub">Accès réservé — identifiez-vous</p>
+        <img class="auth-logo" src="logo_mmi.jpg" alt="MMI">
+        <h2 class="auth-title">Gestion MMI</h2>
+        <p class="auth-sub">IUT de Béziers — Accès réservé</p>
         <form id="auth-form" autocomplete="on" onsubmit="event.preventDefault(); AUTH._doLogin();">
           <input id="auth-login" class="auth-input" type="text"     placeholder="Identifiant"   autocomplete="username" autofocus>
           <input id="auth-pwd"   class="auth-input" type="password" placeholder="Mot de passe"  autocomplete="current-password">
@@ -143,17 +180,17 @@ window.AUTH = {
 
   async _doLogin() {
     const login = document.getElementById("auth-login").value;
-    const pwd = document.getElementById("auth-pwd").value;
-    const btn = document.getElementById("auth-btn");
-    const err = document.getElementById("auth-err");
+    const pwd   = document.getElementById("auth-pwd").value;
+    const btn   = document.getElementById("auth-btn");
+    const err   = document.getElementById("auth-err");
     btn.disabled = true;
     btn.textContent = "…";
     err.style.display = "none";
-
     try {
       if (await AUTH.login(login, pwd)) {
         document.getElementById("auth-overlay").remove();
-        document.getElementById("app-root").style.display = "";
+        const appRoot = document.getElementById("app-root");
+        if (appRoot) appRoot.style.display = "";
         window.dispatchEvent(new Event("auth-success"));
       } else {
         err.style.display = "block";
@@ -183,6 +220,7 @@ window.AUTH = {
     if (hdr) hdr.appendChild(badge);
   },
 
+  /* Applique les restrictions d'interface (utilisé par Répartition) */
   applyPermissions() {
     const navMods = document.getElementById("nav-modifications");
     if (navMods) navMods.style.display = this.isAdmin() ? "" : "none";
@@ -194,24 +232,14 @@ window.AUTH = {
       return;
     }
     document.body.classList.add("auth-readonly");
-    document.querySelectorAll("#app-root select").forEach((s) => {
-      s.disabled = true;
-    });
+    document.querySelectorAll("#app-root select").forEach(s => { s.disabled = true; });
     const writeActions = [
-      "saveAffectationsGH",
-      "saveMaquetteGH",
-      "saveEnseignantsGH",
-      "addEns",
-      "deleteEns",
-      "openEditEnsModal",
-      "addSubrow",
-      "removeSubrow",
-      "saveEditEns",
+      "saveAffectationsGH", "saveMaquetteGH", "saveEnseignantsGH",
+      "addEns", "deleteEns", "openEditEnsModal", "addSubrow", "removeSubrow", "saveEditEns",
     ];
-    document.querySelectorAll("#app-root button[onclick]").forEach((btn) => {
+    document.querySelectorAll("#app-root button[onclick]").forEach(btn => {
       const oc = btn.getAttribute("onclick") || "";
-      if (writeActions.some((fn) => oc.includes(fn)))
-        btn.style.display = "none";
+      if (writeActions.some(fn => oc.includes(fn))) btn.style.display = "none";
     });
   },
 };

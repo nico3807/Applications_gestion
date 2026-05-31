@@ -130,6 +130,10 @@
 
   <!-- ==================== JAVASCRIPT ==================== -->
 
+  <!-- Auth partagée -->
+  <script src="../auth.js"></script>
+  <script>if (!AUTH.isAuth()) { location.href = "../index.html"; }</script>
+
   <!-- Script applicatif -->
   <script src="script.js?v=2"></script>
 

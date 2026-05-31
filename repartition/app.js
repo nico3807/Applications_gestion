@@ -1374,15 +1374,8 @@ async function loadData() {
 }
 
 document.addEventListener("DOMContentLoaded", async () => {
-  AUTH.injectUI();
-  const init = async () => {
-    injectGHUI();
-    await loadData();
-    AUTH.injectBadge();
-  };
-  if (AUTH.isAuth()) {
-    await init();
-  } else {
-    window.addEventListener("auth-success", init, { once: true });
-  }
+  // La redirection est gérée par le script inline dans index.html
+  injectGHUI();
+  await loadData();
+  AUTH.injectBadge();
 });
