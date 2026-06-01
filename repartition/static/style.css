@@ -559,6 +559,15 @@ th.reel-col {
   background: #1e6645;
   font-size: 11px;
 }
+.reel-val {
+  text-align: center;
+  font-weight: 600;
+  color: #14532d;
+  background: #f0fdf4;
+}
+.group-even .reel-val {
+  background: #dcfce7;
+}
 
 .input-editable {
   width: 58px;

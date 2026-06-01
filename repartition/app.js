@@ -497,6 +497,7 @@ function renderMaquetteSemestre(root, sem) {
             <th rowspan="2" class="col-intitule">Ressource</th>
             <th colspan="3" class="group-header editable-header">Volumes Maquette</th>
             <th colspan="4" class="group-header pn-header">PN + Adaptation locale</th>
+            <th colspan="3" class="group-header reel-header">Réel planifié</th>
             <th rowspan="2" class="pct-header">% réalisation<br>/ PN</th>
         </tr>
         <tr>
@@ -507,6 +508,9 @@ function renderMaquetteSemestre(root, sem) {
             <th class="pn-readonly-col">Dont TP</th>
             <th class="pn-editable-col">Adapt locale</th>
             <th class="pn-editable-col">Dont TP</th>
+            <th class="reel-col">CM</th>
+            <th class="reel-col">TD</th>
+            <th class="reel-col">TP</th>
         </tr>
     </thead>
     <tbody>`;
@@ -531,6 +535,18 @@ function renderMaquetteSemestre(root, sem) {
       const pctClass = pct < 95 ? "pct-low" : "pct-ok";
       pctHtml = `<span class="${pctClass}">${pct.toFixed(0)} %</span>`;
     }
+    /* Réel planifié : somme des heures saisies dans la répartition */
+    const affRes = aff[res] || {};
+    let rCM = parseFloat(affRes.cm) || 0;
+    let rTD = parseFloat(affRes.td) || 0;
+    let rTP = parseFloat(affRes.tp) || 0;
+    if (affRes.subrows) affRes.subrows.forEach((s) => {
+      rCM += parseFloat(s.cm) || 0;
+      rTD += parseFloat(s.td) || 0;
+      rTP += parseFloat(s.tp) || 0;
+    });
+    const fmtR = (n) => (n % 1 === 0 ? n : n.toFixed(1).replace(/\.0$/, ""));
+
     html += `<tr class="${rowClass} row-main-resource">
             <td>${res}</td>
             <td><input type="number" class="input-editable" value="${m.cm_final}" onchange="updateMaq('${sem}','${resEsc}','cm_final',this.value)"></td>
@@ -540,6 +556,9 @@ function renderMaquetteSemestre(root, sem) {
             <td class="pn-readonly-val">${v.dont_tp_hn || '-'}</td>
             <td><input type="number" class="input-pn-editable" value="${v.adapt_locale}" onchange="updateVolHN('${sem}','${resEsc}','adapt_locale',this.value)" step="0.5"></td>
             <td><input type="number" class="input-pn-editable" value="${v.dont_tp_al}" onchange="updateVolHN('${sem}','${resEsc}','dont_tp_al',this.value)" step="0.5"></td>
+            <td class="reel-val">${fmtR(rCM)}</td>
+            <td class="reel-val">${fmtR(rTD)}</td>
+            <td class="reel-val">${fmtR(rTP)}</td>
             <td class="pct-cell">${pctHtml}</td>
         </tr>`;
   });
