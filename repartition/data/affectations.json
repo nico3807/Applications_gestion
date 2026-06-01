@@ -615,6 +615,12 @@
           "cm": 0,
           "td": 7.5,
           "tp": 1.5
+        },
+        {
+          "enseignant": "CHOLLET Antoine",
+          "cm": 0,
+          "td": 3,
+          "tp": 0
         }
       ],
       "responsable": "DE VELDER Sophie"
