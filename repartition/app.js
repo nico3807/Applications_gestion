@@ -384,6 +384,15 @@ function renderSemestre(root, sem) {
     });
     const fmtR = (n) => (n % 1 === 0 ? n : n.toFixed(1).replace(/\.0$/, ""));
 
+    const _ecartStyle = (v, m) => {
+      const e = v - m;
+      if (e < 0) return "color:#dc2626;font-weight:700;";
+      return (m === 0 ? e === 0 : e / m <= 0.1) ? "color:#16a34a;" : "color:#ea580c;";
+    };
+    const cmStyle = _ecartStyle(resCM, parseFloat(prev.cm_final) || 0);
+    const tdStyle = _ecartStyle(resTD, parseFloat(prev.td_final) || 0);
+    const tpStyle = _ecartStyle(resTP, parseFloat(prev.tp_final) || 0);
+
     html += `<tr class="row-responsable ${rowClass}">
             <td colspan="2" class="responsable-label">Responsable :
                 <select class="select-enseignant ${respSelClass}" onchange="updateAff('${sem}', '${res.replace(/'/g, "\\'")}', 'responsable', this.value)">
@@ -398,9 +407,9 @@ function renderSemestre(root, sem) {
                 </select>
             </td>
             <td class="responsable-label" style="text-align:right;">Total / étudiant :</td>
-            <td style="text-align:center;"><span class="prev-badge res-total-badge" data-field="cm" data-val="${resCM}" data-maq-cm="${prev.cm_final||0}" data-maq-td="${prev.td_final||0}" data-maq-tp="${prev.tp_final||0}">${fmtR(resCM)}</span></td>
-            <td style="text-align:center;"><span class="prev-badge res-total-badge" data-field="td" data-val="${resTD}" data-maq-cm="${prev.cm_final||0}" data-maq-td="${prev.td_final||0}" data-maq-tp="${prev.tp_final||0}">${fmtR(resTD)}</span></td>
-            <td style="text-align:center;"><span class="prev-badge res-total-badge" data-field="tp" data-val="${resTP}" data-maq-cm="${prev.cm_final||0}" data-maq-td="${prev.td_final||0}" data-maq-tp="${prev.tp_final||0}">${fmtR(resTP)}</span></td>
+            <td style="text-align:center;"><span class="prev-badge res-total-badge" style="${cmStyle}" data-field="cm" data-val="${resCM}" data-maq-cm="${prev.cm_final||0}" data-maq-td="${prev.td_final||0}" data-maq-tp="${prev.tp_final||0}">${fmtR(resCM)}</span></td>
+            <td style="text-align:center;"><span class="prev-badge res-total-badge" style="${tdStyle}" data-field="td" data-val="${resTD}" data-maq-cm="${prev.cm_final||0}" data-maq-td="${prev.td_final||0}" data-maq-tp="${prev.tp_final||0}">${fmtR(resTD)}</span></td>
+            <td style="text-align:center;"><span class="prev-badge res-total-badge" style="${tpStyle}" data-field="tp" data-val="${resTP}" data-maq-cm="${prev.cm_final||0}" data-maq-td="${prev.td_final||0}" data-maq-tp="${prev.tp_final||0}">${fmtR(resTP)}</span></td>
             <td></td>
         </tr>`;
   });
