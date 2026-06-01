@@ -8,8 +8,18 @@ const ORDER_DEFAULT = ORDER;
 
 /* Tableau de correspondance nom de mois français → numéro */
 const _FR_MONTHS = {
-  Janvier:1, Février:2, Mars:3, Avril:4, Mai:5, Juin:6,
-  Juillet:7, Août:8, Septembre:9, Octobre:10, Novembre:11, Décembre:12,
+  Janvier: 1,
+  Février: 2,
+  Mars: 3,
+  Avril: 4,
+  Mai: 5,
+  Juin: 6,
+  Juillet: 7,
+  Août: 8,
+  Septembre: 9,
+  Octobre: 10,
+  Novembre: 11,
+  Décembre: 12,
 };
 /** Parse une clé "Septembre 2025" → [2025, 9] */
 function _parseMonthKey(key) {
@@ -26,7 +36,11 @@ let CAL_DELTA = {};
 
 /** Charge le delta depuis localStorage */
 function loadDelta() {
-  try { return JSON.parse(localStorage.getItem("cal_delta")) || {}; } catch { return {}; }
+  try {
+    return JSON.parse(localStorage.getItem("cal_delta")) || {};
+  } catch {
+    return {};
+  }
 }
 
 /** Applique le delta sur CAL (par-dessus CAL_BASE) */
@@ -55,7 +69,9 @@ function recordDelta(monthName, day, group, val) {
   if (!CAL_DELTA[monthName]) CAL_DELTA[monthName] = {};
   if (!CAL_DELTA[monthName][day]) CAL_DELTA[monthName][day] = {};
   CAL_DELTA[monthName][day][group] = val; /* null = suppression */
-  try { localStorage.setItem("cal_delta", JSON.stringify(CAL_DELTA)); } catch {}
+  try {
+    localStorage.setItem("cal_delta", JSON.stringify(CAL_DELTA));
+  } catch {}
 }
 
 /** Sauvegarde (appelée après chaque modification de CAL) — enregistre le delta */
@@ -65,11 +81,11 @@ function persistCAL() {
   CAL_DELTA = {};
   ORDER.forEach((month) => {
     const baseEntries = CAL_BASE[month] || [];
-    const curEntries  = CAL[month]  || [];
+    const curEntries = CAL[month] || [];
     /* Événements ajoutés ou modifiés */
     curEntries.forEach((entry) => {
       const baseEntry = baseEntries.find((e) => e.day === entry.day);
-      const baseEvts  = (baseEntry && baseEntry.events) ? baseEntry.events : {};
+      const baseEvts = baseEntry && baseEntry.events ? baseEntry.events : {};
       Object.entries(entry.events || {}).forEach(([g, v]) => {
         if (baseEvts[g] !== v) recordDelta(month, entry.day, g, v);
       });
@@ -107,18 +123,18 @@ const GROUPS = [
 
 /* Couleurs des groupes pour les points de la vue année */
 const GROUP_CLR = {
-  "MMI1":     "var(--clr-MMI1)",
-  "MMI2-crea":"var(--clr-MMI2c)",
+  MMI1: "var(--clr-MMI1)",
+  "MMI2-crea": "var(--clr-MMI2c)",
   "MMI2-Dev": "var(--clr-MMI2d)",
   "MMI2-App": "var(--clr-MMI2a)",
-  "MMI3-crea":"var(--clr-MMI3c)",
+  "MMI3-crea": "var(--clr-MMI3c)",
   "MMI3-Dev": "var(--clr-MMI3d)",
   "MMI3-App": "var(--clr-MMI3a)",
-  "Salons":   "#059669",
-  "JPO":      "#a21caf",
-  "Autre":    "#475569",
-  "Réunion":  "#4338ca",
-  "Férié":    "#9d174d",
+  Salons: "#059669",
+  JPO: "#a21caf",
+  Autre: "#475569",
+  Réunion: "#4338ca",
+  Férié: "#9d174d",
 };
 
 /* Libellés courts et longs des jours ouvrés uniquement (Lu–Ve) */
@@ -265,12 +281,16 @@ function buildFilters() {
     if (allChecked) {
       /* Tout décocher */
       activeGroups.clear();
-      checkboxes.forEach((cb) => { cb.checked = false; });
+      checkboxes.forEach((cb) => {
+        cb.checked = false;
+      });
       btn.textContent = "Tout cocher";
     } else {
       /* Tout cocher */
       GROUPS.forEach((g) => activeGroups.add(g));
-      checkboxes.forEach((cb) => { cb.checked = true; });
+      checkboxes.forEach((cb) => {
+        cb.checked = true;
+      });
       btn.textContent = "Tout décocher";
     }
     document.querySelectorAll(".pill[data-g]").forEach((p) => {
@@ -285,11 +305,29 @@ function buildFilters() {
   ===================================================================== */
 
 const _MONTH_ABBREV = {
-  "Septembre":"Sept","Octobre":"Oct","Novembre":"Nov","Décembre":"Déc",
-  "Janvier":"Janv","Février":"Fév","Mars":"Mars","Avril":"Avr",
-  "Mai":"Mai","Juin":"Juin","Juillet":"Juil","Août":"Août",
+  Septembre: "Sept",
+  Octobre: "Oct",
+  Novembre: "Nov",
+  Décembre: "Déc",
+  Janvier: "Janv",
+  Février: "Fév",
+  Mars: "Mars",
+  Avril: "Avr",
+  Mai: "Mai",
+  Juin: "Juin",
+  Juillet: "Juil",
+  Août: "Août",
 };
-const _MONTHS_JAN_AUG = new Set(["Janvier","Février","Mars","Avril","Mai","Juin","Juillet","Août"]);
+const _MONTHS_JAN_AUG = new Set([
+  "Janvier",
+  "Février",
+  "Mars",
+  "Avril",
+  "Mai",
+  "Juin",
+  "Juillet",
+  "Août",
+]);
 
 /** Retourne le libellé court d'un mois selon la convention d'année universitaire.
  *  Ex: "Septembre 2026" → "Sept 26", "Janvier 2027" → "Janv 26" */
@@ -423,7 +461,10 @@ function buildMonthSection(monthName) {
   prevBtn.innerHTML = "&#8592;";
   prevBtn.setAttribute("aria-label", "Mois précédent");
   prevBtn.disabled = _idx <= 0;
-  prevBtn.addEventListener("click", (e) => { e.stopPropagation(); navigateMonth(monthName, -1); });
+  prevBtn.addEventListener("click", (e) => {
+    e.stopPropagation();
+    navigateMonth(monthName, -1);
+  });
 
   const _h2 = document.createElement("h2");
   _h2.textContent = monthName;
@@ -433,7 +474,10 @@ function buildMonthSection(monthName) {
   nextBtn.innerHTML = "&#8594;";
   nextBtn.setAttribute("aria-label", "Mois suivant");
   nextBtn.disabled = _idx >= ORDER.length - 1;
-  nextBtn.addEventListener("click", (e) => { e.stopPropagation(); navigateMonth(monthName, 1); });
+  nextBtn.addEventListener("click", (e) => {
+    e.stopPropagation();
+    navigateMonth(monthName, 1);
+  });
 
   const _titleRow = document.createElement("div");
   _titleRow.className = "month-hdr-title";
@@ -489,8 +533,17 @@ function buildMonthSection(monthName) {
 
   /* ── Rendu semaine par semaine ───────────────────────────────────── */
   for (const week of weeks) {
-    /* Chaque événement s'affiche uniquement sur son jour stocké */
-    const appEvts = {};
+    /* 1. Identifier les événements qui s'étendent sur toute la semaine (SAE, Stage, Entreprise) */
+    const weekSpanningEvts = {};
+    week.forEach((day) => {
+      if (day && day.dd && day.dd.events) {
+        Object.entries(day.dd.events).forEach(([g, ev]) => {
+          if (isWeekSpanning(g, ev)) {
+            weekSpanningEvts[g] = ev;
+          }
+        });
+      }
+    });
 
     /* ── Cellules des 5 jours de la semaine ── */
     for (const day of week) {
@@ -510,7 +563,7 @@ function buildMonthSection(monthName) {
            Sauf si la date est explicitement exclue (VACANCE_EXCLUSIONS). */
       const dateKey = y + "-" + m + "-" + d;
       const isVacance =
-        !isToday(y, m, d) &&                          /* aujourd'hui n'est jamais grisé vacances */
+        !isToday(y, m, d) /* aujourd'hui n'est jamais grisé vacances */ &&
         !VACANCE_EXCLUSIONS.has(dateKey) &&
         (FERIES.has(dateKey) ||
           vacanceDates.has(dateKey) ||
@@ -575,24 +628,41 @@ function buildMonthSection(monthName) {
 
       /* Ordre d'affichage des groupes dans la cellule */
       const GROUP_ORDER = [
-        "Férié", "Salons", "JPO", "Autre", "Réunion",
-        "MMI1", "MMI2-crea", "MMI2-Dev", "MMI2-App",
-        "MMI3-crea", "MMI3-Dev", "MMI3-App",
+        "Férié",
+        "Salons",
+        "JPO",
+        "Autre",
+        "Réunion",
+        "MMI1",
+        "MMI2-crea",
+        "MMI2-Dev",
+        "MMI2-App",
+        "MMI3-crea",
+        "MMI3-Dev",
+        "MMI3-App",
       ];
       const groupPriority = (g) => {
         const i = GROUP_ORDER.indexOf(g);
         return i === -1 ? GROUP_ORDER.length : i;
       };
 
-      /* Collecter tous les événements du jour (vacances exclus) */
-      const allEvts = []; /* { g, ev } */
+      /* Collecter tous les événements du jour */
+      const allEvts = [];
 
+      // Ajouter les événements spécifiques au jour (en ignorant ceux déjà gérés par la répétition semaine)
       if (dd && dd.events) {
         Object.entries(dd.events).forEach(([g, ev]) => {
           if (getCategory(ev) === "vacances") return;
-          allEvts.push({ g, ev });
+          if (!isWeekSpanning(g, ev)) {
+            allEvts.push({ g, ev });
+          }
         });
       }
+
+      // Ajouter les événements qui s'étendent sur la semaine pour ce groupe
+      Object.entries(weekSpanningEvts).forEach(([g, ev]) => {
+        allEvts.push({ g, ev });
+      });
 
       /* Trier par priorité puis rendre */
       allEvts.sort((a, b) => groupPriority(a.g) - groupPriority(b.g));
@@ -684,9 +754,12 @@ function buildYearView() {
       if (wi >= 5) continue; /* Ignorer Sa et Di */
 
       const dd = getDayData(monthName, d);
-      const evs = dd && dd.events
-        ? Object.entries(dd.events).filter(([g]) => activeGroups.has(g)).map(([, ev]) => ev)
-        : [];
+      const evs =
+        dd && dd.events
+          ? Object.entries(dd.events)
+              .filter(([g]) => activeGroups.has(g))
+              .map(([, ev]) => ev)
+          : [];
 
       const c = document.createElement("div");
       c.className = "mini-c";
@@ -702,9 +775,10 @@ function buildYearView() {
       c.appendChild(n);
 
       /* Points colorés (un par groupe actif ayant un événement ce jour) */
-      const dayGroups = dd && dd.events
-        ? Object.keys(dd.events).filter((g) => activeGroups.has(g))
-        : [];
+      const dayGroups =
+        dd && dd.events
+          ? Object.keys(dd.events).filter((g) => activeGroups.has(g))
+          : [];
       if (dayGroups.length > 0) {
         const dots = document.createElement("div");
         dots.className = "mini-dots";
@@ -804,15 +878,15 @@ function setView(v) {
 
 /* Jours fériés à griser comme les vacances (format "YYYY-M-D") */
 const FERIES = new Set([
-  "2026-11-11", /* Armistice */
-  "2026-12-25", /* Noël */
-  "2027-1-1",   /* Jour de l'an */
-  "2027-3-29",  /* Lundi de Pâques */
-  "2027-5-1",   /* Fête du Travail */
-  "2027-5-6",   /* Ascension */
-  "2027-5-8",   /* Victoire 1945 */
-  "2027-5-17",  /* Lundi de Pentecôte */
-  "2027-7-14",  /* Fête nationale */
+  "2026-11-11" /* Armistice */,
+  "2026-12-25" /* Noël */,
+  "2027-1-1" /* Jour de l'an */,
+  "2027-3-29" /* Lundi de Pâques */,
+  "2027-5-1" /* Fête du Travail */,
+  "2027-5-6" /* Ascension */,
+  "2027-5-8" /* Victoire 1945 */,
+  "2027-5-17" /* Lundi de Pentecôte */,
+  "2027-7-14" /* Fête nationale */,
 ]);
 
 /* Dates explicitement exclues du grisé vacances (format "YYYY-M-D") */
@@ -964,7 +1038,15 @@ function openDuplicateView() {
   document.getElementById("dupStart").value = srcDate;
   document.getElementById("dupEnd").value = srcDate;
   document.getElementById("dupError").textContent = "";
-  const _mmiGroups = ["MMI1","MMI2-crea","MMI2-Dev","MMI2-App","MMI3-crea","MMI3-Dev","MMI3-App"];
+  const _mmiGroups = [
+    "MMI1",
+    "MMI2-crea",
+    "MMI2-Dev",
+    "MMI2-App",
+    "MMI3-crea",
+    "MMI3-Dev",
+    "MMI3-App",
+  ];
   const targetSel = document.getElementById("dupTargetGroup");
   targetSel.value = _mmiGroups.includes(group) ? group : _mmiGroups[0];
   document
@@ -1286,13 +1368,13 @@ function injectFeries() {
   const ferieEvents = new Map([
     ["2026-11-11", "Armistice"],
     ["2026-12-25", "Noël"],
-    ["2027-1-1",   "Jour de l'an"],
-    ["2027-3-29",  "Lundi de Pâques"],
-    ["2027-5-1",   "Fête du Travail"],
-    ["2027-5-6",   "Ascension"],
-    ["2027-5-8",   "Victoire 1945"],
-    ["2027-5-17",  "Lundi de Pentecôte"],
-    ["2027-7-14",  "Fête nationale"],
+    ["2027-1-1", "Jour de l'an"],
+    ["2027-3-29", "Lundi de Pâques"],
+    ["2027-5-1", "Fête du Travail"],
+    ["2027-5-6", "Ascension"],
+    ["2027-5-8", "Victoire 1945"],
+    ["2027-5-17", "Lundi de Pentecôte"],
+    ["2027-7-14", "Fête nationale"],
   ]);
 
   /* Table de correspondance "YYYY-M" → nom du mois */
@@ -1321,17 +1403,23 @@ function injectFeries() {
 /* =====================================================================
      GITHUB SAVE
   ===================================================================== */
-const GH_KEY          = "gh_planning_cfg";
-const GH_OWNER        = "nico3807";
-const GH_REPO         = "Applications_gestion";
-const GH_BRANCH       = "main";
-const GH_PATH         = "planning-web/calendar_data.json";
+const GH_KEY = "gh_planning_cfg";
+const GH_OWNER = "nico3807";
+const GH_REPO = "Applications_gestion";
+const GH_BRANCH = "main";
+const GH_PATH = "planning-web/calendar_data.json";
 const GH_ARCHIVE_PATH = "planning-web/archive_25-26/calendar_data_25-26.json";
 
 function getGHConfig() {
-  try { return JSON.parse(localStorage.getItem(GH_KEY)) || {}; } catch { return {}; }
+  try {
+    return JSON.parse(localStorage.getItem(GH_KEY)) || {};
+  } catch {
+    return {};
+  }
 }
-function isGHConfigured() { return !!getGHConfig().token; }
+function isGHConfigured() {
+  return !!getGHConfig().token;
+}
 
 async function saveJsonToGitHub(path, jsonStr, message) {
   const cfg = getGHConfig();
@@ -1342,7 +1430,10 @@ async function saveJsonToGitHub(path, jsonStr, message) {
   try {
     const r = await fetch(`${url}?ref=${GH_BRANCH}`, {
       cache: "no-cache",
-      headers: { Authorization: `token ${cfg.token}`, Accept: "application/vnd.github.v3+json" },
+      headers: {
+        Authorization: `token ${cfg.token}`,
+        Accept: "application/vnd.github.v3+json",
+      },
     });
     if (r.ok) sha = (await r.json()).sha;
   } catch {}
@@ -1361,9 +1452,10 @@ async function saveJsonToGitHub(path, jsonStr, message) {
     let msg = `Erreur ${r.status}`;
     try {
       const j = await r.json();
-      msg = r.status === 401
-        ? "Token GitHub invalide ou expiré — reconfigurez-le."
-        : (j.message || msg);
+      msg =
+        r.status === 401
+          ? "Token GitHub invalide ou expiré — reconfigurez-le."
+          : j.message || msg;
     } catch {}
     throw new Error(msg);
   }
@@ -1371,7 +1463,12 @@ async function saveJsonToGitHub(path, jsonStr, message) {
 
 function showGHToast(msg, isError = false) {
   let t = document.getElementById("gh-toast");
-  if (!t) { t = document.createElement("div"); t.id = "gh-toast"; t.className = "gh-toast"; document.body.appendChild(t); }
+  if (!t) {
+    t = document.createElement("div");
+    t.id = "gh-toast";
+    t.className = "gh-toast";
+    document.body.appendChild(t);
+  }
   t.textContent = msg;
   t.style.background = isError ? "#dc2626" : "#16a34a";
   t.classList.add("show");
@@ -1379,22 +1476,40 @@ function showGHToast(msg, isError = false) {
 }
 
 async function saveCalendarGH() {
-  if (ARCHIVE_MODE) { showGHToast("Archives 2025-2026 — consultation uniquement", true); return; }
-  if (!isGHConfigured()) { openGHModal(); return; }
+  if (ARCHIVE_MODE) {
+    showGHToast("Archives 2025-2026 — consultation uniquement", true);
+    return;
+  }
+  if (!isGHConfigured()) {
+    openGHModal();
+    return;
+  }
   const btn = document.getElementById("gh-save-btn");
-  if (btn) { btn.disabled = true; btn.textContent = "⏳ Sauvegarde…"; }
+  if (btn) {
+    btn.disabled = true;
+    btn.textContent = "⏳ Sauvegarde…";
+  }
   try {
     const ts = new Date().toLocaleString("fr-FR");
-    await saveJsonToGitHub(GH_PATH, JSON.stringify(CAL, null, 2), `Update calendar_data.json — ${ts}`);
+    await saveJsonToGitHub(
+      GH_PATH,
+      JSON.stringify(CAL, null, 2),
+      `Update calendar_data.json — ${ts}`,
+    );
     /* La base devient l'état courant : on efface le delta */
     CAL_BASE = JSON.parse(JSON.stringify(CAL));
     CAL_DELTA = {};
-    try { localStorage.removeItem("cal_delta"); } catch {}
+    try {
+      localStorage.removeItem("cal_delta");
+    } catch {}
     showGHToast("✓ Planning sauvegardé sur GitHub !");
   } catch (e) {
     showGHToast("✗ " + e.message, true);
   } finally {
-    if (btn) { btn.disabled = false; btn.textContent = "💾 Sauvegarder"; }
+    if (btn) {
+      btn.disabled = false;
+      btn.textContent = "💾 Sauvegarder";
+    }
   }
 }
 
@@ -1404,7 +1519,9 @@ function injectGHUI() {
   footer.className = "gh-footer";
   footer.innerHTML = `<button class="gh-footer-link" id="gh-config-btn" style="${isGHConfigured() ? "display:none" : ""}">⚙ Configurer GitHub</button>`;
   document.body.appendChild(footer);
-  document.getElementById("gh-config-btn").addEventListener("click", openGHModal);
+  document
+    .getElementById("gh-config-btn")
+    .addEventListener("click", openGHModal);
 
   /* Bouton "Sauvegarder" dans le header */
   const headerInner = document.querySelector(".header-inner");
@@ -1437,20 +1554,33 @@ function injectGHUI() {
     </div>`;
   document.body.appendChild(modal);
 
-  modal.addEventListener("click", (e) => { if (e.target === modal) closeGHModal(); });
-  document.getElementById("gh-modal-cancel").addEventListener("click", closeGHModal);
-  document.getElementById("gh-modal-save").addEventListener("click", saveGHFromModal);
+  modal.addEventListener("click", (e) => {
+    if (e.target === modal) closeGHModal();
+  });
+  document
+    .getElementById("gh-modal-cancel")
+    .addEventListener("click", closeGHModal);
+  document
+    .getElementById("gh-modal-save")
+    .addEventListener("click", saveGHFromModal);
 
   const cfg = getGHConfig();
   if (cfg.token) document.getElementById("gh-token").value = cfg.token;
 }
 
-function openGHModal()  { document.getElementById("gh-modal").classList.add("open"); }
-function closeGHModal() { document.getElementById("gh-modal").classList.remove("open"); }
+function openGHModal() {
+  document.getElementById("gh-modal").classList.add("open");
+}
+function closeGHModal() {
+  document.getElementById("gh-modal").classList.remove("open");
+}
 
 function saveGHFromModal() {
   const token = document.getElementById("gh-token").value.trim();
-  if (!token) { showGHStatus("Saisissez un token.", "error"); return; }
+  if (!token) {
+    showGHStatus("Saisissez un token.", "error");
+    return;
+  }
   localStorage.setItem(GH_KEY, JSON.stringify({ token }));
   const cfgBtn = document.getElementById("gh-config-btn");
   if (cfgBtn) cfgBtn.style.display = "none";
@@ -1476,7 +1606,9 @@ function showGHStatus(msg, type) {
  *  puis reconstruit tout le calendrier. */
 async function _loadCalAndRebuild(localPath, ghPath) {
   let newBase = {};
-  try { newBase = await fetch(localPath).then((r) => r.json()); } catch {}
+  try {
+    newBase = await fetch(localPath).then((r) => r.json());
+  } catch {}
 
   if (!ARCHIVE_MODE && isGHConfigured()) {
     try {
@@ -1484,11 +1616,16 @@ async function _loadCalAndRebuild(localPath, ghPath) {
       const url = `https://api.github.com/repos/${GH_OWNER}/${GH_REPO}/contents/${ghPath}?ref=${GH_BRANCH}`;
       const resp = await fetch(url, {
         cache: "no-cache",
-        headers: { Authorization: `token ${cfg.token}`, Accept: "application/vnd.github.v3+json" },
+        headers: {
+          Authorization: `token ${cfg.token}`,
+          Accept: "application/vnd.github.v3+json",
+        },
       });
       if (resp.ok) {
         const json = await resp.json();
-        const ghData = JSON.parse(decodeURIComponent(escape(atob(json.content.replace(/\n/g, "")))));
+        const ghData = JSON.parse(
+          decodeURIComponent(escape(atob(json.content.replace(/\n/g, "")))),
+        );
         // N'utiliser les données GH que si elles correspondent à l'année courante
         if (ORDER.some((m) => ghData[m] !== undefined)) {
           newBase = ghData;
@@ -1505,7 +1642,9 @@ async function _loadCalAndRebuild(localPath, ghPath) {
     const keys = Object.keys(CAL_BASE);
     ORDER = keys;
     META = {};
-    keys.forEach((k) => { META[k] = _parseMonthKey(k); });
+    keys.forEach((k) => {
+      META[k] = _parseMonthKey(k);
+    });
   } else {
     ORDER = ORDER_DEFAULT;
     META = META_DEFAULT;
@@ -1559,8 +1698,11 @@ window.switchToArchive = async function () {
   if (!banner) {
     banner = document.createElement("div");
     banner.id = "archive-banner";
-    banner.textContent = "🗂 Mode archive 2025-2026 — consultation uniquement, aucune modification possible";
-    document.querySelector(".app-header").insertAdjacentElement("afterend", banner);
+    banner.textContent =
+      "🗂 Mode archive 2025-2026 — consultation uniquement, aucune modification possible";
+    document
+      .querySelector(".app-header")
+      .insertAdjacentElement("afterend", banner);
   }
   banner.style.display = "";
 
@@ -1570,7 +1712,10 @@ window.switchToArchive = async function () {
   const cfgBtn = document.getElementById("gh-config-btn");
   if (cfgBtn) cfgBtn.style.display = "none";
 
-  await _loadCalAndRebuild("archive_25-26/calendar_data_25-26.json", GH_ARCHIVE_PATH);
+  await _loadCalAndRebuild(
+    "archive_25-26/calendar_data_25-26.json",
+    GH_ARCHIVE_PATH,
+  );
   window.scrollTo({ top: 0, behavior: "instant" });
 };
 
@@ -1618,11 +1763,16 @@ async function init() {
       const url = `https://api.github.com/repos/${GH_OWNER}/${GH_REPO}/contents/${GH_PATH}?ref=${GH_BRANCH}`;
       const resp = await fetch(url, {
         cache: "no-cache",
-        headers: { Authorization: `token ${cfg.token}`, Accept: "application/vnd.github.v3+json" },
+        headers: {
+          Authorization: `token ${cfg.token}`,
+          Accept: "application/vnd.github.v3+json",
+        },
       });
       if (resp.ok) {
         const json = await resp.json();
-        const ghData = JSON.parse(decodeURIComponent(escape(atob(json.content.replace(/\n/g, "")))));
+        const ghData = JSON.parse(
+          decodeURIComponent(escape(atob(json.content.replace(/\n/g, "")))),
+        );
         // N'utiliser les données GH que si elles correspondent à l'année courante
         if (ORDER.some((m) => ghData[m] !== undefined)) {
           CAL_BASE = ghData;
@@ -1633,7 +1783,9 @@ async function init() {
   /* Copie profonde dans CAL */
   CAL = JSON.parse(JSON.stringify(CAL_BASE));
   /* Migrer l'ancienne clé cal_data si elle existe */
-  try { localStorage.removeItem("cal_data"); } catch {}
+  try {
+    localStorage.removeItem("cal_data");
+  } catch {}
   /* Appliquer le delta sauvegardé (modifications utilisateur) */
   CAL_DELTA = loadDelta();
   applyDelta();
@@ -1696,7 +1848,10 @@ async function init() {
   });
   document.getElementById("dupOkBtn").addEventListener("click", saveDuplicate);
   document.getElementById("dupForm").addEventListener("keydown", (e) => {
-    if (e.key === "Enter") { e.preventDefault(); saveDuplicate(); }
+    if (e.key === "Enter") {
+      e.preventDefault();
+      saveDuplicate();
+    }
   });
   document
     .getElementById("detailEditBtn")
