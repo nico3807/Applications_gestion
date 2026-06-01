@@ -1002,24 +1002,57 @@ function closeEventDetail() {
 /** Supprime l'événement du groupe pour le jour stocké dans currentDetailEvt */
 function deleteEvent() {
   if (!currentDetailEvt) return;
-  const { group, monthName, day } = currentDetailEvt;
+  const { group, text, monthName, day } = currentDetailEvt;
 
-  const monthData = CAL[monthName];
-  if (monthData) {
-    const entry = monthData.find((e) => e.day === day);
-    if (entry && entry.events) delete entry.events[group];
+  const isSpanning = isWeekSpanning(group, text);
+  const affectedMonths = new Set([monthName]);
+
+  if (isSpanning) {
+    const [y, m] = META[monthName];
+    const date = new Date(y, m - 1, day);
+    const dow = date.getDay(); // 0=Di, 1=Lu...
+    const diffToMon = dow === 0 ? -6 : 1 - dow;
+
+    for (let i = 0; i < 5; i++) {
+      const d = new Date(y, m - 1, day);
+      d.setDate(date.getDate() + diffToMon + i);
+      const ty = d.getFullYear(),
+        tm = d.getMonth() + 1,
+        td = d.getDate();
+
+      const tmn = ORDER.find((mn) => {
+        const [my, mm] = META[mn];
+        return my === ty && mm === tm;
+      });
+      if (tmn) {
+        affectedMonths.add(tmn);
+        const mData = CAL[tmn];
+        if (mData) {
+          const entry = mData.find((e) => e.day === td);
+          if (entry && entry.events) delete entry.events[group];
+        }
+      }
+    }
+  } else {
+    const monthData = CAL[monthName];
+    if (monthData) {
+      const entry = monthData.find((e) => e.day === day);
+      if (entry && entry.events) delete entry.events[group];
+    }
   }
 
-  /* Reconstruire la section du mois */
+  /* Reconstruire les sections impactées */
   const mc = document.getElementById("monthsContainer");
-  const sectionId = "ms-" + monthName.replace(/\s+/g, "-");
-  const old = document.getElementById(sectionId);
-  if (old) {
-    const wasActive = old.classList.contains("active");
-    const rebuilt = buildMonthSection(monthName);
-    if (wasActive) rebuilt.classList.add("active");
-    mc.replaceChild(rebuilt, old);
-  }
+  affectedMonths.forEach((mn) => {
+    const sectionId = "ms-" + mn.replace(/\s+/g, "-");
+    const old = document.getElementById(sectionId);
+    if (old) {
+      const wasActive = old.classList.contains("active");
+      const rebuilt = buildMonthSection(mn);
+      if (wasActive) rebuilt.classList.add("active");
+      mc.replaceChild(rebuilt, old);
+    }
+  });
 
   persistCAL();
   syncStickyTops();
@@ -1203,15 +1236,47 @@ function saveEdit() {
   /* Supprimer l'ancien événement */
   const {
     group: oldGroup,
+    text: oldText,
     monthName: oldMonth,
     day: oldDay,
   } = currentDetailEvt;
-  const oldMonthData = CAL[oldMonth];
-  if (oldMonthData) {
-    const entry = oldMonthData.find((e) => e.day === oldDay);
-    if (entry && entry.events) delete entry.events[oldGroup];
-  }
+
+  const isSpanning = isWeekSpanning(oldGroup, oldText);
   const affectedMonths = new Set([oldMonth]);
+
+  if (isSpanning) {
+    const [y, m] = META[oldMonth];
+    const date = new Date(y, m - 1, oldDay);
+    const dow = date.getDay();
+    const diffToMon = dow === 0 ? -6 : 1 - dow;
+
+    for (let i = 0; i < 5; i++) {
+      const d = new Date(y, m - 1, oldDay);
+      d.setDate(date.getDate() + diffToMon + i);
+      const ty = d.getFullYear(),
+        tm = d.getMonth() + 1,
+        td = d.getDate();
+
+      const tmn = ORDER.find((mn) => {
+        const [my, mm] = META[mn];
+        return my === ty && mm === tm;
+      });
+      if (tmn) {
+        affectedMonths.add(tmn);
+        const mData = CAL[tmn];
+        if (mData) {
+          const entry = mData.find((e) => e.day === td);
+          if (entry && entry.events) delete entry.events[oldGroup];
+        }
+      }
+    }
+  } else {
+    const oldMonthData = CAL[oldMonth];
+    if (oldMonthData) {
+      const entry = oldMonthData.find((e) => e.day === oldDay);
+      if (entry && entry.events) delete entry.events[oldGroup];
+    }
+  }
 
   /* Insérer le nouvel événement jour par jour */
   const cur = new Date(start + "T00:00:00");
