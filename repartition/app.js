@@ -91,6 +91,76 @@ function _injectPrintBar(root) {
   else root.insertBefore(bar, root.firstChild);
 }
 
+/* ── Tooltip Total / étudiant ────────────────────────────────────────────── */
+function _ensureTooltip() {
+  let tt = document.getElementById("res-tooltip");
+  if (!tt) {
+    tt = document.createElement("div");
+    tt.id = "res-tooltip";
+    tt.style.cssText = "display:none;position:fixed;z-index:9999;background:#fff;" +
+      "border:1px solid #d1d5db;border-radius:8px;padding:0.65rem 0.9rem;" +
+      "box-shadow:0 4px 16px rgba(0,0,0,.15);font-size:12px;pointer-events:none;" +
+      "min-width:220px;line-height:1.8;";
+    document.body.appendChild(tt);
+  }
+  return tt;
+}
+
+function _posTooltip(e, tt) {
+  const m = 14;
+  let l = e.clientX + m, t = e.clientY + m;
+  if (l + tt.offsetWidth  > window.innerWidth)  l = e.clientX - tt.offsetWidth  - m;
+  if (t + tt.offsetHeight > window.innerHeight) t = e.clientY - tt.offsetHeight - m;
+  tt.style.left = l + "px";
+  tt.style.top  = t + "px";
+}
+
+document.addEventListener("mouseover", function (e) {
+  const badge = e.target.closest(".res-total-badge");
+  if (!badge) return;
+
+  const field  = badge.dataset.field;
+  const val    = parseFloat(badge.dataset.val)    || 0;
+  const maqCM  = parseFloat(badge.dataset.maqCm)  || 0;
+  const maqTD  = parseFloat(badge.dataset.maqTd)  || 0;
+  const maqTP  = parseFloat(badge.dataset.maqTp)  || 0;
+  const maqVal = field === "cm" ? maqCM : field === "td" ? maqTD : maqTP;
+
+  const ecart = val - maqVal;
+  let ecartColor;
+  if (ecart < 0) {
+    ecartColor = "#dc2626";
+  } else if (maqVal === 0 ? ecart === 0 : ecart / maqVal <= 0.1) {
+    ecartColor = "#16a34a";
+  } else {
+    ecartColor = "#ea580c";
+  }
+
+  const fmt  = (n) => (n % 1 === 0 ? String(n) : n.toFixed(1));
+  const sign = ecart >= 0 ? "+" : "";
+  const lbl  = field.toUpperCase();
+
+  const tt = _ensureTooltip();
+  tt.innerHTML =
+    `<div><strong>Total&nbsp;/&nbsp;étudiant&nbsp;:</strong> ${lbl}&nbsp;=&nbsp;${fmt(val)}</div>` +
+    `<div><strong>Maquette&nbsp;:</strong> CM&nbsp;${fmt(maqCM)}&nbsp;|&nbsp;TD&nbsp;${fmt(maqTD)}&nbsp;|&nbsp;TP&nbsp;${fmt(maqTP)}</div>` +
+    `<div><strong>Écart&nbsp;:</strong> <span style="color:${ecartColor};font-weight:700;">${sign}${fmt(ecart)}</span></div>`;
+  tt.style.display = "block";
+  _posTooltip(e, tt);
+});
+
+document.addEventListener("mousemove", function (e) {
+  const tt = document.getElementById("res-tooltip");
+  if (tt && tt.style.display !== "none") _posTooltip(e, tt);
+});
+
+document.addEventListener("mouseout", function (e) {
+  if (!e.target.closest(".res-total-badge")) return;
+  if (e.relatedTarget && e.target.contains(e.relatedTarget)) return;
+  const tt = document.getElementById("res-tooltip");
+  if (tt) tt.style.display = "none";
+});
+
 function renderView() {
   const root = document.getElementById("app-root");
 
@@ -328,9 +398,9 @@ function renderSemestre(root, sem) {
                 </select>
             </td>
             <td class="responsable-label" style="text-align:right;">Total / étudiant :</td>
-            <td style="text-align:center;"><span class="prev-badge">${fmtR(resCM)}</span></td>
-            <td style="text-align:center;"><span class="prev-badge">${fmtR(resTD)}</span></td>
-            <td style="text-align:center;"><span class="prev-badge">${fmtR(resTP)}</span></td>
+            <td style="text-align:center;"><span class="prev-badge res-total-badge" data-field="cm" data-val="${resCM}" data-maq-cm="${prev.cm_final||0}" data-maq-td="${prev.td_final||0}" data-maq-tp="${prev.tp_final||0}">${fmtR(resCM)}</span></td>
+            <td style="text-align:center;"><span class="prev-badge res-total-badge" data-field="td" data-val="${resTD}" data-maq-cm="${prev.cm_final||0}" data-maq-td="${prev.td_final||0}" data-maq-tp="${prev.tp_final||0}">${fmtR(resTD)}</span></td>
+            <td style="text-align:center;"><span class="prev-badge res-total-badge" data-field="tp" data-val="${resTP}" data-maq-cm="${prev.cm_final||0}" data-maq-td="${prev.td_final||0}" data-maq-tp="${prev.tp_final||0}">${fmtR(resTP)}</span></td>
             <td></td>
         </tr>`;
   });
