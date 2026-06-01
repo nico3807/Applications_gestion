@@ -302,8 +302,20 @@ function renderSemestre(root, sem) {
         ? "select-vac"
         : "select-tit"
       : "";
+
+    /* Totaux CM/TD/TP de la ressource (ligne principale + sous-groupes) */
+    let resCM = parseFloat(data.cm) || 0;
+    let resTD = parseFloat(data.td) || 0;
+    let resTP = parseFloat(data.tp) || 0;
+    if (data.subrows) data.subrows.forEach((s) => {
+      resCM += parseFloat(s.cm) || 0;
+      resTD += parseFloat(s.td) || 0;
+      resTP += parseFloat(s.tp) || 0;
+    });
+    const fmtR = (n) => (n % 1 === 0 ? n : n.toFixed(1).replace(/\.0$/, ""));
+
     html += `<tr class="row-responsable ${rowClass}">
-            <td colspan="7" class="responsable-label">Responsable :
+            <td colspan="2" class="responsable-label">Responsable :
                 <select class="select-enseignant ${respSelClass}" onchange="updateAff('${sem}', '${res.replace(/'/g, "\\'")}', 'responsable', this.value)">
                     <option value="">-</option>
                     ${enseignants
@@ -315,6 +327,11 @@ function renderSemestre(root, sem) {
                       .join("")}
                 </select>
             </td>
+            <td class="responsable-label">Total / étudiant :</td>
+            <td><span class="prev-badge">${fmtR(resCM)}</span></td>
+            <td><span class="prev-badge">${fmtR(resTD)}</span></td>
+            <td><span class="prev-badge">${fmtR(resTP)}</span></td>
+            <td></td>
         </tr>`;
   });
 
