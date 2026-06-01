@@ -44,28 +44,38 @@
     {
       "day": 7,
       "weekday": "Mo",
-      "events": {},
+      "events": {
+        "MMI1": "Test rajout"
+      },
       "week": 37
     },
     {
       "day": 8,
       "weekday": "Tu",
-      "events": {}
+      "events": {
+        "MMI1": "Test rajout"
+      }
     },
     {
       "day": 9,
       "weekday": "We",
-      "events": {}
+      "events": {
+        "MMI1": "Test rajout"
+      }
     },
     {
       "day": 10,
       "weekday": "Th",
-      "events": {}
+      "events": {
+        "MMI1": "Test rajout"
+      }
     },
     {
       "day": 11,
       "weekday": "Fr",
-      "events": {}
+      "events": {
+        "MMI1": "Test rajout"
+      }
     },
     {
       "day": 12,
@@ -118,8 +128,8 @@
       "weekday": "Mo",
       "events": {
         "MMI3-App": "Entreprise S01",
-        "MMI3-crea": "SAÉ 5xx",
-        "MMI3-Dev": "SAÉ 5xx"
+        "MMI3-Dev": "SAÉ 5xx",
+        "MMI3-crea": "SAÉ 5xx"
       },
       "week": 39
     },
@@ -128,8 +138,8 @@
       "weekday": "Tu",
       "events": {
         "MMI3-App": "Entreprise S01",
-        "MMI3-crea": "SAÉ 5xx",
-        "MMI3-Dev": "SAÉ 5xx"
+        "MMI3-Dev": "SAÉ 5xx",
+        "MMI3-crea": "SAÉ 5xx"
       }
     },
     {
@@ -137,8 +147,8 @@
       "weekday": "We",
       "events": {
         "MMI3-App": "Entreprise S01",
-        "MMI3-crea": "SAÉ 5xx",
-        "MMI3-Dev": "SAÉ 5xx"
+        "MMI3-Dev": "SAÉ 5xx",
+        "MMI3-crea": "SAÉ 5xx"
       }
     },
     {
@@ -147,8 +157,8 @@
       "events": {
         "MMI3-App": "Entreprise S01",
         "Autre": "Journée Bienvenue 2026",
-        "MMI3-crea": "SAÉ 5xx",
-        "MMI3-Dev": "SAÉ 5xx"
+        "MMI3-Dev": "SAÉ 5xx",
+        "MMI3-crea": "SAÉ 5xx"
       }
     },
     {
@@ -156,8 +166,8 @@
       "weekday": "Fr",
       "events": {
         "MMI3-App": "Entreprise S01",
-        "MMI3-crea": "SAÉ 5xx",
-        "MMI3-Dev": "SAÉ 5xx"
+        "MMI3-Dev": "SAÉ 5xx",
+        "MMI3-crea": "SAÉ 5xx"
       }
     },
     {
@@ -489,21 +499,13 @@
     {
       "day": 9,
       "weekday": "Mo",
-      "events": {
-        "MMI3-App": "Entreprise S05",
-        "MMI3-crea": "SAÉ 5xx",
-        "MMI3-Dev": "SAÉ 5xx"
-      },
+      "events": {},
       "week": 46
     },
     {
       "day": 10,
       "weekday": "Tu",
-      "events": {
-        "MMI3-App": "Entreprise S05",
-        "MMI3-crea": "SAÉ 5xx",
-        "MMI3-Dev": "SAÉ 5xx"
-      }
+      "events": {}
     },
     {
       "day": 11,
@@ -515,20 +517,12 @@
     {
       "day": 12,
       "weekday": "Th",
-      "events": {
-        "MMI3-App": "Entreprise S05",
-        "MMI3-crea": "SAÉ 5xx",
-        "MMI3-Dev": "SAÉ 5xx"
-      }
+      "events": {}
     },
     {
       "day": 13,
       "weekday": "Fr",
-      "events": {
-        "MMI3-App": "Entreprise S05",
-        "MMI3-crea": "SAÉ 5xx",
-        "MMI3-Dev": "SAÉ 5xx"
-      }
+      "events": {}
     },
     {
       "day": 14,
@@ -815,7 +809,6 @@
       "day": 22,
       "weekday": "Tu",
       "events": {
-        "MMI2-App": "Entreprise S06",
         "MMI3-App": "Entreprise S08"
       }
     },
@@ -823,7 +816,6 @@
       "day": 23,
       "weekday": "We",
       "events": {
-        "MMI2-App": "Entreprise S06",
         "MMI3-App": "Entreprise S08"
       }
     },
@@ -831,7 +823,6 @@
       "day": 24,
       "weekday": "Th",
       "events": {
-        "MMI2-App": "Entreprise S06",
         "MMI3-App": "Entreprise S08"
       }
     },
