@@ -515,10 +515,17 @@ function renderMaquetteSemestre(root, sem) {
     </thead>
     <tbody>`;
 
+  const _resPrio = (r) => {
+    const l = r.toLowerCase();
+    if (l.includes("hackathon")) return 4;
+    if (l.includes("marathon"))  return 3;
+    if (l.includes("portfolio")) return 2;
+    if (l.includes("saé"))       return 1;
+    return 0;
+  };
   const sortedRes = Object.keys(aff).sort((a, b) => {
-    const aSae = a.toLowerCase().includes("saé");
-    const bSae = b.toLowerCase().includes("saé");
-    if (aSae !== bSae) return aSae ? 1 : -1;
+    const pa = _resPrio(a), pb = _resPrio(b);
+    if (pa !== pb) return pa - pb;
     return a.localeCompare(b, "fr");
   });
 
