@@ -554,6 +554,16 @@
       "cm_final": 0,
       "td_final": 7.5,
       "tp_final": 0
+    },
+    "SAÉ 5.Crea.02 | SAE Management": {
+      "cm_final": 0,
+      "td_final": 15,
+      "tp_final": 0
+    },
+    "SAÉ 5.Crea.03 | SAE Conception d'interface": {
+      "cm_final": 0,
+      "td_final": 15,
+      "tp_final": 0
     }
   },
   "S6 crea": {
@@ -652,9 +662,9 @@
       "tp_final": 0
     },
     "R6.DWeb-DI.02 | Développement Web et dispositif interactif": {
-      "cm_final": 20,
+      "cm_final": 0,
       "td_final": 20,
-      "tp_final": 0
+      "tp_final": 20
     },
     "R6.DWeb-DI.03 | Fonctionnement des IA": {
       "cm_final": 0,
@@ -668,7 +678,7 @@
     },
     "PORTFOLIO | Portfolio-Parcours Dev": {
       "cm_final": 0,
-      "td_final": 7.5,
+      "td_final": 3,
       "tp_final": 0
     }
   }

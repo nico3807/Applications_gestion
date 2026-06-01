@@ -1,667 +1,667 @@
 {
   "S1": {
     "R1.20 | Soutien, remise a niveau": {
-      "vol_hn": 0.0,
-      "dont_tp_hn": 0.0,
+      "vol_hn": 0,
+      "dont_tp_hn": 0,
       "adapt_locale": 13.5,
       "dont_tp_al": 1.5
     },
     "R1.01 | Anglais": {
-      "vol_hn": 15.0,
-      "dont_tp_hn": 10.0,
-      "adapt_locale": 0.0,
-      "dont_tp_al": 0.0
+      "vol_hn": 15,
+      "dont_tp_hn": 10,
+      "adapt_locale": 0,
+      "dont_tp_al": 0
     },
     "R1.02 | Espagnol (LV2)": {
-      "vol_hn": 10.0,
-      "dont_tp_hn": 5.0,
+      "vol_hn": 10,
+      "dont_tp_hn": 5,
       "adapt_locale": 0.5,
-      "dont_tp_al": 0.0
+      "dont_tp_al": 0
     },
     "R1.03 Ergonomie et Accessibilité": {
-      "vol_hn": 15.0,
-      "dont_tp_hn": 10.0,
+      "vol_hn": 15,
+      "dont_tp_hn": 10,
       "adapt_locale": 1.5,
-      "dont_tp_al": 0.0
+      "dont_tp_al": 0
     },
     "R1.04 Culture numérique": {
-      "vol_hn": 15.0,
-      "dont_tp_hn": 0.0,
-      "adapt_locale": 6.0,
-      "dont_tp_al": 0.0
+      "vol_hn": 15,
+      "dont_tp_hn": 0,
+      "adapt_locale": 6,
+      "dont_tp_al": 0
     },
     "R1.05 Stratégies de communication et marketing": {
-      "vol_hn": 25.0,
-      "dont_tp_hn": 0.0,
+      "vol_hn": 25,
+      "dont_tp_hn": 0,
       "adapt_locale": 0.5,
-      "dont_tp_al": 0.0
+      "dont_tp_al": 0
     },
     "R1.06 Expression, communication et rhétorique": {
-      "vol_hn": 20.0,
-      "dont_tp_hn": 15.0,
-      "adapt_locale": 0.0,
-      "dont_tp_al": 0.0
+      "vol_hn": 20,
+      "dont_tp_hn": 15,
+      "adapt_locale": 0,
+      "dont_tp_al": 0
     },
     "R1.07 Écriture multimédia et narration": {
-      "vol_hn": 15.0,
-      "dont_tp_hn": 10.0,
+      "vol_hn": 15,
+      "dont_tp_hn": 10,
       "adapt_locale": 1.5,
-      "dont_tp_al": 0.0
+      "dont_tp_al": 0
     },
     "R1.08 Production graphique": {
-      "vol_hn": 20.0,
-      "dont_tp_hn": 15.0,
-      "adapt_locale": 1.0,
-      "dont_tp_al": 0.0
+      "vol_hn": 20,
+      "dont_tp_hn": 15,
+      "adapt_locale": 1,
+      "dont_tp_al": 0
     },
     "R1.09 Culture artistique": {
-      "vol_hn": 15.0,
-      "dont_tp_hn": 10.0,
-      "adapt_locale": 3.0,
+      "vol_hn": 15,
+      "dont_tp_hn": 10,
+      "adapt_locale": 3,
       "dont_tp_al": 0.5
     },
     "R1.10 Production audio et vidéo": {
-      "vol_hn": 20.0,
-      "dont_tp_hn": 15.0,
-      "adapt_locale": 1.0,
-      "dont_tp_al": 0.0
+      "vol_hn": 20,
+      "dont_tp_hn": 15,
+      "adapt_locale": 1,
+      "dont_tp_al": 0
     },
     "R1.11 Intégration": {
-      "vol_hn": 25.0,
-      "dont_tp_hn": 15.0,
-      "adapt_locale": 5.0,
-      "dont_tp_al": 0.0
+      "vol_hn": 25,
+      "dont_tp_hn": 15,
+      "adapt_locale": 5,
+      "dont_tp_al": 0
     },
     "R1.12 Développement Web": {
-      "vol_hn": 20.0,
-      "dont_tp_hn": 15.0,
-      "adapt_locale": 0.0,
-      "dont_tp_al": 0.0
+      "vol_hn": 20,
+      "dont_tp_hn": 15,
+      "adapt_locale": 0,
+      "dont_tp_al": 0
     },
     "R1.13 Hébergement": {
-      "vol_hn": 15.0,
-      "dont_tp_hn": 10.0,
-      "adapt_locale": 0.0,
-      "dont_tp_al": 0.0
+      "vol_hn": 15,
+      "dont_tp_hn": 10,
+      "adapt_locale": 0,
+      "dont_tp_al": 0
     },
     "R1.14 Représentation et traitement de l'information": {
-      "vol_hn": 20.0,
-      "dont_tp_hn": 15.0,
-      "adapt_locale": 0.0,
-      "dont_tp_al": 0.0
+      "vol_hn": 20,
+      "dont_tp_hn": 15,
+      "adapt_locale": 0,
+      "dont_tp_al": 0
     },
     "R1.15 Gestion de projet": {
-      "vol_hn": 15.0,
-      "dont_tp_hn": 10.0,
-      "adapt_locale": 0.0,
-      "dont_tp_al": 0.0
+      "vol_hn": 15,
+      "dont_tp_hn": 10,
+      "adapt_locale": 0,
+      "dont_tp_al": 0
     },
     "R1.16 Économie, gestion et droit du numérique": {
-      "vol_hn": 15.0,
-      "dont_tp_hn": 0.0,
-      "adapt_locale": 0.0,
-      "dont_tp_al": 0.0
+      "vol_hn": 15,
+      "dont_tp_hn": 0,
+      "adapt_locale": 0,
+      "dont_tp_al": 0
     },
     "R1.17 Projet Personnel et Professionnel": {
-      "vol_hn": 20.0,
-      "dont_tp_hn": 5.0,
-      "adapt_locale": 0.0,
-      "dont_tp_al": 0.0
+      "vol_hn": 20,
+      "dont_tp_hn": 5,
+      "adapt_locale": 0,
+      "dont_tp_al": 0
     },
     "SAÉ 1.01 Auditer une communication numérique": {
-      "vol_hn": 0.0,
-      "dont_tp_hn": 0.0,
-      "adapt_locale": 18.0,
-      "dont_tp_al": 0.0
+      "vol_hn": 0,
+      "dont_tp_hn": 0,
+      "adapt_locale": 18,
+      "dont_tp_al": 0
     },
     "SAÉ 1.02 Concevoir une recommandation de communication numérique": {
-      "vol_hn": 0.0,
-      "dont_tp_hn": 0.0,
+      "vol_hn": 0,
+      "dont_tp_hn": 0,
       "adapt_locale": 19.5,
       "dont_tp_al": 4.5
     },
     "SAÉ 1.03 Produire les éléments d'une communication visuelle": {
-      "vol_hn": 0.0,
-      "dont_tp_hn": 0.0,
+      "vol_hn": 0,
+      "dont_tp_hn": 0,
       "adapt_locale": 10.5,
-      "dont_tp_al": 3.0
+      "dont_tp_al": 3
     },
     "SAÉ 1.04 Produire un contenu audio et vidéo": {
-      "vol_hn": 0.0,
-      "dont_tp_hn": 0.0,
+      "vol_hn": 0,
+      "dont_tp_hn": 0,
       "adapt_locale": 19.5,
-      "dont_tp_al": 0.0
+      "dont_tp_al": 0
     },
     "SAÉ 1.05 Produire un site Web": {
-      "vol_hn": 0.0,
-      "dont_tp_hn": 0.0,
-      "adapt_locale": 9.0,
-      "dont_tp_al": 0.0
+      "vol_hn": 0,
+      "dont_tp_hn": 0,
+      "adapt_locale": 9,
+      "dont_tp_al": 0
     },
     "SAÉ 1.06 Gérer un projet de communication numérique": {
-      "vol_hn": 0.0,
-      "dont_tp_hn": 0.0,
+      "vol_hn": 0,
+      "dont_tp_hn": 0,
       "adapt_locale": 19.5,
-      "dont_tp_al": 0.0
+      "dont_tp_al": 0
     },
     "PORTFOLIO | Portfolio": {
-      "vol_hn": 0.0,
-      "dont_tp_hn": 0.0,
-      "adapt_locale": 0.0,
-      "dont_tp_al": 0.0
+      "vol_hn": 0,
+      "dont_tp_hn": 0,
+      "adapt_locale": 0,
+      "dont_tp_al": 0
     }
   },
   "S2": {
     "R2.01 | Anglais": {
-      "vol_hn": 15.0,
-      "dont_tp_hn": 10.0,
-      "adapt_locale": 0.0,
-      "dont_tp_al": 0.0
+      "vol_hn": 15,
+      "dont_tp_hn": 10,
+      "adapt_locale": 0,
+      "dont_tp_al": 0
     },
     "R2.03 | Ergonomie et Accessibilité": {
-      "vol_hn": 15.0,
-      "dont_tp_hn": 10.0,
-      "adapt_locale": 0.0,
-      "dont_tp_al": 0.0
+      "vol_hn": 15,
+      "dont_tp_hn": 10,
+      "adapt_locale": 0,
+      "dont_tp_al": 0
     },
     "R2.04 | Culture numérique": {
-      "vol_hn": 15.0,
-      "dont_tp_hn": 0.0,
-      "adapt_locale": 0.0,
-      "dont_tp_al": 0.0
+      "vol_hn": 15,
+      "dont_tp_hn": 0,
+      "adapt_locale": 0,
+      "dont_tp_al": 0
     },
     "R2.05 | Stratégies de communication et marketing": {
-      "vol_hn": 15.0,
-      "dont_tp_hn": 0.0,
-      "adapt_locale": 0.0,
-      "dont_tp_al": 0.0
+      "vol_hn": 15,
+      "dont_tp_hn": 0,
+      "adapt_locale": 0,
+      "dont_tp_al": 0
     },
     "R2.06 | Expression, communication et rhétorique": {
-      "vol_hn": 15.0,
-      "dont_tp_hn": 10.0,
+      "vol_hn": 15,
+      "dont_tp_hn": 10,
       "adapt_locale": 1.5,
       "dont_tp_al": 0.5
     },
     "R2.07 | Écriture multimédia et narration": {
-      "vol_hn": 15.0,
-      "dont_tp_hn": 10.0,
+      "vol_hn": 15,
+      "dont_tp_hn": 10,
       "adapt_locale": 4.5,
       "dont_tp_al": 0.5
     },
     "R2.08 | Production graphique": {
-      "vol_hn": 20.0,
-      "dont_tp_hn": 15.0,
-      "adapt_locale": 1.0,
-      "dont_tp_al": 0.0
+      "vol_hn": 20,
+      "dont_tp_hn": 15,
+      "adapt_locale": 1,
+      "dont_tp_al": 0
     },
     "R2.09 | Culture artistique": {
-      "vol_hn": 15.0,
-      "dont_tp_hn": 10.0,
+      "vol_hn": 15,
+      "dont_tp_hn": 10,
       "adapt_locale": 1.5,
       "dont_tp_al": 0.5
     },
     "R2.10 | Production audio et vidéo": {
-      "vol_hn": 20.0,
-      "dont_tp_hn": 15.0,
-      "adapt_locale": 0.0,
-      "dont_tp_al": 0.0
+      "vol_hn": 20,
+      "dont_tp_hn": 15,
+      "adapt_locale": 0,
+      "dont_tp_al": 0
     },
     "R2.11 | Gestion de contenus": {
-      "vol_hn": 10.0,
-      "dont_tp_hn": 5.0,
+      "vol_hn": 10,
+      "dont_tp_hn": 5,
       "adapt_locale": 0.5,
-      "dont_tp_al": 1.0
+      "dont_tp_al": 1
     },
     "R2.12 | Intégration": {
-      "vol_hn": 20.0,
-      "dont_tp_hn": 15.0,
-      "adapt_locale": 1.0,
-      "dont_tp_al": 0.0
+      "vol_hn": 20,
+      "dont_tp_hn": 15,
+      "adapt_locale": 1,
+      "dont_tp_al": 0
     },
     "R2.13 | Développement Web": {
-      "vol_hn": 20.0,
-      "dont_tp_hn": 15.0,
-      "adapt_locale": 0.0,
-      "dont_tp_al": 0.0
+      "vol_hn": 20,
+      "dont_tp_hn": 15,
+      "adapt_locale": 0,
+      "dont_tp_al": 0
     },
     "R2.14 | Système d'information": {
-      "vol_hn": 15.0,
-      "dont_tp_hn": 5.0,
-      "adapt_locale": 0.0,
-      "dont_tp_al": 0.0
+      "vol_hn": 15,
+      "dont_tp_hn": 5,
+      "adapt_locale": 0,
+      "dont_tp_al": 0
     },
     "R2.15 | Hébergement": {
-      "vol_hn": 15.0,
-      "dont_tp_hn": 10.0,
-      "adapt_locale": 0.0,
-      "dont_tp_al": 0.0
+      "vol_hn": 15,
+      "dont_tp_hn": 10,
+      "adapt_locale": 0,
+      "dont_tp_al": 0
     },
     "R2.16 | Représentation et traitement de l'information": {
-      "vol_hn": 15.0,
-      "dont_tp_hn": 10.0,
-      "adapt_locale": 0.0,
-      "dont_tp_al": 0.0
+      "vol_hn": 15,
+      "dont_tp_hn": 10,
+      "adapt_locale": 0,
+      "dont_tp_al": 0
     },
     "R2.17 | Gestion de projet": {
-      "vol_hn": 15.0,
-      "dont_tp_hn": 10.0,
-      "adapt_locale": 0.0,
-      "dont_tp_al": 0.0
+      "vol_hn": 15,
+      "dont_tp_hn": 10,
+      "adapt_locale": 0,
+      "dont_tp_al": 0
     },
     "R2.18 | Économie, gestion et droit du numérique": {
-      "vol_hn": 15.0,
-      "dont_tp_hn": 0.0,
+      "vol_hn": 15,
+      "dont_tp_hn": 0,
       "adapt_locale": 1.5,
-      "dont_tp_al": 0.0
+      "dont_tp_al": 0
     },
     "R2.19 | Projet Personnel et Professionnel": {
-      "vol_hn": 20.0,
-      "dont_tp_hn": 5.0,
-      "adapt_locale": 1.0,
+      "vol_hn": 20,
+      "dont_tp_hn": 5,
+      "adapt_locale": 1,
       "dont_tp_al": 5.5
     },
     "SAÉ 2.01 | Explorer les usages du numérique": {
-      "vol_hn": 0.0,
-      "dont_tp_hn": 0.0,
+      "vol_hn": 0,
+      "dont_tp_hn": 0,
       "adapt_locale": 19.5,
-      "dont_tp_al": 0.0
+      "dont_tp_al": 0
     },
     "SAÉ 2.02 | Concevoir un produit ou un service et sa communication": {
-      "vol_hn": 0.0,
-      "dont_tp_hn": 0.0,
+      "vol_hn": 0,
+      "dont_tp_hn": 0,
       "adapt_locale": 61.5,
-      "dont_tp_al": 0.0
+      "dont_tp_al": 0
     },
     "SAÉ 2.03 | Concevoir un site web avec une source de données": {
-      "vol_hn": 0.0,
-      "dont_tp_hn": 0.0,
+      "vol_hn": 0,
+      "dont_tp_hn": 0,
       "adapt_locale": 16.5,
-      "dont_tp_al": 0.0
+      "dont_tp_al": 0
     },
     "SAÉ 2.04 | Construire sa présence en ligne": {
-      "vol_hn": 0.0,
-      "dont_tp_hn": 0.0,
+      "vol_hn": 0,
+      "dont_tp_hn": 0,
       "adapt_locale": 16.5,
-      "dont_tp_al": 6.0
+      "dont_tp_al": 6
     },
     "SAÉ 2.98 | Hackathon": {
-      "vol_hn": 0.0,
-      "dont_tp_hn": 0.0,
-      "adapt_locale": 6.0,
+      "vol_hn": 0,
+      "dont_tp_hn": 0,
+      "adapt_locale": 6,
       "dont_tp_al": 0
     },
     "SAÉ 2.99 | Marathon MMI": {
-      "vol_hn": 0.0,
-      "dont_tp_hn": 0.0,
-      "adapt_locale": 12.0,
+      "vol_hn": 0,
+      "dont_tp_hn": 0,
+      "adapt_locale": 12,
       "dont_tp_al": 0
     },
     "PORTFOLIO | Portfolio": {
-      "vol_hn": 0.0,
-      "dont_tp_hn": 0.0,
-      "adapt_locale": 0.0,
-      "dont_tp_al": 0.0
+      "vol_hn": 0,
+      "dont_tp_hn": 0,
+      "adapt_locale": 0,
+      "dont_tp_al": 0
     }
   },
   "S3": {
     "R3.01 | Anglais": {
-      "vol_hn": 15.0,
-      "dont_tp_hn": 10.0,
-      "adapt_locale": 0.0,
+      "vol_hn": 15,
+      "dont_tp_hn": 10,
+      "adapt_locale": 0,
       "dont_tp_al": 0
     },
     "R3.02 | Espagnol (LV2)": {
-      "vol_hn": 10.0,
-      "dont_tp_hn": 5.0,
-      "adapt_locale": 0.0,
+      "vol_hn": 10,
+      "dont_tp_hn": 5,
+      "adapt_locale": 0,
       "dont_tp_al": 0
     },
     "R3.03 | Design d'expérience": {
-      "vol_hn": 15.0,
-      "dont_tp_hn": 5.0,
-      "adapt_locale": 0.0,
+      "vol_hn": 15,
+      "dont_tp_hn": 5,
+      "adapt_locale": 0,
       "dont_tp_al": 0
     },
     "R3.04 | Culture numérique": {
-      "vol_hn": 15.0,
-      "dont_tp_hn": 0.0,
-      "adapt_locale": 0.0,
+      "vol_hn": 15,
+      "dont_tp_hn": 0,
+      "adapt_locale": 0,
       "dont_tp_al": 0
     },
     "R3.05 | Stratégies de communication et marketing": {
-      "vol_hn": 15.0,
-      "dont_tp_hn": 0.0,
-      "adapt_locale": 0.0,
+      "vol_hn": 15,
+      "dont_tp_hn": 0,
+      "adapt_locale": 0,
       "dont_tp_al": 0
     },
     "R3.06 | Référencement": {
-      "vol_hn": 15.0,
-      "dont_tp_hn": 10.0,
+      "vol_hn": 15,
+      "dont_tp_hn": 10,
       "adapt_locale": 1.5,
       "dont_tp_al": 0
     },
     "R3.07 | Expression, communication et rhétorique": {
-      "vol_hn": 15.0,
-      "dont_tp_hn": 5.0,
-      "adapt_locale": 0.0,
+      "vol_hn": 15,
+      "dont_tp_hn": 5,
+      "adapt_locale": 0,
       "dont_tp_al": 0
     },
     "R3.08 | Écriture multimédia et narration": {
-      "vol_hn": 10.0,
-      "dont_tp_hn": 5.0,
+      "vol_hn": 10,
+      "dont_tp_hn": 5,
       "adapt_locale": 0.5,
       "dont_tp_al": 0
     },
     "R3.09 | Création et design interactif (UI)": {
-      "vol_hn": 15.0,
-      "dont_tp_hn": 10.0,
-      "adapt_locale": 0.0,
+      "vol_hn": 15,
+      "dont_tp_hn": 10,
+      "adapt_locale": 0,
       "dont_tp_al": 0
     },
     "R3.10 | Culture artistique": {
-      "vol_hn": 20.0,
-      "dont_tp_hn": 10.0,
-      "adapt_locale": 1.0,
+      "vol_hn": 20,
+      "dont_tp_hn": 10,
+      "adapt_locale": 1,
       "dont_tp_al": 0
     },
     "R3.11 | Audiovisuel et Motion design": {
-      "vol_hn": 20.0,
-      "dont_tp_hn": 10.0,
-      "adapt_locale": 1.0,
+      "vol_hn": 20,
+      "dont_tp_hn": 10,
+      "adapt_locale": 1,
       "dont_tp_al": 0
     },
     "R3.12 | Développement Front et intégration": {
-      "vol_hn": 35.0,
-      "dont_tp_hn": 20.0,
+      "vol_hn": 35,
+      "dont_tp_hn": 20,
       "adapt_locale": 8.5,
       "dont_tp_al": 0
     },
     "R3.13 | Gestion de contenus avancée / Dév Back": {
-      "vol_hn": 20.0,
-      "dont_tp_hn": 10.0,
-      "adapt_locale": 16.0,
+      "vol_hn": 20,
+      "dont_tp_hn": 10,
+      "adapt_locale": 16,
       "dont_tp_al": 0
     },
     "R3.14 | Déploiement de services": {
-      "vol_hn": 20.0,
-      "dont_tp_hn": 10.0,
-      "adapt_locale": 0.0,
+      "vol_hn": 20,
+      "dont_tp_hn": 10,
+      "adapt_locale": 0,
       "dont_tp_al": 0
     },
     "R3.15 | Représentation et traitement de l'information": {
-      "vol_hn": 20.0,
-      "dont_tp_hn": 10.0,
-      "adapt_locale": 1.0,
+      "vol_hn": 20,
+      "dont_tp_hn": 10,
+      "adapt_locale": 1,
       "dont_tp_al": 0
     },
     "R3.16 | Gestion de projet": {
-      "vol_hn": 15.0,
-      "dont_tp_hn": 5.0,
-      "adapt_locale": 0.0,
+      "vol_hn": 15,
+      "dont_tp_hn": 5,
+      "adapt_locale": 0,
       "dont_tp_al": 0
     },
     "R3.17 | Economie, gestion et droit du numérique": {
-      "vol_hn": 15.0,
-      "dont_tp_hn": 0.0,
-      "adapt_locale": 0.0,
+      "vol_hn": 15,
+      "dont_tp_hn": 0,
+      "adapt_locale": 0,
       "dont_tp_al": 0
     },
     "R3.18 | Projet Personnel et Professionnel": {
-      "vol_hn": 10.0,
-      "dont_tp_hn": 5.0,
-      "adapt_locale": 5.0,
+      "vol_hn": 10,
+      "dont_tp_hn": 5,
+      "adapt_locale": 5,
       "dont_tp_al": 0
     },
     "SAÉ 3.01 | Intégrer des interfaces utilisateurs au sein d'un système d'information": {
-      "vol_hn": 0.0,
-      "dont_tp_hn": 0.0,
+      "vol_hn": 0,
+      "dont_tp_hn": 0,
       "adapt_locale": 37.5,
       "dont_tp_al": 0
     },
     "SAÉ 3.02 | Produire des contenus pour une communication plurimédia": {
-      "vol_hn": 0.0,
-      "dont_tp_hn": 0.0,
+      "vol_hn": 0,
+      "dont_tp_hn": 0,
       "adapt_locale": 31.5,
       "dont_tp_al": 0
     },
     "SAÉ 3.03 | Concevoir des visualisations de données pour le web et un support animé": {
-      "vol_hn": 0.0,
-      "dont_tp_hn": 0.0,
+      "vol_hn": 0,
+      "dont_tp_hn": 0,
       "adapt_locale": 31.5,
       "dont_tp_al": 0
     },
     "PORTFOLIO Portfolio-Parcours Dev": {
-      "vol_hn": 0.0,
-      "dont_tp_hn": 0.0,
-      "adapt_locale": 0.0,
+      "vol_hn": 0,
+      "dont_tp_hn": 0,
+      "adapt_locale": 0,
       "dont_tp_al": 0
     }
   },
   "S4 crea": {
     "R4.Crea.01 Anglais": {
-      "vol_hn": 15.0,
-      "dont_tp_hn": 5.0,
-      "adapt_locale": 0.0,
+      "vol_hn": 15,
+      "dont_tp_hn": 5,
+      "adapt_locale": 0,
       "dont_tp_al": 0
     },
     "R4.Crea.02 | Economie, gestion et Droit du numérique": {
-      "vol_hn": 15.0,
-      "dont_tp_hn": 0.0,
-      "adapt_locale": 0.0,
+      "vol_hn": 15,
+      "dont_tp_hn": 0,
+      "adapt_locale": 0,
       "dont_tp_al": 0
     },
     "R4.Crea.03 | Design d'expérience": {
-      "vol_hn": 15.0,
-      "dont_tp_hn": 5.0,
-      "adapt_locale": 0.0,
+      "vol_hn": 15,
+      "dont_tp_hn": 5,
+      "adapt_locale": 0,
       "dont_tp_al": 0
     },
     "R4.Crea.04 | Expression, communication": {
-      "vol_hn": 15.0,
-      "dont_tp_hn": 0.0,
-      "adapt_locale": 0.0,
+      "vol_hn": 15,
+      "dont_tp_hn": 0,
+      "adapt_locale": 0,
       "dont_tp_al": 0
     },
     "R4.Crea.05 | Gestion de contenus spécialisée": {
-      "vol_hn": 20.0,
-      "dont_tp_hn": 10.0,
-      "adapt_locale": 1.0,
+      "vol_hn": 20,
+      "dont_tp_hn": 10,
+      "adapt_locale": 1,
       "dont_tp_al": 0
     },
     "R4.Crea.06 | Culture artistique": {
-      "vol_hn": 15.0,
-      "dont_tp_hn": 10.0,
-      "adapt_locale": 0.0,
+      "vol_hn": 15,
+      "dont_tp_hn": 10,
+      "adapt_locale": 0,
       "dont_tp_al": 0
     },
     "R4.Crea.07 | Audiovisuel - Motion design": {
-      "vol_hn": 15.0,
-      "dont_tp_hn": 10.0,
+      "vol_hn": 15,
+      "dont_tp_hn": 10,
       "adapt_locale": 1.5,
       "dont_tp_al": 0
     },
     "R4.Crea.08 | Ecriture multimédia et narration": {
-      "vol_hn": 10.0,
-      "dont_tp_hn": 0.0,
+      "vol_hn": 10,
+      "dont_tp_hn": 0,
       "adapt_locale": 0.5,
       "dont_tp_al": 0
     },
     "SAÉ 4.Crea.01 | Créer pour une campagne de communication visuelle": {
-      "vol_hn": 0.0,
-      "dont_tp_hn": 0.0,
-      "adapt_locale": 27.0,
+      "vol_hn": 0,
+      "dont_tp_hn": 0,
+      "adapt_locale": 27,
       "dont_tp_al": 0
     },
     "SAÉ 4.Crea.02 | Produire du contenu multimédia": {
-      "vol_hn": 0.0,
-      "dont_tp_hn": 0.0,
-      "adapt_locale": 27.0,
+      "vol_hn": 0,
+      "dont_tp_hn": 0,
+      "adapt_locale": 27,
       "dont_tp_al": 0
     },
     "SAÉ 4.Crea.03 | SAE langues": {
-      "vol_hn": 0.0,
-      "dont_tp_hn": 0.0,
-      "adapt_locale": 20.0,
+      "vol_hn": 0,
+      "dont_tp_hn": 0,
+      "adapt_locale": 20,
       "dont_tp_al": 0
     },
     "SAÉ 4.98 | Hackathon": {
-      "vol_hn": 0.0,
-      "dont_tp_hn": 0.0,
-      "adapt_locale": 6.0,
+      "vol_hn": 0,
+      "dont_tp_hn": 0,
+      "adapt_locale": 6,
       "dont_tp_al": 0
     },
     "SAÉ 4.99 | Marathon MMI": {
-      "vol_hn": 0.0,
-      "dont_tp_hn": 0.0,
-      "adapt_locale": 12.0,
+      "vol_hn": 0,
+      "dont_tp_hn": 0,
+      "adapt_locale": 12,
       "dont_tp_al": 0
     },
     "PORTFOLIO | Portfolio-Parcours Création Numérique": {
-      "vol_hn": 0.0,
-      "dont_tp_hn": 0.0,
-      "adapt_locale": 0.0,
+      "vol_hn": 0,
+      "dont_tp_hn": 0,
+      "adapt_locale": 0,
       "dont_tp_al": 0
     }
   },
   "S4 dev": {
     "R4.DWeb-DI.01 Anglais": {
-      "vol_hn": 15.0,
-      "dont_tp_hn": 5.0,
-      "adapt_locale": 0.0,
+      "vol_hn": 15,
+      "dont_tp_hn": 5,
+      "adapt_locale": 0,
       "dont_tp_al": 0
     },
     "R4.DWeb-DI.02  Economie, gestion et Droit du numérique": {
-      "vol_hn": 15.0,
-      "dont_tp_hn": 0.0,
-      "adapt_locale": 0.0,
+      "vol_hn": 15,
+      "dont_tp_hn": 0,
+      "adapt_locale": 0,
       "dont_tp_al": 0
     },
     "R4.DWeb-DI.03  Design d'expérience": {
-      "vol_hn": 15.0,
-      "dont_tp_hn": 5.0,
-      "adapt_locale": 0.0,
+      "vol_hn": 15,
+      "dont_tp_hn": 5,
+      "adapt_locale": 0,
       "dont_tp_al": 0
     },
     "R4.DWeb-DI.04  Expression, communication": {
-      "vol_hn": 15.0,
-      "dont_tp_hn": 0.0,
-      "adapt_locale": 0.0,
+      "vol_hn": 15,
+      "dont_tp_hn": 0,
+      "adapt_locale": 0,
       "dont_tp_al": 0
     },
     "R4.DWeb-DI.05 Création et design interactif": {
-      "vol_hn": 15.0,
-      "dont_tp_hn": 5.0,
-      "adapt_locale": 0.0,
+      "vol_hn": 15,
+      "dont_tp_hn": 5,
+      "adapt_locale": 0,
       "dont_tp_al": 0
     },
     "R4.DWeb-DI.06 Développement front": {
-      "vol_hn": 15.0,
-      "dont_tp_hn": 10.0,
-      "adapt_locale": 0.0,
+      "vol_hn": 15,
+      "dont_tp_hn": 10,
+      "adapt_locale": 0,
       "dont_tp_al": 0
     },
     "R4.DWeb-DI.07 Développement back": {
-      "vol_hn": 20.0,
-      "dont_tp_hn": 10.0,
-      "adapt_locale": 1.0,
+      "vol_hn": 20,
+      "dont_tp_hn": 10,
+      "adapt_locale": 1,
       "dont_tp_al": 0
     },
     "R4.DWeb-DI.08 Déploiement de services": {
-      "vol_hn": 10.0,
-      "dont_tp_hn": 5.0,
-      "adapt_locale": 2.0,
+      "vol_hn": 10,
+      "dont_tp_hn": 5,
+      "adapt_locale": 2,
       "dont_tp_al": 0
     },
     "SAÉ 4.DWeb-DI.01 Développer pour le Web": {
-      "vol_hn": 0.0,
-      "dont_tp_hn": 0.0,
-      "adapt_locale": 27.0,
+      "vol_hn": 0,
+      "dont_tp_hn": 0,
+      "adapt_locale": 27,
       "dont_tp_al": 0
     },
     "SAÉ 4.DWeb-DI.02 Concevoir un dispositif interactif": {
-      "vol_hn": 0.0,
-      "dont_tp_hn": 0.0,
-      "adapt_locale": 27.0,
+      "vol_hn": 0,
+      "dont_tp_hn": 0,
+      "adapt_locale": 27,
       "dont_tp_al": 0
     },
     "SAÉ 4.98 | Hackathon": {
-      "vol_hn": 0.0,
-      "dont_tp_hn": 0.0,
-      "adapt_locale": 6.0,
+      "vol_hn": 0,
+      "dont_tp_hn": 0,
+      "adapt_locale": 6,
       "dont_tp_al": 0
     },
     "SAÉ 4.99 | Marathon MMI": {
-      "vol_hn": 0.0,
-      "dont_tp_hn": 0.0,
-      "adapt_locale": 12.0,
+      "vol_hn": 0,
+      "dont_tp_hn": 0,
+      "adapt_locale": 12,
       "dont_tp_al": 0
     },
     "PORTFOLIO Portfolio-Parcours Développement Web et Dispositifs interactifs": {
-      "vol_hn": 0.0,
-      "dont_tp_hn": 0.0,
-      "adapt_locale": 0.0,
+      "vol_hn": 0,
+      "dont_tp_hn": 0,
+      "adapt_locale": 0,
       "dont_tp_al": 0
     }
   },
   "S5 crea": {
     "R5.Crea.01 | Anglais": {
-      "vol_hn": 20.0,
+      "vol_hn": 20,
       "dont_tp_hn": 0,
-      "adapt_locale": 0.0,
+      "adapt_locale": 0,
       "dont_tp_al": 0
     },
     "R5.crea.02 | Management et Assurance Qualité": {
-      "vol_hn": 15.0,
-      "dont_tp_hn": 5.0,
-      "adapt_locale": 0.0,
+      "vol_hn": 15,
+      "dont_tp_hn": 5,
+      "adapt_locale": 0,
       "dont_tp_al": 0
     },
     "R5 crea 03 | Entrepreunariat": {
-      "vol_hn": 15.0,
-      "dont_tp_hn": 5.0,
-      "adapt_locale": 0.0,
+      "vol_hn": 15,
+      "dont_tp_hn": 5,
+      "adapt_locale": 0,
       "dont_tp_al": 0
     },
     "R5. crea 04 PPP": {
-      "vol_hn": 20.0,
+      "vol_hn": 20,
       "dont_tp_hn": 0,
-      "adapt_locale": 0.0,
+      "adapt_locale": 0,
       "dont_tp_al": 0
     },
     "R5.Crea.05 | Définir une direction artistique": {
-      "vol_hn": 40.0,
-      "dont_tp_hn": 20.0,
-      "adapt_locale": 0.0,
+      "vol_hn": 40,
+      "dont_tp_hn": 20,
+      "adapt_locale": 0,
       "dont_tp_al": 0
     },
     "R5 Crea.06 | Création numérique": {
-      "vol_hn": 75.0,
-      "dont_tp_hn": 30.0,
-      "adapt_locale": 9.0,
+      "vol_hn": 75,
+      "dont_tp_hn": 30,
+      "adapt_locale": 9,
       "dont_tp_al": 0
     },
     "R5.Crea.07 | Ecriture Multimédia et narration": {
-      "vol_hn": 75.0,
-      "dont_tp_hn": 30.0,
-      "adapt_locale": 9.0,
+      "vol_hn": 75,
+      "dont_tp_hn": 30,
+      "adapt_locale": 9,
       "dont_tp_al": 0
     },
     "SAÉ 5.Crea.01 | Créer par/pour le numérique": {
       "vol_hn": 0,
       "dont_tp_hn": 0,
-      "adapt_locale": 100.0,
+      "adapt_locale": 100,
       "dont_tp_al": 0
     },
     "SAÉ 5.Crea.02 | SAE Management": {
       "vol_hn": 0,
       "dont_tp_hn": 0,
-      "adapt_locale": 15.0,
+      "adapt_locale": 15,
       "dont_tp_al": 0
     },
     "SAÉ 5.Crea.03 | SAE Conception d'interface": {
       "vol_hn": 0,
       "dont_tp_hn": 0,
-      "adapt_locale": 15.0,
+      "adapt_locale": 15,
       "dont_tp_al": 0
     },
     "PORTFOLIO | Portfolio-Parcours Création Numérique": {
@@ -673,69 +673,69 @@
   },
   "S5 dev": {
     "R5.DWeb-DI.01 | Anglais": {
-      "vol_hn": 20.0,
+      "vol_hn": 20,
       "dont_tp_hn": 0,
-      "adapt_locale": 0.0,
+      "adapt_locale": 0,
       "dont_tp_al": 0
     },
     "R5.DWeb-DI.02 | Management et Assurance Qualité": {
-      "vol_hn": 15.0,
-      "dont_tp_hn": 5.0,
-      "adapt_locale": 0.0,
+      "vol_hn": 15,
+      "dont_tp_hn": 5,
+      "adapt_locale": 0,
       "dont_tp_al": 0
     },
     "R5.DWeb-DI.03 | Entrepreunariat": {
-      "vol_hn": 15.0,
-      "dont_tp_hn": 5.0,
-      "adapt_locale": 0.0,
+      "vol_hn": 15,
+      "dont_tp_hn": 5,
+      "adapt_locale": 0,
       "dont_tp_al": 0
     },
     "R5.DWeb-DI.04 | PPP": {
-      "vol_hn": 20.0,
+      "vol_hn": 20,
       "dont_tp_hn": 0,
-      "adapt_locale": 0.0,
+      "adapt_locale": 0,
       "dont_tp_al": 0
     },
     "R5.DWeb-DI.05 | Développement front avancé": {
-      "vol_hn": 50.0,
-      "dont_tp_hn": 20.0,
-      "adapt_locale": 9.0,
+      "vol_hn": 50,
+      "dont_tp_hn": 20,
+      "adapt_locale": 9,
       "dont_tp_al": 0
     },
     "R5.DWeb-DI.06 | Développement back avancé": {
-      "vol_hn": 50.0,
-      "dont_tp_hn": 20.0,
-      "adapt_locale": 9.0,
+      "vol_hn": 50,
+      "dont_tp_hn": 20,
+      "adapt_locale": 9,
       "dont_tp_al": 0
     },
     "R5.DWeb-DI.07 | Dispositifs interactifs": {
-      "vol_hn": 50.0,
-      "dont_tp_hn": 20.0,
-      "adapt_locale": 9.0,
+      "vol_hn": 50,
+      "dont_tp_hn": 20,
+      "adapt_locale": 9,
       "dont_tp_al": 0
     },
     "R5.DWeb-DI.08 | Hébergement et cybersécurité": {
-      "vol_hn": 40.0,
-      "dont_tp_hn": 20.0,
-      "adapt_locale": 0.0,
+      "vol_hn": 40,
+      "dont_tp_hn": 20,
+      "adapt_locale": 0,
       "dont_tp_al": 0
     },
     "R5.DWeb-DI.09 | Mathématiques avancées, complexité algorithmique": {
       "vol_hn": 0,
       "dont_tp_hn": 0,
-      "adapt_locale": 12.0,
+      "adapt_locale": 12,
       "dont_tp_al": 0
     },
     "SAÉ 5D.01 | Développer pour le web": {
       "vol_hn": 0,
       "dont_tp_hn": 0,
-      "adapt_locale": 60.0,
+      "adapt_locale": 60,
       "dont_tp_al": 0
     },
     "SAÉ 5D.02 | SAE Management": {
       "vol_hn": 0,
       "dont_tp_hn": 0,
-      "adapt_locale": 15.0,
+      "adapt_locale": 15,
       "dont_tp_al": 0
     },
     "SAÉ 5D.03 | Concevoir un dispositif interactif": {
@@ -759,13 +759,13 @@
   },
   "S6 crea": {
     "R6 crea 01 | Entrepreunariat": {
-      "vol_hn": 15.0,
+      "vol_hn": 15,
       "dont_tp_hn": 0,
       "adapt_locale": 0,
       "dont_tp_al": 0
     },
     "R6 crea 02 | Création numérique intéractive": {
-      "vol_hn": 38.0,
+      "vol_hn": 38,
       "dont_tp_hn": 0,
       "adapt_locale": 0,
       "dont_tp_al": 0
@@ -791,13 +791,13 @@
   },
   "S6 dev": {
     "R6.DWeb-DI.01 | Entrepreunariat": {
-      "vol_hn": 15.0,
+      "vol_hn": 15,
       "dont_tp_hn": 0,
       "adapt_locale": 0,
       "dont_tp_al": 0
     },
     "R6.DWeb-DI.02 | Développement Web et dispositif interactif": {
-      "vol_hn": 38.0,
+      "vol_hn": 38,
       "dont_tp_hn": 0,
       "adapt_locale": 0,
       "dont_tp_al": 0
