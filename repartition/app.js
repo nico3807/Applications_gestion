@@ -545,12 +545,113 @@ function renderMaquetteSemestre(root, sem) {
   });
 
   html += `</tbody></table></div>
-    <div class="form-actions">
+    <div class="form-actions" style="gap:0.75rem;">
+        <button class="btn-add-res" onclick="openAddRessourceModal('${sem}')">➕ Ajout de ressource ou de SAÉ / Adaptation locale</button>
         <button class="btn-save" onclick="saveMaquetteGH()">💾 Enregistrer la maquette sur GitHub</button>
     </div>`;
 
   root.innerHTML = html;
 }
+
+window.openAddRessourceModal = function (sem) {
+  let modal = document.getElementById("add-res-modal");
+  if (!modal) {
+    modal = document.createElement("div");
+    modal.id = "add-res-modal";
+    modal.className = "modal-overlay";
+    modal.innerHTML = `
+      <div class="modal-box">
+        <h3>Ajout de ressource ou de SAÉ</h3>
+        <p class="modal-sub">Adaptation locale — Semestre <strong id="add-res-sem-lbl"></strong></p>
+
+        <div class="modal-fields">
+          <label class="modal-field-label">
+            Intitulé
+            <span class="modal-hint">Commencez par "SAÉ" pour une SAÉ, sinon la ressource sera traitée comme une ressource standard</span>
+            <input id="add-res-name" type="text" class="input-editable" placeholder="Ex : SAÉ 3.01 — … ou R3.01 …" style="width:100%;margin-top:4px;">
+          </label>
+
+          <div class="modal-group-header">Volumes Maquette</div>
+          <div class="modal-row3">
+            <label class="modal-field-label">CM final<input id="add-res-cm" type="number" class="input-editable" value="0" min="0" step="0.5"></label>
+            <label class="modal-field-label">TD final<input id="add-res-td" type="number" class="input-editable" value="0" min="0" step="0.5"></label>
+            <label class="modal-field-label">TP final<input id="add-res-tp" type="number" class="input-editable" value="0" min="0" step="0.5"></label>
+          </div>
+
+          <div class="modal-group-header">PN + Adaptation locale <span class="modal-hint">(optionnel)</span></div>
+          <div class="modal-row4">
+            <label class="modal-field-label">Vol horaire PN<input id="add-res-vhn" type="number" class="input-editable" value="0" min="0" step="0.5"></label>
+            <label class="modal-field-label">Dont TP PN<input id="add-res-dtp" type="number" class="input-editable" value="0" min="0" step="0.5"></label>
+            <label class="modal-field-label">Adapt locale<input id="add-res-al"  type="number" class="input-editable" value="0" min="0" step="0.5"></label>
+            <label class="modal-field-label">Dont TP AL<input id="add-res-dal" type="number" class="input-editable" value="0" min="0" step="0.5"></label>
+          </div>
+
+          <p id="add-res-err" class="modal-err" style="display:none;"></p>
+        </div>
+
+        <div class="modal-actions">
+          <button class="btn-cancel" onclick="closeAddRessourceModal()">Annuler</button>
+          <button class="btn-save"   onclick="confirmAddRessource()">Ajouter</button>
+        </div>
+      </div>`;
+    document.body.appendChild(modal);
+    modal.addEventListener("click", (e) => { if (e.target === modal) closeAddRessourceModal(); });
+  }
+  modal.dataset.sem = sem;
+  document.getElementById("add-res-sem-lbl").textContent = sem;
+  ["add-res-name"].forEach((id) => (document.getElementById(id).value = ""));
+  ["add-res-cm","add-res-td","add-res-tp","add-res-vhn","add-res-dtp","add-res-al","add-res-dal"]
+    .forEach((id) => (document.getElementById(id).value = "0"));
+  document.getElementById("add-res-err").style.display = "none";
+  modal.style.display = "flex";
+  document.getElementById("add-res-name").focus();
+};
+
+window.closeAddRessourceModal = function () {
+  const modal = document.getElementById("add-res-modal");
+  if (modal) modal.style.display = "none";
+};
+
+window.confirmAddRessource = function () {
+  const modal = document.getElementById("add-res-modal");
+  const sem   = modal.dataset.sem;
+  const name  = document.getElementById("add-res-name").value.trim();
+  const err   = document.getElementById("add-res-err");
+
+  if (!name) {
+    err.textContent = "L'intitulé est obligatoire.";
+    err.style.display = "block";
+    return;
+  }
+  if (APP_DATA.affectations[sem]?.[name]) {
+    err.textContent = `La ressource "${name}" existe déjà dans ce semestre.`;
+    err.style.display = "block";
+    return;
+  }
+
+  if (!APP_DATA.affectations[sem])            APP_DATA.affectations[sem]            = {};
+  if (!APP_DATA.maquette_overrides[sem])       APP_DATA.maquette_overrides[sem]       = {};
+  if (!APP_DATA.volume_horaire_national[sem])  APP_DATA.volume_horaire_national[sem]  = {};
+
+  APP_DATA.affectations[sem][name] = { enseignant: "", cm: 0, td: 0, tp: 0, responsable: "", subrows: [] };
+
+  APP_DATA.maquette_overrides[sem][name] = {
+    cm_final: parseFloat(document.getElementById("add-res-cm").value) || 0,
+    td_final: parseFloat(document.getElementById("add-res-td").value) || 0,
+    tp_final: parseFloat(document.getElementById("add-res-tp").value) || 0,
+  };
+
+  APP_DATA.volume_horaire_national[sem][name] = {
+    vol_hn:       parseFloat(document.getElementById("add-res-vhn").value) || 0,
+    dont_tp_hn:   parseFloat(document.getElementById("add-res-dtp").value) || 0,
+    adapt_locale: parseFloat(document.getElementById("add-res-al").value)  || 0,
+    dont_tp_al:   parseFloat(document.getElementById("add-res-dal").value) || 0,
+  };
+
+  _logMod("Maquette", `Ajout ressource — ${sem}`, "—", name);
+  closeAddRessourceModal();
+  renderView();
+};
 
 window.updateMaq = function (sem, res, field, value) {
   if (!APP_DATA.maquette_overrides[sem]) APP_DATA.maquette_overrides[sem] = {};
