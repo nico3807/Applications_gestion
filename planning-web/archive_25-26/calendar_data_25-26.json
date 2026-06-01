@@ -2047,7 +2047,6 @@
         "MMI2-Dev": "vacances",
         "MMI3-crea": "vacances",
         "MMI3-Dev": "vacances",
-        "Autre": "Grand Jury",
         "MMI2-App": "entreprise S28",
         "MMI3-App": "entreprise S29"
       }
@@ -2057,7 +2056,8 @@
       "weekday": "Me",
       "events": {
         "MMI2-App": "entreprise S28",
-        "MMI3-App": "entreprise S29"
+        "MMI3-App": "entreprise S29",
+        "Autre": "Grand Jury"
       }
     },
     {
