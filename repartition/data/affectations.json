@@ -1125,19 +1125,25 @@
     "SAÉ 6.dev.01 | Developpement avancé": {
       "enseignant": "MARILL Damien",
       "cm": 0,
-      "td": 9,
+      "td": 6,
       "tp": 0,
       "subrows": [
         {
           "enseignant": "SURRIBAS Caroline",
           "cm": 0,
-          "td": 16.5,
+          "td": 13.5,
           "tp": 0
         },
         {
           "enseignant": "DARTIES Benoit",
           "cm": 0,
-          "td": 7.5,
+          "td": 6,
+          "tp": 0
+        },
+        {
+          "enseignant": "HADDAD Gatien",
+          "cm": 0,
+          "td": 13.5,
           "tp": 0
         }
       ],
