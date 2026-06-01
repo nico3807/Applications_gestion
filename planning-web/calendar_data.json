@@ -128,7 +128,8 @@
       "weekday": "Mo",
       "events": {
         "MMI3-App": "Entreprise S01",
-        "MMI3-Dev": "SAÉ 5xx"
+        "MMI3-Dev": "SAÉ 5xx",
+        "MMI3-crea": "SAÉ 5xx"
       },
       "week": 39
     },
@@ -137,7 +138,8 @@
       "weekday": "Tu",
       "events": {
         "MMI3-App": "Entreprise S01",
-        "MMI3-Dev": "SAÉ 5xx"
+        "MMI3-Dev": "SAÉ 5xx",
+        "MMI3-crea": "SAÉ 5xx"
       }
     },
     {
@@ -145,7 +147,8 @@
       "weekday": "We",
       "events": {
         "MMI3-App": "Entreprise S01",
-        "MMI3-Dev": "SAÉ 5xx"
+        "MMI3-Dev": "SAÉ 5xx",
+        "MMI3-crea": "SAÉ 5xx"
       }
     },
     {
@@ -154,7 +157,8 @@
       "events": {
         "MMI3-App": "Entreprise S01",
         "Autre": "Journée Bienvenue 2026",
-        "MMI3-Dev": "SAÉ 5xx"
+        "MMI3-Dev": "SAÉ 5xx",
+        "MMI3-crea": "SAÉ 5xx"
       }
     },
     {
@@ -162,7 +166,8 @@
       "weekday": "Fr",
       "events": {
         "MMI3-App": "Entreprise S01",
-        "MMI3-Dev": "SAÉ 5xx"
+        "MMI3-Dev": "SAÉ 5xx",
+        "MMI3-crea": "SAÉ 5xx"
       }
     },
     {
