@@ -1100,7 +1100,7 @@
       "day": 26,
       "weekday": "Lu",
       "events": {
-        "MMI1": "Marathon MMI"
+        "Autre": "Marathon MMI"
       },
       "week": 5
     },
@@ -1108,28 +1108,28 @@
       "day": 27,
       "weekday": "Ma",
       "events": {
-        "MMI1": "Marathon MMI"
+        "Autre": "Marathon MMI"
       }
     },
     {
       "day": 28,
       "weekday": "Me",
       "events": {
-        "MMI1": "Marathon MMI"
+        "Autre": "Marathon MMI"
       }
     },
     {
       "day": 29,
       "weekday": "Je",
       "events": {
-        "MMI1": "Marathon MMI"
+        "Autre": "Marathon MMI"
       }
     },
     {
       "day": 30,
       "weekday": "Ve",
       "events": {
-        "MMI1": "Marathon MMI"
+        "Autre": "Marathon MMI"
       }
     },
     {
