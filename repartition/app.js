@@ -80,16 +80,77 @@ window.navigate = function (view, param = null) {
 
 const _PRINTABLE_VIEWS = new Set(["semestre","maquette_semestre","services","pilotage"]);
 
+/* Priorité de tri des ressources (module-level, réutilisée dans export et maquette) */
+function _resPrio(r) {
+  const l = r.toLowerCase();
+  if (l.includes("hackathon")) return 4;
+  if (l.includes("marathon"))  return 3;
+  if (l.includes("portfolio")) return 2;
+  if (l.includes("saé"))       return 1;
+  return 0;
+}
+
 function _injectPrintBar(root) {
   const bar = document.createElement("div");
   bar.className = "print-bar";
   bar.innerHTML = `
     <button class="btn-print-action" onclick="window.print()">🖨 Imprimer</button>
-    <button class="btn-pdf-action"   onclick="window.print()">⬇ Exporter PDF</button>`;
+    <button class="btn-pdf-action"   onclick="exportXLSX()">⬇ Exporter XLSX</button>`;
   const pageHeader = root.querySelector(".page-header");
   if (pageHeader) pageHeader.appendChild(bar);
   else root.insertBefore(bar, root.firstChild);
 }
+
+window.exportXLSX = function () {
+  if (typeof XLSX === "undefined") { alert("Bibliothèque XLSX non chargée."); return; }
+  const sem = currentParam || "";
+  const safeSem = sem.replace(/\s+/g, "_");
+  let rows, filename, sheetName;
+
+  if (currentView === "semestre") {
+    const aff = APP_DATA.affectations[sem] || {};
+    rows = [["Ressource", "Enseignant", "CM", "TD", "TP"]];
+    Object.keys(aff).forEach((res) => {
+      const d = aff[res];
+      rows.push([res, d.enseignant || "", parseFloat(d.cm) || 0, parseFloat(d.td) || 0, parseFloat(d.tp) || 0]);
+      (d.subrows || []).forEach((s) => {
+        rows.push(["", s.enseignant || "", parseFloat(s.cm) || 0, parseFloat(s.td) || 0, parseFloat(s.tp) || 0]);
+      });
+    });
+    filename = `repartition_${safeSem}.xlsx`;
+    sheetName = sem || "Répartition";
+
+  } else if (currentView === "maquette_semestre") {
+    const aff = APP_DATA.affectations[sem] || {};
+    const maq = APP_DATA.maquette_overrides[sem] || {};
+    const vhn = APP_DATA.volume_horaire_national[sem] || {};
+    const sorted = Object.keys(aff).sort((a, b) => {
+      const d = _resPrio(a) - _resPrio(b);
+      return d !== 0 ? d : a.localeCompare(b, "fr");
+    });
+    rows = [["Ressource", "CM final", "TD final", "TP final", "Vol horaire PN", "Dont TP PN", "Adapt locale", "Dont TP AL"]];
+    sorted.forEach((res) => {
+      const m = maq[res] || {};
+      const v = vhn[res] || {};
+      rows.push([
+        res,
+        parseFloat(m.cm_final) || 0, parseFloat(m.td_final) || 0, parseFloat(m.tp_final) || 0,
+        v.vol_hn || 0, v.dont_tp_hn || 0,
+        parseFloat(v.adapt_locale) || 0, parseFloat(v.dont_tp_al) || 0,
+      ]);
+    });
+    filename = `maquette_${safeSem}.xlsx`;
+    sheetName = sem || "Maquette";
+
+  } else {
+    return;
+  }
+
+  const ws = XLSX.utils.aoa_to_sheet(rows);
+  const wb = XLSX.utils.book_new();
+  XLSX.utils.book_append_sheet(wb, ws, sheetName.substring(0, 31));
+  XLSX.writeFile(wb, filename);
+};
 
 /* ── Tooltip Total / étudiant ────────────────────────────────────────────── */
 function _ensureTooltip() {
@@ -515,18 +576,9 @@ function renderMaquetteSemestre(root, sem) {
     </thead>
     <tbody>`;
 
-  const _resPrio = (r) => {
-    const l = r.toLowerCase();
-    if (l.includes("hackathon")) return 4;
-    if (l.includes("marathon"))  return 3;
-    if (l.includes("portfolio")) return 2;
-    if (l.includes("saé"))       return 1;
-    return 0;
-  };
   const sortedRes = Object.keys(aff).sort((a, b) => {
-    const pa = _resPrio(a), pb = _resPrio(b);
-    if (pa !== pb) return pa - pb;
-    return a.localeCompare(b, "fr");
+    const d = _resPrio(a) - _resPrio(b);
+    return d !== 0 ? d : a.localeCompare(b, "fr");
   });
 
   sortedRes.forEach((res, i) => {
