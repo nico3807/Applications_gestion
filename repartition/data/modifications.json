@@ -547,5 +547,68 @@
     "description": "S5 crea / SAÉ 5.Crea.03 | SAE Conception d'interface / td_final",
     "prev": "0",
     "next": "15"
+  },
+  {
+    "date": "01/06/2026",
+    "heure": "10:28:21",
+    "utilisateur": "nicolas.maurin",
+    "type": "Répartition",
+    "description": "S6 dev / SAÉ 6.dev.01 | Developpement avancé / td",
+    "prev": "9",
+    "next": "6"
+  },
+  {
+    "date": "01/06/2026",
+    "heure": "10:28:25",
+    "utilisateur": "nicolas.maurin",
+    "type": "Répartition",
+    "description": "S6 dev / SAÉ 6.dev.01 | Developpement avancé / sous-groupe 3 / enseignant",
+    "prev": "",
+    "next": "HADDAD Gatien"
+  },
+  {
+    "date": "01/06/2026",
+    "heure": "10:28:44",
+    "utilisateur": "nicolas.maurin",
+    "type": "Répartition",
+    "description": "S6 dev / SAÉ 6.dev.01 | Developpement avancé / sous-groupe 3 / td",
+    "prev": "0",
+    "next": "13.5"
+  },
+  {
+    "date": "01/06/2026",
+    "heure": "10:28:54",
+    "utilisateur": "nicolas.maurin",
+    "type": "Répartition",
+    "description": "S6 dev / SAÉ 6.dev.01 | Developpement avancé / sous-groupe 1 / td",
+    "prev": "16.5",
+    "next": "13.5"
+  },
+  {
+    "date": "01/06/2026",
+    "heure": "10:28:54",
+    "utilisateur": "nicolas.maurin",
+    "type": "Répartition",
+    "description": "S6 dev / SAÉ 6.dev.01 | Developpement avancé / sous-groupe 2 / td",
+    "prev": "7.5",
+    "next": "7"
+  },
+  {
+    "date": "01/06/2026",
+    "heure": "10:28:54",
+    "utilisateur": "nicolas.maurin",
+    "type": "Répartition",
+    "description": "S6 dev / SAÉ 6.dev.01 | Developpement avancé / sous-groupe 2 / td",
+    "prev": "7",
+    "next": "6.5"
+  },
+  {
+    "date": "01/06/2026",
+    "heure": "10:28:54",
+    "utilisateur": "nicolas.maurin",
+    "type": "Répartition",
+    "description": "S6 dev / SAÉ 6.dev.01 | Developpement avancé / sous-groupe 2 / td",
+    "prev": "6.5",
+    "next": "6"
   }
 ]
