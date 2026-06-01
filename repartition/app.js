@@ -515,7 +515,14 @@ function renderMaquetteSemestre(root, sem) {
     </thead>
     <tbody>`;
 
-  Object.keys(aff).forEach((res, i) => {
+  const sortedRes = Object.keys(aff).sort((a, b) => {
+    const aSae = a.toLowerCase().includes("saé");
+    const bSae = b.toLowerCase().includes("saé");
+    if (aSae !== bSae) return aSae ? 1 : -1;
+    return a.localeCompare(b, "fr");
+  });
+
+  sortedRes.forEach((res, i) => {
     const m = maq[res] || { cm_final: 0, td_final: 0, tp_final: 0 };
     const v = vhn[res] || {
       vol_hn: 0,
