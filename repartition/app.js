@@ -327,10 +327,10 @@ function renderSemestre(root, sem) {
                       .join("")}
                 </select>
             </td>
-            <td class="responsable-label">Total / étudiant :</td>
-            <td><span class="prev-badge">${fmtR(resCM)}</span></td>
-            <td><span class="prev-badge">${fmtR(resTD)}</span></td>
-            <td><span class="prev-badge">${fmtR(resTP)}</span></td>
+            <td class="responsable-label" style="text-align:right;">Total / étudiant :</td>
+            <td style="text-align:center;"><span class="prev-badge">${fmtR(resCM)}</span></td>
+            <td style="text-align:center;"><span class="prev-badge">${fmtR(resTD)}</span></td>
+            <td style="text-align:center;"><span class="prev-badge">${fmtR(resTP)}</span></td>
             <td></td>
         </tr>`;
   });
