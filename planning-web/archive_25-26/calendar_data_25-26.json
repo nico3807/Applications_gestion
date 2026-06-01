@@ -192,6 +192,7 @@
       "weekday": "Ma",
       "events": {
         "MMI2-App": "Entreprise S02",
+        "MMI2-dev": "SAE 301  part 1  (B. Darties/N. Maurin)",
         "MMI2-crea": "SAE 301  part 1  (B. Darties/N. Maurin)"
       },
       "week": 40
@@ -202,7 +203,8 @@
       "day": 1,
       "weekday": "Me",
       "events": {
-        "MMI2-crea": "SAE 301  part 1  (B. Darties/N. Maurin)",
+        "MMI2-crea": "SAE 301  part 1  (B. Darties/N. Maurin)",,
+        "MMI2-dev": "SAE 301  part 1  (B. Darties/N. Maurin)",
         "MMI2-App": "Entreprise S08"
       }
     },
@@ -210,7 +212,8 @@
       "day": 2,
       "weekday": "Je",
       "events": {
-        "MMI2-crea": "SAE 301  part 1  (B. Darties/N. Maurin)",
+        "MMI2-crea": "SAE 301  part 1  (B. Darties/N. Maurin)",,
+        "MMI2-dev": "SAE 301  part 1  (B. Darties/N. Maurin)",
         "MMI2-App": "Entreprise S08"
       }
     },
@@ -218,7 +221,8 @@
       "day": 3,
       "weekday": "Ve",
       "events": {
-        "MMI2-crea": "SAE 301  part 1  (B. Darties/N. Maurin)",
+        "MMI2-crea": "SAE 301  part 1  (B. Darties/N. Maurin)",,
+        "MMI2-dev": "SAE 301  part 1  (B. Darties/N. Maurin)",
         "MMI2-App": "Entreprise S08"
       }
     },
