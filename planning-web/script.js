@@ -533,18 +533,6 @@ function buildMonthSection(monthName) {
 
   /* ── Rendu semaine par semaine ───────────────────────────────────── */
   for (const week of weeks) {
-    /* 1. Identifier les événements qui s'étendent sur toute la semaine (SAE, Stage, Entreprise) */
-    const weekSpanningEvts = {};
-    week.forEach((day) => {
-      if (day && day.dd && day.dd.events) {
-        Object.entries(day.dd.events).forEach(([g, ev]) => {
-          if (isWeekSpanning(g, ev)) {
-            weekSpanningEvts[g] = ev;
-          }
-        });
-      }
-    });
-
     /* ── Cellules des 5 jours de la semaine ── */
     for (const day of week) {
       if (!day) {
@@ -646,23 +634,15 @@ function buildMonthSection(monthName) {
         return i === -1 ? GROUP_ORDER.length : i;
       };
 
-      /* Collecter tous les événements du jour */
-      const allEvts = [];
+      /* Collecter tous les événements du jour (vacances exclus) */
+      const allEvts = []; /* { g, ev } */
 
-      // Ajouter les événements spécifiques au jour (en ignorant ceux déjà gérés par la répétition semaine)
       if (dd && dd.events) {
         Object.entries(dd.events).forEach(([g, ev]) => {
           if (getCategory(ev) === "vacances") return;
-          if (!isWeekSpanning(g, ev)) {
-            allEvts.push({ g, ev });
-          }
+          allEvts.push({ g, ev });
         });
       }
-
-      // Ajouter les événements qui s'étendent sur la semaine pour ce groupe
-      Object.entries(weekSpanningEvts).forEach(([g, ev]) => {
-        allEvts.push({ g, ev });
-      });
 
       /* Trier par priorité puis rendre */
       allEvts.sort((a, b) => groupPriority(a.g) - groupPriority(b.g));
@@ -1236,47 +1216,16 @@ function saveEdit() {
   /* Supprimer l'ancien événement */
   const {
     group: oldGroup,
-    text: oldText,
     monthName: oldMonth,
     day: oldDay,
   } = currentDetailEvt;
 
-  const isSpanning = isWeekSpanning(oldGroup, oldText);
-  const affectedMonths = new Set([oldMonth]);
-
-  if (isSpanning) {
-    const [y, m] = META[oldMonth];
-    const date = new Date(y, m - 1, oldDay);
-    const dow = date.getDay();
-    const diffToMon = dow === 0 ? -6 : 1 - dow;
-
-    for (let i = 0; i < 5; i++) {
-      const d = new Date(y, m - 1, oldDay);
-      d.setDate(date.getDate() + diffToMon + i);
-      const ty = d.getFullYear(),
-        tm = d.getMonth() + 1,
-        td = d.getDate();
-
-      const tmn = ORDER.find((mn) => {
-        const [my, mm] = META[mn];
-        return my === ty && mm === tm;
-      });
-      if (tmn) {
-        affectedMonths.add(tmn);
-        const mData = CAL[tmn];
-        if (mData) {
-          const entry = mData.find((e) => e.day === td);
-          if (entry && entry.events) delete entry.events[oldGroup];
-        }
-      }
-    }
-  } else {
-    const oldMonthData = CAL[oldMonth];
-    if (oldMonthData) {
-      const entry = oldMonthData.find((e) => e.day === oldDay);
-      if (entry && entry.events) delete entry.events[oldGroup];
-    }
+  const oldMonthData = CAL[oldMonth];
+  if (oldMonthData) {
+    const entry = oldMonthData.find((e) => e.day === oldDay);
+    if (entry && entry.events) delete entry.events[oldGroup];
   }
+  const affectedMonths = new Set([oldMonth]);
 
   /* Insérer le nouvel événement jour par jour */
   const cur = new Date(start + "T00:00:00");
