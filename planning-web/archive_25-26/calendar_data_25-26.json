@@ -522,7 +522,6 @@
       "day": 11,
       "weekday": "Ma",
       "events": {
-        "MMI1": "Armistice 1918",
         "Férié": "Armistice"
       }
     },
@@ -863,9 +862,7 @@
     {
       "day": 25,
       "weekday": "Je",
-      "events": {
-        "MMI1": "Noel"
-      }
+      "events": {}
     },
     {
       "day": 26,
@@ -921,7 +918,6 @@
       "day": 1,
       "weekday": "Je",
       "events": {
-        "MMI1": "Jour de l'an",
         "Férié": "Jour de l'an"
       }
     },
@@ -1700,7 +1696,6 @@
       "day": 6,
       "weekday": "Lu",
       "events": {
-        "MMI1": "Paques",
         "Férié": "Lundi de Pâques"
       },
       "week": 15
@@ -1759,7 +1754,6 @@
       "day": 14,
       "weekday": "Ma",
       "events": {
-        "MMI1": "202",
         "MMI2-App": "Entreprise S11",
         "MMI2-crea": "stage S02",
         "MMI3-crea": "stage S11",
