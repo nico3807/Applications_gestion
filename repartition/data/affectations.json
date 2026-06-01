@@ -615,6 +615,12 @@
           "cm": 0,
           "td": 7.5,
           "tp": 1.5
+        },
+        {
+          "enseignant": "CHOLLET Antoine",
+          "cm": 0,
+          "td": 3,
+          "tp": 0
         }
       ],
       "responsable": "DE VELDER Sophie"
@@ -983,7 +989,7 @@
           "tp": 0
         },
         {
-          "enseignant": "",
+          "enseignant": "MEUNIER Dylan",
           "cm": 0,
           "td": 12.5,
           "tp": 7.5
@@ -1336,7 +1342,7 @@
       "td": 9,
       "tp": 4.5,
       "subrows": [],
-      "responsable": ""
+      "responsable": "BERNARD William"
     },
     "R4.DWeb-DI.02  Economie, gestion et Droit du numérique": {
       "enseignant": "MOCQUET Bertrand",
@@ -1501,7 +1507,7 @@
       "td": 4.5,
       "tp": 9,
       "subrows": [],
-      "responsable": ""
+      "responsable": "BERNARD William"
     },
     "R3.02 | Espagnol (LV2)": {
       "enseignant": "CALLET Caroline",
