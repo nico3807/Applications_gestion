@@ -33,7 +33,6 @@
   "mmi1_jury5_sname5": "RIBES",
   "mmi1_jury5_sname6": "ROCAMORA",
   "mmi1_jury5_sname7": "SEGURA--MARTINEZ",
-  "mmi1_jury5_sname8": "SIEGEL--BOISSIERE",
   "mmi1_jury6_sname1": "DA COSTA",
   "mmi1_jury6_sname2": "DOUCHET--LEFÈVRE",
   "mmi1_jury6_sname3": "EGIDO-NEFFLIEZ",
@@ -135,5 +134,6 @@
   "mmi2_alt_jury2_sname7": "MOTA",
   "mmi2_alt_jury2_sname8": "YELLET",
   "mmi2_alt_jury1_sname8": "PERIGOT",
-  "mmi3_init_jury2_sname6": "ZHANG Zhongqiu"
+  "mmi3_init_jury2_sname6": "ZHANG Zhongqiu",
+  "mmi1_jury4_sname7": "SIEGEL--BOISSIERE"
 }
