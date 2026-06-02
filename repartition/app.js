@@ -581,6 +581,11 @@ function renderMaquetteSemestre(root, sem) {
     return d !== 0 ? d : a.localeCompare(b, "fr");
   });
 
+  const fmtR = (n) => (n % 1 === 0 ? n : n.toFixed(1).replace(/\.0$/, ""));
+  let totCMf = 0, totTDf = 0, totTPf = 0;
+  let totVolHN = 0, totDontTpHN = 0, totAL = 0, totDontTpAL = 0;
+  let totRCM = 0, totRTD = 0, totRTP = 0;
+
   sortedRes.forEach((res, i) => {
     const m = maq[res] || { cm_final: 0, td_final: 0, tp_final: 0 };
     const v = vhn[res] || {
@@ -611,7 +616,11 @@ function renderMaquetteSemestre(root, sem) {
       rTD += parseFloat(s.td) || 0;
       rTP += parseFloat(s.tp) || 0;
     });
-    const fmtR = (n) => (n % 1 === 0 ? n : n.toFixed(1).replace(/\.0$/, ""));
+
+    totCMf += m.cm_final || 0; totTDf += m.td_final || 0; totTPf += m.tp_final || 0;
+    totVolHN += v.vol_hn || 0; totDontTpHN += v.dont_tp_hn || 0;
+    totAL += v.adapt_locale || 0; totDontTpAL += v.dont_tp_al || 0;
+    totRCM += rCM; totRTD += rTD; totRTP += rTP;
 
     html += `<tr class="${rowClass} row-main-resource">
             <td>${res}</td>
@@ -629,7 +638,25 @@ function renderMaquetteSemestre(root, sem) {
         </tr>`;
   });
 
-  html += `</tbody></table></div>
+  const totMaqGlobal = totCMf + totTDf + totTPf;
+  const totPctHtml = totVolHN > 0
+    ? `<span class="${totMaqGlobal / totVolHN * 100 < 95 ? "pct-low" : "pct-ok"}">${(totMaqGlobal / totVolHN * 100).toFixed(0)} %</span>`
+    : `<span class="pct-na">—</span>`;
+
+  html += `</tbody><tfoot><tr class="row-total-pose">
+      <td><strong>Total</strong></td>
+      <td><strong>${fmtR(totCMf)}</strong></td>
+      <td><strong>${fmtR(totTDf)}</strong></td>
+      <td><strong>${fmtR(totTPf)}</strong></td>
+      <td><strong>${fmtR(totVolHN) || '-'}</strong></td>
+      <td><strong>${fmtR(totDontTpHN) || '-'}</strong></td>
+      <td><strong>${fmtR(totAL)}</strong></td>
+      <td><strong>${fmtR(totDontTpAL)}</strong></td>
+      <td><strong>${fmtR(totRCM)}</strong></td>
+      <td><strong>${fmtR(totRTD)}</strong></td>
+      <td><strong>${fmtR(totRTP)}</strong></td>
+      <td>${totPctHtml}</td>
+  </tr></tfoot></table></div>
     <div class="form-actions" style="gap:0.75rem;">
         <button class="btn-add-res" onclick="openRenameRessourcesModal('${sem}')">✏️ Modif ressources/SAÉ</button>
         <button class="btn-add-res" onclick="openAddRessourceModal('${sem}')">➕ Ajout de ressource ou de SAÉ / Adaptation locale</button>
