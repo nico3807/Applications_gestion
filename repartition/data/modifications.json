@@ -1240,5 +1240,41 @@
     "description": "S4 dev / SAÉ 4.DWeb-DI.02 Concevoir un dispositif interactif / td_final",
     "prev": "0",
     "next": "27"
+  },
+  {
+    "date": "02/06/2026",
+    "heure": "11:46:46",
+    "utilisateur": "nicolas.maurin",
+    "type": "Maquette",
+    "description": "S5 dev / R5.DWeb-DI.06 | Développement back avancé / tp_final",
+    "prev": "15",
+    "next": "45"
+  },
+  {
+    "date": "02/06/2026",
+    "heure": "11:47:21",
+    "utilisateur": "nicolas.maurin",
+    "type": "Maquette",
+    "description": "S5 dev / SAÉ 5D.02 | SAE Management / td_final",
+    "prev": "30",
+    "next": "15"
+  },
+  {
+    "date": "02/06/2026",
+    "heure": "11:48:23",
+    "utilisateur": "nicolas.maurin",
+    "type": "Maquette",
+    "description": "S5 dev / SAÉ 5D.03 | Concevoir un dispositif interactif / td_final",
+    "prev": "0",
+    "next": "34.5"
+  },
+  {
+    "date": "02/06/2026",
+    "heure": "11:48:57",
+    "utilisateur": "nicolas.maurin",
+    "type": "Maquette",
+    "description": "S5 dev / SAÉ 5D.04 | Integration d'un LLM / td_final",
+    "prev": "0",
+    "next": "15"
   }
 ]
