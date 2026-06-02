@@ -18,136 +18,136 @@
       "adapt_locale": 0.5,
       "dont_tp_al": 0
     },
-    "R1.03 Ergonomie et Accessibilité": {
+    "PORTFOLIO | Portfolio": {
+      "vol_hn": 0,
+      "dont_tp_hn": 0,
+      "adapt_locale": 0,
+      "dont_tp_al": 0
+    },
+    "R1.03 | Ergonomie et Accessibilité": {
       "vol_hn": 15,
       "dont_tp_hn": 10,
       "adapt_locale": 1.5,
       "dont_tp_al": 0
     },
-    "R1.04 Culture numérique": {
+    "R1.04 | Culture numérique": {
       "vol_hn": 15,
       "dont_tp_hn": 0,
       "adapt_locale": 6,
       "dont_tp_al": 0
     },
-    "R1.05 Stratégies de communication et marketing": {
+    "R1.05 | Stratégies de communication et marketing": {
       "vol_hn": 25,
       "dont_tp_hn": 0,
       "adapt_locale": 0.5,
       "dont_tp_al": 0
     },
-    "R1.06 Expression, communication et rhétorique": {
+    "R1.06 | Expression, communication et rhétorique": {
       "vol_hn": 20,
       "dont_tp_hn": 15,
       "adapt_locale": 0,
       "dont_tp_al": 0
     },
-    "R1.07 Écriture multimédia et narration": {
+    "R1.07 | Écriture multimédia et narration": {
       "vol_hn": 15,
       "dont_tp_hn": 10,
       "adapt_locale": 1.5,
       "dont_tp_al": 0
     },
-    "R1.08 Production graphique": {
+    "R1.08 | Production graphique": {
       "vol_hn": 20,
       "dont_tp_hn": 15,
       "adapt_locale": 1,
       "dont_tp_al": 0
     },
-    "R1.09 Culture artistique": {
+    "R1.09 | Culture artistique": {
       "vol_hn": 15,
       "dont_tp_hn": 10,
       "adapt_locale": 3,
       "dont_tp_al": 0.5
     },
-    "R1.10 Production audio et vidéo": {
+    "R1.10 | Production audio et vidéo": {
       "vol_hn": 20,
       "dont_tp_hn": 15,
       "adapt_locale": 1,
       "dont_tp_al": 0
     },
-    "R1.11 Intégration": {
+    "R1.11 | Intégration": {
       "vol_hn": 25,
       "dont_tp_hn": 15,
       "adapt_locale": 5,
       "dont_tp_al": 0
     },
-    "R1.12 Développement Web": {
+    "R1.12 | Développement Web": {
       "vol_hn": 20,
       "dont_tp_hn": 15,
       "adapt_locale": 0,
       "dont_tp_al": 0
     },
-    "R1.13 Hébergement": {
+    "R1.13 | Hébergement": {
       "vol_hn": 15,
       "dont_tp_hn": 10,
       "adapt_locale": 0,
       "dont_tp_al": 0
     },
-    "R1.14 Représentation et traitement de l'information": {
+    "R1.14 | Représentation et traitement de l'information": {
       "vol_hn": 20,
       "dont_tp_hn": 15,
       "adapt_locale": 0,
       "dont_tp_al": 0
     },
-    "R1.15 Gestion de projet": {
+    "R1.15 | Gestion de projet": {
       "vol_hn": 15,
       "dont_tp_hn": 10,
       "adapt_locale": 0,
       "dont_tp_al": 0
     },
-    "R1.16 Économie, gestion et droit du numérique": {
+    "R1.16 | Économie, gestion et droit du numérique": {
       "vol_hn": 15,
       "dont_tp_hn": 0,
       "adapt_locale": 0,
       "dont_tp_al": 0
     },
-    "R1.17 Projet Personnel et Professionnel": {
+    "R1.17 | Projet Personnel et Professionnel": {
       "vol_hn": 20,
       "dont_tp_hn": 5,
       "adapt_locale": 0,
       "dont_tp_al": 0
     },
-    "SAÉ 1.01 Auditer une communication numérique": {
+    "SAÉ 1.01 | Auditer une communication numérique": {
       "vol_hn": 0,
       "dont_tp_hn": 0,
       "adapt_locale": 18,
       "dont_tp_al": 0
     },
-    "SAÉ 1.02 Concevoir une recommandation de communication numérique": {
+    "SAÉ 1.02 | Concevoir une recommandation de communication numérique": {
       "vol_hn": 0,
       "dont_tp_hn": 0,
       "adapt_locale": 19.5,
       "dont_tp_al": 4.5
     },
-    "SAÉ 1.03 Produire les éléments d'une communication visuelle": {
+    "SAÉ 1.03 | Produire les éléments d'une communication visuelle": {
       "vol_hn": 0,
       "dont_tp_hn": 0,
       "adapt_locale": 10.5,
       "dont_tp_al": 3
     },
-    "SAÉ 1.04 Produire un contenu audio et vidéo": {
+    "SAÉ 1.04 | Produire un contenu audio et vidéo": {
       "vol_hn": 0,
       "dont_tp_hn": 0,
       "adapt_locale": 19.5,
       "dont_tp_al": 0
     },
-    "SAÉ 1.05 Produire un site Web": {
+    "SAÉ 1.05 | Produire un site Web": {
       "vol_hn": 0,
       "dont_tp_hn": 0,
       "adapt_locale": 9,
       "dont_tp_al": 0
     },
-    "SAÉ 1.06 Gérer un projet de communication numérique": {
+    "SAÉ 1.06 | Gérer un projet de communication numérique": {
       "vol_hn": 0,
       "dont_tp_hn": 0,
       "adapt_locale": 19.5,
-      "dont_tp_al": 0
-    },
-    "PORTFOLIO | Portfolio": {
-      "vol_hn": 0,
-      "dont_tp_hn": 0,
-      "adapt_locale": 0,
       "dont_tp_al": 0
     }
   },
