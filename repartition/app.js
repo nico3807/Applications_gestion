@@ -560,6 +560,7 @@ function renderMaquetteSemestre(root, sem) {
             <th colspan="4" class="group-header pn-header">PN + Adaptation locale</th>
             <th colspan="3" class="group-header reel-header">Réel planifié</th>
             <th rowspan="2" class="pct-header">% réalisation<br>/ PN</th>
+            <th rowspan="2" style="width:38px;"></th>
         </tr>
         <tr>
             <th class="editable-col">CM final</th>
@@ -635,6 +636,7 @@ function renderMaquetteSemestre(root, sem) {
             <td class="reel-val">${fmtR(rTD)}</td>
             <td class="reel-val">${fmtR(rTP)}</td>
             <td class="pct-cell">${pctHtml}</td>
+            <td style="text-align:center;"><button class="btn-remove-subrow" onclick="deleteRessourceMaq('${sem}','${resEsc}')" title="Supprimer cette ressource">🗑</button></td>
         </tr>`;
   });
 
@@ -656,6 +658,7 @@ function renderMaquetteSemestre(root, sem) {
       <td><strong>${fmtR(totRTD)}</strong></td>
       <td><strong>${fmtR(totRTP)}</strong></td>
       <td>${totPctHtml}</td>
+      <td></td>
   </tr></tfoot></table></div>
     <div class="form-actions" style="gap:0.75rem;">
         <button class="btn-add-res" onclick="openRenameRessourcesModal('${sem}')">✏️ Modif ressources/SAÉ</button>
@@ -871,6 +874,15 @@ window.confirmRenameRessources = function () {
   });
 
   closeRenameRessourcesModal();
+  renderView();
+};
+
+window.deleteRessourceMaq = function (sem, res) {
+  if (!confirm(`Supprimer "${res}" du semestre ${sem} ?\nToutes les affectations associées seront également supprimées.`)) return;
+  delete (APP_DATA.affectations[sem] || {})[res];
+  delete (APP_DATA.maquette_overrides[sem] || {})[res];
+  delete (APP_DATA.volume_horaire_national[sem] || {})[res];
+  _logMod("Maquette", `Suppression ressource — ${sem}`, res, "—");
   renderView();
 };
 
