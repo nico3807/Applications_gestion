@@ -435,6 +435,11 @@
       "cm_final": 0,
       "td_final": 7.5,
       "tp_final": 0
+    },
+    "SAÉ 4.DWeb-DI.04 |.Apprentis : Interface, contenus et visualisation": {
+      "cm_final": 0,
+      "td_final": 21,
+      "tp_final": 0
     }
   },
   "S4 crea": {
@@ -535,11 +540,6 @@
       "td_final": 18,
       "tp_final": 18
     },
-    "R5 Crea.06 | Création numérique": {
-      "cm_final": 0,
-      "td_final": 40.5,
-      "tp_final": 30
-    },
     "R5.Crea.07 | Ecriture Multimédia et narration": {
       "cm_final": 0,
       "td_final": 40.5,
@@ -565,11 +565,6 @@
       "td_final": 15,
       "tp_final": 0
     },
-    "R5 Crea.03 | Entrepreunariat": {
-      "cm_final": 0,
-      "td_final": 15,
-      "tp_final": 0
-    },
     "R5.Crea.04 | PPP": {
       "cm_final": 0,
       "td_final": 9,
@@ -579,6 +574,16 @@
       "cm_final": 0,
       "td_final": 15,
       "tp_final": 0
+    },
+    "R5.Crea.03 | Entrepreunariat": {
+      "cm_final": 0,
+      "td_final": 15,
+      "tp_final": 0
+    },
+    "R5.Crea.06 | Création numérique": {
+      "cm_final": 0,
+      "td_final": 40.5,
+      "tp_final": 30
     }
   },
   "S6 crea": {
@@ -666,7 +671,7 @@
     },
     "PORTFOLIO Portfolio-Parcours Dev Web": {
       "cm_final": 0,
-      "td_final": 7.5,
+      "td_final": 3,
       "tp_final": 0
     },
     "SAÉ 5D.03 | Concevoir un dispositif interactif": {
@@ -696,14 +701,19 @@
       "td_final": 12,
       "tp_final": 0
     },
-    "SAÉ 6.dev.01 | Developpement avancé": {
-      "cm_final": 0,
-      "td_final": 30,
-      "tp_final": 0
-    },
     "PORTFOLIO | Portfolio-Parcours Dev": {
       "cm_final": 0,
       "td_final": 3,
+      "tp_final": 0
+    },
+    "SAÉ 6.DWeb-DI.02 | Apprenti": {
+      "cm_final": 0,
+      "td_final": 21,
+      "tp_final": 0
+    },
+    "SAÉ 6.DWeb-DI.01 | Developpement avancé": {
+      "cm_final": 0,
+      "td_final": 30,
       "tp_final": 0
     }
   }
