@@ -524,66 +524,6 @@
     }
   },
   "S4 dev": {
-    "R4.DWeb-DI.01 Anglais": {
-      "vol_hn": 15,
-      "dont_tp_hn": 5,
-      "adapt_locale": 0,
-      "dont_tp_al": 0
-    },
-    "R4.DWeb-DI.02  Economie, gestion et Droit du numérique": {
-      "vol_hn": 15,
-      "dont_tp_hn": 0,
-      "adapt_locale": 0,
-      "dont_tp_al": 0
-    },
-    "R4.DWeb-DI.03  Design d'expérience": {
-      "vol_hn": 15,
-      "dont_tp_hn": 5,
-      "adapt_locale": 0,
-      "dont_tp_al": 0
-    },
-    "R4.DWeb-DI.04  Expression, communication": {
-      "vol_hn": 15,
-      "dont_tp_hn": 0,
-      "adapt_locale": 0,
-      "dont_tp_al": 0
-    },
-    "R4.DWeb-DI.05 Création et design interactif": {
-      "vol_hn": 15,
-      "dont_tp_hn": 5,
-      "adapt_locale": 0,
-      "dont_tp_al": 0
-    },
-    "R4.DWeb-DI.06 Développement front": {
-      "vol_hn": 15,
-      "dont_tp_hn": 10,
-      "adapt_locale": 0,
-      "dont_tp_al": 0
-    },
-    "R4.DWeb-DI.07 Développement back": {
-      "vol_hn": 20,
-      "dont_tp_hn": 10,
-      "adapt_locale": 1,
-      "dont_tp_al": 0
-    },
-    "R4.DWeb-DI.08 Déploiement de services": {
-      "vol_hn": 10,
-      "dont_tp_hn": 5,
-      "adapt_locale": 2,
-      "dont_tp_al": 0
-    },
-    "SAÉ 4.DWeb-DI.01 Développer pour le Web": {
-      "vol_hn": 0,
-      "dont_tp_hn": 0,
-      "adapt_locale": 27,
-      "dont_tp_al": 0
-    },
-    "SAÉ 4.DWeb-DI.02 Concevoir un dispositif interactif": {
-      "vol_hn": 0,
-      "dont_tp_hn": 0,
-      "adapt_locale": 27,
-      "dont_tp_al": 0
-    },
     "SAÉ 4.98 | Hackathon": {
       "vol_hn": 0,
       "dont_tp_hn": 0,
@@ -596,7 +536,67 @@
       "adapt_locale": 12,
       "dont_tp_al": 0
     },
-    "PORTFOLIO Portfolio-Parcours Développement Web et Dispositifs interactifs": {
+    "R4.DWeb-DI.01 | Anglais": {
+      "vol_hn": 15,
+      "dont_tp_hn": 5,
+      "adapt_locale": 0,
+      "dont_tp_al": 0
+    },
+    "R4.DWeb-DI.02 |  Economie, gestion et Droit du numérique": {
+      "vol_hn": 15,
+      "dont_tp_hn": 0,
+      "adapt_locale": 0,
+      "dont_tp_al": 0
+    },
+    "R4.DWeb-DI.03 |  Design d'expérience": {
+      "vol_hn": 15,
+      "dont_tp_hn": 5,
+      "adapt_locale": 0,
+      "dont_tp_al": 0
+    },
+    "R4.DWeb-DI.04 |  Expression, communication": {
+      "vol_hn": 15,
+      "dont_tp_hn": 0,
+      "adapt_locale": 0,
+      "dont_tp_al": 0
+    },
+    "R4.DWeb-DI.05 | Création et design interactif": {
+      "vol_hn": 15,
+      "dont_tp_hn": 5,
+      "adapt_locale": 0,
+      "dont_tp_al": 0
+    },
+    "R4.DWeb-DI.06 | Développement front": {
+      "vol_hn": 15,
+      "dont_tp_hn": 10,
+      "adapt_locale": 0,
+      "dont_tp_al": 0
+    },
+    "R4.DWeb-DI.07 | Développement back": {
+      "vol_hn": 20,
+      "dont_tp_hn": 10,
+      "adapt_locale": 1,
+      "dont_tp_al": 0
+    },
+    "R4.DWeb-DI.08 | Déploiement de services": {
+      "vol_hn": 10,
+      "dont_tp_hn": 5,
+      "adapt_locale": 2,
+      "dont_tp_al": 0
+    },
+    "SAÉ 4.DWeb-DI.01 | Développer pour le Web": {
+      "vol_hn": 0,
+      "dont_tp_hn": 0,
+      "adapt_locale": 27,
+      "dont_tp_al": 0
+    },
+    "SAÉ 4.DWeb-DI.02 | Concevoir un dispositif interactif": {
+      "vol_hn": 0,
+      "dont_tp_hn": 0,
+      "adapt_locale": 27,
+      "dont_tp_al": 0
+    },
+    "PORTFOLIO | Portfolio-Parcours Développement Web et Dispositifs interactifs": {
       "vol_hn": 0,
       "dont_tp_hn": 0,
       "adapt_locale": 0,
