@@ -1645,5 +1645,14 @@
     "description": "S6 dev / SAÉ 6.dev.01 | Developpement avancé / td_final",
     "prev": "15",
     "next": "30"
+  },
+  {
+    "date": "02/06/2026",
+    "heure": "12:01:20",
+    "utilisateur": "nicolas.maurin",
+    "type": "Maquette",
+    "description": "S6 crea / PORTFOLIO | Portfolio-Parcours Création Numérique / td_final",
+    "prev": "7.5",
+    "next": "3"
   }
 ]
