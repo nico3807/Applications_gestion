@@ -535,11 +535,6 @@
       "td_final": 18,
       "tp_final": 18
     },
-    "R5 Crea.06 | Création numérique": {
-      "cm_final": 0,
-      "td_final": 40.5,
-      "tp_final": 30
-    },
     "R5.Crea.07 | Ecriture Multimédia et narration": {
       "cm_final": 0,
       "td_final": 40.5,
@@ -565,11 +560,6 @@
       "td_final": 15,
       "tp_final": 0
     },
-    "R5 Crea.03 | Entrepreunariat": {
-      "cm_final": 0,
-      "td_final": 15,
-      "tp_final": 0
-    },
     "R5.Crea.04 | PPP": {
       "cm_final": 0,
       "td_final": 9,
@@ -579,6 +569,16 @@
       "cm_final": 0,
       "td_final": 15,
       "tp_final": 0
+    },
+    "R5.Crea.03 | Entrepreunariat": {
+      "cm_final": 0,
+      "td_final": 15,
+      "tp_final": 0
+    },
+    "R5.Crea.06 | Création numérique": {
+      "cm_final": 0,
+      "td_final": 40.5,
+      "tp_final": 30
     }
   },
   "S6 crea": {
