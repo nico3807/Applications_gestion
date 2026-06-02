@@ -413,12 +413,12 @@
     },
     "SAÉ 4.DWeb-DI.01 Développer pour le Web": {
       "cm_final": 0,
-      "td_final": 0,
+      "td_final": 27,
       "tp_final": 0
     },
     "SAÉ 4.DWeb-DI.02 Concevoir un dispositif interactif": {
       "cm_final": 0,
-      "td_final": 0,
+      "td_final": 27,
       "tp_final": 0
     },
     "SAÉ 4.98 | Hackathon": {
@@ -506,6 +506,21 @@
     "PORTFOLIO | Portfolio-Parcours Création Numérique": {
       "cm_final": 0,
       "td_final": 7.5,
+      "tp_final": 0
+    },
+    "R4.Crea.02 | Economie, gestion et Droit du numérique": {
+      "cm_final": 0,
+      "td_final": 15,
+      "tp_final": 0
+    },
+    "R4.Crea.03 | Design d'expérience": {
+      "cm_final": 0,
+      "td_final": 4.5,
+      "tp_final": 10.5
+    },
+    "R4.Crea.04 | Expression, communication": {
+      "cm_final": 0,
+      "td_final": 15,
       "tp_final": 0
     }
   },
