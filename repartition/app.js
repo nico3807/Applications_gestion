@@ -1320,31 +1320,46 @@ async function saveFileGH(filename, dataObj, msg) {
   const content = btoa(
     unescape(encodeURIComponent(JSON.stringify(dataObj, null, 2))),
   );
-  let sha = null;
-  try {
-    const r = await fetch(`${url}?ref=${GH_BRANCH}`, {
-      // Ajout de no-cache pour s'assurer de récupérer le SHA le plus récent
-      cache: "no-cache",
+
+  /* Lecture du SHA courant — _t= contourne le CDN GitHub (cache serveur) */
+  async function _getSha() {
+    try {
+      const r = await fetch(`${url}?ref=${GH_BRANCH}&_t=${Date.now()}`, {
+        cache: "no-cache",
+        headers: {
+          Authorization: `token ${cfg.token}`,
+          Accept: "application/vnd.github.v3+json",
+        },
+      });
+      if (r.ok) return (await r.json()).sha;
+    } catch {}
+    return null;
+  }
+
+  /* Envoi du PUT avec le SHA fourni */
+  async function _put(sha) {
+    const body = { message: msg, content, branch: GH_BRANCH };
+    if (sha) body.sha = sha;
+    return fetch(url, {
+      method: "PUT",
       headers: {
         Authorization: `token ${cfg.token}`,
         Accept: "application/vnd.github.v3+json",
+        "Content-Type": "application/json",
       },
+      body: JSON.stringify(body),
     });
-    if (r.ok) sha = (await r.json()).sha;
-  } catch {}
+  }
 
-  const body = { message: msg, content, branch: GH_BRANCH };
-  if (sha) body.sha = sha;
+  let sha = await _getSha();
+  let r = await _put(sha);
 
-  const r = await fetch(url, {
-    method: "PUT",
-    headers: {
-      Authorization: `token ${cfg.token}`,
-      Accept: "application/vnd.github.v3+json",
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(body),
-  });
+  /* Retry automatique sur conflit SHA (409) : re-lire le vrai SHA et réessayer */
+  if (r.status === 409) {
+    sha = await _getSha();
+    r = await _put(sha);
+  }
+
   if (!r.ok) {
     let errMsg = `Erreur ${r.status}`;
     try {
