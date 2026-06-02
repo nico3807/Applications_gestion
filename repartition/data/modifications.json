@@ -1150,5 +1150,41 @@
     "description": "S2 / SAÉ 2.98 | Hackathon / td_final",
     "prev": "5",
     "next": "6"
+  },
+  {
+    "date": "02/06/2026",
+    "heure": "11:35:31",
+    "utilisateur": "nicolas.maurin",
+    "type": "Maquette",
+    "description": "S3 / R3.07 | Expression, communication et rhétorique / cm_final",
+    "prev": "0",
+    "next": "9"
+  },
+  {
+    "date": "02/06/2026",
+    "heure": "11:35:34",
+    "utilisateur": "nicolas.maurin",
+    "type": "Maquette",
+    "description": "S3 / R3.07 | Expression, communication et rhétorique / td_final",
+    "prev": "9",
+    "next": "6"
+  },
+  {
+    "date": "02/06/2026",
+    "heure": "11:35:56",
+    "utilisateur": "nicolas.maurin",
+    "type": "Maquette",
+    "description": "S3 / R3.07 | Expression, communication et rhétorique / td_final",
+    "prev": "6",
+    "next": "9"
+  },
+  {
+    "date": "02/06/2026",
+    "heure": "11:36:00",
+    "utilisateur": "nicolas.maurin",
+    "type": "Maquette",
+    "description": "S3 / R3.07 | Expression, communication et rhétorique / cm_final",
+    "prev": "9",
+    "next": "0"
   }
 ]
