@@ -1285,5 +1285,104 @@
     "description": "Renommage — S4 crea",
     "prev": "R4.Crea.01 Anglais",
     "next": "R4.Crea.01 | Anglais"
+  },
+  {
+    "date": "02/06/2026",
+    "heure": "11:52:28",
+    "utilisateur": "nicolas.maurin",
+    "type": "Maquette",
+    "description": "Renommage — S4 dev",
+    "prev": "R4.DWeb-DI.01 Anglais",
+    "next": "R4.DWeb-DI.01 | Anglais"
+  },
+  {
+    "date": "02/06/2026",
+    "heure": "11:52:28",
+    "utilisateur": "nicolas.maurin",
+    "type": "Maquette",
+    "description": "Renommage — S4 dev",
+    "prev": "R4.DWeb-DI.02  Economie, gestion et Droit du numérique",
+    "next": "R4.DWeb-DI.02 |  Economie, gestion et Droit du numérique"
+  },
+  {
+    "date": "02/06/2026",
+    "heure": "11:52:28",
+    "utilisateur": "nicolas.maurin",
+    "type": "Maquette",
+    "description": "Renommage — S4 dev",
+    "prev": "R4.DWeb-DI.03  Design d'expérience",
+    "next": "R4.DWeb-DI.03 |  Design d'expérience"
+  },
+  {
+    "date": "02/06/2026",
+    "heure": "11:52:28",
+    "utilisateur": "nicolas.maurin",
+    "type": "Maquette",
+    "description": "Renommage — S4 dev",
+    "prev": "R4.DWeb-DI.04  Expression, communication",
+    "next": "R4.DWeb-DI.04 |  Expression, communication"
+  },
+  {
+    "date": "02/06/2026",
+    "heure": "11:52:28",
+    "utilisateur": "nicolas.maurin",
+    "type": "Maquette",
+    "description": "Renommage — S4 dev",
+    "prev": "R4.DWeb-DI.05 Création et design interactif",
+    "next": "R4.DWeb-DI.05 | Création et design interactif"
+  },
+  {
+    "date": "02/06/2026",
+    "heure": "11:52:28",
+    "utilisateur": "nicolas.maurin",
+    "type": "Maquette",
+    "description": "Renommage — S4 dev",
+    "prev": "R4.DWeb-DI.06 Développement front",
+    "next": "R4.DWeb-DI.06 | Développement front"
+  },
+  {
+    "date": "02/06/2026",
+    "heure": "11:52:28",
+    "utilisateur": "nicolas.maurin",
+    "type": "Maquette",
+    "description": "Renommage — S4 dev",
+    "prev": "R4.DWeb-DI.07 Développement back",
+    "next": "R4.DWeb-DI.07 | Développement back"
+  },
+  {
+    "date": "02/06/2026",
+    "heure": "11:52:28",
+    "utilisateur": "nicolas.maurin",
+    "type": "Maquette",
+    "description": "Renommage — S4 dev",
+    "prev": "R4.DWeb-DI.08 Déploiement de services",
+    "next": "R4.DWeb-DI.08 | Déploiement de services"
+  },
+  {
+    "date": "02/06/2026",
+    "heure": "11:52:28",
+    "utilisateur": "nicolas.maurin",
+    "type": "Maquette",
+    "description": "Renommage — S4 dev",
+    "prev": "SAÉ 4.DWeb-DI.01 Développer pour le Web",
+    "next": "SAÉ 4.DWeb-DI.01 | Développer pour le Web"
+  },
+  {
+    "date": "02/06/2026",
+    "heure": "11:52:28",
+    "utilisateur": "nicolas.maurin",
+    "type": "Maquette",
+    "description": "Renommage — S4 dev",
+    "prev": "SAÉ 4.DWeb-DI.02 Concevoir un dispositif interactif",
+    "next": "SAÉ 4.DWeb-DI.02 | Concevoir un dispositif interactif"
+  },
+  {
+    "date": "02/06/2026",
+    "heure": "11:52:28",
+    "utilisateur": "nicolas.maurin",
+    "type": "Maquette",
+    "description": "Renommage — S4 dev",
+    "prev": "PORTFOLIO Portfolio-Parcours Développement Web et Dispositifs interactifs",
+    "next": "PORTFOLIO | Portfolio-Parcours Développement Web et Dispositifs interactifs"
   }
 ]
