@@ -435,6 +435,11 @@
       "cm_final": 0,
       "td_final": 7.5,
       "tp_final": 0
+    },
+    "SAÉ 4.DWeb-DI.04 |.Apprentis : Interface, contenus et visualisation": {
+      "cm_final": 0,
+      "td_final": 21,
+      "tp_final": 0
     }
   },
   "S4 crea": {
@@ -666,7 +671,7 @@
     },
     "PORTFOLIO Portfolio-Parcours Dev Web": {
       "cm_final": 0,
-      "td_final": 7.5,
+      "td_final": 3,
       "tp_final": 0
     },
     "SAÉ 5D.03 | Concevoir un dispositif interactif": {
