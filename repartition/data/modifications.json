@@ -1240,5 +1240,419 @@
     "description": "S4 dev / SAÉ 4.DWeb-DI.02 Concevoir un dispositif interactif / td_final",
     "prev": "0",
     "next": "27"
+  },
+  {
+    "date": "02/06/2026",
+    "heure": "11:46:46",
+    "utilisateur": "nicolas.maurin",
+    "type": "Maquette",
+    "description": "S5 dev / R5.DWeb-DI.06 | Développement back avancé / tp_final",
+    "prev": "15",
+    "next": "45"
+  },
+  {
+    "date": "02/06/2026",
+    "heure": "11:47:21",
+    "utilisateur": "nicolas.maurin",
+    "type": "Maquette",
+    "description": "S5 dev / SAÉ 5D.02 | SAE Management / td_final",
+    "prev": "30",
+    "next": "15"
+  },
+  {
+    "date": "02/06/2026",
+    "heure": "11:48:23",
+    "utilisateur": "nicolas.maurin",
+    "type": "Maquette",
+    "description": "S5 dev / SAÉ 5D.03 | Concevoir un dispositif interactif / td_final",
+    "prev": "0",
+    "next": "34.5"
+  },
+  {
+    "date": "02/06/2026",
+    "heure": "11:48:57",
+    "utilisateur": "nicolas.maurin",
+    "type": "Maquette",
+    "description": "S5 dev / SAÉ 5D.04 | Integration d'un LLM / td_final",
+    "prev": "0",
+    "next": "15"
+  },
+  {
+    "date": "02/06/2026",
+    "heure": "11:51:36",
+    "utilisateur": "nicolas.maurin",
+    "type": "Maquette",
+    "description": "Renommage — S4 crea",
+    "prev": "R4.Crea.01 Anglais",
+    "next": "R4.Crea.01 | Anglais"
+  },
+  {
+    "date": "02/06/2026",
+    "heure": "11:52:28",
+    "utilisateur": "nicolas.maurin",
+    "type": "Maquette",
+    "description": "Renommage — S4 dev",
+    "prev": "R4.DWeb-DI.01 Anglais",
+    "next": "R4.DWeb-DI.01 | Anglais"
+  },
+  {
+    "date": "02/06/2026",
+    "heure": "11:52:28",
+    "utilisateur": "nicolas.maurin",
+    "type": "Maquette",
+    "description": "Renommage — S4 dev",
+    "prev": "R4.DWeb-DI.02  Economie, gestion et Droit du numérique",
+    "next": "R4.DWeb-DI.02 |  Economie, gestion et Droit du numérique"
+  },
+  {
+    "date": "02/06/2026",
+    "heure": "11:52:28",
+    "utilisateur": "nicolas.maurin",
+    "type": "Maquette",
+    "description": "Renommage — S4 dev",
+    "prev": "R4.DWeb-DI.03  Design d'expérience",
+    "next": "R4.DWeb-DI.03 |  Design d'expérience"
+  },
+  {
+    "date": "02/06/2026",
+    "heure": "11:52:28",
+    "utilisateur": "nicolas.maurin",
+    "type": "Maquette",
+    "description": "Renommage — S4 dev",
+    "prev": "R4.DWeb-DI.04  Expression, communication",
+    "next": "R4.DWeb-DI.04 |  Expression, communication"
+  },
+  {
+    "date": "02/06/2026",
+    "heure": "11:52:28",
+    "utilisateur": "nicolas.maurin",
+    "type": "Maquette",
+    "description": "Renommage — S4 dev",
+    "prev": "R4.DWeb-DI.05 Création et design interactif",
+    "next": "R4.DWeb-DI.05 | Création et design interactif"
+  },
+  {
+    "date": "02/06/2026",
+    "heure": "11:52:28",
+    "utilisateur": "nicolas.maurin",
+    "type": "Maquette",
+    "description": "Renommage — S4 dev",
+    "prev": "R4.DWeb-DI.06 Développement front",
+    "next": "R4.DWeb-DI.06 | Développement front"
+  },
+  {
+    "date": "02/06/2026",
+    "heure": "11:52:28",
+    "utilisateur": "nicolas.maurin",
+    "type": "Maquette",
+    "description": "Renommage — S4 dev",
+    "prev": "R4.DWeb-DI.07 Développement back",
+    "next": "R4.DWeb-DI.07 | Développement back"
+  },
+  {
+    "date": "02/06/2026",
+    "heure": "11:52:28",
+    "utilisateur": "nicolas.maurin",
+    "type": "Maquette",
+    "description": "Renommage — S4 dev",
+    "prev": "R4.DWeb-DI.08 Déploiement de services",
+    "next": "R4.DWeb-DI.08 | Déploiement de services"
+  },
+  {
+    "date": "02/06/2026",
+    "heure": "11:52:28",
+    "utilisateur": "nicolas.maurin",
+    "type": "Maquette",
+    "description": "Renommage — S4 dev",
+    "prev": "SAÉ 4.DWeb-DI.01 Développer pour le Web",
+    "next": "SAÉ 4.DWeb-DI.01 | Développer pour le Web"
+  },
+  {
+    "date": "02/06/2026",
+    "heure": "11:52:28",
+    "utilisateur": "nicolas.maurin",
+    "type": "Maquette",
+    "description": "Renommage — S4 dev",
+    "prev": "SAÉ 4.DWeb-DI.02 Concevoir un dispositif interactif",
+    "next": "SAÉ 4.DWeb-DI.02 | Concevoir un dispositif interactif"
+  },
+  {
+    "date": "02/06/2026",
+    "heure": "11:52:28",
+    "utilisateur": "nicolas.maurin",
+    "type": "Maquette",
+    "description": "Renommage — S4 dev",
+    "prev": "PORTFOLIO Portfolio-Parcours Développement Web et Dispositifs interactifs",
+    "next": "PORTFOLIO | Portfolio-Parcours Développement Web et Dispositifs interactifs"
+  },
+  {
+    "date": "02/06/2026",
+    "heure": "11:53:54",
+    "utilisateur": "nicolas.maurin",
+    "type": "Maquette",
+    "description": "Renommage — S1",
+    "prev": "R1.03 Ergonomie et Accessibilité",
+    "next": "R1.03 | Ergonomie et Accessibilité"
+  },
+  {
+    "date": "02/06/2026",
+    "heure": "11:53:54",
+    "utilisateur": "nicolas.maurin",
+    "type": "Maquette",
+    "description": "Renommage — S1",
+    "prev": "R1.04 Culture numérique",
+    "next": "R1.04 | Culture numérique"
+  },
+  {
+    "date": "02/06/2026",
+    "heure": "11:53:54",
+    "utilisateur": "nicolas.maurin",
+    "type": "Maquette",
+    "description": "Renommage — S1",
+    "prev": "R1.05 Stratégies de communication et marketing",
+    "next": "R1.05 | Stratégies de communication et marketing"
+  },
+  {
+    "date": "02/06/2026",
+    "heure": "11:53:54",
+    "utilisateur": "nicolas.maurin",
+    "type": "Maquette",
+    "description": "Renommage — S1",
+    "prev": "R1.06 Expression, communication et rhétorique",
+    "next": "R1.06 | Expression, communication et rhétorique"
+  },
+  {
+    "date": "02/06/2026",
+    "heure": "11:53:54",
+    "utilisateur": "nicolas.maurin",
+    "type": "Maquette",
+    "description": "Renommage — S1",
+    "prev": "R1.07 Écriture multimédia et narration",
+    "next": "R1.07 | Écriture multimédia et narration"
+  },
+  {
+    "date": "02/06/2026",
+    "heure": "11:53:54",
+    "utilisateur": "nicolas.maurin",
+    "type": "Maquette",
+    "description": "Renommage — S1",
+    "prev": "R1.08 Production graphique",
+    "next": "R1.08 | Production graphique"
+  },
+  {
+    "date": "02/06/2026",
+    "heure": "11:53:54",
+    "utilisateur": "nicolas.maurin",
+    "type": "Maquette",
+    "description": "Renommage — S1",
+    "prev": "R1.09 Culture artistique",
+    "next": "R1.09 | Culture artistique"
+  },
+  {
+    "date": "02/06/2026",
+    "heure": "11:53:54",
+    "utilisateur": "nicolas.maurin",
+    "type": "Maquette",
+    "description": "Renommage — S1",
+    "prev": "R1.10 Production audio et vidéo",
+    "next": "R1.10 | Production audio et vidéo"
+  },
+  {
+    "date": "02/06/2026",
+    "heure": "11:53:54",
+    "utilisateur": "nicolas.maurin",
+    "type": "Maquette",
+    "description": "Renommage — S1",
+    "prev": "R1.11 Intégration",
+    "next": "R1.11 | Intégration"
+  },
+  {
+    "date": "02/06/2026",
+    "heure": "11:53:54",
+    "utilisateur": "nicolas.maurin",
+    "type": "Maquette",
+    "description": "Renommage — S1",
+    "prev": "R1.12 Développement Web",
+    "next": "R1.12 | Développement Web"
+  },
+  {
+    "date": "02/06/2026",
+    "heure": "11:53:54",
+    "utilisateur": "nicolas.maurin",
+    "type": "Maquette",
+    "description": "Renommage — S1",
+    "prev": "R1.13 Hébergement",
+    "next": "R1.13 | Hébergement"
+  },
+  {
+    "date": "02/06/2026",
+    "heure": "11:53:54",
+    "utilisateur": "nicolas.maurin",
+    "type": "Maquette",
+    "description": "Renommage — S1",
+    "prev": "R1.14 Représentation et traitement de l'information",
+    "next": "R1.14 | Représentation et traitement de l'information"
+  },
+  {
+    "date": "02/06/2026",
+    "heure": "11:53:54",
+    "utilisateur": "nicolas.maurin",
+    "type": "Maquette",
+    "description": "Renommage — S1",
+    "prev": "R1.15 Gestion de projet",
+    "next": "R1.15 | Gestion de projet"
+  },
+  {
+    "date": "02/06/2026",
+    "heure": "11:53:54",
+    "utilisateur": "nicolas.maurin",
+    "type": "Maquette",
+    "description": "Renommage — S1",
+    "prev": "R1.16 Économie, gestion et droit du numérique",
+    "next": "R1.16 | Économie, gestion et droit du numérique"
+  },
+  {
+    "date": "02/06/2026",
+    "heure": "11:53:54",
+    "utilisateur": "nicolas.maurin",
+    "type": "Maquette",
+    "description": "Renommage — S1",
+    "prev": "R1.17 Projet Personnel et Professionnel",
+    "next": "R1.17 | Projet Personnel et Professionnel"
+  },
+  {
+    "date": "02/06/2026",
+    "heure": "11:53:54",
+    "utilisateur": "nicolas.maurin",
+    "type": "Maquette",
+    "description": "Renommage — S1",
+    "prev": "SAÉ 1.01 Auditer une communication numérique",
+    "next": "SAÉ 1.01 | Auditer une communication numérique"
+  },
+  {
+    "date": "02/06/2026",
+    "heure": "11:53:54",
+    "utilisateur": "nicolas.maurin",
+    "type": "Maquette",
+    "description": "Renommage — S1",
+    "prev": "SAÉ 1.02 Concevoir une recommandation de communication numérique",
+    "next": "SAÉ 1.02 | Concevoir une recommandation de communication numérique"
+  },
+  {
+    "date": "02/06/2026",
+    "heure": "11:53:54",
+    "utilisateur": "nicolas.maurin",
+    "type": "Maquette",
+    "description": "Renommage — S1",
+    "prev": "SAÉ 1.03 Produire les éléments d'une communication visuelle",
+    "next": "SAÉ 1.03 | Produire les éléments d'une communication visuelle"
+  },
+  {
+    "date": "02/06/2026",
+    "heure": "11:53:54",
+    "utilisateur": "nicolas.maurin",
+    "type": "Maquette",
+    "description": "Renommage — S1",
+    "prev": "SAÉ 1.04 Produire un contenu audio et vidéo",
+    "next": "SAÉ 1.04 | Produire un contenu audio et vidéo"
+  },
+  {
+    "date": "02/06/2026",
+    "heure": "11:53:54",
+    "utilisateur": "nicolas.maurin",
+    "type": "Maquette",
+    "description": "Renommage — S1",
+    "prev": "SAÉ 1.05 Produire un site Web",
+    "next": "SAÉ 1.05 | Produire un site Web"
+  },
+  {
+    "date": "02/06/2026",
+    "heure": "11:53:54",
+    "utilisateur": "nicolas.maurin",
+    "type": "Maquette",
+    "description": "Renommage — S1",
+    "prev": "SAÉ 1.06 Gérer un projet de communication numérique",
+    "next": "SAÉ 1.06 | Gérer un projet de communication numérique"
+  },
+  {
+    "date": "02/06/2026",
+    "heure": "11:54:27",
+    "utilisateur": "nicolas.maurin",
+    "type": "Maquette",
+    "description": "Renommage — S3",
+    "prev": "PORTFOLIO Portfolio-Parcours Dev",
+    "next": "PORTFOLIO | Portfolio-Parcours Dev"
+  },
+  {
+    "date": "02/06/2026",
+    "heure": "11:55:39",
+    "utilisateur": "nicolas.maurin",
+    "type": "Maquette",
+    "description": "Renommage — S5 crea",
+    "prev": "R5 crea 03 | Entrepreunariat",
+    "next": "R5 Crea.03 | Entrepreunariat"
+  },
+  {
+    "date": "02/06/2026",
+    "heure": "11:55:39",
+    "utilisateur": "nicolas.maurin",
+    "type": "Maquette",
+    "description": "Renommage — S5 crea",
+    "prev": "R5. crea 04 PPP",
+    "next": "R5.Crea.04 | PPP"
+  },
+  {
+    "date": "02/06/2026",
+    "heure": "11:55:39",
+    "utilisateur": "nicolas.maurin",
+    "type": "Maquette",
+    "description": "Renommage — S5 crea",
+    "prev": "R5.crea.02 | Management et Assurance Qualité",
+    "next": "R5.Crea.02 | Management et Assurance Qualité"
+  },
+  {
+    "date": "02/06/2026",
+    "heure": "11:56:02",
+    "utilisateur": "nicolas.maurin",
+    "type": "Maquette",
+    "description": "Renommage — S6 crea",
+    "prev": "PORTFOLIO Portfolio-Parcours Création Numérique",
+    "next": "PORTFOLIO | Portfolio-Parcours Création Numérique"
+  },
+  {
+    "date": "02/06/2026",
+    "heure": "11:58:00",
+    "utilisateur": "nicolas.maurin",
+    "type": "Maquette",
+    "description": "S6 crea / SAÉ 4.99 | Marathon MMI / td_final",
+    "prev": "36",
+    "next": "27"
+  },
+  {
+    "date": "02/06/2026",
+    "heure": "11:58:37",
+    "utilisateur": "nicolas.maurin",
+    "type": "Maquette",
+    "description": "S6 dev / SAÉ 6.dev.01 | Developpement avancé / td_final",
+    "prev": "39",
+    "next": "15"
+  },
+  {
+    "date": "02/06/2026",
+    "heure": "12:00:53",
+    "utilisateur": "nicolas.maurin",
+    "type": "Maquette",
+    "description": "S6 dev / SAÉ 6.dev.01 | Developpement avancé / td_final",
+    "prev": "15",
+    "next": "30"
+  },
+  {
+    "date": "02/06/2026",
+    "heure": "12:01:20",
+    "utilisateur": "nicolas.maurin",
+    "type": "Maquette",
+    "description": "S6 crea / PORTFOLIO | Portfolio-Parcours Création Numérique / td_final",
+    "prev": "7.5",
+    "next": "3"
   }
 ]
