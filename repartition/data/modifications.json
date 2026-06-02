@@ -1276,5 +1276,14 @@
     "description": "S5 dev / SAÉ 5D.04 | Integration d'un LLM / td_final",
     "prev": "0",
     "next": "15"
+  },
+  {
+    "date": "02/06/2026",
+    "heure": "11:51:36",
+    "utilisateur": "nicolas.maurin",
+    "type": "Maquette",
+    "description": "Renommage — S4 crea",
+    "prev": "R4.Crea.01 Anglais",
+    "next": "R4.Crea.01 | Anglais"
   }
 ]
