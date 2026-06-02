@@ -814,13 +814,19 @@
       "adapt_locale": 0,
       "dont_tp_al": 0
     },
-    "SAÉ 6.dev.01 | Developpement avancé": {
+    "PORTFOLIO | Portfolio-Parcours Dev": {
       "vol_hn": 0,
       "dont_tp_hn": 0,
       "adapt_locale": 0,
       "dont_tp_al": 0
     },
-    "PORTFOLIO | Portfolio-Parcours Dev": {
+    "SAÉ 6.DWeb-DI.02 | Apprenti": {
+      "vol_hn": 0,
+      "dont_tp_hn": 21,
+      "adapt_locale": 21,
+      "dont_tp_al": 0
+    },
+    "SAÉ 6.DWeb-DI.01 | Developpement avancé": {
       "vol_hn": 0,
       "dont_tp_hn": 0,
       "adapt_locale": 0,
