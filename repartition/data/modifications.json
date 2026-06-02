@@ -1618,5 +1618,14 @@
     "description": "Renommage — S6 crea",
     "prev": "PORTFOLIO Portfolio-Parcours Création Numérique",
     "next": "PORTFOLIO | Portfolio-Parcours Création Numérique"
+  },
+  {
+    "date": "02/06/2026",
+    "heure": "11:58:00",
+    "utilisateur": "nicolas.maurin",
+    "type": "Maquette",
+    "description": "S6 crea / SAÉ 4.99 | Marathon MMI / td_final",
+    "prev": "36",
+    "next": "27"
   }
 ]
