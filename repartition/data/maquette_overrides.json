@@ -15,114 +15,114 @@
       "td_final": 4.5,
       "tp_final": 4.5
     },
-    "R1.03 Ergonomie et Accessibilité": {
+    "PORTFOLIO | Portfolio": {
+      "cm_final": 0,
+      "td_final": 7.5,
+      "tp_final": 0
+    },
+    "R1.03 | Ergonomie et Accessibilité": {
       "cm_final": 3,
       "td_final": 7.5,
       "tp_final": 6
     },
-    "R1.04 Culture numérique": {
+    "R1.04 | Culture numérique": {
       "cm_final": 9,
       "td_final": 12,
       "tp_final": 0
     },
-    "R1.05 Stratégies de communication et marketing": {
+    "R1.05 | Stratégies de communication et marketing": {
       "cm_final": 12,
       "td_final": 13.5,
       "tp_final": 0
     },
-    "R1.06 Expression, communication et rhétorique": {
+    "R1.06 | Expression, communication et rhétorique": {
       "cm_final": 0,
       "td_final": 13.5,
       "tp_final": 6
     },
-    "R1.07 Écriture multimédia et narration": {
+    "R1.07 | Écriture multimédia et narration": {
       "cm_final": 0,
       "td_final": 10.5,
       "tp_final": 6
     },
-    "R1.08 Production graphique": {
+    "R1.08 | Production graphique": {
       "cm_final": 0,
       "td_final": 6,
       "tp_final": 15
     },
-    "R1.09 Culture artistique": {
+    "R1.09 | Culture artistique": {
       "cm_final": 7.5,
       "td_final": 0,
       "tp_final": 10.5
     },
-    "R1.10 Production audio et vidéo": {
+    "R1.10 | Production audio et vidéo": {
       "cm_final": 6,
       "td_final": 4.5,
       "tp_final": 10.5
     },
-    "R1.11 Intégration": {
+    "R1.11 | Intégration": {
       "cm_final": 1.5,
       "td_final": 13.5,
       "tp_final": 15
     },
-    "R1.12 Développement Web": {
+    "R1.12 | Développement Web": {
       "cm_final": 1.5,
       "td_final": 10.5,
       "tp_final": 0
     },
-    "R1.13 Hébergement": {
+    "R1.13 | Hébergement": {
       "cm_final": 6,
       "td_final": 3,
       "tp_final": 3
     },
-    "R1.14 Représentation et traitement de l'information": {
+    "R1.14 | Représentation et traitement de l'information": {
       "cm_final": 0,
       "td_final": 9,
       "tp_final": 9
     },
-    "R1.15 Gestion de projet": {
+    "R1.15 | Gestion de projet": {
       "cm_final": 0,
       "td_final": 10.5,
       "tp_final": 4.5
     },
-    "R1.16 Économie, gestion et droit du numérique": {
+    "R1.16 | Économie, gestion et droit du numérique": {
       "cm_final": 9,
       "td_final": 6,
       "tp_final": 0
     },
-    "R1.17 Projet Personnel et Professionnel": {
+    "R1.17 | Projet Personnel et Professionnel": {
       "cm_final": 0,
       "td_final": 4.5,
       "tp_final": 13.5
     },
-    "SAÉ 1.01 Auditer une communication numérique": {
+    "SAÉ 1.01 | Auditer une communication numérique": {
       "cm_final": 3,
       "td_final": 15,
       "tp_final": 0
     },
-    "SAÉ 1.02 Concevoir une recommandation de communication numérique": {
+    "SAÉ 1.02 | Concevoir une recommandation de communication numérique": {
       "cm_final": 3,
       "td_final": 12,
       "tp_final": 4.5
     },
-    "SAÉ 1.03 Produire les éléments d'une communication visuelle": {
+    "SAÉ 1.03 | Produire les éléments d'une communication visuelle": {
       "cm_final": 0,
       "td_final": 7.5,
       "tp_final": 3
     },
-    "SAÉ 1.04 Produire un contenu audio et vidéo": {
+    "SAÉ 1.04 | Produire un contenu audio et vidéo": {
       "cm_final": 0,
       "td_final": 19.5,
       "tp_final": 0
     },
-    "SAÉ 1.05 Produire un site Web": {
+    "SAÉ 1.05 | Produire un site Web": {
       "cm_final": 1.5,
       "td_final": 12.5,
       "tp_final": 0
     },
-    "SAÉ 1.06 Gérer un projet de communication numérique": {
+    "SAÉ 1.06 | Gérer un projet de communication numérique": {
       "cm_final": 1.5,
       "td_final": 18,
-      "tp_final": 0
-    },
-    "PORTFOLIO | Portfolio": {
-      "cm_final": 0,
-      "td_final": 7.5,
       "tp_final": 0
     }
   },
