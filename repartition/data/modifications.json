@@ -1609,5 +1609,14 @@
     "description": "Renommage — S5 crea",
     "prev": "R5.crea.02 | Management et Assurance Qualité",
     "next": "R5.Crea.02 | Management et Assurance Qualité"
+  },
+  {
+    "date": "02/06/2026",
+    "heure": "11:56:02",
+    "utilisateur": "nicolas.maurin",
+    "type": "Maquette",
+    "description": "Renommage — S6 crea",
+    "prev": "PORTFOLIO Portfolio-Parcours Création Numérique",
+    "next": "PORTFOLIO | Portfolio-Parcours Création Numérique"
   }
 ]
