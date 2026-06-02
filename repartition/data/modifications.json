@@ -1069,5 +1069,23 @@
     "description": "S3 / R3.14 | Déploiement de services / td_final",
     "prev": "9.5",
     "next": "9"
+  },
+  {
+    "date": "02/06/2026",
+    "heure": "11:32:36",
+    "utilisateur": "nicolas.maurin",
+    "type": "Maquette",
+    "description": "S2 / SAÉ 2.98 | Hackathon / td_final",
+    "prev": "0",
+    "next": "6"
+  },
+  {
+    "date": "02/06/2026",
+    "heure": "11:32:56",
+    "utilisateur": "nicolas.maurin",
+    "type": "Maquette",
+    "description": "S2 / SAÉ 2.99 | Marathon MMI / td_final",
+    "prev": "0",
+    "next": "12"
   }
 ]
