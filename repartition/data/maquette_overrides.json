@@ -637,7 +637,7 @@
     "R5.DWeb-DI.06 | Développement back avancé": {
       "cm_final": 0,
       "td_final": 18,
-      "tp_final": 15
+      "tp_final": 45
     },
     "R5.DWeb-DI.07 | Dispositifs interactifs": {
       "cm_final": 0,
@@ -661,12 +661,22 @@
     },
     "SAÉ 5D.02 | SAE Management": {
       "cm_final": 0,
-      "td_final": 30,
+      "td_final": 15,
       "tp_final": 0
     },
     "PORTFOLIO Portfolio-Parcours Dev Web": {
       "cm_final": 0,
       "td_final": 7.5,
+      "tp_final": 0
+    },
+    "SAÉ 5D.03 | Concevoir un dispositif interactif": {
+      "cm_final": 0,
+      "td_final": 34.5,
+      "tp_final": 0
+    },
+    "SAÉ 5D.04 | Integration d'un LLM": {
+      "cm_final": 0,
+      "td_final": 15,
       "tp_final": 0
     }
   },
