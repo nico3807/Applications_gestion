@@ -616,12 +616,6 @@
       "adapt_locale": 0,
       "dont_tp_al": 0
     },
-    "R5 Crea.06 | Création numérique": {
-      "vol_hn": 75,
-      "dont_tp_hn": 30,
-      "adapt_locale": 9,
-      "dont_tp_al": 0
-    },
     "R5.Crea.07 | Ecriture Multimédia et narration": {
       "vol_hn": 75,
       "dont_tp_hn": 30,
@@ -652,12 +646,6 @@
       "adapt_locale": 7.5,
       "dont_tp_al": 0
     },
-    "R5 Crea.03 | Entrepreunariat": {
-      "vol_hn": 15,
-      "dont_tp_hn": 5,
-      "adapt_locale": 0,
-      "dont_tp_al": 0
-    },
     "R5.Crea.04 | PPP": {
       "vol_hn": 20,
       "dont_tp_hn": 0,
@@ -668,6 +656,18 @@
       "vol_hn": 15,
       "dont_tp_hn": 5,
       "adapt_locale": 0,
+      "dont_tp_al": 0
+    },
+    "R5.Crea.03 | Entrepreunariat": {
+      "vol_hn": 15,
+      "dont_tp_hn": 5,
+      "adapt_locale": 0,
+      "dont_tp_al": 0
+    },
+    "R5.Crea.06 | Création numérique": {
+      "vol_hn": 75,
+      "dont_tp_hn": 30,
+      "adapt_locale": 9,
       "dont_tp_al": 0
     }
   },
