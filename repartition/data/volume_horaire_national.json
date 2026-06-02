@@ -438,12 +438,6 @@
     }
   },
   "S4 crea": {
-    "R4.Crea.01 Anglais": {
-      "vol_hn": 15,
-      "dont_tp_hn": 5,
-      "adapt_locale": 0,
-      "dont_tp_al": 0
-    },
     "R4.Crea.02 | Economie, gestion et Droit du numérique": {
       "vol_hn": 15,
       "dont_tp_hn": 0,
@@ -519,6 +513,12 @@
     "PORTFOLIO | Portfolio-Parcours Création Numérique": {
       "vol_hn": 0,
       "dont_tp_hn": 0,
+      "adapt_locale": 0,
+      "dont_tp_al": 0
+    },
+    "R4.Crea.01 | Anglais": {
+      "vol_hn": 15,
+      "dont_tp_hn": 5,
       "adapt_locale": 0,
       "dont_tp_al": 0
     }
