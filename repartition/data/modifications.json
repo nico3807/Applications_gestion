@@ -1627,5 +1627,23 @@
     "description": "S6 crea / SAÉ 4.99 | Marathon MMI / td_final",
     "prev": "36",
     "next": "27"
+  },
+  {
+    "date": "02/06/2026",
+    "heure": "11:58:37",
+    "utilisateur": "nicolas.maurin",
+    "type": "Maquette",
+    "description": "S6 dev / SAÉ 6.dev.01 | Developpement avancé / td_final",
+    "prev": "39",
+    "next": "15"
+  },
+  {
+    "date": "02/06/2026",
+    "heure": "12:00:53",
+    "utilisateur": "nicolas.maurin",
+    "type": "Maquette",
+    "description": "S6 dev / SAÉ 6.dev.01 | Developpement avancé / td_final",
+    "prev": "15",
+    "next": "30"
   }
 ]
