@@ -1573,5 +1573,14 @@
     "description": "Renommage — S1",
     "prev": "SAÉ 1.06 Gérer un projet de communication numérique",
     "next": "SAÉ 1.06 | Gérer un projet de communication numérique"
+  },
+  {
+    "date": "02/06/2026",
+    "heure": "11:54:27",
+    "utilisateur": "nicolas.maurin",
+    "type": "Maquette",
+    "description": "Renommage — S3",
+    "prev": "PORTFOLIO Portfolio-Parcours Dev",
+    "next": "PORTFOLIO | Portfolio-Parcours Dev"
   }
 ]
