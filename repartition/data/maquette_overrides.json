@@ -438,11 +438,6 @@
     }
   },
   "S4 crea": {
-    "R4.Crea.01 Anglais": {
-      "cm_final": 0,
-      "td_final": 4.5,
-      "tp_final": 9
-    },
     "R4.02 | Economie, gestion et Droit du numérique": {
       "cm_final": 0,
       "td_final": 15,
@@ -522,6 +517,11 @@
       "cm_final": 0,
       "td_final": 15,
       "tp_final": 0
+    },
+    "R4.Crea.01 | Anglais": {
+      "cm_final": 0,
+      "td_final": 4.5,
+      "tp_final": 9
     }
   },
   "S5 crea": {
