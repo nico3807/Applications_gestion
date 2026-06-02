@@ -631,6 +631,7 @@ function renderMaquetteSemestre(root, sem) {
 
   html += `</tbody></table></div>
     <div class="form-actions" style="gap:0.75rem;">
+        <button class="btn-add-res" onclick="openRenameRessourcesModal('${sem}')">✏️ Modif ressources/SAÉ</button>
         <button class="btn-add-res" onclick="openAddRessourceModal('${sem}')">➕ Ajout de ressource ou de SAÉ / Adaptation locale</button>
         <button class="btn-save" onclick="saveMaquetteGH()">💾 Enregistrer la maquette sur GitHub</button>
     </div>`;
@@ -735,6 +736,114 @@ window.confirmAddRessource = function () {
 
   _logMod("Maquette", `Ajout ressource — ${sem}`, "—", name);
   closeAddRessourceModal();
+  renderView();
+};
+
+/* ── Renommage de ressources / SAÉ ─────────────────────────────────────── */
+window.openRenameRessourcesModal = function (sem) {
+  let modal = document.getElementById("rename-res-modal");
+  if (!modal) {
+    modal = document.createElement("div");
+    modal.id = "rename-res-modal";
+    modal.className = "modal-overlay";
+    modal.innerHTML = `
+      <div class="modal-box" style="max-width:640px; max-height:80vh; display:flex; flex-direction:column;">
+        <h3>Modifier les intitulés des ressources</h3>
+        <p class="modal-sub">Semestre <strong id="rename-res-sem-lbl"></strong></p>
+        <div id="rename-res-list" style="overflow-y:auto; flex:1; display:flex; flex-direction:column; gap:6px; margin:0.75rem 0;"></div>
+        <p id="rename-res-err" class="modal-err" style="display:none;"></p>
+        <div class="modal-actions">
+          <button class="btn-cancel" onclick="closeRenameRessourcesModal()">Annuler</button>
+          <button class="btn-save"   onclick="confirmRenameRessources()">Enregistrer</button>
+        </div>
+      </div>`;
+    document.body.appendChild(modal);
+    modal.addEventListener("click", (e) => { if (e.target === modal) closeRenameRessourcesModal(); });
+  }
+
+  modal.dataset.sem = sem;
+  document.getElementById("rename-res-sem-lbl").textContent = sem;
+
+  const aff = APP_DATA.affectations[sem] || {};
+  const sorted = Object.keys(aff).sort((a, b) => {
+    const d = _resPrio(a) - _resPrio(b);
+    return d !== 0 ? d : a.localeCompare(b, "fr");
+  });
+
+  const list = document.getElementById("rename-res-list");
+  list.innerHTML = "";
+  sorted.forEach((res) => {
+    const row = document.createElement("div");
+    row.style.cssText = "display:flex; align-items:center; gap:8px;";
+    const input = document.createElement("input");
+    input.type = "text";
+    input.className = "rename-input input-editable";
+    input.dataset.old = res;
+    input.value = res;
+    input.style.cssText = "flex:1; width:100%;";
+    input.autocomplete = "off";
+    row.appendChild(input);
+    list.appendChild(row);
+  });
+
+  document.getElementById("rename-res-err").style.display = "none";
+  modal.style.display = "flex";
+};
+
+window.closeRenameRessourcesModal = function () {
+  const modal = document.getElementById("rename-res-modal");
+  if (modal) modal.style.display = "none";
+};
+
+window.confirmRenameRessources = function () {
+  const modal = document.getElementById("rename-res-modal");
+  const sem = modal.dataset.sem;
+  const err = document.getElementById("rename-res-err");
+  err.style.display = "none";
+
+  const inputs = [...modal.querySelectorAll(".rename-input")];
+  const nameMap = inputs.map((i) => ({ old: i.dataset.old, new: i.value.trim() }));
+
+  for (const m of nameMap) {
+    if (!m.new) {
+      err.textContent = "Un intitulé ne peut pas être vide.";
+      err.style.display = "block"; return;
+    }
+  }
+  if (new Set(nameMap.map((m) => m.new)).size < nameMap.length) {
+    err.textContent = "Deux ressources ne peuvent pas avoir le même intitulé.";
+    err.style.display = "block"; return;
+  }
+
+  const unchangedNames = new Set(nameMap.filter((m) => m.old === m.new).map((m) => m.new));
+  const renames = nameMap.filter((m) => m.old !== m.new);
+  for (const r of renames) {
+    if (unchangedNames.has(r.new)) {
+      err.textContent = `"${r.new}" est déjà utilisé par une autre ressource.`;
+      err.style.display = "block"; return;
+    }
+  }
+
+  if (renames.length === 0) { closeRenameRessourcesModal(); return; }
+
+  const affSem = APP_DATA.affectations[sem]           || {};
+  const maqSem = APP_DATA.maquette_overrides[sem]      || {};
+  const vhnSem = APP_DATA.volume_horaire_national[sem] || {};
+
+  /* Sauvegarde des données avant suppression (évite les conflits entre renames) */
+  const saved = renames.map((r) => ({
+    old: r.old, new: r.new,
+    aff: affSem[r.old], maq: maqSem[r.old], vhn: vhnSem[r.old],
+  }));
+  saved.forEach((r) => { delete affSem[r.old]; delete maqSem[r.old]; delete vhnSem[r.old]; });
+  saved.forEach((r) => {
+    if (r.aff !== undefined) affSem[r.new] = r.aff;
+    if (r.maq !== undefined) maqSem[r.new] = r.maq;
+    if (r.vhn !== undefined) vhnSem[r.new] = r.vhn;
+    _logMod("Maquette", `Renommage — ${sem}`, r.old, r.new);
+  });
+
+  closeRenameRessourcesModal();
   renderView();
 };
 
