@@ -1843,5 +1843,14 @@
     "description": "Renommage — S1",
     "prev": "SAÉ 1.06 Gérer un projet de communication numérique",
     "next": "SAÉ 1.06 | Gérer un projet de communication numérique"
+  },
+  {
+    "date": "02/06/2026",
+    "heure": "15:38:52",
+    "utilisateur": "nicolas.maurin",
+    "type": "Maquette",
+    "description": "S3 / R3.08 | Écriture multimédia et narration / tp_final",
+    "prev": "0",
+    "next": "6"
   }
 ]
