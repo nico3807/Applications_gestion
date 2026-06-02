@@ -371,56 +371,6 @@
     }
   },
   "S4 dev": {
-    "R4.DWeb-DI.01 Anglais": {
-      "cm_final": 0,
-      "td_final": 4.5,
-      "tp_final": 9
-    },
-    "R4.DWeb-DI.02  Economie, gestion et Droit du numérique": {
-      "cm_final": 0,
-      "td_final": 15,
-      "tp_final": 0
-    },
-    "R4.DWeb-DI.03  Design d'expérience": {
-      "cm_final": 0,
-      "td_final": 4.5,
-      "tp_final": 10.5
-    },
-    "R4.DWeb-DI.04  Expression, communication": {
-      "cm_final": 0,
-      "td_final": 15,
-      "tp_final": 0
-    },
-    "R4.DWeb-DI.05 Création et design interactif": {
-      "cm_final": 0,
-      "td_final": 7.5,
-      "tp_final": 7.5
-    },
-    "R4.DWeb-DI.06 Développement front": {
-      "cm_final": 0,
-      "td_final": 4.5,
-      "tp_final": 10.5
-    },
-    "R4.DWeb-DI.07 Développement back": {
-      "cm_final": 0,
-      "td_final": 4.5,
-      "tp_final": 16.5
-    },
-    "R4.DWeb-DI.08 Déploiement de services": {
-      "cm_final": 0,
-      "td_final": 3,
-      "tp_final": 9
-    },
-    "SAÉ 4.DWeb-DI.01 Développer pour le Web": {
-      "cm_final": 0,
-      "td_final": 27,
-      "tp_final": 0
-    },
-    "SAÉ 4.DWeb-DI.02 Concevoir un dispositif interactif": {
-      "cm_final": 0,
-      "td_final": 27,
-      "tp_final": 0
-    },
     "SAÉ 4.98 | Hackathon": {
       "cm_final": 0,
       "td_final": 6,
@@ -431,7 +381,57 @@
       "td_final": 12,
       "tp_final": 0
     },
-    "PORTFOLIO Portfolio-Parcours Développement Web et Dispositifs interactifs": {
+    "R4.DWeb-DI.01 | Anglais": {
+      "cm_final": 0,
+      "td_final": 4.5,
+      "tp_final": 9
+    },
+    "R4.DWeb-DI.02 |  Economie, gestion et Droit du numérique": {
+      "cm_final": 0,
+      "td_final": 15,
+      "tp_final": 0
+    },
+    "R4.DWeb-DI.03 |  Design d'expérience": {
+      "cm_final": 0,
+      "td_final": 4.5,
+      "tp_final": 10.5
+    },
+    "R4.DWeb-DI.04 |  Expression, communication": {
+      "cm_final": 0,
+      "td_final": 15,
+      "tp_final": 0
+    },
+    "R4.DWeb-DI.05 | Création et design interactif": {
+      "cm_final": 0,
+      "td_final": 7.5,
+      "tp_final": 7.5
+    },
+    "R4.DWeb-DI.06 | Développement front": {
+      "cm_final": 0,
+      "td_final": 4.5,
+      "tp_final": 10.5
+    },
+    "R4.DWeb-DI.07 | Développement back": {
+      "cm_final": 0,
+      "td_final": 4.5,
+      "tp_final": 16.5
+    },
+    "R4.DWeb-DI.08 | Déploiement de services": {
+      "cm_final": 0,
+      "td_final": 3,
+      "tp_final": 9
+    },
+    "SAÉ 4.DWeb-DI.01 | Développer pour le Web": {
+      "cm_final": 0,
+      "td_final": 27,
+      "tp_final": 0
+    },
+    "SAÉ 4.DWeb-DI.02 | Concevoir un dispositif interactif": {
+      "cm_final": 0,
+      "td_final": 27,
+      "tp_final": 0
+    },
+    "PORTFOLIO | Portfolio-Parcours Développement Web et Dispositifs interactifs": {
       "cm_final": 0,
       "td_final": 7.5,
       "tp_final": 0
