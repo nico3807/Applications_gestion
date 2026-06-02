@@ -1354,10 +1354,14 @@ async function saveFileGH(filename, dataObj, msg) {
   let sha = await _getSha();
   let r = await _put(sha);
 
-  /* Retry automatique sur conflit SHA (409) : re-lire le vrai SHA et réessayer */
-  if (r.status === 409) {
-    sha = await _getSha();
-    r = await _put(sha);
+  /* Retry sur conflit SHA — GitHub renvoie 409 ou 422 selon les versions */
+  if (r.status === 409 || r.status === 422) {
+    let body; try { body = await r.json(); } catch {}
+    const isSHAConflict = !body || !body.message || body.message.includes("expected");
+    if (isSHAConflict) {
+      sha = await _getSha();
+      r = await _put(sha);
+    }
   }
 
   if (!r.ok) {
@@ -1414,18 +1418,16 @@ window.saveMaquetteGH = async function () {
   if (!isGHConfigured()) return alert("Veuillez configurer GitHub d'abord !");
   try {
     await _flushMods();
-    await Promise.all([
-      saveFileGH(
-        "maquette_overrides.json",
-        APP_DATA.maquette_overrides,
-        "Update maquette_overrides.json via Web UI",
-      ),
-      saveFileGH(
-        "volume_horaire_national.json",
-        APP_DATA.volume_horaire_national,
-        "Update volume_horaire_national.json via Web UI",
-      ),
-    ]);
+    await saveFileGH(
+      "maquette_overrides.json",
+      APP_DATA.maquette_overrides,
+      "Update maquette_overrides.json via Web UI",
+    );
+    await saveFileGH(
+      "volume_horaire_national.json",
+      APP_DATA.volume_horaire_national,
+      "Update volume_horaire_national.json via Web UI",
+    );
     showToast("Maquette sauvegardée sur GitHub !");
   } catch (e) {
     alert("Erreur: " + e.message);
