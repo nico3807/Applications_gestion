@@ -6,27 +6,46 @@
     <title>Gestion MMI - Applications</title>
     <link rel="stylesheet" href="style.css" />
     <style>
-      .root-header {
-        background: #1e3a5f;
-        padding: 0 1.5rem;
-        position: sticky;
-        top: 0;
-        z-index: 100;
+      .root-header { background:#1e3a5f; padding:0 1.5rem; position:sticky; top:0; z-index:100; }
+      .root-header .header-inner { display:flex; align-items:center; justify-content:flex-end; min-height:40px; }
+
+      /* Boutons admin */
+      .adm-btn {
+        padding:10px 22px; border:none; border-radius:8px; font-size:14px; font-weight:600;
+        cursor:pointer; transition:opacity .15s;
       }
-      .root-header .header-inner {
-        display: flex;
-        align-items: center;
-        justify-content: flex-end;
-        min-height: 40px;
+      .adm-btn:hover { opacity:.85; }
+      .adm-btn-add  { background:#1e3a5f; color:#fff; }
+      .adm-btn-edit { background:#fff; color:#1e3a5f; border:2px solid #1e3a5f; }
+
+      /* Modals */
+      .adm-overlay {
+        display:none; position:fixed; inset:0; background:rgba(0,0,0,.45);
+        z-index:200; align-items:center; justify-content:center;
       }
+      .adm-overlay.open { display:flex; }
+      .adm-box {
+        background:#fff; border-radius:12px; padding:1.75rem;
+        width:min(620px, 96vw); max-height:90vh; overflow-y:auto;
+        box-shadow:0 8px 32px rgba(0,0,0,.18); position:relative;
+      }
+      .adm-box h2 { color:#1e3a5f; font-size:1.1rem; margin-bottom:1.25rem; }
+      .adm-section { background:#f0f4fb; border:1px solid #c7d2e8; border-radius:8px; padding:1rem; margin-bottom:1.25rem; }
+      .adm-section label { font-size:13px; font-weight:600; color:#374151; display:block; margin-bottom:6px; }
+      .adm-field { display:flex; gap:8px; }
+      .adm-input { padding:8px 10px; border:1.5px solid #d1d5db; border-radius:6px; font-size:13px; width:100%; box-sizing:border-box; }
+      .adm-btn-save { padding:8px 16px; background:#1e3a5f; color:#fff; border:none; border-radius:6px; font-size:13px; cursor:pointer; white-space:nowrap; }
+      .adm-status  { font-size:11px; color:#6b7280; margin-top:4px; display:block; }
+      .adm-actions { display:flex; justify-content:flex-end; gap:.75rem; margin-top:1.25rem; }
+      .adm-close   { padding:9px 20px; border:1.5px solid #d1d5db; background:#fff; color:#374151; border-radius:6px; font-size:13px; cursor:pointer; }
+      .adm-submit  { padding:9px 20px; background:#1e3a5f; color:#fff; border:none; border-radius:6px; font-size:13px; cursor:pointer; }
+      .adm-err     { color:#dc2626; font-size:12px; margin-top:.6rem; display:none; }
     </style>
   </head>
   <body>
     <div id="app-root">
       <header class="root-header">
-        <div class="header-inner">
-          <!-- Badge utilisateur injecté ici par auth.js -->
-        </div>
+        <div class="header-inner"><!-- Badge injecté par auth.js --></div>
       </header>
 
       <div class="hero">
@@ -53,7 +72,6 @@
             <div class="icard-arrow">Accéder <span>→</span></div>
           </a>
         </div>
-
         <div class="index-row">
           <a href="soutenances_stages/index.html" class="icard">
             <div class="icard-icon">🎤</div>
@@ -69,224 +87,165 @@
           </a>
         </div>
       </div>
+
+      <!-- Boutons admin (nicolas.maurin uniquement) -->
+      <div id="adm-btns" style="display:none; justify-content:center; gap:1rem; flex-wrap:wrap; padding:2rem 1rem 1rem;">
+        <button class="adm-btn adm-btn-add"  onclick="openAddUserModal()">➕ Ajouter un utilisateur</button>
+        <button class="adm-btn adm-btn-edit" onclick="openEditUserModal()">✏️ Modifier un utilisateur</button>
+      </div>
     </div>
 
-    <!-- Panneau admin (visible uniquement pour nicolas.maurin) -->
-    <div id="admin-panel" style="display:none; max-width:720px; margin:2rem auto 3rem; padding:0 1.5rem;">
-      <h2 style="color:#1e3a5f; font-size:1.05rem; font-weight:700; border-bottom:2px solid #1e3a5f; padding-bottom:.5rem; margin-bottom:1.25rem;">
-        Gestion des utilisateurs
-      </h2>
+    <!-- ═══ Modal : Ajouter un utilisateur ═══════════════════════════════ -->
+    <div id="modal-add" class="adm-overlay" onclick="if(event.target===this)closeModal('modal-add')">
+      <div class="adm-box">
+        <h2>Ajouter un utilisateur</h2>
 
-      <!-- Token GitHub -->
-      <div style="background:#f0f4fb; border:1px solid #c7d2e8; border-radius:8px; padding:1rem; margin-bottom:1.5rem;">
-        <label style="font-size:13px; font-weight:600; color:#374151; display:block; margin-bottom:6px;">Token GitHub (pour sauvegarder les utilisateurs)</label>
-        <div style="display:flex; gap:8px;">
-          <input type="password" id="adm-gh-token" placeholder="ghp_…" autocomplete="off"
-                 style="flex:1; padding:8px 12px; border:1.5px solid #d1d5db; border-radius:6px; font-size:13px;">
-          <button onclick="admSaveToken()"
-                  style="padding:8px 16px; background:#1e3a5f; color:#fff; border:none; border-radius:6px; font-size:13px; cursor:pointer;">
-            Enregistrer
-          </button>
+        <!-- Token GitHub -->
+        <div class="adm-section">
+          <label>Token GitHub (pour sauvegarder les utilisateurs)</label>
+          <div class="adm-field">
+            <input type="password" id="add-gh-token" class="adm-input" placeholder="ghp_…" autocomplete="off">
+            <button class="adm-btn-save" onclick="admSaveToken('add')">Enregistrer</button>
+          </div>
+          <span id="add-gh-status" class="adm-status"></span>
         </div>
-        <span id="adm-gh-status" style="font-size:11px; color:#6b7280; margin-top:4px; display:block;"></span>
-      </div>
 
-      <!-- Liste des utilisateurs créés -->
-      <div id="adm-user-list" style="margin-bottom:1.5rem;"></div>
-
-      <!-- Formulaire de création -->
-      <div style="background:#f8fafc; border:1px solid #d1d5db; border-radius:8px; padding:1.25rem;">
-        <h3 style="font-size:.95rem; color:#1e3a5f; font-weight:600; margin-bottom:1rem;">Créer un utilisateur</h3>
+        <!-- Identifiants -->
         <div style="display:grid; grid-template-columns:1fr 1fr; gap:.75rem; margin-bottom:1rem;">
           <div>
             <label style="font-size:12px; font-weight:500; color:#374151; display:block; margin-bottom:4px;">Identifiant</label>
-            <input type="text" id="adm-login" placeholder="prenom.nom" autocomplete="off"
-                   style="width:100%; padding:8px 10px; border:1.5px solid #d1d5db; border-radius:6px; font-size:13px; box-sizing:border-box;">
+            <input type="text" id="add-login" class="adm-input" placeholder="prenom.nom" autocomplete="off">
           </div>
           <div>
             <label style="font-size:12px; font-weight:500; color:#374151; display:block; margin-bottom:4px;">Mot de passe</label>
-            <input type="password" id="adm-pwd" placeholder="…" autocomplete="new-password"
-                   style="width:100%; padding:8px 10px; border:1.5px solid #d1d5db; border-radius:6px; font-size:13px; box-sizing:border-box;">
+            <input type="password" id="add-pwd" class="adm-input" placeholder="…" autocomplete="new-password">
           </div>
         </div>
 
+        <!-- Droits -->
         <label style="font-size:12px; font-weight:500; color:#374151; display:block; margin-bottom:6px;">Droits d'accès</label>
-        <div style="display:flex; flex-direction:column; gap:6px; font-size:13px;">
-          <label><input type="radio" name="adm-mode" value="rw"> Lecture / Écriture complète (toutes les apps)</label>
-          <label><input type="radio" name="adm-mode" value="rwapps" checked> R/W sur certaines applications seulement</label>
-          <label><input type="radio" name="adm-mode" value="readonly"> Lecture seule (toutes les apps)</label>
-          <label><input type="radio" name="adm-mode" value="deny-rep"> Lecture seule + interdit sur Répartition</label>
+        <div style="display:flex; flex-direction:column; gap:6px; font-size:13px; margin-bottom:.75rem;">
+          <label><input type="radio" name="add-mode" value="rw"> Lecture / Écriture complète (toutes les apps)</label>
+          <label><input type="radio" name="add-mode" value="rwapps" checked> R/W sur certaines applications seulement</label>
+          <label><input type="radio" name="add-mode" value="readonly"> Lecture seule (toutes les apps)</label>
+          <label><input type="radio" name="add-mode" value="deny-rep"> Lecture seule + interdit sur Répartition</label>
         </div>
-
-        <div id="adm-rwapps-box" style="margin-top:.75rem; padding-left:1.5rem;">
+        <div id="add-rwapps-box" style="padding-left:1.5rem; margin-bottom:.75rem;">
           <label style="font-size:12px; font-weight:500; color:#374151; display:block; margin-bottom:5px;">Applications avec R/W :</label>
           <div style="display:flex; gap:14px; flex-wrap:wrap; font-size:13px;">
-            <label><input type="checkbox" class="adm-rwapp" value="planning-web"> Planning</label>
-            <label><input type="checkbox" class="adm-rwapp" value="repartition"> Répartition</label>
-            <label><input type="checkbox" class="adm-rwapp" value="soutenances_portfolio"> Soutenances Portfolio</label>
-            <label><input type="checkbox" class="adm-rwapp" value="soutenances_stages"> Soutenances Stages</label>
+            <label><input type="checkbox" class="add-rwapp" value="planning-web"> Planning</label>
+            <label><input type="checkbox" class="add-rwapp" value="repartition"> Répartition</label>
+            <label><input type="checkbox" class="add-rwapp" value="soutenances_portfolio"> Soutenances Portfolio</label>
+            <label><input type="checkbox" class="add-rwapp" value="soutenances_stages"> Soutenances Stages</label>
           </div>
         </div>
 
-        <p id="adm-err" style="color:#dc2626; font-size:12px; margin-top:.75rem; display:none;"></p>
+        <p id="add-err" class="adm-err"></p>
+        <div class="adm-actions">
+          <button class="adm-close" onclick="closeModal('modal-add')">Annuler</button>
+          <button id="add-submit" class="adm-submit" onclick="admCreateUser()">Créer l'utilisateur</button>
+        </div>
+      </div>
+    </div>
 
-        <button id="adm-create-btn" onclick="admCreateUser()"
-                style="margin-top:1rem; padding:9px 20px; background:#1e3a5f; color:#fff; border:none; border-radius:6px; font-size:13px; cursor:pointer;">
-          Créer l'utilisateur
-        </button>
+    <!-- ═══ Modal : Modifier un utilisateur ══════════════════════════════ -->
+    <div id="modal-edit" class="adm-overlay" onclick="if(event.target===this)closeModal('modal-edit')">
+      <div class="adm-box">
+        <h2>Modifier un utilisateur</h2>
+
+        <!-- Token GitHub -->
+        <div class="adm-section">
+          <label>Token GitHub (pour sauvegarder les utilisateurs)</label>
+          <div class="adm-field">
+            <input type="password" id="edit-gh-token" class="adm-input" placeholder="ghp_…" autocomplete="off">
+            <button class="adm-btn-save" onclick="admSaveToken('edit')">Enregistrer</button>
+          </div>
+          <span id="edit-gh-status" class="adm-status"></span>
+        </div>
+
+        <!-- Liste des utilisateurs -->
+        <div id="edit-user-list"></div>
+
+        <div class="adm-actions">
+          <button class="adm-close" onclick="closeModal('modal-edit')">Fermer</button>
+        </div>
       </div>
     </div>
 
     <script src="auth.js"></script>
     <script>
-      const _APPS = ["planning-web","repartition","soutenances_portfolio","soutenances_stages"];
       const _APP_LABELS = { "planning-web":"Planning", "repartition":"Répartition", "soutenances_portfolio":"Sout. Portfolio", "soutenances_stages":"Sout. Stages" };
 
       AUTH.injectUI();
-      if (AUTH.isAuth()) {
-        AUTH.injectBadge();
-        initAdmin();
-      } else {
-        window.addEventListener("auth-success", function () {
-          AUTH.injectBadge();
-          initAdmin();
-        }, { once: true });
-      }
+      if (AUTH.isAuth()) { AUTH.injectBadge(); initAdmin(); }
+      else window.addEventListener("auth-success", () => { AUTH.injectBadge(); initAdmin(); }, { once:true });
 
       function initAdmin() {
         if (!AUTH.isAdmin()) return;
-        document.getElementById("admin-panel").style.display = "";
-        const tok = AUTH.getGHToken();
-        if (tok) { document.getElementById("adm-gh-token").value = tok; document.getElementById("adm-gh-status").textContent = "Token enregistré."; }
-        admRefreshList();
-
-        /* Afficher/masquer la section rwapps */
-        document.querySelectorAll("input[name='adm-mode']").forEach(r =>
+        document.getElementById("adm-btns").style.display = "flex";
+        document.querySelectorAll("input[name='add-mode']").forEach(r =>
           r.addEventListener("change", () => {
-            document.getElementById("adm-rwapps-box").style.display = r.value === "rwapps" ? "" : "none";
+            document.getElementById("add-rwapps-box").style.display = r.value === "rwapps" ? "" : "none";
           })
         );
-        document.getElementById("adm-rwapps-box").style.display = "";
       }
 
-      function admSaveToken() {
-        const tok = document.getElementById("adm-gh-token").value.trim();
+      /* ── Modals ────────────────────────────────────────────────────── */
+      function openAddUserModal() {
+        const tok = AUTH.getGHToken();
+        document.getElementById("add-gh-token").value = tok || "";
+        document.getElementById("add-gh-status").textContent = tok ? "Token enregistré." : "";
+        document.getElementById("add-login").value = "";
+        document.getElementById("add-pwd").value = "";
+        document.getElementById("add-err").style.display = "none";
+        document.querySelectorAll(".add-rwapp").forEach(c => c.checked = false);
+        document.querySelector("input[name='add-mode'][value='rwapps']").checked = true;
+        document.getElementById("add-rwapps-box").style.display = "";
+        document.getElementById("modal-add").classList.add("open");
+        document.getElementById("add-login").focus();
+      }
+
+      function openEditUserModal() {
+        const tok = AUTH.getGHToken();
+        document.getElementById("edit-gh-token").value = tok || "";
+        document.getElementById("edit-gh-status").textContent = tok ? "Token enregistré." : "";
+        AUTH.reloadExtraUsers().then(renderEditList);
+        document.getElementById("modal-edit").classList.add("open");
+      }
+
+      function closeModal(id) { document.getElementById(id).classList.remove("open"); }
+
+      /* ── Token GitHub ──────────────────────────────────────────────── */
+      function admSaveToken(prefix) {
+        const tok = document.getElementById(prefix + "-gh-token").value.trim();
         if (!tok) return;
         AUTH.setGHToken(tok);
-        document.getElementById("adm-gh-status").textContent = "Token enregistré ✓";
-        AUTH.reloadExtraUsers().then(admRefreshList);
+        document.getElementById(prefix + "-gh-status").textContent = "Token enregistré ✓";
+        if (prefix === "edit") AUTH.reloadExtraUsers().then(renderEditList);
       }
 
-      function admRefreshList() {
-        const users = AUTH.listExtraUsers();
-        const el = document.getElementById("adm-user-list");
-        const keys = Object.keys(users);
-        if (!keys.length) { el.innerHTML = "<p style='font-size:13px;color:#6b7280;'>Aucun utilisateur créé pour l'instant.</p>"; return; }
-        el.innerHTML = `<table style="width:100%;border-collapse:collapse;font-size:13px;">
-          <thead><tr style="background:#1e3a5f;color:#fff;">
-            <th style="padding:8px 10px;text-align:left;">Identifiant</th>
-            <th style="padding:8px 10px;text-align:left;">Droits</th>
-            <th style="padding:8px 10px;"></th>
-          </tr></thead><tbody>
-          ${keys.map((login, i) => {
-            const u = users[login];
-            let droits = u.rw ? "L/É complète" : u.denyApps?.includes("repartition") ? "Lecture seule + ✗ Répartition" : u.rwApps?.length ? "R/W : " + u.rwApps.map(a => _APP_LABELS[a]||a).join(", ") : "Lecture seule";
-            const bg = i%2 ? "#f8fafc" : "#fff";
-            const loginEsc = login.replace(/'/g,"\\'");
-            return `<tr style="background:${bg}">
-              <td style="padding:7px 10px;font-weight:500;">${login}</td>
-              <td style="padding:7px 10px;color:#374151;">${droits}</td>
-              <td style="padding:7px 10px;text-align:right;">
-                <div style="display:flex;gap:6px;justify-content:flex-end;">
-                  <button onclick="admTogglePwd('${loginEsc}')"
-                          style="padding:3px 10px;background:#e0f2fe;color:#0369a1;border:1px solid #7dd3fc;border-radius:5px;font-size:12px;cursor:pointer;">
-                    ✏️ Modifier mdp
-                  </button>
-                  <button onclick="admDeleteUser('${loginEsc}')"
-                          style="padding:3px 10px;background:#fee2e2;color:#dc2626;border:1px solid #fca5a5;border-radius:5px;font-size:12px;cursor:pointer;">
-                    🗑 Supprimer
-                  </button>
-                </div>
-              </td>
-            </tr>
-            <tr id="adm-pwd-row-${login}" style="display:none;background:${bg};">
-              <td colspan="3" style="padding:4px 10px 10px;">
-                <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;">
-                  <span style="font-size:12px;color:#374151;white-space:nowrap;">Nouveau mot de passe :</span>
-                  <input type="password" id="adm-pwd-input-${login}" placeholder="Nouveau mot de passe" autocomplete="new-password"
-                         style="padding:5px 10px;border:1.5px solid #d1d5db;border-radius:6px;font-size:13px;flex:1;min-width:180px;">
-                  <button onclick="admConfirmPwd('${loginEsc}')"
-                          style="padding:5px 14px;background:#16a34a;color:#fff;border:none;border-radius:6px;font-size:12px;cursor:pointer;">
-                    Valider
-                  </button>
-                  <button onclick="admTogglePwd('${loginEsc}')"
-                          style="padding:5px 14px;background:#f3f4f6;color:#374151;border:1px solid #d1d5db;border-radius:6px;font-size:12px;cursor:pointer;">
-                    Annuler
-                  </button>
-                  <span id="adm-pwd-err-${login}" style="font-size:11px;color:#dc2626;display:none;"></span>
-                </div>
-              </td>
-            </tr>`;
-          }).join("")}
-          </tbody></table>`;
-      }
-
-      function admTogglePwd(login) {
-        const row = document.getElementById("adm-pwd-row-" + login);
-        const open = row.style.display === "none";
-        row.style.display = open ? "" : "none";
-        if (open) {
-          const inp = document.getElementById("adm-pwd-input-" + login);
-          if (inp) { inp.value = ""; inp.focus(); }
-          const errEl = document.getElementById("adm-pwd-err-" + login);
-          if (errEl) errEl.style.display = "none";
-        }
-      }
-
-      async function admConfirmPwd(login) {
-        const inp    = document.getElementById("adm-pwd-input-" + login);
-        const errEl  = document.getElementById("adm-pwd-err-" + login);
-        errEl.style.display = "none";
-        if (!inp.value) { errEl.textContent = "Mot de passe vide."; errEl.style.display = "inline"; return; }
-        inp.disabled = true;
-        try {
-          const h = await AUTH.hashPwd(inp.value);
-          const u = AUTH.listExtraUsers()[login];
-          await AUTH.createUser({ ...u, h });
-          admTogglePwd(login);
-          admRefreshList();
-        } catch (e) {
-          errEl.textContent = "Erreur : " + e.message;
-          errEl.style.display = "inline";
-          inp.disabled = false;
-        }
-      }
-
+      /* ── Créer un utilisateur ──────────────────────────────────────── */
       async function admCreateUser() {
-        const login = document.getElementById("adm-login").value.trim().toLowerCase();
-        const pwd   = document.getElementById("adm-pwd").value;
-        const mode  = document.querySelector("input[name='adm-mode']:checked").value;
-        const err   = document.getElementById("adm-err");
+        const login = document.getElementById("add-login").value.trim().toLowerCase();
+        const pwd   = document.getElementById("add-pwd").value;
+        const mode  = document.querySelector("input[name='add-mode']:checked").value;
+        const err   = document.getElementById("add-err");
         err.style.display = "none";
 
         if (!login || !pwd) { err.textContent = "Identifiant et mot de passe requis."; err.style.display = "block"; return; }
         if (AUTH.listExtraUsers()[login]) { err.textContent = `"${login}" existe déjà.`; err.style.display = "block"; return; }
 
-        const btn = document.getElementById("adm-create-btn");
+        const btn = document.getElementById("add-submit");
         btn.disabled = true; btn.textContent = "…";
-
-        const h   = await AUTH.hashPwd(pwd);
-        const cfg = { login, h, rw: false, rwApps: [], denyApps: [] };
-        if (mode === "rw")       { cfg.rw = true; }
-        else if (mode === "rwapps") { cfg.rwApps = [...document.querySelectorAll(".adm-rwapp:checked")].map(c => c.value); }
-        else if (mode === "deny-rep") { cfg.denyApps = ["repartition"]; }
-
         try {
+          const h   = await AUTH.hashPwd(pwd);
+          const cfg = { login, h, rw:false, rwApps:[], denyApps:[] };
+          if (mode === "rw")         cfg.rw = true;
+          else if (mode === "rwapps") cfg.rwApps = [...document.querySelectorAll(".add-rwapp:checked")].map(c => c.value);
+          else if (mode === "deny-rep") cfg.denyApps = ["repartition"];
           await AUTH.createUser(cfg);
-          document.getElementById("adm-login").value = "";
-          document.getElementById("adm-pwd").value = "";
-          admRefreshList();
-        } catch (e) {
+          closeModal("modal-add");
+        } catch(e) {
           err.textContent = "Erreur : " + e.message;
           err.style.display = "block";
         } finally {
@@ -294,10 +253,97 @@
         }
       }
 
-      async function admDeleteUser(login) {
+      /* ── Liste de modification ─────────────────────────────────────── */
+      function renderEditList() {
+        const users = AUTH.listExtraUsers();
+        const el    = document.getElementById("edit-user-list");
+        const keys  = Object.keys(users);
+        if (!keys.length) { el.innerHTML = "<p style='font-size:13px;color:#6b7280;margin-bottom:1rem;'>Aucun utilisateur créé pour l'instant.</p>"; return; }
+
+        el.innerHTML = `<table style="width:100%;border-collapse:collapse;font-size:13px;margin-bottom:1rem;">
+          <thead><tr style="background:#1e3a5f;color:#fff;">
+            <th style="padding:8px 10px;text-align:left;">Identifiant</th>
+            <th style="padding:8px 10px;text-align:left;">Droits</th>
+            <th style="padding:8px 10px;"></th>
+          </tr></thead><tbody>
+          ${keys.map((login, i) => {
+            const u  = users[login];
+            const dr = u.rw ? "L/É complète" : u.denyApps?.includes("repartition") ? "Lecture seule + ✗ Répartition" : u.rwApps?.length ? "R/W : " + u.rwApps.map(a => _APP_LABELS[a]||a).join(", ") : "Lecture seule";
+            const bg = i%2 ? "#f8fafc" : "#fff";
+            const le = login.replace(/'/g,"\\'");
+            return `<tr style="background:${bg}">
+              <td style="padding:7px 10px;font-weight:500;">${login}</td>
+              <td style="padding:7px 10px;color:#374151;">${dr}</td>
+              <td style="padding:7px 10px;text-align:right;">
+                <div style="display:flex;gap:6px;justify-content:flex-end;">
+                  <button onclick="editTogglePwd('${le}')"
+                    style="padding:3px 10px;background:#e0f2fe;color:#0369a1;border:1px solid #7dd3fc;border-radius:5px;font-size:12px;cursor:pointer;">
+                    ✏️ Modifier mdp
+                  </button>
+                  <button onclick="editDeleteUser('${le}')"
+                    style="padding:3px 10px;background:#fee2e2;color:#dc2626;border:1px solid #fca5a5;border-radius:5px;font-size:12px;cursor:pointer;">
+                    🗑 Supprimer
+                  </button>
+                </div>
+              </td>
+            </tr>
+            <tr id="edit-pwd-row-${login}" style="display:none;background:${bg};">
+              <td colspan="3" style="padding:4px 10px 10px;">
+                <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;">
+                  <span style="font-size:12px;color:#374151;white-space:nowrap;">Nouveau mot de passe :</span>
+                  <input type="password" id="edit-pwd-inp-${login}" placeholder="Nouveau mot de passe" autocomplete="new-password"
+                    style="padding:5px 10px;border:1.5px solid #d1d5db;border-radius:6px;font-size:13px;flex:1;min-width:160px;">
+                  <button onclick="editConfirmPwd('${le}')"
+                    style="padding:5px 14px;background:#16a34a;color:#fff;border:none;border-radius:6px;font-size:12px;cursor:pointer;">
+                    Valider
+                  </button>
+                  <button onclick="editTogglePwd('${le}')"
+                    style="padding:5px 14px;background:#f3f4f6;color:#374151;border:1px solid #d1d5db;border-radius:6px;font-size:12px;cursor:pointer;">
+                    Annuler
+                  </button>
+                  <span id="edit-pwd-err-${login}" style="font-size:11px;color:#dc2626;display:none;"></span>
+                </div>
+              </td>
+            </tr>`;
+          }).join("")}
+          </tbody></table>`;
+      }
+
+      function editTogglePwd(login) {
+        const row = document.getElementById("edit-pwd-row-" + login);
+        const open = row.style.display === "none";
+        row.style.display = open ? "" : "none";
+        if (open) {
+          const inp = document.getElementById("edit-pwd-inp-" + login);
+          if (inp) { inp.value = ""; inp.focus(); }
+          const e = document.getElementById("edit-pwd-err-" + login);
+          if (e) e.style.display = "none";
+        }
+      }
+
+      async function editConfirmPwd(login) {
+        const inp   = document.getElementById("edit-pwd-inp-" + login);
+        const errEl = document.getElementById("edit-pwd-err-" + login);
+        errEl.style.display = "none";
+        if (!inp.value) { errEl.textContent = "Mot de passe vide."; errEl.style.display = "inline"; return; }
+        inp.disabled = true;
+        try {
+          const h = await AUTH.hashPwd(inp.value);
+          const u = AUTH.listExtraUsers()[login];
+          await AUTH.createUser({ ...u, h });
+          editTogglePwd(login);
+          renderEditList();
+        } catch(e) {
+          errEl.textContent = "Erreur : " + e.message;
+          errEl.style.display = "inline";
+          inp.disabled = false;
+        }
+      }
+
+      async function editDeleteUser(login) {
         if (!confirm(`Supprimer l'utilisateur "${login}" ?`)) return;
-        try { await AUTH.deleteUser(login); admRefreshList(); }
-        catch (e) { alert("Erreur : " + e.message); }
+        try { await AUTH.deleteUser(login); renderEditList(); }
+        catch(e) { alert("Erreur : " + e.message); }
       }
     </script>
   </body>
