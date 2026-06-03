@@ -20,7 +20,46 @@ const _U = {
   "sylvie.escaig":   { h: "afd6ad2d7374c59bc880b837386effab0357dd9177538a3625ba299a643efe19", rw: false },
 };
 
-const _SK = "mmi_auth_v1";
+const _SK  = "mmi_auth_v1";
+const _GHU = { owner:"nico3807", repo:"Applications_gestion", branch:"main", path:"users_extra.json", lsKey:"mmi_portal_gh" };
+
+let _usersExtra = {};
+let _extraUsersPromise = null;
+
+function _ghToken() {
+  try { return (JSON.parse(localStorage.getItem(_GHU.lsKey)) || {}).token || null; } catch { return null; }
+}
+
+async function _fetchExtraUsers() {
+  const token = _ghToken();
+  if (!token) return;
+  try {
+    const url = `https://api.github.com/repos/${_GHU.owner}/${_GHU.repo}/contents/${_GHU.path}?ref=${_GHU.branch}&_t=${Date.now()}`;
+    const r = await fetch(url, { cache:"no-cache", headers:{ Authorization:`token ${token}`, Accept:"application/vnd.github.v3+json" } });
+    if (!r.ok) return;
+    const j = await r.json();
+    const arr = JSON.parse(decodeURIComponent(escape(atob(j.content.replace(/\n/g,"")))));
+    _usersExtra = {};
+    arr.forEach(u => { _usersExtra[u.login] = u; });
+  } catch {}
+}
+
+async function _saveExtraUsers() {
+  const token = _ghToken();
+  if (!token) throw new Error("Token GitHub non configuré — configurez-le dans la gestion des utilisateurs.");
+  const arr  = Object.values(_usersExtra);
+  const url  = `https://api.github.com/repos/${_GHU.owner}/${_GHU.repo}/contents/${_GHU.path}`;
+  const content = btoa(unescape(encodeURIComponent(JSON.stringify(arr, null, 2))));
+  let sha = null;
+  try {
+    const r = await fetch(`${url}?ref=${_GHU.branch}&_t=${Date.now()}`, { cache:"no-cache", headers:{ Authorization:`token ${token}`, Accept:"application/vnd.github.v3+json" } });
+    if (r.ok) sha = (await r.json()).sha;
+  } catch {}
+  const body = { message:"Update users_extra.json via Web UI", content, branch:_GHU.branch };
+  if (sha) body.sha = sha;
+  const r = await fetch(url, { method:"PUT", headers:{ Authorization:`token ${token}`, Accept:"application/vnd.github.v3+json", "Content-Type":"application/json" }, body:JSON.stringify(body) });
+  if (!r.ok) { const j = await r.json().catch(()=>({})); throw new Error(j.message || `Erreur ${r.status}`); }
+}
 
 /* ── SHA-256 pur JS (fallback quand crypto.subtle est absent, ex. HTTP) ────── */
 function _sha256Pure(bytes) {
@@ -169,12 +208,31 @@ window.AUTH = {
 
   async login(login, pwd) {
     const key = login.trim().toLowerCase();
-    const u = _U[key];
+    const u = _U[key] || _usersExtra[key];
     if (!u) return false;
     if ((await _sha256(pwd)) !== u.h) return false;
-    sessionStorage.setItem(_SK, JSON.stringify({ login: key, rw: u.rw, rwApps: u.rwApps || [], denyApps: u.denyApps || [] }));
+    sessionStorage.setItem(_SK, JSON.stringify({ login: key, rw: !!u.rw, rwApps: u.rwApps || [], denyApps: u.denyApps || [] }));
     return true;
   },
+
+  /* Expose SHA-256 pour le panneau admin */
+  hashPwd: (pwd) => _sha256(pwd),
+
+  /* Fonctions admin — gestion des utilisateurs extra */
+  listExtraUsers: () => ({ ..._usersExtra }),
+  async createUser(cfg) {
+    _usersExtra[cfg.login] = cfg;
+    await _saveExtraUsers();
+  },
+  async deleteUser(login) {
+    delete _usersExtra[login];
+    await _saveExtraUsers();
+  },
+  getGHToken: () => _ghToken(),
+  setGHToken(token) {
+    localStorage.setItem(_GHU.lsKey, JSON.stringify({ token }));
+  },
+  reloadExtraUsers: () => _fetchExtraUsers(),
 
   logout() {
     sessionStorage.removeItem(_SK);
@@ -183,6 +241,7 @@ window.AUTH = {
 
   /* Affiche la modale de connexion (appelée uniquement depuis index.html racine) */
   injectUI() {
+    _extraUsersPromise = _fetchExtraUsers(); /* Charge les utilisateurs GitHub en arrière-plan */
     if (_sess()) return;
     const appRoot = document.getElementById("app-root");
     if (appRoot) appRoot.style.display = "none";
@@ -213,6 +272,7 @@ window.AUTH = {
     btn.textContent = "…";
     err.style.display = "none";
     try {
+      if (_extraUsersPromise) await _extraUsersPromise; /* Attendre le chargement des utilisateurs GitHub */
       if (await AUTH.login(login, pwd)) {
         document.getElementById("auth-overlay").remove();
         const appRoot = document.getElementById("app-root");
