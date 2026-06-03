@@ -208,7 +208,7 @@ window.AUTH = {
 
   async login(login, pwd) {
     const key = login.trim().toLowerCase();
-    const u = _U[key] || _usersExtra[key];
+    const u = _usersExtra[key] || _U[key]; /* _usersExtra en priorité (permet de changer le mdp des users hardcodés) */
     if (!u) return false;
     if ((await _sha256(pwd)) !== u.h) return false;
     sessionStorage.setItem(_SK, JSON.stringify({ login: key, rw: !!u.rw, rwApps: u.rwApps || [], denyApps: u.denyApps || [] }));
@@ -220,12 +220,26 @@ window.AUTH = {
 
   /* Fonctions admin — gestion des utilisateurs extra */
   listExtraUsers: () => ({ ..._usersExtra }),
+
+  /* Retourne tous les logins connus (hardcodés + extra) */
+  listAllLogins: () => {
+    const all = new Set([...Object.keys(_U), ...Object.keys(_usersExtra)]);
+    return [...all].sort();
+  },
+
   async createUser(cfg) {
     _usersExtra[cfg.login] = cfg;
     await _saveExtraUsers();
   },
   async deleteUser(login) {
     delete _usersExtra[login];
+    await _saveExtraUsers();
+  },
+
+  /* Change le mot de passe d'un utilisateur (hardcodé ou extra) */
+  async updateUserPassword(login, h) {
+    const base = _usersExtra[login] || _U[login] || {};
+    _usersExtra[login] = { ...base, login, h };
     await _saveExtraUsers();
   },
   getGHToken: () => _ghToken(),
