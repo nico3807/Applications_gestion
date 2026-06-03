@@ -28,10 +28,11 @@
         background:#fff; border-radius:12px; padding:1.75rem;
         width:min(620px, 96vw); max-height:90vh; overflow-y:auto;
         box-shadow:0 8px 32px rgba(0,0,0,.18); position:relative;
+        color:#111;
       }
       .adm-box h2 { color:#1e3a5f; font-size:1.1rem; margin-bottom:1.25rem; }
       .adm-section { background:#f0f4fb; border:1px solid #c7d2e8; border-radius:8px; padding:1rem; margin-bottom:1.25rem; }
-      .adm-section label { font-size:13px; font-weight:600; color:#374151; display:block; margin-bottom:6px; }
+      .adm-section label { font-size:13px; font-weight:600; color:#111; display:block; margin-bottom:6px; }
       .adm-field { display:flex; gap:8px; }
       .adm-input { padding:8px 10px; border:1.5px solid #d1d5db; border-radius:6px; font-size:13px; width:100%; box-sizing:border-box; }
       .adm-btn-save { padding:8px 16px; background:#1e3a5f; color:#fff; border:none; border-radius:6px; font-size:13px; cursor:pointer; white-space:nowrap; }
@@ -113,11 +114,11 @@
         <!-- Identifiants -->
         <div style="display:grid; grid-template-columns:1fr 1fr; gap:.75rem; margin-bottom:1rem;">
           <div>
-            <label style="font-size:12px; font-weight:500; color:#374151; display:block; margin-bottom:4px;">Identifiant</label>
+            <label style="font-size:12px; font-weight:500; color:#111; display:block; margin-bottom:4px;">Identifiant</label>
             <input type="text" id="add-login" class="adm-input" placeholder="prenom.nom" autocomplete="off">
           </div>
           <div>
-            <label style="font-size:12px; font-weight:500; color:#374151; display:block; margin-bottom:4px;">Mot de passe</label>
+            <label style="font-size:12px; font-weight:500; color:#111; display:block; margin-bottom:4px;">Mot de passe</label>
             <input type="password" id="add-pwd" class="adm-input" placeholder="…" autocomplete="new-password">
           </div>
         </div>
@@ -131,7 +132,7 @@
           <label><input type="radio" name="add-mode" value="deny-rep"> Lecture seule + interdit sur Répartition</label>
         </div>
         <div id="add-rwapps-box" style="padding-left:1.5rem; margin-bottom:.75rem;">
-          <label style="font-size:12px; font-weight:500; color:#374151; display:block; margin-bottom:5px;">Applications avec R/W :</label>
+          <label style="font-size:12px; font-weight:500; color:#111; display:block; margin-bottom:5px;">Applications avec R/W :</label>
           <div style="display:flex; gap:14px; flex-wrap:wrap; font-size:13px;">
             <label><input type="checkbox" class="add-rwapp" value="planning-web"> Planning</label>
             <label><input type="checkbox" class="add-rwapp" value="repartition"> Répartition</label>
