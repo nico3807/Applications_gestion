@@ -13,7 +13,7 @@ const _U = {
     rw: false,
     rwApps: ["planning-web", "repartition"],
   },
-  crea: {
+  "emmanuel.tehrond": {
     h: "cb669adb1c13b2ea8661fc47ee7b9dda17aca84edaf5a6a845a8a6c8e2c188f2",
     rw: false,
     rwApps: ["planning-web", "repartition"],
