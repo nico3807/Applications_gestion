@@ -217,6 +217,32 @@
               🗑 Supprimer l'utilisateur
             </button>
           </div>
+
+          <hr style="border:none;border-top:1px solid #e5e7eb;margin:1.25rem 0;">
+
+          <!-- Modifier les droits -->
+          <label style="font-size:13px;font-weight:600;color:#111;display:block;margin-bottom:8px;">Droits d'accès</label>
+          <div style="display:flex;flex-direction:column;gap:6px;font-size:13px;margin-bottom:.75rem;">
+            <label><input type="radio" name="edit-mode" value="rw"> Lecture / Écriture complète (toutes les apps)</label>
+            <label><input type="radio" name="edit-mode" value="rwapps"> R/W sur certaines applications seulement</label>
+            <label><input type="radio" name="edit-mode" value="readonly" checked> Lecture seule (toutes les apps)</label>
+            <label><input type="radio" name="edit-mode" value="deny-rep"> Lecture seule + interdit sur Répartition</label>
+          </div>
+          <div id="edit-rwapps-box" style="padding-left:1.5rem;margin-bottom:.75rem;display:none;">
+            <label style="font-size:12px;font-weight:500;color:#111;display:block;margin-bottom:5px;">Applications avec R/W :</label>
+            <div style="display:flex;gap:14px;flex-wrap:wrap;font-size:13px;">
+              <label><input type="checkbox" class="edit-rwapp" value="planning-web"> Planning</label>
+              <label><input type="checkbox" class="edit-rwapp" value="repartition"> Répartition</label>
+              <label><input type="checkbox" class="edit-rwapp" value="soutenances_portfolio"> Soutenances Portfolio</label>
+              <label><input type="checkbox" class="edit-rwapp" value="soutenances_stages"> Soutenances Stages</label>
+            </div>
+          </div>
+          <p id="edit-rights-err" style="color:#dc2626;font-size:12px;margin-bottom:.5rem;display:none;"></p>
+          <p id="edit-rights-ok"  style="color:#16a34a;font-size:12px;margin-bottom:.5rem;display:none;">✓ Droits modifiés avec succès.</p>
+          <button id="edit-rights-btn" onclick="editSaveRights()"
+            style="padding:9px 20px;background:#0369a1;color:#fff;border:none;border-radius:6px;font-size:13px;cursor:pointer;font-weight:600;">
+            Modifier les droits
+          </button>
         </div>
 
         <div class="adm-actions" style="margin-top:1.5rem;">
@@ -239,6 +265,11 @@
         document.querySelectorAll("input[name='add-mode']").forEach(r =>
           r.addEventListener("change", () => {
             document.getElementById("add-rwapps-box").style.display = r.value === "rwapps" ? "" : "none";
+          })
+        );
+        document.querySelectorAll("input[name='edit-mode']").forEach(r =>
+          r.addEventListener("change", () => {
+            document.getElementById("edit-rwapps-box").style.display = r.value === "rwapps" ? "" : "none";
           })
         );
       }
@@ -322,6 +353,8 @@
       function editSelectUser() {
         const login = document.getElementById("edit-select").value;
         document.getElementById("edit-pwd-form").style.display = login ? "" : "none";
+
+        /* Reset mot de passe */
         document.getElementById("edit-new-pwd").value     = "";
         document.getElementById("edit-confirm-pwd").value = "";
         document.getElementById("edit-pwd-err").style.display = "none";
@@ -329,7 +362,27 @@
         ["edit-new-pwd","edit-confirm-pwd"].forEach(id => { document.getElementById(id).type = "password"; });
         document.getElementById("eye-new-svg").innerHTML     = _EYE_OPEN;
         document.getElementById("eye-confirm-svg").innerHTML = _EYE_OPEN;
-        if (login) document.getElementById("edit-new-pwd").focus();
+
+        /* Reset messages droits */
+        document.getElementById("edit-rights-err").style.display = "none";
+        document.getElementById("edit-rights-ok").style.display  = "none";
+
+        /* Pré-remplir les droits actuels */
+        if (login) {
+          const u = AUTH.getUserInfo(login);
+          let mode = "readonly";
+          if (u.rw)                                     mode = "rw";
+          else if (u.rwApps && u.rwApps.length > 0)    mode = "rwapps";
+          else if (u.denyApps && u.denyApps.includes("repartition")) mode = "deny-rep";
+
+          const radio = document.querySelector(`input[name="edit-mode"][value="${mode}"]`);
+          if (radio) radio.checked = true;
+          document.getElementById("edit-rwapps-box").style.display = mode === "rwapps" ? "" : "none";
+          document.querySelectorAll(".edit-rwapp").forEach(c => {
+            c.checked = mode === "rwapps" && (u.rwApps || []).includes(c.value);
+          });
+          document.getElementById("edit-new-pwd").focus();
+        }
       }
 
       function editToggleEye(inputId, btnId) {
@@ -362,6 +415,31 @@
           errEl.textContent = "Erreur : " + e.message; errEl.style.display = "block";
         } finally {
           btn.disabled = false; btn.textContent = "Modifier le mot de passe";
+        }
+      }
+
+      async function editSaveRights() {
+        const login  = document.getElementById("edit-select").value;
+        const mode   = document.querySelector("input[name='edit-mode']:checked")?.value;
+        const errEl  = document.getElementById("edit-rights-err");
+        const okEl   = document.getElementById("edit-rights-ok");
+        errEl.style.display = "none"; okEl.style.display = "none";
+
+        const u = AUTH.getUserInfo(login);
+        const cfg = { login, h: u.h || "", rw: false, rwApps: [], denyApps: [] };
+        if (mode === "rw")          cfg.rw = true;
+        else if (mode === "rwapps") cfg.rwApps = [...document.querySelectorAll(".edit-rwapp:checked")].map(c => c.value);
+        else if (mode === "deny-rep") cfg.denyApps = ["repartition"];
+
+        const btn = document.getElementById("edit-rights-btn");
+        btn.disabled = true; btn.textContent = "…";
+        try {
+          await AUTH.createUser(cfg);
+          okEl.style.display = "block";
+        } catch(e) {
+          errEl.textContent = "Erreur : " + e.message; errEl.style.display = "block";
+        } finally {
+          btn.disabled = false; btn.textContent = "Modifier les droits";
         }
       }
 

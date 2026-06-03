@@ -393,6 +393,9 @@ window.AUTH = {
     return [...all].sort();
   },
 
+  /* Retourne la config complète d'un utilisateur (_usersExtra en priorité) */
+  getUserInfo: (login) => ({ ...(_U[login] || {}), ...(_usersExtra[login] || {}) }),
+
   async createUser(cfg) {
     _usersExtra[cfg.login] = cfg;
     await _saveExtraUsers();
