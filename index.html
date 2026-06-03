@@ -191,18 +191,75 @@
           ${keys.map((login, i) => {
             const u = users[login];
             let droits = u.rw ? "L/É complète" : u.denyApps?.includes("repartition") ? "Lecture seule + ✗ Répartition" : u.rwApps?.length ? "R/W : " + u.rwApps.map(a => _APP_LABELS[a]||a).join(", ") : "Lecture seule";
-            return `<tr style="background:${i%2?"#f8fafc":"#fff"}">
-              <td style="padding:7px 10px;">${login}</td>
+            const bg = i%2 ? "#f8fafc" : "#fff";
+            const loginEsc = login.replace(/'/g,"\\'");
+            return `<tr style="background:${bg}">
+              <td style="padding:7px 10px;font-weight:500;">${login}</td>
               <td style="padding:7px 10px;color:#374151;">${droits}</td>
               <td style="padding:7px 10px;text-align:right;">
-                <button onclick="admDeleteUser('${login}')"
-                        style="padding:3px 10px;background:#fee2e2;color:#dc2626;border:1px solid #fca5a5;border-radius:5px;font-size:12px;cursor:pointer;">
-                  Supprimer
-                </button>
+                <div style="display:flex;gap:6px;justify-content:flex-end;">
+                  <button onclick="admTogglePwd('${loginEsc}')"
+                          style="padding:3px 10px;background:#e0f2fe;color:#0369a1;border:1px solid #7dd3fc;border-radius:5px;font-size:12px;cursor:pointer;">
+                    ✏️ Modifier mdp
+                  </button>
+                  <button onclick="admDeleteUser('${loginEsc}')"
+                          style="padding:3px 10px;background:#fee2e2;color:#dc2626;border:1px solid #fca5a5;border-radius:5px;font-size:12px;cursor:pointer;">
+                    🗑 Supprimer
+                  </button>
+                </div>
+              </td>
+            </tr>
+            <tr id="adm-pwd-row-${login}" style="display:none;background:${bg};">
+              <td colspan="3" style="padding:4px 10px 10px;">
+                <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;">
+                  <span style="font-size:12px;color:#374151;white-space:nowrap;">Nouveau mot de passe :</span>
+                  <input type="password" id="adm-pwd-input-${login}" placeholder="Nouveau mot de passe" autocomplete="new-password"
+                         style="padding:5px 10px;border:1.5px solid #d1d5db;border-radius:6px;font-size:13px;flex:1;min-width:180px;">
+                  <button onclick="admConfirmPwd('${loginEsc}')"
+                          style="padding:5px 14px;background:#16a34a;color:#fff;border:none;border-radius:6px;font-size:12px;cursor:pointer;">
+                    Valider
+                  </button>
+                  <button onclick="admTogglePwd('${loginEsc}')"
+                          style="padding:5px 14px;background:#f3f4f6;color:#374151;border:1px solid #d1d5db;border-radius:6px;font-size:12px;cursor:pointer;">
+                    Annuler
+                  </button>
+                  <span id="adm-pwd-err-${login}" style="font-size:11px;color:#dc2626;display:none;"></span>
+                </div>
               </td>
             </tr>`;
           }).join("")}
           </tbody></table>`;
+      }
+
+      function admTogglePwd(login) {
+        const row = document.getElementById("adm-pwd-row-" + login);
+        const open = row.style.display === "none";
+        row.style.display = open ? "" : "none";
+        if (open) {
+          const inp = document.getElementById("adm-pwd-input-" + login);
+          if (inp) { inp.value = ""; inp.focus(); }
+          const errEl = document.getElementById("adm-pwd-err-" + login);
+          if (errEl) errEl.style.display = "none";
+        }
+      }
+
+      async function admConfirmPwd(login) {
+        const inp    = document.getElementById("adm-pwd-input-" + login);
+        const errEl  = document.getElementById("adm-pwd-err-" + login);
+        errEl.style.display = "none";
+        if (!inp.value) { errEl.textContent = "Mot de passe vide."; errEl.style.display = "inline"; return; }
+        inp.disabled = true;
+        try {
+          const h = await AUTH.hashPwd(inp.value);
+          const u = AUTH.listExtraUsers()[login];
+          await AUTH.createUser({ ...u, h });
+          admTogglePwd(login);
+          admRefreshList();
+        } catch (e) {
+          errEl.textContent = "Erreur : " + e.message;
+          errEl.style.display = "inline";
+          inp.disabled = false;
+        }
       }
 
       async function admCreateUser() {
