@@ -1,1 +1,11 @@
-[]
+[
+  {
+    "h": "55ce64d38ac9c3571dccfa07761c068a7a218faaf65bf007df0d9c5ded88eb97",
+    "rw": false,
+    "rwApps": [
+      "planning-web",
+      "repartition"
+    ],
+    "login": "damien.marill"
+  }
+]
