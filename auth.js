@@ -6,18 +6,18 @@
 const _U = {
   "nicolas.maurin": { h: "eeb705ce8d0aa8255bea1e65ac2633938eb36bb496b92695f8475428ef5313f1", rw: true  },
   "damien.marill":  { h: "e9f6d4e3a860db8eec3bfc8dcf84186e7cfb24216f8c191d6f423a159250c7ec", rw: false, rwApps: ["planning-web", "repartition"] },
-  crea:             { h: "92bbadd93a744ec77a19eef8d0df9bbb354ced75ceefa18581a2c7a37c880746", rw: false, rwApps: ["planning-web", "repartition"] },
+  crea:             { h: "cb669adb1c13b2ea8661fc47ee7b9dda17aca84edaf5a6a845a8a6c8e2c188f2", rw: false, rwApps: ["planning-web", "repartition"] },
   "william.bernard":{ h: "08bd382e37e89970a9fc8dcb6cc9392b49daf28f6cc0c37c7fe8f7c3d5a331e3", rw: false },
   "carole.pitot":    { h: "651452ffac1d672f0bcb9fc86436fbca73f88fa3e416102b5f8b52992e5c33fd", rw: false, rwApps: ["soutenances_portfolio", "soutenances_stages"] },
-  "luc.jaeckle":     { h: "5187678470b8facb096482bc99a6d857a8656e28c39d085531b406c8588c962d", rw: false, denyApps: ["repartition"] },
-  "benoit.darties":  { h: "db5935ec700d4fd3aed91c7e460e435daeb935a2e4960738fcab6e5e7ff3513c", rw: false, denyApps: ["repartition"] },
-  "sophie.de-velder":{ h: "ff5bca8ef5bc9e099a4bf06910f881e4b4679f1fb44f0d011df917b3b92cad3d", rw: false, denyApps: ["repartition"] },
-  "davide.di-pierro":{ h: "df3c8fcaace96c75735a4a521ec2f663e703eaa0b4a473bd6b470ee8f0ae0c03", rw: false, denyApps: ["repartition"] },
-  "chrysta.pelissier":{ h: "2982f410475a0eb8ac99b83f24d96249c49b757c322bab4596b7b31ba6c321c2", rw: false, denyApps: ["repartition"] },
-  "caroline.surribas":{ h: "d6420023b4acd0198010b2f7e53aa422498afe39d06ffe8379f46fca46640ce4", rw: false, denyApps: ["repartition"] },
-  "laeticia.tournie":{ h: "c4b68d8a9ad3c363bfcd40373641e844a1269e76255904abaf7c9b5f9d6f4fd2", rw: false, denyApps: ["repartition"] },
-  "jerome.aze":      { h: "e48494a5aa2f86cbee52d39a85b51e5f76c30b4069c1daca7779cbb253862db1", rw: false },
-  "sylvie.escaig":   { h: "afd6ad2d7374c59bc880b837386effab0357dd9177538a3625ba299a643efe19", rw: false },
+  "luc.jaeckle":     { h: "61fc127efcc19b85c3277ba4dd68b5265be07d9e622bd5cba87949d9a632aa78", rw: false, denyApps: ["repartition"] },
+  "benoit.darties":  { h: "07132555d86495570592e8a15dd7a76616d0d2282bcc2286395a4565ea1ec818", rw: false, denyApps: ["repartition"] },
+  "sophie.de-velder":{ h: "03c0422171b20676728d2cc2fa79db828b0299d25da09f455643e33c4af4f2c1", rw: false, denyApps: ["repartition"] },
+  "davide.di-pierro":{ h: "81c761bfccaf91af3d2c6d683b9bc0ca548e7eccc655ad8a925235774e15814f", rw: false, denyApps: ["repartition"] },
+  "chrysta.pelissier":{ h: "64d789a0e1025587c1bbdd11373cf3e9664745a75bd10d596fc655525e820617", rw: false, denyApps: ["repartition"] },
+  "caroline.surribas":{ h: "d2a0388d97fc0f440eb8733036214270ebdd1b0f79cf3e638774cff570ee27ee", rw: false, denyApps: ["repartition"] },
+  "laeticia.tournie":{ h: "a9e7254724ec1f357c650eeb680679a09c2a5ddcc457d5b671edd082ede206ab", rw: false, denyApps: ["repartition"] },
+  "jerome.aze":      { h: "9451a2511dd5e95d1ccc0d620b54f5047a6f41c1a7c79fab1b3d0b544e3e4c74", rw: false },
+  "sylvie.escaig":   { h: "4b6921083b48e054bfc75ddf50953e688ac464e712bf7f6af067ab0bedc7f033", rw: false },
 };
 
 const _SK  = "mmi_auth_v1";
