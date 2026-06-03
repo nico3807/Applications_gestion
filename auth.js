@@ -92,7 +92,25 @@ function _ghToken() {
   }
 }
 
+/* URL absolue de users_extra.json déduite de l'emplacement de auth.js
+   (fonctionne que auth.js soit chargé depuis la racine ou un sous-dossier) */
+const _USERS_JSON_URL = (() => {
+  const tag = [...document.scripts].find((s) => s.src.includes("auth.js"));
+  return tag ? new URL("users_extra.json", tag.src).href : "users_extra.json";
+})();
+
 async function _fetchExtraUsers() {
+  /* 1. Lecture directe du fichier servi (pas besoin de token) */
+  try {
+    const r = await fetch(_USERS_JSON_URL + "?_t=" + Date.now(), { cache: "no-cache" });
+    if (r.ok) {
+      const arr = await r.json();
+      _usersExtra = {};
+      arr.forEach((u) => { _usersExtra[u.login] = u; });
+    }
+  } catch {}
+
+  /* 2. Si le token GitHub est configuré, on prend la version GitHub en priorité */
   const token = _ghToken();
   if (!token) return;
   try {
