@@ -151,7 +151,7 @@
 
     <!-- ═══ Modal : Modifier un utilisateur ══════════════════════════════ -->
     <div id="modal-edit" class="adm-overlay" onclick="if(event.target===this)closeModal('modal-edit')">
-      <div class="adm-box">
+      <div class="adm-box" style="width:min(520px,96vw);">
         <h2>Modifier un utilisateur</h2>
 
         <!-- Token GitHub -->
@@ -164,10 +164,62 @@
           <span id="edit-gh-status" class="adm-status"></span>
         </div>
 
-        <!-- Liste des utilisateurs -->
-        <div id="edit-user-list"></div>
+        <!-- Sélection utilisateur -->
+        <div style="margin-bottom:1.25rem;">
+          <label style="font-size:13px;font-weight:600;color:#111;display:block;margin-bottom:6px;">Sélectionner un utilisateur</label>
+          <select id="edit-select" onchange="editSelectUser()"
+            style="width:100%;padding:9px 12px;border:1.5px solid #d1d5db;border-radius:6px;font-size:13px;color:#111;background:#fff;cursor:pointer;">
+            <option value="">— Choisir un utilisateur —</option>
+          </select>
+        </div>
 
-        <div class="adm-actions">
+        <!-- Formulaire changement de mot de passe -->
+        <div id="edit-pwd-form" style="display:none;">
+          <!-- Nouveau mot de passe -->
+          <div style="margin-bottom:.9rem;">
+            <label style="font-size:13px;font-weight:500;color:#111;display:block;margin-bottom:5px;">Nouveau mot de passe</label>
+            <div style="position:relative;">
+              <input type="password" id="edit-new-pwd" class="adm-input" placeholder="Nouveau mot de passe"
+                     autocomplete="new-password" style="padding-right:2.5rem;">
+              <button type="button" id="eye-new" onclick="editToggleEye('edit-new-pwd','eye-new')"
+                style="position:absolute;right:8px;top:50%;transform:translateY(-50%);background:none;border:none;cursor:pointer;color:#6b7280;padding:2px;display:flex;align-items:center;">
+                <svg id="eye-new-svg" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/>
+                </svg>
+              </button>
+            </div>
+          </div>
+          <!-- Confirmer mot de passe -->
+          <div style="margin-bottom:.9rem;">
+            <label style="font-size:13px;font-weight:500;color:#111;display:block;margin-bottom:5px;">Confirmer le mot de passe</label>
+            <div style="position:relative;">
+              <input type="password" id="edit-confirm-pwd" class="adm-input" placeholder="Confirmer le mot de passe"
+                     autocomplete="new-password" style="padding-right:2.5rem;">
+              <button type="button" id="eye-confirm" onclick="editToggleEye('edit-confirm-pwd','eye-confirm')"
+                style="position:absolute;right:8px;top:50%;transform:translateY(-50%);background:none;border:none;cursor:pointer;color:#6b7280;padding:2px;display:flex;align-items:center;">
+                <svg id="eye-confirm-svg" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/>
+                </svg>
+              </button>
+            </div>
+          </div>
+
+          <p id="edit-pwd-err" style="color:#dc2626;font-size:12px;margin-bottom:.5rem;display:none;"></p>
+          <p id="edit-pwd-ok"  style="color:#16a34a;font-size:12px;margin-bottom:.5rem;display:none;">✓ Mot de passe modifié avec succès.</p>
+
+          <div style="display:flex;gap:.75rem;flex-wrap:wrap;margin-top:.5rem;">
+            <button id="edit-save-btn" onclick="editSavePwd()"
+              style="padding:9px 20px;background:#1e3a5f;color:#fff;border:none;border-radius:6px;font-size:13px;cursor:pointer;font-weight:600;">
+              Modifier le mot de passe
+            </button>
+            <button onclick="editDeleteSelected()"
+              style="padding:9px 20px;background:#fee2e2;color:#dc2626;border:1.5px solid #fca5a5;border-radius:6px;font-size:13px;cursor:pointer;font-weight:600;">
+              🗑 Supprimer l'utilisateur
+            </button>
+          </div>
+        </div>
+
+        <div class="adm-actions" style="margin-top:1.5rem;">
           <button class="adm-close" onclick="closeModal('modal-edit')">Fermer</button>
         </div>
       </div>
@@ -210,7 +262,8 @@
         const tok = AUTH.getGHToken();
         document.getElementById("edit-gh-token").value = tok || "";
         document.getElementById("edit-gh-status").textContent = tok ? "Token enregistré." : "";
-        AUTH.reloadExtraUsers().then(renderEditList);
+        document.getElementById("edit-pwd-form").style.display = "none";
+        AUTH.reloadExtraUsers().then(populateEditDropdown);
         document.getElementById("modal-edit").classList.add("open");
       }
 
@@ -222,7 +275,7 @@
         if (!tok) return;
         AUTH.setGHToken(tok);
         document.getElementById(prefix + "-gh-status").textContent = "Token enregistré ✓";
-        if (prefix === "edit") AUTH.reloadExtraUsers().then(renderEditList);
+        if (prefix === "edit") AUTH.reloadExtraUsers().then(populateEditDropdown);
       }
 
       /* ── Créer un utilisateur ──────────────────────────────────────── */
@@ -254,7 +307,73 @@
         }
       }
 
-      /* ── Liste de modification ─────────────────────────────────────── */
+      /* ── Fenêtre "Modifier un utilisateur" ────────────────────────── */
+      const _EYE_OPEN = `<path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/>`;
+      const _EYE_OFF  = `<path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"/><line x1="1" y1="1" x2="23" y2="23"/>`;
+
+      function populateEditDropdown() {
+        const sel   = document.getElementById("edit-select");
+        const keys  = Object.keys(AUTH.listExtraUsers());
+        sel.innerHTML = `<option value="">— Choisir un utilisateur —</option>` +
+          keys.map(l => `<option value="${l}">${l}</option>`).join("");
+        document.getElementById("edit-pwd-form").style.display = "none";
+      }
+
+      function editSelectUser() {
+        const login = document.getElementById("edit-select").value;
+        document.getElementById("edit-pwd-form").style.display = login ? "" : "none";
+        document.getElementById("edit-new-pwd").value     = "";
+        document.getElementById("edit-confirm-pwd").value = "";
+        document.getElementById("edit-pwd-err").style.display = "none";
+        document.getElementById("edit-pwd-ok").style.display  = "none";
+        ["edit-new-pwd","edit-confirm-pwd"].forEach(id => { document.getElementById(id).type = "password"; });
+        document.getElementById("eye-new-svg").innerHTML     = _EYE_OPEN;
+        document.getElementById("eye-confirm-svg").innerHTML = _EYE_OPEN;
+        if (login) document.getElementById("edit-new-pwd").focus();
+      }
+
+      function editToggleEye(inputId, btnId) {
+        const inp = document.getElementById(inputId);
+        const svg = document.getElementById(btnId + "-svg");
+        const hidden = inp.type === "password";
+        inp.type      = hidden ? "text" : "password";
+        svg.innerHTML = hidden ? _EYE_OFF : _EYE_OPEN;
+      }
+
+      async function editSavePwd() {
+        const login  = document.getElementById("edit-select").value;
+        const newPwd = document.getElementById("edit-new-pwd").value;
+        const conf   = document.getElementById("edit-confirm-pwd").value;
+        const errEl  = document.getElementById("edit-pwd-err");
+        const okEl   = document.getElementById("edit-pwd-ok");
+        errEl.style.display = "none";
+        okEl.style.display  = "none";
+        if (!newPwd)           { errEl.textContent = "Le mot de passe ne peut pas être vide."; errEl.style.display = "block"; return; }
+        if (newPwd !== conf)   { errEl.textContent = "Les mots de passe ne correspondent pas."; errEl.style.display = "block"; return; }
+        const btn = document.getElementById("edit-save-btn");
+        btn.disabled = true; btn.textContent = "…";
+        try {
+          const h = await AUTH.hashPwd(newPwd);
+          const u = AUTH.listExtraUsers()[login];
+          await AUTH.createUser({ ...u, h });
+          document.getElementById("edit-new-pwd").value     = "";
+          document.getElementById("edit-confirm-pwd").value = "";
+          okEl.style.display = "block";
+        } catch(e) {
+          errEl.textContent = "Erreur : " + e.message; errEl.style.display = "block";
+        } finally {
+          btn.disabled = false; btn.textContent = "Modifier le mot de passe";
+        }
+      }
+
+      async function editDeleteSelected() {
+        const login = document.getElementById("edit-select").value;
+        if (!login || !confirm(`Supprimer l'utilisateur "${login}" ?`)) return;
+        try { await AUTH.deleteUser(login); populateEditDropdown(); }
+        catch(e) { alert("Erreur : " + e.message); }
+      }
+
+      /* ── (ancien renderEditList — conservé vide pour compatibilité) ── */
       function renderEditList() {
         const users = AUTH.listExtraUsers();
         const el    = document.getElementById("edit-user-list");
