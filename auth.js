@@ -14,9 +14,9 @@ const _U = {
     rwApps: ["planning-web", "repartition"],
   },
   "emmanuel.tehrond": {
-    h: "cb669adb1c13b2ea8661fc47ee7b9dda17aca84edaf5a6a845a8a6c8e2c188f2",
+    h: "35b7123a725f50dee3c17586c037b95c25aee4284de39e31fc67be4c6105078b",
     rw: false,
-    rwApps: ["planning-web", "repartition"],
+    denyApps: ["repartition"],
   },
   "william.bernard": {
     h: "08bd382e37e89970a9fc8dcb6cc9392b49daf28f6cc0c37c7fe8f7c3d5a331e3",
@@ -28,46 +28,46 @@ const _U = {
     rwApps: ["soutenances_portfolio", "soutenances_stages"],
   },
   "luc.jaeckle": {
-    h: "61fc127efcc19b85c3277ba4dd68b5265be07d9e622bd5cba87949d9a632aa78",
+    h: "f7d76b2c3e104d79c4e36c94ea164e7ceba4473d31da47bfbe89585f6ce2b41d",
     rw: false,
     denyApps: ["repartition"],
   },
   "benoit.darties": {
-    h: "07132555d86495570592e8a15dd7a76616d0d2282bcc2286395a4565ea1ec818",
+    h: "9c95d64f828327ea82072a80cafff1f5e0a2b4ee6fb9f549e29bc10ed64beb84",
     rw: false,
     denyApps: ["repartition"],
   },
   "sophie.de-velder": {
-    h: "03c0422171b20676728d2cc2fa79db828b0299d25da09f455643e33c4af4f2c1",
+    h: "d4951ba77a01781bc3f965259b7d798188f7d01a9be809badb1bd56c6cc09849",
     rw: false,
     denyApps: ["repartition"],
   },
   "davide.di-pierro": {
-    h: "81c761bfccaf91af3d2c6d683b9bc0ca548e7eccc655ad8a925235774e15814f",
+    h: "1c5d657de51e7461341264e1b0df722b6009fd726704bd4a3e527c1e19c37002",
     rw: false,
     denyApps: ["repartition"],
   },
   "chrysta.pelissier": {
-    h: "64d789a0e1025587c1bbdd11373cf3e9664745a75bd10d596fc655525e820617",
+    h: "86eb27cd8f105b2c8223b07f037be481f32ea62fa1025e1c2e3a804a20e71785",
     rw: false,
     denyApps: ["repartition"],
   },
   "caroline.surribas": {
-    h: "d2a0388d97fc0f440eb8733036214270ebdd1b0f79cf3e638774cff570ee27ee",
+    h: "abecb3fbe2d656c38134708d66255fa5ff27b499148efdf0bfb49ffb7213da79",
     rw: false,
     denyApps: ["repartition"],
   },
   "laeticia.tournie": {
-    h: "a9e7254724ec1f357c650eeb680679a09c2a5ddcc457d5b671edd082ede206ab",
+    h: "f60156a3fc67a08976538a6cfbc34380f75d2c3785c8dc7b490b3ca50d6349ee",
     rw: false,
     denyApps: ["repartition"],
   },
   "jerome.aze": {
-    h: "9451a2511dd5e95d1ccc0d620b54f5047a6f41c1a7c79fab1b3d0b544e3e4c74",
+    h: "1fdc64b661d47f09e51ca4212a67ae510c8a0deb2c6f7fd4fb6e072c1c93f526",
     rw: false,
   },
   "sylvie.escaig": {
-    h: "4b6921083b48e054bfc75ddf50953e688ac464e712bf7f6af067ab0bedc7f033",
+    h: "b6464e3bc88e10e0f92a7418c22143290900118e1ec7dc2039ab169c7c23a577",
     rw: false,
   },
 };
@@ -102,11 +102,15 @@ const _USERS_JSON_URL = (() => {
 async function _fetchExtraUsers() {
   /* 1. Lecture directe du fichier servi (pas besoin de token) */
   try {
-    const r = await fetch(_USERS_JSON_URL + "?_t=" + Date.now(), { cache: "no-cache" });
+    const r = await fetch(_USERS_JSON_URL + "?_t=" + Date.now(), {
+      cache: "no-cache",
+    });
     if (r.ok) {
       const arr = await r.json();
       _usersExtra = {};
-      arr.forEach((u) => { _usersExtra[u.login] = u; });
+      arr.forEach((u) => {
+        _usersExtra[u.login] = u;
+      });
     }
   } catch {}
 
