@@ -7,5 +7,13 @@
       "repartition"
     ],
     "login": "damien.marill"
+  },
+  {
+    "h": "f7d76b2c3e104d79c4e36c94ea164e7ceba4473d31da47bfbe89585f6ce2b41d",
+    "rw": false,
+    "denyApps": [
+      "repartition"
+    ],
+    "login": "luc.jaeckle"
   }
 ]
