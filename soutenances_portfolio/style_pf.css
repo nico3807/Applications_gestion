@@ -60,7 +60,8 @@ a {
   cursor: pointer;
 }
 .nav-back:hover {
-  background: var(--surface2);
+  background: rgba(255, 255, 255, 0.12);
+  color: #fff;
 }
 .nav-back svg {
   width: 16px;
