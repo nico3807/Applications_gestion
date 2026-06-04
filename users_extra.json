@@ -15,5 +15,13 @@
       "repartition"
     ],
     "login": "luc.jaeckle"
+  },
+  {
+    "h": "9c95d64f828327ea82072a80cafff1f5e0a2b4ee6fb9f549e29bc10ed64beb84",
+    "rw": false,
+    "denyApps": [
+      "repartition"
+    ],
+    "login": "benoit.darties"
   }
 ]
