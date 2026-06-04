@@ -23,5 +23,13 @@
       "repartition"
     ],
     "login": "benoit.darties"
+  },
+  {
+    "h": "d4951ba77a01781bc3f965259b7d798188f7d01a9be809badb1bd56c6cc09849",
+    "rw": false,
+    "denyApps": [
+      "repartition"
+    ],
+    "login": "sophie.de-velder"
   }
 ]
