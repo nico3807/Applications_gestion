@@ -22,13 +22,64 @@ const SEMESTRES = [
   "S6 dev",
 ];
 
+/* Données SAÉ par défaut (PN 2022) — toujours disponibles même sans JSON */
+const _SAE_DEFAULT = {
+  semestres: ["S1", "S2"],
+  sae: {
+    S1: [
+      { code: "SAÉ 1.01", intitule: "Auditer une communication numérique",
+        competence: "Comprendre les écosystèmes, les besoins des utilisateurs et les dispositifs de communication numérique",
+        ressources: ["R1.03 | Ergonomie et Accessibilité","R1.04 | Culture numérique","R1.05 | Stratégies de communication et marketing","R1.09 | Culture artistique","R1.14 | Représentation et traitement de l'information","R1.16 | Économie, gestion et droit du numérique"],
+        responsable: "" },
+      { code: "SAÉ 1.02", intitule: "Concevoir une recommandation de communication numérique",
+        competence: "Concevoir ou co-concevoir une réponse stratégique pertinente à une problématique complexe",
+        ressources: ["R1.01 | Anglais","R1.02 | Anglais Renforcé ou LV2","R1.05 | Stratégies de communication et marketing","R1.06 | Expression, communication et rhétorique"],
+        responsable: "" },
+      { code: "SAÉ 1.03", intitule: "Produire les éléments d'une communication visuelle",
+        competence: "Exprimer un message avec les médias numériques pour informer et communiquer",
+        ressources: ["R1.01 | Anglais","R1.08 | Production graphique","R1.09 | Culture artistique","R1.14 | Représentation et traitement de l'information"],
+        responsable: "" },
+      { code: "SAÉ 1.04", intitule: "Produire un contenu audio et vidéo",
+        competence: "Exprimer un message avec les médias numériques pour informer et communiquer",
+        ressources: ["R1.07 | Écriture multimédia et narration","R1.10 | Production audio et vidéo","R1.14 | Représentation et traitement de l'information"],
+        responsable: "" },
+      { code: "SAÉ 1.05", intitule: "Produire un site Web",
+        competence: "Développer pour le web et les médias numériques",
+        ressources: ["R1.11 | Intégration","R1.12 | Développement Web","R1.13 | Hébergement"],
+        responsable: "" },
+      { code: "SAÉ 1.06", intitule: "Gérer un projet de communication numérique",
+        competence: "Entreprendre dans le secteur du numérique",
+        ressources: ["R1.01 | Anglais","R1.02 | Anglais Renforcé ou LV2","R1.06 | Expression, communication et rhétorique","R1.15 | Gestion de projet","R1.16 | Économie, gestion et droit du numérique","R1.17 | Projet Personnel et Professionnel"],
+        responsable: "" }
+    ],
+    S2: [
+      { code: "SAÉ 2.01", intitule: "Explorer les usages du numérique",
+        competence: "Comprendre les écosystèmes, les besoins des utilisateurs et les dispositifs de communication numérique",
+        ressources: ["R2.01 | Anglais","R2.02 | Anglais Renforcé ou LV2","R2.03 | Ergonomie et Accessibilité","R2.04 | Culture numérique","R2.05 | Stratégies de communication et marketing","R2.06 | Expression, communication et rhétorique","R2.07 | Écriture multimédia et narration","R2.16 | Représentation et traitement de l'information"],
+        responsable: "" },
+      { code: "SAÉ 2.02", intitule: "Concevoir un produit ou un service et sa communication",
+        competence: "Concevoir · Exprimer · Développer · Entreprendre",
+        ressources: ["R2.08 | Production graphique","R2.09 | Culture artistique","R2.10 | Production audio et vidéo","R2.11 | Gestion de contenus","R2.16 | Représentation et traitement de l'information","R2.17 | Gestion de projet","R2.18 | Économie, gestion et droit du numérique","R2.19 | Projet Personnel et Professionnel"],
+        responsable: "" },
+      { code: "SAÉ 2.03", intitule: "Concevoir un site web avec une source de données",
+        competence: "Développer pour le web et les médias numériques",
+        ressources: ["R2.12 | Intégration","R2.13 | Développement Web","R2.14 | Système d'information","R2.15 | Hébergement"],
+        responsable: "" },
+      { code: "SAÉ 2.04", intitule: "Construire sa présence en ligne",
+        competence: "Entreprendre dans le secteur du numérique",
+        ressources: ["R2.06 | Expression, communication et rhétorique","R2.19 | Projet Personnel et Professionnel"],
+        responsable: "" }
+    ]
+  }
+};
+
 let APP_DATA = {
   affectations: {},
   enseignants: [],
   maquette_overrides: {},
   modifications: [],
   volume_horaire_national: {},
-  sae: { semestres: ["S1", "S2"], sae: {} },
+  sae: JSON.parse(JSON.stringify(_SAE_DEFAULT)),
 };
 
 let _pendingMods = [];
@@ -1900,6 +1951,23 @@ window.switchArchiveVersion = async function () {
   await loadData();
 };
 
+/* Fusionne les responsables chargés depuis sae_data.json dans la structure par défaut */
+function _mergeSaeResponsables(loaded) {
+  if (!loaded || !loaded.sae) return;
+  Object.entries(loaded.sae).forEach(([sem, list]) => {
+    if (!Array.isArray(list)) return;
+    if (!APP_DATA.sae.sae[sem]) {
+      APP_DATA.sae.sae[sem] = list; /* Semestre inconnu → insérer tel quel */
+      if (!APP_DATA.sae.semestres.includes(sem)) APP_DATA.sae.semestres.push(sem);
+      return;
+    }
+    list.forEach((entry) => {
+      const local = APP_DATA.sae.sae[sem].find((s) => s.code === entry.code);
+      if (local) local.responsable = entry.responsable || local.responsable;
+    });
+  });
+}
+
 async function loadData() {
   const localBase = ARCHIVE_MODE ? "archive_25-26/data" : "data";
   const ghBase = ARCHIVE_MODE ? GH_ARCHIVE_PATH : GH_BASE_PATH;
@@ -1934,7 +2002,7 @@ async function loadData() {
     if (maq) APP_DATA.maquette_overrides = maq;
     if (mods) APP_DATA.modifications = mods;
     if (vhn) APP_DATA.volume_horaire_national = vhn;
-    if (sae) APP_DATA.sae = sae;
+    if (sae) _mergeSaeResponsables(sae);
   } catch (e) {
     console.warn("Local load failed (file:// ?)", e);
   }
@@ -1955,7 +2023,7 @@ async function loadData() {
       if (maq) APP_DATA.maquette_overrides = maq;
       if (mods) APP_DATA.modifications = mods;
       if (vhn) APP_DATA.volume_horaire_national = vhn;
-      if (sae) APP_DATA.sae = sae;
+      if (sae) _mergeSaeResponsables(sae);
     } catch (e) {
       console.warn("GH load failed, données locales conservées", e);
     }
