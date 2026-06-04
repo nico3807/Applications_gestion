@@ -917,6 +917,36 @@ let vacanceDates = new Set();
      MODALE AJOUT D'ÉVÉNEMENT
   ===================================================================== */
 
+/* ── Données SAÉ chargées depuis la répartition ─────────────────────────── */
+let _saeData = null;
+
+async function _loadSaeData() {
+  if (_saeData) return;
+  try {
+    const r = await fetch("../repartition/data/sae_data.json?_t=" + Date.now(), { cache: "no-cache" });
+    if (r.ok) _saeData = await r.json();
+  } catch {}
+}
+
+function _buildSaeDropdown() {
+  const sel = document.getElementById("evtSaeSelect");
+  sel.innerHTML = '<option value="">— Choisir une SAÉ —</option>';
+  if (!_saeData) return;
+  (_saeData.semestres || []).forEach((sem) => {
+    const list = (_saeData.sae || {})[sem] || [];
+    if (!list.length) return;
+    const grp = document.createElement("optgroup");
+    grp.label = sem;
+    list.forEach((s) => {
+      const opt = document.createElement("option");
+      opt.value = s.code;
+      opt.textContent = s.code;
+      grp.appendChild(opt);
+    });
+    sel.appendChild(grp);
+  });
+}
+
 /** Ouvre la modale et pré-remplit la date de début avec le jour cliqué */
 function openAddEventModal(dateStr) {
   document.getElementById("evtStart").value = dateStr;
@@ -924,9 +954,15 @@ function openAddEventModal(dateStr) {
   document.getElementById("evtGroup").value = "";
   document.getElementById("evtTitle").value = "";
   document.getElementById("evtError").textContent = "";
-  document
-    .querySelectorAll("#evtForm .form-ctrl")
+  /* Reset case SAÉ */
+  const saeCheck = document.getElementById("evtSaeCheck");
+  saeCheck.checked = false;
+  document.getElementById("evtSaeRow").style.display = "none";
+  document.getElementById("evtSaeSelect").value = "";
+  document.querySelectorAll("#evtForm .form-ctrl")
     .forEach((el) => el.classList.remove("invalid"));
+  /* Charger les SAÉ si pas encore fait */
+  _loadSaeData().then(_buildSaeDropdown);
   document.getElementById("evtModal").showModal();
 }
 
@@ -934,6 +970,22 @@ function openAddEventModal(dateStr) {
 function closeAddEventModal() {
   document.getElementById("evtModal").close();
 }
+
+/* Afficher/masquer la liste SAÉ selon la case à cocher */
+document.addEventListener("DOMContentLoaded", () => {
+  document.getElementById("evtSaeCheck").addEventListener("change", function () {
+    document.getElementById("evtSaeRow").style.display = this.checked ? "" : "none";
+    if (!this.checked) document.getElementById("evtTitle").value = "";
+  });
+  document.getElementById("evtSaeSelect").addEventListener("change", function () {
+    if (this.value) {
+      const [, title] = this.value.includes(" | ")
+        ? this.value.split(" | ")
+        : [this.value, this.value];
+      document.getElementById("evtTitle").value = this.value; /* code complet comme intitulé */
+    }
+  });
+});
 
 /* =====================================================================
      MODALE DÉTAIL / SUPPRESSION D'ÉVÉNEMENT

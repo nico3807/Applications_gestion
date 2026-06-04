@@ -297,10 +297,22 @@
           </div>
         </div>
 
-        <div class="form-row">
-          <label class="form-label" for="evtTitle">Intitulé</label>
-          <input class="form-ctrl" type="text" id="evtTitle" required
-                 placeholder="Nom de l'événement" maxlength="120">
+        <div class="form-row" style="align-items:center;">
+          <label class="form-label">Intitulé</label>
+          <div style="display:flex;align-items:center;gap:10px;flex:1;">
+            <input class="form-ctrl" type="text" id="evtTitle" required
+                   placeholder="Nom de l'événement" maxlength="120" style="flex:1;">
+            <label style="display:flex;align-items:center;gap:5px;white-space:nowrap;font-size:13px;cursor:pointer;">
+              <input type="checkbox" id="evtSaeCheck" autocomplete="off"> SAÉ
+            </label>
+          </div>
+        </div>
+
+        <div class="form-row" id="evtSaeRow" style="display:none;">
+          <label class="form-label" for="evtSaeSelect">SAÉ</label>
+          <select class="form-ctrl" id="evtSaeSelect">
+            <option value="">— Choisir une SAÉ —</option>
+          </select>
         </div>
 
         <p id="evtError" class="form-error" role="alert" aria-live="polite"></p>
