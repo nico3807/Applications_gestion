@@ -2,54 +2,56 @@
   "semestres": ["S1", "S2", "S3", "S4 crea", "S4 dev", "S5 crea", "S5 dev", "S6 crea", "S6 dev"],
   "sae": {
     "S1": [
-      { "code": "SAÉ 1.01", "responsable": "" },
-      { "code": "SAÉ 1.02", "responsable": "" },
-      { "code": "SAÉ 1.03", "responsable": "" },
-      { "code": "SAÉ 1.04", "responsable": "" },
-      { "code": "SAÉ 1.05", "responsable": "" },
-      { "code": "SAÉ 1.06", "responsable": "" }
+      { "code": "SAÉ 1.01 | Auditer une communication numérique", "responsable": "" },
+      { "code": "SAÉ 1.02 | Concevoir une recommandation de communication numérique", "responsable": "" },
+      { "code": "SAÉ 1.03 | Produire les éléments d'une communication visuelle", "responsable": "" },
+      { "code": "SAÉ 1.04 | Produire un contenu audio et vidéo", "responsable": "" },
+      { "code": "SAÉ 1.05 | Produire un site Web", "responsable": "" },
+      { "code": "SAÉ 1.06 | Gérer un projet de communication numérique", "responsable": "" }
     ],
     "S2": [
-      { "code": "SAÉ 2.01", "responsable": "" },
-      { "code": "SAÉ 2.02", "responsable": "" },
-      { "code": "SAÉ 2.03", "responsable": "" },
-      { "code": "SAÉ 2.04", "responsable": "" }
+      { "code": "SAÉ 2.01 | Explorer les usages du numérique", "responsable": "" },
+      { "code": "SAÉ 2.02 | Concevoir un produit ou un service et sa communication", "responsable": "" },
+      { "code": "SAÉ 2.03 | Concevoir un site web avec une source de données", "responsable": "" },
+      { "code": "SAÉ 2.04 | Construire sa présence en ligne", "responsable": "" },
+      { "code": "SAÉ 2.98 | Hackathon", "responsable": "" },
+      { "code": "SAÉ 2.99 | Marathon MMI", "responsable": "" }
     ],
     "S3": [
-      { "code": "SAÉ 3.02 ★", "responsable": "" },
-      { "code": "SAÉ 3.Crea.01", "responsable": "" },
-      { "code": "SAÉ 3.Crea.03", "responsable": "" },
-      { "code": "SAÉ 3.DWeb-DI.01", "responsable": "" },
-      { "code": "SAÉ 3.DWeb-DI.03", "responsable": "" }
+      { "code": "SAÉ 3.01 | Intégrer des interfaces utilisateurs au sein d'un système d'information", "responsable": "" },
+      { "code": "SAÉ 3.02 | Produire des contenus pour une communication plurimédia", "responsable": "" },
+      { "code": "SAÉ 3.03 | Concevoir des visualisations de données pour le web et un support animé", "responsable": "" }
     ],
     "S4 crea": [
-      { "code": "SAÉ 4.Crea.01", "responsable": "" },
-      { "code": "SAÉ 4.Crea.02", "responsable": "" },
+      { "code": "SAÉ 4.Crea.01 | Créer pour une campagne de communication visuelle", "responsable": "" },
+      { "code": "SAÉ 4.Crea.02 | Produire du contenu multimédia", "responsable": "" },
+      { "code": "SAÉ 4.Crea.03 | SAE langues", "responsable": "" },
       { "code": "SAÉ 4.98 | Hackathon", "responsable": "" },
       { "code": "SAÉ 4.99 | Marathon MMI", "responsable": "" }
     ],
     "S4 dev": [
-      { "code": "SAÉ 4.DWeb-DI.01", "responsable": "" },
-      { "code": "SAÉ 4.DWeb-DI.02", "responsable": "" },
+      { "code": "SAÉ 4.DWeb-DI.01 | Développer pour le Web", "responsable": "" },
+      { "code": "SAÉ 4.DWeb-DI.02 | Concevoir un dispositif interactif", "responsable": "" },
+      { "code": "SAÉ 4.DWeb-DI.04 | Apprentis : Interface, contenus et visualisation", "responsable": "" },
       { "code": "SAÉ 4.98 | Hackathon", "responsable": "" },
       { "code": "SAÉ 4.99 | Marathon MMI", "responsable": "" }
     ],
     "S5 crea": [
-      { "code": "SAÉ 5.Crea.01", "responsable": "" },
+      { "code": "SAÉ 5.Crea.01 | Créer par/pour le numérique", "responsable": "" },
       { "code": "SAÉ 5.Crea.02 | SAE Management", "responsable": "" },
       { "code": "SAÉ 5.Crea.03 | SAE Conception d'interface", "responsable": "" }
     ],
     "S5 dev": [
-      { "code": "SAÉ 5.DWeb-DI.01", "responsable": "" },
+      { "code": "SAÉ 5D.01 | Développer pour le web", "responsable": "" },
       { "code": "SAÉ 5D.02 | SAE Management", "responsable": "" },
       { "code": "SAÉ 5D.03 | Concevoir un dispositif interactif", "responsable": "" },
       { "code": "SAÉ 5D.04 | Integration d'un LLM", "responsable": "" }
     ],
     "S6 crea": [
-      { "code": "SAÉ 6.Crea.01", "responsable": "" }
+      { "code": "SAÉ 6.Crea.01 | UX / UI avancé", "responsable": "" }
     ],
     "S6 dev": [
-      { "code": "SAÉ 6.dev.01", "responsable": "" }
+      { "code": "SAÉ 6.dev.01 | Developpement avancé", "responsable": "" }
     ]
   }
 }
