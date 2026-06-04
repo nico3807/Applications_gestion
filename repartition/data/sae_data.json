@@ -40,15 +40,16 @@
       { "code": "SAÉ 5.Crea.03 | SAE Conception d'interface", "responsable": "" }
     ],
     "S5 dev": [
-      { "code": "SAÉ 5.DWeb-DI.01", "responsable": "" }
+      { "code": "SAÉ 5.DWeb-DI.01", "responsable": "" },
+      { "code": "SAÉ 5D.02 | SAE Management", "responsable": "" },
+      { "code": "SAÉ 5D.03 | Concevoir un dispositif interactif", "responsable": "" },
+      { "code": "SAÉ 5D.04 | Integration d'un LLM", "responsable": "" }
     ],
     "S6 crea": [
-      { "code": "STAGE.Crea", "responsable": "" },
-      { "code": "PORTFOLIO | Portfolio-Parcours Création Numérique", "responsable": "" }
+      { "code": "SAÉ 6.Crea.01", "responsable": "" }
     ],
     "S6 dev": [
-      { "code": "STAGE.DWeb-DI", "responsable": "" },
-      { "code": "PORTFOLIO | Portfolio-Parcours Dev", "responsable": "" }
+      { "code": "SAÉ 6.dev.01", "responsable": "" }
     ]
   }
 }

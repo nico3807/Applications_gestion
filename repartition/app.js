@@ -146,26 +146,24 @@ const _SAE_DEFAULT = {
       { code: "SAÉ 5.DWeb-DI.01", intitule: "Développer pour le web ou Concevoir un dispositif interactif",
         competence: "Développer · Entreprendre",
         ressources: ["R5.01 | Anglais","R5.02 | Management et Assurance qualité","R5.03 | Entrepreneuriat","R5.04 | Projet Personnel et Professionnel","R5.DWeb-DI.05 | Développement front avancé","R5.DWeb-DI.06 | Développement back avancé","R5.DWeb-DI.07 | Dispositifs interactifs","R5.DWeb-DI.08 | Hébergement et cybersécurité"],
-        responsable: "" }
+        responsable: "" },
+      { code: "SAÉ 5D.02 | SAE Management", intitule: "SAE Management",
+        competence: "", ressources: [], responsable: "" },
+      { code: "SAÉ 5D.03 | Concevoir un dispositif interactif", intitule: "Concevoir un dispositif interactif",
+        competence: "", ressources: [], responsable: "" },
+      { code: "SAÉ 5D.04 | Integration d'un LLM", intitule: "Integration d'un LLM",
+        competence: "", ressources: [], responsable: "" }
     ],
     "S6 crea": [
-      { code: "STAGE.Crea", intitule: "Stage de fin de cursus",
-        competence: "Toutes compétences — ressources acquises tout au long du parcours",
+      { code: "SAÉ 6.Crea.01", intitule: "UX / UI avancé",
+        competence: "",
         ressources: [],
-        responsable: "" },
-      { code: "PORTFOLIO | Portfolio-Parcours Création Numérique", intitule: "Démarche portfolio (évaluation finale)",
-        competence: "Exprimer · Entreprendre",
-        ressources: ["R6.01 | Entrepreneuriat","R6.Crea.02 | Création numérique interactive"],
         responsable: "" }
     ],
     "S6 dev": [
-      { code: "STAGE.DWeb-DI", intitule: "Stage de fin de cursus",
-        competence: "Développer · Entreprendre",
-        ressources: ["R6.DWeb-DI.02 | Développement Web et dispositif interactif"],
-        responsable: "" },
-      { code: "PORTFOLIO | Portfolio-Parcours Dev", intitule: "Démarche portfolio (évaluation finale)",
-        competence: "Développer · Entreprendre",
-        ressources: ["R6.01 | Entrepreneuriat"],
+      { code: "SAÉ 6.dev.01", intitule: "Développement avancé",
+        competence: "",
+        ressources: [],
         responsable: "" }
     ]
   }
