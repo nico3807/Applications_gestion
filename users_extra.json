@@ -47,5 +47,13 @@
       "repartition"
     ],
     "login": "chrysta.pelissier"
+  },
+  {
+    "h": "abecb3fbe2d656c38134708d66255fa5ff27b499148efdf0bfb49ffb7213da79",
+    "rw": false,
+    "denyApps": [
+      "repartition"
+    ],
+    "login": "caroline.surribas"
   }
 ]
