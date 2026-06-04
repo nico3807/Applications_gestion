@@ -459,6 +459,14 @@ window.AUTH = {
       if (_extraUsersPromise)
         await _extraUsersPromise; /* Attendre le chargement des utilisateurs GitHub */
       if (await AUTH.login(login, pwd)) {
+        /* Signaler à Chrome/Edge de proposer la sauvegarde du mot de passe */
+        if (window.PasswordCredential) {
+          try {
+            await navigator.credentials.store(
+              new PasswordCredential({ id: login.trim().toLowerCase(), password: pwd })
+            );
+          } catch {}
+        }
         document.getElementById("auth-overlay").remove();
         const appRoot = document.getElementById("app-root");
         if (appRoot) appRoot.style.display = "";
