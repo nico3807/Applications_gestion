@@ -31,5 +31,13 @@
       "repartition"
     ],
     "login": "sophie.de-velder"
+  },
+  {
+    "h": "2703a12457cbadc0c397ffac71a00ec206cb0b91ce74e8dc1c7b72a4bf8afbe7",
+    "rw": false,
+    "denyApps": [
+      "repartition"
+    ],
+    "login": "davide.di-pierro"
   }
 ]
