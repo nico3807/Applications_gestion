@@ -73,5 +73,13 @@
     "h": "b6464e3bc88e10e0f92a7418c22143290900118e1ec7dc2039ab169c7c23a577",
     "rw": false,
     "login": "sylvie.escaig"
+  },
+  {
+    "h": "35b7123a725f50dee3c17586c037b95c25aee4284de39e31fc67be4c6105078b",
+    "rw": false,
+    "denyApps": [
+      "repartition"
+    ],
+    "login": "emmanuel.tehrond"
   }
 ]
