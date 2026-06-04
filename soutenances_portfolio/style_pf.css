@@ -1,19 +1,19 @@
 :root {
-  --bg: #0d1117;
-  --surface: #161b22;
-  --surface2: #21262d;
-  --surface3: #2d333b;
-  --border: #30363d;
-  --accent: #58a6ff;
-  --accent2: #79c0ff;
-  --text: #e6edf3;
-  --sub: #8b949e;
-  --muted: #6e7681;
-  --green: #3fb950;
-  --green-bg: rgba(63, 185, 80, 0.15);
-  --blue-bg: rgba(88, 166, 255, 0.15);
-  --r: 12px;
-  --shadow: 0 4px 20px rgba(0, 0, 0, 0.55);
+  --bg: #fafaf8;
+  --surface: #ffffff;
+  --surface2: #f3f4f6;
+  --surface3: #e5e7eb;
+  --border: #e0e0d8;
+  --accent: #1e3a5f;
+  --accent2: #2d5f8a;
+  --text: #1a1a1a;
+  --sub: #6b7280;
+  --muted: #9ca3af;
+  --green: #16a34a;
+  --green-bg: #d1fae5;
+  --blue-bg: #dbeafe;
+  --r: 10px;
+  --shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
 *,
 ::before,
@@ -40,10 +40,8 @@ a {
   position: sticky;
   top: 0;
   z-index: 100;
-  background: rgba(13, 17, 23, 0.9);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border-bottom: 1px solid var(--border);
+  background: #1e3a5f;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
   padding: 0 28px;
   height: 56px;
   display: flex;
@@ -54,7 +52,7 @@ a {
   display: flex;
   align-items: center;
   gap: 6px;
-  color: var(--accent);
+  color: rgba(255, 255, 255, 0.8);
   font-size: 14px;
   padding: 6px 12px;
   border-radius: 6px;
@@ -72,13 +70,14 @@ a {
 .nav-title {
   font-weight: 600;
   font-size: 15px;
+  color: #ffffff;
 }
 .nav-spacer {
   flex: 1;
 }
 .pdf-btn {
   background: var(--accent);
-  color: #0d1117;
+  color: #ffffff;
   border: none;
   border-radius: 6px;
   padding: 7px 16px;
@@ -114,7 +113,7 @@ a {
 }
 .save-btn:hover {
   background: var(--accent);
-  color: #0d1117;
+  color: #ffffff;
 }
 .save-btn svg {
   width: 15px;
@@ -603,7 +602,7 @@ a {
 }
 .gh-btn-save {
   background: var(--accent);
-  color: #0d1117;
+  color: #ffffff;
   border: none;
   border-radius: 6px;
   padding: 8px 18px;
@@ -690,7 +689,7 @@ a {
 }
 .cfg-btn:hover {
   background: #e3b341;
-  color: #0d1117;
+  color: #ffffff;
 }
 .cfg-modal {
   background: var(--surface);
