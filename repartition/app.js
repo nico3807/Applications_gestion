@@ -24,7 +24,7 @@ const SEMESTRES = [
 
 /* Données SAÉ par défaut (PN 2022) — toujours disponibles même sans JSON */
 const _SAE_DEFAULT = {
-  semestres: ["S1", "S2"],
+  semestres: ["S1", "S2", "S3", "S4 crea", "S4 dev", "S5 crea", "S5 dev", "S6 crea", "S6 dev"],
   sae: {
     S1: [
       { code: "SAÉ 1.01", intitule: "Auditer une communication numérique",
@@ -68,6 +68,104 @@ const _SAE_DEFAULT = {
       { code: "SAÉ 2.04", intitule: "Construire sa présence en ligne",
         competence: "Entreprendre dans le secteur du numérique",
         ressources: ["R2.06 | Expression, communication et rhétorique","R2.19 | Projet Personnel et Professionnel"],
+        responsable: "" }
+    ],
+    S3: [
+      { code: "SAÉ 3.02 ★", intitule: "Produire des contenus pour une communication plurimédia (commune aux 3 parcours)",
+        competence: "Comprendre · Concevoir · Exprimer · Entreprendre",
+        ressources: ["R3.01 | Anglais","R3.02 | Anglais Renforcé ou LV2","R3.06 | Référencement","R3.07 | Expression, communication et rhétorique","R3.08 | Écriture multimédia et narration","R3.10 | Culture artistique","R3.11 | Audiovisuel et Motion design","R3.15 | Représentation et traitement de l'information","R3.17 | Économie, gestion et droit du numérique"],
+        responsable: "" },
+      { code: "SAÉ 3.Crea.01", intitule: "Intégrer des interfaces utilisateurs au sein d'un système d'information",
+        competence: "Comprendre · Concevoir · Développer · Entreprendre",
+        ressources: ["R3.03 | Design d'expérience","R3.04 | Culture numérique","R3.12 | Développement Front et intégration","R3.Crea.13 | Gestion de contenus avancée","R3.14 | Déploiement de services","R3.16 | Gestion de projet","R3.17 | Économie, gestion et droit du numérique","R3.18 | Projet Personnel et Professionnel"],
+        responsable: "" },
+      { code: "SAÉ 3.Crea.03", intitule: "Concevoir des visualisations de données pour le web et un support animé",
+        competence: "Comprendre · Exprimer · Développer",
+        ressources: ["R3.Crea.09 | Création et design interactif (UI)","R3.10 | Culture artistique","R3.11 | Audiovisuel et Motion design","R3.12 | Développement Front et intégration","R3.15 | Représentation et traitement de l'information"],
+        responsable: "" },
+      { code: "SAÉ 3.DWeb-DI.01", intitule: "Développer des parcours utilisateur au sein d'un système d'information",
+        competence: "Comprendre · Concevoir · Développer · Entreprendre",
+        ressources: ["R3.03 | Design d'expérience","R3.04 | Culture numérique","R3.12 | Développement Front et intégration","R3.DWeb-DI.13 | Développement Back","R3.14 | Déploiement de services","R3.16 | Gestion de projet","R3.17 | Économie, gestion et droit du numérique","R3.18 | Projet Personnel et Professionnel"],
+        responsable: "" },
+      { code: "SAÉ 3.DWeb-DI.03", intitule: "Concevoir des visualisations de données pour le web et une application interactive",
+        competence: "Comprendre · Exprimer · Développer",
+        ressources: ["R3.DWeb-DI.09 | Création et design interactif (UI)","R3.10 | Culture artistique","R3.11 | Audiovisuel et Motion design","R3.12 | Développement Front et intégration","R3.15 | Représentation et traitement de l'information"],
+        responsable: "" }
+    ],
+    "S4 crea": [
+      { code: "SAÉ 4.Crea.01", intitule: "Créer pour une campagne de communication visuelle",
+        competence: "Comprendre · Concevoir · Exprimer · Entreprendre",
+        ressources: ["R4.Crea.01 | Anglais","R4.02 | Économie, gestion et Droit du numérique","R4.03 | Design d'expérience","R4.Crea.06 | Culture artistique"],
+        responsable: "" },
+      { code: "SAÉ 4.Crea.02", intitule: "Produire du contenu multimédia",
+        competence: "Concevoir · Exprimer · Développer · Entreprendre",
+        ressources: ["R4.Crea.01 | Anglais","R4.03 | Design d'expérience","R4.04 | Expression, communication","R4.Crea.05 | Gestion de contenus spécialisée","R4.Crea.07 | Audiovisuel – Motion design","R4.Crea.08 | Écriture multimédia et narration"],
+        responsable: "" },
+      { code: "SAÉ 4.98 | Hackathon", intitule: "Hackathon",
+        competence: "Toutes compétences",
+        ressources: [],
+        responsable: "" },
+      { code: "SAÉ 4.99 | Marathon MMI", intitule: "Marathon MMI",
+        competence: "Toutes compétences",
+        ressources: [],
+        responsable: "" }
+    ],
+    "S4 dev": [
+      { code: "SAÉ 4.DWeb-DI.01", intitule: "Développer pour le Web",
+        competence: "Comprendre · Concevoir · Développer · Entreprendre",
+        ressources: ["R4.DWeb-DI.01 | Anglais","R4.02 | Économie, gestion et Droit du numérique","R4.03 | Design d'expérience","R4.04 | Expression, communication","R4.DWeb-DI.06 | Développement front","R4.DWeb-DI.07 | Développement back","R4.DWeb-DI.08 | Déploiement de services"],
+        responsable: "" },
+      { code: "SAÉ 4.DWeb-DI.02", intitule: "Concevoir un dispositif interactif",
+        competence: "Exprimer · Développer",
+        ressources: ["R4.DWeb-DI.01 | Anglais","R4.DWeb-DI.05 | Création et design interactif","R4.DWeb-DI.06 | Développement front"],
+        responsable: "" },
+      { code: "SAÉ 4.98 | Hackathon", intitule: "Hackathon",
+        competence: "Toutes compétences",
+        ressources: [],
+        responsable: "" },
+      { code: "SAÉ 4.99 | Marathon MMI", intitule: "Marathon MMI",
+        competence: "Toutes compétences",
+        ressources: [],
+        responsable: "" }
+    ],
+    "S5 crea": [
+      { code: "SAÉ 5.Crea.01", intitule: "Créer par/pour le numérique",
+        competence: "Exprimer · Entreprendre",
+        ressources: ["R5.01 | Anglais","R5.02 | Management et Assurance qualité","R5.03 | Entrepreneuriat","R5.04 | Projet Personnel et Professionnel","R5.Crea.05 | Définir une direction artistique","R5.Crea.06 | Création numérique","R5.Crea.07 | Écriture Multimédia et narration"],
+        responsable: "" },
+      { code: "SAÉ 5.Crea.02 | SAE Management", intitule: "SAE Management",
+        competence: "Entreprendre",
+        ressources: [],
+        responsable: "" },
+      { code: "SAÉ 5.Crea.03 | SAE Conception d'interface", intitule: "SAE Conception d'interface",
+        competence: "Concevoir · Exprimer",
+        ressources: [],
+        responsable: "" }
+    ],
+    "S5 dev": [
+      { code: "SAÉ 5.DWeb-DI.01", intitule: "Développer pour le web ou Concevoir un dispositif interactif",
+        competence: "Développer · Entreprendre",
+        ressources: ["R5.01 | Anglais","R5.02 | Management et Assurance qualité","R5.03 | Entrepreneuriat","R5.04 | Projet Personnel et Professionnel","R5.DWeb-DI.05 | Développement front avancé","R5.DWeb-DI.06 | Développement back avancé","R5.DWeb-DI.07 | Dispositifs interactifs","R5.DWeb-DI.08 | Hébergement et cybersécurité"],
+        responsable: "" }
+    ],
+    "S6 crea": [
+      { code: "STAGE.Crea", intitule: "Stage de fin de cursus",
+        competence: "Toutes compétences — ressources acquises tout au long du parcours",
+        ressources: [],
+        responsable: "" },
+      { code: "PORTFOLIO | Portfolio-Parcours Création Numérique", intitule: "Démarche portfolio (évaluation finale)",
+        competence: "Exprimer · Entreprendre",
+        ressources: ["R6.01 | Entrepreneuriat","R6.Crea.02 | Création numérique interactive"],
+        responsable: "" }
+    ],
+    "S6 dev": [
+      { code: "STAGE.DWeb-DI", intitule: "Stage de fin de cursus",
+        competence: "Développer · Entreprendre",
+        ressources: ["R6.DWeb-DI.02 | Développement Web et dispositif interactif"],
+        responsable: "" },
+      { code: "PORTFOLIO | Portfolio-Parcours Dev", intitule: "Démarche portfolio (évaluation finale)",
+        competence: "Développer · Entreprendre",
+        ressources: ["R6.01 | Entrepreneuriat"],
         responsable: "" }
     ]
   }
