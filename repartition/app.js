@@ -475,6 +475,13 @@ function renderSemestre(root, sem) {
     </thead>
     <tbody>`;
 
+  /* Tri des ressources : Portfolio toujours en dernier */
+  const _affKeys = Object.keys(aff).sort((a, b) => {
+    const pa = a.toLowerCase().includes("portfolio") ? 1 : 0;
+    const pb = b.toLowerCase().includes("portfolio") ? 1 : 0;
+    return pa - pb;
+  });
+
   // Calcul des totaux
   let totPrevCM = 0,
     totPrevTD = 0,
@@ -482,7 +489,7 @@ function renderSemestre(root, sem) {
   let totCM = 0,
     totTD = 0,
     totTP = 0;
-  Object.keys(aff).forEach((res) => {
+  _affKeys.forEach((res) => {
     const data = aff[res];
     const prev = maq[res] || {};
     totPrevCM += parseFloat(prev.cm_final) || 0;
@@ -500,7 +507,7 @@ function renderSemestre(root, sem) {
     });
   });
 
-  Object.keys(aff).forEach((res, i) => {
+  _affKeys.forEach((res, i) => {
     const data = aff[res];
     const prev = maq[res] || {};
     const isSae = res.toLowerCase().includes("saé");
