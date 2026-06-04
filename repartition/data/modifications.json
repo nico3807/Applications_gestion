@@ -2014,5 +2014,59 @@
     "description": "Responsable SAÉ 1.01 | Auditer une communication numérique (S1)",
     "prev": "—",
     "next": "PELISSIER Chrysta"
+  },
+  {
+    "date": "04/06/2026",
+    "heure": "18:30:20",
+    "utilisateur": "nicolas.maurin",
+    "type": "Répartition",
+    "description": "S3 / SAÉ 3.01 | Intégrer des interfaces utilisateurs au sein d'un système d'information / tp",
+    "prev": "17.25",
+    "next": "0"
+  },
+  {
+    "date": "04/06/2026",
+    "heure": "18:30:23",
+    "utilisateur": "nicolas.maurin",
+    "type": "Répartition",
+    "description": "S3 / SAÉ 3.01 | Intégrer des interfaces utilisateurs au sein d'un système d'information / td",
+    "prev": "0",
+    "next": "17.25"
+  },
+  {
+    "date": "04/06/2026",
+    "heure": "18:30:24",
+    "utilisateur": "nicolas.maurin",
+    "type": "Répartition",
+    "description": "S3 / SAÉ 3.01 | Intégrer des interfaces utilisateurs au sein d'un système d'information / sous-groupe 1 / tp",
+    "prev": "22.5",
+    "next": "0"
+  },
+  {
+    "date": "04/06/2026",
+    "heure": "18:30:29",
+    "utilisateur": "nicolas.maurin",
+    "type": "Répartition",
+    "description": "S3 / SAÉ 3.01 | Intégrer des interfaces utilisateurs au sein d'un système d'information / sous-groupe 1 / td",
+    "prev": "0",
+    "next": "22.5"
+  },
+  {
+    "date": "04/06/2026",
+    "heure": "18:30:40",
+    "utilisateur": "nicolas.maurin",
+    "type": "Répartition",
+    "description": "S3 / SAÉ 3.01 | Intégrer des interfaces utilisateurs au sein d'un système d'information / tp",
+    "prev": "0",
+    "next": "0"
+  },
+  {
+    "date": "04/06/2026",
+    "heure": "18:30:45",
+    "utilisateur": "nicolas.maurin",
+    "type": "Répartition",
+    "description": "S3 / SAÉ 3.01 | Intégrer des interfaces utilisateurs au sein d'un système d'information / sous-groupe 1 / tp",
+    "prev": "0",
+    "next": "0"
   }
 ]

@@ -1743,14 +1743,14 @@
     "SAÉ 3.01 | Intégrer des interfaces utilisateurs au sein d'un système d'information": {
       "enseignant": "DARTIES Benoit",
       "cm": 1.5,
-      "td": 0,
-      "tp": 17.25,
+      "td": 17.25,
+      "tp": 0,
       "subrows": [
         {
           "enseignant": "MAURIN Nicolas",
           "cm": 0,
-          "td": 0,
-          "tp": 22.5
+          "td": 22.5,
+          "tp": 0
         }
       ],
       "responsable": ""
