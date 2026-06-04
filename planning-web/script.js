@@ -930,6 +930,7 @@ async function _loadSaeData() {
 
 function _buildSaeDropdown() {
   const sel = document.getElementById("evtSaeSelect");
+  if (!sel) return;
   sel.innerHTML = '<option value="">— Choisir une SAÉ —</option>';
   if (!_saeData) return;
   (_saeData.semestres || []).forEach((sem) => {
@@ -954,15 +955,17 @@ function openAddEventModal(dateStr) {
   document.getElementById("evtGroup").value = "";
   document.getElementById("evtTitle").value = "";
   document.getElementById("evtError").textContent = "";
-  /* Reset case SAÉ */
+  /* Reset case SAÉ (null-safe : éléments optionnels) */
   const saeCheck = document.getElementById("evtSaeCheck");
-  saeCheck.checked = false;
-  document.getElementById("evtSaeRow").style.display = "none";
-  document.getElementById("evtSaeSelect").value = "";
+  const saeRow   = document.getElementById("evtSaeRow");
+  const saeSel   = document.getElementById("evtSaeSelect");
+  if (saeCheck) saeCheck.checked = false;
+  if (saeRow)   saeRow.style.display = "none";
+  if (saeSel)   saeSel.value = "";
   document.querySelectorAll("#evtForm .form-ctrl")
     .forEach((el) => el.classList.remove("invalid"));
   /* Charger les SAÉ si pas encore fait */
-  _loadSaeData().then(_buildSaeDropdown);
+  if (saeCheck) _loadSaeData().then(_buildSaeDropdown);
   document.getElementById("evtModal").showModal();
 }
 
@@ -971,20 +974,24 @@ function closeAddEventModal() {
   document.getElementById("evtModal").close();
 }
 
-/* Afficher/masquer la liste SAÉ selon la case à cocher */
+/* Afficher/masquer la liste SAÉ selon la case à cocher (null-safe) */
 document.addEventListener("DOMContentLoaded", () => {
-  document.getElementById("evtSaeCheck").addEventListener("change", function () {
-    document.getElementById("evtSaeRow").style.display = this.checked ? "" : "none";
-    if (!this.checked) document.getElementById("evtTitle").value = "";
-  });
-  document.getElementById("evtSaeSelect").addEventListener("change", function () {
-    if (this.value) {
-      const [, title] = this.value.includes(" | ")
-        ? this.value.split(" | ")
-        : [this.value, this.value];
-      document.getElementById("evtTitle").value = this.value; /* code complet comme intitulé */
-    }
-  });
+  const saeCheck = document.getElementById("evtSaeCheck");
+  const saeSel   = document.getElementById("evtSaeSelect");
+  if (saeCheck) {
+    saeCheck.addEventListener("change", function () {
+      const row = document.getElementById("evtSaeRow");
+      if (row) row.style.display = this.checked ? "" : "none";
+      if (!this.checked) document.getElementById("evtTitle").value = "";
+    });
+  }
+  if (saeSel) {
+    saeSel.addEventListener("change", function () {
+      if (this.value) {
+        document.getElementById("evtTitle").value = this.value;
+      }
+    });
+  }
 });
 
 /* =====================================================================
