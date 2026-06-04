@@ -44,7 +44,9 @@
     {
       "day": 7,
       "weekday": "Mo",
-      "events": {},
+      "events": {
+        "Autre": "Jury de septembre"
+      },
       "week": 37
     },
     {
