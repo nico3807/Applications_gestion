@@ -5,47 +5,96 @@
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>Soutenances Stages MMI</title>
     <link rel="stylesheet" href="style_stages.css" />
+    <style>
+      /* ── Thème clair (style répartition) pour la page d'accueil uniquement ── */
+      body { background:#fafaf8; color:#1a1a1a; font-family:system-ui,-apple-system,sans-serif; display:flex; flex-direction:column; min-height:100vh; }
+
+      header { background:#1e3a5f; color:#fff; padding:0 1.5rem; position:sticky; top:0; z-index:200; }
+      .header-inner { max-width:1100px; margin:0 auto; display:flex; align-items:center; justify-content:space-between; height:54px; gap:1rem; }
+      .header-left  { display:flex; align-items:center; gap:1rem; }
+      .nav-home     { color:rgba(255,255,255,.75); font-size:13px; padding:5px 10px; border-radius:6px; text-decoration:none; transition:background .15s; }
+      .nav-home:hover { background:rgba(255,255,255,.12); color:#fff; }
+      .site-title   { font-size:15px; font-weight:700; color:#fff; }
+
+      main { max-width:1100px; margin:0 auto; padding:2rem 1.5rem 3rem; flex:1; width:100%; }
+
+      .hero { text-align:center; padding-bottom:1.75rem; border-bottom:1px solid #e0e0d8; margin-bottom:2rem; }
+      .hero h1 { font-size:22px; font-weight:700; color:#1e3a5f; background:none; -webkit-text-fill-color:#1e3a5f; letter-spacing:normal; }
+      .hero p  { color:#6b7280; font-size:14px; margin-top:6px; }
+
+      .index-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(220px,1fr)); gap:1rem; padding:0; max-width:none; margin:0; }
+      .index-row  { display:contents; }
+
+      .icard        { background:#fff; border:1px solid #e0e0d8; border-radius:10px; padding:1.75rem 1.5rem; color:#1e3a5f; flex-direction:column; gap:8px; transition:background .15s,box-shadow .15s,transform .15s; overflow:visible; }
+      .icard::after { display:none; }
+      .icard:hover  { background:#eef2ff; border-color:#1e3a5f; box-shadow:0 2px 10px rgba(0,0,0,.09); transform:translateY(-2px); }
+      .icard h2     { font-size:16px; font-weight:700; }
+      .icard-sub    { color:#6b7280; font-size:13px; }
+      .icard-arrow  { position:static; color:#1e3a5f; font-size:13px; font-weight:600; margin-top:6px; }
+
+      footer { background:#1e3a5f; color:rgba(255,255,255,.5); text-align:center; padding:.75rem; font-size:12px; }
+
+      #auth-badge { display:flex; align-items:center; gap:.75rem; font-size:13px; }
+      .auth-badge-user   { font-weight:600; color:#fff; }
+      .auth-badge-role   { color:rgba(255,255,255,.65); }
+      .auth-badge-logout { padding:4px 12px; background:rgba(255,255,255,.12); border:1px solid rgba(255,255,255,.25); border-radius:6px; color:#fff; font-size:12px; cursor:pointer; }
+      .auth-badge-logout:hover { background:rgba(255,255,255,.22); }
+    </style>
   </head>
   <body>
-    <a href="../index.html" title="Retour à l'accueil MMI" style="position:fixed;top:14px;left:20px;z-index:200;display:block;line-height:0;"><img src="../logo_mmi.jpg" alt="MMI" style="height:36px;width:auto;border-radius:4px;box-shadow:0 2px 8px rgba(0,0,0,0.4);display:block;"></a>
-    <div class="hero">
-      <h1>Soutenances Stages MMI</h1>
-      <p>Gestion des jurys de soutenance — IUT MMI</p>
-    </div>
-    <div class="index-grid" style="display: block">
-      <!-- Ligne 1 : MMI 2 Initiaux & Alternants -->
-      <div class="index-row">
-        <a href="mmi2_init_stages.html" class="icard">
-          <h2>MMI 2 — Initiaux</h2>
-          <div class="icard-sub" data-dates="mmi2_init_date"></div>
-          <div class="icard-arrow">Voir les jurys <span>→</span></div>
-        </a>
-        <a href="mmi2_alt_stages.html" class="icard">
-          <h2>MMI 2 — Alternants</h2>
-          <div class="icard-sub" data-dates="mmi2_alt_date"></div>
-          <div class="icard-arrow">Voir les jurys <span>→</span></div>
-        </a>
+    <header>
+      <div class="header-inner">
+        <div class="header-left">
+          <a href="../index.html" class="nav-home">← Accueil</a>
+          <span class="site-title">Soutenances Stages MMI</span>
+        </div>
+        <!-- Badge utilisateur injecté par auth.js -->
+      </div>
+    </header>
+
+    <main>
+      <div class="hero">
+        <h1>Soutenances Stages MMI</h1>
+        <p>Gestion des jurys de soutenance · IUT de Béziers</p>
       </div>
 
-      <!-- Ligne 3 : MMI 3 Initiaux & Alternants -->
-      <div class="index-row">
-        <a href="mmi3_init_stages.html" class="icard">
-          <h2>MMI 3 — Initiaux</h2>
-          <div class="icard-sub" data-dates="mmi3_init_date"></div>
-          <div class="icard-arrow">Voir les jurys <span>→</span></div>
-        </a>
-        <a href="mmi3_alt_stages.html" class="icard">
-          <h2>MMI 3 — Alternants</h2>
-          <div class="icard-sub" data-dates="mmi3_alt_date"></div>
-          <div class="icard-arrow">Voir les jurys <span>→</span></div>
-        </a>
+      <div class="index-grid">
+        <div class="index-row">
+          <a href="mmi2_init_stages.html" class="icard">
+            <h2>MMI 2 — Initiaux</h2>
+            <div class="icard-sub" data-dates="mmi2_init_date"></div>
+            <div class="icard-arrow">Voir les jurys →</div>
+          </a>
+          <a href="mmi2_alt_stages.html" class="icard">
+            <h2>MMI 2 — Alternants</h2>
+            <div class="icard-sub" data-dates="mmi2_alt_date"></div>
+            <div class="icard-arrow">Voir les jurys →</div>
+          </a>
+        </div>
+        <div class="index-row">
+          <a href="mmi3_init_stages.html" class="icard">
+            <h2>MMI 3 — Initiaux</h2>
+            <div class="icard-sub" data-dates="mmi3_init_date"></div>
+            <div class="icard-arrow">Voir les jurys →</div>
+          </a>
+          <a href="mmi3_alt_stages.html" class="icard">
+            <h2>MMI 3 — Alternants</h2>
+            <div class="icard-sub" data-dates="mmi3_alt_date"></div>
+            <div class="icard-arrow">Voir les jurys →</div>
+          </a>
+        </div>
       </div>
-    </div>
+    </main>
+
+    <footer>IUT de Béziers &nbsp;·&nbsp; Département MMI</footer>
 
     <script src="../auth.js"></script>
     <script>
       if (!AUTH.isAuth()) { location.href = '../index.html'; }
-      else if (!AUTH.canWrite()) { document.body.classList.add('auth-readonly'); }
+      else {
+        AUTH.injectBadge();
+        if (!AUTH.canWrite()) document.body.classList.add('auth-readonly');
+      }
     </script>
     <script src="app_stages.js"></script>
   </body>
