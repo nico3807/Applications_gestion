@@ -39,5 +39,13 @@
       "repartition"
     ],
     "login": "davide.di-pierro"
+  },
+  {
+    "h": "86eb27cd8f105b2c8223b07f037be481f32ea62fa1025e1c2e3a804a20e71785",
+    "rw": false,
+    "denyApps": [
+      "repartition"
+    ],
+    "login": "chrysta.pelissier"
   }
 ]
