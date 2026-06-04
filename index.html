@@ -3,97 +3,63 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>Gestion MMI - Applications</title>
+    <title>Gestion MMI — IUT de Béziers</title>
     <link rel="stylesheet" href="style.css" />
-    <style>
-      .root-header { background:#1e3a5f; padding:0 1.5rem; position:sticky; top:0; z-index:100; }
-      .root-header .header-inner { display:flex; align-items:center; justify-content:flex-end; min-height:40px; }
-
-      /* Boutons admin */
-      .adm-btn {
-        padding:10px 22px; border:none; border-radius:8px; font-size:14px; font-weight:600;
-        cursor:pointer; transition:opacity .15s;
-      }
-      .adm-btn:hover { opacity:.85; }
-      .adm-btn-add  { background:#1e3a5f; color:#fff; }
-      .adm-btn-edit { background:#fff; color:#1e3a5f; border:2px solid #1e3a5f; }
-
-      /* Modals */
-      .adm-overlay {
-        display:none; position:fixed; inset:0; background:rgba(0,0,0,.45);
-        z-index:200; align-items:center; justify-content:center;
-      }
-      .adm-overlay.open { display:flex; }
-      .adm-box {
-        background:#fff; border-radius:12px; padding:1.75rem;
-        width:min(620px, 96vw); max-height:90vh; overflow-y:auto;
-        box-shadow:0 8px 32px rgba(0,0,0,.18); position:relative;
-        color:#111;
-      }
-      .adm-box h2 { color:#1e3a5f; font-size:1.1rem; margin-bottom:1.25rem; }
-      .adm-section { background:#f0f4fb; border:1px solid #c7d2e8; border-radius:8px; padding:1rem; margin-bottom:1.25rem; }
-      .adm-section label { font-size:13px; font-weight:600; color:#111; display:block; margin-bottom:6px; }
-      .adm-field { display:flex; gap:8px; }
-      .adm-input { padding:8px 10px; border:1.5px solid #d1d5db; border-radius:6px; font-size:13px; width:100%; box-sizing:border-box; }
-      .adm-btn-save { padding:8px 16px; background:#1e3a5f; color:#fff; border:none; border-radius:6px; font-size:13px; cursor:pointer; white-space:nowrap; }
-      .adm-status  { font-size:11px; color:#6b7280; margin-top:4px; display:block; }
-      .adm-actions { display:flex; justify-content:flex-end; gap:.75rem; margin-top:1.25rem; }
-      .adm-close   { padding:9px 20px; border:1.5px solid #d1d5db; background:#fff; color:#374151; border-radius:6px; font-size:13px; cursor:pointer; }
-      .adm-submit  { padding:9px 20px; background:#1e3a5f; color:#fff; border:none; border-radius:6px; font-size:13px; cursor:pointer; }
-      .adm-err     { color:#dc2626; font-size:12px; margin-top:.6rem; display:none; }
-    </style>
   </head>
   <body>
     <div id="app-root">
-      <header class="root-header">
-        <div class="header-inner"><!-- Badge injecté par auth.js --></div>
+      <header>
+        <div class="header-inner">
+          <span class="site-title">Gestion Département MMI</span>
+          <!-- Badge utilisateur injecté par auth.js -->
+        </div>
       </header>
 
-      <div class="hero">
-        <div class="hero-title-row">
-          <img src="logo_IUT.png" alt="IUT" class="hero-logo" />
-          <h1>Gestion Département MMI</h1>
-          <img src="logo_mmi.jpg" alt="MMI" class="hero-logo" />
+      <main>
+        <div class="hero">
+          <div class="hero-title-row">
+            <img src="logo_IUT.png" alt="IUT" class="hero-logo" />
+            <h1>Gestion Département MMI</h1>
+            <img src="logo_mmi.jpg" alt="MMI" class="hero-logo" />
+          </div>
+          <p>Applications de gestion · BUT MMI · IUT de Béziers</p>
         </div>
-        <p>Applications de gestion - BUT MMI - IUT de Béziers</p>
-      </div>
 
-      <div class="index-grid">
-        <div class="index-row">
+        <div class="index-grid">
           <a href="planning-web/index.html" class="icard">
             <div class="icard-icon">📅</div>
             <h2>Planning MMI</h2>
             <div class="icard-sub">Calendrier des événements</div>
-            <div class="icard-arrow">Accéder <span>→</span></div>
+            <div class="icard-arrow">Accéder →</div>
           </a>
           <a href="repartition/index.html" class="icard">
             <div class="icard-icon">👥</div>
             <h2>Répartition MMI</h2>
-            <div class="icard-sub">Gestion des enseignants</div>
-            <div class="icard-arrow">Accéder <span>→</span></div>
+            <div class="icard-sub">Gestion des enseignants et services</div>
+            <div class="icard-arrow">Accéder →</div>
           </a>
-        </div>
-        <div class="index-row">
           <a href="soutenances_stages/index.html" class="icard">
             <div class="icard-icon">🎤</div>
             <h2>Soutenances Stages</h2>
             <div class="icard-sub">Gestion des jurys de stage</div>
-            <div class="icard-arrow">Accéder <span>→</span></div>
+            <div class="icard-arrow">Accéder →</div>
           </a>
           <a href="soutenances_portfolio/index.html" class="icard">
             <div class="icard-icon">🎯</div>
             <h2>Soutenances Portfolio</h2>
             <div class="icard-sub">Gestion des jurys de portfolio</div>
-            <div class="icard-arrow">Accéder <span>→</span></div>
+            <div class="icard-arrow">Accéder →</div>
           </a>
         </div>
-      </div>
 
-      <!-- Boutons admin (nicolas.maurin uniquement) -->
-      <div id="adm-btns" style="display:none; justify-content:center; gap:1rem; flex-wrap:wrap; padding:2rem 1rem 1rem;">
-        <button class="adm-btn adm-btn-add"  onclick="openAddUserModal()">➕ Ajouter un utilisateur</button>
-        <button class="adm-btn adm-btn-edit" onclick="openEditUserModal()">✏️ Modifier un utilisateur</button>
-      </div>
+        <!-- Boutons admin (nicolas.maurin uniquement) -->
+        <div id="adm-btns" class="adm-btn-row" style="display:none;">
+          <button class="adm-btn adm-btn-add"  onclick="openAddUserModal()">➕ Ajouter un utilisateur</button>
+          <button class="adm-btn adm-btn-edit" onclick="openEditUserModal()">✏️ Modifier un utilisateur</button>
+        </div>
+      </main>
+
+      <footer>IUT de Béziers &nbsp;·&nbsp; Département MMI</footer>
     </div>
 
     <!-- ═══ Modal : Ajouter un utilisateur ═══════════════════════════════ -->
