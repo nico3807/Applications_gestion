@@ -593,19 +593,29 @@ function renderSemestre(root, sem) {
     const tdStyle = _ecartStyle(resTD, parseFloat(prev.td_final) || 0);
     const tpStyle = _ecartStyle(resTP, parseFloat(prev.tp_final) || 0);
 
+    /* Pour les SAÉ : responsable lu depuis la section SAÉ (non éditable ici) */
+    const _saeList  = (APP_DATA.sae && APP_DATA.sae.sae[sem]) || [];
+    const _saeEntry = _saeList.find((s) => s.code === res);
+    const _saeResp  = _saeEntry ? (_saeEntry.responsable || "") : null;
+
+    const respCell = (isSae && _saeEntry !== undefined)
+      ? `<td colspan="2" class="responsable-label">Responsable SAÉ :
+            <span style="display:inline-block;padding:3px 10px;background:#f0f4fb;border:1px solid #c7d2e8;border-radius:5px;font-size:13px;color:${_saeResp ? "#1e3a5f" : "#9ca3af"};">
+              ${_saeResp || "Non assigné — voir section SAÉ"}
+            </span>
+         </td>`
+      : `<td colspan="2" class="responsable-label">Responsable :
+            <select class="select-enseignant ${respSelClass}" onchange="updateAff('${sem}', '${res.replace(/'/g, "\\'")}', 'responsable', this.value)">
+                <option value="">-</option>
+                ${enseignants
+                  .filter((e) => !e.is_vac)
+                  .map((e) => `<option value="${e.id}" class="ens-option" ${e.id === data.responsable ? "selected" : ""}>${e.id}</option>`)
+                  .join("")}
+            </select>
+         </td>`;
+
     html += `<tr class="row-responsable ${rowClass}">
-            <td colspan="2" class="responsable-label">Responsable :
-                <select class="select-enseignant ${respSelClass}" onchange="updateAff('${sem}', '${res.replace(/'/g, "\\'")}', 'responsable', this.value)">
-                    <option value="">-</option>
-                    ${enseignants
-                      .filter((e) => !e.is_vac)
-                      .map(
-                        (e) =>
-                          `<option value="${e.id}" class="ens-option" ${e.id === data.responsable ? "selected" : ""}>${e.id}</option>`,
-                      )
-                      .join("")}
-                </select>
-            </td>
+            ${respCell}
             <td class="responsable-label" style="text-align:right;">Total / étudiant :</td>
             <td style="text-align:center;"><span class="prev-badge res-total-badge" style="${cmStyle}" data-field="cm" data-val="${resCM}" data-maq-cm="${prev.cm_final||0}" data-maq-td="${prev.td_final||0}" data-maq-tp="${prev.tp_final||0}">${fmtR(resCM)}</span></td>
             <td style="text-align:center;"><span class="prev-badge res-total-badge" style="${tdStyle}" data-field="td" data-val="${resTD}" data-maq-cm="${prev.cm_final||0}" data-maq-td="${prev.td_final||0}" data-maq-tp="${prev.tp_final||0}">${fmtR(resTD)}</span></td>
