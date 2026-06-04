@@ -50,6 +50,7 @@ nav {
   display: flex;
   gap: 4px;
   flex-wrap: nowrap;
+  align-items: center;
   flex: 1;
   justify-content: center;
   min-width: 0;
