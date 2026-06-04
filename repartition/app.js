@@ -226,7 +226,7 @@ window.navigate = function (view, param = null) {
   renderView();
 };
 
-const _PRINTABLE_VIEWS = new Set(["semestre","maquette_semestre","services","pilotage"]);
+const _PRINTABLE_VIEWS = new Set(["semestre","maquette_semestre","services","pilotage","sae"]);
 
 /* Priorité de tri des ressources (module-level, réutilisée dans export et maquette) */
 function _resPrio(r) {
@@ -289,6 +289,23 @@ window.exportXLSX = function () {
     });
     filename = `maquette_${safeSem}.xlsx`;
     sheetName = sem || "Maquette";
+
+  } else if (currentView === "sae") {
+    const sem     = _saeSemFilter;
+    const safeSem = sem.replace(/\s+/g, "_");
+    const list    = (APP_DATA.sae.sae[sem] || []);
+    rows = [["SAÉ", "Intitulé", "Compétence ciblée", "Ressources nécessaires", "Responsable"]];
+    list.forEach((s) => {
+      rows.push([
+        s.code,
+        s.intitule,
+        s.competence,
+        (s.ressources || []).join(", "),
+        s.responsable || "",
+      ]);
+    });
+    filename  = `sae_${safeSem}.xlsx`;
+    sheetName = `SAÉ ${sem}`.substring(0, 31);
 
   } else {
     return;
