@@ -100,41 +100,26 @@ const _USERS_JSON_URL = (() => {
 })();
 
 async function _fetchExtraUsers() {
-  /* 1. Lecture directe du fichier servi (pas besoin de token) */
+  /* Priorité 1 : URL raw GitHub — toujours à jour sans token ni déploiement */
   try {
-    const r = await fetch(_USERS_JSON_URL + "?_t=" + Date.now(), {
-      cache: "no-cache",
-    });
+    const rawUrl = `https://raw.githubusercontent.com/${_GHU.owner}/${_GHU.repo}/${_GHU.branch}/${_GHU.path}?_t=${Date.now()}`;
+    const r = await fetch(rawUrl, { cache: "no-cache" });
     if (r.ok) {
       const arr = await r.json();
       _usersExtra = {};
-      arr.forEach((u) => {
-        _usersExtra[u.login] = u;
-      });
+      arr.forEach((u) => { _usersExtra[u.login] = u; });
+      return; /* Succès → pas besoin du fallback */
     }
   } catch {}
 
-  /* 2. Si le token GitHub est configuré, on prend la version GitHub en priorité */
-  const token = _ghToken();
-  if (!token) return;
+  /* Priorité 2 : fichier local servi par le serveur (fallback dev/offline) */
   try {
-    const url = `https://api.github.com/repos/${_GHU.owner}/${_GHU.repo}/contents/${_GHU.path}?ref=${_GHU.branch}&_t=${Date.now()}`;
-    const r = await fetch(url, {
-      cache: "no-cache",
-      headers: {
-        Authorization: `token ${token}`,
-        Accept: "application/vnd.github.v3+json",
-      },
-    });
-    if (!r.ok) return;
-    const j = await r.json();
-    const arr = JSON.parse(
-      decodeURIComponent(escape(atob(j.content.replace(/\n/g, "")))),
-    );
-    _usersExtra = {};
-    arr.forEach((u) => {
-      _usersExtra[u.login] = u;
-    });
+    const r = await fetch(_USERS_JSON_URL + "?_t=" + Date.now(), { cache: "no-cache" });
+    if (r.ok) {
+      const arr = await r.json();
+      _usersExtra = {};
+      arr.forEach((u) => { _usersExtra[u.login] = u; });
+    }
   } catch {}
 }
 
