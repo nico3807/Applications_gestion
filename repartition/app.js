@@ -1270,7 +1270,7 @@ function renderEnseignants(root) {
 
         let total = 0;
         if (["S1", "S2", "S3"].includes(sem)) {
-          total = cm * 1 + td * 2 + tp * 4;
+          total = cm * 1.5 + td * 2 + tp * 4;
         } else {
           total = td * 1 + tp * 2;
         }
