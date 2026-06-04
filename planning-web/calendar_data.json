@@ -44,38 +44,28 @@
     {
       "day": 7,
       "weekday": "Mo",
-      "events": {
-        "MMI1": "Test rajout"
-      },
+      "events": {},
       "week": 37
     },
     {
       "day": 8,
       "weekday": "Tu",
-      "events": {
-        "MMI1": "Test rajout"
-      }
+      "events": {}
     },
     {
       "day": 9,
       "weekday": "We",
-      "events": {
-        "MMI1": "Test rajout"
-      }
+      "events": {}
     },
     {
       "day": 10,
       "weekday": "Th",
-      "events": {
-        "MMI1": "Test rajout"
-      }
+      "events": {}
     },
     {
       "day": 11,
       "weekday": "Fr",
-      "events": {
-        "MMI1": "Test rajout"
-      }
+      "events": {}
     },
     {
       "day": 12,
