@@ -226,7 +226,7 @@ window.navigate = function (view, param = null) {
   renderView();
 };
 
-const _PRINTABLE_VIEWS = new Set(["semestre","maquette_semestre","services","pilotage","sae"]);
+const _PRINTABLE_VIEWS = new Set(["semestre","maquette_semestre","services","pilotage"]);
 
 /* Priorité de tri des ressources (module-level, réutilisée dans export et maquette) */
 function _resPrio(r) {
@@ -1771,9 +1771,10 @@ function renderSae(root) {
 
   const rows = (saeData.sae[_saeSemFilter] || []);
 
-  const semBtns = semestres.map((s) =>
-    `<button class="sem-btn ${s === _saeSemFilter ? "active" : ""}" onclick="setSaeSemFilter('${s}')">${s}</button>`
-  ).join("");
+  const semBtns = semestres.map((s) => {
+    const baseSem = s.replace(/\s.*/, ""); /* "S4 crea" → "S4" pour les couleurs CSS */
+    return `<button class="sem-btn ${s === _saeSemFilter ? "active" : ""}" data-sem="${baseSem}" onclick="setSaeSemFilter('${s}')">${s}</button>`;
+  }).join("");
 
   const respOptions = `<option value="">— Aucun —</option>` +
     titulaires.map((e) => `<option value="${e.id}">${e.id}</option>`).join("");
@@ -1809,7 +1810,11 @@ function renderSae(root) {
   root.innerHTML = `
     <div class="page-header" style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;">
       <h1 style="margin:0;">Responsables SAÉ</h1>
-      <button class="btn-save" onclick="saveSaeGH()">💾 Enregistrer sur GitHub</button>
+      <div style="display:flex;gap:8px;align-items:center;">
+        <button class="btn-print-action" onclick="window.print()">🖨 Imprimer</button>
+        <button class="btn-pdf-action" onclick="exportXLSX()">⬇ Exporter XLSX</button>
+        <button class="btn-save" onclick="saveSaeGH()">💾 Enregistrer sur GitHub</button>
+      </div>
     </div>
     <p style="color:#6b7280;font-size:13px;margin-bottom:1.25rem;">BUT MMI · Programme National 2022 · Semestres 1 &amp; 2</p>
 
