@@ -28,6 +28,7 @@ let APP_DATA = {
   maquette_overrides: {},
   modifications: [],
   volume_horaire_national: {},
+  sae: { semestres: ["S1", "S2"], sae: {} },
 };
 
 let _pendingMods = [];
@@ -279,6 +280,9 @@ function renderView() {
   } else if (currentView === "pilotage") {
     const np = document.getElementById("nav-pilotage");
     if (np) np.classList.add("active");
+  } else if (currentView === "sae") {
+    const ns = document.getElementById("nav-sae");
+    if (ns) ns.classList.add("active");
   }
 
   if (currentView === "home") renderHome(root);
@@ -290,6 +294,7 @@ function renderView() {
   else if (currentView === "enseignants") renderEnseignants(root);
   else if (currentView === "modifications") renderModifications(root);
   else if (currentView === "pilotage") renderPilotage(root);
+  else if (currentView === "sae") renderSae(root);
 
   if (_PRINTABLE_VIEWS.has(currentView)) _injectPrintBar(root);
 
@@ -1582,6 +1587,113 @@ window.saveMaquetteGH = async function () {
   }
 };
 
+/* ── Vue : SAÉ (chefdep uniquement) ─────────────────────────────────────── */
+let _saeSemFilter = "S1";
+
+function renderSae(root) {
+  if (!AUTH.isAdmin()) {
+    root.innerHTML = `<div class="page-header"><h1>Accès refusé</h1></div>`;
+    return;
+  }
+
+  const saeData   = APP_DATA.sae || { semestres: [], sae: {} };
+  const semestres = saeData.semestres || [];
+  const titulaires = APP_DATA.enseignants.filter((e) => !e.is_vac);
+
+  /* S'assurer que le filtre courant est valide */
+  if (!semestres.includes(_saeSemFilter) && semestres.length > 0) {
+    _saeSemFilter = semestres[0];
+  }
+
+  const rows = (saeData.sae[_saeSemFilter] || []);
+
+  const semBtns = semestres.map((s) =>
+    `<button class="sem-btn ${s === _saeSemFilter ? "active" : ""}" onclick="setSaeSemFilter('${s}')">${s}</button>`
+  ).join("");
+
+  const respOptions = `<option value="">— Aucun —</option>` +
+    titulaires.map((e) => `<option value="${e.id}">${e.id}</option>`).join("");
+
+  const tableRows = rows.map((sae, i) => {
+    const ressBadges = sae.ressources.map((r) =>
+      `<span style="display:inline-block;background:#dbeafe;color:#1e3a5f;border:1px solid #93c5fd;border-radius:4px;padding:1px 7px;font-size:11px;margin:2px 2px 2px 0;">${r}</span>`
+    ).join("");
+
+    const escSem = _saeSemFilter.replace(/'/g, "\\'");
+    const escCode = sae.code.replace(/'/g, "\\'");
+
+    return `<tr class="${i % 2 === 0 ? "group-even" : "group-odd"}">
+      <td style="font-weight:600;white-space:nowrap;">
+        <span style="color:#1e3a5f;font-size:12px;">${sae.code}</span><br>
+        <span style="font-weight:400;font-size:13px;">${sae.intitule}</span>
+      </td>
+      <td style="font-size:13px;color:#374151;">${sae.competence}</td>
+      <td style="line-height:1.8;">${ressBadges}</td>
+      <td>
+        <select class="select-enseignant" autocomplete="off"
+                onchange="updateSaeResponsable('${escSem}','${escCode}',this.value)"
+                style="min-width:160px;">
+          ${respOptions.replace(
+            `value="${sae.responsable}"`,
+            `value="${sae.responsable}" selected`
+          )}
+        </select>
+      </td>
+    </tr>`;
+  }).join("");
+
+  root.innerHTML = `
+    <div class="page-header" style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;">
+      <h1 style="margin:0;">Responsables SAÉ</h1>
+      <button class="btn-save" onclick="saveSaeGH()">💾 Enregistrer sur GitHub</button>
+    </div>
+    <p style="color:#6b7280;font-size:13px;margin-bottom:1.25rem;">BUT MMI · Programme National 2022 · Semestres 1 &amp; 2</p>
+
+    <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-bottom:1.25rem;">
+      ${semBtns}
+    </div>
+
+    <div class="table-wrapper table-wrapper--semestre">
+      <table class="ressources-table">
+        <thead>
+          <tr>
+            <th style="min-width:220px;">SAÉ</th>
+            <th>Compétence ciblée</th>
+            <th>Ressources nécessaires</th>
+            <th style="min-width:180px;">Responsable SAÉ</th>
+          </tr>
+        </thead>
+        <tbody>${tableRows}</tbody>
+      </table>
+    </div>`;
+}
+
+window.setSaeSemFilter = function (sem) {
+  _saeSemFilter = sem;
+  renderView();
+};
+
+window.updateSaeResponsable = function (sem, code, login) {
+  const list = (APP_DATA.sae.sae[sem] || []);
+  const sae  = list.find((s) => s.code === code);
+  if (!sae) return;
+  const prev = sae.responsable;
+  sae.responsable = login;
+  _logMod("SAÉ", `Responsable ${code} (${sem})`, prev || "—", login || "—");
+};
+
+window.saveSaeGH = async function () {
+  if (ARCHIVE_MODE) return showToast("Archives — consultation uniquement");
+  if (!isGHConfigured()) return alert("Veuillez configurer GitHub d'abord !");
+  try {
+    await _flushMods();
+    await saveFileGH("sae_data.json", APP_DATA.sae, "Update sae_data.json via Web UI");
+    showToast("SAÉ sauvegardées sur GitHub !");
+  } catch (e) {
+    alert("Erreur : " + e.message);
+  }
+};
+
 /* ── Vue : Pilotage (chefdep uniquement) ─────────────────────────────────── */
 function renderPilotage(root) {
   if (!AUTH.isAdmin()) {
@@ -1797,7 +1909,7 @@ async function loadData() {
 
   // 1. Charge d'abord les fichiers locaux (fallback garanti)
   try {
-    const [aff, ens, maq, mods, vhn] = await Promise.all([
+    const [aff, ens, maq, mods, vhn, sae] = await Promise.all([
       fetch(`${localBase}/affectations${affSfx}.json`).then((r) =>
         r.ok ? r.json() : null,
       ),
@@ -1813,12 +1925,16 @@ async function loadData() {
       fetch(`${localBase}/volume_horaire_national.json`).then((r) =>
         r.ok ? r.json() : null,
       ),
+      fetch(`${localBase}/sae_data.json`).then((r) =>
+        r.ok ? r.json() : null,
+      ),
     ]);
     if (aff) APP_DATA.affectations = aff;
     if (ens) APP_DATA.enseignants = ens;
     if (maq) APP_DATA.maquette_overrides = maq;
     if (mods) APP_DATA.modifications = mods;
     if (vhn) APP_DATA.volume_horaire_national = vhn;
+    if (sae) APP_DATA.sae = sae;
   } catch (e) {
     console.warn("Local load failed (file:// ?)", e);
   }
@@ -1826,18 +1942,20 @@ async function loadData() {
   // 2. Si GitHub est configuré, tente de récupérer les données (priorité sur local)
   if (isGHConfigured()) {
     try {
-      const [aff, ens, maq, mods, vhn] = await Promise.all([
+      const [aff, ens, maq, mods, vhn, sae] = await Promise.all([
         fetchGH(`affectations${affSfx}.json`, ghBase),
         fetchGH(`enseignants${sfx}.json`, ghBase),
         fetchGH(`maquette_overrides${sfx}.json`, ghBase),
         fetchGH(`modifications${sfx}.json`, ghBase),
         fetchGH(`volume_horaire_national.json`, ghBase),
+        fetchGH(`sae_data.json`, ghBase),
       ]);
       if (aff) APP_DATA.affectations = aff;
       if (ens) APP_DATA.enseignants = ens;
       if (maq) APP_DATA.maquette_overrides = maq;
       if (mods) APP_DATA.modifications = mods;
       if (vhn) APP_DATA.volume_horaire_national = vhn;
+      if (sae) APP_DATA.sae = sae;
     } catch (e) {
       console.warn("GH load failed, données locales conservées", e);
     }

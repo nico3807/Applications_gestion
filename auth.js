@@ -505,6 +505,8 @@ window.AUTH = {
     if (navMods) navMods.style.display = this.isAdmin() ? "" : "none";
     const navPilotage = document.getElementById("nav-pilotage");
     if (navPilotage) navPilotage.style.display = this.isAdmin() ? "" : "none";
+    const navSae = document.getElementById("nav-sae");
+    if (navSae) navSae.style.display = this.isAdmin() ? "" : "none";
 
     if (this.canWrite()) {
       document.body.classList.remove("auth-readonly");
