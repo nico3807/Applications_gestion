@@ -45,6 +45,52 @@ function saveT(el) {
   el.classList.toggle("filled", !!el.value);
   const pv = el.parentElement.querySelector(".print-val");
   if (pv) pv.textContent = el.value || "";
+  scheduleAutoSave();
+}
+
+/* ── Auto-save GitHub (R/W uniquement, déclenché après délai) ────── */
+let _autoSaveTimer = null;
+
+function scheduleAutoSave() {
+  if (!AUTH.canWrite() || !isGHConfigured()) return;
+  clearTimeout(_autoSaveTimer);
+  _autoSaveTimer = setTimeout(doAutoSave, 1800);
+}
+
+async function doAutoSave() {
+  const editedNames = {};
+  document.querySelectorAll(".sname[data-skey]").forEach((el) => {
+    const key = el.getAttribute("data-skey");
+    const val = el.textContent.trim();
+    if (key) editedNames[key] = val;
+  });
+  const changedNames = Object.entries(editedNames).filter(
+    ([k, v]) => (APP_CONFIG.etudiants[k] || "") !== v,
+  );
+  const ts = new Date().toLocaleString("fr-FR");
+  try {
+    await saveJsonToGitHub(
+      "soutenances_portfolio/donnees_pf.json",
+      buildJSON(),
+      `Mise à jour ${PAGE_ID} — ${ts}`,
+    );
+    if (changedNames.length > 0) {
+      const merged = { ...APP_CONFIG.etudiants };
+      for (const [k, v] of changedNames) {
+        if (v) merged[k] = v;
+        else delete merged[k];
+      }
+      await saveJsonToGitHub(
+        "soutenances_portfolio/etudiants_pf.json",
+        JSON.stringify(merged, null, 2),
+        `Mise à jour noms ${PAGE_ID} — ${ts}`,
+      );
+      APP_CONFIG.etudiants = merged;
+    }
+    showToast("✓ Sauvegardé automatiquement");
+  } catch (e) {
+    showToast("✗ GitHub : " + e.message);
+  }
 }
 
 function loadAll() {
@@ -838,69 +884,9 @@ async function saveCfgModal() {
   }
 }
 
-/* ── Sauvegarder ─────────────────────────────────────────────────── */
+/* ── Sauvegarder (conservé pour compatibilité, appelle doAutoSave) ── */
 async function saveSelectionsToFile() {
-  const pwd = prompt(
-    "Veuillez saisir le mot de passe pour autoriser la sauvegarde :",
-  );
-  if (pwd === null) return;
-
-  const secret = [
-    126, 110, 90, 94, 130, 34, 94, 96, 104, 105, 110, 42, 41, 44, 41,
-  ];
-  const isAuth =
-    pwd.length === secret.length &&
-    pwd.split("").every((c, i) => (c.charCodeAt(0) ^ 45) + i === secret[i]);
-  if (!isAuth) {
-    alert("Mot de passe incorrect. Sauvegarde annulée.");
-    return;
-  }
-
-  if (!isGHConfigured()) {
-    showToast("⚙ Configurez GitHub via le lien en bas de page");
-    openGHModal();
-    return;
-  }
-
-  // Collect edited student names from the page
-  const editedNames = {};
-  document.querySelectorAll(".sname[data-skey]").forEach((el) => {
-    const key = el.getAttribute("data-skey");
-    const val = el.textContent.trim();
-    if (key) editedNames[key] = val;
-  });
-
-  // Check if any names changed
-  const changedNames = Object.entries(editedNames).filter(
-    ([k, v]) => (APP_CONFIG.etudiants[k] || "") !== v,
-  );
-
-  const ts = new Date().toLocaleString("fr-FR");
-  try {
-    await saveJsonToGitHub(
-      "soutenances_portfolio/donnees_pf.json",
-      buildJSON(),
-      `Mise à jour ${PAGE_ID} — ${ts}`,
-    );
-
-    if (changedNames.length > 0) {
-      const mergedEtudiants = { ...APP_CONFIG.etudiants };
-      for (const [k, v] of changedNames) {
-        if (v) mergedEtudiants[k] = v;
-        else delete mergedEtudiants[k];
-      }
-      await saveJsonToGitHub(
-        "soutenances_portfolio/etudiants_pf.json",
-        JSON.stringify(mergedEtudiants, null, 2),
-        `Mise à jour noms ${PAGE_ID} — ${ts}`,
-      );
-      APP_CONFIG.etudiants = mergedEtudiants;
-    }
-
-    showToast("✓ Sauvegarde sur GitHub réussie");
-  } catch (e) {
-    showToast("✗ GitHub : " + e.message);
-  }
+  await doAutoSave();
 }
 
 /* ── Auto-load depuis le dossier courant (serveur local) ─────────── */
@@ -1158,4 +1144,14 @@ document.addEventListener("DOMContentLoaded", async () => {
     await loadFromGitHub();
   }
   loadAll();
+
+  /* Masquer le bouton Sauvegarder (remplacé par l'auto-save) */
+  document.querySelectorAll(".save-btn").forEach((btn) => btn.remove());
+
+  /* Auto-save sur modification des noms d'étudiants (contenteditable) */
+  document.addEventListener("input", (e) => {
+    if (e.target.classList.contains("sname") && e.target.isContentEditable) {
+      scheduleAutoSave();
+    }
+  });
 });
