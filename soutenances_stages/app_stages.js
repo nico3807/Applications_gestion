@@ -1158,4 +1158,17 @@ document.addEventListener("DOMContentLoaded", async () => {
       scheduleAutoSave();
     }
   });
+
+  /* Badge utilisateur dans la nav */
+  if (AUTH.isAuth() && !document.getElementById("auth-badge")) {
+    const badge = document.createElement("div");
+    badge.id = "auth-badge";
+    badge.style.cssText = "display:flex;align-items:center;gap:8px;font-size:13px;flex-shrink:0;margin-left:4px;";
+    badge.innerHTML = `
+      <span style="font-weight:600;color:#fff;">${AUTH.user()}</span>
+      <span style="color:rgba(255,255,255,.65);font-size:12px;">${AUTH.canWrite() ? "Lecture / Écriture" : "Lecture seule"}</span>
+      <button onclick="AUTH.logout()" style="padding:3px 10px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.25);border-radius:5px;color:#fff;font-size:12px;cursor:pointer;">Déconnexion</button>`;
+    const nav = document.querySelector(".nav");
+    if (nav) nav.appendChild(badge);
+  }
 });
