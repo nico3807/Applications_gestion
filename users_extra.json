@@ -55,5 +55,13 @@
       "repartition"
     ],
     "login": "caroline.surribas"
+  },
+  {
+    "h": "f60156a3fc67a08976538a6cfbc34380f75d2c3785c8dc7b490b3ca50d6349ee",
+    "rw": false,
+    "denyApps": [
+      "repartition"
+    ],
+    "login": "laeticia.tournie"
   }
 ]
