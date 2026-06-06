@@ -2337,7 +2337,7 @@ function renderSouhaits(root) {
       </div>
       <div style="display:flex;gap:8px;align-items:center;">
         <button class="btn-save" onclick="saveSouhaits()">💾 Valider ce semestre</button>
-        <button class="btn-pdf-action" onclick="exportSouhaitsJSON()">⬇ Télécharger JSON</button>
+        ${AUTH.canAccess("repartition") ? `<button class="btn-pdf-action" onclick="exportSouhaitsJSON()">⬇ Télécharger JSON</button>` : ""}
       </div>
     </div>
 
