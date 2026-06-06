@@ -2149,5 +2149,23 @@
     "description": "Responsable SAÉ 3.02 | Produire des contenus pour une communication plurimédia (S3)",
     "prev": "—",
     "next": "SURRIBAS Caroline"
+  },
+  {
+    "date": "06/06/2026",
+    "heure": "11:43:44",
+    "utilisateur": "nicolas.maurin",
+    "type": "SAÉ",
+    "description": "Responsable SAÉ 4.DWeb-DI.01 | Développer pour le Web (S4 dev)",
+    "prev": "—",
+    "next": "DARTIES Benoit"
+  },
+  {
+    "date": "06/06/2026",
+    "heure": "11:45:28",
+    "utilisateur": "nicolas.maurin",
+    "type": "SAÉ",
+    "description": "Responsable SAÉ 4.DWeb-DI.02 | Concevoir un dispositif interactif (S4 dev)",
+    "prev": "—",
+    "next": "MAURIN Nicolas"
   }
 ]
