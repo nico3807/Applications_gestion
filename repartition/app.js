@@ -2437,14 +2437,17 @@ window.showSouhaitsRecap = function () {
     <div style="background:#fff;border-radius:12px;width:min(580px,95vw);max-height:82vh;
       display:flex;flex-direction:column;box-shadow:0 8px 32px rgba(0,0,0,.2);">
       <div style="padding:16px 20px;border-bottom:1px solid #e5e7eb;display:flex;
-        justify-content:space-between;align-items:center;flex-shrink:0;">
+        justify-content:space-between;align-items:center;flex-shrink:0;gap:10px;">
         <div>
           <h2 style="margin:0;font-size:16px;color:#1e3a5f;">Mes souhaits — récapitulatif complet</h2>
           <p style="margin:3px 0 0;font-size:12px;color:#6b7280;">${_souhaitNom()}</p>
         </div>
-        <button onclick="closeSouhaitsRecap()"
-          style="background:none;border:1.5px solid #d1d5db;border-radius:6px;
-            padding:4px 12px;cursor:pointer;font-size:13px;color:#374151;">✕ Fermer</button>
+        <div style="display:flex;gap:8px;align-items:center;flex-shrink:0;">
+          <button class="btn-pdf-action" onclick="exportSouhaitsXLSX()">⬇ Exporter XLSX</button>
+          <button onclick="closeSouhaitsRecap()"
+            style="background:none;border:1.5px solid #d1d5db;border-radius:6px;
+              padding:4px 12px;cursor:pointer;font-size:13px;color:#374151;">✕ Fermer</button>
+        </div>
       </div>
       <div style="overflow-y:auto;padding:16px 20px;">${sections}</div>
     </div>`;
@@ -2455,6 +2458,31 @@ window.showSouhaitsRecap = function () {
 window.closeSouhaitsRecap = function () {
   const m = document.getElementById("souhaits-recap-modal");
   if (m) m.remove();
+};
+
+window.exportSouhaitsXLSX = function () {
+  if (typeof XLSX === "undefined") { alert("Bibliothèque XLSX non chargée."); return; }
+  const data     = _souhaitLoad();
+  const souhaits = data.souhaits || {};
+  const semsAvec = SEMESTRES.filter(s => (souhaits[s] || []).length > 0);
+  if (!semsAvec.length) { showToast("Aucun souhait à exporter."); return; }
+
+  const rows = [["Semestre", "Code / Intitulé", "Type"]];
+  semsAvec.forEach(sem => {
+    const codes   = souhaits[sem] || [];
+    const saeList = (APP_DATA.sae?.sae?.[sem]) || [];
+    codes.forEach(code => {
+      const saeEntry = saeList.find(s => s.code === code);
+      const type     = saeEntry ? "SAÉ" : "Ressource";
+      rows.push([sem, code, type]);
+    });
+  });
+
+  const ws = XLSX.utils.aoa_to_sheet(rows);
+  ws["!cols"] = [{ wch: 12 }, { wch: 60 }, { wch: 12 }];
+  const wb = XLSX.utils.book_new();
+  XLSX.utils.book_append_sheet(wb, ws, "Souhaits");
+  XLSX.writeFile(wb, `souhaits_${(data.login || AUTH.user()).replace(/\./g, "_")}.xlsx`);
 };
 
 document.addEventListener("DOMContentLoaded", async () => {
