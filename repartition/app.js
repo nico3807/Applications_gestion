@@ -512,15 +512,19 @@ function renderSemestre(root, sem) {
   _affKeys.forEach((res, i) => {
     const data = aff[res];
     const prev = maq[res] || {};
-    const isSae = res.toLowerCase().includes("saé");
-    const isPort = res.toLowerCase().includes("portfolio");
-    const rowClass = isSae
-      ? "row-sae"
-      : isPort
-        ? "row-portfolio"
-        : i % 2 === 0
-          ? "group-even"
-          : "group-odd";
+    const resLc = res.toLowerCase();
+    const isSae = resLc.includes("saé");
+    const isPort = resLc.includes("portfolio");
+    const isHackMarathon = resLc.includes("hackathon") || resLc.includes("marathon");
+    const rowClass = isHackMarathon
+      ? "row-hackathon"
+      : isSae
+        ? "row-sae"
+        : isPort
+          ? "row-portfolio"
+          : i % 2 === 0
+            ? "group-even"
+            : "group-odd";
 
     const selEns = enseignants.find((e) => e.id === data.enseignant);
     const selClass = selEns
