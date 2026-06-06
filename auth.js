@@ -252,12 +252,30 @@ window.AUTH = {
         <img class="auth-logo" src="logo_mmi.jpg" alt="MMI">
         <h2 class="auth-title">Gestion MMI</h2>
         <p class="auth-sub">IUT de Béziers — Accès réservé</p>
+
         <form id="auth-form" autocomplete="on" onsubmit="event.preventDefault(); AUTH._doLogin();">
           <input id="auth-login" class="auth-input" type="text"     placeholder="Identifiant"  autocomplete="username" autofocus>
           <input id="auth-pwd"   class="auth-input" type="password" placeholder="Mot de passe" autocomplete="current-password">
           <button id="auth-btn"  class="auth-btn"   type="submit">Connexion</button>
         </form>
         <p id="auth-err" class="auth-err" style="display:none">Identifiant ou mot de passe incorrect.</p>
+
+        <button onclick="AUTH._showChangePwd()" style="background:none;border:none;color:#6b7280;
+          font-size:.8rem;cursor:pointer;text-decoration:underline;margin-top:.25rem;">
+          Changer mon mot de passe
+        </button>
+
+        <form id="auth-chpwd-form" style="display:none;margin-top:.5rem;"
+          onsubmit="event.preventDefault(); AUTH._doChangePwd();">
+          <p style="font-size:.82rem;color:#1e3a5f;font-weight:600;margin:0 0 .5rem;">Nouveau mot de passe</p>
+          <input id="auth-chpwd-login"   class="auth-input" type="text"     placeholder="Identifiant" autocomplete="username">
+          <input id="auth-chpwd-current" class="auth-input" type="password" placeholder="Mot de passe actuel" style="margin-top:.4rem;" autocomplete="current-password">
+          <input id="auth-chpwd-new"     class="auth-input" type="password" placeholder="Nouveau mot de passe" style="margin-top:.4rem;" autocomplete="new-password">
+          <input id="auth-chpwd-confirm" class="auth-input" type="password" placeholder="Confirmer le nouveau mot de passe" style="margin-top:.4rem;" autocomplete="new-password">
+          <button id="auth-chpwd-btn" class="auth-btn" type="submit" style="margin-top:.5rem;">Valider</button>
+          <p id="auth-chpwd-err" class="auth-err" style="display:none"></p>
+          <p id="auth-chpwd-ok"  style="display:none;font-size:.85rem;color:#16a34a;margin:0;"></p>
+        </form>
       </div>`;
     document.body.appendChild(ov);
   },
@@ -296,6 +314,84 @@ window.AUTH = {
       btn.disabled      = false;
       btn.textContent   = "Connexion";
     }
+  },
+
+  _showChangePwd() {
+    const loginForm = document.getElementById("auth-form");
+    const chpwdForm = document.getElementById("auth-chpwd-form");
+    const err       = document.getElementById("auth-err");
+    const isHidden  = chpwdForm.style.display === "none";
+    err.style.display = "none";
+    if (isHidden) {
+      loginForm.style.display  = "none";
+      chpwdForm.style.display  = "";
+      document.getElementById("auth-chpwd-login").focus();
+    } else {
+      loginForm.style.display  = "";
+      chpwdForm.style.display  = "none";
+    }
+  },
+
+  async _doChangePwd() {
+    const login   = document.getElementById("auth-chpwd-login").value.trim().toLowerCase();
+    const current = document.getElementById("auth-chpwd-current").value;
+    const newPwd  = document.getElementById("auth-chpwd-new").value;
+    const confirm = document.getElementById("auth-chpwd-confirm").value;
+    const btn     = document.getElementById("auth-chpwd-btn");
+    const errEl   = document.getElementById("auth-chpwd-err");
+    const okEl    = document.getElementById("auth-chpwd-ok");
+
+    errEl.style.display = "none";
+    okEl.style.display  = "none";
+
+    if (!login || !current || !newPwd || !confirm) {
+      errEl.textContent   = "Tous les champs sont obligatoires.";
+      errEl.style.display = "block"; return;
+    }
+    if (newPwd.length < 6) {
+      errEl.textContent   = "Le nouveau mot de passe doit contenir au moins 6 caractères.";
+      errEl.style.display = "block"; return;
+    }
+    if (newPwd !== confirm) {
+      errEl.textContent   = "Les nouveaux mots de passe ne correspondent pas.";
+      errEl.style.display = "block"; return;
+    }
+
+    btn.disabled    = true;
+    btn.textContent = "…";
+
+    try {
+      const currentH = await _sha256(current);
+      const newH     = await _sha256(newPwd);
+      const resp = await fetch("/api/change-password.php", {
+        method:      "POST",
+        headers:     { "Content-Type": "application/json" },
+        credentials: "include",
+        body:        JSON.stringify({ login, currentH, newH }),
+      });
+      const data = await resp.json().catch(() => ({}));
+      if (resp.ok && data.success) {
+        document.getElementById("auth-chpwd-login").value   = "";
+        document.getElementById("auth-chpwd-current").value = "";
+        document.getElementById("auth-chpwd-new").value     = "";
+        document.getElementById("auth-chpwd-confirm").value = "";
+        okEl.textContent  = "Mot de passe modifié avec succès.";
+        okEl.style.display = "block";
+        setTimeout(() => {
+          document.getElementById("auth-form").style.display        = "";
+          document.getElementById("auth-chpwd-form").style.display  = "none";
+          okEl.style.display = "none";
+        }, 2000);
+      } else {
+        errEl.textContent   = data.error || "Identifiant ou mot de passe actuel incorrect.";
+        errEl.style.display = "block";
+      }
+    } catch (e) {
+      errEl.textContent   = "Erreur réseau (" + e.message + ").";
+      errEl.style.display = "block";
+    }
+    btn.disabled    = false;
+    btn.textContent = "Valider";
   },
 
   injectBadge() {
