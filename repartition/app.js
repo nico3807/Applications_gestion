@@ -362,7 +362,7 @@ function renderView() {
 
   // Titre et boutons archive / retour
   const yearEl = document.getElementById("app-year");
-  if (yearEl) yearEl.textContent = ARCHIVE_MODE ? "2025-2026" : "2026-2027";
+  if (yearEl) yearEl.textContent = ARCHIVE_MODE ? "25-26" : "26-27";
   const navArchive = document.getElementById("nav-archive");
   const navCurrent = document.getElementById("nav-current");
   if (navArchive) navArchive.style.display = ARCHIVE_MODE ? "none" : "";
