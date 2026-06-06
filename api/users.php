@@ -27,6 +27,16 @@ function saveUsers($file, $users) {
     return file_put_contents($file, json_encode(array_values($users), JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE), LOCK_EX) !== false;
 }
 
+// Le client envoie un SHA-256 brut (64 hex) lors d'une création/changement de mdp ;
+// on le renforce avec password_hash (sel + Argon2id/bcrypt). Si la valeur est déjà
+// un password_hash (ré-émis tel quel par le panneau admin lors d'une simple
+// modification de droits), on la laisse intacte pour éviter un double hachage.
+function normalizeHash($h) {
+    if (preg_match('/^\$(2y|argon2id|argon2i)\$/', $h)) return $h;
+    if (preg_match('/^[a-f0-9]{64}$/i', $h))            return password_hash($h, PASSWORD_DEFAULT);
+    return $h;
+}
+
 // GET — liste des utilisateurs (sans les hachages)
 if ($method === 'GET') {
     $users = loadUsers($usersFile);
@@ -59,6 +69,7 @@ if ($method === 'POST') {
     $existing        = $idx !== null ? $users[$idx] : ['login' => $login];
     $updated         = array_merge($existing, $body);
     $updated['login'] = $login;
+    if (isset($updated['h'])) $updated['h'] = normalizeHash($updated['h']);
     if ($idx !== null) $users[$idx] = $updated;
     else               $users[]     = $updated;
     saveUsers($usersFile, $users);

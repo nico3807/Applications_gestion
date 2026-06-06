@@ -32,7 +32,7 @@ foreach ($users as $u) {
     if ($u['login'] === $login) { $user = $u; break; }
 }
 
-if (!$user || $user['h'] !== $h) {
+if (!$user || !password_verify($h, $user['h'])) {
     http_response_code(401);
     echo json_encode(['success' => false]);
     exit;

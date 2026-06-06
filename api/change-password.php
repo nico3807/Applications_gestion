@@ -32,13 +32,13 @@ foreach ($users as $i => $u) {
     if ($u['login'] === $login) { $idx = $i; $user = $u; break; }
 }
 
-if ($user === null || $user['h'] !== $body['currentH']) {
+if ($user === null || !password_verify($body['currentH'], $user['h'])) {
     http_response_code(401);
     echo json_encode(['success' => false, 'error' => 'Identifiant ou mot de passe actuel incorrect']);
     exit;
 }
 
-$users[$idx]['h'] = $body['newH'];
+$users[$idx]['h'] = password_hash($body['newH'], PASSWORD_DEFAULT);
 
 if (file_put_contents($usersFile, json_encode($users, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE), LOCK_EX) === false) {
     http_response_code(500);

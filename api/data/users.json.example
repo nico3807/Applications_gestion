@@ -1,90 +1,14 @@
 [
   {
     "login": "nicolas.maurin",
-    "h": "eeb705ce8d0aa8255bea1e65ac2633938eb36bb496b92695f8475428ef5313f1",
+    "h": "REPLACE_WITH_PASSWORD_HASH",
     "rw": true
   },
   {
-    "login": "damien.marill",
-    "h": "55ce64d38ac9c3571dccfa07761c068a7a218faaf65bf007df0d9c5ded88eb97",
+    "login": "exemple.utilisateur",
+    "h": "REPLACE_WITH_PASSWORD_HASH",
     "rw": false,
-    "rwApps": ["planning-web", "repartition"]
-  },
-  {
-    "login": "sandy.blanco",
-    "h": "5a639b1d7195408fab84d22d4ac3aabed2274e1dd9f892485879d903a1b2cfc1",
-    "rw": false,
-    "rwApps": ["planning-web"],
+    "rwApps": ["planning-web", "repartition"],
     "denyApps": []
-  },
-  {
-    "login": "william.bernard",
-    "h": "08bd382e37e89970a9fc8dcb6cc9392b49daf28f6cc0c37c7fe8f7c3d5a331e3",
-    "rw": false
-  },
-  {
-    "login": "emmanuel.tehrond",
-    "h": "35b7123a725f50dee3c17586c037b95c25aee4284de39e31fc67be4c6105078b",
-    "rw": false,
-    "rwApps": [],
-    "denyApps": []
-  },
-  {
-    "login": "carole.pitot",
-    "h": "651452ffac1d672f0bcb9fc86436fbca73f88fa3e416102b5f8b52992e5c33fd",
-    "rw": false,
-    "rwApps": ["soutenances_portfolio", "soutenances_stages"]
-  },
-  {
-    "login": "luc.jaeckle",
-    "h": "f7d76b2c3e104d79c4e36c94ea164e7ceba4473d31da47bfbe89585f6ce2b41d",
-    "rw": false,
-    "denyApps": ["repartition"]
-  },
-  {
-    "login": "benoit.darties",
-    "h": "9c95d64f828327ea82072a80cafff1f5e0a2b4ee6fb9f549e29bc10ed64beb84",
-    "rw": false,
-    "denyApps": ["repartition"]
-  },
-  {
-    "login": "sophie.de-velder",
-    "h": "d4951ba77a01781bc3f965259b7d798188f7d01a9be809badb1bd56c6cc09849",
-    "rw": false,
-    "denyApps": ["repartition"]
-  },
-  {
-    "login": "davide.di-pierro",
-    "h": "2703a12457cbadc0c397ffac71a00ec206cb0b91ce74e8dc1c7b72a4bf8afbe7",
-    "rw": false,
-    "denyApps": ["repartition"]
-  },
-  {
-    "login": "chrysta.pelissier",
-    "h": "86eb27cd8f105b2c8223b07f037be481f32ea62fa1025e1c2e3a804a20e71785",
-    "rw": false,
-    "denyApps": ["repartition"]
-  },
-  {
-    "login": "caroline.surribas",
-    "h": "abecb3fbe2d656c38134708d66255fa5ff27b499148efdf0bfb49ffb7213da79",
-    "rw": false,
-    "denyApps": ["repartition"]
-  },
-  {
-    "login": "laeticia.tournie",
-    "h": "f60156a3fc67a08976538a6cfbc34380f75d2c3785c8dc7b490b3ca50d6349ee",
-    "rw": false,
-    "denyApps": ["repartition"]
-  },
-  {
-    "login": "jerome.aze",
-    "h": "1fdc64b661d47f09e51ca4212a67ae510c8a0deb2c6f7fd4fb6e072c1c93f526",
-    "rw": false
-  },
-  {
-    "login": "sylvie.escaig",
-    "h": "b6464e3bc88e10e0f92a7418c22143290900118e1ec7dc2039ab169c7c23a577",
-    "rw": false
   }
 ]
