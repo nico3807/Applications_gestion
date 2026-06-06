@@ -1635,9 +1635,9 @@ async function fetchGH(filename, basePath = GH_BASE_PATH) {
   );
 }
 
-async function saveFileGH(filename, dataObj, msg) {
+async function saveFileGH(filename, dataObj, msg, basePath = GH_BASE_PATH) {
   const cfg = getGHConfig();
-  const url = `https://api.github.com/repos/${GH_OWNER}/${GH_REPO}/contents/${GH_BASE_PATH}/${filename}`;
+  const url = `https://api.github.com/repos/${GH_OWNER}/${GH_REPO}/contents/${basePath}/${filename}`;
   const content = btoa(
     unescape(encodeURIComponent(JSON.stringify(dataObj, null, 2))),
   );
@@ -2217,6 +2217,13 @@ async function loadData() {
     } catch (e) {
       console.warn("GH load failed, données locales conservées", e);
     }
+
+    // Sync souhaits de l'utilisateur courant depuis GitHub vers localStorage
+    try {
+      const login = AUTH.user();
+      const souhaitsData = await fetchGH(`souhaits/${login}.json`, "repartition");
+      if (souhaitsData) localStorage.setItem(`souhaits_${login}`, JSON.stringify(souhaitsData));
+    } catch {}
   }
 
   renderView();
@@ -2370,7 +2377,7 @@ window.setSouhaitsFilter = function (sem) {
   renderView();
 };
 
-window.saveSouhaits = function () {
+window.saveSouhaits = async function () {
   const data = _souhaitLoad();
   if (!data.souhaits) data.souhaits = {};
   data.souhaits[_souhaitsFilter] =
@@ -2379,7 +2386,19 @@ window.saveSouhaits = function () {
   data.login = AUTH.user();
   data.date  = new Date().toISOString();
   localStorage.setItem(_souhaitLsKey(), JSON.stringify(data));
-  showToast(`Souhaits pour ${_souhaitsFilter} enregistrés !`);
+  if (isGHConfigured()) {
+    try {
+      const login = AUTH.user();
+      await saveFileGH(`souhaits/${login}.json`, data,
+        `Update souhaits/${login}.json via Web UI`, "repartition");
+      showToast(`Souhaits pour ${_souhaitsFilter} enregistrés (GitHub ✓) !`);
+    } catch (e) {
+      console.warn("GitHub souhaits save failed", e);
+      showToast(`Souhaits pour ${_souhaitsFilter} enregistrés (local uniquement) !`);
+    }
+  } else {
+    showToast(`Souhaits pour ${_souhaitsFilter} enregistrés !`);
+  }
   renderView();
 };
 
@@ -2496,22 +2515,32 @@ window.exportSouhaitsXLSX = function () {
 
 /* ── Récap consolidé (R/W uniquement) ──────────────────────────────────── */
 
-function _loadAllSouhaits() {
+async function _loadAllSouhaits() {
   const all = {};
-  Object.keys(_LOGIN_TO_NOM).forEach(login => {
-    try {
-      const d = JSON.parse(localStorage.getItem(`souhaits_${login}`));
-      if (d && d.souhaits && Object.values(d.souhaits).some(a => a.length > 0))
-        all[login] = d;
-    } catch {}
-  });
+  if (isGHConfigured()) {
+    await Promise.all(Object.keys(_LOGIN_TO_NOM).map(async login => {
+      try {
+        const d = await fetchGH(`souhaits/${login}.json`, "repartition");
+        if (d && d.souhaits && Object.values(d.souhaits).some(a => a.length > 0))
+          all[login] = d;
+      } catch {}
+    }));
+  } else {
+    Object.keys(_LOGIN_TO_NOM).forEach(login => {
+      try {
+        const d = JSON.parse(localStorage.getItem(`souhaits_${login}`));
+        if (d && d.souhaits && Object.values(d.souhaits).some(a => a.length > 0))
+          all[login] = d;
+      } catch {}
+    });
+  }
   return all;
 }
 
-window.showAllSouhaitsRecap = function () {
+window.showAllSouhaitsRecap = async function () {
   if (!AUTH.canWrite()) return;
 
-  const all = _loadAllSouhaits();
+  const all = await _loadAllSouhaits();
   const logins = Object.keys(all);
   if (!logins.length) {
     showToast("Aucun souhait enregistré pour l'instant.");
@@ -2603,9 +2632,9 @@ window.showAllSouhaitsRecap = function () {
   document.body.appendChild(modal);
 };
 
-window.exportAllSouhaitsXLSX = function () {
+window.exportAllSouhaitsXLSX = async function () {
   if (typeof XLSX === "undefined") { alert("Bibliothèque XLSX non chargée."); return; }
-  const all = _loadAllSouhaits();
+  const all = await _loadAllSouhaits();
   if (!Object.keys(all).length) { showToast("Aucun souhait à exporter."); return; }
 
   const pivot = {};
