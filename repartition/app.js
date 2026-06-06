@@ -417,6 +417,9 @@ function renderView() {
   } else if (currentView === "sae") {
     const ns = document.getElementById("nav-sae");
     if (ns) ns.classList.add("active");
+  } else if (currentView === "souhaits") {
+    const ns = document.getElementById("nav-souhaits");
+    if (ns) ns.classList.add("active");
   }
 
   if (currentView === "home") renderHome(root);
@@ -429,6 +432,7 @@ function renderView() {
   else if (currentView === "modifications") renderModifications(root);
   else if (currentView === "pilotage") renderPilotage(root);
   else if (currentView === "sae") renderSae(root);
+  else if (currentView === "souhaits") renderSouhaits(root);
 
   if (_PRINTABLE_VIEWS.has(currentView)) _injectPrintBar(root);
 

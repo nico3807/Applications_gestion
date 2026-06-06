@@ -192,11 +192,18 @@
           >
           <a
             href="#"
+            class="nav-link nav-link-services"
+            id="nav-souhaits"
+            onclick="navigate('souhaits')"
+            >Souhaits</a
+          >
+          <a
+            href="#"
             class="nav-link nav-link-admin"
             id="nav-modifications"
             onclick="navigate('modifications')"
             style="display:none"
-            >Journal</a
+            >Journal</
           >
           <a
             href="#"
@@ -248,5 +255,6 @@
     <script src="../auth.js"></script>
     <script>if (!AUTH.isAuth() || !AUTH.canAccess('repartition')) { location.href = "../index.html"; }</script>
     <script src="app.js"></script>
+    <script src="souhaits/souhaits.js"></script>
   </body>
 </html>
