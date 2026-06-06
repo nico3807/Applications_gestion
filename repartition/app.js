@@ -6,6 +6,9 @@ const GH_REPO = "Applications_gestion"; // À ajuster selon le dépôt exact
 const GH_BRANCH = "main";
 const GH_BASE_PATH = "repartition/data"; // Dossier où se trouvent les JSON sur GitHub
 const GH_ARCHIVE_PATH = "repartition/archive_25-26/data";
+// Token dédié aux souhaits : ne pas mettre de valeur ici (commit public).
+// Configurer via ⚙ GitHub dans l'app → champ "Token Souhaits".
+const GH_SOUHAITS_TOKEN = "";
 
 let ARCHIVE_MODE = false;
 let ARCHIVE_VERSION = "planifiee"; // "planifiee" | "realisee"
@@ -24,119 +27,368 @@ const SEMESTRES = [
 
 /* Données SAÉ par défaut (PN 2022) — toujours disponibles même sans JSON */
 const _SAE_DEFAULT = {
-  semestres: ["S1", "S2", "S3", "S4 crea", "S4 dev", "S5 crea", "S5 dev", "S6 crea", "S6 dev"],
+  semestres: [
+    "S1",
+    "S2",
+    "S3",
+    "S4 crea",
+    "S4 dev",
+    "S5 crea",
+    "S5 dev",
+    "S6 crea",
+    "S6 dev",
+  ],
   sae: {
     S1: [
-      { code: "SAÉ 1.01 | Auditer une communication numérique",
-        competence: "Comprendre les écosystèmes, les besoins des utilisateurs et les dispositifs de communication numérique",
-        ressources: ["R1.03 | Ergonomie et Accessibilité","R1.04 | Culture numérique","R1.05 | Stratégies de communication et marketing","R1.09 | Culture artistique","R1.14 | Représentation et traitement de l'information","R1.16 | Économie, gestion et droit du numérique"],
-        responsable: "" },
-      { code: "SAÉ 1.02 | Concevoir une recommandation de communication numérique",
-        competence: "Concevoir ou co-concevoir une réponse stratégique pertinente à une problématique complexe",
-        ressources: ["R1.01 | Anglais","R1.02 | Anglais Renforcé ou LV2","R1.05 | Stratégies de communication et marketing","R1.06 | Expression, communication et rhétorique"],
-        responsable: "" },
-      { code: "SAÉ 1.03 | Produire les éléments d'une communication visuelle",
-        competence: "Exprimer un message avec les médias numériques pour informer et communiquer",
-        ressources: ["R1.01 | Anglais","R1.08 | Production graphique","R1.09 | Culture artistique","R1.14 | Représentation et traitement de l'information"],
-        responsable: "" },
-      { code: "SAÉ 1.04 | Produire un contenu audio et vidéo",
-        competence: "Exprimer un message avec les médias numériques pour informer et communiquer",
-        ressources: ["R1.07 | Écriture multimédia et narration","R1.10 | Production audio et vidéo","R1.14 | Représentation et traitement de l'information"],
-        responsable: "" },
-      { code: "SAÉ 1.05 | Produire un site Web",
+      {
+        code: "SAÉ 1.01 | Auditer une communication numérique",
+        competence:
+          "Comprendre les écosystèmes, les besoins des utilisateurs et les dispositifs de communication numérique",
+        ressources: [
+          "R1.03 | Ergonomie et Accessibilité",
+          "R1.04 | Culture numérique",
+          "R1.05 | Stratégies de communication et marketing",
+          "R1.09 | Culture artistique",
+          "R1.14 | Représentation et traitement de l'information",
+          "R1.16 | Économie, gestion et droit du numérique",
+        ],
+        responsable: "",
+      },
+      {
+        code: "SAÉ 1.02 | Concevoir une recommandation de communication numérique",
+        competence:
+          "Concevoir ou co-concevoir une réponse stratégique pertinente à une problématique complexe",
+        ressources: [
+          "R1.01 | Anglais",
+          "R1.02 | Anglais Renforcé ou LV2",
+          "R1.05 | Stratégies de communication et marketing",
+          "R1.06 | Expression, communication et rhétorique",
+        ],
+        responsable: "",
+      },
+      {
+        code: "SAÉ 1.03 | Produire les éléments d'une communication visuelle",
+        competence:
+          "Exprimer un message avec les médias numériques pour informer et communiquer",
+        ressources: [
+          "R1.01 | Anglais",
+          "R1.08 | Production graphique",
+          "R1.09 | Culture artistique",
+          "R1.14 | Représentation et traitement de l'information",
+        ],
+        responsable: "",
+      },
+      {
+        code: "SAÉ 1.04 | Produire un contenu audio et vidéo",
+        competence:
+          "Exprimer un message avec les médias numériques pour informer et communiquer",
+        ressources: [
+          "R1.07 | Écriture multimédia et narration",
+          "R1.10 | Production audio et vidéo",
+          "R1.14 | Représentation et traitement de l'information",
+        ],
+        responsable: "",
+      },
+      {
+        code: "SAÉ 1.05 | Produire un site Web",
         competence: "Développer pour le web et les médias numériques",
-        ressources: ["R1.11 | Intégration","R1.12 | Développement Web","R1.13 | Hébergement"],
-        responsable: "" },
-      { code: "SAÉ 1.06 | Gérer un projet de communication numérique",
+        ressources: [
+          "R1.11 | Intégration",
+          "R1.12 | Développement Web",
+          "R1.13 | Hébergement",
+        ],
+        responsable: "",
+      },
+      {
+        code: "SAÉ 1.06 | Gérer un projet de communication numérique",
         competence: "Entreprendre dans le secteur du numérique",
-        ressources: ["R1.01 | Anglais","R1.02 | Anglais Renforcé ou LV2","R1.06 | Expression, communication et rhétorique","R1.15 | Gestion de projet","R1.16 | Économie, gestion et droit du numérique","R1.17 | Projet Personnel et Professionnel"],
-        responsable: "" }
+        ressources: [
+          "R1.01 | Anglais",
+          "R1.02 | Anglais Renforcé ou LV2",
+          "R1.06 | Expression, communication et rhétorique",
+          "R1.15 | Gestion de projet",
+          "R1.16 | Économie, gestion et droit du numérique",
+          "R1.17 | Projet Personnel et Professionnel",
+        ],
+        responsable: "",
+      },
     ],
     S2: [
-      { code: "SAÉ 2.01 | Explorer les usages du numérique",
-        competence: "Comprendre les écosystèmes, les besoins des utilisateurs et les dispositifs de communication numérique",
-        ressources: ["R2.01 | Anglais","R2.02 | Anglais Renforcé ou LV2","R2.03 | Ergonomie et Accessibilité","R2.04 | Culture numérique","R2.05 | Stratégies de communication et marketing","R2.06 | Expression, communication et rhétorique","R2.07 | Écriture multimédia et narration","R2.16 | Représentation et traitement de l'information"],
-        responsable: "" },
-      { code: "SAÉ 2.02 | Concevoir un produit ou un service et sa communication",
+      {
+        code: "SAÉ 2.01 | Explorer les usages du numérique",
+        competence:
+          "Comprendre les écosystèmes, les besoins des utilisateurs et les dispositifs de communication numérique",
+        ressources: [
+          "R2.01 | Anglais",
+          "R2.02 | Anglais Renforcé ou LV2",
+          "R2.03 | Ergonomie et Accessibilité",
+          "R2.04 | Culture numérique",
+          "R2.05 | Stratégies de communication et marketing",
+          "R2.06 | Expression, communication et rhétorique",
+          "R2.07 | Écriture multimédia et narration",
+          "R2.16 | Représentation et traitement de l'information",
+        ],
+        responsable: "",
+      },
+      {
+        code: "SAÉ 2.02 | Concevoir un produit ou un service et sa communication",
         competence: "Concevoir · Exprimer · Développer · Entreprendre",
-        ressources: ["R2.08 | Production graphique","R2.09 | Culture artistique","R2.10 | Production audio et vidéo","R2.11 | Gestion de contenus","R2.16 | Représentation et traitement de l'information","R2.17 | Gestion de projet","R2.18 | Économie, gestion et droit du numérique","R2.19 | Projet Personnel et Professionnel"],
-        responsable: "" },
-      { code: "SAÉ 2.03 | Concevoir un site web avec une source de données",
+        ressources: [
+          "R2.08 | Production graphique",
+          "R2.09 | Culture artistique",
+          "R2.10 | Production audio et vidéo",
+          "R2.11 | Gestion de contenus",
+          "R2.16 | Représentation et traitement de l'information",
+          "R2.17 | Gestion de projet",
+          "R2.18 | Économie, gestion et droit du numérique",
+          "R2.19 | Projet Personnel et Professionnel",
+        ],
+        responsable: "",
+      },
+      {
+        code: "SAÉ 2.03 | Concevoir un site web avec une source de données",
         competence: "Développer pour le web et les médias numériques",
-        ressources: ["R2.12 | Intégration","R2.13 | Développement Web","R2.14 | Système d'information","R2.15 | Hébergement"],
-        responsable: "" },
-      { code: "SAÉ 2.04 | Construire sa présence en ligne",
+        ressources: [
+          "R2.12 | Intégration",
+          "R2.13 | Développement Web",
+          "R2.14 | Système d'information",
+          "R2.15 | Hébergement",
+        ],
+        responsable: "",
+      },
+      {
+        code: "SAÉ 2.04 | Construire sa présence en ligne",
         competence: "Entreprendre dans le secteur du numérique",
-        ressources: ["R2.06 | Expression, communication et rhétorique","R2.19 | Projet Personnel et Professionnel"],
-        responsable: "" },
-      { code: "SAÉ 2.98 | Hackathon", competence: "", ressources: [], responsable: "" },
-      { code: "SAÉ 2.99 | Marathon MMI", competence: "", ressources: [], responsable: "" }
+        ressources: [
+          "R2.06 | Expression, communication et rhétorique",
+          "R2.19 | Projet Personnel et Professionnel",
+        ],
+        responsable: "",
+      },
+      {
+        code: "SAÉ 2.98 | Hackathon",
+        competence: "",
+        ressources: [],
+        responsable: "",
+      },
+      {
+        code: "SAÉ 2.99 | Marathon MMI",
+        competence: "",
+        ressources: [],
+        responsable: "",
+      },
     ],
     S3: [
-      { code: "SAÉ 3.01 | Intégrer des interfaces utilisateurs au sein d'un système d'information",
+      {
+        code: "SAÉ 3.01 | Intégrer des interfaces utilisateurs au sein d'un système d'information",
         competence: "Comprendre · Concevoir · Développer · Entreprendre",
-        ressources: ["R3.03 | Design d'expérience","R3.04 | Culture numérique","R3.12 | Développement Front et intégration","R3.14 | Déploiement de services","R3.16 | Gestion de projet","R3.17 | Économie, gestion et droit du numérique","R3.18 | Projet Personnel et Professionnel"],
-        responsable: "" },
-      { code: "SAÉ 3.02 | Produire des contenus pour une communication plurimédia",
+        ressources: [
+          "R3.03 | Design d'expérience",
+          "R3.04 | Culture numérique",
+          "R3.12 | Développement Front et intégration",
+          "R3.14 | Déploiement de services",
+          "R3.16 | Gestion de projet",
+          "R3.17 | Économie, gestion et droit du numérique",
+          "R3.18 | Projet Personnel et Professionnel",
+        ],
+        responsable: "",
+      },
+      {
+        code: "SAÉ 3.02 | Produire des contenus pour une communication plurimédia",
         competence: "Comprendre · Concevoir · Exprimer · Entreprendre",
-        ressources: ["R3.01 | Anglais","R3.02 | Anglais Renforcé ou LV2","R3.06 | Référencement","R3.07 | Expression, communication et rhétorique","R3.08 | Écriture multimédia et narration","R3.10 | Culture artistique","R3.11 | Audiovisuel et Motion design","R3.15 | Représentation et traitement de l'information","R3.17 | Économie, gestion et droit du numérique"],
-        responsable: "" },
-      { code: "SAÉ 3.03 | Concevoir des visualisations de données pour le web et un support animé",
+        ressources: [
+          "R3.01 | Anglais",
+          "R3.02 | Anglais Renforcé ou LV2",
+          "R3.06 | Référencement",
+          "R3.07 | Expression, communication et rhétorique",
+          "R3.08 | Écriture multimédia et narration",
+          "R3.10 | Culture artistique",
+          "R3.11 | Audiovisuel et Motion design",
+          "R3.15 | Représentation et traitement de l'information",
+          "R3.17 | Économie, gestion et droit du numérique",
+        ],
+        responsable: "",
+      },
+      {
+        code: "SAÉ 3.03 | Concevoir des visualisations de données pour le web et un support animé",
         competence: "Comprendre · Exprimer · Développer",
-        ressources: ["R3.10 | Culture artistique","R3.11 | Audiovisuel et Motion design","R3.12 | Développement Front et intégration","R3.15 | Représentation et traitement de l'information"],
-        responsable: "" }
+        ressources: [
+          "R3.10 | Culture artistique",
+          "R3.11 | Audiovisuel et Motion design",
+          "R3.12 | Développement Front et intégration",
+          "R3.15 | Représentation et traitement de l'information",
+        ],
+        responsable: "",
+      },
     ],
     "S4 crea": [
-      { code: "SAÉ 4.Crea.01 | Créer pour une campagne de communication visuelle",
+      {
+        code: "SAÉ 4.Crea.01 | Créer pour une campagne de communication visuelle",
         competence: "Comprendre · Concevoir · Exprimer · Entreprendre",
-        ressources: ["R4.Crea.01 | Anglais","R4.02 | Économie, gestion et Droit du numérique","R4.03 | Design d'expérience","R4.Crea.06 | Culture artistique"],
-        responsable: "" },
-      { code: "SAÉ 4.Crea.02 | Produire du contenu multimédia",
+        ressources: [
+          "R4.Crea.01 | Anglais",
+          "R4.02 | Économie, gestion et Droit du numérique",
+          "R4.03 | Design d'expérience",
+          "R4.Crea.06 | Culture artistique",
+        ],
+        responsable: "",
+      },
+      {
+        code: "SAÉ 4.Crea.02 | Produire du contenu multimédia",
         competence: "Concevoir · Exprimer · Développer · Entreprendre",
-        ressources: ["R4.Crea.01 | Anglais","R4.03 | Design d'expérience","R4.04 | Expression, communication","R4.Crea.05 | Gestion de contenus spécialisée","R4.Crea.07 | Audiovisuel – Motion design","R4.Crea.08 | Écriture multimédia et narration"],
-        responsable: "" },
-      { code: "SAÉ 4.Crea.03 | SAE langues", competence: "", ressources: [], responsable: "" },
-      { code: "SAÉ 4.98 | Hackathon", competence: "", ressources: [], responsable: "" },
-      { code: "SAÉ 4.99 | Marathon MMI", competence: "", ressources: [], responsable: "" }
+        ressources: [
+          "R4.Crea.01 | Anglais",
+          "R4.03 | Design d'expérience",
+          "R4.04 | Expression, communication",
+          "R4.Crea.05 | Gestion de contenus spécialisée",
+          "R4.Crea.07 | Audiovisuel – Motion design",
+          "R4.Crea.08 | Écriture multimédia et narration",
+        ],
+        responsable: "",
+      },
+      {
+        code: "SAÉ 4.Crea.03 | SAE langues",
+        competence: "",
+        ressources: [],
+        responsable: "",
+      },
+      {
+        code: "SAÉ 4.98 | Hackathon",
+        competence: "",
+        ressources: [],
+        responsable: "",
+      },
+      {
+        code: "SAÉ 4.99 | Marathon MMI",
+        competence: "",
+        ressources: [],
+        responsable: "",
+      },
     ],
     "S4 dev": [
-      { code: "SAÉ 4.DWeb-DI.01 | Développer pour le Web",
+      {
+        code: "SAÉ 4.DWeb-DI.01 | Développer pour le Web",
         competence: "Comprendre · Concevoir · Développer · Entreprendre",
-        ressources: ["R4.DWeb-DI.01 | Anglais","R4.02 | Économie, gestion et Droit du numérique","R4.03 | Design d'expérience","R4.04 | Expression, communication","R4.DWeb-DI.06 | Développement front","R4.DWeb-DI.07 | Développement back","R4.DWeb-DI.08 | Déploiement de services"],
-        responsable: "" },
-      { code: "SAÉ 4.DWeb-DI.02 | Concevoir un dispositif interactif",
+        ressources: [
+          "R4.DWeb-DI.01 | Anglais",
+          "R4.02 | Économie, gestion et Droit du numérique",
+          "R4.03 | Design d'expérience",
+          "R4.04 | Expression, communication",
+          "R4.DWeb-DI.06 | Développement front",
+          "R4.DWeb-DI.07 | Développement back",
+          "R4.DWeb-DI.08 | Déploiement de services",
+        ],
+        responsable: "",
+      },
+      {
+        code: "SAÉ 4.DWeb-DI.02 | Concevoir un dispositif interactif",
         competence: "Exprimer · Développer",
-        ressources: ["R4.DWeb-DI.01 | Anglais","R4.DWeb-DI.05 | Création et design interactif","R4.DWeb-DI.06 | Développement front"],
-        responsable: "" },
-      { code: "SAÉ 4.DWeb-DI.04 | Apprentis : Interface, contenus et visualisation",
-        competence: "", ressources: [], responsable: "" },
-      { code: "SAÉ 4.98 | Hackathon", competence: "", ressources: [], responsable: "" },
-      { code: "SAÉ 4.99 | Marathon MMI", competence: "", ressources: [], responsable: "" }
+        ressources: [
+          "R4.DWeb-DI.01 | Anglais",
+          "R4.DWeb-DI.05 | Création et design interactif",
+          "R4.DWeb-DI.06 | Développement front",
+        ],
+        responsable: "",
+      },
+      {
+        code: "SAÉ 4.DWeb-DI.04 | Apprentis : Interface, contenus et visualisation",
+        competence: "",
+        ressources: [],
+        responsable: "",
+      },
+      {
+        code: "SAÉ 4.98 | Hackathon",
+        competence: "",
+        ressources: [],
+        responsable: "",
+      },
+      {
+        code: "SAÉ 4.99 | Marathon MMI",
+        competence: "",
+        ressources: [],
+        responsable: "",
+      },
     ],
     "S5 crea": [
-      { code: "SAÉ 5.Crea.01 | Créer par/pour le numérique",
+      {
+        code: "SAÉ 5.Crea.01 | Créer par/pour le numérique",
         competence: "Exprimer · Entreprendre",
-        ressources: ["R5.01 | Anglais","R5.02 | Management et Assurance qualité","R5.03 | Entrepreneuriat","R5.04 | Projet Personnel et Professionnel","R5.Crea.05 | Définir une direction artistique","R5.Crea.06 | Création numérique","R5.Crea.07 | Écriture Multimédia et narration"],
-        responsable: "" },
-      { code: "SAÉ 5.Crea.02 | SAE Management", competence: "", ressources: [], responsable: "" },
-      { code: "SAÉ 5.Crea.03 | SAE Conception d'interface", competence: "", ressources: [], responsable: "" }
+        ressources: [
+          "R5.01 | Anglais",
+          "R5.02 | Management et Assurance qualité",
+          "R5.03 | Entrepreneuriat",
+          "R5.04 | Projet Personnel et Professionnel",
+          "R5.Crea.05 | Définir une direction artistique",
+          "R5.Crea.06 | Création numérique",
+          "R5.Crea.07 | Écriture Multimédia et narration",
+        ],
+        responsable: "",
+      },
+      {
+        code: "SAÉ 5.Crea.02 | SAE Management",
+        competence: "",
+        ressources: [],
+        responsable: "",
+      },
+      {
+        code: "SAÉ 5.Crea.03 | SAE Conception d'interface",
+        competence: "",
+        ressources: [],
+        responsable: "",
+      },
     ],
     "S5 dev": [
-      { code: "SAÉ 5D.01 | Développer pour le web",
+      {
+        code: "SAÉ 5D.01 | Développer pour le web",
         competence: "Développer · Entreprendre",
-        ressources: ["R5.01 | Anglais","R5.02 | Management et Assurance qualité","R5.03 | Entrepreneuriat","R5.04 | Projet Personnel et Professionnel","R5.DWeb-DI.05 | Développement front avancé","R5.DWeb-DI.06 | Développement back avancé","R5.DWeb-DI.07 | Dispositifs interactifs","R5.DWeb-DI.08 | Hébergement et cybersécurité"],
-        responsable: "" },
-      { code: "SAÉ 5D.02 | SAE Management", competence: "", ressources: [], responsable: "" },
-      { code: "SAÉ 5D.03 | Concevoir un dispositif interactif", competence: "", ressources: [], responsable: "" },
-      { code: "SAÉ 5D.04 | Integration d'un LLM", competence: "", ressources: [], responsable: "" }
+        ressources: [
+          "R5.01 | Anglais",
+          "R5.02 | Management et Assurance qualité",
+          "R5.03 | Entrepreneuriat",
+          "R5.04 | Projet Personnel et Professionnel",
+          "R5.DWeb-DI.05 | Développement front avancé",
+          "R5.DWeb-DI.06 | Développement back avancé",
+          "R5.DWeb-DI.07 | Dispositifs interactifs",
+          "R5.DWeb-DI.08 | Hébergement et cybersécurité",
+        ],
+        responsable: "",
+      },
+      {
+        code: "SAÉ 5D.02 | SAE Management",
+        competence: "",
+        ressources: [],
+        responsable: "",
+      },
+      {
+        code: "SAÉ 5D.03 | Concevoir un dispositif interactif",
+        competence: "",
+        ressources: [],
+        responsable: "",
+      },
+      {
+        code: "SAÉ 5D.04 | Integration d'un LLM",
+        competence: "",
+        ressources: [],
+        responsable: "",
+      },
     ],
     "S6 crea": [
-      { code: "SAÉ 6.Crea.01 | UX / UI avancé", competence: "", ressources: [], responsable: "" }
+      {
+        code: "SAÉ 6.Crea.01 | UX / UI avancé",
+        competence: "",
+        ressources: [],
+        responsable: "",
+      },
     ],
     "S6 dev": [
-      { code: "SAÉ 6.dev.01 | Developpement avancé", competence: "", ressources: [], responsable: "" }
-    ]
-  }
+      {
+        code: "SAÉ 6.dev.01 | Developpement avancé",
+        competence: "",
+        ressources: [],
+        responsable: "",
+      },
+    ],
+  },
 };
 
 let APP_DATA = {
@@ -196,15 +448,20 @@ window.navigate = function (view, param = null) {
   renderView();
 };
 
-const _PRINTABLE_VIEWS = new Set(["semestre","maquette_semestre","services","pilotage"]);
+const _PRINTABLE_VIEWS = new Set([
+  "semestre",
+  "maquette_semestre",
+  "services",
+  "pilotage",
+]);
 
 /* Priorité de tri des ressources (module-level, réutilisée dans export et maquette) */
 function _resPrio(r) {
   const l = r.toLowerCase();
   if (l.includes("hackathon")) return 4;
-  if (l.includes("marathon"))  return 3;
+  if (l.includes("marathon")) return 3;
   if (l.includes("portfolio")) return 2;
-  if (l.includes("saé"))       return 1;
+  if (l.includes("saé")) return 1;
   return 0;
 }
 
@@ -220,7 +477,10 @@ function _injectPrintBar(root) {
 }
 
 window.exportXLSX = function () {
-  if (typeof XLSX === "undefined") { alert("Bibliothèque XLSX non chargée."); return; }
+  if (typeof XLSX === "undefined") {
+    alert("Bibliothèque XLSX non chargée.");
+    return;
+  }
   const sem = currentParam || "";
   const safeSem = sem.replace(/\s+/g, "_");
   let rows, filename, sheetName;
@@ -230,14 +490,25 @@ window.exportXLSX = function () {
     rows = [["Ressource", "Enseignant", "CM", "TD", "TP"]];
     Object.keys(aff).forEach((res) => {
       const d = aff[res];
-      rows.push([res, d.enseignant || "", parseFloat(d.cm) || 0, parseFloat(d.td) || 0, parseFloat(d.tp) || 0]);
+      rows.push([
+        res,
+        d.enseignant || "",
+        parseFloat(d.cm) || 0,
+        parseFloat(d.td) || 0,
+        parseFloat(d.tp) || 0,
+      ]);
       (d.subrows || []).forEach((s) => {
-        rows.push(["", s.enseignant || "", parseFloat(s.cm) || 0, parseFloat(s.td) || 0, parseFloat(s.tp) || 0]);
+        rows.push([
+          "",
+          s.enseignant || "",
+          parseFloat(s.cm) || 0,
+          parseFloat(s.td) || 0,
+          parseFloat(s.tp) || 0,
+        ]);
       });
     });
     filename = `repartition_${safeSem}.xlsx`;
     sheetName = sem || "Répartition";
-
   } else if (currentView === "maquette_semestre") {
     const aff = APP_DATA.affectations[sem] || {};
     const maq = APP_DATA.maquette_overrides[sem] || {};
@@ -246,25 +517,47 @@ window.exportXLSX = function () {
       const d = _resPrio(a) - _resPrio(b);
       return d !== 0 ? d : a.localeCompare(b, "fr");
     });
-    rows = [["Ressource", "CM final", "TD final", "TP final", "Vol horaire PN", "Dont TP PN", "Adapt locale", "Dont TP AL"]];
+    rows = [
+      [
+        "Ressource",
+        "CM final",
+        "TD final",
+        "TP final",
+        "Vol horaire PN",
+        "Dont TP PN",
+        "Adapt locale",
+        "Dont TP AL",
+      ],
+    ];
     sorted.forEach((res) => {
       const m = maq[res] || {};
       const v = vhn[res] || {};
       rows.push([
         res,
-        parseFloat(m.cm_final) || 0, parseFloat(m.td_final) || 0, parseFloat(m.tp_final) || 0,
-        v.vol_hn || 0, v.dont_tp_hn || 0,
-        parseFloat(v.adapt_locale) || 0, parseFloat(v.dont_tp_al) || 0,
+        parseFloat(m.cm_final) || 0,
+        parseFloat(m.td_final) || 0,
+        parseFloat(m.tp_final) || 0,
+        v.vol_hn || 0,
+        v.dont_tp_hn || 0,
+        parseFloat(v.adapt_locale) || 0,
+        parseFloat(v.dont_tp_al) || 0,
       ]);
     });
     filename = `maquette_${safeSem}.xlsx`;
     sheetName = sem || "Maquette";
-
   } else if (currentView === "sae") {
-    const sem     = _saeSemFilter;
+    const sem = _saeSemFilter;
     const safeSem = sem.replace(/\s+/g, "_");
-    const list    = (APP_DATA.sae.sae[sem] || []);
-    rows = [["SAÉ", "Intitulé", "Compétence ciblée", "Ressources nécessaires", "Responsable"]];
+    const list = APP_DATA.sae.sae[sem] || [];
+    rows = [
+      [
+        "SAÉ",
+        "Intitulé",
+        "Compétence ciblée",
+        "Ressources nécessaires",
+        "Responsable",
+      ],
+    ];
     list.forEach((s) => {
       rows.push([
         s.code,
@@ -274,9 +567,8 @@ window.exportXLSX = function () {
         s.responsable || "",
       ]);
     });
-    filename  = `sae_${safeSem}.xlsx`;
+    filename = `sae_${safeSem}.xlsx`;
     sheetName = `SAÉ ${sem}`.substring(0, 31);
-
   } else {
     return;
   }
@@ -293,7 +585,8 @@ function _ensureTooltip() {
   if (!tt) {
     tt = document.createElement("div");
     tt.id = "res-tooltip";
-    tt.style.cssText = "display:none;position:fixed;z-index:9999;background:#fff;" +
+    tt.style.cssText =
+      "display:none;position:fixed;z-index:9999;background:#fff;" +
       "border:1px solid #d1d5db;border-radius:8px;padding:0.65rem 0.9rem;" +
       "box-shadow:0 4px 16px rgba(0,0,0,.15);font-size:12px;pointer-events:none;" +
       "min-width:220px;line-height:1.8;";
@@ -304,22 +597,25 @@ function _ensureTooltip() {
 
 function _posTooltip(e, tt) {
   const m = 14;
-  let l = e.clientX + m, t = e.clientY + m;
-  if (l + tt.offsetWidth  > window.innerWidth)  l = e.clientX - tt.offsetWidth  - m;
-  if (t + tt.offsetHeight > window.innerHeight) t = e.clientY - tt.offsetHeight - m;
+  let l = e.clientX + m,
+    t = e.clientY + m;
+  if (l + tt.offsetWidth > window.innerWidth)
+    l = e.clientX - tt.offsetWidth - m;
+  if (t + tt.offsetHeight > window.innerHeight)
+    t = e.clientY - tt.offsetHeight - m;
   tt.style.left = l + "px";
-  tt.style.top  = t + "px";
+  tt.style.top = t + "px";
 }
 
 document.addEventListener("mouseover", function (e) {
   const badge = e.target.closest(".res-total-badge");
   if (!badge) return;
 
-  const field  = badge.dataset.field;
-  const val    = parseFloat(badge.dataset.val)    || 0;
-  const maqCM  = parseFloat(badge.dataset.maqCm)  || 0;
-  const maqTD  = parseFloat(badge.dataset.maqTd)  || 0;
-  const maqTP  = parseFloat(badge.dataset.maqTp)  || 0;
+  const field = badge.dataset.field;
+  const val = parseFloat(badge.dataset.val) || 0;
+  const maqCM = parseFloat(badge.dataset.maqCm) || 0;
+  const maqTD = parseFloat(badge.dataset.maqTd) || 0;
+  const maqTP = parseFloat(badge.dataset.maqTp) || 0;
   const maqVal = field === "cm" ? maqCM : field === "td" ? maqTD : maqTP;
 
   const ecart = val - maqVal;
@@ -332,9 +628,9 @@ document.addEventListener("mouseover", function (e) {
     ecartColor = "#ea580c";
   }
 
-  const fmt  = (n) => (n % 1 === 0 ? String(n) : n.toFixed(1));
+  const fmt = (n) => (n % 1 === 0 ? String(n) : n.toFixed(1));
   const sign = ecart >= 0 ? "+" : "";
-  const lbl  = field.toUpperCase();
+  const lbl = field.toUpperCase();
 
   const tt = _ensureTooltip();
   tt.innerHTML =
@@ -442,7 +738,13 @@ function renderView() {
   /* Masquer les liens de navigation non pertinents pour les utilisateurs
      qui n'ont pas accès à repartition (accès souhaits uniquement) */
   const _repartitionOnly = !AUTH.canAccess("repartition");
-  ["nav-home", "nav-maquette", "nav-services", "nav-enseignants", "nav-archive"].forEach(id => {
+  [
+    "nav-home",
+    "nav-maquette",
+    "nav-services",
+    "nav-enseignants",
+    "nav-archive",
+  ].forEach((id) => {
     const el = document.getElementById(id);
     if (el) el.style.display = _repartitionOnly ? "none" : "";
   });
@@ -490,7 +792,7 @@ function renderSemestre(root, sem) {
   /* Tri des ressources : Hackathon/Marathon en avant-dernier, Portfolio en dernier */
   const _rowPrio = (r) => {
     const l = r.toLowerCase();
-    if (l.includes("portfolio"))  return 2;
+    if (l.includes("portfolio")) return 2;
     if (l.includes("hackathon") || l.includes("marathon")) return 1;
     return 0;
   };
@@ -527,7 +829,8 @@ function renderSemestre(root, sem) {
     const resLc = res.toLowerCase();
     const isSae = resLc.includes("saé");
     const isPort = resLc.includes("portfolio");
-    const isHackMarathon = resLc.includes("hackathon") || resLc.includes("marathon");
+    const isHackMarathon =
+      resLc.includes("hackathon") || resLc.includes("marathon");
     const rowClass = isHackMarathon
       ? "row-hackathon"
       : isSae
@@ -602,39 +905,46 @@ function renderSemestre(root, sem) {
     let resCM = parseFloat(data.cm) || 0;
     let resTD = parseFloat(data.td) || 0;
     let resTP = parseFloat(data.tp) || 0;
-    if (data.subrows) data.subrows.forEach((s) => {
-      resCM += parseFloat(s.cm) || 0;
-      resTD += parseFloat(s.td) || 0;
-      resTP += parseFloat(s.tp) || 0;
-    });
+    if (data.subrows)
+      data.subrows.forEach((s) => {
+        resCM += parseFloat(s.cm) || 0;
+        resTD += parseFloat(s.td) || 0;
+        resTP += parseFloat(s.tp) || 0;
+      });
     const fmtR = (n) => (n % 1 === 0 ? n : n.toFixed(1).replace(/\.0$/, ""));
 
     const _ecartStyle = (v, m) => {
       const e = v - m;
       if (e < 0) return "color:#dc2626;font-weight:700;";
-      return (m === 0 ? e === 0 : e / m <= 0.1) ? "color:#16a34a;" : "color:#ea580c;";
+      return (m === 0 ? e === 0 : e / m <= 0.1)
+        ? "color:#16a34a;"
+        : "color:#ea580c;";
     };
     const cmStyle = _ecartStyle(resCM, parseFloat(prev.cm_final) || 0);
     const tdStyle = _ecartStyle(resTD, parseFloat(prev.td_final) || 0);
     const tpStyle = _ecartStyle(resTP, parseFloat(prev.tp_final) || 0);
 
     /* Pour les SAÉ : responsable lu depuis la section SAÉ (non éditable ici) */
-    const _saeList  = (APP_DATA.sae && APP_DATA.sae.sae[sem]) || [];
+    const _saeList = (APP_DATA.sae && APP_DATA.sae.sae[sem]) || [];
     const _saeEntry = _saeList.find((s) => s.code === res);
-    const _saeResp  = _saeEntry ? (_saeEntry.responsable || "") : null;
+    const _saeResp = _saeEntry ? _saeEntry.responsable || "" : null;
 
-    const respCell = (isSae && _saeEntry !== undefined)
-      ? `<td colspan="2" class="responsable-label">Responsable SAÉ :
+    const respCell =
+      isSae && _saeEntry !== undefined
+        ? `<td colspan="2" class="responsable-label">Responsable SAÉ :
             <span style="display:inline-block;padding:3px 10px;background:#f0f4fb;border:1px solid #c7d2e8;border-radius:5px;font-size:13px;color:${_saeResp ? "#1e3a5f" : "#9ca3af"};">
               ${_saeResp || "Non assigné — voir section SAÉ"}
             </span>
          </td>`
-      : `<td colspan="2" class="responsable-label">Responsable :
+        : `<td colspan="2" class="responsable-label">Responsable :
             <select class="select-enseignant ${respSelClass}" onchange="updateAff('${sem}', '${res.replace(/'/g, "\\'")}', 'responsable', this.value)">
                 <option value="">-</option>
                 ${enseignants
                   .filter((e) => !e.is_vac)
-                  .map((e) => `<option value="${e.id}" class="ens-option" ${e.id === data.responsable ? "selected" : ""}>${e.id}</option>`)
+                  .map(
+                    (e) =>
+                      `<option value="${e.id}" class="ens-option" ${e.id === data.responsable ? "selected" : ""}>${e.id}</option>`,
+                  )
                   .join("")}
             </select>
          </td>`;
@@ -642,9 +952,9 @@ function renderSemestre(root, sem) {
     html += `<tr class="row-responsable ${rowClass}">
             ${respCell}
             <td class="responsable-label" style="text-align:right;">Total / étudiant :</td>
-            <td style="text-align:center;"><span class="prev-badge res-total-badge" style="${cmStyle}" data-field="cm" data-val="${resCM}" data-maq-cm="${prev.cm_final||0}" data-maq-td="${prev.td_final||0}" data-maq-tp="${prev.tp_final||0}">${fmtR(resCM)}</span></td>
-            <td style="text-align:center;"><span class="prev-badge res-total-badge" style="${tdStyle}" data-field="td" data-val="${resTD}" data-maq-cm="${prev.cm_final||0}" data-maq-td="${prev.td_final||0}" data-maq-tp="${prev.tp_final||0}">${fmtR(resTD)}</span></td>
-            <td style="text-align:center;"><span class="prev-badge res-total-badge" style="${tpStyle}" data-field="tp" data-val="${resTP}" data-maq-cm="${prev.cm_final||0}" data-maq-td="${prev.td_final||0}" data-maq-tp="${prev.tp_final||0}">${fmtR(resTP)}</span></td>
+            <td style="text-align:center;"><span class="prev-badge res-total-badge" style="${cmStyle}" data-field="cm" data-val="${resCM}" data-maq-cm="${prev.cm_final || 0}" data-maq-td="${prev.td_final || 0}" data-maq-tp="${prev.tp_final || 0}">${fmtR(resCM)}</span></td>
+            <td style="text-align:center;"><span class="prev-badge res-total-badge" style="${tdStyle}" data-field="td" data-val="${resTD}" data-maq-cm="${prev.cm_final || 0}" data-maq-td="${prev.td_final || 0}" data-maq-tp="${prev.tp_final || 0}">${fmtR(resTD)}</span></td>
+            <td style="text-align:center;"><span class="prev-badge res-total-badge" style="${tpStyle}" data-field="tp" data-val="${resTP}" data-maq-cm="${prev.cm_final || 0}" data-maq-td="${prev.td_final || 0}" data-maq-tp="${prev.tp_final || 0}">${fmtR(resTP)}</span></td>
             <td></td>
         </tr>`;
   });
@@ -757,9 +1067,16 @@ function renderMaquetteSemestre(root, sem) {
   });
 
   const fmtR = (n) => (n % 1 === 0 ? n : n.toFixed(1).replace(/\.0$/, ""));
-  let totCMf = 0, totTDf = 0, totTPf = 0;
-  let totVolHN = 0, totDontTpHN = 0, totAL = 0, totDontTpAL = 0;
-  let totRCM = 0, totRTD = 0, totRTP = 0;
+  let totCMf = 0,
+    totTDf = 0,
+    totTPf = 0;
+  let totVolHN = 0,
+    totDontTpHN = 0,
+    totAL = 0,
+    totDontTpAL = 0;
+  let totRCM = 0,
+    totRTD = 0,
+    totRTP = 0;
 
   sortedRes.forEach((res, i) => {
     const m = maq[res] || { cm_final: 0, td_final: 0, tp_final: 0 };
@@ -786,24 +1103,31 @@ function renderMaquetteSemestre(root, sem) {
     let rCM = parseFloat(affRes.cm) || 0;
     let rTD = parseFloat(affRes.td) || 0;
     let rTP = parseFloat(affRes.tp) || 0;
-    if (affRes.subrows) affRes.subrows.forEach((s) => {
-      rCM += parseFloat(s.cm) || 0;
-      rTD += parseFloat(s.td) || 0;
-      rTP += parseFloat(s.tp) || 0;
-    });
+    if (affRes.subrows)
+      affRes.subrows.forEach((s) => {
+        rCM += parseFloat(s.cm) || 0;
+        rTD += parseFloat(s.td) || 0;
+        rTP += parseFloat(s.tp) || 0;
+      });
 
-    totCMf += m.cm_final || 0; totTDf += m.td_final || 0; totTPf += m.tp_final || 0;
-    totVolHN += v.vol_hn || 0; totDontTpHN += v.dont_tp_hn || 0;
-    totAL += v.adapt_locale || 0; totDontTpAL += v.dont_tp_al || 0;
-    totRCM += rCM; totRTD += rTD; totRTP += rTP;
+    totCMf += m.cm_final || 0;
+    totTDf += m.td_final || 0;
+    totTPf += m.tp_final || 0;
+    totVolHN += v.vol_hn || 0;
+    totDontTpHN += v.dont_tp_hn || 0;
+    totAL += v.adapt_locale || 0;
+    totDontTpAL += v.dont_tp_al || 0;
+    totRCM += rCM;
+    totRTD += rTD;
+    totRTP += rTP;
 
     html += `<tr class="${rowClass} row-main-resource">
             <td>${res}</td>
             <td><input type="number" class="input-editable" value="${m.cm_final}" onchange="updateMaq('${sem}','${resEsc}','cm_final',this.value)"></td>
             <td><input type="number" class="input-editable" value="${m.td_final}" onchange="updateMaq('${sem}','${resEsc}','td_final',this.value)"></td>
             <td><input type="number" class="input-editable" value="${m.tp_final}" onchange="updateMaq('${sem}','${resEsc}','tp_final',this.value)"></td>
-            <td class="pn-readonly-val">${v.vol_hn || '-'}</td>
-            <td class="pn-readonly-val">${v.dont_tp_hn || '-'}</td>
+            <td class="pn-readonly-val">${v.vol_hn || "-"}</td>
+            <td class="pn-readonly-val">${v.dont_tp_hn || "-"}</td>
             <td><input type="number" class="input-pn-editable" value="${v.adapt_locale}" onchange="updateVolHN('${sem}','${resEsc}','adapt_locale',this.value)" step="0.5"></td>
             <td><input type="number" class="input-pn-editable" value="${v.dont_tp_al}" onchange="updateVolHN('${sem}','${resEsc}','dont_tp_al',this.value)" step="0.5"></td>
             <td class="reel-val">${fmtR(rCM)}</td>
@@ -815,17 +1139,18 @@ function renderMaquetteSemestre(root, sem) {
   });
 
   const totMaqGlobal = totCMf + totTDf + totTPf;
-  const totPctHtml = totVolHN > 0
-    ? `<span class="${totMaqGlobal / totVolHN * 100 < 95 ? "pct-low" : "pct-ok"}">${(totMaqGlobal / totVolHN * 100).toFixed(0)} %</span>`
-    : `<span class="pct-na">—</span>`;
+  const totPctHtml =
+    totVolHN > 0
+      ? `<span class="${(totMaqGlobal / totVolHN) * 100 < 95 ? "pct-low" : "pct-ok"}">${((totMaqGlobal / totVolHN) * 100).toFixed(0)} %</span>`
+      : `<span class="pct-na">—</span>`;
 
   html += `</tbody><tfoot><tr class="row-total-pose">
       <td><strong>Total</strong></td>
       <td><strong>${fmtR(totCMf)}</strong></td>
       <td><strong>${fmtR(totTDf)}</strong></td>
       <td><strong>${fmtR(totTPf)}</strong></td>
-      <td><strong>${fmtR(totVolHN) || '-'}</strong></td>
-      <td><strong>${fmtR(totDontTpHN) || '-'}</strong></td>
+      <td><strong>${fmtR(totVolHN) || "-"}</strong></td>
+      <td><strong>${fmtR(totDontTpHN) || "-"}</strong></td>
       <td><strong>${fmtR(totAL)}</strong></td>
       <td><strong>${fmtR(totDontTpAL)}</strong></td>
       <td><strong>${fmtR(totRCM)}</strong></td>
@@ -885,13 +1210,22 @@ window.openAddRessourceModal = function (sem) {
         </div>
       </div>`;
     document.body.appendChild(modal);
-    modal.addEventListener("click", (e) => { if (e.target === modal) closeAddRessourceModal(); });
+    modal.addEventListener("click", (e) => {
+      if (e.target === modal) closeAddRessourceModal();
+    });
   }
   modal.dataset.sem = sem;
   document.getElementById("add-res-sem-lbl").textContent = sem;
   ["add-res-name"].forEach((id) => (document.getElementById(id).value = ""));
-  ["add-res-cm","add-res-td","add-res-tp","add-res-vhn","add-res-dtp","add-res-al","add-res-dal"]
-    .forEach((id) => (document.getElementById(id).value = "0"));
+  [
+    "add-res-cm",
+    "add-res-td",
+    "add-res-tp",
+    "add-res-vhn",
+    "add-res-dtp",
+    "add-res-al",
+    "add-res-dal",
+  ].forEach((id) => (document.getElementById(id).value = "0"));
   document.getElementById("add-res-err").style.display = "none";
   modal.style.display = "flex";
   document.getElementById("add-res-name").focus();
@@ -904,9 +1238,9 @@ window.closeAddRessourceModal = function () {
 
 window.confirmAddRessource = function () {
   const modal = document.getElementById("add-res-modal");
-  const sem   = modal.dataset.sem;
-  const name  = document.getElementById("add-res-name").value.trim();
-  const err   = document.getElementById("add-res-err");
+  const sem = modal.dataset.sem;
+  const name = document.getElementById("add-res-name").value.trim();
+  const err = document.getElementById("add-res-err");
 
   if (!name) {
     err.textContent = "L'intitulé est obligatoire.";
@@ -919,11 +1253,19 @@ window.confirmAddRessource = function () {
     return;
   }
 
-  if (!APP_DATA.affectations[sem])            APP_DATA.affectations[sem]            = {};
-  if (!APP_DATA.maquette_overrides[sem])       APP_DATA.maquette_overrides[sem]       = {};
-  if (!APP_DATA.volume_horaire_national[sem])  APP_DATA.volume_horaire_national[sem]  = {};
+  if (!APP_DATA.affectations[sem]) APP_DATA.affectations[sem] = {};
+  if (!APP_DATA.maquette_overrides[sem]) APP_DATA.maquette_overrides[sem] = {};
+  if (!APP_DATA.volume_horaire_national[sem])
+    APP_DATA.volume_horaire_national[sem] = {};
 
-  APP_DATA.affectations[sem][name] = { enseignant: "", cm: 0, td: 0, tp: 0, responsable: "", subrows: [] };
+  APP_DATA.affectations[sem][name] = {
+    enseignant: "",
+    cm: 0,
+    td: 0,
+    tp: 0,
+    responsable: "",
+    subrows: [],
+  };
 
   APP_DATA.maquette_overrides[sem][name] = {
     cm_final: parseFloat(document.getElementById("add-res-cm").value) || 0,
@@ -932,10 +1274,10 @@ window.confirmAddRessource = function () {
   };
 
   APP_DATA.volume_horaire_national[sem][name] = {
-    vol_hn:       parseFloat(document.getElementById("add-res-vhn").value) || 0,
-    dont_tp_hn:   parseFloat(document.getElementById("add-res-dtp").value) || 0,
-    adapt_locale: parseFloat(document.getElementById("add-res-al").value)  || 0,
-    dont_tp_al:   parseFloat(document.getElementById("add-res-dal").value) || 0,
+    vol_hn: parseFloat(document.getElementById("add-res-vhn").value) || 0,
+    dont_tp_hn: parseFloat(document.getElementById("add-res-dtp").value) || 0,
+    adapt_locale: parseFloat(document.getElementById("add-res-al").value) || 0,
+    dont_tp_al: parseFloat(document.getElementById("add-res-dal").value) || 0,
   };
 
   _logMod("Maquette", `Ajout ressource — ${sem}`, "—", name);
@@ -962,7 +1304,9 @@ window.openRenameRessourcesModal = function (sem) {
         </div>
       </div>`;
     document.body.appendChild(modal);
-    modal.addEventListener("click", (e) => { if (e.target === modal) closeRenameRessourcesModal(); });
+    modal.addEventListener("click", (e) => {
+      if (e.target === modal) closeRenameRessourcesModal();
+    });
   }
 
   modal.dataset.sem = sem;
@@ -1006,40 +1350,58 @@ window.confirmRenameRessources = function () {
   err.style.display = "none";
 
   const inputs = [...modal.querySelectorAll(".rename-input")];
-  const nameMap = inputs.map((i) => ({ old: i.dataset.old, new: i.value.trim() }));
+  const nameMap = inputs.map((i) => ({
+    old: i.dataset.old,
+    new: i.value.trim(),
+  }));
 
   for (const m of nameMap) {
     if (!m.new) {
       err.textContent = "Un intitulé ne peut pas être vide.";
-      err.style.display = "block"; return;
+      err.style.display = "block";
+      return;
     }
   }
   if (new Set(nameMap.map((m) => m.new)).size < nameMap.length) {
     err.textContent = "Deux ressources ne peuvent pas avoir le même intitulé.";
-    err.style.display = "block"; return;
+    err.style.display = "block";
+    return;
   }
 
-  const unchangedNames = new Set(nameMap.filter((m) => m.old === m.new).map((m) => m.new));
+  const unchangedNames = new Set(
+    nameMap.filter((m) => m.old === m.new).map((m) => m.new),
+  );
   const renames = nameMap.filter((m) => m.old !== m.new);
   for (const r of renames) {
     if (unchangedNames.has(r.new)) {
       err.textContent = `"${r.new}" est déjà utilisé par une autre ressource.`;
-      err.style.display = "block"; return;
+      err.style.display = "block";
+      return;
     }
   }
 
-  if (renames.length === 0) { closeRenameRessourcesModal(); return; }
+  if (renames.length === 0) {
+    closeRenameRessourcesModal();
+    return;
+  }
 
-  const affSem = APP_DATA.affectations[sem]           || {};
-  const maqSem = APP_DATA.maquette_overrides[sem]      || {};
+  const affSem = APP_DATA.affectations[sem] || {};
+  const maqSem = APP_DATA.maquette_overrides[sem] || {};
   const vhnSem = APP_DATA.volume_horaire_national[sem] || {};
 
   /* Sauvegarde des données avant suppression (évite les conflits entre renames) */
   const saved = renames.map((r) => ({
-    old: r.old, new: r.new,
-    aff: affSem[r.old], maq: maqSem[r.old], vhn: vhnSem[r.old],
+    old: r.old,
+    new: r.new,
+    aff: affSem[r.old],
+    maq: maqSem[r.old],
+    vhn: vhnSem[r.old],
   }));
-  saved.forEach((r) => { delete affSem[r.old]; delete maqSem[r.old]; delete vhnSem[r.old]; });
+  saved.forEach((r) => {
+    delete affSem[r.old];
+    delete maqSem[r.old];
+    delete vhnSem[r.old];
+  });
   saved.forEach((r) => {
     if (r.aff !== undefined) affSem[r.new] = r.aff;
     if (r.maq !== undefined) maqSem[r.new] = r.maq;
@@ -1052,7 +1414,12 @@ window.confirmRenameRessources = function () {
 };
 
 window.deleteRessourceMaq = function (sem, res) {
-  if (!confirm(`Supprimer "${res}" du semestre ${sem} ?\nToutes les affectations associées seront également supprimées.`)) return;
+  if (
+    !confirm(
+      `Supprimer "${res}" du semestre ${sem} ?\nToutes les affectations associées seront également supprimées.`,
+    )
+  )
+    return;
   delete (APP_DATA.affectations[sem] || {})[res];
   delete (APP_DATA.maquette_overrides[sem] || {})[res];
   delete (APP_DATA.volume_horaire_national[sem] || {})[res];
@@ -1172,14 +1539,17 @@ function renderServices(root) {
     let badgeHtml = "";
     if (!isVac && sDu > 0) {
       const diff = sumTotal - sDu;
-      const diffClass = diff === 0 ? "diff-ok" : diff > 0 ? "diff-surplus" : "diff-manque";
+      const diffClass =
+        diff === 0 ? "diff-ok" : diff > 0 ? "diff-surplus" : "diff-manque";
       const diffText = diff > 0 ? `+${diff}` : diff;
-      badgeHtml = `<span class="service-du-badge">Dû : ${sDu}</span> ` +
-                  `<span class="service-eqtd-badge">Réalisé : ${sumTotal}</span> ` +
-                  `<span class="service-diff-badge ${diffClass}">${diffText}</span>`;
+      badgeHtml =
+        `<span class="service-du-badge">Dû : ${sDu}</span> ` +
+        `<span class="service-eqtd-badge">Réalisé : ${sumTotal}</span> ` +
+        `<span class="service-diff-badge ${diffClass}">${diffText}</span>`;
     } else if (isVac && sMax > 0) {
-      badgeHtml = `<span class="service-max-badge">Max : ${sMax}</span> ` +
-                  `<span class="service-eqtd-badge">Réalisé : ${sumTotal}</span>`;
+      badgeHtml =
+        `<span class="service-max-badge">Max : ${sMax}</span> ` +
+        `<span class="service-eqtd-badge">Réalisé : ${sumTotal}</span>`;
     } else {
       badgeHtml = `<span class="service-eqtd-badge">Réalisé : ${sumTotal}</span>`;
     }
@@ -1577,12 +1947,24 @@ window.closeGHModal = function () {
 };
 window.saveGHFromModal = function () {
   const token = document.getElementById("gh-token").value.trim();
-  if (!token) return alert("Saisissez un token.");
-  localStorage.setItem(GH_KEY, JSON.stringify({ token }));
+  const souhaitsToken = document.getElementById("gh-souhaits-token").value.trim();
+  if (!token && !souhaitsToken) return alert("Saisissez au moins un token.");
+  if (token) localStorage.setItem(GH_KEY, JSON.stringify({ token }));
+  if (souhaitsToken) localStorage.setItem(GH_SOUHAITS_KEY, souhaitsToken);
+  else localStorage.removeItem(GH_SOUHAITS_KEY);
   const btn = document.getElementById("gh-config-btn");
   if (btn) btn.innerHTML = "● GitHub configuré";
-  alert("Token enregistré !");
+  showToast("Configuration GitHub enregistrée !");
   closeGHModal();
+};
+window.copySouhaitsSetupLink = function () {
+  const t = localStorage.getItem(GH_SOUHAITS_KEY);
+  if (!t) return alert("Configurez d'abord le Token Souhaits.");
+  const url = `${location.origin}${location.pathname}#souhaits-setup=${encodeURIComponent(t)}`;
+  navigator.clipboard.writeText(url).then(
+    () => showToast("Lien copié ! Envoyez-le aux enseignants."),
+    () => prompt("Copiez ce lien :", url)
+  );
 };
 
 function injectGHUI() {
@@ -1596,12 +1978,20 @@ function injectGHUI() {
   modal.className = "gh-modal-overlay";
   modal.style.display = "none";
   modal.innerHTML = `
-    <div class="form-card" style="margin:10% auto; position:relative; max-width:400px">
-        <h3 style="margin-bottom:1rem; color:#1e3a5f">⚙ Token GitHub</h3>
-        <p style="font-size:13px; color:#6b7280; margin-bottom:1rem;">Les JSON seront sauvegardés dans <strong>${GH_OWNER}/${GH_REPO}</strong> (branche <code>${GH_BRANCH}</code>).</p>
+    <div class="form-card" style="margin:8% auto; position:relative; max-width:460px">
+        <h3 style="margin-bottom:1rem; color:#1e3a5f">⚙ Configuration GitHub</h3>
+        <p style="font-size:13px; color:#6b7280; margin-bottom:1rem;">Dépôt : <strong>${GH_OWNER}/${GH_REPO}</strong> (branche <code>${GH_BRANCH}</code>).</p>
         <div class="form-group">
-            <label>Personal Access Token</label>
+            <label>Token admin (répartition complète)</label>
             <input id="gh-token" class="form-input" type="password" placeholder="ghp_xxxxxxxxxxxxxxxxxxxx">
+        </div>
+        <div class="form-group" style="margin-top:1rem;">
+            <label>Token Souhaits <span style="font-size:11px;color:#6b7280;font-weight:400;">— partageable avec tous les enseignants</span></label>
+            <input id="gh-souhaits-token" class="form-input" type="password" placeholder="github_pat_xxxxxxxxxxxxxxxxxxxx">
+            <div style="margin-top:6px;">
+              <button class="btn-pdf-action" style="font-size:12px;padding:3px 10px;" onclick="copySouhaitsSetupLink()">🔗 Copier le lien d'installation</button>
+              <span style="font-size:11px;color:#6b7280;margin-left:6px;">Envoyez ce lien aux enseignants — 1 clic suffit.</span>
+            </div>
         </div>
         <div style="display:flex; justify-content:flex-end; gap:0.5rem; margin-top:1.5rem;">
             <button class="btn-cancel" onclick="closeGHModal()">Annuler</button>
@@ -1615,6 +2005,8 @@ function injectGHUI() {
 
   const cfg = getGHConfig();
   if (cfg.token) document.getElementById("gh-token").value = cfg.token;
+  const st = localStorage.getItem(GH_SOUHAITS_KEY);
+  if (st) document.getElementById("gh-souhaits-token").value = st;
 }
 
 async function fetchGH(filename, basePath = GH_BASE_PATH) {
@@ -1677,8 +2069,12 @@ async function saveFileGH(filename, dataObj, msg, basePath = GH_BASE_PATH) {
 
   /* Retry sur conflit SHA — GitHub renvoie 409 ou 422 selon les versions */
   if (r.status === 409 || r.status === 422) {
-    let body; try { body = await r.json(); } catch {}
-    const isSHAConflict = !body || !body.message || body.message.includes("expected");
+    let body;
+    try {
+      body = await r.json();
+    } catch {}
+    const isSHAConflict =
+      !body || !body.message || body.message.includes("expected");
     if (isSHAConflict) {
       sha = await _getSha();
       r = await _put(sha);
@@ -1765,7 +2161,7 @@ function renderSae(root) {
     return;
   }
 
-  const saeData   = APP_DATA.sae || { semestres: [], sae: {} };
+  const saeData = APP_DATA.sae || { semestres: [], sae: {} };
   const semestres = saeData.semestres || [];
   const titulaires = APP_DATA.enseignants.filter((e) => !e.is_vac);
 
@@ -1774,9 +2170,12 @@ function renderSae(root) {
     _saeSemFilter = semestres[0];
   }
 
-  const semBtns = semestres.map((s) =>
-    `<button class="sem-btn ${s === _saeSemFilter && !_saeShowRecap ? "active" : ""}" data-sem="${s}" onclick="setSaeSemFilter('${s}')">${s}</button>`
-  ).join("");
+  const semBtns = semestres
+    .map(
+      (s) =>
+        `<button class="sem-btn ${s === _saeSemFilter && !_saeShowRecap ? "active" : ""}" data-sem="${s}" onclick="setSaeSemFilter('${s}')">${s}</button>`,
+    )
+    .join("");
 
   const recapBtn = `<button class="sem-btn ${_saeShowRecap ? "active" : ""}" onclick="setSaeShowRecap(true)">Responsables</button>`;
 
@@ -1791,7 +2190,7 @@ function renderSae(root) {
     let bodyRows = "";
     let rowIdx = 0;
     semestres.forEach((sem) => {
-      const rows = (saeData.sae[sem] || []);
+      const rows = saeData.sae[sem] || [];
       if (!rows.length) return;
       bodyRows += `<tr>
         <td colspan="3" style="background:#1e3a5f;color:#fff;font-weight:700;font-size:13px;padding:7px 14px;letter-spacing:.03em;border:none;">${sem}</td>
@@ -1841,24 +2240,29 @@ function renderSae(root) {
     return;
   }
 
-  const rows = (saeData.sae[_saeSemFilter] || []);
+  const rows = saeData.sae[_saeSemFilter] || [];
 
-  const respOptions = `<option value="">— Aucun —</option>` +
+  const respOptions =
+    `<option value="">— Aucun —</option>` +
     titulaires.map((e) => `<option value="${e.id}">${e.id}</option>`).join("");
 
-  const tableRows = rows.map((sae, i) => {
-    const ressBadges = sae.ressources.map((r) =>
-      `<span style="display:inline-block;background:#dbeafe;color:#1e3a5f;border:1px solid #93c5fd;border-radius:4px;padding:1px 7px;font-size:11px;margin:2px 2px 2px 0;">${r}</span>`
-    ).join("");
+  const tableRows = rows
+    .map((sae, i) => {
+      const ressBadges = sae.ressources
+        .map(
+          (r) =>
+            `<span style="display:inline-block;background:#dbeafe;color:#1e3a5f;border:1px solid #93c5fd;border-radius:4px;padding:1px 7px;font-size:11px;margin:2px 2px 2px 0;">${r}</span>`,
+        )
+        .join("");
 
-    const escSem = _saeSemFilter.replace(/'/g, "\\'");
-    const escCode = sae.code.replace(/'/g, "\\'");
+      const escSem = _saeSemFilter.replace(/'/g, "\\'");
+      const escCode = sae.code.replace(/'/g, "\\'");
 
-    const [codeRef, codeName] = sae.code.includes(" | ")
-      ? sae.code.split(" | ")
-      : [sae.code, sae.intitule];
+      const [codeRef, codeName] = sae.code.includes(" | ")
+        ? sae.code.split(" | ")
+        : [sae.code, sae.intitule];
 
-    return `<tr class="${i % 2 === 0 ? "group-even" : "group-odd"}">
+      return `<tr class="${i % 2 === 0 ? "group-even" : "group-odd"}">
       <td style="font-weight:600;">
         <span style="color:#1e3a5f;font-size:12px;white-space:nowrap;">${codeRef}</span><br>
         <span style="font-weight:400;font-size:13px;">${codeName || ""}</span>
@@ -1871,12 +2275,13 @@ function renderSae(root) {
                 style="min-width:160px;">
           ${respOptions.replace(
             `value="${sae.responsable}"`,
-            `value="${sae.responsable}" selected`
+            `value="${sae.responsable}" selected`,
           )}
         </select>
       </td>
     </tr>`;
-  }).join("");
+    })
+    .join("");
 
   root.innerHTML = `
     <div class="page-header" style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;">
@@ -1915,8 +2320,8 @@ window.setSaeShowRecap = function (v) {
 };
 
 window.updateSaeResponsable = function (sem, code, login) {
-  const list = (APP_DATA.sae.sae[sem] || []);
-  const sae  = list.find((s) => s.code === code);
+  const list = APP_DATA.sae.sae[sem] || [];
+  const sae = list.find((s) => s.code === code);
   if (!sae) return;
   const prev = sae.responsable;
   sae.responsable = login;
@@ -1928,7 +2333,11 @@ window.saveSaeGH = async function () {
   if (!isGHConfigured()) return alert("Veuillez configurer GitHub d'abord !");
   try {
     await _flushMods();
-    await saveFileGH("sae_data.json", APP_DATA.sae, "Update sae_data.json via Web UI");
+    await saveFileGH(
+      "sae_data.json",
+      APP_DATA.sae,
+      "Update sae_data.json via Web UI",
+    );
     showToast("SAÉ sauvegardées sur GitHub !");
   } catch (e) {
     alert("Erreur : " + e.message);
@@ -2079,12 +2488,12 @@ function renderModifications(root) {
 
   /* Calcul des tops sticky après rendu (mesure réelle des hauteurs) */
   requestAnimationFrame(() => {
-    const navH    = document.querySelector("header")?.offsetHeight || 54;
+    const navH = document.querySelector("header")?.offsetHeight || 54;
     const pageHdr = root.querySelector(".journal-page-hdr");
-    const thead   = root.querySelector(".journal-thead");
+    const thead = root.querySelector(".journal-thead");
     if (!pageHdr || !thead) return;
     pageHdr.style.cssText += `position:sticky;top:${navH}px;z-index:50;background:#fafaf8;padding-bottom:0.6rem;`;
-    thead.style.cssText   += `position:sticky;top:${navH + pageHdr.offsetHeight}px;z-index:49;`;
+    thead.style.cssText += `position:sticky;top:${navH + pageHdr.offsetHeight}px;z-index:49;`;
   });
 }
 
@@ -2148,7 +2557,8 @@ function _mergeSaeResponsables(loaded) {
     if (!Array.isArray(list)) return;
     if (!APP_DATA.sae.sae[sem]) {
       APP_DATA.sae.sae[sem] = list; /* Semestre inconnu → insérer tel quel */
-      if (!APP_DATA.sae.semestres.includes(sem)) APP_DATA.sae.semestres.push(sem);
+      if (!APP_DATA.sae.semestres.includes(sem))
+        APP_DATA.sae.semestres.push(sem);
       return;
     }
     list.forEach((entry) => {
@@ -2183,9 +2593,7 @@ async function loadData() {
       fetch(`${localBase}/volume_horaire_national.json`).then((r) =>
         r.ok ? r.json() : null,
       ),
-      fetch(`${localBase}/sae_data.json`).then((r) =>
-        r.ok ? r.json() : null,
-      ),
+      fetch(`${localBase}/sae_data.json`).then((r) => (r.ok ? r.json() : null)),
     ]);
     if (aff) APP_DATA.affectations = aff;
     if (ens) APP_DATA.enseignants = ens;
@@ -2221,12 +2629,81 @@ async function loadData() {
     // Sync souhaits de l'utilisateur courant depuis GitHub vers localStorage
     try {
       const login = AUTH.user();
-      const souhaitsData = await fetchGH(`souhaits/${login}.json`, "repartition");
-      if (souhaitsData) localStorage.setItem(`souhaits_${login}`, JSON.stringify(souhaitsData));
+      const souhaitsData = await _fetchSouhaitsGH(login);
+      if (souhaitsData)
+        localStorage.setItem(`souhaits_${login}`, JSON.stringify(souhaitsData));
     } catch {}
   }
 
   renderView();
+}
+
+/* ── GitHub helpers dédiés aux souhaits ─────────────────────────────────── */
+
+const GH_SOUHAITS_KEY = "gh_souhaits_token";
+function _souhaitsGHToken() {
+  return GH_SOUHAITS_TOKEN || localStorage.getItem(GH_SOUHAITS_KEY) || getGHConfig().token || "";
+}
+function _isSouhaitsGHAvailable() {
+  return !!(GH_SOUHAITS_TOKEN || localStorage.getItem(GH_SOUHAITS_KEY) || getGHConfig().token);
+}
+
+async function _fetchSouhaitsGH(login) {
+  const token = _souhaitsGHToken();
+  if (!token) return null;
+  const url = `https://api.github.com/repos/${GH_OWNER}/${GH_REPO}/contents/repartition/souhaits/${login}.json?ref=${GH_BRANCH}&_t=${Date.now()}`;
+  try {
+    const r = await fetch(url, {
+      cache: "no-cache",
+      headers: {
+        Authorization: `token ${token}`,
+        Accept: "application/vnd.github.v3+json",
+      },
+    });
+    if (!r.ok) return null;
+    const json = await r.json();
+    return JSON.parse(
+      decodeURIComponent(escape(atob(json.content.replace(/\n/g, "")))),
+    );
+  } catch {
+    return null;
+  }
+}
+
+async function _writeSouhaitsGH(login, data) {
+  const token = _souhaitsGHToken();
+  if (!token) throw new Error("Aucun token disponible");
+  const url = `https://api.github.com/repos/${GH_OWNER}/${GH_REPO}/contents/repartition/souhaits/${login}.json`;
+  const content = btoa(
+    unescape(encodeURIComponent(JSON.stringify(data, null, 2))),
+  );
+  let sha = null;
+  try {
+    const r = await fetch(`${url}?ref=${GH_BRANCH}&_t=${Date.now()}`, {
+      cache: "no-cache",
+      headers: {
+        Authorization: `token ${token}`,
+        Accept: "application/vnd.github.v3+json",
+      },
+    });
+    if (r.ok) sha = (await r.json()).sha;
+  } catch {}
+  const body = {
+    message: `Update souhaits/${login}.json via Web UI`,
+    content,
+    branch: GH_BRANCH,
+  };
+  if (sha) body.sha = sha;
+  const resp = await fetch(url, {
+    method: "PUT",
+    headers: {
+      Authorization: `token ${token}`,
+      Accept: "application/vnd.github.v3+json",
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(body),
+  });
+  if (!resp.ok) throw new Error(`GitHub ${resp.status}`);
 }
 
 /* ── Vue : Souhaits ─────────────────────────────────────────────────────────
@@ -2234,50 +2711,61 @@ async function loadData() {
    Stockage    : localStorage, clé souhaits_<login>, aucune config GitHub requise
    ─────────────────────────────────────────────────────────────────────────── */
 const _LOGIN_TO_NOM = {
-  "nicolas.maurin":    "MAURIN Nicolas",
-  "damien.marill":     "MARILL Damien",
-  "sandy.blanco":      "BLANCO Sandy",
-  "william.bernard":   "BERNARD William",
-  "emmanuel.therond":  "THEROND Emmanuel",
-  "luc.jaeckle":       "JAECKLE Luc",
-  "benoit.darties":    "DARTIES Benoit",
-  "sophie.de-velder":  "DE VELDER Sophie",
-  "davide.di-pierro":  "DI PIERRO Davide",
+  "nicolas.maurin": "MAURIN Nicolas",
+  "damien.marill": "MARILL Damien",
+  "sandy.blanco": "BLANCO Sandy",
+  "william.bernard": "BERNARD William",
+  "emmanuel.therond": "THEROND Emmanuel",
+  "luc.jaeckle": "JAECKLE Luc",
+  "benoit.darties": "DARTIES Benoit",
+  "sophie.de-velder": "DE VELDER Sophie",
+  "davide.di-pierro": "DI PIERRO Davide",
   "chrysta.pelissier": "PELISSIER Chrysta",
   "caroline.surribas": "SURRIBAS Caroline",
-  "laeticia.tournie":  "TOURNIE Laetitia",
-  "jerome.aze":        "AZE Jérome",
-  "sylvie.escaig":     "ESCAIG Sylvie",
+  "laeticia.tournie": "TOURNIE Laetitia",
+  "jerome.aze": "AZE Jérome",
+  "sylvie.escaig": "ESCAIG Sylvie",
 };
 
 let _souhaitsFilter = "S1";
 
-function _souhaitNom()   { return _LOGIN_TO_NOM[AUTH.user()] || AUTH.user(); }
-function _souhaitLsKey() { return `souhaits_${AUTH.user()}`; }
-function _souhaitLoad()  {
-  try { return JSON.parse(localStorage.getItem(_souhaitLsKey())) || {}; }
-  catch { return {}; }
+function _souhaitNom() {
+  return _LOGIN_TO_NOM[AUTH.user()] || AUTH.user();
+}
+function _souhaitLsKey() {
+  return `souhaits_${AUTH.user()}`;
+}
+function _souhaitLoad() {
+  try {
+    return JSON.parse(localStorage.getItem(_souhaitLsKey())) || {};
+  } catch {
+    return {};
+  }
 }
 
 function renderSouhaits(root) {
   if (!SEMESTRES.includes(_souhaitsFilter)) _souhaitsFilter = SEMESTRES[0];
 
-  const saved    = _souhaitLoad();
+  const saved = _souhaitLoad();
   const semSaved = (saved.souhaits && saved.souhaits[_souhaitsFilter]) || [];
 
-  const aff        = (APP_DATA.affectations && APP_DATA.affectations[_souhaitsFilter]) || {};
-  const ressources = Object.keys(aff).filter(r => !r.toLowerCase().includes("saé"));
-  const saeList    = (APP_DATA.sae?.sae?.[_souhaitsFilter]) || [];
+  const aff =
+    (APP_DATA.affectations && APP_DATA.affectations[_souhaitsFilter]) || {};
+  const ressources = Object.keys(aff).filter(
+    (r) => !r.toLowerCase().includes("saé"),
+  );
+  const saeList = APP_DATA.sae?.sae?.[_souhaitsFilter] || [];
 
-  const semBtns = SEMESTRES.map(s =>
-    `<button class="sem-btn ${s === _souhaitsFilter ? "active" : ""}" data-sem="${s}"
-       onclick="setSouhaitsFilter('${s}')">${s}</button>`
+  const semBtns = SEMESTRES.map(
+    (s) =>
+      `<button class="sem-btn ${s === _souhaitsFilter ? "active" : ""}" data-sem="${s}"
+       onclick="setSouhaitsFilter('${s}')">${s}</button>`,
   ).join("");
 
   let rows = "";
-  let idx  = 0;
+  let idx = 0;
 
-  ressources.forEach(r => {
+  ressources.forEach((r) => {
     const checked = semSaved.includes(r) ? "checked" : "";
     rows += `<tr class="${idx % 2 === 0 ? "group-even" : "group-odd"}">
       <td style="font-size:13px;">${r}</td>
@@ -2292,7 +2780,7 @@ function renderSouhaits(root) {
     idx++;
   });
 
-  saeList.forEach(sae => {
+  saeList.forEach((sae) => {
     const checked = semSaved.includes(sae.code) ? "checked" : "";
     const [codeRef, codeName] = sae.code.includes(" | ")
       ? sae.code.split(" | ")
@@ -2312,21 +2800,30 @@ function renderSouhaits(root) {
     idx++;
   });
 
-  const nom       = _souhaitNom();
+  const nom = _souhaitNom();
   const lastSaved = saved.date
-    ? ` — Sauvegardé le ${new Date(saved.date).toLocaleDateString("fr-FR",
-        { day: "2-digit", month: "2-digit", year: "numeric" })} à ${new Date(saved.date).toLocaleTimeString("fr-FR",
-        { hour: "2-digit", minute: "2-digit" })}`
+    ? ` — Sauvegardé le ${new Date(saved.date).toLocaleDateString("fr-FR", {
+        day: "2-digit",
+        month: "2-digit",
+        year: "numeric",
+      })} à ${new Date(saved.date).toLocaleTimeString("fr-FR", {
+        hour: "2-digit",
+        minute: "2-digit",
+      })}`
     : "";
 
-  const summaryChips = Object.values(saved.souhaits || {}).some(a => a.length > 0)
-    ? SEMESTRES.map(s => {
+  const summaryChips = Object.values(saved.souhaits || {}).some(
+    (a) => a.length > 0,
+  )
+    ? SEMESTRES.map((s) => {
         const n = ((saved.souhaits || {})[s] || []).length;
         return n > 0
           ? `<span style="display:inline-block;background:#dbeafe;color:#1e40af;border:1px solid #93c5fd;
               border-radius:4px;padding:1px 8px;font-size:11px;font-weight:600;">${s} : ${n}</span>`
           : "";
-      }).filter(Boolean).join(" ")
+      })
+        .filter(Boolean)
+        .join(" ")
     : `<span style="color:#9ca3af;font-size:12px;">Aucun souhait enregistré pour l'instant</span>`;
 
   root.innerHTML = `
@@ -2364,9 +2861,11 @@ function renderSouhaits(root) {
             <th style="text-align:center;">Souhait</th>
           </tr>
         </thead>
-        <tbody>${rows ||
+        <tbody>${
+          rows ||
           `<tr><td colspan="3" style="text-align:center;color:#9ca3af;padding:2rem;">
-            Aucune ressource pour ce semestre</td></tr>`}
+            Aucune ressource pour ce semestre</td></tr>`
+        }
         </tbody>
       </table>
     </div>`;
@@ -2380,21 +2879,22 @@ window.setSouhaitsFilter = function (sem) {
 window.saveSouhaits = async function () {
   const data = _souhaitLoad();
   if (!data.souhaits) data.souhaits = {};
-  data.souhaits[_souhaitsFilter] =
-    [...document.querySelectorAll(".souhait-cb:checked")].map(cb => cb.dataset.code);
-  data.nom   = _souhaitNom();
+  data.souhaits[_souhaitsFilter] = [
+    ...document.querySelectorAll(".souhait-cb:checked"),
+  ].map((cb) => cb.dataset.code);
+  data.nom = _souhaitNom();
   data.login = AUTH.user();
-  data.date  = new Date().toISOString();
+  data.date = new Date().toISOString();
   localStorage.setItem(_souhaitLsKey(), JSON.stringify(data));
-  if (isGHConfigured()) {
+  if (_isSouhaitsGHAvailable()) {
     try {
-      const login = AUTH.user();
-      await saveFileGH(`souhaits/${login}.json`, data,
-        `Update souhaits/${login}.json via Web UI`, "repartition");
+      await _writeSouhaitsGH(AUTH.user(), data);
       showToast(`Souhaits pour ${_souhaitsFilter} enregistrés (GitHub ✓) !`);
     } catch (e) {
       console.warn("GitHub souhaits save failed", e);
-      showToast(`Souhaits pour ${_souhaitsFilter} enregistrés (local uniquement) !`);
+      showToast(
+        `Souhaits pour ${_souhaitsFilter} enregistrés (local uniquement) !`,
+      );
     }
   } else {
     showToast(`Souhaits pour ${_souhaitsFilter} enregistrés !`);
@@ -2404,45 +2904,58 @@ window.saveSouhaits = async function () {
 
 window.exportSouhaitsJSON = function () {
   const data = _souhaitLoad();
-  if (!data.nom) { showToast("Aucun souhait enregistré."); return; }
-  const blob = new Blob([JSON.stringify(data, null, 2)], { type: "application/json" });
-  const a    = document.createElement("a");
-  a.href     = URL.createObjectURL(blob);
+  if (!data.nom) {
+    showToast("Aucun souhait enregistré.");
+    return;
+  }
+  const blob = new Blob([JSON.stringify(data, null, 2)], {
+    type: "application/json",
+  });
+  const a = document.createElement("a");
+  a.href = URL.createObjectURL(blob);
   a.download = `souhaits_${(data.login || AUTH.user()).replace(/\./g, "_")}.json`;
   a.click();
   URL.revokeObjectURL(a.href);
 };
 
 window.showSouhaitsRecap = function () {
-  const data     = _souhaitLoad();
+  const data = _souhaitLoad();
   const souhaits = data.souhaits || {};
-  const semsAvec = SEMESTRES.filter(s => (souhaits[s] || []).length > 0);
+  const semsAvec = SEMESTRES.filter((s) => (souhaits[s] || []).length > 0);
 
-  if (!semsAvec.length) { showToast("Aucun souhait enregistré pour l'instant."); return; }
+  if (!semsAvec.length) {
+    showToast("Aucun souhait enregistré pour l'instant.");
+    return;
+  }
 
-  const sections = semsAvec.map(sem => {
-    const codes   = souhaits[sem];
-    const saeList = (APP_DATA.sae?.sae?.[sem]) || [];
-    let rowIdx = 0;
-    const rows = codes.map(code => {
-      const saeEntry = saeList.find(s => s.code === code);
-      let label;
-      if (saeEntry) {
-        const [codeRef, codeName] = code.includes(" | ") ? code.split(" | ") : [code, ""];
-        label = `<span style="color:#14532d;font-size:11px;font-weight:600;margin-right:5px;">${codeRef}</span>${codeName}`;
-      } else {
-        label = code;
-      }
-      const typeBadge = saeEntry
-        ? `<span style="display:inline-block;background:#bbf7d0;color:#14532d;border:1px solid #4ade80;border-radius:4px;padding:1px 6px;font-size:11px;">SAÉ</span>`
-        : `<span style="display:inline-block;background:#dbeafe;color:#1e40af;border:1px solid #93c5fd;border-radius:4px;padding:1px 6px;font-size:11px;">Ressource</span>`;
-      const bg = rowIdx++ % 2 === 0 ? "#f0f4fb" : "#fff";
-      return `<tr style="background:${bg};">
+  const sections = semsAvec
+    .map((sem) => {
+      const codes = souhaits[sem];
+      const saeList = APP_DATA.sae?.sae?.[sem] || [];
+      let rowIdx = 0;
+      const rows = codes
+        .map((code) => {
+          const saeEntry = saeList.find((s) => s.code === code);
+          let label;
+          if (saeEntry) {
+            const [codeRef, codeName] = code.includes(" | ")
+              ? code.split(" | ")
+              : [code, ""];
+            label = `<span style="color:#14532d;font-size:11px;font-weight:600;margin-right:5px;">${codeRef}</span>${codeName}`;
+          } else {
+            label = code;
+          }
+          const typeBadge = saeEntry
+            ? `<span style="display:inline-block;background:#bbf7d0;color:#14532d;border:1px solid #4ade80;border-radius:4px;padding:1px 6px;font-size:11px;">SAÉ</span>`
+            : `<span style="display:inline-block;background:#dbeafe;color:#1e40af;border:1px solid #93c5fd;border-radius:4px;padding:1px 6px;font-size:11px;">Ressource</span>`;
+          const bg = rowIdx++ % 2 === 0 ? "#f0f4fb" : "#fff";
+          return `<tr style="background:${bg};">
         <td style="font-size:13px;padding:6px 12px;">${label}</td>
         <td style="text-align:center;padding:6px 12px;white-space:nowrap;">${typeBadge}</td>
       </tr>`;
-    }).join("");
-    return `
+        })
+        .join("");
+      return `
       <div style="margin-bottom:1.25rem;">
         <div style="font-size:13px;font-weight:700;color:#fff;background:#1e3a5f;
           border-radius:6px 6px 0 0;padding:7px 14px;">
@@ -2452,14 +2965,16 @@ window.showSouhaitsRecap = function () {
           <tbody>${rows}</tbody>
         </table>
       </div>`;
-  }).join("");
+    })
+    .join("");
 
   const existing = document.getElementById("souhaits-recap-modal");
   if (existing) existing.remove();
 
   const modal = document.createElement("div");
   modal.id = "souhaits-recap-modal";
-  modal.style.cssText = "position:fixed;inset:0;background:rgba(0,0,0,.45);z-index:1000;display:flex;align-items:center;justify-content:center;";
+  modal.style.cssText =
+    "position:fixed;inset:0;background:rgba(0,0,0,.45);z-index:1000;display:flex;align-items:center;justify-content:center;";
   modal.innerHTML = `
     <div style="background:#fff;border-radius:12px;width:min(580px,95vw);max-height:82vh;
       display:flex;flex-direction:column;box-shadow:0 8px 32px rgba(0,0,0,.2);">
@@ -2479,7 +2994,9 @@ window.showSouhaitsRecap = function () {
       </div>
       <div style="overflow-y:auto;padding:16px 20px;">${sections}</div>
     </div>`;
-  modal.addEventListener("click", e => { if (e.target === modal) closeSouhaitsRecap(); });
+  modal.addEventListener("click", (e) => {
+    if (e.target === modal) closeSouhaitsRecap();
+  });
   document.body.appendChild(modal);
 };
 
@@ -2489,19 +3006,25 @@ window.closeSouhaitsRecap = function () {
 };
 
 window.exportSouhaitsXLSX = function () {
-  if (typeof XLSX === "undefined") { alert("Bibliothèque XLSX non chargée."); return; }
-  const data     = _souhaitLoad();
+  if (typeof XLSX === "undefined") {
+    alert("Bibliothèque XLSX non chargée.");
+    return;
+  }
+  const data = _souhaitLoad();
   const souhaits = data.souhaits || {};
-  const semsAvec = SEMESTRES.filter(s => (souhaits[s] || []).length > 0);
-  if (!semsAvec.length) { showToast("Aucun souhait à exporter."); return; }
+  const semsAvec = SEMESTRES.filter((s) => (souhaits[s] || []).length > 0);
+  if (!semsAvec.length) {
+    showToast("Aucun souhait à exporter.");
+    return;
+  }
 
   const rows = [["Semestre", "Code / Intitulé", "Type"]];
-  semsAvec.forEach(sem => {
-    const codes   = souhaits[sem] || [];
-    const saeList = (APP_DATA.sae?.sae?.[sem]) || [];
-    codes.forEach(code => {
-      const saeEntry = saeList.find(s => s.code === code);
-      const type     = saeEntry ? "SAÉ" : "Ressource";
+  semsAvec.forEach((sem) => {
+    const codes = souhaits[sem] || [];
+    const saeList = APP_DATA.sae?.sae?.[sem] || [];
+    codes.forEach((code) => {
+      const saeEntry = saeList.find((s) => s.code === code);
+      const type = saeEntry ? "SAÉ" : "Ressource";
       rows.push([sem, code, type]);
     });
   });
@@ -2510,30 +3033,33 @@ window.exportSouhaitsXLSX = function () {
   ws["!cols"] = [{ wch: 12 }, { wch: 60 }, { wch: 12 }];
   const wb = XLSX.utils.book_new();
   XLSX.utils.book_append_sheet(wb, ws, "Souhaits");
-  XLSX.writeFile(wb, `souhaits_${(data.login || AUTH.user()).replace(/\./g, "_")}.xlsx`);
+  XLSX.writeFile(
+    wb,
+    `souhaits_${(data.login || AUTH.user()).replace(/\./g, "_")}.xlsx`,
+  );
 };
 
 /* ── Récap consolidé (R/W uniquement) ──────────────────────────────────── */
 
 async function _loadAllSouhaits() {
   const all = {};
-  if (isGHConfigured()) {
-    await Promise.all(Object.keys(_LOGIN_TO_NOM).map(async login => {
-      try {
-        const d = await fetchGH(`souhaits/${login}.json`, "repartition");
-        if (d && d.souhaits && Object.values(d.souhaits).some(a => a.length > 0))
-          all[login] = d;
-      } catch {}
-    }));
-  } else {
-    Object.keys(_LOGIN_TO_NOM).forEach(login => {
-      try {
-        const d = JSON.parse(localStorage.getItem(`souhaits_${login}`));
-        if (d && d.souhaits && Object.values(d.souhaits).some(a => a.length > 0))
-          all[login] = d;
-      } catch {}
-    });
-  }
+  await Promise.all(
+    Object.keys(_LOGIN_TO_NOM).map(async (login) => {
+      let d = _isSouhaitsGHAvailable() ? await _fetchSouhaitsGH(login) : null;
+      if (!d) {
+        try {
+          const raw = localStorage.getItem(`souhaits_${login}`);
+          d = raw ? JSON.parse(raw) : null;
+        } catch {}
+      }
+      if (
+        d &&
+        d.souhaits &&
+        Object.values(d.souhaits).some((a) => a.length > 0)
+      )
+        all[login] = d;
+    }),
+  );
   return all;
 }
 
@@ -2549,44 +3075,54 @@ window.showAllSouhaitsRecap = async function () {
 
   /* Pivot : sem → code → [noms enseignants] */
   const pivot = {};
-  SEMESTRES.forEach(sem => { pivot[sem] = {}; });
-  logins.forEach(login => {
+  SEMESTRES.forEach((sem) => {
+    pivot[sem] = {};
+  });
+  logins.forEach((login) => {
     const souhaits = all[login].souhaits || {};
     const nom = all[login].nom || login;
-    SEMESTRES.forEach(sem => {
-      (souhaits[sem] || []).forEach(code => {
+    SEMESTRES.forEach((sem) => {
+      (souhaits[sem] || []).forEach((code) => {
         if (!pivot[sem][code]) pivot[sem][code] = [];
         pivot[sem][code].push(nom);
       });
     });
   });
 
-  const sections = SEMESTRES.filter(sem => Object.keys(pivot[sem]).length > 0).map(sem => {
-    const saeList = (APP_DATA.sae?.sae?.[sem]) || [];
-    let rowIdx = 0;
-    const rows = Object.entries(pivot[sem]).map(([code, noms]) => {
-      const saeEntry = saeList.find(s => s.code === code);
-      let label;
-      if (saeEntry) {
-        const [codeRef, codeName] = code.includes(" | ") ? code.split(" | ") : [code, ""];
-        label = `<span style="color:#14532d;font-size:11px;font-weight:600;margin-right:5px;">${codeRef}</span>${codeName}`;
-      } else {
-        label = code;
-      }
-      const typeBadge = saeEntry
-        ? `<span style="display:inline-block;background:#bbf7d0;color:#14532d;border:1px solid #4ade80;border-radius:4px;padding:1px 6px;font-size:11px;">SAÉ</span>`
-        : `<span style="display:inline-block;background:#dbeafe;color:#1e40af;border:1px solid #93c5fd;border-radius:4px;padding:1px 6px;font-size:11px;">Ressource</span>`;
-      const nomsBadges = noms.map(n =>
-        `<span style="display:inline-block;background:#f3f4f6;color:#374151;border:1px solid #d1d5db;border-radius:4px;padding:1px 7px;font-size:11px;margin:1px 2px 1px 0;">${n}</span>`
-      ).join("");
-      const bg = rowIdx++ % 2 === 0 ? "#f0f4fb" : "#fff";
-      return `<tr style="background:${bg};">
+  const sections = SEMESTRES.filter((sem) => Object.keys(pivot[sem]).length > 0)
+    .map((sem) => {
+      const saeList = APP_DATA.sae?.sae?.[sem] || [];
+      let rowIdx = 0;
+      const rows = Object.entries(pivot[sem])
+        .map(([code, noms]) => {
+          const saeEntry = saeList.find((s) => s.code === code);
+          let label;
+          if (saeEntry) {
+            const [codeRef, codeName] = code.includes(" | ")
+              ? code.split(" | ")
+              : [code, ""];
+            label = `<span style="color:#14532d;font-size:11px;font-weight:600;margin-right:5px;">${codeRef}</span>${codeName}`;
+          } else {
+            label = code;
+          }
+          const typeBadge = saeEntry
+            ? `<span style="display:inline-block;background:#bbf7d0;color:#14532d;border:1px solid #4ade80;border-radius:4px;padding:1px 6px;font-size:11px;">SAÉ</span>`
+            : `<span style="display:inline-block;background:#dbeafe;color:#1e40af;border:1px solid #93c5fd;border-radius:4px;padding:1px 6px;font-size:11px;">Ressource</span>`;
+          const nomsBadges = noms
+            .map(
+              (n) =>
+                `<span style="display:inline-block;background:#f3f4f6;color:#374151;border:1px solid #d1d5db;border-radius:4px;padding:1px 7px;font-size:11px;margin:1px 2px 1px 0;">${n}</span>`,
+            )
+            .join("");
+          const bg = rowIdx++ % 2 === 0 ? "#f0f4fb" : "#fff";
+          return `<tr style="background:${bg};">
         <td style="font-size:13px;padding:6px 12px;">${label}</td>
         <td style="text-align:center;padding:6px 8px;white-space:nowrap;">${typeBadge}</td>
         <td style="padding:6px 12px;line-height:1.8;">${nomsBadges}</td>
       </tr>`;
-    }).join("");
-    return `
+        })
+        .join("");
+      return `
       <div style="margin-bottom:1.25rem;">
         <div style="font-size:13px;font-weight:700;color:#fff;background:#1e3a5f;
           border-radius:6px 6px 0 0;padding:7px 14px;">${sem}</div>
@@ -2601,7 +3137,8 @@ window.showAllSouhaitsRecap = async function () {
           <tbody>${rows}</tbody>
         </table>
       </div>`;
-  }).join("");
+    })
+    .join("");
 
   const nbEnseig = logins.length;
   const existing = document.getElementById("all-souhaits-modal");
@@ -2609,7 +3146,8 @@ window.showAllSouhaitsRecap = async function () {
 
   const modal = document.createElement("div");
   modal.id = "all-souhaits-modal";
-  modal.style.cssText = "position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:1100;display:flex;align-items:center;justify-content:center;";
+  modal.style.cssText =
+    "position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:1100;display:flex;align-items:center;justify-content:center;";
   modal.innerHTML = `
     <div style="background:#fff;border-radius:12px;width:min(740px,96vw);max-height:86vh;
       display:flex;flex-direction:column;box-shadow:0 8px 32px rgba(0,0,0,.25);">
@@ -2628,33 +3166,45 @@ window.showAllSouhaitsRecap = async function () {
       </div>
       <div style="overflow-y:auto;padding:16px 20px;">${sections}</div>
     </div>`;
-  modal.addEventListener("click", e => { if (e.target === modal) modal.remove(); });
+  modal.addEventListener("click", (e) => {
+    if (e.target === modal) modal.remove();
+  });
   document.body.appendChild(modal);
 };
 
 window.exportAllSouhaitsXLSX = async function () {
-  if (typeof XLSX === "undefined") { alert("Bibliothèque XLSX non chargée."); return; }
+  if (typeof XLSX === "undefined") {
+    alert("Bibliothèque XLSX non chargée.");
+    return;
+  }
   const all = await _loadAllSouhaits();
-  if (!Object.keys(all).length) { showToast("Aucun souhait à exporter."); return; }
+  if (!Object.keys(all).length) {
+    showToast("Aucun souhait à exporter.");
+    return;
+  }
 
   const pivot = {};
-  SEMESTRES.forEach(sem => { pivot[sem] = {}; });
-  Object.keys(all).forEach(login => {
+  SEMESTRES.forEach((sem) => {
+    pivot[sem] = {};
+  });
+  Object.keys(all).forEach((login) => {
     const souhaits = all[login].souhaits || {};
     const nom = all[login].nom || login;
-    SEMESTRES.forEach(sem => {
-      (souhaits[sem] || []).forEach(code => {
+    SEMESTRES.forEach((sem) => {
+      (souhaits[sem] || []).forEach((code) => {
         if (!pivot[sem][code]) pivot[sem][code] = [];
         pivot[sem][code].push(nom);
       });
     });
   });
 
-  const rows = [["Semestre", "Code / Intitulé", "Type", "Enseignants souhaitant"]];
-  SEMESTRES.forEach(sem => {
-    const saeList = (APP_DATA.sae?.sae?.[sem]) || [];
+  const rows = [
+    ["Semestre", "Code / Intitulé", "Type", "Enseignants souhaitant"],
+  ];
+  SEMESTRES.forEach((sem) => {
+    const saeList = APP_DATA.sae?.sae?.[sem] || [];
     Object.entries(pivot[sem]).forEach(([code, noms]) => {
-      const type = saeList.find(s => s.code === code) ? "SAÉ" : "Ressource";
+      const type = saeList.find((s) => s.code === code) ? "SAÉ" : "Ressource";
       rows.push([sem, code, type, noms.join(", ")]);
     });
   });
@@ -2671,7 +3221,13 @@ document.addEventListener("DOMContentLoaded", async () => {
   injectGHUI();
   await loadData();
   AUTH.injectBadge();
-  if (location.hash === "#souhaits") {
+  // Lien d'installation du token souhaits : #souhaits-setup=TOKEN
+  if (location.hash.startsWith("#souhaits-setup=")) {
+    const t = decodeURIComponent(location.hash.slice("#souhaits-setup=".length));
+    if (t) { localStorage.setItem(GH_SOUHAITS_KEY, t); showToast("Token Souhaits installé !"); }
+    history.replaceState(null, "", location.pathname);
+    navigate("souhaits");
+  } else if (location.hash === "#souhaits") {
     history.replaceState(null, "", location.pathname);
     navigate("souhaits");
   }
