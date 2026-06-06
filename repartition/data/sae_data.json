@@ -45,7 +45,7 @@
           "R1.09 | Culture artistique",
           "R1.14 | Représentation et traitement de l'information"
         ],
-        "responsable": ""
+        "responsable": "SURRIBAS Caroline"
       },
       {
         "code": "SAÉ 1.04 | Produire un contenu audio et vidéo",
@@ -55,7 +55,7 @@
           "R1.10 | Production audio et vidéo",
           "R1.14 | Représentation et traitement de l'information"
         ],
-        "responsable": ""
+        "responsable": "BLANCO Sandy"
       },
       {
         "code": "SAÉ 1.05 | Produire un site Web",
@@ -65,7 +65,7 @@
           "R1.12 | Développement Web",
           "R1.13 | Hébergement"
         ],
-        "responsable": ""
+        "responsable": "DARTIES Benoit"
       },
       {
         "code": "SAÉ 1.06 | Gérer un projet de communication numérique",
@@ -95,7 +95,7 @@
           "R2.07 | Écriture multimédia et narration",
           "R2.16 | Représentation et traitement de l'information"
         ],
-        "responsable": ""
+        "responsable": "DE VELDER Sophie"
       },
       {
         "code": "SAÉ 2.02 | Concevoir un produit ou un service et sa communication",
@@ -110,7 +110,7 @@
           "R2.18 | Économie, gestion et droit du numérique",
           "R2.19 | Projet Personnel et Professionnel"
         ],
-        "responsable": ""
+        "responsable": "SURRIBAS Caroline"
       },
       {
         "code": "SAÉ 2.03 | Concevoir un site web avec une source de données",
@@ -121,7 +121,7 @@
           "R2.14 | Système d'information",
           "R2.15 | Hébergement"
         ],
-        "responsable": ""
+        "responsable": "DARTIES Benoit"
       },
       {
         "code": "SAÉ 2.04 | Construire sa présence en ligne",
@@ -130,7 +130,7 @@
           "R2.06 | Expression, communication et rhétorique",
           "R2.19 | Projet Personnel et Professionnel"
         ],
-        "responsable": ""
+        "responsable": "DARTIES Benoit"
       },
       {
         "code": "SAÉ 2.98 | Hackathon",
@@ -158,7 +158,7 @@
           "R3.17 | Économie, gestion et droit du numérique",
           "R3.18 | Projet Personnel et Professionnel"
         ],
-        "responsable": ""
+        "responsable": "DARTIES Benoit"
       },
       {
         "code": "SAÉ 3.02 | Produire des contenus pour une communication plurimédia",
@@ -174,7 +174,7 @@
           "R3.15 | Représentation et traitement de l'information",
           "R3.17 | Économie, gestion et droit du numérique"
         ],
-        "responsable": ""
+        "responsable": "SURRIBAS Caroline"
       },
       {
         "code": "SAÉ 3.03 | Concevoir des visualisations de données pour le web et un support animé",
@@ -198,7 +198,7 @@
           "R4.03 | Design d'expérience",
           "R4.Crea.06 | Culture artistique"
         ],
-        "responsable": ""
+        "responsable": "SURRIBAS Caroline"
       },
       {
         "code": "SAÉ 4.Crea.02 | Produire du contenu multimédia",
@@ -211,13 +211,13 @@
           "R4.Crea.07 | Audiovisuel – Motion design",
           "R4.Crea.08 | Écriture multimédia et narration"
         ],
-        "responsable": ""
+        "responsable": "THEROND Emmanuel"
       },
       {
         "code": "SAÉ 4.Crea.03 | SAE langues",
         "competence": "",
         "ressources": [],
-        "responsable": ""
+        "responsable": "BLANCO Sandy"
       },
       {
         "code": "SAÉ 4.98 | Hackathon",
@@ -245,7 +245,7 @@
           "R4.DWeb-DI.07 | Développement back",
           "R4.DWeb-DI.08 | Déploiement de services"
         ],
-        "responsable": ""
+        "responsable": "DARTIES Benoit"
       },
       {
         "code": "SAÉ 4.DWeb-DI.02 | Concevoir un dispositif interactif",
@@ -255,7 +255,7 @@
           "R4.DWeb-DI.05 | Création et design interactif",
           "R4.DWeb-DI.06 | Développement front"
         ],
-        "responsable": ""
+        "responsable": "MAURIN Nicolas"
       },
       {
         "code": "SAÉ 4.DWeb-DI.04 | Apprentis : Interface, contenus et visualisation",
@@ -289,7 +289,7 @@
           "R5.Crea.06 | Création numérique",
           "R5.Crea.07 | Écriture Multimédia et narration"
         ],
-        "responsable": ""
+        "responsable": "BLANCO Sandy"
       },
       {
         "code": "SAÉ 5.Crea.02 | SAE Management",
@@ -344,7 +344,7 @@
         "code": "SAÉ 6.Crea.01 | UX / UI avancé",
         "competence": "",
         "ressources": [],
-        "responsable": ""
+        "responsable": "THEROND Emmanuel"
       }
     ],
     "S6 dev": [

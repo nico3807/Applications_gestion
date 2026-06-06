@@ -2068,5 +2068,149 @@
     "description": "S3 / SAÉ 3.01 | Intégrer des interfaces utilisateurs au sein d'un système d'information / sous-groupe 1 / tp",
     "prev": "0",
     "next": "0"
+  },
+  {
+    "date": "06/06/2026",
+    "heure": "09:25:08",
+    "utilisateur": "nicolas.maurin",
+    "type": "SAÉ",
+    "description": "Responsable SAÉ 1.03 | Produire les éléments d'une communication visuelle (S1)",
+    "prev": "—",
+    "next": "SURRIBAS Caroline"
+  },
+  {
+    "date": "06/06/2026",
+    "heure": "09:25:11",
+    "utilisateur": "nicolas.maurin",
+    "type": "SAÉ",
+    "description": "Responsable SAÉ 1.04 | Produire un contenu audio et vidéo (S1)",
+    "prev": "—",
+    "next": "BLANCO Sandy"
+  },
+  {
+    "date": "06/06/2026",
+    "heure": "09:25:32",
+    "utilisateur": "nicolas.maurin",
+    "type": "SAÉ",
+    "description": "Responsable SAÉ 1.05 | Produire un site Web (S1)",
+    "prev": "—",
+    "next": "DARTIES Benoit"
+  },
+  {
+    "date": "06/06/2026",
+    "heure": "11:42:02",
+    "utilisateur": "nicolas.maurin",
+    "type": "SAÉ",
+    "description": "Responsable SAÉ 2.01 | Explorer les usages du numérique (S2)",
+    "prev": "—",
+    "next": "DE VELDER Sophie"
+  },
+  {
+    "date": "06/06/2026",
+    "heure": "11:42:09",
+    "utilisateur": "nicolas.maurin",
+    "type": "SAÉ",
+    "description": "Responsable SAÉ 2.02 | Concevoir un produit ou un service et sa communication (S2)",
+    "prev": "—",
+    "next": "SURRIBAS Caroline"
+  },
+  {
+    "date": "06/06/2026",
+    "heure": "11:42:24",
+    "utilisateur": "nicolas.maurin",
+    "type": "SAÉ",
+    "description": "Responsable SAÉ 2.03 | Concevoir un site web avec une source de données (S2)",
+    "prev": "—",
+    "next": "DARTIES Benoit"
+  },
+  {
+    "date": "06/06/2026",
+    "heure": "11:42:28",
+    "utilisateur": "nicolas.maurin",
+    "type": "SAÉ",
+    "description": "Responsable SAÉ 2.04 | Construire sa présence en ligne (S2)",
+    "prev": "—",
+    "next": "DARTIES Benoit"
+  },
+  {
+    "date": "06/06/2026",
+    "heure": "11:43:02",
+    "utilisateur": "nicolas.maurin",
+    "type": "SAÉ",
+    "description": "Responsable SAÉ 3.01 | Intégrer des interfaces utilisateurs au sein d'un système d'information (S3)",
+    "prev": "—",
+    "next": "DARTIES Benoit"
+  },
+  {
+    "date": "06/06/2026",
+    "heure": "11:43:06",
+    "utilisateur": "nicolas.maurin",
+    "type": "SAÉ",
+    "description": "Responsable SAÉ 3.02 | Produire des contenus pour une communication plurimédia (S3)",
+    "prev": "—",
+    "next": "SURRIBAS Caroline"
+  },
+  {
+    "date": "06/06/2026",
+    "heure": "11:43:44",
+    "utilisateur": "nicolas.maurin",
+    "type": "SAÉ",
+    "description": "Responsable SAÉ 4.DWeb-DI.01 | Développer pour le Web (S4 dev)",
+    "prev": "—",
+    "next": "DARTIES Benoit"
+  },
+  {
+    "date": "06/06/2026",
+    "heure": "11:45:28",
+    "utilisateur": "nicolas.maurin",
+    "type": "SAÉ",
+    "description": "Responsable SAÉ 4.DWeb-DI.02 | Concevoir un dispositif interactif (S4 dev)",
+    "prev": "—",
+    "next": "MAURIN Nicolas"
+  },
+  {
+    "date": "06/06/2026",
+    "heure": "11:45:52",
+    "utilisateur": "nicolas.maurin",
+    "type": "SAÉ",
+    "description": "Responsable SAÉ 4.Crea.01 | Créer pour une campagne de communication visuelle (S4 crea)",
+    "prev": "—",
+    "next": "SURRIBAS Caroline"
+  },
+  {
+    "date": "06/06/2026",
+    "heure": "11:46:04",
+    "utilisateur": "nicolas.maurin",
+    "type": "SAÉ",
+    "description": "Responsable SAÉ 4.Crea.02 | Produire du contenu multimédia (S4 crea)",
+    "prev": "—",
+    "next": "THEROND Emmanuel"
+  },
+  {
+    "date": "06/06/2026",
+    "heure": "11:46:24",
+    "utilisateur": "nicolas.maurin",
+    "type": "SAÉ",
+    "description": "Responsable SAÉ 4.Crea.03 | SAE langues (S4 crea)",
+    "prev": "—",
+    "next": "BLANCO Sandy"
+  },
+  {
+    "date": "06/06/2026",
+    "heure": "11:47:43",
+    "utilisateur": "nicolas.maurin",
+    "type": "SAÉ",
+    "description": "Responsable SAÉ 5.Crea.01 | Créer par/pour le numérique (S5 crea)",
+    "prev": "—",
+    "next": "BLANCO Sandy"
+  },
+  {
+    "date": "06/06/2026",
+    "heure": "11:49:25",
+    "utilisateur": "nicolas.maurin",
+    "type": "SAÉ",
+    "description": "Responsable SAÉ 6.Crea.01 | UX / UI avancé (S6 crea)",
+    "prev": "—",
+    "next": "THEROND Emmanuel"
   }
 ]

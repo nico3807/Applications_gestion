@@ -75,11 +75,19 @@
     "login": "sylvie.escaig"
   },
   {
+    "login": "emmanuel.tehrond",
     "h": "35b7123a725f50dee3c17586c037b95c25aee4284de39e31fc67be4c6105078b",
     "rw": false,
-    "denyApps": [
-      "repartition"
+    "rwApps": [],
+    "denyApps": []
+  },
+  {
+    "login": "sandy.blanco",
+    "h": "5a639b1d7195408fab84d22d4ac3aabed2274e1dd9f892485879d903a1b2cfc1",
+    "rw": false,
+    "rwApps": [
+      "planning-web"
     ],
-    "login": "emmanuel.tehrond"
+    "denyApps": []
   }
 ]
