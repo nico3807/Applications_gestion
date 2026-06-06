@@ -6,9 +6,7 @@ const GH_REPO = "Applications_gestion"; // À ajuster selon le dépôt exact
 const GH_BRANCH = "main";
 const GH_BASE_PATH = "repartition/data"; // Dossier où se trouvent les JSON sur GitHub
 const GH_ARCHIVE_PATH = "repartition/archive_25-26/data";
-// Token dédié aux souhaits : ne pas mettre de valeur ici (commit public).
-// Configurer via ⚙ GitHub dans l'app → champ "Token Souhaits".
-const GH_SOUHAITS_TOKEN = "";
+
 
 let ARCHIVE_MODE = false;
 let ARCHIVE_VERSION = "planifiee"; // "planifiee" | "realisee"
@@ -1947,24 +1945,12 @@ window.closeGHModal = function () {
 };
 window.saveGHFromModal = function () {
   const token = document.getElementById("gh-token").value.trim();
-  const souhaitsToken = document.getElementById("gh-souhaits-token").value.trim();
-  if (!token && !souhaitsToken) return alert("Saisissez au moins un token.");
-  if (token) localStorage.setItem(GH_KEY, JSON.stringify({ token }));
-  if (souhaitsToken) localStorage.setItem(GH_SOUHAITS_KEY, souhaitsToken);
-  else localStorage.removeItem(GH_SOUHAITS_KEY);
+  if (!token) return alert("Saisissez un token.");
+  localStorage.setItem(GH_KEY, JSON.stringify({ token }));
   const btn = document.getElementById("gh-config-btn");
   if (btn) btn.innerHTML = "● GitHub configuré";
-  showToast("Configuration GitHub enregistrée !");
+  showToast("Token enregistré !");
   closeGHModal();
-};
-window.copySouhaitsSetupLink = function () {
-  const t = localStorage.getItem(GH_SOUHAITS_KEY);
-  if (!t) return alert("Configurez d'abord le Token Souhaits.");
-  const url = `${location.origin}${location.pathname}#souhaits-setup=${encodeURIComponent(t)}`;
-  navigator.clipboard.writeText(url).then(
-    () => showToast("Lien copié ! Envoyez-le aux enseignants."),
-    () => prompt("Copiez ce lien :", url)
-  );
 };
 
 function injectGHUI() {
@@ -1978,20 +1964,12 @@ function injectGHUI() {
   modal.className = "gh-modal-overlay";
   modal.style.display = "none";
   modal.innerHTML = `
-    <div class="form-card" style="margin:8% auto; position:relative; max-width:460px">
-        <h3 style="margin-bottom:1rem; color:#1e3a5f">⚙ Configuration GitHub</h3>
-        <p style="font-size:13px; color:#6b7280; margin-bottom:1rem;">Dépôt : <strong>${GH_OWNER}/${GH_REPO}</strong> (branche <code>${GH_BRANCH}</code>).</p>
+    <div class="form-card" style="margin:10% auto; position:relative; max-width:400px">
+        <h3 style="margin-bottom:1rem; color:#1e3a5f">⚙ Token GitHub</h3>
+        <p style="font-size:13px; color:#6b7280; margin-bottom:1rem;">Les JSON seront sauvegardés dans <strong>${GH_OWNER}/${GH_REPO}</strong> (branche <code>${GH_BRANCH}</code>).</p>
         <div class="form-group">
-            <label>Token admin (répartition complète)</label>
+            <label>Personal Access Token</label>
             <input id="gh-token" class="form-input" type="password" placeholder="ghp_xxxxxxxxxxxxxxxxxxxx">
-        </div>
-        <div class="form-group" style="margin-top:1rem;">
-            <label>Token Souhaits <span style="font-size:11px;color:#6b7280;font-weight:400;">— partageable avec tous les enseignants</span></label>
-            <input id="gh-souhaits-token" class="form-input" type="password" placeholder="github_pat_xxxxxxxxxxxxxxxxxxxx">
-            <div style="margin-top:6px;">
-              <button class="btn-pdf-action" style="font-size:12px;padding:3px 10px;" onclick="copySouhaitsSetupLink()">🔗 Copier le lien d'installation</button>
-              <span style="font-size:11px;color:#6b7280;margin-left:6px;">Envoyez ce lien aux enseignants — 1 clic suffit.</span>
-            </div>
         </div>
         <div style="display:flex; justify-content:flex-end; gap:0.5rem; margin-top:1.5rem;">
             <button class="btn-cancel" onclick="closeGHModal()">Annuler</button>
@@ -2005,8 +1983,6 @@ function injectGHUI() {
 
   const cfg = getGHConfig();
   if (cfg.token) document.getElementById("gh-token").value = cfg.token;
-  const st = localStorage.getItem(GH_SOUHAITS_KEY);
-  if (st) document.getElementById("gh-souhaits-token").value = st;
 }
 
 async function fetchGH(filename, basePath = GH_BASE_PATH) {
@@ -2626,84 +2602,9 @@ async function loadData() {
       console.warn("GH load failed, données locales conservées", e);
     }
 
-    // Sync souhaits de l'utilisateur courant depuis GitHub vers localStorage
-    try {
-      const login = AUTH.user();
-      const souhaitsData = await _fetchSouhaitsGH(login);
-      if (souhaitsData)
-        localStorage.setItem(`souhaits_${login}`, JSON.stringify(souhaitsData));
-    } catch {}
   }
 
   renderView();
-}
-
-/* ── GitHub helpers dédiés aux souhaits ─────────────────────────────────── */
-
-const GH_SOUHAITS_KEY = "gh_souhaits_token";
-function _souhaitsGHToken() {
-  return GH_SOUHAITS_TOKEN || localStorage.getItem(GH_SOUHAITS_KEY) || getGHConfig().token || "";
-}
-function _isSouhaitsGHAvailable() {
-  return !!(GH_SOUHAITS_TOKEN || localStorage.getItem(GH_SOUHAITS_KEY) || getGHConfig().token);
-}
-
-async function _fetchSouhaitsGH(login) {
-  const token = _souhaitsGHToken();
-  if (!token) return null;
-  const url = `https://api.github.com/repos/${GH_OWNER}/${GH_REPO}/contents/repartition/souhaits/${login}.json?ref=${GH_BRANCH}&_t=${Date.now()}`;
-  try {
-    const r = await fetch(url, {
-      cache: "no-cache",
-      headers: {
-        Authorization: `token ${token}`,
-        Accept: "application/vnd.github.v3+json",
-      },
-    });
-    if (!r.ok) return null;
-    const json = await r.json();
-    return JSON.parse(
-      decodeURIComponent(escape(atob(json.content.replace(/\n/g, "")))),
-    );
-  } catch {
-    return null;
-  }
-}
-
-async function _writeSouhaitsGH(login, data) {
-  const token = _souhaitsGHToken();
-  if (!token) throw new Error("Aucun token disponible");
-  const url = `https://api.github.com/repos/${GH_OWNER}/${GH_REPO}/contents/repartition/souhaits/${login}.json`;
-  const content = btoa(
-    unescape(encodeURIComponent(JSON.stringify(data, null, 2))),
-  );
-  let sha = null;
-  try {
-    const r = await fetch(`${url}?ref=${GH_BRANCH}&_t=${Date.now()}`, {
-      cache: "no-cache",
-      headers: {
-        Authorization: `token ${token}`,
-        Accept: "application/vnd.github.v3+json",
-      },
-    });
-    if (r.ok) sha = (await r.json()).sha;
-  } catch {}
-  const body = {
-    message: `Update souhaits/${login}.json via Web UI`,
-    content,
-    branch: GH_BRANCH,
-  };
-  if (sha) body.sha = sha;
-  const resp = await fetch(url, {
-    method: "PUT",
-    headers: {
-      Authorization: `token ${token}`,
-      Accept: "application/vnd.github.v3+json",
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(body),
-  });
-  if (!resp.ok) throw new Error(`GitHub ${resp.status}`);
 }
 
 /* ── Vue : Souhaits ─────────────────────────────────────────────────────────
@@ -2876,7 +2777,7 @@ window.setSouhaitsFilter = function (sem) {
   renderView();
 };
 
-window.saveSouhaits = async function () {
+window.saveSouhaits = function () {
   const data = _souhaitLoad();
   if (!data.souhaits) data.souhaits = {};
   data.souhaits[_souhaitsFilter] = [
@@ -2886,19 +2787,7 @@ window.saveSouhaits = async function () {
   data.login = AUTH.user();
   data.date = new Date().toISOString();
   localStorage.setItem(_souhaitLsKey(), JSON.stringify(data));
-  if (_isSouhaitsGHAvailable()) {
-    try {
-      await _writeSouhaitsGH(AUTH.user(), data);
-      showToast(`Souhaits pour ${_souhaitsFilter} enregistrés (GitHub ✓) !`);
-    } catch (e) {
-      console.warn("GitHub souhaits save failed", e);
-      showToast(
-        `Souhaits pour ${_souhaitsFilter} enregistrés (local uniquement) !`,
-      );
-    }
-  } else {
-    showToast(`Souhaits pour ${_souhaitsFilter} enregistrés !`);
-  }
+  showToast(`Souhaits pour ${_souhaitsFilter} enregistrés !`);
   renderView();
 };
 
@@ -3041,32 +2930,22 @@ window.exportSouhaitsXLSX = function () {
 
 /* ── Récap consolidé (R/W uniquement) ──────────────────────────────────── */
 
-async function _loadAllSouhaits() {
+function _loadAllSouhaits() {
   const all = {};
-  await Promise.all(
-    Object.keys(_LOGIN_TO_NOM).map(async (login) => {
-      let d = _isSouhaitsGHAvailable() ? await _fetchSouhaitsGH(login) : null;
-      if (!d) {
-        try {
-          const raw = localStorage.getItem(`souhaits_${login}`);
-          d = raw ? JSON.parse(raw) : null;
-        } catch {}
-      }
-      if (
-        d &&
-        d.souhaits &&
-        Object.values(d.souhaits).some((a) => a.length > 0)
-      )
+  Object.keys(_LOGIN_TO_NOM).forEach(login => {
+    try {
+      const d = JSON.parse(localStorage.getItem(`souhaits_${login}`));
+      if (d && d.souhaits && Object.values(d.souhaits).some(a => a.length > 0))
         all[login] = d;
-    }),
-  );
+    } catch {}
+  });
   return all;
 }
 
-window.showAllSouhaitsRecap = async function () {
+window.showAllSouhaitsRecap = function () {
   if (!AUTH.canWrite()) return;
 
-  const all = await _loadAllSouhaits();
+  const all = _loadAllSouhaits();
   const logins = Object.keys(all);
   if (!logins.length) {
     showToast("Aucun souhait enregistré pour l'instant.");
@@ -3172,12 +3051,12 @@ window.showAllSouhaitsRecap = async function () {
   document.body.appendChild(modal);
 };
 
-window.exportAllSouhaitsXLSX = async function () {
+window.exportAllSouhaitsXLSX = function () {
   if (typeof XLSX === "undefined") {
     alert("Bibliothèque XLSX non chargée.");
     return;
   }
-  const all = await _loadAllSouhaits();
+  const all = _loadAllSouhaits();
   if (!Object.keys(all).length) {
     showToast("Aucun souhait à exporter.");
     return;
@@ -3221,13 +3100,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   injectGHUI();
   await loadData();
   AUTH.injectBadge();
-  // Lien d'installation du token souhaits : #souhaits-setup=TOKEN
-  if (location.hash.startsWith("#souhaits-setup=")) {
-    const t = decodeURIComponent(location.hash.slice("#souhaits-setup=".length));
-    if (t) { localStorage.setItem(GH_SOUHAITS_KEY, t); showToast("Token Souhaits installé !"); }
-    history.replaceState(null, "", location.pathname);
-    navigate("souhaits");
-  } else if (location.hash === "#souhaits") {
+  if (location.hash === "#souhaits") {
     history.replaceState(null, "", location.pathname);
     navigate("souhaits");
   }
