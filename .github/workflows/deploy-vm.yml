@@ -12,4 +12,5 @@ jobs:
       - name: Pull latest code
         run: |
           cd /var/www/applications_gestion
-          git pull origin main
+          git fetch origin main
+          git reset --hard origin/main
