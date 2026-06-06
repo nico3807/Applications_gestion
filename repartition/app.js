@@ -2604,6 +2604,16 @@ async function loadData() {
 
   }
 
+  // Sync souhaits de l'utilisateur courant depuis le serveur vers localStorage
+  try {
+    const login = AUTH.user();
+    const resp = await fetch(`souhaits/${login}.json?_t=${Date.now()}`);
+    if (resp.ok) {
+      const d = await resp.json();
+      localStorage.setItem(`souhaits_${login}`, JSON.stringify(d));
+    }
+  } catch {}
+
   renderView();
 }
 
@@ -2777,17 +2787,30 @@ window.setSouhaitsFilter = function (sem) {
   renderView();
 };
 
-window.saveSouhaits = function () {
+window.saveSouhaits = async function () {
   const data = _souhaitLoad();
   if (!data.souhaits) data.souhaits = {};
   data.souhaits[_souhaitsFilter] = [
     ...document.querySelectorAll(".souhait-cb:checked"),
   ].map((cb) => cb.dataset.code);
-  data.nom = _souhaitNom();
+  data.nom   = _souhaitNom();
   data.login = AUTH.user();
-  data.date = new Date().toISOString();
+  data.date  = new Date().toISOString();
   localStorage.setItem(_souhaitLsKey(), JSON.stringify(data));
-  showToast(`Souhaits pour ${_souhaitsFilter} enregistrés !`);
+  try {
+    const resp = await fetch("souhaits/save.php", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ login: AUTH.user(), data }),
+    });
+    if (resp.ok) {
+      showToast(`Souhaits pour ${_souhaitsFilter} enregistrés !`);
+    } else {
+      showToast(`Souhaits enregistrés localement (erreur serveur ${resp.status}).`);
+    }
+  } catch {
+    showToast(`Souhaits enregistrés localement (serveur inaccessible).`);
+  }
   renderView();
 };
 
@@ -2930,22 +2953,30 @@ window.exportSouhaitsXLSX = function () {
 
 /* ── Récap consolidé (R/W uniquement) ──────────────────────────────────── */
 
-function _loadAllSouhaits() {
+async function _loadAllSouhaits() {
   const all = {};
-  Object.keys(_LOGIN_TO_NOM).forEach(login => {
+  await Promise.all(Object.keys(_LOGIN_TO_NOM).map(async login => {
+    let d = null;
     try {
-      const d = JSON.parse(localStorage.getItem(`souhaits_${login}`));
-      if (d && d.souhaits && Object.values(d.souhaits).some(a => a.length > 0))
-        all[login] = d;
+      const resp = await fetch(`souhaits/${login}.json?_t=${Date.now()}`);
+      if (resp.ok) d = await resp.json();
     } catch {}
-  });
+    if (!d) {
+      try {
+        const raw = localStorage.getItem(`souhaits_${login}`);
+        d = raw ? JSON.parse(raw) : null;
+      } catch {}
+    }
+    if (d && d.souhaits && Object.values(d.souhaits).some(a => a.length > 0))
+      all[login] = d;
+  }));
   return all;
 }
 
-window.showAllSouhaitsRecap = function () {
+window.showAllSouhaitsRecap = async function () {
   if (!AUTH.canWrite()) return;
 
-  const all = _loadAllSouhaits();
+  const all = await _loadAllSouhaits();
   const logins = Object.keys(all);
   if (!logins.length) {
     showToast("Aucun souhait enregistré pour l'instant.");
@@ -3051,12 +3082,12 @@ window.showAllSouhaitsRecap = function () {
   document.body.appendChild(modal);
 };
 
-window.exportAllSouhaitsXLSX = function () {
+window.exportAllSouhaitsXLSX = async function () {
   if (typeof XLSX === "undefined") {
     alert("Bibliothèque XLSX non chargée.");
     return;
   }
-  const all = _loadAllSouhaits();
+  const all = await _loadAllSouhaits();
   if (!Object.keys(all).length) {
     showToast("Aucun souhait à exporter.");
     return;
