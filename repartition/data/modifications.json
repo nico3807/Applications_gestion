@@ -2167,5 +2167,32 @@
     "description": "Responsable SAÉ 4.DWeb-DI.02 | Concevoir un dispositif interactif (S4 dev)",
     "prev": "—",
     "next": "MAURIN Nicolas"
+  },
+  {
+    "date": "06/06/2026",
+    "heure": "11:45:52",
+    "utilisateur": "nicolas.maurin",
+    "type": "SAÉ",
+    "description": "Responsable SAÉ 4.Crea.01 | Créer pour une campagne de communication visuelle (S4 crea)",
+    "prev": "—",
+    "next": "SURRIBAS Caroline"
+  },
+  {
+    "date": "06/06/2026",
+    "heure": "11:46:04",
+    "utilisateur": "nicolas.maurin",
+    "type": "SAÉ",
+    "description": "Responsable SAÉ 4.Crea.02 | Produire du contenu multimédia (S4 crea)",
+    "prev": "—",
+    "next": "THEROND Emmanuel"
+  },
+  {
+    "date": "06/06/2026",
+    "heure": "11:46:24",
+    "utilisateur": "nicolas.maurin",
+    "type": "SAÉ",
+    "description": "Responsable SAÉ 4.Crea.03 | SAE langues (S4 crea)",
+    "prev": "—",
+    "next": "BLANCO Sandy"
   }
 ]
