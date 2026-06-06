@@ -2634,4 +2634,8 @@ document.addEventListener("DOMContentLoaded", async () => {
   injectGHUI();
   await loadData();
   AUTH.injectBadge();
+  if (location.hash === "#souhaits") {
+    history.replaceState(null, "", location.pathname);
+    navigate("souhaits");
+  }
 });
