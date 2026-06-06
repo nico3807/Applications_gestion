@@ -1485,7 +1485,7 @@ const GH_ARCHIVE_PATH = "planning-web/archive_25-26/calendar_data_25-26.json";
 
 function getGHConfig() {
   try {
-    return JSON.parse(localStorage.getItem(GH_KEY)) || {};
+    return JSON.parse(sessionStorage.getItem(GH_KEY)) || {};
   } catch {
     return {};
   }
@@ -1654,7 +1654,7 @@ function saveGHFromModal() {
     showGHStatus("Saisissez un token.", "error");
     return;
   }
-  localStorage.setItem(GH_KEY, JSON.stringify({ token }));
+  sessionStorage.setItem(GH_KEY, JSON.stringify({ token }));
   const cfgBtn = document.getElementById("gh-config-btn");
   if (cfgBtn) cfgBtn.style.display = "none";
   const saveBtn = document.getElementById("gh-save-btn");

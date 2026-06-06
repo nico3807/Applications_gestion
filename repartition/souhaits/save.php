@@ -1,5 +1,19 @@
 <?php
+session_set_cookie_params([
+    'lifetime' => 28800,
+    'path'     => '/',
+    'secure'   => true,
+    'httponly' => true,
+    'samesite' => 'Lax',
+]);
+session_start();
 header('Content-Type: application/json; charset=utf-8');
+
+if (!isset($_SESSION['user'])) {
+    http_response_code(401);
+    echo json_encode(['error' => 'Non authentifié']);
+    exit;
+}
 
 // Lecture du corps JSON
 $body = json_decode(file_get_contents('php://input'), true);
@@ -10,19 +24,12 @@ if (!$body || !isset($body['login']) || !isset($body['data'])) {
     exit;
 }
 
-// Liste blanche des logins autorisés
-$allowed = [
-    'nicolas.maurin', 'damien.marill', 'sandy.blanco', 'william.bernard',
-    'emmanuel.therond', 'luc.jaeckle', 'benoit.darties', 'sophie.de-velder',
-    'davide.di-pierro', 'chrysta.pelissier', 'caroline.surribas',
-    'laeticia.tournie', 'jerome.aze', 'sylvie.escaig',
-];
-
 $login = $body['login'];
 
-if (!in_array($login, $allowed, true)) {
+// Un utilisateur ne peut écrire que SES PROPRES souhaits
+if ($login !== $_SESSION['user']['login']) {
     http_response_code(403);
-    echo json_encode(['error' => 'Login non autorisé']);
+    echo json_encode(['error' => 'Vous ne pouvez modifier que vos propres souhaits']);
     exit;
 }
 

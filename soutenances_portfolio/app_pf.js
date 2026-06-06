@@ -161,7 +161,7 @@ function applyJSON(text) {
 /* ── GitHub API ──────────────────────────────────────────────────── */
 function getGHConfig() {
   try {
-    const stored = JSON.parse(localStorage.getItem(GH_KEY)) || {};
+    const stored = JSON.parse(sessionStorage.getItem(GH_KEY)) || {};
     return {
       token: stored.token || "",
       owner: GH_OWNER,
@@ -354,7 +354,7 @@ function saveGHFromModal() {
     showGHStatus("Veuillez saisir le token.", "error");
     return;
   }
-  localStorage.setItem(GH_KEY, JSON.stringify({ token }));
+  sessionStorage.setItem(GH_KEY, JSON.stringify({ token }));
   const btn = document.getElementById("gh-config-btn");
   if (btn) btn.classList.add("gh-footer-link--active");
   showGHStatus("Token enregistré !", "success");
@@ -362,7 +362,7 @@ function saveGHFromModal() {
 }
 
 function clearGHConfig() {
-  localStorage.removeItem(GH_KEY);
+  sessionStorage.removeItem(GH_KEY);
   const btn = document.getElementById("gh-config-btn");
   if (btn) btn.classList.remove("gh-footer-link--active");
   document.getElementById("gh-token").value = "";

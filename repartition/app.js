@@ -1,5 +1,14 @@
 "use strict";
 
+/* Échappement HTML — à utiliser pour toute donnée dynamique (JSON éditable,
+   noms, codes…) injectée dans un template innerHTML, afin d'empêcher une
+   injection XSS stockée (ex : un nom d'enseignant contenant <img onerror=…>). */
+function esc(s) {
+  return String(s ?? "").replace(/[&<>"']/g, (c) => ({
+    "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;",
+  }[c]));
+}
+
 const GH_KEY = "gh_repartition_cfg";
 const GH_OWNER = "nico3807";
 const GH_REPO = "Applications_gestion"; // À ajuster selon le dépôt exact
@@ -852,7 +861,7 @@ function renderSemestre(root, sem) {
             <td>
                 <select class="select-enseignant ${selClass}" onchange="updateAff('${sem}', '${res.replace(/'/g, "\\'")}', 'enseignant', this.value)">
                     <option value="">-</option>
-                    ${enseignants.map((e) => `<option value="${e.id}" class="ens-option" data-vac="${e.is_vac ? "true" : "false"}" ${e.id === data.enseignant ? "selected" : ""}>${e.id}</option>`).join("")}
+                    ${enseignants.map((e) => `<option value="${esc(e.id)}" class="ens-option" data-vac="${e.is_vac ? "true" : "false"}" ${e.id === data.enseignant ? "selected" : ""}>${esc(e.id)}</option>`).join("")}
                 </select>
             </td>
             <td><input type="number" class="input-h" value="${data.cm || 0}" onchange="updateAff('${sem}', '${res.replace(/'/g, "\\'")}', 'cm', this.value)" step="0.5"></td>
@@ -881,7 +890,7 @@ function renderSemestre(root, sem) {
                     <td>
                         <select class="select-enseignant ${subSelClass}" onchange="updateSub('${sem}', '${res.replace(/'/g, "\\'")}', ${j}, 'enseignant', this.value)">
                             <option value="">-</option>
-                            ${enseignants.map((e) => `<option value="${e.id}" class="ens-option" data-vac="${e.is_vac ? "true" : "false"}" ${e.id === sub.enseignant ? "selected" : ""}>${e.id}</option>`).join("")}
+                            ${enseignants.map((e) => `<option value="${esc(e.id)}" class="ens-option" data-vac="${e.is_vac ? "true" : "false"}" ${e.id === sub.enseignant ? "selected" : ""}>${esc(e.id)}</option>`).join("")}
                         </select>
                     </td>
                     <td><input type="number" class="input-h" value="${sub.cm || 0}" onchange="updateSub('${sem}', '${res.replace(/'/g, "\\'")}', ${j}, 'cm', this.value)" step="0.5"></td>
@@ -941,7 +950,7 @@ function renderSemestre(root, sem) {
                   .filter((e) => !e.is_vac)
                   .map(
                     (e) =>
-                      `<option value="${e.id}" class="ens-option" ${e.id === data.responsable ? "selected" : ""}>${e.id}</option>`,
+                      `<option value="${esc(e.id)}" class="ens-option" ${e.id === data.responsable ? "selected" : ""}>${esc(e.id)}</option>`,
                   )
                   .join("")}
             </select>
@@ -1726,7 +1735,7 @@ function renderEnseignants(root) {
       : `<span style="color:#9ca3af">-</span>`;
 
     html += `<tr class="enseignant-item" data-vac="${e.is_vac ? "true" : "false"}">
-            <td>${e.id}</td>
+            <td>${esc(e.id)}</td>
             <td>${e.is_vac ? (e.is_cev ? "Vacataire (CEV)" : "Vacataire") : "Titulaire"}</td>
             <td>${e.service_du != null ? e.service_du : "-"}</td>
             <td>${e.service_max != null ? e.service_max : "-"}</td>
@@ -1868,7 +1877,7 @@ window.openEditEnsModal = function (i) {
 
   modal.innerHTML = `
     <div class="form-card" style="margin:10% auto; position:relative; max-width:400px">
-        <h3 style="margin-bottom:1rem; color:#1e3a5f">Modifier ${e.id}</h3>
+        <h3 style="margin-bottom:1rem; color:#1e3a5f">Modifier ${esc(e.id)}</h3>
         <div class="form-group form-group-check">
             <label><input type="checkbox" id="edit_ens_vac" ${e.is_vac ? "checked" : ""} onchange="document.getElementById('edit_cev_group').style.display = this.checked ? 'block' : 'none'; if (!this.checked) document.getElementById('edit_ens_cev').checked = false;"> Est vacataire</label>
         </div>
@@ -1931,7 +1940,7 @@ window.isGHConfigured = function () {
 };
 window.getGHConfig = function () {
   try {
-    return JSON.parse(localStorage.getItem(GH_KEY)) || {};
+    return JSON.parse(sessionStorage.getItem(GH_KEY)) || {};
   } catch {
     return {};
   }
@@ -1946,7 +1955,7 @@ window.closeGHModal = function () {
 window.saveGHFromModal = function () {
   const token = document.getElementById("gh-token").value.trim();
   if (!token) return alert("Saisissez un token.");
-  localStorage.setItem(GH_KEY, JSON.stringify({ token }));
+  sessionStorage.setItem(GH_KEY, JSON.stringify({ token }));
   const btn = document.getElementById("gh-config-btn");
   if (btn) btn.innerHTML = "● GitHub configuré";
   showToast("Token enregistré !");
@@ -2176,11 +2185,11 @@ function renderSae(root) {
           ? sae.code.split(" | ")
           : [sae.code, sae.intitule || ""];
         const respBadge = sae.responsable
-          ? `<span style="display:inline-block;background:#dcfce7;color:#166534;border:1px solid #86efac;border-radius:4px;padding:2px 10px;font-size:12px;font-weight:500;">${sae.responsable}</span>`
+          ? `<span style="display:inline-block;background:#dcfce7;color:#166534;border:1px solid #86efac;border-radius:4px;padding:2px 10px;font-size:12px;font-weight:500;">${esc(sae.responsable)}</span>`
           : `<span style="color:#9ca3af;font-size:12px;">—</span>`;
         bodyRows += `<tr class="${rowIdx % 2 === 0 ? "group-even" : "group-odd"}">
-          <td style="font-weight:600;white-space:nowrap;color:#1e3a5f;font-size:12px;width:100px;">${codeRef}</td>
-          <td style="font-size:13px;">${codeName}</td>
+          <td style="font-weight:600;white-space:nowrap;color:#1e3a5f;font-size:12px;width:100px;">${esc(codeRef)}</td>
+          <td style="font-size:13px;">${esc(codeName)}</td>
           <td style="width:200px;">${respBadge}</td>
         </tr>`;
         rowIdx++;
@@ -2220,14 +2229,14 @@ function renderSae(root) {
 
   const respOptions =
     `<option value="">— Aucun —</option>` +
-    titulaires.map((e) => `<option value="${e.id}">${e.id}</option>`).join("");
+    titulaires.map((e) => `<option value="${esc(e.id)}">${esc(e.id)}</option>`).join("");
 
   const tableRows = rows
     .map((sae, i) => {
       const ressBadges = sae.ressources
         .map(
           (r) =>
-            `<span style="display:inline-block;background:#dbeafe;color:#1e3a5f;border:1px solid #93c5fd;border-radius:4px;padding:1px 7px;font-size:11px;margin:2px 2px 2px 0;">${r}</span>`,
+            `<span style="display:inline-block;background:#dbeafe;color:#1e3a5f;border:1px solid #93c5fd;border-radius:4px;padding:1px 7px;font-size:11px;margin:2px 2px 2px 0;">${esc(r)}</span>`,
         )
         .join("");
 
@@ -2240,18 +2249,18 @@ function renderSae(root) {
 
       return `<tr class="${i % 2 === 0 ? "group-even" : "group-odd"}">
       <td style="font-weight:600;">
-        <span style="color:#1e3a5f;font-size:12px;white-space:nowrap;">${codeRef}</span><br>
-        <span style="font-weight:400;font-size:13px;">${codeName || ""}</span>
+        <span style="color:#1e3a5f;font-size:12px;white-space:nowrap;">${esc(codeRef)}</span><br>
+        <span style="font-weight:400;font-size:13px;">${esc(codeName || "")}</span>
       </td>
-      <td style="font-size:13px;color:#374151;">${sae.competence}</td>
+      <td style="font-size:13px;color:#374151;">${esc(sae.competence)}</td>
       <td style="line-height:1.8;">${ressBadges}</td>
       <td>
         <select class="select-enseignant" autocomplete="off"
                 onchange="updateSaeResponsable('${escSem}','${escCode}',this.value)"
                 style="min-width:160px;">
           ${respOptions.replace(
-            `value="${sae.responsable}"`,
-            `value="${sae.responsable}" selected`,
+            `value="${esc(sae.responsable)}"`,
+            `value="${esc(sae.responsable)}" selected`,
           )}
         </select>
       </td>
@@ -2607,7 +2616,7 @@ async function loadData() {
   // Sync souhaits de l'utilisateur courant depuis le serveur vers localStorage
   try {
     const login = AUTH.user();
-    const resp = await fetch(`souhaits/${login}.json?_t=${Date.now()}`);
+    const resp = await fetch(`souhaits/get.php?login=${encodeURIComponent(login)}&_t=${Date.now()}`, { credentials: "include" });
     if (resp.ok) {
       const d = await resp.json();
       localStorage.setItem(`souhaits_${login}`, JSON.stringify(d));
@@ -2685,7 +2694,7 @@ function renderSouhaits(root) {
     ressourcesR.forEach((r) => {
       const checked = semSaved.includes(r) ? "checked" : "";
       rows += `<tr class="${idx % 2 === 0 ? "group-even" : "group-odd"}">
-        <td style="font-size:13px;">${r}</td>
+        <td style="font-size:13px;">${esc(r)}</td>
         <td style="text-align:center;">
           <span style="display:inline-block;background:#dbeafe;color:#1e40af;border:1px solid #93c5fd;
             border-radius:4px;padding:1px 7px;font-size:11px;">Ressource</span>
@@ -2707,7 +2716,7 @@ function renderSouhaits(root) {
         : [sae.code, sae.intitule || ""];
       rows += `<tr class="${idx % 2 === 0 ? "group-even" : "group-odd"}">
         <td style="font-size:13px;">
-          <span style="color:#14532d;font-size:11px;font-weight:600;margin-right:5px;">${codeRef}</span>${codeName}
+          <span style="color:#14532d;font-size:11px;font-weight:600;margin-right:5px;">${esc(codeRef)}</span>${esc(codeName)}
         </td>
         <td style="text-align:center;">
           <span style="display:inline-block;background:#bbf7d0;color:#14532d;border:1px solid #4ade80;
@@ -2726,7 +2735,7 @@ function renderSouhaits(root) {
     portfolio.forEach((r) => {
       const checked = semSaved.includes(r) ? "checked" : "";
       rows += `<tr class="${idx % 2 === 0 ? "group-even" : "group-odd"}">
-        <td style="font-size:13px;">${r}</td>
+        <td style="font-size:13px;">${esc(r)}</td>
         <td style="text-align:center;">
           <span style="display:inline-block;background:#dbeafe;color:#1e40af;border:1px solid #93c5fd;
             border-radius:4px;padding:1px 7px;font-size:11px;">Ressource</span>
@@ -2769,7 +2778,7 @@ function renderSouhaits(root) {
     <div class="page-header" style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;">
       <div>
         <h1 style="margin:0;">Mes souhaits d'enseignement</h1>
-        <div style="font-size:13px;color:#6b7280;margin-top:3px;">${nom}${lastSaved}</div>
+        <div style="font-size:13px;color:#6b7280;margin-top:3px;">${esc(nom)}${esc(lastSaved)}</div>
       </div>
       <div style="display:flex;gap:8px;align-items:center;">
         <button class="btn-save" onclick="saveSouhaits()">💾 Valider ce semestre</button>
@@ -2871,9 +2880,9 @@ window.showSouhaitsRecap = function () {
             const [codeRef, codeName] = code.includes(" | ")
               ? code.split(" | ")
               : [code, ""];
-            label = `<span style="color:#14532d;font-size:11px;font-weight:600;margin-right:5px;">${codeRef}</span>${codeName}`;
+            label = `<span style="color:#14532d;font-size:11px;font-weight:600;margin-right:5px;">${esc(codeRef)}</span>${esc(codeName)}`;
           } else {
-            label = code;
+            label = esc(code);
           }
           const typeBadge = saeEntry
             ? `<span style="display:inline-block;background:#bbf7d0;color:#14532d;border:1px solid #4ade80;border-radius:4px;padding:1px 6px;font-size:11px;">SAÉ</span>`
@@ -2912,7 +2921,7 @@ window.showSouhaitsRecap = function () {
         justify-content:space-between;align-items:center;flex-shrink:0;gap:10px;">
         <div>
           <h2 style="margin:0;font-size:16px;color:#1e3a5f;">Mes souhaits — récapitulatif complet</h2>
-          <p style="margin:3px 0 0;font-size:12px;color:#6b7280;">${_souhaitNom()}</p>
+          <p style="margin:3px 0 0;font-size:12px;color:#6b7280;">${esc(_souhaitNom())}</p>
         </div>
         <div style="display:flex;gap:8px;align-items:center;flex-shrink:0;">
           ${AUTH.canWrite() ? `<button class="btn-print-action" onclick="showAllSouhaitsRecap()">👥 Tous les enseignants</button>` : ""}
@@ -2976,7 +2985,7 @@ async function _loadAllSouhaits() {
   await Promise.all(Object.keys(_LOGIN_TO_NOM).map(async login => {
     let d = null;
     try {
-      const resp = await fetch(`souhaits/${login}.json?_t=${Date.now()}`);
+      const resp = await fetch(`souhaits/get.php?login=${encodeURIComponent(login)}&_t=${Date.now()}`, { credentials: "include" });
       if (resp.ok) d = await resp.json();
     } catch {}
     if (!d) {
@@ -3029,9 +3038,9 @@ window.showAllSouhaitsRecap = async function () {
             const [codeRef, codeName] = code.includes(" | ")
               ? code.split(" | ")
               : [code, ""];
-            label = `<span style="color:#14532d;font-size:11px;font-weight:600;margin-right:5px;">${codeRef}</span>${codeName}`;
+            label = `<span style="color:#14532d;font-size:11px;font-weight:600;margin-right:5px;">${esc(codeRef)}</span>${esc(codeName)}`;
           } else {
-            label = code;
+            label = esc(code);
           }
           const typeBadge = saeEntry
             ? `<span style="display:inline-block;background:#bbf7d0;color:#14532d;border:1px solid #4ade80;border-radius:4px;padding:1px 6px;font-size:11px;">SAÉ</span>`
@@ -3039,7 +3048,7 @@ window.showAllSouhaitsRecap = async function () {
           const nomsBadges = noms
             .map(
               (n) =>
-                `<span style="display:inline-block;background:#f3f4f6;color:#374151;border:1px solid #d1d5db;border-radius:4px;padding:1px 7px;font-size:11px;margin:1px 2px 1px 0;">${n}</span>`,
+                `<span style="display:inline-block;background:#f3f4f6;color:#374151;border:1px solid #d1d5db;border-radius:4px;padding:1px 7px;font-size:11px;margin:1px 2px 1px 0;">${esc(n)}</span>`,
             )
             .join("");
           const bg = rowIdx++ % 2 === 0 ? "#f0f4fb" : "#fff";

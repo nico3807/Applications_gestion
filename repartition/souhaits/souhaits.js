@@ -1,5 +1,11 @@
 "use strict";
 
+function esc(s) {
+  return String(s ?? "").replace(/[&<>"']/g, (c) => ({
+    "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;",
+  }[c]));
+}
+
 /* Correspondance login → nom affiché dans le JSON de souhaits */
 const _LOGIN_TO_NOM = {
   "nicolas.maurin":   "MAURIN Nicolas",
@@ -57,13 +63,13 @@ window.renderSouhaits = function (root) {
     ressourcesR.forEach(r => {
       const checked = semSaved.includes(r) ? "checked" : "";
       rows += `<tr class="${idx % 2 === 0 ? "group-even" : "group-odd"}">
-        <td style="font-size:13px;">${r}</td>
+        <td style="font-size:13px;">${esc(r)}</td>
         <td style="text-align:center;">
           <span style="display:inline-block;background:#dbeafe;color:#1e40af;border:1px solid #93c5fd;
             border-radius:4px;padding:1px 7px;font-size:11px;">Ressource</span>
         </td>
         <td style="text-align:center;">
-          <input type="checkbox" class="souhait-cb" data-code="${r.replace(/"/g, '&quot;')}" ${checked}>
+          <input type="checkbox" class="souhait-cb" data-code="${esc(r)}" ${checked}>
         </td>
       </tr>`;
       idx++;
@@ -79,14 +85,14 @@ window.renderSouhaits = function (root) {
         : [sae.code, sae.intitule || ""];
       rows += `<tr class="${idx % 2 === 0 ? "group-even" : "group-odd"}">
         <td style="font-size:13px;">
-          <span style="color:#14532d;font-size:11px;font-weight:600;margin-right:5px;">${codeRef}</span>${codeName}
+          <span style="color:#14532d;font-size:11px;font-weight:600;margin-right:5px;">${esc(codeRef)}</span>${esc(codeName)}
         </td>
         <td style="text-align:center;">
           <span style="display:inline-block;background:#bbf7d0;color:#14532d;border:1px solid #4ade80;
             border-radius:4px;padding:1px 7px;font-size:11px;">SAÉ</span>
         </td>
         <td style="text-align:center;">
-          <input type="checkbox" class="souhait-cb" data-code="${sae.code.replace(/"/g, '&quot;')}" ${checked}>
+          <input type="checkbox" class="souhait-cb" data-code="${esc(sae.code)}" ${checked}>
         </td>
       </tr>`;
       idx++;
@@ -98,13 +104,13 @@ window.renderSouhaits = function (root) {
     portfolio.forEach(r => {
       const checked = semSaved.includes(r) ? "checked" : "";
       rows += `<tr class="${idx % 2 === 0 ? "group-even" : "group-odd"}">
-        <td style="font-size:13px;">${r}</td>
+        <td style="font-size:13px;">${esc(r)}</td>
         <td style="text-align:center;">
           <span style="display:inline-block;background:#dbeafe;color:#1e40af;border:1px solid #93c5fd;
             border-radius:4px;padding:1px 7px;font-size:11px;">Ressource</span>
         </td>
         <td style="text-align:center;">
-          <input type="checkbox" class="souhait-cb" data-code="${r.replace(/"/g, '&quot;')}" ${checked}>
+          <input type="checkbox" class="souhait-cb" data-code="${esc(r)}" ${checked}>
         </td>
       </tr>`;
       idx++;
@@ -134,7 +140,7 @@ window.renderSouhaits = function (root) {
       flex-wrap:wrap;gap:10px;">
       <div>
         <h1 style="margin:0;">Mes souhaits d'enseignement</h1>
-        <div style="font-size:13px;color:#6b7280;margin-top:3px;">${nom}${lastSaved}</div>
+        <div style="font-size:13px;color:#6b7280;margin-top:3px;">${esc(nom)}${esc(lastSaved)}</div>
       </div>
       <div style="display:flex;gap:8px;align-items:center;">
         <button class="btn-save" onclick="saveSouhaits()">💾 Valider ce semestre</button>
