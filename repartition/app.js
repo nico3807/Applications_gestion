@@ -3051,7 +3051,7 @@ window.showAllSouhaitsRecap = async function () {
         })
         .join("");
       return `
-      <div style="margin-bottom:1.25rem;">
+      <div data-sem="${sem}" style="margin-bottom:1.25rem;">
         <div style="font-size:13px;font-weight:700;color:#fff;background:#1e3a5f;
           border-radius:6px 6px 0 0;padding:7px 14px;">${sem}</div>
         <table style="width:100%;border-collapse:collapse;border:1px solid #e2e8f0;border-top:none;">
@@ -3071,6 +3071,15 @@ window.showAllSouhaitsRecap = async function () {
   const nbEnseig = logins.length;
   const existing = document.getElementById("all-souhaits-modal");
   if (existing) existing.remove();
+
+  const semsAvec = SEMESTRES.filter((sem) => Object.keys(pivot[sem]).length > 0);
+  const filterBtns = ["Tout", ...semsAvec].map(s =>
+    `<button onclick="filterAllSouhaitsRecap('${s}')" data-filter="${s}"
+      style="padding:3px 10px;border-radius:5px;border:1.5px solid #d1d5db;
+        background:${s === "Tout" ? "#1e3a5f" : "#fff"};
+        color:${s === "Tout" ? "#fff" : "#374151"};
+        font-size:12px;font-weight:600;cursor:pointer;white-space:nowrap;">${s}</button>`
+  ).join("");
 
   const modal = document.createElement("div");
   modal.id = "all-souhaits-modal";
@@ -3092,12 +3101,27 @@ window.showAllSouhaitsRecap = async function () {
               padding:4px 12px;cursor:pointer;font-size:13px;color:#374151;">✕ Fermer</button>
         </div>
       </div>
+      <div style="padding:10px 20px;border-bottom:1px solid #e5e7eb;display:flex;
+        gap:6px;flex-wrap:wrap;flex-shrink:0;">
+        ${filterBtns}
+      </div>
       <div style="overflow-y:auto;padding:16px 20px;">${sections}</div>
     </div>`;
   modal.addEventListener("click", (e) => {
     if (e.target === modal) modal.remove();
   });
   document.body.appendChild(modal);
+};
+
+window.filterAllSouhaitsRecap = function (sem) {
+  document.querySelectorAll("#all-souhaits-modal [data-filter]").forEach(btn => {
+    const active = btn.dataset.filter === sem;
+    btn.style.background = active ? "#1e3a5f" : "#fff";
+    btn.style.color       = active ? "#fff"    : "#374151";
+  });
+  document.querySelectorAll("#all-souhaits-modal [data-sem]").forEach(el => {
+    el.style.display = (sem === "Tout" || el.dataset.sem === sem) ? "" : "none";
+  });
 };
 
 window.exportAllSouhaitsXLSX = async function () {
