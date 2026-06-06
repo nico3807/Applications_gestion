@@ -475,12 +475,14 @@ function renderSemestre(root, sem) {
     </thead>
     <tbody>`;
 
-  /* Tri des ressources : Portfolio toujours en dernier */
-  const _affKeys = Object.keys(aff).sort((a, b) => {
-    const pa = a.toLowerCase().includes("portfolio") ? 1 : 0;
-    const pb = b.toLowerCase().includes("portfolio") ? 1 : 0;
-    return pa - pb;
-  });
+  /* Tri des ressources : Hackathon/Marathon en avant-dernier, Portfolio en dernier */
+  const _rowPrio = (r) => {
+    const l = r.toLowerCase();
+    if (l.includes("portfolio"))  return 2;
+    if (l.includes("hackathon") || l.includes("marathon")) return 1;
+    return 0;
+  };
+  const _affKeys = Object.keys(aff).sort((a, b) => _rowPrio(a) - _rowPrio(b));
 
   // Calcul des totaux
   let totPrevCM = 0,
