@@ -2660,12 +2660,11 @@ function renderSouhaits(root) {
   const saved = _souhaitLoad();
   const semSaved = (saved.souhaits && saved.souhaits[_souhaitsFilter]) || [];
 
-  const aff =
-    (APP_DATA.affectations && APP_DATA.affectations[_souhaitsFilter]) || {};
-  const ressources = Object.keys(aff).filter(
-    (r) => !r.toLowerCase().includes("saé"),
-  );
-  const saeList = APP_DATA.sae?.sae?.[_souhaitsFilter] || [];
+  const aff         = (APP_DATA.affectations && APP_DATA.affectations[_souhaitsFilter]) || {};
+  const toutesRess  = Object.keys(aff).filter(r => !r.toLowerCase().includes("saé"));
+  const ressourcesR = toutesRess.filter(r => /^R/i.test(r));
+  const portfolio   = toutesRess.filter(r => !/^R/i.test(r));
+  const saeList     = APP_DATA.sae?.sae?.[_souhaitsFilter] || [];
 
   const semBtns = SEMESTRES.map(
     (s) =>
@@ -2673,43 +2672,72 @@ function renderSouhaits(root) {
        onclick="setSouhaitsFilter('${s}')">${s}</button>`,
   ).join("");
 
+  const sectionHeader = label =>
+    `<tr><td colspan="3" style="background:#f1f5f9;font-size:11px;font-weight:700;
+      color:#64748b;padding:4px 10px;letter-spacing:.05em;text-transform:uppercase;
+      border-top:1px solid #e2e8f0;">${label}</td></tr>`;
+
   let rows = "";
   let idx = 0;
 
-  ressources.forEach((r) => {
-    const checked = semSaved.includes(r) ? "checked" : "";
-    rows += `<tr class="${idx % 2 === 0 ? "group-even" : "group-odd"}">
-      <td style="font-size:13px;">${r}</td>
-      <td style="text-align:center;">
-        <span style="display:inline-block;background:#dbeafe;color:#1e40af;border:1px solid #93c5fd;
-          border-radius:4px;padding:1px 7px;font-size:11px;">Ressource</span>
-      </td>
-      <td style="text-align:center;">
-        <input type="checkbox" class="souhait-cb" data-code="${r.replace(/"/g, "&quot;")}" ${checked}>
-      </td>
-    </tr>`;
-    idx++;
-  });
+  if (ressourcesR.length) {
+    rows += sectionHeader("Ressources");
+    ressourcesR.forEach((r) => {
+      const checked = semSaved.includes(r) ? "checked" : "";
+      rows += `<tr class="${idx % 2 === 0 ? "group-even" : "group-odd"}">
+        <td style="font-size:13px;">${r}</td>
+        <td style="text-align:center;">
+          <span style="display:inline-block;background:#dbeafe;color:#1e40af;border:1px solid #93c5fd;
+            border-radius:4px;padding:1px 7px;font-size:11px;">Ressource</span>
+        </td>
+        <td style="text-align:center;">
+          <input type="checkbox" class="souhait-cb" data-code="${r.replace(/"/g, "&quot;")}" ${checked}>
+        </td>
+      </tr>`;
+      idx++;
+    });
+  }
 
-  saeList.forEach((sae) => {
-    const checked = semSaved.includes(sae.code) ? "checked" : "";
-    const [codeRef, codeName] = sae.code.includes(" | ")
-      ? sae.code.split(" | ")
-      : [sae.code, sae.intitule || ""];
-    rows += `<tr class="${idx % 2 === 0 ? "group-even" : "group-odd"}">
-      <td style="font-size:13px;">
-        <span style="color:#14532d;font-size:11px;font-weight:600;margin-right:5px;">${codeRef}</span>${codeName}
-      </td>
-      <td style="text-align:center;">
-        <span style="display:inline-block;background:#bbf7d0;color:#14532d;border:1px solid #4ade80;
-          border-radius:4px;padding:1px 7px;font-size:11px;">SAÉ</span>
-      </td>
-      <td style="text-align:center;">
-        <input type="checkbox" class="souhait-cb" data-code="${sae.code.replace(/"/g, "&quot;")}" ${checked}>
-      </td>
-    </tr>`;
-    idx++;
-  });
+  if (saeList.length) {
+    rows += sectionHeader("SAÉ");
+    saeList.forEach((sae) => {
+      const checked = semSaved.includes(sae.code) ? "checked" : "";
+      const [codeRef, codeName] = sae.code.includes(" | ")
+        ? sae.code.split(" | ")
+        : [sae.code, sae.intitule || ""];
+      rows += `<tr class="${idx % 2 === 0 ? "group-even" : "group-odd"}">
+        <td style="font-size:13px;">
+          <span style="color:#14532d;font-size:11px;font-weight:600;margin-right:5px;">${codeRef}</span>${codeName}
+        </td>
+        <td style="text-align:center;">
+          <span style="display:inline-block;background:#bbf7d0;color:#14532d;border:1px solid #4ade80;
+            border-radius:4px;padding:1px 7px;font-size:11px;">SAÉ</span>
+        </td>
+        <td style="text-align:center;">
+          <input type="checkbox" class="souhait-cb" data-code="${sae.code.replace(/"/g, "&quot;")}" ${checked}>
+        </td>
+      </tr>`;
+      idx++;
+    });
+  }
+
+  if (portfolio.length) {
+    rows += sectionHeader("Portfolio");
+    portfolio.forEach((r) => {
+      const checked = semSaved.includes(r) ? "checked" : "";
+      rows += `<tr class="${idx % 2 === 0 ? "group-even" : "group-odd"}">
+        <td style="font-size:13px;">${r}</td>
+        <td style="text-align:center;">
+          <span style="display:inline-block;background:#dbeafe;color:#1e40af;border:1px solid #93c5fd;
+            border-radius:4px;padding:1px 7px;font-size:11px;">Ressource</span>
+        </td>
+        <td style="text-align:center;">
+          <input type="checkbox" class="souhait-cb" data-code="${r.replace(/"/g, "&quot;")}" ${checked}>
+        </td>
+      </tr>`;
+      idx++;
+    });
+  }
 
   const nom = _souhaitNom();
   const lastSaved = saved.date
