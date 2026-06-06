@@ -442,7 +442,7 @@ function renderView() {
   /* Masquer les liens de navigation non pertinents pour les utilisateurs
      qui n'ont pas accès à repartition (accès souhaits uniquement) */
   const _repartitionOnly = !AUTH.canAccess("repartition");
-  ["nav-home", "nav-maquette", "nav-services", "nav-enseignants"].forEach(id => {
+  ["nav-home", "nav-maquette", "nav-services", "nav-enseignants", "nav-archive"].forEach(id => {
     const el = document.getElementById(id);
     if (el) el.style.display = _repartitionOnly ? "none" : "";
   });
