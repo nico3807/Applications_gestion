@@ -81,5 +81,14 @@
       "repartition"
     ],
     "login": "emmanuel.tehrond"
+  },
+  {
+    "login": "sandy.blanco",
+    "h": "5a639b1d7195408fab84d22d4ac3aabed2274e1dd9f892485879d903a1b2cfc1",
+    "rw": false,
+    "rwApps": [
+      "planning-web"
+    ],
+    "denyApps": []
   }
 ]
