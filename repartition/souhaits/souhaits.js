@@ -136,6 +136,10 @@ window.renderSouhaits = function (root) {
             Aucune ressource pour ce semestre</td></tr>`}
         </tbody>
       </table>
+    </div>
+
+    <div style="display:flex;justify-content:flex-end;margin-top:1rem;">
+      <button class="btn-save" onclick="saveSouhaits()">💾 Valider ce semestre</button>
     </div>`;
 };
 
