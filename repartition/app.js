@@ -2443,6 +2443,7 @@ window.showSouhaitsRecap = function () {
           <p style="margin:3px 0 0;font-size:12px;color:#6b7280;">${_souhaitNom()}</p>
         </div>
         <div style="display:flex;gap:8px;align-items:center;flex-shrink:0;">
+          ${AUTH.canWrite() ? `<button class="btn-print-action" onclick="showAllSouhaitsRecap()">👥 Tous les enseignants</button>` : ""}
           <button class="btn-pdf-action" onclick="exportSouhaitsXLSX()">⬇ Exporter XLSX</button>
           <button onclick="closeSouhaitsRecap()"
             style="background:none;border:1.5px solid #d1d5db;border-radius:6px;
@@ -2483,6 +2484,149 @@ window.exportSouhaitsXLSX = function () {
   const wb = XLSX.utils.book_new();
   XLSX.utils.book_append_sheet(wb, ws, "Souhaits");
   XLSX.writeFile(wb, `souhaits_${(data.login || AUTH.user()).replace(/\./g, "_")}.xlsx`);
+};
+
+/* ── Récap consolidé (R/W uniquement) ──────────────────────────────────── */
+
+function _loadAllSouhaits() {
+  const all = {};
+  Object.keys(_LOGIN_TO_NOM).forEach(login => {
+    try {
+      const d = JSON.parse(localStorage.getItem(`souhaits_${login}`));
+      if (d && d.souhaits && Object.values(d.souhaits).some(a => a.length > 0))
+        all[login] = d;
+    } catch {}
+  });
+  return all;
+}
+
+window.showAllSouhaitsRecap = function () {
+  if (!AUTH.canWrite()) return;
+
+  const all = _loadAllSouhaits();
+  const logins = Object.keys(all);
+  if (!logins.length) {
+    showToast("Aucun souhait enregistré pour l'instant.");
+    return;
+  }
+
+  /* Pivot : sem → code → [noms enseignants] */
+  const pivot = {};
+  SEMESTRES.forEach(sem => { pivot[sem] = {}; });
+  logins.forEach(login => {
+    const souhaits = all[login].souhaits || {};
+    const nom = all[login].nom || login;
+    SEMESTRES.forEach(sem => {
+      (souhaits[sem] || []).forEach(code => {
+        if (!pivot[sem][code]) pivot[sem][code] = [];
+        pivot[sem][code].push(nom);
+      });
+    });
+  });
+
+  const sections = SEMESTRES.filter(sem => Object.keys(pivot[sem]).length > 0).map(sem => {
+    const saeList = (APP_DATA.sae?.sae?.[sem]) || [];
+    let rowIdx = 0;
+    const rows = Object.entries(pivot[sem]).map(([code, noms]) => {
+      const saeEntry = saeList.find(s => s.code === code);
+      let label;
+      if (saeEntry) {
+        const [codeRef, codeName] = code.includes(" | ") ? code.split(" | ") : [code, ""];
+        label = `<span style="color:#14532d;font-size:11px;font-weight:600;margin-right:5px;">${codeRef}</span>${codeName}`;
+      } else {
+        label = code;
+      }
+      const typeBadge = saeEntry
+        ? `<span style="display:inline-block;background:#bbf7d0;color:#14532d;border:1px solid #4ade80;border-radius:4px;padding:1px 6px;font-size:11px;">SAÉ</span>`
+        : `<span style="display:inline-block;background:#dbeafe;color:#1e40af;border:1px solid #93c5fd;border-radius:4px;padding:1px 6px;font-size:11px;">Ressource</span>`;
+      const nomsBadges = noms.map(n =>
+        `<span style="display:inline-block;background:#f3f4f6;color:#374151;border:1px solid #d1d5db;border-radius:4px;padding:1px 7px;font-size:11px;margin:1px 2px 1px 0;">${n}</span>`
+      ).join("");
+      const bg = rowIdx++ % 2 === 0 ? "#f0f4fb" : "#fff";
+      return `<tr style="background:${bg};">
+        <td style="font-size:13px;padding:6px 12px;">${label}</td>
+        <td style="text-align:center;padding:6px 8px;white-space:nowrap;">${typeBadge}</td>
+        <td style="padding:6px 12px;line-height:1.8;">${nomsBadges}</td>
+      </tr>`;
+    }).join("");
+    return `
+      <div style="margin-bottom:1.25rem;">
+        <div style="font-size:13px;font-weight:700;color:#fff;background:#1e3a5f;
+          border-radius:6px 6px 0 0;padding:7px 14px;">${sem}</div>
+        <table style="width:100%;border-collapse:collapse;border:1px solid #e2e8f0;border-top:none;">
+          <thead>
+            <tr style="background:#f8fafc;">
+              <th style="text-align:left;padding:6px 12px;font-size:12px;color:#374151;font-weight:600;">Intitulé</th>
+              <th style="text-align:center;padding:6px 8px;font-size:12px;color:#374151;font-weight:600;width:90px;">Type</th>
+              <th style="text-align:left;padding:6px 12px;font-size:12px;color:#374151;font-weight:600;">Enseignants souhaitant</th>
+            </tr>
+          </thead>
+          <tbody>${rows}</tbody>
+        </table>
+      </div>`;
+  }).join("");
+
+  const nbEnseig = logins.length;
+  const existing = document.getElementById("all-souhaits-modal");
+  if (existing) existing.remove();
+
+  const modal = document.createElement("div");
+  modal.id = "all-souhaits-modal";
+  modal.style.cssText = "position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:1100;display:flex;align-items:center;justify-content:center;";
+  modal.innerHTML = `
+    <div style="background:#fff;border-radius:12px;width:min(740px,96vw);max-height:86vh;
+      display:flex;flex-direction:column;box-shadow:0 8px 32px rgba(0,0,0,.25);">
+      <div style="padding:16px 20px;border-bottom:1px solid #e5e7eb;display:flex;
+        justify-content:space-between;align-items:center;flex-shrink:0;gap:10px;">
+        <div>
+          <h2 style="margin:0;font-size:16px;color:#1e3a5f;">Récapitulatif — tous les enseignants</h2>
+          <p style="margin:3px 0 0;font-size:12px;color:#6b7280;">${nbEnseig} enseignant${nbEnseig > 1 ? "s" : ""} ayant soumis leurs souhaits</p>
+        </div>
+        <div style="display:flex;gap:8px;align-items:center;flex-shrink:0;">
+          <button class="btn-pdf-action" onclick="exportAllSouhaitsXLSX()">⬇ Exporter XLSX</button>
+          <button onclick="document.getElementById('all-souhaits-modal').remove()"
+            style="background:none;border:1.5px solid #d1d5db;border-radius:6px;
+              padding:4px 12px;cursor:pointer;font-size:13px;color:#374151;">✕ Fermer</button>
+        </div>
+      </div>
+      <div style="overflow-y:auto;padding:16px 20px;">${sections}</div>
+    </div>`;
+  modal.addEventListener("click", e => { if (e.target === modal) modal.remove(); });
+  document.body.appendChild(modal);
+};
+
+window.exportAllSouhaitsXLSX = function () {
+  if (typeof XLSX === "undefined") { alert("Bibliothèque XLSX non chargée."); return; }
+  const all = _loadAllSouhaits();
+  if (!Object.keys(all).length) { showToast("Aucun souhait à exporter."); return; }
+
+  const pivot = {};
+  SEMESTRES.forEach(sem => { pivot[sem] = {}; });
+  Object.keys(all).forEach(login => {
+    const souhaits = all[login].souhaits || {};
+    const nom = all[login].nom || login;
+    SEMESTRES.forEach(sem => {
+      (souhaits[sem] || []).forEach(code => {
+        if (!pivot[sem][code]) pivot[sem][code] = [];
+        pivot[sem][code].push(nom);
+      });
+    });
+  });
+
+  const rows = [["Semestre", "Code / Intitulé", "Type", "Enseignants souhaitant"]];
+  SEMESTRES.forEach(sem => {
+    const saeList = (APP_DATA.sae?.sae?.[sem]) || [];
+    Object.entries(pivot[sem]).forEach(([code, noms]) => {
+      const type = saeList.find(s => s.code === code) ? "SAÉ" : "Ressource";
+      rows.push([sem, code, type, noms.join(", ")]);
+    });
+  });
+
+  const ws = XLSX.utils.aoa_to_sheet(rows);
+  ws["!cols"] = [{ wch: 12 }, { wch: 58 }, { wch: 12 }, { wch: 50 }];
+  const wb = XLSX.utils.book_new();
+  XLSX.utils.book_append_sheet(wb, ws, "Tous les souhaits");
+  XLSX.writeFile(wb, `souhaits_tous_enseignants.xlsx`);
 };
 
 document.addEventListener("DOMContentLoaded", async () => {
