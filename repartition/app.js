@@ -1776,39 +1776,29 @@ function renderSae(root) {
     </div>`;
 
   if (_saeShowRecap) {
-    const sections = semestres.map((sem) => {
+    let bodyRows = "";
+    let rowIdx = 0;
+    semestres.forEach((sem) => {
       const rows = (saeData.sae[sem] || []);
-      if (!rows.length) return "";
-      const tableRows = rows.map((sae, i) => {
+      if (!rows.length) return;
+      bodyRows += `<tr>
+        <td colspan="3" style="background:#1e3a5f;color:#fff;font-weight:700;font-size:13px;padding:7px 14px;letter-spacing:.03em;border:none;">${sem}</td>
+      </tr>`;
+      rows.forEach((sae) => {
         const [codeRef, codeName] = sae.code.includes(" | ")
           ? sae.code.split(" | ")
           : [sae.code, sae.intitule || ""];
         const respBadge = sae.responsable
           ? `<span style="display:inline-block;background:#dcfce7;color:#166534;border:1px solid #86efac;border-radius:4px;padding:2px 10px;font-size:12px;font-weight:500;">${sae.responsable}</span>`
           : `<span style="color:#9ca3af;font-size:12px;">—</span>`;
-        return `<tr class="${i % 2 === 0 ? "group-even" : "group-odd"}">
-          <td style="font-weight:600;white-space:nowrap;color:#1e3a5f;font-size:12px;">${codeRef}</td>
+        bodyRows += `<tr class="${rowIdx % 2 === 0 ? "group-even" : "group-odd"}">
+          <td style="font-weight:600;white-space:nowrap;color:#1e3a5f;font-size:12px;width:100px;">${codeRef}</td>
           <td style="font-size:13px;">${codeName}</td>
-          <td>${respBadge}</td>
+          <td style="width:200px;">${respBadge}</td>
         </tr>`;
-      }).join("");
-      return `
-        <div style="margin-bottom:1.5rem;">
-          <div style="font-size:13px;font-weight:700;color:#fff;background:#1e3a5f;border-radius:6px 6px 0 0;padding:7px 14px;letter-spacing:.03em;">${sem}</div>
-          <div class="table-wrapper" style="margin:0;">
-            <table class="ressources-table" style="border-radius:0 0 6px 6px;">
-              <thead>
-                <tr>
-                  <th style="min-width:90px;">Code</th>
-                  <th>Intitulé</th>
-                  <th style="min-width:180px;">Responsable SAÉ</th>
-                </tr>
-              </thead>
-              <tbody>${tableRows}</tbody>
-            </table>
-          </div>
-        </div>`;
-    }).join("");
+        rowIdx++;
+      });
+    });
 
     root.innerHTML = `
       <div class="page-header" style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;">
@@ -1819,7 +1809,23 @@ function renderSae(root) {
         </div>
       </div>
       ${filterBar}
-      ${sections}`;
+      <div class="table-wrapper">
+        <table class="ressources-table">
+          <colgroup>
+            <col style="width:110px;">
+            <col>
+            <col style="width:200px;">
+          </colgroup>
+          <thead>
+            <tr>
+              <th>Code</th>
+              <th>Intitulé</th>
+              <th>Responsable SAÉ</th>
+            </tr>
+          </thead>
+          <tbody>${bodyRows}</tbody>
+        </table>
+      </div>`;
     return;
   }
 
