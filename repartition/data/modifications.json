@@ -2095,5 +2095,41 @@
     "description": "Responsable SAÉ 1.05 | Produire un site Web (S1)",
     "prev": "—",
     "next": "DARTIES Benoit"
+  },
+  {
+    "date": "06/06/2026",
+    "heure": "11:42:02",
+    "utilisateur": "nicolas.maurin",
+    "type": "SAÉ",
+    "description": "Responsable SAÉ 2.01 | Explorer les usages du numérique (S2)",
+    "prev": "—",
+    "next": "DE VELDER Sophie"
+  },
+  {
+    "date": "06/06/2026",
+    "heure": "11:42:09",
+    "utilisateur": "nicolas.maurin",
+    "type": "SAÉ",
+    "description": "Responsable SAÉ 2.02 | Concevoir un produit ou un service et sa communication (S2)",
+    "prev": "—",
+    "next": "SURRIBAS Caroline"
+  },
+  {
+    "date": "06/06/2026",
+    "heure": "11:42:24",
+    "utilisateur": "nicolas.maurin",
+    "type": "SAÉ",
+    "description": "Responsable SAÉ 2.03 | Concevoir un site web avec une source de données (S2)",
+    "prev": "—",
+    "next": "DARTIES Benoit"
+  },
+  {
+    "date": "06/06/2026",
+    "heure": "11:42:28",
+    "utilisateur": "nicolas.maurin",
+    "type": "SAÉ",
+    "description": "Responsable SAÉ 2.04 | Construire sa présence en ligne (S2)",
+    "prev": "—",
+    "next": "DARTIES Benoit"
   }
 ]
