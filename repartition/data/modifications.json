@@ -2203,5 +2203,14 @@
     "description": "Responsable SAÉ 5.Crea.01 | Créer par/pour le numérique (S5 crea)",
     "prev": "—",
     "next": "BLANCO Sandy"
+  },
+  {
+    "date": "06/06/2026",
+    "heure": "11:49:25",
+    "utilisateur": "nicolas.maurin",
+    "type": "SAÉ",
+    "description": "Responsable SAÉ 6.Crea.01 | UX / UI avancé (S6 crea)",
+    "prev": "—",
+    "next": "THEROND Emmanuel"
   }
 ]
