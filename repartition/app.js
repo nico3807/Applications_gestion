@@ -2214,6 +2214,249 @@ async function loadData() {
   renderView();
 }
 
+/* ── Vue : Souhaits ─────────────────────────────────────────────────────────
+   Code source : repartition/souhaits/souhaits.js (intégré ici pour fiabilité)
+   Stockage    : localStorage, clé souhaits_<login>, aucune config GitHub requise
+   ─────────────────────────────────────────────────────────────────────────── */
+const _LOGIN_TO_NOM = {
+  "nicolas.maurin":    "MAURIN Nicolas",
+  "damien.marill":     "MARILL Damien",
+  "sandy.blanco":      "BLANCO Sandy",
+  "william.bernard":   "BERNARD William",
+  "emmanuel.therond":  "THEROND Emmanuel",
+  "luc.jaeckle":       "JAECKLE Luc",
+  "benoit.darties":    "DARTIES Benoit",
+  "sophie.de-velder":  "DE VELDER Sophie",
+  "davide.di-pierro":  "DI PIERRO Davide",
+  "chrysta.pelissier": "PELISSIER Chrysta",
+  "caroline.surribas": "SURRIBAS Caroline",
+  "laeticia.tournie":  "TOURNIE Laetitia",
+  "jerome.aze":        "AZE Jérome",
+  "sylvie.escaig":     "ESCAIG Sylvie",
+};
+
+let _souhaitsFilter = "S1";
+
+function _souhaitNom()   { return _LOGIN_TO_NOM[AUTH.user()] || AUTH.user(); }
+function _souhaitLsKey() { return `souhaits_${AUTH.user()}`; }
+function _souhaitLoad()  {
+  try { return JSON.parse(localStorage.getItem(_souhaitLsKey())) || {}; }
+  catch { return {}; }
+}
+
+function renderSouhaits(root) {
+  if (!SEMESTRES.includes(_souhaitsFilter)) _souhaitsFilter = SEMESTRES[0];
+
+  const saved    = _souhaitLoad();
+  const semSaved = (saved.souhaits && saved.souhaits[_souhaitsFilter]) || [];
+
+  const aff        = (APP_DATA.affectations && APP_DATA.affectations[_souhaitsFilter]) || {};
+  const ressources = Object.keys(aff).filter(r => !r.toLowerCase().includes("saé"));
+  const saeList    = (APP_DATA.sae?.sae?.[_souhaitsFilter]) || [];
+
+  const semBtns = SEMESTRES.map(s =>
+    `<button class="sem-btn ${s === _souhaitsFilter ? "active" : ""}" data-sem="${s}"
+       onclick="setSouhaitsFilter('${s}')">${s}</button>`
+  ).join("");
+
+  let rows = "";
+  let idx  = 0;
+
+  ressources.forEach(r => {
+    const checked = semSaved.includes(r) ? "checked" : "";
+    rows += `<tr class="${idx % 2 === 0 ? "group-even" : "group-odd"}">
+      <td style="font-size:13px;">${r}</td>
+      <td style="text-align:center;">
+        <span style="display:inline-block;background:#dbeafe;color:#1e40af;border:1px solid #93c5fd;
+          border-radius:4px;padding:1px 7px;font-size:11px;">Ressource</span>
+      </td>
+      <td style="text-align:center;">
+        <input type="checkbox" class="souhait-cb" data-code="${r.replace(/"/g, "&quot;")}" ${checked}>
+      </td>
+    </tr>`;
+    idx++;
+  });
+
+  saeList.forEach(sae => {
+    const checked = semSaved.includes(sae.code) ? "checked" : "";
+    const [codeRef, codeName] = sae.code.includes(" | ")
+      ? sae.code.split(" | ")
+      : [sae.code, sae.intitule || ""];
+    rows += `<tr class="${idx % 2 === 0 ? "group-even" : "group-odd"}">
+      <td style="font-size:13px;">
+        <span style="color:#14532d;font-size:11px;font-weight:600;margin-right:5px;">${codeRef}</span>${codeName}
+      </td>
+      <td style="text-align:center;">
+        <span style="display:inline-block;background:#bbf7d0;color:#14532d;border:1px solid #4ade80;
+          border-radius:4px;padding:1px 7px;font-size:11px;">SAÉ</span>
+      </td>
+      <td style="text-align:center;">
+        <input type="checkbox" class="souhait-cb" data-code="${sae.code.replace(/"/g, "&quot;")}" ${checked}>
+      </td>
+    </tr>`;
+    idx++;
+  });
+
+  const nom       = _souhaitNom();
+  const lastSaved = saved.date
+    ? ` — Sauvegardé le ${new Date(saved.date).toLocaleDateString("fr-FR",
+        { day: "2-digit", month: "2-digit", year: "numeric" })} à ${new Date(saved.date).toLocaleTimeString("fr-FR",
+        { hour: "2-digit", minute: "2-digit" })}`
+    : "";
+
+  const summaryChips = Object.values(saved.souhaits || {}).some(a => a.length > 0)
+    ? SEMESTRES.map(s => {
+        const n = ((saved.souhaits || {})[s] || []).length;
+        return n > 0
+          ? `<span style="display:inline-block;background:#dbeafe;color:#1e40af;border:1px solid #93c5fd;
+              border-radius:4px;padding:1px 8px;font-size:11px;font-weight:600;">${s} : ${n}</span>`
+          : "";
+      }).filter(Boolean).join(" ")
+    : `<span style="color:#9ca3af;font-size:12px;">Aucun souhait enregistré pour l'instant</span>`;
+
+  root.innerHTML = `
+    <div class="page-header" style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;">
+      <div>
+        <h1 style="margin:0;">Mes souhaits d'enseignement</h1>
+        <div style="font-size:13px;color:#6b7280;margin-top:3px;">${nom}${lastSaved}</div>
+      </div>
+      <div style="display:flex;gap:8px;align-items:center;">
+        <button class="btn-save" onclick="saveSouhaits()">💾 Valider ce semestre</button>
+        <button class="btn-pdf-action" onclick="exportSouhaitsJSON()">⬇ Télécharger JSON</button>
+      </div>
+    </div>
+
+    <div style="background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;
+      padding:10px 14px;margin-bottom:1.25rem;display:flex;align-items:center;gap:10px;flex-wrap:wrap;">
+      <span style="font-size:12px;font-weight:600;color:#374151;">Récapitulatif :</span>
+      ${summaryChips}
+      <button onclick="showSouhaitsRecap()"
+        style="margin-left:auto;padding:4px 12px;background:#1e3a5f;color:#fff;border:none;
+          border-radius:6px;font-size:12px;font-weight:600;cursor:pointer;">📋 Voir le détail</button>
+    </div>
+
+    <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-bottom:1.25rem;">
+      ${semBtns}
+    </div>
+
+    <div class="table-wrapper">
+      <table class="ressources-table">
+        <colgroup><col><col style="width:110px;"><col style="width:90px;"></colgroup>
+        <thead>
+          <tr>
+            <th>Intitulé</th>
+            <th style="text-align:center;">Type</th>
+            <th style="text-align:center;">Souhait</th>
+          </tr>
+        </thead>
+        <tbody>${rows ||
+          `<tr><td colspan="3" style="text-align:center;color:#9ca3af;padding:2rem;">
+            Aucune ressource pour ce semestre</td></tr>`}
+        </tbody>
+      </table>
+    </div>`;
+}
+
+window.setSouhaitsFilter = function (sem) {
+  _souhaitsFilter = sem;
+  renderView();
+};
+
+window.saveSouhaits = function () {
+  const data = _souhaitLoad();
+  if (!data.souhaits) data.souhaits = {};
+  data.souhaits[_souhaitsFilter] =
+    [...document.querySelectorAll(".souhait-cb:checked")].map(cb => cb.dataset.code);
+  data.nom   = _souhaitNom();
+  data.login = AUTH.user();
+  data.date  = new Date().toISOString();
+  localStorage.setItem(_souhaitLsKey(), JSON.stringify(data));
+  showToast(`Souhaits pour ${_souhaitsFilter} enregistrés !`);
+  renderView();
+};
+
+window.exportSouhaitsJSON = function () {
+  const data = _souhaitLoad();
+  if (!data.nom) { showToast("Aucun souhait enregistré."); return; }
+  const blob = new Blob([JSON.stringify(data, null, 2)], { type: "application/json" });
+  const a    = document.createElement("a");
+  a.href     = URL.createObjectURL(blob);
+  a.download = `souhaits_${(data.login || AUTH.user()).replace(/\./g, "_")}.json`;
+  a.click();
+  URL.revokeObjectURL(a.href);
+};
+
+window.showSouhaitsRecap = function () {
+  const data     = _souhaitLoad();
+  const souhaits = data.souhaits || {};
+  const semsAvec = SEMESTRES.filter(s => (souhaits[s] || []).length > 0);
+
+  if (!semsAvec.length) { showToast("Aucun souhait enregistré pour l'instant."); return; }
+
+  const sections = semsAvec.map(sem => {
+    const codes   = souhaits[sem];
+    const saeList = (APP_DATA.sae?.sae?.[sem]) || [];
+    let rowIdx = 0;
+    const rows = codes.map(code => {
+      const saeEntry = saeList.find(s => s.code === code);
+      let label;
+      if (saeEntry) {
+        const [codeRef, codeName] = code.includes(" | ") ? code.split(" | ") : [code, ""];
+        label = `<span style="color:#14532d;font-size:11px;font-weight:600;margin-right:5px;">${codeRef}</span>${codeName}`;
+      } else {
+        label = code;
+      }
+      const typeBadge = saeEntry
+        ? `<span style="display:inline-block;background:#bbf7d0;color:#14532d;border:1px solid #4ade80;border-radius:4px;padding:1px 6px;font-size:11px;">SAÉ</span>`
+        : `<span style="display:inline-block;background:#dbeafe;color:#1e40af;border:1px solid #93c5fd;border-radius:4px;padding:1px 6px;font-size:11px;">Ressource</span>`;
+      const bg = rowIdx++ % 2 === 0 ? "#f0f4fb" : "#fff";
+      return `<tr style="background:${bg};">
+        <td style="font-size:13px;padding:6px 12px;">${label}</td>
+        <td style="text-align:center;padding:6px 12px;white-space:nowrap;">${typeBadge}</td>
+      </tr>`;
+    }).join("");
+    return `
+      <div style="margin-bottom:1.25rem;">
+        <div style="font-size:13px;font-weight:700;color:#fff;background:#1e3a5f;
+          border-radius:6px 6px 0 0;padding:7px 14px;">
+          ${sem} <span style="opacity:.75;font-weight:400;font-size:12px;">— ${codes.length} souhait${codes.length > 1 ? "s" : ""}</span>
+        </div>
+        <table style="width:100%;border-collapse:collapse;border:1px solid #e2e8f0;border-top:none;border-radius:0 0 6px 6px;overflow:hidden;">
+          <tbody>${rows}</tbody>
+        </table>
+      </div>`;
+  }).join("");
+
+  const existing = document.getElementById("souhaits-recap-modal");
+  if (existing) existing.remove();
+
+  const modal = document.createElement("div");
+  modal.id = "souhaits-recap-modal";
+  modal.style.cssText = "position:fixed;inset:0;background:rgba(0,0,0,.45);z-index:1000;display:flex;align-items:center;justify-content:center;";
+  modal.innerHTML = `
+    <div style="background:#fff;border-radius:12px;width:min(580px,95vw);max-height:82vh;
+      display:flex;flex-direction:column;box-shadow:0 8px 32px rgba(0,0,0,.2);">
+      <div style="padding:16px 20px;border-bottom:1px solid #e5e7eb;display:flex;
+        justify-content:space-between;align-items:center;flex-shrink:0;">
+        <div>
+          <h2 style="margin:0;font-size:16px;color:#1e3a5f;">Mes souhaits — récapitulatif complet</h2>
+          <p style="margin:3px 0 0;font-size:12px;color:#6b7280;">${_souhaitNom()}</p>
+        </div>
+        <button onclick="closeSouhaitsRecap()"
+          style="background:none;border:1.5px solid #d1d5db;border-radius:6px;
+            padding:4px 12px;cursor:pointer;font-size:13px;color:#374151;">✕ Fermer</button>
+      </div>
+      <div style="overflow-y:auto;padding:16px 20px;">${sections}</div>
+    </div>`;
+  modal.addEventListener("click", e => { if (e.target === modal) closeSouhaitsRecap(); });
+  document.body.appendChild(modal);
+};
+
+window.closeSouhaitsRecap = function () {
+  const m = document.getElementById("souhaits-recap-modal");
+  if (m) m.remove();
+};
+
 document.addEventListener("DOMContentLoaded", async () => {
   // La redirection est gérée par le script inline dans index.html
   injectGHUI();
