@@ -2068,5 +2068,32 @@
     "description": "S3 / SAÉ 3.01 | Intégrer des interfaces utilisateurs au sein d'un système d'information / sous-groupe 1 / tp",
     "prev": "0",
     "next": "0"
+  },
+  {
+    "date": "06/06/2026",
+    "heure": "09:25:08",
+    "utilisateur": "nicolas.maurin",
+    "type": "SAÉ",
+    "description": "Responsable SAÉ 1.03 | Produire les éléments d'une communication visuelle (S1)",
+    "prev": "—",
+    "next": "SURRIBAS Caroline"
+  },
+  {
+    "date": "06/06/2026",
+    "heure": "09:25:11",
+    "utilisateur": "nicolas.maurin",
+    "type": "SAÉ",
+    "description": "Responsable SAÉ 1.04 | Produire un contenu audio et vidéo (S1)",
+    "prev": "—",
+    "next": "BLANCO Sandy"
+  },
+  {
+    "date": "06/06/2026",
+    "heure": "09:25:32",
+    "utilisateur": "nicolas.maurin",
+    "type": "SAÉ",
+    "description": "Responsable SAÉ 1.05 | Produire un site Web (S1)",
+    "prev": "—",
+    "next": "DARTIES Benoit"
   }
 ]
