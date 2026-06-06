@@ -26,25 +26,25 @@
         </div>
 
         <div class="index-grid">
-          <a href="planning-web/index.html" class="icard">
+          <a href="planning-web/index.html" class="icard" data-app="planning-web">
             <div class="icard-icon">📅</div>
             <h2>Planning MMI</h2>
             <div class="icard-sub">Calendrier des événements</div>
             <div class="icard-arrow">Accéder →</div>
           </a>
-          <a href="repartition/index.html" class="icard">
+          <a href="repartition/index.html" class="icard" data-app="repartition">
             <div class="icard-icon">👥</div>
             <h2>Répartition MMI</h2>
             <div class="icard-sub">Gestion des enseignants et services</div>
             <div class="icard-arrow">Accéder →</div>
           </a>
-          <a href="soutenances_stages/index.html" class="icard">
+          <a href="soutenances_stages/index.html" class="icard" data-app="soutenances_stages">
             <div class="icard-icon">🎤</div>
             <h2>Soutenances Stages</h2>
             <div class="icard-sub">Gestion des jurys de stage</div>
             <div class="icard-arrow">Accéder →</div>
           </a>
-          <a href="soutenances_portfolio/index.html" class="icard">
+          <a href="soutenances_portfolio/index.html" class="icard" data-app="soutenances_portfolio">
             <div class="icard-icon">🎯</div>
             <h2>Soutenances Portfolio</h2>
             <div class="icard-sub">Gestion des jurys de portfolio</div>
@@ -222,8 +222,14 @@
       const _APP_LABELS = { "planning-web":"Planning", "repartition":"Répartition", "soutenances_portfolio":"Sout. Portfolio", "soutenances_stages":"Sout. Stages" };
 
       AUTH.injectUI();
-      if (AUTH.isAuth()) { AUTH.injectBadge(); initAdmin(); }
-      else window.addEventListener("auth-success", () => { AUTH.injectBadge(); initAdmin(); }, { once:true });
+      if (AUTH.isAuth()) { AUTH.injectBadge(); initAdmin(); applyCardVisibility(); }
+      else window.addEventListener("auth-success", () => { AUTH.injectBadge(); initAdmin(); applyCardVisibility(); }, { once:true });
+
+      function applyCardVisibility() {
+        document.querySelectorAll(".icard[data-app]").forEach(card => {
+          if (!AUTH.canAccess(card.dataset.app)) card.style.display = "none";
+        });
+      }
 
       function initAdmin() {
         if (!AUTH.isAdmin()) return;
