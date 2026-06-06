@@ -107,7 +107,7 @@ window.renderSouhaits = function (root) {
       </div>
       <div style="display:flex;gap:8px;align-items:center;">
         <button class="btn-save" onclick="saveSouhaits()">💾 Valider ce semestre</button>
-        <button class="btn-pdf-action" onclick="exportSouhaitsJSON()">⬇ Télécharger JSON</button>
+        <button class="btn-pdf-action" onclick="exportSouhaitsXLSX()">⬇ Export XLSX</button>
       </div>
     </div>
 
@@ -166,13 +166,25 @@ window.saveSouhaits = function () {
   renderView();
 };
 
-window.exportSouhaitsJSON = function () {
-  const data = _souhaitLoad();
-  if (!data.nom) { showToast("Aucun souhait enregistré."); return; }
-  const blob = new Blob([JSON.stringify(data, null, 2)], { type: "application/json" });
-  const a    = document.createElement("a");
-  a.href     = URL.createObjectURL(blob);
-  a.download = `souhaits_${(data.login || AUTH.user()).replace(/\./g, "_")}.json`;
-  a.click();
-  URL.revokeObjectURL(a.href);
+window.exportSouhaitsXLSX = function () {
+  if (typeof XLSX === "undefined") { alert("Bibliothèque XLSX non chargée."); return; }
+  const data    = _souhaitLoad();
+  const souhaits = data.souhaits || {};
+  const semsAvec = semestres().filter(s => (souhaits[s] || []).length > 0);
+  if (!semsAvec.length) { showToast("Aucun souhait à exporter."); return; }
+
+  const rows = [["Semestre", "Code / Intitulé", "Type"]];
+  semsAvec.forEach(sem => {
+    const saeList = (APP_DATA?.sae?.sae?.[sem]) || [];
+    (souhaits[sem] || []).forEach(code => {
+      const isSae = saeList.some(s => s.code === code);
+      rows.push([sem, code, isSae ? "SAÉ" : "Ressource"]);
+    });
+  });
+
+  const ws = XLSX.utils.aoa_to_sheet(rows);
+  ws["!cols"] = [{ wch: 12 }, { wch: 60 }, { wch: 12 }];
+  const wb = XLSX.utils.book_new();
+  XLSX.utils.book_append_sheet(wb, ws, "Souhaits");
+  XLSX.writeFile(wb, `souhaits_${(data.login || AUTH.user()).replace(/\./g, "_")}.xlsx`);
 };

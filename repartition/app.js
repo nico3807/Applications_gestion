@@ -2745,7 +2745,7 @@ function renderSouhaits(root) {
       </div>
       <div style="display:flex;gap:8px;align-items:center;">
         <button class="btn-save" onclick="saveSouhaits()">💾 Valider ce semestre</button>
-        ${AUTH.canAccess("repartition") ? `<button class="btn-pdf-action" onclick="exportSouhaitsJSON()">⬇ Télécharger JSON</button>` : ""}
+        <button class="btn-pdf-action" onclick="exportSouhaitsXLSX()">⬇ Export XLSX</button>
       </div>
     </div>
 
@@ -2818,21 +2818,7 @@ window.saveSouhaits = async function () {
   renderView();
 };
 
-window.exportSouhaitsJSON = function () {
-  const data = _souhaitLoad();
-  if (!data.nom) {
-    showToast("Aucun souhait enregistré.");
-    return;
-  }
-  const blob = new Blob([JSON.stringify(data, null, 2)], {
-    type: "application/json",
-  });
-  const a = document.createElement("a");
-  a.href = URL.createObjectURL(blob);
-  a.download = `souhaits_${(data.login || AUTH.user()).replace(/\./g, "_")}.json`;
-  a.click();
-  URL.revokeObjectURL(a.href);
-};
+
 
 window.showSouhaitsRecap = function () {
   const data = _souhaitLoad();
