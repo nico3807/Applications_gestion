@@ -75,12 +75,11 @@
     "login": "sylvie.escaig"
   },
   {
+    "login": "emmanuel.tehrond",
     "h": "35b7123a725f50dee3c17586c037b95c25aee4284de39e31fc67be4c6105078b",
     "rw": false,
-    "denyApps": [
-      "repartition"
-    ],
-    "login": "emmanuel.tehrond"
+    "rwApps": [],
+    "denyApps": []
   },
   {
     "login": "sandy.blanco",
