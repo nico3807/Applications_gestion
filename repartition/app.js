@@ -1739,6 +1739,7 @@ window.saveMaquetteGH = async function () {
 
 /* ── Vue : SAÉ (chefdep uniquement) ─────────────────────────────────────── */
 let _saeSemFilter = "S1";
+let _saeShowRecap = false;
 
 function renderSae(root) {
   if (!AUTH.isAdmin()) {
@@ -1755,11 +1756,68 @@ function renderSae(root) {
     _saeSemFilter = semestres[0];
   }
 
-  const rows = (saeData.sae[_saeSemFilter] || []);
-
   const semBtns = semestres.map((s) =>
-    `<button class="sem-btn ${s === _saeSemFilter ? "active" : ""}" data-sem="${s}" onclick="setSaeSemFilter('${s}')">${s}</button>`
+    `<button class="sem-btn ${s === _saeSemFilter && !_saeShowRecap ? "active" : ""}" data-sem="${s}" onclick="setSaeSemFilter('${s}')">${s}</button>`
   ).join("");
+
+  const recapBtn = `<button class="sem-btn ${_saeShowRecap ? "active" : ""}" onclick="setSaeShowRecap(true)">Responsables</button>`;
+
+  const filterBar = `
+    <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-bottom:1.25rem;">
+      ${semBtns}
+      <span style="color:#d1d5db;font-size:18px;margin:0 2px;">|</span>
+      ${recapBtn}
+    </div>`;
+
+  if (_saeShowRecap) {
+    const sections = semestres.map((sem) => {
+      const rows = (saeData.sae[sem] || []);
+      if (!rows.length) return "";
+      const tableRows = rows.map((sae, i) => {
+        const [codeRef, codeName] = sae.code.includes(" | ")
+          ? sae.code.split(" | ")
+          : [sae.code, sae.intitule || ""];
+        const respBadge = sae.responsable
+          ? `<span style="display:inline-block;background:#dcfce7;color:#166534;border:1px solid #86efac;border-radius:4px;padding:2px 10px;font-size:12px;font-weight:500;">${sae.responsable}</span>`
+          : `<span style="color:#9ca3af;font-size:12px;">—</span>`;
+        return `<tr class="${i % 2 === 0 ? "group-even" : "group-odd"}">
+          <td style="font-weight:600;white-space:nowrap;color:#1e3a5f;font-size:12px;">${codeRef}</td>
+          <td style="font-size:13px;">${codeName}</td>
+          <td>${respBadge}</td>
+        </tr>`;
+      }).join("");
+      return `
+        <div style="margin-bottom:1.5rem;">
+          <div style="font-size:13px;font-weight:700;color:#fff;background:#1e3a5f;border-radius:6px 6px 0 0;padding:7px 14px;letter-spacing:.03em;">${sem}</div>
+          <div class="table-wrapper" style="margin:0;">
+            <table class="ressources-table" style="border-radius:0 0 6px 6px;">
+              <thead>
+                <tr>
+                  <th style="min-width:90px;">Code</th>
+                  <th>Intitulé</th>
+                  <th style="min-width:180px;">Responsable SAÉ</th>
+                </tr>
+              </thead>
+              <tbody>${tableRows}</tbody>
+            </table>
+          </div>
+        </div>`;
+    }).join("");
+
+    root.innerHTML = `
+      <div class="page-header" style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;">
+        <h1 style="margin:0;">Responsables SAÉ</h1>
+        <div style="display:flex;gap:8px;align-items:center;">
+          <button class="btn-print-action" onclick="window.print()">🖨 Imprimer</button>
+          <button class="btn-save" onclick="saveSaeGH()">💾 Enregistrer sur GitHub</button>
+        </div>
+      </div>
+      ${filterBar}
+      ${sections}`;
+    return;
+  }
+
+  const rows = (saeData.sae[_saeSemFilter] || []);
 
   const respOptions = `<option value="">— Aucun —</option>` +
     titulaires.map((e) => `<option value="${e.id}">${e.id}</option>`).join("");
@@ -1805,11 +1863,7 @@ function renderSae(root) {
         <button class="btn-save" onclick="saveSaeGH()">💾 Enregistrer sur GitHub</button>
       </div>
     </div>
-
-    <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-bottom:1.25rem;">
-      ${semBtns}
-    </div>
-
+    ${filterBar}
     <div class="table-wrapper table-wrapper--semestre">
       <table class="ressources-table">
         <thead>
@@ -1827,6 +1881,12 @@ function renderSae(root) {
 
 window.setSaeSemFilter = function (sem) {
   _saeSemFilter = sem;
+  _saeShowRecap = false;
+  renderView();
+};
+
+window.setSaeShowRecap = function (v) {
+  _saeShowRecap = v;
   renderView();
 };
 
