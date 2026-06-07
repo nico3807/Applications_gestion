@@ -368,8 +368,7 @@
         const okEl   = document.getElementById("edit-rights-ok");
         errEl.style.display = "none"; okEl.style.display = "none";
 
-        const u = AUTH.getUserInfo(login);
-        const cfg = { login, h: u.h || "", rw: false, rwApps: [], denyApps: [] };
+        const cfg = { login, rw: false, rwApps: [], denyApps: [] };
         if (mode === "rw")          cfg.rw = true;
         else if (mode === "rwapps") cfg.rwApps = [...document.querySelectorAll(".edit-rwapp:checked")].map(c => c.value);
         else if (mode === "deny-rep") cfg.denyApps = ["repartition"];
