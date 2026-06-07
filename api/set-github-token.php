@@ -19,7 +19,7 @@ if (PHP_SAPI !== 'cli') {
     exit('Ce script doit être exécuté en ligne de commande (CLI), pas via le navigateur.');
 }
 
-fwrite(STDOUT, "Token GitHub (ghp_...) : ");
+fwrite(STDOUT, "Token GitHub (ghp_... ou github_pat_...) : ");
 
 // Désactive l'écho du terminal pendant la saisie, si possible (Linux/macOS)
 $sttyAvailable = false;
@@ -39,8 +39,8 @@ if ($token === '') {
     fwrite(STDERR, "Aucun token saisi, annulation.\n");
     exit(1);
 }
-if (!preg_match('/^gh[pousr]_[A-Za-z0-9_]+$/', $token)) {
-    fwrite(STDERR, "Ce ne ressemble pas à un token GitHub valide (préfixe ghp_/gho_/ghu_/ghs_/ghr_ attendu). Annulation.\n");
+if (!preg_match('/^(gh[pousr]_[A-Za-z0-9_]+|github_pat_[A-Za-z0-9_]+)$/', $token)) {
+    fwrite(STDERR, "Ce ne ressemble pas à un token GitHub valide (préfixe ghp_/gho_/ghu_/ghs_/ghr_/github_pat_ attendu). Annulation.\n");
     exit(1);
 }
 
