@@ -971,10 +971,14 @@ function renderSemestre(root, sem) {
             </select>
          </td>`;
 
-    /* Volume horaire à financer = total/étudiant pondéré par des coefficients fixes */
-    const financeCM = resCM * 1.5;
-    const financeTD = resTD * 2;
-    const financeTP = resTP * 4;
+    /* Volume horaire à financer = total/étudiant pondéré par des coefficients
+       qui dépendent du semestre (S1-S3 vs S4-S6 crea/dev). */
+    const _financeCoefs = ["S1", "S2", "S3"].includes(sem)
+      ? { cm: 1.5, td: 2, tp: 4 }
+      : { cm: 1.5, td: 1, tp: 2 };
+    const financeCM = resCM * _financeCoefs.cm;
+    const financeTD = resTD * _financeCoefs.td;
+    const financeTP = resTP * _financeCoefs.tp;
 
     html += `<tr class="row-responsable ${rowClass}">
             <td colspan="2"></td>
