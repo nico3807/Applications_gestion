@@ -933,7 +933,7 @@ function renderSemestre(root, sem) {
         resTD += parseFloat(s.td) || 0;
         resTP += parseFloat(s.tp) || 0;
       });
-    const fmtR = (n) => (n % 1 === 0 ? n : n.toFixed(1).replace(/\.0$/, ""));
+    const fmtR = (n) => (n % 1 === 0 ? n : parseFloat(n.toFixed(2)));
 
     const _ecartStyle = (v, m) => {
       const e = v - m;
