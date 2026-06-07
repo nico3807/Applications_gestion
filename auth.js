@@ -226,11 +226,9 @@ window.AUTH = {
       } catch {}
     }
 
-    /* 2. Charger le cache utilisateurs en arrière-plan */
-    _loadUsersCache();
-
-    /* 3. Déjà authentifié → afficher l'app */
+    /* 2. Déjà authentifié → afficher l'app et charger le cache utilisateurs */
     if (_sess()) {
+      _loadUsersCache();
       const appRoot = document.getElementById("app-root");
       if (appRoot) appRoot.style.display = "";
       window.dispatchEvent(new Event("auth-success"));
@@ -286,6 +284,7 @@ window.AUTH = {
     err.style.display = "none";
     try {
       if (await AUTH.login(login, pwd)) {
+        _loadUsersCache();
         if (window.PasswordCredential) {
           try {
             await navigator.credentials.store(
