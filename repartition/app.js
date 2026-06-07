@@ -1010,9 +1010,9 @@ function renderSemestre(root, sem) {
         <td rowspan="3" style="vertical-align:middle;"><strong>Total posé</strong></td>
         <td><span class="prev-badge">CM: ${fmtT(totPrevCM)} | TD: ${fmtT(totPrevTD)} | TP: ${fmtT(totPrevTP)}</span></td>
         <td></td>
-        <td class="total-pose-val">${fmtT(totCM)}</td>
-        <td class="total-pose-val">${fmtT(totTD)}</td>
-        <td class="total-pose-val">${fmtT(totTP)}</td>
+        <td></td>
+        <td></td>
+        <td></td>
         <td></td>
     </tr>
     <tr class="row-total-pose">
