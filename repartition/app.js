@@ -783,6 +783,7 @@ function renderHome(root) {
 }
 
 function renderSemestre(root, sem) {
+  const canEditAff = canEditMaquette(sem);
   const aff = APP_DATA.affectations[sem] || {};
   const maq = APP_DATA.maquette_overrides[sem] || {};
   const enseignants = APP_DATA.enseignants
@@ -993,7 +994,7 @@ function renderSemestre(root, sem) {
 
   html += `</tbody></table></div>
     <div class="form-actions">
-        <button class="btn-save" onclick="saveAffectationsGH()">💾 Enregistrer les affectations sur GitHub</button>
+        ${canEditAff ? `<button class="btn-save" onclick="saveAffectationsGH()">💾 Enregistrer les affectations sur GitHub</button>` : ""}
     </div>`;
 
   root.innerHTML = html;
