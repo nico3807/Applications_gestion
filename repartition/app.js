@@ -29,6 +29,23 @@ const SEMESTRES = [
   "S6 dev",
 ];
 
+/* Groupes de semestres pour l'accès en écriture restreint à la maquette
+   (correspond aux cases à cocher "Accès Maquette" du panneau admin). */
+const MAQUETTE_GROUPS = {
+  s123: ["S1", "S2", "S3"],
+  crea: ["S4 crea", "S5 crea", "S6 crea"],
+  dev:  ["S4 dev", "S5 dev", "S6 dev"],
+};
+
+function _maquetteGroupOf(sem) {
+  return Object.keys(MAQUETTE_GROUPS).find((g) => MAQUETTE_GROUPS[g].includes(sem)) || null;
+}
+
+function canEditMaquette(sem) {
+  const g = _maquetteGroupOf(sem);
+  return g ? AUTH.canEditMaquetteGroup(g) : AUTH.canWrite();
+}
+
 /* Données SAÉ par défaut (PN 2022) — toujours disponibles même sans JSON */
 const _SAE_DEFAULT = {
   semestres: [
@@ -1032,6 +1049,7 @@ function renderMaquetteSemestre(root, sem) {
   const aff = APP_DATA.affectations[sem] || {};
   const maq = APP_DATA.maquette_overrides[sem] || {};
   const vhn = APP_DATA.volume_horaire_national[sem] || {};
+  const canEdit = !ARCHIVE_MODE && canEditMaquette(sem);
 
   let html = `
     <div class="page-header">
@@ -1125,20 +1143,25 @@ function renderMaquetteSemestre(root, sem) {
     totRTD += rTD;
     totRTP += rTP;
 
+    const numCell = (val, cls, handler, step) =>
+      canEdit
+        ? `<input type="number" class="${cls}" value="${val}" onchange="${handler}"${step ? ` step="${step}"` : ""}>`
+        : `<span class="reel-val">${fmtR(val || 0)}</span>`;
+
     html += `<tr class="${rowClass} row-main-resource">
             <td>${res}</td>
-            <td><input type="number" class="input-editable" value="${m.cm_final}" onchange="updateMaq('${sem}','${resEsc}','cm_final',this.value)"></td>
-            <td><input type="number" class="input-editable" value="${m.td_final}" onchange="updateMaq('${sem}','${resEsc}','td_final',this.value)"></td>
-            <td><input type="number" class="input-editable" value="${m.tp_final}" onchange="updateMaq('${sem}','${resEsc}','tp_final',this.value)"></td>
+            <td>${numCell(m.cm_final, "input-editable", `updateMaq('${sem}','${resEsc}','cm_final',this.value)`)}</td>
+            <td>${numCell(m.td_final, "input-editable", `updateMaq('${sem}','${resEsc}','td_final',this.value)`)}</td>
+            <td>${numCell(m.tp_final, "input-editable", `updateMaq('${sem}','${resEsc}','tp_final',this.value)`)}</td>
             <td class="pn-readonly-val">${v.vol_hn || "-"}</td>
             <td class="pn-readonly-val">${v.dont_tp_hn || "-"}</td>
-            <td><input type="number" class="input-pn-editable" value="${v.adapt_locale}" onchange="updateVolHN('${sem}','${resEsc}','adapt_locale',this.value)" step="0.5"></td>
-            <td><input type="number" class="input-pn-editable" value="${v.dont_tp_al}" onchange="updateVolHN('${sem}','${resEsc}','dont_tp_al',this.value)" step="0.5"></td>
+            <td>${numCell(v.adapt_locale, "input-pn-editable", `updateVolHN('${sem}','${resEsc}','adapt_locale',this.value)`, "0.5")}</td>
+            <td>${numCell(v.dont_tp_al, "input-pn-editable", `updateVolHN('${sem}','${resEsc}','dont_tp_al',this.value)`, "0.5")}</td>
             <td class="reel-val">${fmtR(rCM)}</td>
             <td class="reel-val">${fmtR(rTD)}</td>
             <td class="reel-val">${fmtR(rTP)}</td>
             <td class="pct-cell">${pctHtml}</td>
-            <td style="text-align:center;"><button class="btn-remove-subrow" onclick="deleteRessourceMaq('${sem}','${resEsc}')" title="Supprimer cette ressource">🗑</button></td>
+            <td style="text-align:center;">${canEdit && AUTH.canWrite() ? `<button class="btn-remove-subrow" onclick="deleteRessourceMaq('${sem}','${resEsc}')" title="Supprimer cette ressource">🗑</button>` : ""}</td>
         </tr>`;
   });
 
@@ -1163,11 +1186,11 @@ function renderMaquetteSemestre(root, sem) {
       <td>${totPctHtml}</td>
       <td></td>
   </tr></tfoot></table></div>
-    <div class="form-actions" style="gap:0.75rem;">
-        <button class="btn-add-res" onclick="openRenameRessourcesModal('${sem}')">✏️ Modif ressources/SAÉ</button>
-        <button class="btn-add-res" onclick="openAddRessourceModal('${sem}')">➕ Ajout de ressource ou de SAÉ / Adaptation locale</button>
+    ${canEdit ? `<div class="form-actions" style="gap:0.75rem;">
+        ${AUTH.canWrite() ? `<button class="btn-add-res" onclick="openRenameRessourcesModal('${sem}')">✏️ Modif ressources/SAÉ</button>
+        <button class="btn-add-res" onclick="openAddRessourceModal('${sem}')">➕ Ajout de ressource ou de SAÉ / Adaptation locale</button>` : ""}
         <button class="btn-save" onclick="saveMaquetteGH()">💾 Enregistrer la maquette sur GitHub</button>
-    </div>`;
+    </div>` : ""}`;
 
   root.innerHTML = html;
 }
@@ -2054,22 +2077,54 @@ window.saveEnseignantsGH = async function () {
   }
 };
 
+/* Fusionne, dans la version distante, uniquement les semestres que
+   l'utilisateur est autorisé à modifier — pour ne jamais écraser les
+   semestres gérés par d'autres lorsque l'accès est restreint par groupe. */
+function _mergeAllowedSemestres(remote, local, allowedSems) {
+  const merged = { ...(remote || {}) };
+  allowedSems.forEach((s) => {
+    if (local[s] !== undefined) merged[s] = local[s];
+    else delete merged[s];
+  });
+  return merged;
+}
+
 window.saveMaquetteGH = async function () {
   if (ARCHIVE_MODE)
     return showToast("Archives 2025-2026 — consultation uniquement");
   if (!isGHConfigured()) return alert("Veuillez configurer GitHub d'abord !");
   try {
     await _flushMods();
-    await saveFileGH(
-      "maquette_overrides.json",
-      APP_DATA.maquette_overrides,
-      "Update maquette_overrides.json via Web UI",
-    );
-    await saveFileGH(
-      "volume_horaire_national.json",
-      APP_DATA.volume_horaire_national,
-      "Update volume_horaire_national.json via Web UI",
-    );
+
+    if (AUTH.hasFullMaquetteAccess()) {
+      await saveFileGH(
+        "maquette_overrides.json",
+        APP_DATA.maquette_overrides,
+        "Update maquette_overrides.json via Web UI",
+      );
+      await saveFileGH(
+        "volume_horaire_national.json",
+        APP_DATA.volume_horaire_national,
+        "Update volume_horaire_national.json via Web UI",
+      );
+    } else {
+      const allowedSems = Object.keys(MAQUETTE_GROUPS)
+        .filter((g) => AUTH.canEditMaquetteGroup(g))
+        .flatMap((g) => MAQUETTE_GROUPS[g]);
+      if (!allowedSems.length) return alert("Vous n'avez pas les droits pour enregistrer la maquette.");
+
+      const remoteMaq = (await fetchGH("maquette_overrides.json")) || {};
+      const remoteVhn = (await fetchGH("volume_horaire_national.json")) || {};
+      const mergedMaq = _mergeAllowedSemestres(remoteMaq, APP_DATA.maquette_overrides, allowedSems);
+      const mergedVhn = _mergeAllowedSemestres(remoteVhn, APP_DATA.volume_horaire_national, allowedSems);
+
+      await saveFileGH("maquette_overrides.json", mergedMaq, "Update maquette_overrides.json via Web UI");
+      await saveFileGH("volume_horaire_national.json", mergedVhn, "Update volume_horaire_national.json via Web UI");
+
+      APP_DATA.maquette_overrides = mergedMaq;
+      APP_DATA.volume_horaire_national = mergedVhn;
+    }
+
     showToast("Maquette sauvegardée sur GitHub !");
   } catch (e) {
     alert("Erreur: " + e.message);

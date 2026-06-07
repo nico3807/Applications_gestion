@@ -101,6 +101,14 @@
             <label><input type="checkbox" class="add-rwapp" value="soutenances_portfolio"> Soutenances Portfolio</label>
             <label><input type="checkbox" class="add-rwapp" value="soutenances_stages"> Soutenances Stages</label>
           </div>
+          <div id="add-maquette-box" style="margin-top:10px; display:none;">
+            <label style="font-size:12px; font-weight:500; color:#111; display:block; margin-bottom:5px;">Accès en écriture à la Maquette (par groupe de semestres) :</label>
+            <div style="display:flex; flex-direction:column; gap:4px; font-size:13px;">
+              <label><input type="checkbox" class="add-maquette-grp" value="s123"> Semestres S1, S2, S3</label>
+              <label><input type="checkbox" class="add-maquette-grp" value="crea"> Semestres S4/S5/S6 Créa</label>
+              <label><input type="checkbox" class="add-maquette-grp" value="dev"> Semestres S4/S5/S6 Dev</label>
+            </div>
+          </div>
         </div>
 
         <p id="add-err" class="adm-err"></p>
@@ -188,6 +196,14 @@
               <label><input type="checkbox" class="edit-rwapp" value="soutenances_portfolio"> Soutenances Portfolio</label>
               <label><input type="checkbox" class="edit-rwapp" value="soutenances_stages"> Soutenances Stages</label>
             </div>
+            <div id="edit-maquette-box" style="margin-top:10px; display:none;">
+              <label style="font-size:12px;font-weight:500;color:#111;display:block;margin-bottom:5px;">Accès en écriture à la Maquette (par groupe de semestres) :</label>
+              <div style="display:flex;flex-direction:column;gap:4px;font-size:13px;">
+                <label><input type="checkbox" class="edit-maquette-grp" value="s123"> Semestres S1, S2, S3</label>
+                <label><input type="checkbox" class="edit-maquette-grp" value="crea"> Semestres S4/S5/S6 Créa</label>
+                <label><input type="checkbox" class="edit-maquette-grp" value="dev"> Semestres S4/S5/S6 Dev</label>
+              </div>
+            </div>
           </div>
           <p id="edit-rights-err" style="color:#dc2626;font-size:12px;margin-bottom:.5rem;display:none;"></p>
           <p id="edit-rights-ok"  style="color:#16a34a;font-size:12px;margin-bottom:.5rem;display:none;">✓ Droits modifiés avec succès.</p>
@@ -223,13 +239,28 @@
         document.querySelectorAll("input[name='add-mode']").forEach(r =>
           r.addEventListener("change", () => {
             document.getElementById("add-rwapps-box").style.display = r.value === "rwapps" ? "" : "none";
+            _toggleMaquetteBox("add");
           })
         );
         document.querySelectorAll("input[name='edit-mode']").forEach(r =>
           r.addEventListener("change", () => {
             document.getElementById("edit-rwapps-box").style.display = r.value === "rwapps" ? "" : "none";
+            _toggleMaquetteBox("edit");
           })
         );
+        document.querySelectorAll(".add-rwapp").forEach(c => c.addEventListener("change", () => _toggleMaquetteBox("add")));
+        document.querySelectorAll(".edit-rwapp").forEach(c => c.addEventListener("change", () => _toggleMaquetteBox("edit")));
+      }
+
+      /* Affiche les cases d'accès Maquette uniquement quand "Répartition" est cochée
+         parmi les applications R/W (l'accès maquette par groupe est un complément
+         à un R/W déjà accordé sur l'application répartition). */
+      function _toggleMaquetteBox(prefix) {
+        const repCb = document.querySelector(`.${prefix}-rwapp[value="repartition"]`);
+        const box   = document.getElementById(prefix + "-maquette-box");
+        const show  = !!(repCb && repCb.checked);
+        box.style.display = show ? "" : "none";
+        if (!show) document.querySelectorAll(`.${prefix}-maquette-grp`).forEach(c => c.checked = false);
       }
 
       /* ── Modals ────────────────────────────────────────────────────── */
@@ -238,8 +269,10 @@
         document.getElementById("add-pwd").value = "";
         document.getElementById("add-err").style.display = "none";
         document.querySelectorAll(".add-rwapp").forEach(c => c.checked = false);
+        document.querySelectorAll(".add-maquette-grp").forEach(c => c.checked = false);
         document.querySelector("input[name='add-mode'][value='rwapps']").checked = true;
         document.getElementById("add-rwapps-box").style.display = "";
+        _toggleMaquetteBox("add");
         document.getElementById("modal-add").classList.add("open");
         document.getElementById("add-login").focus();
       }
@@ -267,9 +300,13 @@
         btn.disabled = true; btn.textContent = "…";
         try {
           const h   = await AUTH.hashPwd(pwd);
-          const cfg = { login, h, rw:false, rwApps:[], denyApps:[] };
+          const cfg = { login, h, rw:false, rwApps:[], denyApps:[], maquetteGroups:[] };
           if (mode === "rw")         cfg.rw = true;
-          else if (mode === "rwapps") cfg.rwApps = [...document.querySelectorAll(".add-rwapp:checked")].map(c => c.value);
+          else if (mode === "rwapps") {
+            cfg.rwApps = [...document.querySelectorAll(".add-rwapp:checked")].map(c => c.value);
+            if (cfg.rwApps.includes("repartition"))
+              cfg.maquetteGroups = [...document.querySelectorAll(".add-maquette-grp:checked")].map(c => c.value);
+          }
           else if (mode === "deny-rep") cfg.denyApps = ["repartition"];
           await AUTH.createUser(cfg);
           closeModal("modal-add");
@@ -324,6 +361,10 @@
           document.querySelectorAll(".edit-rwapp").forEach(c => {
             c.checked = mode === "rwapps" && (u.rwApps || []).includes(c.value);
           });
+          document.querySelectorAll(".edit-maquette-grp").forEach(c => {
+            c.checked = (u.maquetteGroups || []).includes(c.value);
+          });
+          _toggleMaquetteBox("edit");
           document.getElementById("edit-new-pwd").focus();
         }
       }
@@ -368,9 +409,13 @@
         const okEl   = document.getElementById("edit-rights-ok");
         errEl.style.display = "none"; okEl.style.display = "none";
 
-        const cfg = { login, rw: false, rwApps: [], denyApps: [] };
+        const cfg = { login, rw: false, rwApps: [], denyApps: [], maquetteGroups: [] };
         if (mode === "rw")          cfg.rw = true;
-        else if (mode === "rwapps") cfg.rwApps = [...document.querySelectorAll(".edit-rwapp:checked")].map(c => c.value);
+        else if (mode === "rwapps") {
+          cfg.rwApps = [...document.querySelectorAll(".edit-rwapp:checked")].map(c => c.value);
+          if (cfg.rwApps.includes("repartition"))
+            cfg.maquetteGroups = [...document.querySelectorAll(".edit-maquette-grp:checked")].map(c => c.value);
+        }
         else if (mode === "deny-rep") cfg.denyApps = ["repartition"];
 
         const btn = document.getElementById("edit-rights-btn");

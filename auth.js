@@ -146,6 +146,29 @@ window.AUTH = {
     if (s.rwApps?.length) return s.rwApps.some(app => location.href.includes(app));
     return false;
   },
+  /* Accès en écriture à un groupe de semestres de la maquette (répartition).
+     "maquetteGroups" sert à AFFINER (restreindre) le R/W repartition existant :
+     si défini et non vide, seuls les groupes cochés restent éditables ;
+     si absent/vide, le R/W repartition donne accès à toute la maquette. */
+  canEditMaquetteGroup: (groupKey) => {
+    const s = _sess();
+    if (!s) return false;
+    if (s.rw) return true;
+    if (s.rwApps?.includes("repartition")) {
+      if (s.maquetteGroups?.length) return s.maquetteGroups.includes(groupKey);
+      return true;
+    }
+    return (s.maquetteGroups || []).includes(groupKey);
+  },
+  /* Accès maquette complet et non restreint (utilisé pour décider s'il faut
+     fusionner uniquement les groupes autorisés lors de l'enregistrement). */
+  hasFullMaquetteAccess: () => {
+    const s = _sess();
+    if (!s) return false;
+    if (s.rw) return true;
+    if (s.rwApps?.includes("repartition")) return !(s.maquetteGroups?.length);
+    return false;
+  },
   canAccess:  (app) => {
     const s = _sess();
     if (!s) return false;

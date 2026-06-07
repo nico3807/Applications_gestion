@@ -19,9 +19,19 @@ $u      = $_SESSION['user'];
 $method = $_SERVER['REQUEST_METHOD'];
 
 // Lecture : ouverte à tout utilisateur authentifié (données à jour pour tous).
-// Écriture : réservée aux utilisateurs ayant des droits d'écriture.
+// Écriture : réservée aux utilisateurs ayant des droits d'écriture — ou,
+// pour la maquette de répartition, aux utilisateurs disposant d'un accès
+// restreint par groupe de semestres (maquetteGroups), uniquement sur les
+// deux fichiers concernés.
 if ($method !== 'GET') {
     $canWrite = !empty($u['rw']) || !empty($u['rwApps']);
+    if (!$canWrite && !empty($u['maquetteGroups'])) {
+        $maquetteFiles = [
+            'repartition/maquette_overrides.json',
+            'repartition/volume_horaire_national.json',
+        ];
+        $canWrite = in_array($_GET['path'] ?? null, $maquetteFiles, true);
+    }
     if (!$canWrite) {
         http_response_code(403);
         echo json_encode(['error' => 'Accès en écriture requis']);

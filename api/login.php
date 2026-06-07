@@ -84,10 +84,11 @@ unset($attempts[$ip]);
 saveAttempts($attemptsFile, $attempts);
 
 $_SESSION['user'] = [
-    'login'    => $user['login'],
-    'rw'       => !empty($user['rw']),
-    'rwApps'   => $user['rwApps']   ?? [],
-    'denyApps' => $user['denyApps'] ?? [],
+    'login'          => $user['login'],
+    'rw'             => !empty($user['rw']),
+    'rwApps'         => $user['rwApps']   ?? [],
+    'denyApps'       => $user['denyApps'] ?? [],
+    'maquetteGroups' => $user['maquetteGroups'] ?? [],
 ];
 
 echo json_encode(['success' => true, 'user' => $_SESSION['user']]);
