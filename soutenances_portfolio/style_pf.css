@@ -427,35 +427,6 @@ a {
   color: var(--muted);
 }
 
-/* GITHUB FOOTER LINK */
-.gh-footer {
-  text-align: center;
-  padding: 28px 0 20px;
-}
-.gh-footer-link {
-  background: none;
-  border: none;
-  color: var(--muted);
-  font-size: 11px;
-  cursor: pointer;
-  display: inline-flex;
-  align-items: center;
-  gap: 5px;
-  opacity: 0.45;
-  transition: opacity 0.2s;
-  font-family: inherit;
-}
-.gh-footer-link:hover {
-  opacity: 1;
-}
-.gh-footer-link--active {
-  color: var(--green);
-  opacity: 0.55;
-}
-.gh-footer-link--active:hover {
-  opacity: 1;
-}
-
 /* GITHUB MODAL */
 .gh-modal-overlay {
   position: fixed;
@@ -513,33 +484,11 @@ a {
 .gh-modal-body {
   padding: 20px;
 }
-.gh-modal-desc {
-  font-size: 13px;
-  color: var(--sub);
-  margin-bottom: 18px;
-  line-height: 1.6;
-}
-.gh-modal-desc code {
-  background: var(--surface2);
-  border: 1px solid var(--border);
-  border-radius: 4px;
-  padding: 1px 6px;
-  font-size: 12px;
-  color: var(--accent2);
-}
-.gh-modal-desc strong {
-  color: var(--text);
-}
 .gh-form-group {
   display: flex;
   flex-direction: column;
   gap: 6px;
   margin-bottom: 14px;
-}
-.gh-form-row {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 12px;
 }
 .gh-label {
   font-size: 12px;
@@ -589,11 +538,6 @@ a {
   color: #f85149;
   border: 1px solid rgba(248, 81, 73, 0.3);
 }
-.gh-status--info {
-  background: var(--blue-bg);
-  color: var(--accent);
-  border: 1px solid rgba(88, 166, 255, 0.3);
-}
 .gh-modal-footer {
   padding: 14px 20px;
   border-top: 1px solid var(--border);
@@ -614,21 +558,6 @@ a {
 }
 .gh-btn-save:hover {
   opacity: 0.85;
-}
-.gh-btn-test {
-  background: var(--surface2);
-  color: var(--text);
-  border: 1px solid var(--border);
-  border-radius: 6px;
-  padding: 8px 14px;
-  font-size: 13px;
-  font-weight: 500;
-  cursor: pointer;
-  transition: all 0.15s;
-}
-.gh-btn-test:hover {
-  border-color: var(--accent);
-  color: var(--accent);
 }
 .gh-btn-clear {
   background: none;
@@ -857,7 +786,6 @@ a {
   .nav,
   .pdf-btn,
   .save-btn,
-  .gh-footer,
   .gh-modal-overlay,
   .toast {
     display: none !important;

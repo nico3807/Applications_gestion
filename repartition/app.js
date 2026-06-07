@@ -9,8 +9,6 @@ function esc(s) {
   }[c]));
 }
 
-const GH_OWNER = "nico3807";
-const GH_REPO = "Applications_gestion"; // À ajuster selon le dépôt exact
 const GH_BRANCH = "main";
 const GH_BASE_PATH = "repartition/data"; // Dossier où se trouvent les JSON sur GitHub
 const GH_ARCHIVE_PATH = "repartition/archive_25-26/data";
@@ -1934,72 +1932,19 @@ window.showToast = function (msg) {
   setTimeout(() => t.classList.remove("show"), 3000);
 };
 
+/* La sauvegarde GitHub passe désormais par un proxy serveur (api/gh-proxy.php)
+   qui détient le token : aucune configuration côté client n'est nécessaire,
+   il suffit d'avoir les droits d'écriture (vérifiés côté serveur). */
 window.isGHConfigured = function () {
-  return !!getGHConfig().token;
+  return true;
 };
-window.getGHConfig = function () {
-  const token = AUTH.getGHToken();
-  return token ? { token } : {};
-};
-
-window.openGHModal = function () {
-  document.getElementById("gh-modal").style.display = "block";
-};
-window.closeGHModal = function () {
-  document.getElementById("gh-modal").style.display = "none";
-};
-window.saveGHFromModal = function () {
-  const token = document.getElementById("gh-token").value.trim();
-  if (!token) return alert("Saisissez un token.");
-  AUTH.setGHToken(token);
-  const btn = document.getElementById("gh-config-btn");
-  if (btn) btn.innerHTML = "● GitHub configuré";
-  showToast("Token enregistré !");
-  closeGHModal();
-};
-
-function injectGHUI() {
-  const footer = document.createElement("div");
-  footer.className = "gh-footer";
-  footer.innerHTML = `<button class="gh-footer-link" id="gh-config-btn" onclick="openGHModal()">${isGHConfigured() ? "● GitHub configuré" : "⚙ Configurer sauvegarde GitHub"}</button>`;
-  document.body.appendChild(footer);
-
-  const modal = document.createElement("div");
-  modal.id = "gh-modal";
-  modal.className = "gh-modal-overlay";
-  modal.style.display = "none";
-  modal.innerHTML = `
-    <div class="form-card" style="margin:10% auto; position:relative; max-width:400px">
-        <h3 style="margin-bottom:1rem; color:#1e3a5f">⚙ Token GitHub</h3>
-        <p style="font-size:13px; color:#6b7280; margin-bottom:1rem;">Les JSON seront sauvegardés dans <strong>${GH_OWNER}/${GH_REPO}</strong> (branche <code>${GH_BRANCH}</code>).</p>
-        <div class="form-group">
-            <label>Personal Access Token</label>
-            <input id="gh-token" class="form-input" type="password" placeholder="ghp_xxxxxxxxxxxxxxxxxxxx">
-        </div>
-        <div style="display:flex; justify-content:flex-end; gap:0.5rem; margin-top:1.5rem;">
-            <button class="btn-cancel" onclick="closeGHModal()">Annuler</button>
-            <button class="btn-save" onclick="saveGHFromModal()">Enregistrer</button>
-        </div>
-    </div>`;
-  modal.addEventListener("click", (e) => {
-    if (e.target === modal) closeGHModal();
-  });
-  document.body.appendChild(modal);
-
-  const cfg = getGHConfig();
-  if (cfg.token) document.getElementById("gh-token").value = cfg.token;
-}
 
 async function fetchGH(filename, basePath = GH_BASE_PATH) {
-  const cfg = getGHConfig();
-  const url = `https://api.github.com/repos/${GH_OWNER}/${GH_REPO}/contents/${basePath}/${filename}?ref=${GH_BRANCH}`;
+  const url = `/api/gh-proxy.php?path=${encodeURIComponent(`${basePath}/${filename}`)}&ref=${GH_BRANCH}`;
   const resp = await fetch(url, {
-    // Ajout de no-cache pour éviter les conflits de version dus au cache du navigateur
     cache: "no-cache",
-    headers: {
-      Authorization: `token ${cfg.token}`,
-      Accept: "application/vnd.github.v3+json",
-    },
+    credentials: "include",
+    headers: { Accept: "application/vnd.github.v3+json" },
   });
   if (!resp.ok) return null;
   const json = await resp.json();
@@ -2009,21 +1954,19 @@ async function fetchGH(filename, basePath = GH_BASE_PATH) {
 }
 
 async function saveFileGH(filename, dataObj, msg, basePath = GH_BASE_PATH) {
-  const cfg = getGHConfig();
-  const url = `https://api.github.com/repos/${GH_OWNER}/${GH_REPO}/contents/${basePath}/${filename}`;
+  const path = `${basePath}/${filename}`;
+  const url = `/api/gh-proxy.php?path=${encodeURIComponent(path)}`;
   const content = btoa(
     unescape(encodeURIComponent(JSON.stringify(dataObj, null, 2))),
   );
 
-  /* Lecture du SHA courant — _t= contourne le CDN GitHub (cache serveur) */
+  /* Lecture du SHA courant — _t= contourne le cache */
   async function _getSha() {
     try {
-      const r = await fetch(`${url}?ref=${GH_BRANCH}&_t=${Date.now()}`, {
+      const r = await fetch(`${url}&ref=${GH_BRANCH}&_t=${Date.now()}`, {
         cache: "no-cache",
-        headers: {
-          Authorization: `token ${cfg.token}`,
-          Accept: "application/vnd.github.v3+json",
-        },
+        credentials: "include",
+        headers: { Accept: "application/vnd.github.v3+json" },
       });
       if (r.ok) return (await r.json()).sha;
     } catch {}
@@ -2032,12 +1975,12 @@ async function saveFileGH(filename, dataObj, msg, basePath = GH_BASE_PATH) {
 
   /* Envoi du PUT avec le SHA fourni */
   async function _put(sha) {
-    const body = { message: msg, content, branch: GH_BRANCH };
+    const body = { message: msg, content };
     if (sha) body.sha = sha;
     return fetch(url, {
       method: "PUT",
+      credentials: "include",
       headers: {
-        Authorization: `token ${cfg.token}`,
         Accept: "application/vnd.github.v3+json",
         "Content-Type": "application/json",
       },
@@ -2066,10 +2009,11 @@ async function saveFileGH(filename, dataObj, msg, basePath = GH_BASE_PATH) {
     let errMsg = `Erreur ${r.status}`;
     try {
       const errJson = await r.json();
-      if (r.status === 401)
-        errMsg =
-          "Token GitHub invalide ou expiré — reconfigurez-le via le bouton en bas de page.";
-      else errMsg = errJson.message || errMsg;
+      if (r.status === 403)
+        errMsg = errJson.error || "Accès en écriture refusé par le serveur.";
+      else if (r.status === 500 && errJson.error)
+        errMsg = errJson.error;
+      else errMsg = errJson.message || errJson.error || errMsg;
     } catch {}
     throw new Error(errMsg);
   }
@@ -3175,7 +3119,6 @@ window.exportAllSouhaitsXLSX = async function () {
 
 document.addEventListener("DOMContentLoaded", async () => {
   // La redirection est gérée par le script inline dans index.html
-  injectGHUI();
   await loadData();
   AUTH.injectBadge();
   if (location.hash === "#souhaits") {

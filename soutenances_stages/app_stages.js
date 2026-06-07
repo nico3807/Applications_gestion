@@ -159,41 +159,32 @@ function applyJSON(text) {
   }
 }
 
-/* ── GitHub API ──────────────────────────────────────────────────── */
-function getGHConfig() {
-  return {
-    token: AUTH.getGHToken() || "",
-    owner: GH_OWNER,
-    repo: GH_REPO,
-    branch: GH_BRANCH,
-  };
-}
-
+/* ── GitHub API (relayée par api/gh-proxy.php — le token reste côté serveur,
+   aucune configuration n'est nécessaire côté client) ────────────────────── */
 function isGHConfigured() {
-  return !!getGHConfig().token;
+  return true;
 }
 
 function ghFilePath() {
   return `soutenances_stages/donnees_stages.json`;
 }
 
+async function fetchGHJson(path) {
+  const url = `/api/gh-proxy.php?path=${encodeURIComponent(path)}&ref=${GH_BRANCH}`;
+  const resp = await fetch(url, {
+    cache: "no-cache",
+    credentials: "include",
+    headers: { Accept: "application/vnd.github.v3+json" },
+  });
+  if (!resp.ok) return null;
+  const json = await resp.json();
+  return decodeURIComponent(escape(atob(json.content.replace(/\n/g, ""))));
+}
+
 async function loadFromGitHub() {
-  const cfg = getGHConfig();
-  if (!cfg || !cfg.token || !cfg.owner || !cfg.repo) return false;
-  const branch = cfg.branch || "main";
-  const url = `https://api.github.com/repos/${cfg.owner}/${cfg.repo}/contents/${ghFilePath()}?ref=${branch}`;
   try {
-    const resp = await fetch(url, {
-      headers: {
-        Authorization: `token ${cfg.token}`,
-        Accept: "application/vnd.github.v3+json",
-      },
-    });
-    if (!resp.ok) return false;
-    const json = await resp.json();
-    const text = decodeURIComponent(
-      escape(atob(json.content.replace(/\n/g, ""))),
-    );
+    const text = await fetchGHJson(ghFilePath());
+    if (!text) return false;
     applyJSON(text);
     showToast("↺ Sélections restaurées depuis GitHub");
     return true;
@@ -204,21 +195,9 @@ async function loadFromGitHub() {
 
 async function loadHorairesFromGitHub() {
   if (document.getElementById("juries-root")?.children.length > 0) return;
-  const cfg = getGHConfig();
-  if (!cfg || !cfg.token) return;
   try {
-    const url = `https://api.github.com/repos/${GH_OWNER}/${GH_REPO}/contents/soutenances_stages/horaires_stages.json?ref=${GH_BRANCH}`;
-    const resp = await fetch(url, {
-      headers: {
-        Authorization: `token ${cfg.token}`,
-        Accept: "application/vnd.github.v3+json",
-      },
-    });
-    if (!resp.ok) return;
-    const json = await resp.json();
-    const text = decodeURIComponent(
-      escape(atob(json.content.replace(/\n/g, ""))),
-    );
+    const text = await fetchGHJson("soutenances_stages/horaires_stages.json");
+    if (!text) return;
     const data = JSON.parse(text);
     APP_CONFIG.horaires = data;
     renderJuries(PAGE_ID);
@@ -229,36 +208,33 @@ async function loadHorairesFromGitHub() {
 }
 
 async function saveJsonToGitHub(filename, jsonStr, message) {
-  const cfg = getGHConfig();
-  if (!cfg.token) throw new Error("Token non configuré");
-  const url = `https://api.github.com/repos/${GH_OWNER}/${GH_REPO}/contents/${filename}`;
+  const url = `/api/gh-proxy.php?path=${encodeURIComponent(filename)}`;
   const content = btoa(unescape(encodeURIComponent(jsonStr)));
   let sha = null;
   try {
-    const r = await fetch(`${url}?ref=${GH_BRANCH}`, {
-      headers: {
-        Authorization: `token ${cfg.token}`,
-        Accept: "application/vnd.github.v3+json",
-      },
+    const r = await fetch(`${url}&ref=${GH_BRANCH}&_t=${Date.now()}`, {
+      cache: "no-cache",
+      credentials: "include",
+      headers: { Accept: "application/vnd.github.v3+json" },
     });
     if (r.ok) sha = (await r.json()).sha;
   } catch {
     /* fichier inexistant */
   }
-  const body = { message, content, branch: GH_BRANCH };
+  const body = { message, content };
   if (sha) body.sha = sha;
   const r = await fetch(url, {
     method: "PUT",
+    credentials: "include",
     headers: {
-      Authorization: `token ${cfg.token}`,
       Accept: "application/vnd.github.v3+json",
       "Content-Type": "application/json",
     },
     body: JSON.stringify(body),
   });
   if (!r.ok) {
-    const err = await r.json();
-    throw new Error(err.message || r.status);
+    const err = await r.json().catch(() => ({}));
+    throw new Error(err.error || err.message || `Erreur ${r.status}`);
   }
 }
 
@@ -275,116 +251,6 @@ async function saveToGitHub() {
     showToast("✗ GitHub : " + e.message);
     return false;
   }
-}
-
-async function testGHConnection(cfg) {
-  try {
-    const resp = await fetch(
-      `https://api.github.com/repos/${cfg.owner}/${cfg.repo}`,
-      {
-        headers: {
-          Authorization: `token ${cfg.token}`,
-          Accept: "application/vnd.github.v3+json",
-        },
-      },
-    );
-    return resp.ok;
-  } catch {
-    return false;
-  }
-}
-
-/* ── GitHub settings modal ───────────────────────────────────────── */
-function injectGHUI() {
-  const footer = document.createElement("div");
-  footer.className = "gh-footer";
-  footer.innerHTML = `<button class="gh-footer-link${isGHConfigured() ? " gh-footer-link--active" : ""}" id="gh-config-btn" title="Configuration sauvegarde GitHub"><svg viewBox="0 0 16 16" fill="currentColor" width="13" height="13"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>${isGHConfigured() ? "● GitHub configuré" : "Configurer sauvegarde GitHub"}</button>`;
-  document.body.appendChild(footer);
-  document
-    .getElementById("gh-config-btn")
-    .addEventListener("click", openGHModal);
-
-  const modal = document.createElement("div");
-  modal.id = "gh-modal";
-  modal.className = "gh-modal-overlay";
-  modal.innerHTML = `
-<div class="gh-modal">
-  <div class="gh-modal-hdr">
-    <span>⚙ Token GitHub</span>
-    <button class="gh-modal-close" onclick="closeGHModal()">✕</button>
-  </div>
-  <div class="gh-modal-body">
-    <p class="gh-modal-desc">Les sélections sont sauvegardées dans <strong>${GH_OWNER}/${GH_REPO}</strong> (branche <code>${GH_BRANCH}</code>). Entrez votre <strong>Personal Access Token</strong> (scope <code>repo</code>) — à saisir une seule fois par poste.</p>
-    <div class="gh-form-group">
-      <label class="gh-label" for="gh-token">Token <span class="gh-hint">(GitHub → Settings → Developer settings → PAT)</span></label>
-      <input id="gh-token" class="gh-input" type="password" placeholder="ghp_xxxxxxxxxxxxxxxxxxxx" autocomplete="off">
-    </div>
-    <div id="gh-status" class="gh-status" style="display:none"></div>
-  </div>
-  <div class="gh-modal-footer">
-    <button class="gh-btn-test" onclick="testGHFromModal()">Tester la connexion</button>
-    <span style="flex:1"></span>
-    <button class="gh-btn-clear" onclick="clearGHConfig()">Effacer</button>
-    <button class="gh-btn-save" onclick="saveGHFromModal()">Enregistrer</button>
-  </div>
-</div>`;
-  modal.addEventListener("click", (e) => {
-    if (e.target === modal) closeGHModal();
-  });
-  document.body.appendChild(modal);
-
-  const cfg = getGHConfig();
-  if (cfg.token) document.getElementById("gh-token").value = cfg.token;
-}
-
-function openGHModal() {
-  document.getElementById("gh-modal").classList.add("open");
-}
-function closeGHModal() {
-  document.getElementById("gh-modal").classList.remove("open");
-}
-
-function saveGHFromModal() {
-  const token = document.getElementById("gh-token").value.trim();
-  if (!token) {
-    showGHStatus("Veuillez saisir le token.", "error");
-    return;
-  }
-  AUTH.setGHToken(token);
-  const btn = document.getElementById("gh-config-btn");
-  if (btn) btn.classList.add("gh-footer-link--active");
-  showGHStatus("Token enregistré !", "success");
-  setTimeout(closeGHModal, 900);
-}
-
-function clearGHConfig() {
-  AUTH.clearGHToken();
-  const btn = document.getElementById("gh-config-btn");
-  if (btn) btn.classList.remove("gh-footer-link--active");
-  document.getElementById("gh-token").value = "";
-  showGHStatus("Token effacé.", "info");
-}
-
-async function testGHFromModal() {
-  const token = document.getElementById("gh-token").value.trim();
-  if (!token) {
-    showGHStatus("Saisissez d'abord le token.", "error");
-    return;
-  }
-  showGHStatus("Connexion en cours…", "info");
-  const ok = await testGHConnection({ token, owner: GH_OWNER, repo: GH_REPO });
-  showGHStatus(
-    ok ? "✓ Connexion réussie !" : "✗ Échec — vérifiez le token.",
-    ok ? "success" : "error",
-  );
-}
-
-function showGHStatus(msg, type) {
-  const s = document.getElementById("gh-status");
-  if (!s) return;
-  s.textContent = msg;
-  s.className = "gh-status gh-status--" + type;
-  s.style.display = "block";
 }
 
 /* ── Config modal ────────────────────────────────────────────────── */
@@ -1123,7 +989,7 @@ function injectPrintStyles() {
     @media print {
       @page { margin: 0; }
       body { margin: 1.5cm; }
-      .gh-footer, .gh-modal-overlay, #toast { display: none !important; }
+      #toast { display: none !important; }
     }
   `;
   document.head.appendChild(style);
@@ -1131,7 +997,6 @@ function injectPrintStyles() {
 
 /* ── Init ────────────────────────────────────────────────────────── */
 document.addEventListener("DOMContentLoaded", async () => {
-  injectGHUI();
   injectPrintStyles();
   injectCfgUI();
   await loadHoraires();
