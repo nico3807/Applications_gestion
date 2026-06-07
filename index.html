@@ -73,16 +73,6 @@
       <div class="adm-box">
         <h2>Ajouter un utilisateur</h2>
 
-        <!-- Token GitHub -->
-        <div class="adm-section">
-          <label>Token GitHub (pour sauvegarder les utilisateurs)</label>
-          <div class="adm-field">
-            <input type="password" id="add-gh-token" class="adm-input" placeholder="ghp_…" autocomplete="off">
-            <button class="adm-btn-save" onclick="admSaveToken('add')">Enregistrer</button>
-          </div>
-          <span id="add-gh-status" class="adm-status"></span>
-        </div>
-
         <!-- Identifiants -->
         <div style="display:grid; grid-template-columns:1fr 1fr; gap:.75rem; margin-bottom:1rem;">
           <div>
@@ -125,16 +115,6 @@
     <div id="modal-edit" class="adm-overlay" onclick="if(event.target===this)closeModal('modal-edit')">
       <div class="adm-box" style="width:min(520px,96vw);">
         <h2>Modifier un utilisateur</h2>
-
-        <!-- Token GitHub -->
-        <div class="adm-section">
-          <label>Token GitHub (pour sauvegarder les utilisateurs)</label>
-          <div class="adm-field">
-            <input type="password" id="edit-gh-token" class="adm-input" placeholder="ghp_…" autocomplete="off">
-            <button class="adm-btn-save" onclick="admSaveToken('edit')">Enregistrer</button>
-          </div>
-          <span id="edit-gh-status" class="adm-status"></span>
-        </div>
 
         <!-- Sélection utilisateur -->
         <div style="margin-bottom:1.25rem;">
@@ -254,9 +234,6 @@
 
       /* ── Modals ────────────────────────────────────────────────────── */
       function openAddUserModal() {
-        const tok = AUTH.getGHToken();
-        document.getElementById("add-gh-token").value = tok || "";
-        document.getElementById("add-gh-status").textContent = tok ? "Token enregistré." : "";
         document.getElementById("add-login").value = "";
         document.getElementById("add-pwd").value = "";
         document.getElementById("add-err").style.display = "none";
@@ -268,24 +245,12 @@
       }
 
       function openEditUserModal() {
-        const tok = AUTH.getGHToken();
-        document.getElementById("edit-gh-token").value = tok || "";
-        document.getElementById("edit-gh-status").textContent = tok ? "Token enregistré." : "";
         document.getElementById("edit-pwd-form").style.display = "none";
         AUTH.reloadExtraUsers().then(populateEditDropdown);
         document.getElementById("modal-edit").classList.add("open");
       }
 
       function closeModal(id) { document.getElementById(id).classList.remove("open"); }
-
-      /* ── Token GitHub ──────────────────────────────────────────────── */
-      function admSaveToken(prefix) {
-        const tok = document.getElementById(prefix + "-gh-token").value.trim();
-        if (!tok) return;
-        AUTH.setGHToken(tok);
-        document.getElementById(prefix + "-gh-status").textContent = "Token enregistré ✓";
-        if (prefix === "edit") AUTH.reloadExtraUsers().then(populateEditDropdown);
-      }
 
       /* ── Créer un utilisateur ──────────────────────────────────────── */
       async function admCreateUser() {
