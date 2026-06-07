@@ -820,6 +820,12 @@ function renderSemestre(root, sem) {
   };
   const _affKeys = Object.keys(aff).sort((a, b) => _rowPrio(a) - _rowPrio(b));
 
+  /* Volume horaire à financer = total/étudiant pondéré par des coefficients
+     qui dépendent du semestre (S1-S3 vs S4-S6 crea/dev). */
+  const _financeCoefs = ["S1", "S2", "S3"].includes(sem)
+    ? { cm: 1.5, td: 2, tp: 4 }
+    : { cm: 1.5, td: 1, tp: 2 };
+
   // Calcul des totaux
   let totPrevCM = 0,
     totPrevTD = 0,
@@ -827,6 +833,9 @@ function renderSemestre(root, sem) {
   let totCM = 0,
     totTD = 0,
     totTP = 0;
+  let totFinanceCM = 0,
+    totFinanceTD = 0,
+    totFinanceTP = 0;
   _affKeys.forEach((res) => {
     const data = aff[res];
     const prev = maq[res] || {};
@@ -971,14 +980,12 @@ function renderSemestre(root, sem) {
             </select>
          </td>`;
 
-    /* Volume horaire à financer = total/étudiant pondéré par des coefficients
-       qui dépendent du semestre (S1-S3 vs S4-S6 crea/dev). */
-    const _financeCoefs = ["S1", "S2", "S3"].includes(sem)
-      ? { cm: 1.5, td: 2, tp: 4 }
-      : { cm: 1.5, td: 1, tp: 2 };
     const financeCM = resCM * _financeCoefs.cm;
     const financeTD = resTD * _financeCoefs.td;
     const financeTP = resTP * _financeCoefs.tp;
+    totFinanceCM += financeCM;
+    totFinanceTD += financeTD;
+    totFinanceTP += financeTP;
 
     html += `<tr class="row-responsable ${rowClass}">
             <td colspan="2"></td>
@@ -1000,12 +1007,28 @@ function renderSemestre(root, sem) {
 
   const fmtT = (n) => (n % 1 === 0 ? n : n.toFixed(1).replace(/\.0$/, ""));
   html += `<tr class="row-total-pose">
-        <td><strong>Total posé</strong></td>
+        <td rowspan="3" style="vertical-align:middle;"><strong>Total posé</strong></td>
         <td><span class="prev-badge">CM: ${fmtT(totPrevCM)} | TD: ${fmtT(totPrevTD)} | TP: ${fmtT(totPrevTP)}</span></td>
         <td></td>
         <td class="total-pose-val">${fmtT(totCM)}</td>
         <td class="total-pose-val">${fmtT(totTD)}</td>
         <td class="total-pose-val">${fmtT(totTP)}</td>
+        <td></td>
+    </tr>
+    <tr class="row-total-pose">
+        <td></td>
+        <td class="responsable-label" style="text-align:right;">Total / étudiant :</td>
+        <td class="total-pose-val">${fmtT(totCM)}</td>
+        <td class="total-pose-val">${fmtT(totTD)}</td>
+        <td class="total-pose-val">${fmtT(totTP)}</td>
+        <td></td>
+    </tr>
+    <tr class="row-total-pose">
+        <td></td>
+        <td class="responsable-label" style="text-align:right;">Volume horaire à financer :</td>
+        <td class="total-pose-val">${fmtT(totFinanceCM)}</td>
+        <td class="total-pose-val">${fmtT(totFinanceTD)}</td>
+        <td class="total-pose-val">${fmtT(totFinanceTP)}</td>
         <td></td>
     </tr>`;
 
