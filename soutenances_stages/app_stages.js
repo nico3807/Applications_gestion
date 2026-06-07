@@ -3,7 +3,6 @@ const SK = "sout_v1_";
 const PAGE_ID = (location.pathname.split("/").pop() || "index")
   .replace(".html", "")
   .replace("_stages", "");
-const GH_KEY = "gh_cfg_v1";
 const GH_OWNER = "nico3807";
 const GH_REPO = "Applications_gestion";
 const GH_BRANCH = "main";
@@ -162,17 +161,12 @@ function applyJSON(text) {
 
 /* ── GitHub API ──────────────────────────────────────────────────── */
 function getGHConfig() {
-  try {
-    const stored = JSON.parse(sessionStorage.getItem(GH_KEY)) || {};
-    return {
-      token: stored.token || "",
-      owner: GH_OWNER,
-      repo: GH_REPO,
-      branch: GH_BRANCH,
-    };
-  } catch {
-    return { token: "", owner: GH_OWNER, repo: GH_REPO, branch: GH_BRANCH };
-  }
+  return {
+    token: AUTH.getGHToken() || "",
+    owner: GH_OWNER,
+    repo: GH_REPO,
+    branch: GH_BRANCH,
+  };
 }
 
 function isGHConfigured() {
@@ -356,7 +350,7 @@ function saveGHFromModal() {
     showGHStatus("Veuillez saisir le token.", "error");
     return;
   }
-  sessionStorage.setItem(GH_KEY, JSON.stringify({ token }));
+  AUTH.setGHToken(token);
   const btn = document.getElementById("gh-config-btn");
   if (btn) btn.classList.add("gh-footer-link--active");
   showGHStatus("Token enregistré !", "success");
@@ -364,7 +358,7 @@ function saveGHFromModal() {
 }
 
 function clearGHConfig() {
-  sessionStorage.removeItem(GH_KEY);
+  AUTH.clearGHToken();
   const btn = document.getElementById("gh-config-btn");
   if (btn) btn.classList.remove("gh-footer-link--active");
   document.getElementById("gh-token").value = "";

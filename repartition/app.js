@@ -9,7 +9,6 @@ function esc(s) {
   }[c]));
 }
 
-const GH_KEY = "gh_repartition_cfg";
 const GH_OWNER = "nico3807";
 const GH_REPO = "Applications_gestion"; // À ajuster selon le dépôt exact
 const GH_BRANCH = "main";
@@ -1939,11 +1938,8 @@ window.isGHConfigured = function () {
   return !!getGHConfig().token;
 };
 window.getGHConfig = function () {
-  try {
-    return JSON.parse(sessionStorage.getItem(GH_KEY)) || {};
-  } catch {
-    return {};
-  }
+  const token = AUTH.getGHToken();
+  return token ? { token } : {};
 };
 
 window.openGHModal = function () {
@@ -1955,7 +1951,7 @@ window.closeGHModal = function () {
 window.saveGHFromModal = function () {
   const token = document.getElementById("gh-token").value.trim();
   if (!token) return alert("Saisissez un token.");
-  sessionStorage.setItem(GH_KEY, JSON.stringify({ token }));
+  AUTH.setGHToken(token);
   const btn = document.getElementById("gh-config-btn");
   if (btn) btn.innerHTML = "● GitHub configuré";
   showToast("Token enregistré !");

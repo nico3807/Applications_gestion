@@ -2,6 +2,13 @@
 
 const _SK = "mmi_auth_v1";
 
+/* ── Token GitHub partagé entre toutes les applications (sessionStorage est
+   déjà commun à toutes les pages d'une même origine — une seule clé suffit
+   pour que la config se propage automatiquement à Répartition, Planning,
+   Soutenances Stages et Soutenances Portfolio). ────────────────────────── */
+const _GH_SHARED_KEY  = "gh_token_shared_v1";
+const _GH_LEGACY_KEYS = ["gh_repartition_cfg", "gh_planning_cfg", "gh_cfg_v1"];
+
 /* ── Cache utilisateurs (chargé au démarrage, utilisé par le panneau admin) ── */
 let _usersCache = [];
 async function _loadUsersCache() {
@@ -210,9 +217,70 @@ window.AUTH = {
     await this.createUser({ ...existing, login, h });
   },
 
-  /* Conservés pour compatibilité — GitHub n'est plus utilisé pour les users */
-  getGHToken: () => null,
-  setGHToken: () => {},
+  /* ── Token GitHub partagé (sessionStorage, commun à toutes les apps) ──── */
+  getGHToken: () => {
+    try {
+      const cfg = JSON.parse(sessionStorage.getItem(_GH_SHARED_KEY) || "null");
+      if (cfg?.token) return cfg.token;
+    } catch {}
+    /* Migration depuis les anciennes clés propres à chaque application */
+    for (const k of _GH_LEGACY_KEYS) {
+      try {
+        const legacy = JSON.parse(sessionStorage.getItem(k) || "null");
+        if (legacy?.token) {
+          sessionStorage.setItem(_GH_SHARED_KEY, JSON.stringify({ token: legacy.token }));
+          return legacy.token;
+        }
+      } catch {}
+    }
+    return null;
+  },
+  setGHToken: (token) => {
+    try { sessionStorage.setItem(_GH_SHARED_KEY, JSON.stringify({ token })); } catch {}
+  },
+  clearGHToken: () => {
+    try { sessionStorage.removeItem(_GH_SHARED_KEY); } catch {}
+  },
+
+  /* ── Propose la configuration du token GitHub à la connexion si l'utilisateur
+     a des droits d'écriture et n'a pas encore de token enregistré ────────── */
+  async _maybeProposeGHToken() {
+    const s = _sess();
+    if (!s) return;
+    const hasWriteAccess = s.rw === true || (Array.isArray(s.rwApps) && s.rwApps.length > 0);
+    if (!hasWriteAccess || AUTH.getGHToken()) return;
+
+    await new Promise((resolve) => {
+      const ov = document.createElement("div");
+      ov.id = "auth-gh-overlay";
+      ov.style.cssText = "position:fixed;inset:0;z-index:10000;background:rgba(15,23,42,.6);display:flex;align-items:center;justify-content:center;";
+      ov.innerHTML = `
+        <div class="auth-card" style="max-width:380px;">
+          <h3 class="auth-title" style="font-size:1.1rem;">⚙ Token GitHub</h3>
+          <p class="auth-sub" style="text-align:left;">
+            Pour pouvoir enregistrer vos modifications, configurez votre token GitHub personnel.
+            Il sera automatiquement partagé avec toutes les applications (Répartition, Planning,
+            Soutenances Stages et Portfolio) sur cette machine — vous n'aurez à le saisir qu'une seule fois.
+          </p>
+          <input id="auth-gh-token" class="auth-input" type="password" placeholder="ghp_xxxxxxxxxxxxxxxxxxxx" autocomplete="off">
+          <p id="auth-gh-err" class="auth-err" style="display:none;"></p>
+          <div style="display:flex;gap:.5rem;">
+            <button id="auth-gh-skip" class="auth-btn" style="background:#9ca3af;flex:1;">Plus tard</button>
+            <button id="auth-gh-save" class="auth-btn" style="flex:1;">Enregistrer</button>
+          </div>
+        </div>`;
+      document.body.appendChild(ov);
+      const close = () => { ov.remove(); resolve(); };
+      document.getElementById("auth-gh-skip").onclick = close;
+      document.getElementById("auth-gh-save").onclick = () => {
+        const token = document.getElementById("auth-gh-token").value.trim();
+        const err   = document.getElementById("auth-gh-err");
+        if (!token) { err.textContent = "Saisissez un token."; err.style.display = "block"; return; }
+        AUTH.setGHToken(token);
+        close();
+      };
+    });
+  },
 
   /* ── Interface utilisateur ───────────────────────────────────────────────── */
   async injectUI() {
@@ -301,6 +369,7 @@ window.AUTH = {
         const appRoot = document.getElementById("app-root");
         if (appRoot) appRoot.style.display = "";
         window.dispatchEvent(new Event("auth-success"));
+        await AUTH._maybeProposeGHToken();
       } else {
         err.style.display = "block";
         document.getElementById("auth-pwd").value = "";

@@ -1476,7 +1476,6 @@ function injectFeries() {
 /* =====================================================================
      GITHUB SAVE
   ===================================================================== */
-const GH_KEY = "gh_planning_cfg";
 const GH_OWNER = "nico3807";
 const GH_REPO = "Applications_gestion";
 const GH_BRANCH = "main";
@@ -1484,11 +1483,8 @@ const GH_PATH = "planning-web/calendar_data.json";
 const GH_ARCHIVE_PATH = "planning-web/archive_25-26/calendar_data_25-26.json";
 
 function getGHConfig() {
-  try {
-    return JSON.parse(sessionStorage.getItem(GH_KEY)) || {};
-  } catch {
-    return {};
-  }
+  const token = AUTH.getGHToken();
+  return token ? { token } : {};
 }
 function isGHConfigured() {
   return !!getGHConfig().token;
@@ -1654,7 +1650,7 @@ function saveGHFromModal() {
     showGHStatus("Saisissez un token.", "error");
     return;
   }
-  sessionStorage.setItem(GH_KEY, JSON.stringify({ token }));
+  AUTH.setGHToken(token);
   const cfgBtn = document.getElementById("gh-config-btn");
   if (cfgBtn) cfgBtn.style.display = "none";
   const saveBtn = document.getElementById("gh-save-btn");
