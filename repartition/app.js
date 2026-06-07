@@ -971,12 +971,25 @@ function renderSemestre(root, sem) {
             </select>
          </td>`;
 
+    /* Volume horaire à financer = total/étudiant pondéré par des coefficients fixes */
+    const financeCM = resCM * 1.5;
+    const financeTD = resTD * 2;
+    const financeTP = resTP * 4;
+
     html += `<tr class="row-responsable ${rowClass}">
-            ${respCell}
+            <td colspan="2"></td>
             <td class="responsable-label" style="text-align:right;">Total / étudiant :</td>
             <td style="text-align:center;"><span class="prev-badge res-total-badge" style="${cmStyle}" data-field="cm" data-val="${resCM}" data-maq-cm="${prev.cm_final || 0}" data-maq-td="${prev.td_final || 0}" data-maq-tp="${prev.tp_final || 0}">${fmtR(resCM)}</span></td>
             <td style="text-align:center;"><span class="prev-badge res-total-badge" style="${tdStyle}" data-field="td" data-val="${resTD}" data-maq-cm="${prev.cm_final || 0}" data-maq-td="${prev.td_final || 0}" data-maq-tp="${prev.tp_final || 0}">${fmtR(resTD)}</span></td>
             <td style="text-align:center;"><span class="prev-badge res-total-badge" style="${tpStyle}" data-field="tp" data-val="${resTP}" data-maq-cm="${prev.cm_final || 0}" data-maq-td="${prev.td_final || 0}" data-maq-tp="${prev.tp_final || 0}">${fmtR(resTP)}</span></td>
+            <td></td>
+        </tr>
+        <tr class="row-responsable ${rowClass}">
+            ${respCell}
+            <td class="responsable-label" style="text-align:right;">Volume horaire à financer :</td>
+            <td style="text-align:center;"><span class="prev-badge">${fmtR(financeCM)}</span></td>
+            <td style="text-align:center;"><span class="prev-badge">${fmtR(financeTD)}</span></td>
+            <td style="text-align:center;"><span class="prev-badge">${fmtR(financeTP)}</span></td>
             <td></td>
         </tr>`;
   });
