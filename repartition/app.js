@@ -3172,6 +3172,43 @@ window.filterAllSouhaitsRecap = function (sem) {
   });
 };
 
+/* ── Helpers de style pour xlsx-js-style ────────────────────────────────── */
+function _xlsxCell(value, style) {
+  return { v: value, t: typeof value === "number" ? "n" : "s", s: style };
+}
+
+function _xlsxBuildSheet(headers, dataRows, colWidths) {
+  const S_HEADER = {
+    font:      { name: "Arial", bold: true, sz: 11, color: { rgb: "FFFFFF" } },
+    fill:      { patternType: "solid", fgColor: { rgb: "1E3A5F" } },
+    alignment: { horizontal: "center", vertical: "center", wrapText: true },
+    border: {
+      bottom: { style: "thin", color: { rgb: "AAAAAA" } },
+    },
+  };
+  const S_EVEN = {
+    font:      { name: "Arial", sz: 10 },
+    fill:      { patternType: "solid", fgColor: { rgb: "F0F4FB" } },
+    alignment: { vertical: "top", wrapText: true },
+  };
+  const S_ODD = {
+    font:      { name: "Arial", sz: 10 },
+    fill:      { patternType: "solid", fgColor: { rgb: "FFFFFF" } },
+    alignment: { vertical: "top", wrapText: true },
+  };
+
+  const aoa = [
+    headers.map((h) => _xlsxCell(h, S_HEADER)),
+    ...dataRows.map((row, i) =>
+      row.map((v) => _xlsxCell(v, i % 2 === 0 ? S_EVEN : S_ODD))
+    ),
+  ];
+  const ws = XLSX.utils.aoa_to_sheet(aoa, { cellStyles: true });
+  ws["!cols"]   = colWidths;
+  ws["!freeze"] = { xSplit: 0, ySplit: 1 };
+  return ws;
+}
+
 window.exportAllSouhaitsXLSX = async function () {
   if (typeof XLSX === "undefined") {
     alert("Bibliothèque XLSX non chargée.");
@@ -3205,18 +3242,18 @@ window.exportAllSouhaitsXLSX = async function () {
     return;
   }
 
-  const wb = XLSX.utils.book_new();
-  const header = ["Code / Intitulé", "Type", "Enseignants souhaitant"];
+  const COLS    = [{ wch: 58 }, { wch: 12 }, { wch: 50 }];
+  const HEADERS = ["Code / Intitulé", "Type", "Enseignants souhaitant"];
+  const wb      = XLSX.utils.book_new();
 
   semsToExport.forEach((sem) => {
     const saeList = APP_DATA.sae?.sae?.[sem] || [];
-    const rows = [header];
+    const rows = [];
     Object.entries(pivot[sem]).forEach(([code, noms]) => {
       const type = saeList.find((s) => s.code === code) ? "SAÉ" : "Ressource";
       rows.push([code, type, noms.join(", ")]);
     });
-    const ws = XLSX.utils.aoa_to_sheet(rows);
-    ws["!cols"] = [{ wch: 58 }, { wch: 12 }, { wch: 50 }];
+    const ws = _xlsxBuildSheet(HEADERS, rows, COLS);
     XLSX.utils.book_append_sheet(wb, ws, sem.substring(0, 31));
   });
 
