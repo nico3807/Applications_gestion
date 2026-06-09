@@ -412,6 +412,90 @@ window.AUTH = {
     btn.textContent = "Valider";
   },
 
+  _showChangePwdModal() {
+    if (document.getElementById("chpwd-modal")) return;
+    const modal = document.createElement("div");
+    modal.id = "chpwd-modal";
+    modal.style.cssText = "position:fixed;inset:0;background:rgba(0,0,0,.45);z-index:2000;display:flex;align-items:center;justify-content:center;";
+    modal.innerHTML = `
+      <div style="background:#fff;border-radius:10px;width:min(380px,94vw);
+        box-shadow:0 8px 32px rgba(0,0,0,.22);overflow:hidden;">
+        <div style="background:#1e3a5f;padding:14px 18px;display:flex;justify-content:space-between;align-items:center;">
+          <span style="color:#fff;font-size:15px;font-weight:700;">Changer mon mot de passe</span>
+          <button onclick="document.getElementById('chpwd-modal').remove()"
+            style="background:none;border:none;color:#fff;font-size:18px;cursor:pointer;line-height:1;">✕</button>
+        </div>
+        <div style="padding:20px 20px 16px;">
+          <input id="chpwd-m-current" type="password" placeholder="Mot de passe actuel"
+            class="auth-input" autocomplete="current-password" style="margin-bottom:.6rem;">
+          <input id="chpwd-m-new"     type="password" placeholder="Nouveau mot de passe"
+            class="auth-input" autocomplete="new-password" style="margin-bottom:.6rem;">
+          <input id="chpwd-m-confirm" type="password" placeholder="Confirmer le nouveau mot de passe"
+            class="auth-input" autocomplete="new-password">
+          <p id="chpwd-m-err" style="color:#dc2626;font-size:12px;margin:.6rem 0 0;display:none;"></p>
+          <p id="chpwd-m-ok"  style="color:#16a34a;font-size:12px;margin:.6rem 0 0;display:none;"></p>
+          <div style="display:flex;gap:8px;justify-content:flex-end;margin-top:14px;">
+            <button onclick="document.getElementById('chpwd-modal').remove()"
+              style="background:none;border:1.5px solid #d1d5db;border-radius:6px;
+                padding:6px 14px;cursor:pointer;font-size:13px;color:#374151;">Annuler</button>
+            <button id="chpwd-m-btn" onclick="AUTH._doChangePwdModal()"
+              class="auth-btn" style="padding:6px 18px;width:auto;margin:0;">Valider</button>
+          </div>
+        </div>
+      </div>`;
+    modal.addEventListener("click", e => { if (e.target === modal) modal.remove(); });
+    document.body.appendChild(modal);
+    document.getElementById("chpwd-m-current").focus();
+  },
+
+  async _doChangePwdModal() {
+    const current = document.getElementById("chpwd-m-current").value;
+    const newPwd  = document.getElementById("chpwd-m-new").value;
+    const confirm = document.getElementById("chpwd-m-confirm").value;
+    const btn     = document.getElementById("chpwd-m-btn");
+    const errEl   = document.getElementById("chpwd-m-err");
+    const okEl    = document.getElementById("chpwd-m-ok");
+    errEl.style.display = okEl.style.display = "none";
+
+    if (!current || !newPwd || !confirm) {
+      errEl.textContent   = "Tous les champs sont obligatoires.";
+      errEl.style.display = "block"; return;
+    }
+    if (newPwd.length < 6) {
+      errEl.textContent   = "Le nouveau mot de passe doit contenir au moins 6 caractères.";
+      errEl.style.display = "block"; return;
+    }
+    if (newPwd !== confirm) {
+      errEl.textContent   = "Les nouveaux mots de passe ne correspondent pas.";
+      errEl.style.display = "block"; return;
+    }
+
+    btn.disabled = true; btn.textContent = "…";
+    try {
+      const currentH = await _sha256(current);
+      const newH     = await _sha256(newPwd);
+      const resp = await fetch("/api/change-password.php", {
+        method:      "POST",
+        headers:     { "Content-Type": "application/json" },
+        credentials: "include",
+        body:        JSON.stringify({ login: _sess().login, currentH, newH }),
+      });
+      const data = await resp.json().catch(() => ({}));
+      if (resp.ok && data.success) {
+        okEl.textContent   = "Mot de passe modifié avec succès.";
+        okEl.style.display = "block";
+        setTimeout(() => document.getElementById("chpwd-modal")?.remove(), 1800);
+      } else {
+        errEl.textContent   = data.error || "Mot de passe actuel incorrect.";
+        errEl.style.display = "block";
+      }
+    } catch (e) {
+      errEl.textContent   = "Erreur réseau (" + e.message + ").";
+      errEl.style.display = "block";
+    }
+    btn.disabled = false; btn.textContent = "Valider";
+  },
+
   injectBadge() {
     const s = _sess();
     if (!s || document.getElementById("auth-badge")) return;
@@ -420,6 +504,7 @@ window.AUTH = {
     badge.innerHTML = `
       <span class="auth-badge-user">${s.login}</span>
       <span class="auth-badge-role">${AUTH.canWrite() ? "Lecture/Écriture" : "Lecture seule"}</span>
+      <button class="auth-badge-logout" onclick="AUTH._showChangePwdModal()" title="Changer mon mot de passe">🔑</button>
       <button class="auth-badge-logout" onclick="AUTH.logout()">Déconnexion</button>`;
     const hdr = document.querySelector(".header-inner");
     if (hdr) hdr.appendChild(badge);
