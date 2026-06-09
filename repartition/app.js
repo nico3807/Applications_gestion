@@ -2684,6 +2684,7 @@ const _LOGIN_TO_NOM = {
 };
 
 let _souhaitsFilter = "S1";
+let _allSouhaitsFilter = "Tout";
 
 function _souhaitNom() {
   return _LOGIN_TO_NOM[AUTH.user()] || AUTH.user();
@@ -3114,6 +3115,7 @@ window.showAllSouhaitsRecap = async function () {
     .join("");
 
   const nbEnseig = logins.length;
+  _allSouhaitsFilter = "Tout";
   const existing = document.getElementById("all-souhaits-modal");
   if (existing) existing.remove();
 
@@ -3159,6 +3161,7 @@ window.showAllSouhaitsRecap = async function () {
 };
 
 window.filterAllSouhaitsRecap = function (sem) {
+  _allSouhaitsFilter = sem;
   document.querySelectorAll("#all-souhaits-modal [data-filter]").forEach(btn => {
     const active = btn.dataset.filter === sem;
     btn.style.background = active ? "#1e3a5f" : "#fff";
@@ -3181,9 +3184,7 @@ window.exportAllSouhaitsXLSX = async function () {
   }
 
   const pivot = {};
-  SEMESTRES.forEach((sem) => {
-    pivot[sem] = {};
-  });
+  SEMESTRES.forEach((sem) => { pivot[sem] = {}; });
   Object.keys(all).forEach((login) => {
     const souhaits = all[login].souhaits || {};
     const nom = all[login].nom || login;
@@ -3195,22 +3196,34 @@ window.exportAllSouhaitsXLSX = async function () {
     });
   });
 
-  const rows = [
-    ["Semestre", "Code / Intitulé", "Type", "Enseignants souhaitant"],
-  ];
-  SEMESTRES.forEach((sem) => {
+  const semsToExport = _allSouhaitsFilter === "Tout"
+    ? SEMESTRES.filter((s) => Object.keys(pivot[s]).length > 0)
+    : [_allSouhaitsFilter].filter((s) => Object.keys(pivot[s]).length > 0);
+
+  if (!semsToExport.length) {
+    showToast("Aucun souhait pour ce semestre.");
+    return;
+  }
+
+  const wb = XLSX.utils.book_new();
+  const header = ["Code / Intitulé", "Type", "Enseignants souhaitant"];
+
+  semsToExport.forEach((sem) => {
     const saeList = APP_DATA.sae?.sae?.[sem] || [];
+    const rows = [header];
     Object.entries(pivot[sem]).forEach(([code, noms]) => {
       const type = saeList.find((s) => s.code === code) ? "SAÉ" : "Ressource";
-      rows.push([sem, code, type, noms.join(", ")]);
+      rows.push([code, type, noms.join(", ")]);
     });
+    const ws = XLSX.utils.aoa_to_sheet(rows);
+    ws["!cols"] = [{ wch: 58 }, { wch: 12 }, { wch: 50 }];
+    XLSX.utils.book_append_sheet(wb, ws, sem.substring(0, 31));
   });
 
-  const ws = XLSX.utils.aoa_to_sheet(rows);
-  ws["!cols"] = [{ wch: 12 }, { wch: 58 }, { wch: 12 }, { wch: 50 }];
-  const wb = XLSX.utils.book_new();
-  XLSX.utils.book_append_sheet(wb, ws, "Tous les souhaits");
-  XLSX.writeFile(wb, `souhaits_tous_enseignants.xlsx`);
+  const filename = _allSouhaitsFilter === "Tout"
+    ? "souhaits_tous_enseignants.xlsx"
+    : `souhaits_${_allSouhaitsFilter.replace(/\s+/g, "_")}.xlsx`;
+  XLSX.writeFile(wb, filename);
 };
 
 document.addEventListener("DOMContentLoaded", async () => {
