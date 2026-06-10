@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Script one-shot : crée (ou met à jour) les comptes MMI1, MMI2, MMI3.
  * À exécuter UNE SEULE FOIS depuis le serveur, puis supprimer.
@@ -8,9 +9,9 @@
  */
 
 $MMI_USERS = [
-    ['login' => 'mmi1', 'password' => 'mmi1'],
-    ['login' => 'mmi2', 'password' => 'mmi2'],
-    ['login' => 'mmi3', 'password' => 'mmi3'],
+    ['login' => 'mmi1', 'MMI12026@iutb' => 'mmi1'],
+    ['login' => 'mmi2', 'MMI2cd2026@iutb' => 'mmi2'],
+    ['login' => 'mmi3', 'MMI3dc2026@iutb' => 'mmi3'],
 ];
 
 $usersFile = __DIR__ . '/data/users.json';
@@ -24,7 +25,10 @@ foreach ($MMI_USERS as $def) {
 
     $idx = null;
     foreach ($users as $i => $u) {
-        if ($u['login'] === $login) { $idx = $i; break; }
+        if ($u['login'] === $login) {
+            $idx = $i;
+            break;
+        }
     }
 
     $entry = [
@@ -33,7 +37,7 @@ foreach ($MMI_USERS as $def) {
         'rw'            => false,
         'rwApps'        => [],
         'denyApps'      => ['repartition', 'planning-web'],
-        'maquetteGroups'=> [],
+        'maquetteGroups' => [],
         'fixedPassword' => true,
     ];
 
