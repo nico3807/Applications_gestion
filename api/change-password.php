@@ -38,6 +38,12 @@ if ($user === null || !password_verify($body['currentH'], $user['h'])) {
     exit;
 }
 
+if (!empty($user['fixedPassword'])) {
+    http_response_code(403);
+    echo json_encode(['success' => false, 'error' => 'Le mot de passe de ce compte ne peut pas être modifié.']);
+    exit;
+}
+
 $users[$idx]['h'] = password_hash($body['newH'], PASSWORD_DEFAULT);
 
 if (file_put_contents($usersFile, json_encode($users, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE), LOCK_EX) === false) {

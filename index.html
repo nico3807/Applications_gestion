@@ -454,11 +454,13 @@
           </tr></thead><tbody>
           ${keys.map((login, i) => {
             const u  = users[login];
-            const dr = u.rw ? "L/É complète" : u.denyApps?.includes("repartition") ? "Lecture seule + ✗ Répartition" : u.rwApps?.length ? "R/W : " + u.rwApps.map(a => _APP_LABELS[a]||a).join(", ") : "Lecture seule";
+            const denied = u.denyApps?.length ? " (✗ " + u.denyApps.map(a => _APP_LABELS[a]||a).join(", ") + ")" : "";
+            const dr = u.rw ? "L/É complète" : u.rwApps?.length ? "R/W : " + u.rwApps.map(a => _APP_LABELS[a]||a).join(", ") : "Lecture seule" + denied;
+            const fpBadge = u.fixedPassword ? ' <span style="font-size:10px;background:#fef3c7;color:#92400e;border:1px solid #fcd34d;border-radius:4px;padding:1px 5px;">🔒 mdp fixé</span>' : "";
             const bg = i%2 ? "#f8fafc" : "#fff";
             const le = login.replace(/'/g,"\\'");
             return `<tr style="background:${bg}">
-              <td style="padding:7px 10px;font-weight:500;">${login}</td>
+              <td style="padding:7px 10px;font-weight:500;">${login}${fpBadge}</td>
               <td style="padding:7px 10px;color:#374151;">${dr}</td>
               <td style="padding:7px 10px;text-align:right;">
                 <div style="display:flex;gap:6px;justify-content:flex-end;">
