@@ -3068,6 +3068,12 @@ window.showAllSouhaitsRecap = async function () {
       const saeList = APP_DATA.sae?.sae?.[sem] || [];
       let rowIdx = 0;
       const rows = Object.entries(pivot[sem])
+        .sort(([codeA], [codeB]) => {
+          const oA = _codeTypeOrder(codeA, saeList);
+          const oB = _codeTypeOrder(codeB, saeList);
+          if (oA !== oB) return oA - oB;
+          return codeA.localeCompare(codeB, "fr");
+        })
         .map(([code, noms]) => {
           const saeEntry = saeList.find((s) => s.code === code);
           let label;
@@ -3172,6 +3178,14 @@ window.filterAllSouhaitsRecap = function (sem) {
   });
 };
 
+/* ── Ordre de tri pour les codes souhaits ────────────────────────────────── */
+function _codeTypeOrder(code, saeList) {
+  const l = code.toLowerCase();
+  if (l.includes("hackathon") || l.includes("marathon")) return 2;
+  if (saeList.find((s) => s.code === code)) return 1;
+  return 0;
+}
+
 /* ── Helpers de style pour xlsx-js-style ────────────────────────────────── */
 function _xlsxCell(value, style) {
   return { v: value, t: typeof value === "number" ? "n" : "s", s: style };
@@ -3242,18 +3256,58 @@ window.exportAllSouhaitsXLSX = async function () {
     return;
   }
 
-  const COLS    = [{ wch: 58 }, { wch: 12 }, { wch: 50 }];
-  const HEADERS = ["Code / Intitulé", "Type", "Enseignants souhaitant"];
-  const wb      = XLSX.utils.book_new();
+  const wb = XLSX.utils.book_new();
+
+  const S_HDR = {
+    font:      { name: "Arial", bold: true, sz: 11, color: { rgb: "FFFFFF" } },
+    fill:      { patternType: "solid", fgColor: { rgb: "1E3A5F" } },
+    alignment: { horizontal: "center", vertical: "center", wrapText: true },
+    border:    { bottom: { style: "thin", color: { rgb: "AAAAAA" } } },
+  };
+  const mkS = (even, center = false, sub = false) => ({
+    font: sub
+      ? { name: "Arial", sz: 10, color: { rgb: "4B5563" }, italic: true }
+      : { name: "Arial", sz: 10 },
+    fill: { patternType: "solid", fgColor: { rgb: sub ? (even ? "E8EEFA" : "F5F5F5") : (even ? "F0F4FB" : "FFFFFF") } },
+    alignment: { vertical: "top", wrapText: true, ...(center ? { horizontal: "center" } : {}), ...(sub ? { indent: 1 } : {}) },
+  });
 
   semsToExport.forEach((sem) => {
     const saeList = APP_DATA.sae?.sae?.[sem] || [];
-    const rows = [];
-    Object.entries(pivot[sem]).forEach(([code, noms]) => {
-      const type = saeList.find((s) => s.code === code) ? "SAÉ" : "Ressource";
-      rows.push([code, type, noms.join(", ")]);
+    const sortedEntries = Object.entries(pivot[sem]).sort(([cA], [cB]) => {
+      const oA = _codeTypeOrder(cA, saeList);
+      const oB = _codeTypeOrder(cB, saeList);
+      if (oA !== oB) return oA - oB;
+      return cA.localeCompare(cB, "fr");
     });
-    const ws = _xlsxBuildSheet(HEADERS, rows, COLS);
+
+    const HEADERS = ["Code / Intitulé", "Type", "Enseignant"];
+    const aoa = [HEADERS.map((h) => _xlsxCell(h, S_HDR))];
+    let grp = 0;
+    sortedEntries.forEach(([code, noms]) => {
+      const type = saeList.find((s) => s.code === code) ? "SAÉ" : "Ressource";
+      const even = grp % 2 === 0;
+      noms.forEach((nom, i) => {
+        if (i === 0) {
+          aoa.push([
+            _xlsxCell(code, mkS(even)),
+            _xlsxCell(type, mkS(even, true)),
+            _xlsxCell(nom,  mkS(even)),
+          ]);
+        } else {
+          aoa.push([
+            _xlsxCell("", mkS(even)),
+            _xlsxCell("", mkS(even)),
+            _xlsxCell(nom, mkS(even, false, true)),
+          ]);
+        }
+      });
+      grp++;
+    });
+
+    const ws = XLSX.utils.aoa_to_sheet(aoa, { cellStyles: true });
+    ws["!cols"]   = [{ wch: 52 }, { wch: 12 }, { wch: 36 }];
+    ws["!freeze"] = { xSplit: 0, ySplit: 1 };
     XLSX.utils.book_append_sheet(wb, ws, sem.substring(0, 31));
   });
 
