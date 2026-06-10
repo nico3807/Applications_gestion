@@ -9,9 +9,9 @@
  */
 
 $MMI_USERS = [
-    ['login' => 'mmi1', 'password' => 'MMI12026@iutb'],
-    ['login' => 'mmi2', 'password' => 'MMI2cd2026@iutb'],
-    ['login' => 'mmi3', 'password' => 'MMI3dc2026@iutb'],
+    ['login' => 'mmi1', 'password' => 'MMI12026@iutb',   'denyApps' => ['repartition', 'planning-web', 'souhaits', 'soutenances_stages']],
+    ['login' => 'mmi2', 'password' => 'MMI2cd2026@iutb', 'denyApps' => ['repartition', 'planning-web', 'souhaits']],
+    ['login' => 'mmi3', 'password' => 'MMI3dc2026@iutb', 'denyApps' => ['repartition', 'planning-web', 'souhaits']],
 ];
 
 $usersFile = __DIR__ . '/data/users.json';
@@ -36,7 +36,7 @@ foreach ($MMI_USERS as $def) {
         'h'             => $h,
         'rw'            => false,
         'rwApps'        => [],
-        'denyApps'      => ['repartition', 'planning-web', 'souhaits'],
+        'denyApps'      => $def['denyApps'],
         'maquetteGroups' => [],
         'fixedPassword' => true,
     ];

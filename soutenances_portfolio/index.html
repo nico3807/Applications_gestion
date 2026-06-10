@@ -60,31 +60,31 @@
 
       <div class="index-grid">
         <div class="index-row single">
-          <a href="mmi1_pf.html" class="icard">
+          <a href="mmi1_pf.html" class="icard" data-promo="mmi1">
             <h2>MMI 1</h2>
             <div class="icard-sub" data-dates="mmi1_date"></div>
             <div class="icard-arrow">Voir les jurys →</div>
           </a>
         </div>
         <div class="index-row">
-          <a href="mmi2_init_pf.html" class="icard">
+          <a href="mmi2_init_pf.html" class="icard" data-promo="mmi2">
             <h2>MMI 2 — Initiaux</h2>
             <div class="icard-sub" data-dates="mmi2_init_date"></div>
             <div class="icard-arrow">Voir les jurys →</div>
           </a>
-          <a href="mmi2_alt_pf.html" class="icard">
+          <a href="mmi2_alt_pf.html" class="icard" data-promo="mmi2">
             <h2>MMI 2 — Alternants</h2>
             <div class="icard-sub" data-dates="mmi2_alt_date"></div>
             <div class="icard-arrow">Voir les jurys →</div>
           </a>
         </div>
         <div class="index-row">
-          <a href="mmi3_init_pf.html" class="icard">
+          <a href="mmi3_init_pf.html" class="icard" data-promo="mmi3">
             <h2>MMI 3 — Initiaux</h2>
             <div class="icard-sub" data-dates="mmi3_init_date"></div>
             <div class="icard-arrow">Voir les jurys →</div>
           </a>
-          <a href="mmi3_alt_pf.html" class="icard">
+          <a href="mmi3_alt_pf.html" class="icard" data-promo="mmi3">
             <h2>MMI 3 — Alternants</h2>
             <div class="icard-sub" data-dates="mmi3_alt_date"></div>
             <div class="icard-arrow">Voir les jurys →</div>
@@ -101,6 +101,12 @@
       else {
         AUTH.injectBadge();
         if (!AUTH.canWrite()) document.body.classList.add('auth-readonly');
+        const _u = AUTH.user();
+        if (['mmi1','mmi2','mmi3'].includes(_u)) {
+          document.querySelectorAll('.icard[data-promo]').forEach(c => {
+            if (c.dataset.promo !== _u) c.style.display = 'none';
+          });
+        }
       }
     </script>
     <script src="app_pf.js"></script>

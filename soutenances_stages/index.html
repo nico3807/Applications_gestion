@@ -60,24 +60,24 @@
 
       <div class="index-grid">
         <div class="index-row">
-          <a href="mmi2_init_stages.html" class="icard">
+          <a href="mmi2_init_stages.html" class="icard" data-promo="mmi2">
             <h2>MMI 2 — Initiaux</h2>
             <div class="icard-sub" data-dates="mmi2_init_date"></div>
             <div class="icard-arrow">Voir les jurys →</div>
           </a>
-          <a href="mmi2_alt_stages.html" class="icard">
+          <a href="mmi2_alt_stages.html" class="icard" data-promo="mmi2">
             <h2>MMI 2 — Alternants</h2>
             <div class="icard-sub" data-dates="mmi2_alt_date"></div>
             <div class="icard-arrow">Voir les jurys →</div>
           </a>
         </div>
         <div class="index-row">
-          <a href="mmi3_init_stages.html" class="icard">
+          <a href="mmi3_init_stages.html" class="icard" data-promo="mmi3">
             <h2>MMI 3 — Initiaux</h2>
             <div class="icard-sub" data-dates="mmi3_init_date"></div>
             <div class="icard-arrow">Voir les jurys →</div>
           </a>
-          <a href="mmi3_alt_stages.html" class="icard">
+          <a href="mmi3_alt_stages.html" class="icard" data-promo="mmi3">
             <h2>MMI 3 — Alternants</h2>
             <div class="icard-sub" data-dates="mmi3_alt_date"></div>
             <div class="icard-arrow">Voir les jurys →</div>
@@ -90,10 +90,16 @@
 
     <script src="../auth.js"></script>
     <script>
-      if (!AUTH.isAuth()) { location.href = '../index.html'; }
+      if (!AUTH.isAuth() || !AUTH.canAccess('soutenances_stages')) { location.href = '../index.html'; }
       else {
         AUTH.injectBadge();
         if (!AUTH.canWrite()) document.body.classList.add('auth-readonly');
+        const _u = AUTH.user();
+        if (['mmi2','mmi3'].includes(_u)) {
+          document.querySelectorAll('.icard[data-promo]').forEach(c => {
+            if (c.dataset.promo !== _u) c.style.display = 'none';
+          });
+        }
       }
     </script>
     <script src="app_stages.js"></script>
