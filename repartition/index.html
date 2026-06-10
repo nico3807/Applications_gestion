@@ -224,7 +224,7 @@
     <script src="../auth.js"></script>
     <script>
       if (!AUTH.isAuth()) { location.href = "../index.html"; }
-      if (!AUTH.canAccess('repartition') && location.hash !== "#souhaits") { location.href = "../index.html"; }
+      if (!AUTH.canAccess('repartition') && (location.hash !== "#souhaits" || !AUTH.canAccess('souhaits'))) { location.href = "../index.html"; }
     </script>
     <script src="app.js"></script>
   </body>

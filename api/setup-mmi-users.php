@@ -36,7 +36,7 @@ foreach ($MMI_USERS as $def) {
         'h'             => $h,
         'rw'            => false,
         'rwApps'        => [],
-        'denyApps'      => ['repartition', 'planning-web'],
+        'denyApps'      => ['repartition', 'planning-web', 'souhaits'],
         'maquetteGroups' => [],
         'fixedPassword' => true,
     ];
