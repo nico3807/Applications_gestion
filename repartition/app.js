@@ -2994,25 +2994,30 @@ window.exportSouhaitsXLSX = function () {
     return;
   }
 
-  const rows = [["Semestre", "Code / Intitulé", "Type"]];
+  const rows = [];
   semsAvec.forEach((sem) => {
-    const codes = souhaits[sem] || [];
     const saeList = APP_DATA.sae?.sae?.[sem] || [];
-    codes.forEach((code) => {
-      const saeEntry = saeList.find((s) => s.code === code);
-      const type = saeEntry ? "SAÉ" : "Ressource";
-      rows.push([sem, code, type]);
-    });
+    [...(souhaits[sem] || [])]
+      .sort((a, b) => {
+        const oA = _codeTypeOrder(a, saeList);
+        const oB = _codeTypeOrder(b, saeList);
+        if (oA !== oB) return oA - oB;
+        return a.localeCompare(b, "fr");
+      })
+      .forEach((code) => {
+        const type = saeList.find((s) => s.code === code) ? "SAÉ" : "Ressource";
+        rows.push([sem, code, type]);
+      });
   });
 
-  const ws = XLSX.utils.aoa_to_sheet(rows);
-  ws["!cols"] = [{ wch: 12 }, { wch: 60 }, { wch: 12 }];
   const wb = XLSX.utils.book_new();
-  XLSX.utils.book_append_sheet(wb, ws, "Souhaits");
-  XLSX.writeFile(
-    wb,
-    `souhaits_${(data.login || AUTH.user()).replace(/\./g, "_")}.xlsx`,
+  const ws = _xlsxBuildSheet(
+    ["Semestre", "Code / Intitulé", "Type"],
+    rows,
+    [{ wch: 14 }, { wch: 58 }, { wch: 12 }],
   );
+  XLSX.utils.book_append_sheet(wb, ws, "Souhaits");
+  XLSX.writeFile(wb, `souhaits_${(data.login || AUTH.user()).replace(/\./g, "_")}.xlsx`);
 };
 
 /* ── Récap consolidé (R/W uniquement) ──────────────────────────────────── */
