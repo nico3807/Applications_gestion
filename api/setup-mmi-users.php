@@ -9,9 +9,9 @@
  */
 
 $MMI_USERS = [
-    ['login' => 'mmi1', 'MMI12026@iutb' => 'mmi1'],
-    ['login' => 'mmi2', 'MMI2cd2026@iutb' => 'mmi2'],
-    ['login' => 'mmi3', 'MMI3dc2026@iutb' => 'mmi3'],
+    ['login' => 'mmi1', 'password' => 'MMI12026@iutb'],
+    ['login' => 'mmi2', 'password' => 'MMI2cd2026@iutb'],
+    ['login' => 'mmi3', 'password' => 'MMI3dc2026@iutb'],
 ];
 
 $usersFile = __DIR__ . '/data/users.json';
