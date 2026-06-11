@@ -79,5 +79,23 @@
     "description": "S4 crea / SAÉ 4.Crea.01 | Créer pour une campagne de communication visuelle / adapt_locale",
     "prev": "27",
     "next": "48"
+  },
+  {
+    "date": "11/06/2026",
+    "heure": "19:50:00",
+    "utilisateur": "nicolas.maurin",
+    "type": "Maquette",
+    "description": "S4 dev / SAÉ 4.DWeb-DI.01 | Développer pour le Web / td_final",
+    "prev": "27",
+    "next": "48"
+  },
+  {
+    "date": "11/06/2026",
+    "heure": "19:50:03",
+    "utilisateur": "nicolas.maurin",
+    "type": "Maquette PN",
+    "description": "S4 dev / SAÉ 4.DWeb-DI.01 | Développer pour le Web / adapt_locale",
+    "prev": "27",
+    "next": "48"
   }
 ]
