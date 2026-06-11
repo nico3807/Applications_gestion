@@ -546,8 +546,9 @@ window.exportXLSX = function () {
         "TP final",
         "Vol horaire PN",
         "Dont TP PN",
-        "Adapt locale",
-        "Dont TP AL",
+        "Adapt locale CM",
+        "Adapt locale TD",
+        "Adapt locale TP",
       ],
     ];
     sorted.forEach((res) => {
@@ -560,8 +561,9 @@ window.exportXLSX = function () {
         parseFloat(m.tp_final) || 0,
         v.vol_hn || 0,
         v.dont_tp_hn || 0,
-        parseFloat(v.adapt_locale) || 0,
-        parseFloat(v.dont_tp_al) || 0,
+        parseFloat(v.Adapt_local_CM) || 0,
+        parseFloat(v.Adapt_local_TD) || 0,
+        parseFloat(v.Adapt_local_TP) || 0,
       ]);
     });
     filename = `maquette_${safeSem}.xlsx`;
@@ -1104,7 +1106,7 @@ function renderMaquetteSemestre(root, sem) {
         <tr>
             <th rowspan="2" class="col-intitule">Ressource</th>
             <th colspan="3" class="group-header editable-header">Volumes Maquette</th>
-            <th colspan="4" class="group-header pn-header">PN + Adaptation locale</th>
+            <th colspan="5" class="group-header pn-header">PN + Adaptation locale</th>
             <th colspan="3" class="group-header reel-header">Réel planifié</th>
             <th rowspan="2" class="pct-header">% réalisation<br>/ PN</th>
             <th rowspan="2" style="width:38px;"></th>
@@ -1115,8 +1117,9 @@ function renderMaquetteSemestre(root, sem) {
             <th class="editable-col">TP final</th>
             <th class="pn-readonly-col">Vol horaire PN<br>(CM+TD+TP)</th>
             <th class="pn-readonly-col">Dont TP</th>
-            <th class="pn-editable-col">Adapt locale</th>
-            <th class="pn-editable-col">Dont TP</th>
+            <th class="pn-editable-col">AL CM</th>
+            <th class="pn-editable-col">AL TD</th>
+            <th class="pn-editable-col">AL TP</th>
             <th class="reel-col">CM</th>
             <th class="reel-col">TD</th>
             <th class="reel-col">TP</th>
@@ -1135,8 +1138,9 @@ function renderMaquetteSemestre(root, sem) {
     totTPf = 0;
   let totVolHN = 0,
     totDontTpHN = 0,
-    totAL = 0,
-    totDontTpAL = 0;
+    totAL_CM = 0,
+    totAL_TD = 0,
+    totAL_TP = 0;
   let totRCM = 0,
     totRTD = 0,
     totRTP = 0;
@@ -1146,8 +1150,9 @@ function renderMaquetteSemestre(root, sem) {
     const v = vhn[res] || {
       vol_hn: 0,
       dont_tp_hn: 0,
-      adapt_locale: 0,
-      dont_tp_al: 0,
+      Adapt_local_CM: 0,
+      Adapt_local_TD: 0,
+      Adapt_local_TP: 0,
     };
     const rowClass = i % 2 === 0 ? "group-even" : "group-odd";
     const resEsc = res.replace(/'/g, "\\'");
@@ -1178,8 +1183,9 @@ function renderMaquetteSemestre(root, sem) {
     totTPf += m.tp_final || 0;
     totVolHN += v.vol_hn || 0;
     totDontTpHN += v.dont_tp_hn || 0;
-    totAL += v.adapt_locale || 0;
-    totDontTpAL += v.dont_tp_al || 0;
+    totAL_CM += v.Adapt_local_CM || 0;
+    totAL_TD += v.Adapt_local_TD || 0;
+    totAL_TP += v.Adapt_local_TP || 0;
     totRCM += rCM;
     totRTD += rTD;
     totRTP += rTP;
@@ -1196,8 +1202,9 @@ function renderMaquetteSemestre(root, sem) {
             <td>${numCell(m.tp_final, "input-editable", `updateMaq('${sem}','${resEsc}','tp_final',this.value)`)}</td>
             <td class="pn-readonly-val">${v.vol_hn || "-"}</td>
             <td class="pn-readonly-val">${v.dont_tp_hn || "-"}</td>
-            <td>${numCell(v.adapt_locale, "input-pn-editable", `updateVolHN('${sem}','${resEsc}','adapt_locale',this.value)`, "0.5")}</td>
-            <td>${numCell(v.dont_tp_al, "input-pn-editable", `updateVolHN('${sem}','${resEsc}','dont_tp_al',this.value)`, "0.5")}</td>
+            <td>${numCell(v.Adapt_local_CM, "input-pn-editable", `updateVolHN('${sem}','${resEsc}','Adapt_local_CM',this.value)`, "0.5")}</td>
+            <td>${numCell(v.Adapt_local_TD, "input-pn-editable", `updateVolHN('${sem}','${resEsc}','Adapt_local_TD',this.value)`, "0.5")}</td>
+            <td>${numCell(v.Adapt_local_TP, "input-pn-editable", `updateVolHN('${sem}','${resEsc}','Adapt_local_TP',this.value)`, "0.5")}</td>
             <td class="reel-val">${fmtR(rCM)}</td>
             <td class="reel-val">${fmtR(rTD)}</td>
             <td class="reel-val">${fmtR(rTP)}</td>
@@ -1219,8 +1226,9 @@ function renderMaquetteSemestre(root, sem) {
       <td><strong>${fmtR(totTPf)}</strong></td>
       <td><strong>${fmtR(totVolHN) || "-"}</strong></td>
       <td><strong>${fmtR(totDontTpHN) || "-"}</strong></td>
-      <td><strong>${fmtR(totAL)}</strong></td>
-      <td><strong>${fmtR(totDontTpAL)}</strong></td>
+      <td><strong>${fmtR(totAL_CM)}</strong></td>
+      <td><strong>${fmtR(totAL_TD)}</strong></td>
+      <td><strong>${fmtR(totAL_TP)}</strong></td>
       <td><strong>${fmtR(totRCM)}</strong></td>
       <td><strong>${fmtR(totRTD)}</strong></td>
       <td><strong>${fmtR(totRTP)}</strong></td>
@@ -1262,11 +1270,14 @@ window.openAddRessourceModal = function (sem) {
           </div>
 
           <div class="modal-group-header">PN + Adaptation locale <span class="modal-hint">(optionnel)</span></div>
-          <div class="modal-row4">
+          <div class="modal-row3">
             <label class="modal-field-label">Vol horaire PN<input id="add-res-vhn" type="number" class="input-editable" value="0" min="0" step="0.5"></label>
             <label class="modal-field-label">Dont TP PN<input id="add-res-dtp" type="number" class="input-editable" value="0" min="0" step="0.5"></label>
-            <label class="modal-field-label">Adapt locale<input id="add-res-al"  type="number" class="input-editable" value="0" min="0" step="0.5"></label>
-            <label class="modal-field-label">Dont TP AL<input id="add-res-dal" type="number" class="input-editable" value="0" min="0" step="0.5"></label>
+          </div>
+          <div class="modal-row3">
+            <label class="modal-field-label">Adapt locale CM<input id="add-res-al-cm" type="number" class="input-editable" value="0" min="0" step="0.5"></label>
+            <label class="modal-field-label">Adapt locale TD<input id="add-res-al-td" type="number" class="input-editable" value="0" min="0" step="0.5"></label>
+            <label class="modal-field-label">Adapt locale TP<input id="add-res-al-tp" type="number" class="input-editable" value="0" min="0" step="0.5"></label>
           </div>
 
           <p id="add-res-err" class="modal-err" style="display:none;"></p>
@@ -1291,8 +1302,9 @@ window.openAddRessourceModal = function (sem) {
     "add-res-tp",
     "add-res-vhn",
     "add-res-dtp",
-    "add-res-al",
-    "add-res-dal",
+    "add-res-al-cm",
+    "add-res-al-td",
+    "add-res-al-tp",
   ].forEach((id) => (document.getElementById(id).value = "0"));
   document.getElementById("add-res-err").style.display = "none";
   modal.style.display = "flex";
@@ -1342,10 +1354,11 @@ window.confirmAddRessource = function () {
   };
 
   APP_DATA.volume_horaire_national[sem][name] = {
-    vol_hn: parseFloat(document.getElementById("add-res-vhn").value) || 0,
-    dont_tp_hn: parseFloat(document.getElementById("add-res-dtp").value) || 0,
-    adapt_locale: parseFloat(document.getElementById("add-res-al").value) || 0,
-    dont_tp_al: parseFloat(document.getElementById("add-res-dal").value) || 0,
+    vol_hn:        parseFloat(document.getElementById("add-res-vhn").value)   || 0,
+    dont_tp_hn:    parseFloat(document.getElementById("add-res-dtp").value)   || 0,
+    Adapt_local_CM: parseFloat(document.getElementById("add-res-al-cm").value) || 0,
+    Adapt_local_TD: parseFloat(document.getElementById("add-res-al-td").value) || 0,
+    Adapt_local_TP: parseFloat(document.getElementById("add-res-al-tp").value) || 0,
   };
 
   _logMod("Maquette", `Ajout ressource — ${sem}`, "—", name);
@@ -1516,8 +1529,9 @@ window.updateVolHN = function (sem, res, field, value) {
     APP_DATA.volume_horaire_national[sem][res] = {
       vol_hn: 0,
       dont_tp_hn: 0,
-      adapt_locale: 0,
-      dont_tp_al: 0,
+      Adapt_local_CM: 0,
+      Adapt_local_TD: 0,
+      Adapt_local_TP: 0,
     };
   const prev = APP_DATA.volume_horaire_national[sem][res][field] ?? 0;
   const newVal = parseFloat(value) || 0;
