@@ -661,12 +661,12 @@
     },
     "SAÉ 5D.01 | Développer pour le web": {
       "cm_final": 0,
-      "td_final": 60,
+      "td_final": 124.5,
       "tp_final": 0
     },
     "SAÉ 5D.02 | SAE Management": {
       "cm_final": 0,
-      "td_final": 15,
+      "td_final": 0,
       "tp_final": 0
     },
     "PORTFOLIO Portfolio-Parcours Dev Web": {
@@ -676,12 +676,12 @@
     },
     "SAÉ 5D.03 | Concevoir un dispositif interactif": {
       "cm_final": 0,
-      "td_final": 34.5,
+      "td_final": 0,
       "tp_final": 0
     },
     "SAÉ 5D.04 | Integration d'un LLM": {
       "cm_final": 0,
-      "td_final": 15,
+      "td_final": 0,
       "tp_final": 0
     }
   },
