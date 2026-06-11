@@ -2307,9 +2307,10 @@ function renderSae(root) {
   root.innerHTML = `
     <div class="page-header" style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;">
       <h1 style="margin:0;">Responsables SAÉ</h1>
-      <div style="display:flex;gap:8px;align-items:center;">
+      <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap;">
         <button class="btn-print-action" onclick="window.print()">🖨 Imprimer</button>
         <button class="btn-pdf-action" onclick="exportXLSX()">⬇ Exporter XLSX</button>
+        <button class="btn-add-res" onclick="openSaeEditModal()">✏️ Modifier ou supprimer Ressources/SAÉ</button>
         <button class="btn-save" onclick="saveSaeGH()">💾 Enregistrer sur GitHub</button>
       </div>
     </div>
@@ -2347,6 +2348,165 @@ window.updateSaeResponsable = function (sem, code, login) {
   const prev = sae.responsable;
   sae.responsable = login;
   _logMod("SAÉ", `Responsable ${code} (${sem})`, prev || "—", login || "—");
+};
+
+/* ── Modal : Modifier / supprimer SAÉ et Ressources ─────────────────────── */
+window.openSaeEditModal = function () {
+  const saeData = APP_DATA.sae || { semestres: [], sae: {} };
+  const semestres = saeData.semestres || [];
+
+  const existing = document.getElementById("sae-edit-modal");
+  if (existing) existing.remove();
+
+  const modal = document.createElement("div");
+  modal.id = "sae-edit-modal";
+  modal.style.cssText = "position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:1100;display:flex;align-items:center;justify-content:center;";
+
+  const semTabs = semestres
+    .map((s, i) => `<button class="sem-btn${i === 0 ? " active" : ""}" data-sem="${s}"
+        onclick="renderSaeEditList('${s.replace(/'/g,"\\'")}',this)">${s}</button>`)
+    .join("");
+
+  modal.innerHTML = `
+    <div style="background:#fff;border-radius:12px;width:min(960px,96vw);max-height:88vh;
+      display:flex;flex-direction:column;box-shadow:0 8px 32px rgba(0,0,0,.25);">
+      <div style="padding:16px 20px;border-bottom:1px solid #e5e7eb;display:flex;
+        justify-content:space-between;align-items:center;flex-shrink:0;">
+        <h2 style="margin:0;font-size:16px;color:#1e3a5f;">Modifier ou supprimer Ressources / SAÉ</h2>
+        <button onclick="document.getElementById('sae-edit-modal').remove()"
+          style="background:none;border:1.5px solid #d1d5db;border-radius:6px;
+            padding:4px 12px;cursor:pointer;font-size:13px;color:#374151;">✕ Fermer</button>
+      </div>
+      <div style="padding:10px 20px;border-bottom:1px solid #e5e7eb;display:flex;gap:6px;flex-wrap:wrap;flex-shrink:0;">
+        ${semTabs}
+      </div>
+      <div id="sae-edit-body" style="overflow-y:auto;padding:16px 20px;flex:1;"></div>
+      <div style="padding:12px 20px;border-top:1px solid #e5e7eb;display:flex;justify-content:flex-end;flex-shrink:0;">
+        <button class="btn-save" onclick="
+          window._flushSaeEditInputs(document.getElementById('sae-edit-body').dataset.currentSem);
+          saveSaeGH();
+          document.getElementById('sae-edit-modal').remove();">
+          💾 Enregistrer sur GitHub
+        </button>
+      </div>
+    </div>`;
+
+  modal.addEventListener("click", (e) => { if (e.target === modal) modal.remove(); });
+  document.body.appendChild(modal);
+
+  if (semestres.length > 0) {
+    const firstBtn = modal.querySelector(".sem-btn");
+    renderSaeEditList(semestres[0], firstBtn);
+  }
+};
+
+window.renderSaeEditList = function (sem, btn) {
+  const body = document.getElementById("sae-edit-body");
+  if (!body) return;
+
+  /* Flush avant de changer de semestre */
+  const prev = body.dataset.currentSem;
+  if (prev && prev !== sem) window._flushSaeEditInputs(prev);
+
+  /* Mise à jour de l'onglet actif */
+  document.querySelectorAll("#sae-edit-modal .sem-btn").forEach((b) => b.classList.remove("active"));
+  if (btn) btn.classList.add("active");
+  else {
+    const b = document.querySelector(`#sae-edit-modal .sem-btn[data-sem="${sem}"]`);
+    if (b) b.classList.add("active");
+  }
+
+  body.dataset.currentSem = sem;
+  const list = (APP_DATA.sae?.sae?.[sem]) || [];
+
+  const rows = list.map((sae, i) => {
+    const [codeRef, codeName] = sae.code.includes(" | ")
+      ? sae.code.split(" | ", 2)
+      : [sae.code, sae.intitule || ""];
+    const ressTxt = esc((sae.ressources || []).join("\n"));
+    const bg = i % 2 === 0 ? "#f8fafc" : "#fff";
+    return `<tr style="background:${bg};vertical-align:top;">
+      <td style="padding:5px 6px;">
+        <input type="text" class="input-editable" style="width:88px;font-size:12px;"
+          placeholder="SAÉ 1.01" value="${esc(codeRef)}" data-sae-field="codeRef" data-idx="${i}">
+      </td>
+      <td style="padding:5px 6px;">
+        <input type="text" class="input-editable" style="width:100%;font-size:12px;"
+          placeholder="Intitulé" value="${esc(codeName)}" data-sae-field="codeName" data-idx="${i}">
+      </td>
+      <td style="padding:5px 6px;">
+        <input type="text" class="input-editable" style="width:100%;font-size:12px;"
+          placeholder="Compétence" value="${esc(sae.competence || '')}" data-sae-field="competence" data-idx="${i}">
+      </td>
+      <td style="padding:5px 6px;">
+        <textarea class="input-editable" style="width:100%;font-size:11px;height:54px;resize:vertical;"
+          placeholder="Une ressource par ligne" data-sae-field="ressources" data-idx="${i}">${ressTxt}</textarea>
+      </td>
+      <td style="padding:5px 6px;text-align:center;width:36px;">
+        <button class="btn-remove-subrow" title="Supprimer"
+          onclick="deleteSaeEntry('${sem.replace(/'/g,"\\'")}',${i})">🗑</button>
+      </td>
+    </tr>`;
+  }).join("");
+
+  const escSem = sem.replace(/'/g, "\\'");
+  body.innerHTML = `
+    <table style="width:100%;border-collapse:collapse;font-size:13px;">
+      <thead>
+        <tr style="background:#1e3a5f;color:#fff;">
+          <th style="padding:7px 8px;font-size:11px;width:100px;text-align:left;">Code</th>
+          <th style="padding:7px 8px;font-size:11px;text-align:left;">Intitulé</th>
+          <th style="padding:7px 8px;font-size:11px;width:160px;text-align:left;">Compétence</th>
+          <th style="padding:7px 8px;font-size:11px;width:180px;text-align:left;">
+            Ressources nécessaires<br><span style="font-weight:400;opacity:.75;">(une par ligne)</span>
+          </th>
+          <th style="padding:7px 8px;width:36px;"></th>
+        </tr>
+      </thead>
+      <tbody id="sae-edit-rows">${rows}</tbody>
+    </table>
+    <div style="margin-top:10px;">
+      <button class="btn-add-res" onclick="addSaeEntry('${escSem}')">➕ Ajouter une SAÉ / Ressource</button>
+    </div>`;
+};
+
+window._flushSaeEditInputs = function (sem) {
+  if (!sem) return;
+  const list = APP_DATA.sae?.sae?.[sem];
+  if (!list) return;
+  document.querySelectorAll("#sae-edit-rows [data-sae-field='codeRef']").forEach((input) => {
+    const idx = parseInt(input.dataset.idx, 10);
+    if (idx >= list.length) return;
+    const tr = input.closest("tr");
+    const codeRef  = input.value.trim();
+    const codeName = tr.querySelector('[data-sae-field="codeName"]')?.value.trim() || "";
+    const competence = tr.querySelector('[data-sae-field="competence"]')?.value.trim() || "";
+    const ressTxt  = tr.querySelector('[data-sae-field="ressources"]')?.value || "";
+    const ressources = ressTxt.split("\n").map((r) => r.trim()).filter(Boolean);
+    list[idx].code = (codeRef && codeName) ? `${codeRef} | ${codeName}` : (codeRef || codeName);
+    list[idx].intitule = codeName;
+    list[idx].competence = competence;
+    list[idx].ressources = ressources;
+  });
+};
+
+window.deleteSaeEntry = function (sem, idx) {
+  if (!confirm("Supprimer cette entrée ?")) return;
+  window._flushSaeEditInputs(sem);
+  const list = APP_DATA.sae?.sae?.[sem];
+  if (!list) return;
+  _logMod("SAÉ", `Suppression — ${sem}`, list[idx]?.code || idx, "—");
+  list.splice(idx, 1);
+  renderSaeEditList(sem);
+};
+
+window.addSaeEntry = function (sem) {
+  window._flushSaeEditInputs(sem);
+  if (!APP_DATA.sae.sae[sem]) APP_DATA.sae.sae[sem] = [];
+  APP_DATA.sae.sae[sem].push({ code: " | ", intitule: "", competence: "", ressources: [], responsable: "" });
+  renderSaeEditList(sem);
+  const body = document.getElementById("sae-edit-body");
+  if (body) body.scrollTop = body.scrollHeight;
 };
 
 window.saveSaeGH = async function () {
