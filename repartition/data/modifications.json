@@ -151,5 +151,95 @@
     "description": "S5 crea / SAÉ 5.Crea.03 | SAE Conception d'interface / adapt_locale",
     "prev": "15",
     "next": "0"
+  },
+  {
+    "date": "11/06/2026",
+    "heure": "19:50:48",
+    "utilisateur": "nicolas.maurin",
+    "type": "Maquette",
+    "description": "S5 dev / SAÉ 5D.02 | SAE Management / td_final",
+    "prev": "15",
+    "next": "0"
+  },
+  {
+    "date": "11/06/2026",
+    "heure": "19:50:57",
+    "utilisateur": "nicolas.maurin",
+    "type": "Maquette PN",
+    "description": "S5 dev / SAÉ 5D.02 | SAE Management / adapt_locale",
+    "prev": "15",
+    "next": "0"
+  },
+  {
+    "date": "11/06/2026",
+    "heure": "19:52:43",
+    "utilisateur": "nicolas.maurin",
+    "type": "Maquette",
+    "description": "S5 dev / SAÉ 5D.01 | Développer pour le web / td_final",
+    "prev": "60",
+    "next": "124"
+  },
+  {
+    "date": "11/06/2026",
+    "heure": "19:52:44",
+    "utilisateur": "nicolas.maurin",
+    "type": "Maquette",
+    "description": "S5 dev / SAÉ 5D.01 | Développer pour le web / td_final",
+    "prev": "124",
+    "next": "125"
+  },
+  {
+    "date": "11/06/2026",
+    "heure": "19:52:45",
+    "utilisateur": "nicolas.maurin",
+    "type": "Maquette",
+    "description": "S5 dev / SAÉ 5D.01 | Développer pour le web / td_final",
+    "prev": "125",
+    "next": "124"
+  },
+  {
+    "date": "11/06/2026",
+    "heure": "19:52:48",
+    "utilisateur": "nicolas.maurin",
+    "type": "Maquette",
+    "description": "S5 dev / SAÉ 5D.01 | Développer pour le web / td_final",
+    "prev": "124",
+    "next": "124.5"
+  },
+  {
+    "date": "11/06/2026",
+    "heure": "19:52:57",
+    "utilisateur": "nicolas.maurin",
+    "type": "Maquette PN",
+    "description": "S5 dev / SAÉ 5D.01 | Développer pour le web / adapt_locale",
+    "prev": "60",
+    "next": "124.5"
+  },
+  {
+    "date": "11/06/2026",
+    "heure": "19:53:03",
+    "utilisateur": "nicolas.maurin",
+    "type": "Maquette",
+    "description": "S5 dev / SAÉ 5D.03 | Concevoir un dispositif interactif / td_final",
+    "prev": "34.5",
+    "next": "0"
+  },
+  {
+    "date": "11/06/2026",
+    "heure": "19:53:14",
+    "utilisateur": "nicolas.maurin",
+    "type": "Maquette PN",
+    "description": "S5 dev / SAÉ 5D.03 | Concevoir un dispositif interactif / adapt_locale",
+    "prev": "34.5",
+    "next": "0"
+  },
+  {
+    "date": "11/06/2026",
+    "heure": "19:53:24",
+    "utilisateur": "nicolas.maurin",
+    "type": "Maquette",
+    "description": "S5 dev / SAÉ 5D.04 | Integration d'un LLM / td_final",
+    "prev": "15",
+    "next": "0"
   }
 ]
