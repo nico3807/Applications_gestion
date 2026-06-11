@@ -480,18 +480,18 @@
     },
     "SAÉ 4.Crea.01 | Créer pour une campagne de communication visuelle": {
       "cm_final": 0,
-      "td_final": 27,
+      "td_final": 48,
       "tp_final": 0
     },
     "SAÉ 4.Crea.02 | Produire du contenu multimédia": {
       "cm_final": 0,
-      "td_final": 27,
-      "tp_final": 0
+      "td_final": 30,
+      "tp_final": 12
     },
     "SAÉ 4.Crea.03 | SAE langues": {
       "cm_final": 0,
-      "td_final": 3,
-      "tp_final": 12
+      "td_final": 0,
+      "tp_final": 0
     },
     "SAÉ 4.98 | Hackathon": {
       "cm_final": 0,
