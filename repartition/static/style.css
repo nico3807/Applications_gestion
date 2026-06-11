@@ -315,7 +315,7 @@ footer {
 
 /* Colonnes */
 .col-intitule {
-  min-width: 200px;
+  min-width: 300px;
 }
 .col-prev {
   min-width: 130px;
@@ -1462,7 +1462,7 @@ th.pilotage-total-col small {
     padding: 1rem;
   }
   .col-intitule {
-    min-width: 160px;
+    min-width: 200px;
   }
   .col-enseignant {
     min-width: 160px;
