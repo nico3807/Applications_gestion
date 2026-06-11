@@ -16,5 +16,14 @@
     "description": "S1 / SAÉ 1.03 | Produire les éléments d'une communication visuelle / sous-groupe 1 / enseignant",
     "prev": "SURRIBAS Caroline",
     "next": "SELIGHINI Valérie"
+  },
+  {
+    "date": "11/06/2026",
+    "heure": "10:10:55",
+    "utilisateur": "nicolas.maurin",
+    "type": "Enseignants",
+    "description": "Suppression",
+    "prev": "WILLEMS Eric",
+    "next": "—"
   }
 ]
