@@ -345,14 +345,5 @@
     "service_max": 187,
     "is_vac": true,
     "is_cev": false
-  },
-  {
-    "id": "WILLEMS Eric",
-    "nom": "WILLEMS",
-    "prenom": "Eric",
-    "service_du": null,
-    "service_max": 187,
-    "is_vac": true,
-    "is_cev": false
   }
 ]

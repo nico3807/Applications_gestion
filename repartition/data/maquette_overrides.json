@@ -423,7 +423,7 @@
     },
     "SAÉ 4.DWeb-DI.01 | Développer pour le Web": {
       "cm_final": 0,
-      "td_final": 27,
+      "td_final": 48,
       "tp_final": 0
     },
     "SAÉ 4.DWeb-DI.02 | Concevoir un dispositif interactif": {
@@ -480,18 +480,18 @@
     },
     "SAÉ 4.Crea.01 | Créer pour une campagne de communication visuelle": {
       "cm_final": 0,
-      "td_final": 27,
+      "td_final": 48,
       "tp_final": 0
     },
     "SAÉ 4.Crea.02 | Produire du contenu multimédia": {
       "cm_final": 0,
-      "td_final": 27,
-      "tp_final": 0
+      "td_final": 30,
+      "tp_final": 12
     },
     "SAÉ 4.Crea.03 | SAE langues": {
       "cm_final": 0,
-      "td_final": 3,
-      "tp_final": 12
+      "td_final": 0,
+      "tp_final": 0
     },
     "SAÉ 4.98 | Hackathon": {
       "cm_final": 0,
@@ -547,7 +547,7 @@
     },
     "SAÉ 5.Crea.01 | Créer par/pour le numérique": {
       "cm_final": 0,
-      "td_final": 100,
+      "td_final": 130,
       "tp_final": 0
     },
     "PORTFOLIO | Portfolio-Parcours Création Numérique": {
@@ -557,7 +557,7 @@
     },
     "SAÉ 5.Crea.02 | SAE Management": {
       "cm_final": 0,
-      "td_final": 15,
+      "td_final": 0,
       "tp_final": 0
     },
     "SAÉ 5.Crea.03 | SAE Conception d'interface": {
@@ -661,12 +661,12 @@
     },
     "SAÉ 5D.01 | Développer pour le web": {
       "cm_final": 0,
-      "td_final": 60,
+      "td_final": 124.5,
       "tp_final": 0
     },
     "SAÉ 5D.02 | SAE Management": {
       "cm_final": 0,
-      "td_final": 15,
+      "td_final": 0,
       "tp_final": 0
     },
     "PORTFOLIO Portfolio-Parcours Dev Web": {
@@ -676,12 +676,12 @@
     },
     "SAÉ 5D.03 | Concevoir un dispositif interactif": {
       "cm_final": 0,
-      "td_final": 34.5,
+      "td_final": 0,
       "tp_final": 0
     },
     "SAÉ 5D.04 | Integration d'un LLM": {
       "cm_final": 0,
-      "td_final": 15,
+      "td_final": 0,
       "tp_final": 0
     }
   },
