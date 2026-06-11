@@ -241,5 +241,68 @@
     "description": "S5 dev / SAÉ 5D.04 | Integration d'un LLM / td_final",
     "prev": "15",
     "next": "0"
+  },
+  {
+    "date": "11/06/2026",
+    "heure": "22:34:23",
+    "utilisateur": "nicolas.maurin",
+    "type": "SAÉ",
+    "description": "Suppression — S4 crea",
+    "prev": "SAÉ 4.Crea.03 | SAE langues",
+    "next": "—"
+  },
+  {
+    "date": "11/06/2026",
+    "heure": "22:34:34",
+    "utilisateur": "nicolas.maurin",
+    "type": "SAÉ",
+    "description": "Suppression — S4 dev",
+    "prev": "SAÉ 4.DWeb-DI.04 | Apprentis : Interface, contenus et visualisation",
+    "next": "—"
+  },
+  {
+    "date": "11/06/2026",
+    "heure": "22:34:41",
+    "utilisateur": "nicolas.maurin",
+    "type": "SAÉ",
+    "description": "Suppression — S5 crea",
+    "prev": "SAÉ 5.Crea.02 | SAE Management",
+    "next": "—"
+  },
+  {
+    "date": "11/06/2026",
+    "heure": "22:34:45",
+    "utilisateur": "nicolas.maurin",
+    "type": "SAÉ",
+    "description": "Suppression — S5 crea",
+    "prev": "SAÉ 5.Crea.03 | SAE Conception d'interface",
+    "next": "—"
+  },
+  {
+    "date": "11/06/2026",
+    "heure": "22:34:54",
+    "utilisateur": "nicolas.maurin",
+    "type": "SAÉ",
+    "description": "Suppression — S5 dev",
+    "prev": "SAÉ 5D.04 | Integration d'un LLM",
+    "next": "—"
+  },
+  {
+    "date": "11/06/2026",
+    "heure": "22:35:00",
+    "utilisateur": "nicolas.maurin",
+    "type": "SAÉ",
+    "description": "Suppression — S5 dev",
+    "prev": "SAÉ 5D.03 | Concevoir un dispositif interactif",
+    "next": "—"
+  },
+  {
+    "date": "11/06/2026",
+    "heure": "22:35:04",
+    "utilisateur": "nicolas.maurin",
+    "type": "SAÉ",
+    "description": "Suppression — S5 dev",
+    "prev": "SAÉ 5D.02 | SAE Management",
+    "next": "—"
   }
 ]
