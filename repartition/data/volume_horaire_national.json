@@ -735,19 +735,19 @@
     "SAÉ 5D.01 | Développer pour le web": {
       "vol_hn": 0,
       "dont_tp_hn": 0,
-      "adapt_locale": 60,
+      "adapt_locale": 124.5,
       "dont_tp_al": 0
     },
     "SAÉ 5D.02 | SAE Management": {
       "vol_hn": 0,
       "dont_tp_hn": 0,
-      "adapt_locale": 15,
+      "adapt_locale": 0,
       "dont_tp_al": 0
     },
     "SAÉ 5D.03 | Concevoir un dispositif interactif": {
       "vol_hn": 0,
       "dont_tp_hn": 0,
-      "adapt_locale": 34.5,
+      "adapt_locale": 0,
       "dont_tp_al": 0
     },
     "SAÉ 5D.04 | Integration d'un LLM": {
