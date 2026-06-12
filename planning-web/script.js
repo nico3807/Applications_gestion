@@ -1765,9 +1765,9 @@ window.exportCalendarXLSX = function () {
   });
   const xlCell = (v, s) => ({ v: v ?? "", t: typeof v === "number" ? "n" : "s", s });
 
-  const WD_FULL = {
-    lu: "Lundi", ma: "Mardi", me: "Mercredi", je: "Jeudi",
-    ve: "Vendredi", sa: "Samedi", di: "Dimanche",
+  const WD_SHORT = {
+    lu: "Lu", ma: "Ma", me: "Me", je: "Je",
+    ve: "Ve", sa: "Sa", di: "Di",
   };
 
   const wb = XLSX.utils.book_new();
@@ -1794,7 +1794,7 @@ window.exportCalendarXLSX = function () {
       const weekStart = d.week !== undefined && d.week !== lastWeek;
       if (d.week !== undefined) lastWeek = d.week;
       const dateStr = `${String(d.day).padStart(2, "0")}/${String(month).padStart(2, "0")}/${year}`;
-      const jourStr = WD_FULL[wdKey] || d.weekday;
+      const jourStr = WD_SHORT[wdKey] || d.weekday;
       const semStr  = d.week ? `S${d.week}` : "";
 
       aoa.push([
