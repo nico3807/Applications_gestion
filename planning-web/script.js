@@ -1766,8 +1766,8 @@ window.exportCalendarXLSX = function () {
   const xlCell = (v, s) => ({ v: v ?? "", t: typeof v === "number" ? "n" : "s", s });
 
   const WD_SHORT = {
-    lu: "Lu", ma: "Ma", me: "Me", je: "Je",
-    ve: "Ve", sa: "Sa", di: "Di",
+    mo: "Lu", tu: "Ma", we: "Me", th: "Je", fr: "Ve", sa: "Sa", su: "Di",
+    lu: "Lu", ma: "Ma", me: "Me", je: "Je", ve: "Ve", di: "Di",
   };
 
   const wb = XLSX.utils.book_new();
@@ -1789,7 +1789,7 @@ window.exportCalendarXLSX = function () {
 
     days.forEach((d) => {
       const wdKey = d.weekday.toLowerCase().substring(0, 2);
-      if (wdKey === "sa" || wdKey === "di") return;
+      if (wdKey === "sa" || wdKey === "su" || wdKey === "di") return;
       const even      = rowIdx % 2 === 0;
       const weekStart = d.week !== undefined && d.week !== lastWeek;
       if (d.week !== undefined) lastWeek = d.week;
