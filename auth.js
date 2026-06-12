@@ -176,6 +176,7 @@ window.AUTH = {
     return true;
   },
   isAdmin:    () => _sess()?.login === "nicolas.maurin",
+  hasRwApp:   (app) => _sess()?.rwApps?.includes(app) ?? false,
   user:       () => _sess()?.login ?? null,
   hashPwd:    (pwd) => _sha256(pwd),
 
@@ -512,7 +513,7 @@ window.AUTH = {
 
   applyPermissions() {
     const navMods    = document.getElementById("nav-modifications");
-    if (navMods)    navMods.style.display    = this.isAdmin() ? "" : "none";
+    if (navMods)    navMods.style.display    = (this.isAdmin() || this.hasRwApp("journal")) ? "" : "none";
     const navPilotage = document.getElementById("nav-pilotage");
     if (navPilotage) navPilotage.style.display = this.isAdmin() ? "" : "none";
     const navSae     = document.getElementById("nav-sae");

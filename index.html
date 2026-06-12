@@ -100,6 +100,7 @@
             <label><input type="checkbox" class="add-rwapp" value="repartition"> Répartition</label>
             <label><input type="checkbox" class="add-rwapp" value="soutenances_portfolio"> Soutenances Portfolio</label>
             <label><input type="checkbox" class="add-rwapp" value="soutenances_stages"> Soutenances Stages</label>
+            <label><input type="checkbox" class="add-rwapp" value="journal"> Accès Journal</label>
           </div>
           <div id="add-maquette-box" style="margin-top:10px; display:none;">
             <label style="font-size:12px; font-weight:500; color:#111; display:block; margin-bottom:5px;">Accès en écriture à la Maquette (par groupe de semestres) :</label>
@@ -195,6 +196,7 @@
               <label><input type="checkbox" class="edit-rwapp" value="repartition"> Répartition</label>
               <label><input type="checkbox" class="edit-rwapp" value="soutenances_portfolio"> Soutenances Portfolio</label>
               <label><input type="checkbox" class="edit-rwapp" value="soutenances_stages"> Soutenances Stages</label>
+              <label><input type="checkbox" class="edit-rwapp" value="journal"> Accès Journal</label>
             </div>
             <div id="edit-maquette-box" style="margin-top:10px; display:none;">
               <label style="font-size:12px;font-weight:500;color:#111;display:block;margin-bottom:5px;">Accès en écriture à la Maquette (par groupe de semestres) :</label>
@@ -221,7 +223,7 @@
 
     <script src="auth.js"></script>
     <script>
-      const _APP_LABELS = { "planning-web":"Planning", "repartition":"Répartition", "soutenances_portfolio":"Sout. Portfolio", "soutenances_stages":"Sout. Stages" };
+      const _APP_LABELS = { "planning-web":"Planning", "repartition":"Répartition", "soutenances_portfolio":"Sout. Portfolio", "soutenances_stages":"Sout. Stages", "journal":"Journal" };
 
       AUTH.injectUI();
       if (AUTH.isAuth()) { AUTH.injectBadge(); initAdmin(); applyCardVisibility(); }

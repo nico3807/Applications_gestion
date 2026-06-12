@@ -2629,7 +2629,7 @@ function renderModifications(root) {
         <h1 style="margin:0;">Journal des modifications</h1>
         <p class="subtitle">Modifications effectuées par les utilisateurs avec droits d'écriture</p>
       </div>
-      ${mods.length > 0 ? `<button class="btn-delete" onclick="clearModificationsGH()" style="flex-shrink:0;">🗑 Vider le journal</button>` : ""}
+      ${mods.length > 0 && AUTH.isAdmin() ? `<button class="btn-delete" onclick="clearModificationsGH()" style="flex-shrink:0;">🗑 Vider le journal</button>` : ""}
     </div>`;
 
   if (mods.length === 0) {
@@ -3497,5 +3497,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   if (location.hash === "#souhaits") {
     history.replaceState(null, "", location.pathname);
     navigate("souhaits");
+  } else if (AUTH.hasRwApp("journal") && !AUTH.isAdmin() && !AUTH.canWrite()) {
+    navigate("modifications");
   }
 });
