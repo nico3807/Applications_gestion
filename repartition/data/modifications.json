@@ -313,5 +313,14 @@
     "description": "S5 crea / SAÉ 5.Crea.03 | SAE Conception d'interface / td_final",
     "prev": "15",
     "next": "0"
+  },
+  {
+    "date": "12/06/2026",
+    "heure": "18:53:11",
+    "utilisateur": "nicolas.maurin",
+    "type": "Enseignants",
+    "description": "Modification CHOLLET Antoine",
+    "prev": "Vacataire, dû:187, max:—",
+    "next": "Vacataire (CEV), dû:187, max:—"
   }
 ]
