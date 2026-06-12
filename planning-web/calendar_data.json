@@ -2322,7 +2322,10 @@
       "events": {
         "MMI2-App": "Entreprise S21",
         "MMI2-crea": "Stage",
-        "MMI2-Dev": "Stage"
+        "MMI2-Dev": "Stage",
+        "MMI3-crea": "TEDS",
+        "MMI3-Dev": "TEDS",
+        "MMI3-App": "TEDS"
       },
       "week": 22
     }
@@ -2334,7 +2337,10 @@
       "events": {
         "MMI2-App": "Entreprise S21",
         "MMI2-crea": "Stage",
-        "MMI2-Dev": "Stage"
+        "MMI2-Dev": "Stage",
+        "MMI3-crea": "TEDS",
+        "MMI3-Dev": "TEDS",
+        "MMI3-App": "TEDS"
       }
     },
     {
@@ -2343,7 +2349,10 @@
       "events": {
         "MMI2-App": "Entreprise S21",
         "MMI2-crea": "Stage",
-        "MMI2-Dev": "Stage"
+        "MMI2-Dev": "Stage",
+        "MMI3-crea": "TEDS",
+        "MMI3-Dev": "TEDS",
+        "MMI3-App": "TEDS"
       }
     },
     {
@@ -2352,7 +2361,10 @@
       "events": {
         "MMI2-App": "Entreprise S21",
         "MMI2-crea": "Stage",
-        "MMI2-Dev": "Stage"
+        "MMI2-Dev": "Stage",
+        "MMI3-crea": "TEDS",
+        "MMI3-Dev": "TEDS",
+        "MMI3-App": "TEDS"
       }
     },
     {
@@ -2361,7 +2373,10 @@
       "events": {
         "MMI2-App": "Entreprise S21",
         "MMI2-crea": "Stage",
-        "MMI2-Dev": "Stage"
+        "MMI2-Dev": "Stage",
+        "MMI3-crea": "TEDS",
+        "MMI3-Dev": "TEDS",
+        "MMI3-App": "TEDS"
       }
     },
     {
@@ -2384,7 +2399,8 @@
       "events": {
         "MMI2-App": "Entreprise S22",
         "MMI2-crea": "Stage",
-        "MMI2-Dev": "Stage"
+        "MMI2-Dev": "Stage",
+        "MMI3-App": "Entreprise S26"
       },
       "week": 23
     },
