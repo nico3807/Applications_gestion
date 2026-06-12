@@ -1939,6 +1939,14 @@ window.openEditEnsModal = function (i) {
   modal.innerHTML = `
     <div class="form-card" style="margin:10% auto; position:relative; max-width:400px">
         <h3 style="margin-bottom:1rem; color:#1e3a5f">Modifier ${esc(e.id)}</h3>
+        <div class="form-group">
+            <label>Nom</label>
+            <input type="text" id="edit_ens_nom" class="form-input" value="${esc(e.nom || "")}" autocomplete="off">
+        </div>
+        <div class="form-group">
+            <label>Prénom</label>
+            <input type="text" id="edit_ens_prenom" class="form-input" value="${esc(e.prenom || "")}" autocomplete="off">
+        </div>
         <div class="form-group form-group-check">
             <label><input type="checkbox" id="edit_ens_vac" ${e.is_vac ? "checked" : ""} onchange="document.getElementById('edit_cev_group').style.display = this.checked ? 'block' : 'none'; if (!this.checked) document.getElementById('edit_ens_cev').checked = false;"> Est vacataire</label>
         </div>
@@ -1967,25 +1975,48 @@ window.closeEditEnsModal = function () {
 };
 
 window.saveEditEns = async function (i) {
+  const nom    = document.getElementById("edit_ens_nom").value.trim().toUpperCase();
+  const prenom = document.getElementById("edit_ens_prenom").value.trim();
   const is_vac = document.getElementById("edit_ens_vac").checked;
   const is_cev = is_vac && document.getElementById("edit_ens_cev").checked;
-  const du = parseFloat(document.getElementById("edit_ens_du").value) || null;
+  const du  = parseFloat(document.getElementById("edit_ens_du").value) || null;
   const max = parseFloat(document.getElementById("edit_ens_max").value) || null;
 
-  const e = APP_DATA.enseignants[i];
-  const prev = `${e.is_vac ? (e.is_cev ? "Vacataire (CEV)" : "Vacataire") : "Titulaire"}, dû:${e.service_du ?? "—"}, max:${e.service_max ?? "—"}`;
-  const next = `${is_vac ? (is_cev ? "Vacataire (CEV)" : "Vacataire") : "Titulaire"}, dû:${du ?? "—"}, max:${max ?? "—"}`;
-  _logMod("Enseignants", `Modification ${e.id}`, prev, next);
+  if (!nom && !prenom) return alert("Le nom ou prénom est requis.");
 
-  APP_DATA.enseignants[i].is_vac = is_vac;
-  if (is_vac) APP_DATA.enseignants[i].is_cev = is_cev;
-  else delete APP_DATA.enseignants[i].is_cev;
-  APP_DATA.enseignants[i].service_du = du;
-  APP_DATA.enseignants[i].service_max = max;
+  const e = APP_DATA.enseignants[i];
+  const oldId = e.id;
+  const newId = `${nom} ${prenom}`.trim();
+
+  if (newId !== oldId && APP_DATA.enseignants.find((x, j) => j !== i && x.id === newId))
+    return alert(`Un enseignant avec le nom "${newId}" existe déjà.`);
+
+  const prev = `${oldId} — ${e.is_vac ? (e.is_cev ? "Vacataire (CEV)" : "Vacataire") : "Titulaire"}, dû:${e.service_du ?? "—"}, max:${e.service_max ?? "—"}`;
+  const next = `${newId} — ${is_vac ? (is_cev ? "Vacataire (CEV)" : "Vacataire") : "Titulaire"}, dû:${du ?? "—"}, max:${max ?? "—"}`;
+  _logMod("Enseignants", `Modification ${oldId}`, prev, next);
+
+  const updated = { ...e, id: newId, nom, prenom, is_vac, service_du: du, service_max: max };
+  if (is_vac) updated.is_cev = is_cev; else delete updated.is_cev;
+  APP_DATA.enseignants[i] = updated;
+
+  if (newId !== oldId) {
+    Object.values(APP_DATA.affectations).forEach((semAff) => {
+      Object.values(semAff).forEach((row) => {
+        if (row.enseignant === oldId) row.enseignant = newId;
+        (row.subrows || []).forEach((sub) => { if (sub.enseignant === oldId) sub.enseignant = newId; });
+      });
+    });
+    if (APP_DATA.sae?.sae) {
+      Object.values(APP_DATA.sae.sae).forEach((list) => {
+        list.forEach((sae) => { if (sae.responsable === oldId) sae.responsable = newId; });
+      });
+    }
+  }
 
   closeEditEnsModal();
   renderView();
   if (isGHConfigured()) await saveEnseignantsGH();
+  if (newId !== oldId && isGHConfigured()) await saveAffectationsGH();
 };
 
 /* ── Logique GitHub & Données ────────────────────────────────────────────── */
