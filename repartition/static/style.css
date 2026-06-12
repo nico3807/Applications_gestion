@@ -1315,6 +1315,14 @@ th.pilotage-total-col small {
   align-items: center;
   justify-content: center;
 }
+.gh-modal-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.45);
+  z-index: 1000;
+  overflow-y: auto;
+}
 .modal-box {
   background: #fff;
   border-radius: 12px;
