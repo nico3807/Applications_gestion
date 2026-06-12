@@ -118,8 +118,8 @@
       "weekday": "Mo",
       "events": {
         "MMI3-App": "Entreprise S01",
-        "MMI3-Dev": "SAÉ 5xx",
-        "MMI3-crea": "SAÉ 5xx"
+        "MMI3-Dev": "SAÉ 5D.01 | Développer pour le web",
+        "MMI3-crea": "SAÉ 5.Crea.01 | Créer par/pour le numérique"
       },
       "week": 39
     },
@@ -128,8 +128,8 @@
       "weekday": "Tu",
       "events": {
         "MMI3-App": "Entreprise S01",
-        "MMI3-Dev": "SAÉ 5xx",
-        "MMI3-crea": "SAÉ 5xx"
+        "MMI3-Dev": "SAÉ 5D.01 | Développer pour le web",
+        "MMI3-crea": "SAÉ 5.Crea.01 | Créer par/pour le numérique"
       }
     },
     {
@@ -137,8 +137,8 @@
       "weekday": "We",
       "events": {
         "MMI3-App": "Entreprise S01",
-        "MMI3-Dev": "SAÉ 5xx",
-        "MMI3-crea": "SAÉ 5xx"
+        "MMI3-Dev": "SAÉ 5D.01 | Développer pour le web",
+        "MMI3-crea": "SAÉ 5.Crea.01 | Créer par/pour le numérique"
       }
     },
     {
@@ -147,8 +147,8 @@
       "events": {
         "MMI3-App": "Entreprise S01",
         "Autre": "Journée Bienvenue 2026",
-        "MMI3-Dev": "SAÉ 5xx",
-        "MMI3-crea": "SAÉ 5xx"
+        "MMI3-Dev": "SAÉ 5D.01 | Développer pour le web",
+        "MMI3-crea": "SAÉ 5.Crea.01 | Créer par/pour le numérique"
       }
     },
     {
@@ -156,8 +156,8 @@
       "weekday": "Fr",
       "events": {
         "MMI3-App": "Entreprise S01",
-        "MMI3-Dev": "SAÉ 5xx",
-        "MMI3-crea": "SAÉ 5xx"
+        "MMI3-Dev": "SAÉ 5D.01 | Développer pour le web",
+        "MMI3-crea": "SAÉ 5.Crea.01 | Créer par/pour le numérique"
       }
     },
     {
@@ -233,8 +233,8 @@
       "weekday": "Mo",
       "events": {
         "MMI3-App": "Entreprise S02",
-        "MMI3-crea": "SAÉ 5xx",
-        "MMI3-Dev": "SAÉ 5xx",
+        "MMI3-crea": "SAÉ 5.Crea.01 | Créer par/pour le numérique",
+        "MMI3-Dev": "SAÉ 5D.01 | Développer pour le web",
         "MMI1": "SAÉ 1.01 | Auditer une communication numérique"
       },
       "week": 41
@@ -244,8 +244,9 @@
       "weekday": "Tu",
       "events": {
         "MMI3-App": "Entreprise S02",
-        "MMI3-crea": "SAÉ 5xx",
-        "MMI1": "SAÉ 1.01 | Auditer une communication numérique"
+        "MMI3-crea": "SAÉ 5.Crea.01 | Créer par/pour le numérique",
+        "MMI1": "SAÉ 1.01 | Auditer une communication numérique",
+        "MMI3-Dev": "SAÉ 5D.01 | Développer pour le web"
       }
     },
     {
@@ -253,8 +254,9 @@
       "weekday": "We",
       "events": {
         "MMI3-App": "Entreprise S02",
-        "MMI3-crea": "SAÉ 5xx",
-        "MMI1": "SAÉ 1.01 | Auditer une communication numérique"
+        "MMI3-crea": "SAÉ 5.Crea.01 | Créer par/pour le numérique",
+        "MMI1": "SAÉ 1.01 | Auditer une communication numérique",
+        "MMI3-Dev": "SAÉ 5D.01 | Développer pour le web"
       }
     },
     {
@@ -262,8 +264,9 @@
       "weekday": "Th",
       "events": {
         "MMI3-App": "Entreprise S02",
-        "MMI3-crea": "SAÉ 5xx",
-        "MMI1": "SAÉ 1.01 | Auditer une communication numérique"
+        "MMI3-crea": "SAÉ 5.Crea.01 | Créer par/pour le numérique",
+        "MMI1": "SAÉ 1.01 | Auditer une communication numérique",
+        "MMI3-Dev": "SAÉ 5D.01 | Développer pour le web"
       }
     },
     {
@@ -271,8 +274,9 @@
       "weekday": "Fr",
       "events": {
         "MMI3-App": "Entreprise S02",
-        "MMI3-crea": "SAÉ 5xx",
-        "MMI1": "SAÉ 1.01 | Auditer une communication numérique"
+        "MMI3-crea": "SAÉ 5.Crea.01 | Créer par/pour le numérique",
+        "MMI1": "SAÉ 1.01 | Auditer une communication numérique",
+        "MMI3-Dev": "SAÉ 5D.01 | Développer pour le web"
       }
     },
     {
@@ -346,8 +350,8 @@
       "weekday": "Mo",
       "events": {
         "MMI3-App": "Entreprise S03",
-        "MMI3-crea": "SAÉ 5xx",
-        "MMI3-Dev": "SAÉ 5xx",
+        "MMI3-crea": "SAÉ 5.Crea.01 | Créer par/pour le numérique",
+        "MMI3-Dev": "SAÉ 5D.01 | Développer pour le web",
         "MMI1": "SAÉ 1.04 | Produire un contenu audio et vidéo"
       },
       "week": 43
@@ -357,8 +361,8 @@
       "weekday": "Tu",
       "events": {
         "MMI3-App": "Entreprise S03",
-        "MMI3-crea": "SAÉ 5xx",
-        "MMI3-Dev": "SAÉ 5xx",
+        "MMI3-crea": "SAÉ 5.Crea.01 | Créer par/pour le numérique",
+        "MMI3-Dev": "SAÉ 5D.01 | Développer pour le web",
         "MMI1": "SAÉ 1.04 | Produire un contenu audio et vidéo"
       }
     },
@@ -367,8 +371,8 @@
       "weekday": "We",
       "events": {
         "MMI3-App": "Entreprise S03",
-        "MMI3-crea": "SAÉ 5xx",
-        "MMI3-Dev": "SAÉ 5xx",
+        "MMI3-crea": "SAÉ 5.Crea.01 | Créer par/pour le numérique",
+        "MMI3-Dev": "SAÉ 5D.01 | Développer pour le web",
         "MMI1": "SAÉ 1.04 | Produire un contenu audio et vidéo"
       }
     },
@@ -377,8 +381,8 @@
       "weekday": "Th",
       "events": {
         "MMI3-App": "Entreprise S03",
-        "MMI3-crea": "SAÉ 5xx",
-        "MMI3-Dev": "SAÉ 5xx",
+        "MMI3-crea": "SAÉ 5.Crea.01 | Créer par/pour le numérique",
+        "MMI3-Dev": "SAÉ 5D.01 | Développer pour le web",
         "MMI1": "SAÉ 1.04 | Produire un contenu audio et vidéo"
       }
     },
@@ -387,8 +391,8 @@
       "weekday": "Fr",
       "events": {
         "MMI3-App": "Entreprise S03",
-        "MMI3-crea": "SAÉ 5xx",
-        "MMI3-Dev": "SAÉ 5xx",
+        "MMI3-crea": "SAÉ 5.Crea.01 | Créer par/pour le numérique",
+        "MMI3-Dev": "SAÉ 5D.01 | Développer pour le web",
         "MMI1": "SAÉ 1.04 | Produire un contenu audio et vidéo"
       }
     },
@@ -509,13 +513,21 @@
     {
       "day": 9,
       "weekday": "Mo",
-      "events": {},
+      "events": {
+        "MMI3-crea": "SAÉ 5.Crea.01 | Créer par/pour le numérique",
+        "MMI3-Dev": "SAÉ 5D.01 | Développer pour le web",
+        "MMI3-App": "Entreprise S05"
+      },
       "week": 46
     },
     {
       "day": 10,
       "weekday": "Tu",
-      "events": {}
+      "events": {
+        "MMI3-crea": "SAÉ 5.Crea.01 | Créer par/pour le numérique",
+        "MMI3-Dev": "SAÉ 5D.01 | Développer pour le web",
+        "MMI3-App": "Entreprise S05"
+      }
     },
     {
       "day": 11,
@@ -527,12 +539,20 @@
     {
       "day": 12,
       "weekday": "Th",
-      "events": {}
+      "events": {
+        "MMI3-Dev": "SAÉ 5D.01 | Développer pour le web",
+        "MMI3-crea": "SAÉ 5.Crea.01 | Créer par/pour le numérique",
+        "MMI3-App": "Entreprise S05"
+      }
     },
     {
       "day": 13,
       "weekday": "Fr",
-      "events": {}
+      "events": {
+        "MMI3-Dev": "SAÉ 5D.01 | Développer pour le web",
+        "MMI3-crea": "SAÉ 5.Crea.01 | Créer par/pour le numérique",
+        "MMI3-App": "Entreprise S05"
+      }
     },
     {
       "day": 14,
@@ -605,8 +625,8 @@
       "weekday": "Mo",
       "events": {
         "MMI3-App": "Entreprise S06",
-        "MMI3-crea": "SAÉ 5xx",
-        "MMI3-Dev": "SAÉ 5xx",
+        "MMI3-crea": "SAÉ 5.Crea.01 | Créer par/pour le numérique",
+        "MMI3-Dev": "SAÉ 5D.01 | Développer pour le web",
         "MMI1": "SAÉ 1.02 | Concevoir une recommandation de communication numérique"
       },
       "week": 48
@@ -616,8 +636,8 @@
       "weekday": "Tu",
       "events": {
         "MMI3-App": "Entreprise S06",
-        "MMI3-crea": "SAÉ 5xx",
-        "MMI3-Dev": "SAÉ 5xx",
+        "MMI3-crea": "SAÉ 5.Crea.01 | Créer par/pour le numérique",
+        "MMI3-Dev": "SAÉ 5D.01 | Développer pour le web",
         "MMI1": "SAÉ 1.02 | Concevoir une recommandation de communication numérique"
       }
     },
@@ -626,8 +646,8 @@
       "weekday": "We",
       "events": {
         "MMI3-App": "Entreprise S06",
-        "MMI3-crea": "SAÉ 5xx",
-        "MMI3-Dev": "SAÉ 5xx",
+        "MMI3-crea": "SAÉ 5.Crea.01 | Créer par/pour le numérique",
+        "MMI3-Dev": "SAÉ 5D.01 | Développer pour le web",
         "MMI1": "SAÉ 1.02 | Concevoir une recommandation de communication numérique"
       }
     },
@@ -636,8 +656,8 @@
       "weekday": "Th",
       "events": {
         "MMI3-App": "Entreprise S06",
-        "MMI3-crea": "SAÉ 5xx",
-        "MMI3-Dev": "SAÉ 5xx",
+        "MMI3-crea": "SAÉ 5.Crea.01 | Créer par/pour le numérique",
+        "MMI3-Dev": "SAÉ 5D.01 | Développer pour le web",
         "MMI1": "SAÉ 1.02 | Concevoir une recommandation de communication numérique"
       }
     },
@@ -646,8 +666,8 @@
       "weekday": "Fr",
       "events": {
         "MMI3-App": "Entreprise S06",
-        "MMI3-crea": "SAÉ 5xx",
-        "MMI3-Dev": "SAÉ 5xx",
+        "MMI3-crea": "SAÉ 5.Crea.01 | Créer par/pour le numérique",
+        "MMI3-Dev": "SAÉ 5D.01 | Développer pour le web",
         "MMI1": "SAÉ 1.02 | Concevoir une recommandation de communication numérique"
       }
     },
@@ -724,8 +744,8 @@
       "weekday": "Mo",
       "events": {
         "MMI3-App": "Entreprise S07",
-        "MMI3-crea": "SAÉ 5xx",
-        "MMI3-Dev": "SAÉ 5xx",
+        "MMI3-crea": "SAÉ 5.Crea.01 | Créer par/pour le numérique",
+        "MMI3-Dev": "SAÉ 5D.01 | Développer pour le web",
         "MMI1": "SAÉ 1.05 | Produire un site Web"
       },
       "week": 50
@@ -735,8 +755,8 @@
       "weekday": "Tu",
       "events": {
         "MMI3-App": "Entreprise S07",
-        "MMI3-crea": "SAÉ 5xx",
-        "MMI3-Dev": "SAÉ 5xx",
+        "MMI3-crea": "SAÉ 5.Crea.01 | Créer par/pour le numérique",
+        "MMI3-Dev": "SAÉ 5D.01 | Développer pour le web",
         "MMI1": "SAÉ 1.05 | Produire un site Web"
       }
     },
@@ -745,8 +765,8 @@
       "weekday": "We",
       "events": {
         "MMI3-App": "Entreprise S07",
-        "MMI3-crea": "SAÉ 5xx",
-        "MMI3-Dev": "SAÉ 5xx",
+        "MMI3-crea": "SAÉ 5.Crea.01 | Créer par/pour le numérique",
+        "MMI3-Dev": "SAÉ 5D.01 | Développer pour le web",
         "MMI1": "SAÉ 1.05 | Produire un site Web"
       }
     },
@@ -755,8 +775,8 @@
       "weekday": "Th",
       "events": {
         "MMI3-App": "Entreprise S07",
-        "MMI3-crea": "SAÉ 5xx",
-        "MMI3-Dev": "SAÉ 5xx",
+        "MMI3-crea": "SAÉ 5.Crea.01 | Créer par/pour le numérique",
+        "MMI3-Dev": "SAÉ 5D.01 | Développer pour le web",
         "MMI1": "SAÉ 1.05 | Produire un site Web"
       }
     },
@@ -765,8 +785,8 @@
       "weekday": "Fr",
       "events": {
         "MMI3-App": "Entreprise S07",
-        "MMI3-crea": "SAÉ 5xx",
-        "MMI3-Dev": "SAÉ 5xx",
+        "MMI3-crea": "SAÉ 5.Crea.01 | Créer par/pour le numérique",
+        "MMI3-Dev": "SAÉ 5D.01 | Développer pour le web",
         "MMI1": "SAÉ 1.05 | Produire un site Web"
       }
     },
@@ -973,7 +993,8 @@
       "weekday": "Mo",
       "events": {
         "MMI3-App": "Entreprise S10",
-        "MMI3-crea": "SAÉ 5xx"
+        "MMI3-crea": "SAÉ 5.Crea.01 | Créer par/pour le numérique",
+        "MMI3-Dev": "SAÉ 5D.01 | Développer pour le web"
       },
       "week": 2
     },
@@ -982,7 +1003,8 @@
       "weekday": "Tu",
       "events": {
         "MMI3-App": "Entreprise S10",
-        "MMI3-crea": "SAÉ 5xx"
+        "MMI3-crea": "SAÉ 5.Crea.01 | Créer par/pour le numérique",
+        "MMI3-Dev": "SAÉ 5D.01 | Développer pour le web"
       }
     },
     {
@@ -990,7 +1012,8 @@
       "weekday": "We",
       "events": {
         "MMI3-App": "Entreprise S10",
-        "MMI3-crea": "SAÉ 5xx"
+        "MMI3-crea": "SAÉ 5.Crea.01 | Créer par/pour le numérique",
+        "MMI3-Dev": "SAÉ 5D.01 | Développer pour le web"
       }
     },
     {
@@ -998,7 +1021,8 @@
       "weekday": "Th",
       "events": {
         "MMI3-App": "Entreprise S10",
-        "MMI3-crea": "SAÉ 5xx"
+        "MMI3-crea": "SAÉ 5.Crea.01 | Créer par/pour le numérique",
+        "MMI3-Dev": "SAÉ 5D.01 | Développer pour le web"
       }
     },
     {
@@ -1006,7 +1030,8 @@
       "weekday": "Fr",
       "events": {
         "MMI3-App": "Entreprise S10",
-        "MMI3-crea": "SAÉ 5xx"
+        "MMI3-crea": "SAÉ 5.Crea.01 | Créer par/pour le numérique",
+        "MMI3-Dev": "SAÉ 5D.01 | Développer pour le web"
       }
     },
     {
