@@ -1731,6 +1731,104 @@ window.printMonth = function () {
 };
 
 /* =====================================================================
+     EXPORT XLSX
+  ===================================================================== */
+
+window.exportCalendarXLSX = function () {
+  if (typeof XLSX === "undefined") {
+    alert("Bibliothèque XLSX non chargée.");
+    return;
+  }
+
+  /* Groupes actifs (cochés), sans le groupe "Férié" auto-injecté */
+  const groups = GROUPS.filter((g) => g !== "Férié" && activeGroups.has(g));
+  if (!groups.length) {
+    alert("Aucun groupe sélectionné.");
+    return;
+  }
+
+  /* Mois à exporter selon la vue courante */
+  const monthsToExport = currentView === "year" ? ORDER : [currentMonth];
+
+  /* ── Styles ── */
+  const S_HDR = {
+    font:      { name: "Arial", bold: true, sz: 11, color: { rgb: "FFFFFF" } },
+    fill:      { patternType: "solid", fgColor: { rgb: "1E3A5F" } },
+    alignment: { horizontal: "center", vertical: "center", wrapText: true },
+    border:    { bottom: { style: "thin", color: { rgb: "AAAAAA" } } },
+  };
+  const mkS = (even, center = false) => ({
+    font:      { name: "Arial", sz: 10 },
+    fill:      { patternType: "solid", fgColor: { rgb: even ? "F0F4FB" : "FFFFFF" } },
+    alignment: { vertical: "top", wrapText: true, ...(center ? { horizontal: "center" } : {}) },
+  });
+  const mkSWE = (even) => ({
+    font:      { name: "Arial", sz: 10, color: { rgb: "9CA3AF" }, italic: true },
+    fill:      { patternType: "solid", fgColor: { rgb: even ? "F0F4FB" : "FFFFFF" } },
+    alignment: { horizontal: "center", vertical: "top" },
+  });
+  const xlCell = (v, s) => ({ v: v ?? "", t: typeof v === "number" ? "n" : "s", s });
+
+  const WD_FULL = {
+    lu: "Lundi", ma: "Mardi", me: "Mercredi", je: "Jeudi",
+    ve: "Vendredi", sa: "Samedi", di: "Dimanche",
+  };
+
+  const wb = XLSX.utils.book_new();
+
+  monthsToExport.forEach((monthName) => {
+    const days = CAL[monthName];
+    if (!days || !days.length) return;
+    const [year, month] = META[monthName] || [0, 0];
+
+    const headers = ["Date", "Jour", "Sem.", ...groups];
+    const colWidths = [
+      { wch: 12 }, { wch: 10 }, { wch: 6 },
+      ...groups.map(() => ({ wch: 34 })),
+    ];
+
+    const aoa = [headers.map((h) => xlCell(h, S_HDR))];
+    let rowIdx = 0;
+
+    days.forEach((d) => {
+      const wdKey = d.weekday.toLowerCase().substring(0, 2);
+      const isWE  = wdKey === "sa" || wdKey === "di";
+      const even  = rowIdx % 2 === 0;
+      const dateStr = `${String(d.day).padStart(2, "0")}/${String(month).padStart(2, "0")}/${year}`;
+      const jourStr = WD_FULL[wdKey] || d.weekday;
+      const semStr  = d.week ? `S${d.week}` : "";
+
+      const sBase   = isWE ? mkSWE(even) : mkS(even);
+      const sCenter = isWE ? mkSWE(even) : mkS(even, true);
+
+      aoa.push([
+        xlCell(dateStr, sCenter),
+        xlCell(jourStr, sBase),
+        xlCell(semStr,  sCenter),
+        ...groups.map((g) => xlCell((d.events && d.events[g]) || "", sBase)),
+      ]);
+      rowIdx++;
+    });
+
+    const ws = XLSX.utils.aoa_to_sheet(aoa, { cellStyles: true });
+    ws["!cols"]   = colWidths;
+    ws["!freeze"] = { xSplit: 0, ySplit: 1 };
+    XLSX.utils.book_append_sheet(wb, ws, monthName.substring(0, 31));
+  });
+
+  if (!wb.SheetNames.length) {
+    alert("Aucune donnée à exporter pour la sélection courante.");
+    return;
+  }
+
+  const safeName = currentMonth.replace(/\s+/g, "_");
+  const filename = currentView === "year"
+    ? "planning_mmi_annee.xlsx"
+    : `planning_mmi_${safeName}.xlsx`;
+  XLSX.writeFile(wb, filename);
+};
+
+/* =====================================================================
      INITIALISATION
   ===================================================================== */
 async function init() {

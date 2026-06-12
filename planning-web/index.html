@@ -88,6 +88,7 @@
         <p class="toolbar-title" id="lbl-groups">Filtrer par groupe</p>
         <div class="toolbar-hdr-actions">
           <button class="btn-toggle-all" id="btnToggleAll" type="button">Tout décocher</button>
+          <button class="btn-print" id="btnExportXLSX" type="button" onclick="exportCalendarXLSX()">⬇ Export XLSX</button>
           <button class="btn-print" id="btnPrint" type="button" onclick="printMonth()">🖨 Imprimer</button>
         </div>
       </div>
@@ -136,6 +137,9 @@
     if (!AUTH.isAuth()) { location.href = "../index.html"; }
     if (!AUTH.canAccess("planning-web")) { location.href = "../index.html"; }
   </script>
+
+  <!-- Librairie XLSX avec styles -->
+  <script src="https://cdn.jsdelivr.net/npm/xlsx-js-style@1.2.0/dist/xlsx.bundle.js"></script>
 
   <!-- Script applicatif -->
   <script src="script.js?v=2"></script>
