@@ -1762,11 +1762,6 @@ window.exportCalendarXLSX = function () {
     fill:      { patternType: "solid", fgColor: { rgb: even ? "F0F4FB" : "FFFFFF" } },
     alignment: { vertical: "top", wrapText: true, ...(center ? { horizontal: "center" } : {}) },
   });
-  const mkSWE = (even) => ({
-    font:      { name: "Arial", sz: 10, color: { rgb: "9CA3AF" }, italic: true },
-    fill:      { patternType: "solid", fgColor: { rgb: even ? "F0F4FB" : "FFFFFF" } },
-    alignment: { horizontal: "center", vertical: "top" },
-  });
   const xlCell = (v, s) => ({ v: v ?? "", t: typeof v === "number" ? "n" : "s", s });
 
   const WD_FULL = {
@@ -1792,20 +1787,17 @@ window.exportCalendarXLSX = function () {
 
     days.forEach((d) => {
       const wdKey = d.weekday.toLowerCase().substring(0, 2);
-      const isWE  = wdKey === "sa" || wdKey === "di";
-      const even  = rowIdx % 2 === 0;
+      if (wdKey === "sa" || wdKey === "di") return;
+      const even    = rowIdx % 2 === 0;
       const dateStr = `${String(d.day).padStart(2, "0")}/${String(month).padStart(2, "0")}/${year}`;
       const jourStr = WD_FULL[wdKey] || d.weekday;
       const semStr  = d.week ? `S${d.week}` : "";
 
-      const sBase   = isWE ? mkSWE(even) : mkS(even);
-      const sCenter = isWE ? mkSWE(even) : mkS(even, true);
-
       aoa.push([
-        xlCell(dateStr, sCenter),
-        xlCell(jourStr, sBase),
-        xlCell(semStr,  sCenter),
-        ...groups.map((g) => xlCell((d.events && d.events[g]) || "", sBase)),
+        xlCell(dateStr, mkS(even, true)),
+        xlCell(jourStr, mkS(even)),
+        xlCell(semStr,  mkS(even, true)),
+        ...groups.map((g) => xlCell((d.events && d.events[g]) || "", mkS(even))),
       ]);
       rowIdx++;
     });
