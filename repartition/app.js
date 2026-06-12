@@ -3228,11 +3228,20 @@ window.showAllSouhaitsRecap = async function () {
     });
   });
 
-  const sections = SEMESTRES.filter((sem) => Object.keys(pivot[sem]).length > 0)
-    .map((sem) => {
+  const sections = SEMESTRES.map((sem) => {
       const saeList = APP_DATA.sae?.sae?.[sem] || [];
+      const entries = Object.entries(pivot[sem]);
+      if (!entries.length) {
+        return `
+      <div data-sem="${sem}" style="margin-bottom:1.25rem;">
+        <div style="font-size:13px;font-weight:700;color:#fff;background:#1e3a5f;
+          border-radius:6px 6px 0 0;padding:7px 14px;">${sem}</div>
+        <div style="padding:14px 16px;border:1px solid #e2e8f0;border-top:none;
+          color:#9ca3af;font-size:13px;font-style:italic;">Aucun souhait enregistré pour ce semestre.</div>
+      </div>`;
+      }
       let rowIdx = 0;
-      const rows = Object.entries(pivot[sem])
+      const rows = entries
         .sort(([codeA], [codeB]) => {
           const oA = _codeTypeOrder(codeA, saeList);
           const oB = _codeTypeOrder(codeB, saeList);
@@ -3290,8 +3299,7 @@ window.showAllSouhaitsRecap = async function () {
   const existing = document.getElementById("all-souhaits-modal");
   if (existing) existing.remove();
 
-  const semsAvec = SEMESTRES.filter((sem) => Object.keys(pivot[sem]).length > 0);
-  const filterBtns = ["Tout", ...semsAvec].map(s =>
+  const filterBtns = ["Tout", ...SEMESTRES].map(s =>
     `<button onclick="filterAllSouhaitsRecap('${s}')" data-filter="${s}"
       style="padding:3px 10px;border-radius:5px;border:1.5px solid #d1d5db;
         background:${s === "Tout" ? "#1e3a5f" : "#fff"};
