@@ -66,7 +66,7 @@
     "is_vac": true,
     "service_du": 187,
     "service_max": null,
-    "is_cev": false
+    "is_cev": true
   },
   {
     "id": "DARTIES Benoit",
@@ -169,7 +169,7 @@
     "service_du": null,
     "service_max": 187,
     "is_vac": true,
-    "is_cev": false
+    "is_cev": true
   },
   {
     "id": "LAGIEWKA Arnaud",
@@ -301,7 +301,7 @@
     "service_du": null,
     "service_max": 187,
     "is_vac": true,
-    "is_cev": false
+    "is_cev": true
   },
   {
     "id": "SOLDEVILA Loren",
