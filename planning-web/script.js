@@ -1757,10 +1757,11 @@ window.exportCalendarXLSX = function () {
     alignment: { horizontal: "center", vertical: "center", wrapText: true },
     border:    { bottom: { style: "thin", color: { rgb: "AAAAAA" } } },
   };
-  const mkS = (even, center = false) => ({
+  const mkS = (even, center = false, weekStart = false) => ({
     font:      { name: "Arial", sz: 10 },
     fill:      { patternType: "solid", fgColor: { rgb: even ? "F0F4FB" : "FFFFFF" } },
     alignment: { vertical: "top", wrapText: true, ...(center ? { horizontal: "center" } : {}) },
+    ...(weekStart ? { border: { top: { style: "medium", color: { rgb: "1E3A5F" } } } } : {}),
   });
   const xlCell = (v, s) => ({ v: v ?? "", t: typeof v === "number" ? "n" : "s", s });
 
@@ -1784,20 +1785,23 @@ window.exportCalendarXLSX = function () {
 
     const aoa = [headers.map((h) => xlCell(h, S_HDR))];
     let rowIdx = 0;
+    let lastWeek = null;
 
     days.forEach((d) => {
       const wdKey = d.weekday.toLowerCase().substring(0, 2);
       if (wdKey === "sa" || wdKey === "di") return;
-      const even    = rowIdx % 2 === 0;
+      const even      = rowIdx % 2 === 0;
+      const weekStart = d.week !== undefined && d.week !== lastWeek;
+      if (d.week !== undefined) lastWeek = d.week;
       const dateStr = `${String(d.day).padStart(2, "0")}/${String(month).padStart(2, "0")}/${year}`;
       const jourStr = WD_FULL[wdKey] || d.weekday;
       const semStr  = d.week ? `S${d.week}` : "";
 
       aoa.push([
-        xlCell(dateStr, mkS(even, true)),
-        xlCell(jourStr, mkS(even)),
-        xlCell(semStr,  mkS(even, true)),
-        ...groups.map((g) => xlCell((d.events && d.events[g]) || "", mkS(even))),
+        xlCell(dateStr, mkS(even, true,  weekStart)),
+        xlCell(jourStr, mkS(even, false, weekStart)),
+        xlCell(semStr,  mkS(even, true,  weekStart)),
+        ...groups.map((g) => xlCell((d.events && d.events[g]) || "", mkS(even, false, weekStart))),
       ]);
       rowIdx++;
     });
