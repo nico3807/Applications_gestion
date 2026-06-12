@@ -340,5 +340,14 @@
     "description": "Modification KLAIBI Noel",
     "prev": "Vacataire, dû:—, max:187",
     "next": "Vacataire (CEV), dû:—, max:187"
+  },
+  {
+    "date": "12/06/2026",
+    "heure": "19:00:11",
+    "utilisateur": "nicolas.maurin",
+    "type": "Enseignants",
+    "description": "Modification CALOMINA Léo",
+    "prev": "CALOMINA Léo — Vacataire, dû:187, max:—",
+    "next": "COLOMINA Léo — Vacataire, dû:187, max:—"
   }
 ]
