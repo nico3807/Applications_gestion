@@ -44,9 +44,7 @@
     {
       "day": 7,
       "weekday": "Mo",
-      "events": {
-        "Autre": "Jury de septembre"
-      },
+      "events": {},
       "week": 37
     },
     {
@@ -236,7 +234,8 @@
       "events": {
         "MMI3-App": "Entreprise S02",
         "MMI3-crea": "SAÉ 5xx",
-        "MMI3-Dev": "SAÉ 5xx"
+        "MMI3-Dev": "SAÉ 5xx",
+        "MMI1": "SAÉ 1.01 | Auditer une communication numérique"
       },
       "week": 41
     },
@@ -245,7 +244,8 @@
       "weekday": "Tu",
       "events": {
         "MMI3-App": "Entreprise S02",
-        "MMI3-crea": "SAÉ 5xx"
+        "MMI3-crea": "SAÉ 5xx",
+        "MMI1": "SAÉ 1.01 | Auditer une communication numérique"
       }
     },
     {
@@ -253,7 +253,8 @@
       "weekday": "We",
       "events": {
         "MMI3-App": "Entreprise S02",
-        "MMI3-crea": "SAÉ 5xx"
+        "MMI3-crea": "SAÉ 5xx",
+        "MMI1": "SAÉ 1.01 | Auditer une communication numérique"
       }
     },
     {
@@ -261,7 +262,8 @@
       "weekday": "Th",
       "events": {
         "MMI3-App": "Entreprise S02",
-        "MMI3-crea": "SAÉ 5xx"
+        "MMI3-crea": "SAÉ 5xx",
+        "MMI1": "SAÉ 1.01 | Auditer une communication numérique"
       }
     },
     {
@@ -269,7 +271,8 @@
       "weekday": "Fr",
       "events": {
         "MMI3-App": "Entreprise S02",
-        "MMI3-crea": "SAÉ 5xx"
+        "MMI3-crea": "SAÉ 5xx",
+        "MMI1": "SAÉ 1.01 | Auditer une communication numérique"
       }
     },
     {
@@ -344,7 +347,8 @@
       "events": {
         "MMI3-App": "Entreprise S03",
         "MMI3-crea": "SAÉ 5xx",
-        "MMI3-Dev": "SAÉ 5xx"
+        "MMI3-Dev": "SAÉ 5xx",
+        "MMI1": "SAÉ 1.04 | Produire un contenu audio et vidéo"
       },
       "week": 43
     },
@@ -354,7 +358,8 @@
       "events": {
         "MMI3-App": "Entreprise S03",
         "MMI3-crea": "SAÉ 5xx",
-        "MMI3-Dev": "SAÉ 5xx"
+        "MMI3-Dev": "SAÉ 5xx",
+        "MMI1": "SAÉ 1.04 | Produire un contenu audio et vidéo"
       }
     },
     {
@@ -363,7 +368,8 @@
       "events": {
         "MMI3-App": "Entreprise S03",
         "MMI3-crea": "SAÉ 5xx",
-        "MMI3-Dev": "SAÉ 5xx"
+        "MMI3-Dev": "SAÉ 5xx",
+        "MMI1": "SAÉ 1.04 | Produire un contenu audio et vidéo"
       }
     },
     {
@@ -372,7 +378,8 @@
       "events": {
         "MMI3-App": "Entreprise S03",
         "MMI3-crea": "SAÉ 5xx",
-        "MMI3-Dev": "SAÉ 5xx"
+        "MMI3-Dev": "SAÉ 5xx",
+        "MMI1": "SAÉ 1.04 | Produire un contenu audio et vidéo"
       }
     },
     {
@@ -381,7 +388,8 @@
       "events": {
         "MMI3-App": "Entreprise S03",
         "MMI3-crea": "SAÉ 5xx",
-        "MMI3-Dev": "SAÉ 5xx"
+        "MMI3-Dev": "SAÉ 5xx",
+        "MMI1": "SAÉ 1.04 | Produire un contenu audio et vidéo"
       }
     },
     {
@@ -455,28 +463,38 @@
     {
       "day": 2,
       "weekday": "Mo",
-      "events": {},
+      "events": {
+        "MMI1": "SAÉ 1.04 | Produire un contenu audio et vidéo"
+      },
       "week": 45
     },
     {
       "day": 3,
       "weekday": "Tu",
-      "events": {}
+      "events": {
+        "MMI1": "SAÉ 1.04 | Produire un contenu audio et vidéo"
+      }
     },
     {
       "day": 4,
       "weekday": "We",
-      "events": {}
+      "events": {
+        "MMI1": "SAÉ 1.04 | Produire un contenu audio et vidéo"
+      }
     },
     {
       "day": 5,
       "weekday": "Th",
-      "events": {}
+      "events": {
+        "MMI1": "SAÉ 1.04 | Produire un contenu audio et vidéo"
+      }
     },
     {
       "day": 6,
       "weekday": "Fr",
-      "events": {}
+      "events": {
+        "MMI1": "SAÉ 1.04 | Produire un contenu audio et vidéo"
+      }
     },
     {
       "day": 7,
@@ -588,7 +606,8 @@
       "events": {
         "MMI3-App": "Entreprise S06",
         "MMI3-crea": "SAÉ 5xx",
-        "MMI3-Dev": "SAÉ 5xx"
+        "MMI3-Dev": "SAÉ 5xx",
+        "MMI1": "SAÉ 1.02 | Concevoir une recommandation de communication numérique"
       },
       "week": 48
     },
@@ -598,7 +617,8 @@
       "events": {
         "MMI3-App": "Entreprise S06",
         "MMI3-crea": "SAÉ 5xx",
-        "MMI3-Dev": "SAÉ 5xx"
+        "MMI3-Dev": "SAÉ 5xx",
+        "MMI1": "SAÉ 1.02 | Concevoir une recommandation de communication numérique"
       }
     },
     {
@@ -607,7 +627,8 @@
       "events": {
         "MMI3-App": "Entreprise S06",
         "MMI3-crea": "SAÉ 5xx",
-        "MMI3-Dev": "SAÉ 5xx"
+        "MMI3-Dev": "SAÉ 5xx",
+        "MMI1": "SAÉ 1.02 | Concevoir une recommandation de communication numérique"
       }
     },
     {
@@ -616,7 +637,8 @@
       "events": {
         "MMI3-App": "Entreprise S06",
         "MMI3-crea": "SAÉ 5xx",
-        "MMI3-Dev": "SAÉ 5xx"
+        "MMI3-Dev": "SAÉ 5xx",
+        "MMI1": "SAÉ 1.02 | Concevoir une recommandation de communication numérique"
       }
     },
     {
@@ -625,7 +647,8 @@
       "events": {
         "MMI3-App": "Entreprise S06",
         "MMI3-crea": "SAÉ 5xx",
-        "MMI3-Dev": "SAÉ 5xx"
+        "MMI3-Dev": "SAÉ 5xx",
+        "MMI1": "SAÉ 1.02 | Concevoir une recommandation de communication numérique"
       }
     },
     {
@@ -702,7 +725,8 @@
       "events": {
         "MMI3-App": "Entreprise S07",
         "MMI3-crea": "SAÉ 5xx",
-        "MMI3-Dev": "SAÉ 5xx"
+        "MMI3-Dev": "SAÉ 5xx",
+        "MMI1": "SAÉ 1.05 | Produire un site Web"
       },
       "week": 50
     },
@@ -712,7 +736,8 @@
       "events": {
         "MMI3-App": "Entreprise S07",
         "MMI3-crea": "SAÉ 5xx",
-        "MMI3-Dev": "SAÉ 5xx"
+        "MMI3-Dev": "SAÉ 5xx",
+        "MMI1": "SAÉ 1.05 | Produire un site Web"
       }
     },
     {
@@ -721,7 +746,8 @@
       "events": {
         "MMI3-App": "Entreprise S07",
         "MMI3-crea": "SAÉ 5xx",
-        "MMI3-Dev": "SAÉ 5xx"
+        "MMI3-Dev": "SAÉ 5xx",
+        "MMI1": "SAÉ 1.05 | Produire un site Web"
       }
     },
     {
@@ -730,7 +756,8 @@
       "events": {
         "MMI3-App": "Entreprise S07",
         "MMI3-crea": "SAÉ 5xx",
-        "MMI3-Dev": "SAÉ 5xx"
+        "MMI3-Dev": "SAÉ 5xx",
+        "MMI1": "SAÉ 1.05 | Produire un site Web"
       }
     },
     {
@@ -739,7 +766,8 @@
       "events": {
         "MMI3-App": "Entreprise S07",
         "MMI3-crea": "SAÉ 5xx",
-        "MMI3-Dev": "SAÉ 5xx"
+        "MMI3-Dev": "SAÉ 5xx",
+        "MMI1": "SAÉ 1.05 | Produire un site Web"
       }
     },
     {
@@ -897,28 +925,38 @@
     {
       "day": 4,
       "weekday": "Mo",
-      "events": {},
+      "events": {
+        "MMI1": "SAÉ 1.03 | Produire les éléments d'une communication visuelle"
+      },
       "week": 1
     },
     {
       "day": 5,
       "weekday": "Tu",
-      "events": {}
+      "events": {
+        "MMI1": "SAÉ 1.03 | Produire les éléments d'une communication visuelle"
+      }
     },
     {
       "day": 6,
       "weekday": "We",
-      "events": {}
+      "events": {
+        "MMI1": "SAÉ 1.03 | Produire les éléments d'une communication visuelle"
+      }
     },
     {
       "day": 7,
       "weekday": "Th",
-      "events": {}
+      "events": {
+        "MMI1": "SAÉ 1.03 | Produire les éléments d'une communication visuelle"
+      }
     },
     {
       "day": 8,
       "weekday": "Fr",
-      "events": {}
+      "events": {
+        "MMI1": "SAÉ 1.03 | Produire les éléments d'une communication visuelle"
+      }
     },
     {
       "day": 9,
@@ -988,7 +1026,8 @@
         "MMI2-App": "Entreprise S08",
         "MMI2-crea": "SAÉ 3xx",
         "MMI2-Dev": "SAÉ 3xx",
-        "Autre": "Vœux de l'IUT + 15 ans de l'IUT"
+        "Autre": "Vœux de l'IUT + 15 ans de l'IUT",
+        "MMI1": "SAÉ 1.06 | Gérer un projet de communication numérique"
       },
       "week": 3
     },
@@ -999,7 +1038,8 @@
         "MMI2-App": "Entreprise S08",
         "MMI2-crea": "SAÉ 3xx",
         "MMI2-Dev": "SAÉ 3xx",
-        "Autre": "15 ans de l'IUT"
+        "Autre": "15 ans de l'IUT",
+        "MMI1": "SAÉ 1.06 | Gérer un projet de communication numérique"
       }
     },
     {
@@ -1009,7 +1049,8 @@
         "MMI2-App": "Entreprise S08",
         "MMI2-crea": "SAÉ 3xx",
         "MMI2-Dev": "SAÉ 3xx",
-        "Autre": "15 ans de l'IUT"
+        "Autre": "15 ans de l'IUT",
+        "MMI1": "SAÉ 1.06 | Gérer un projet de communication numérique"
       }
     },
     {
@@ -1019,7 +1060,8 @@
         "MMI2-App": "Entreprise S08",
         "MMI2-crea": "SAÉ 3xx",
         "MMI2-Dev": "SAÉ 3xx",
-        "Autre": "15 ans de l'IUT"
+        "Autre": "15 ans de l'IUT",
+        "MMI1": "SAÉ 1.06 | Gérer un projet de communication numérique"
       }
     },
     {
@@ -1029,7 +1071,8 @@
         "MMI2-App": "Entreprise S08",
         "MMI2-crea": "SAÉ 3xx",
         "MMI2-Dev": "SAÉ 3xx",
-        "Autre": "15 ans de l'IUT"
+        "Autre": "15 ans de l'IUT",
+        "MMI1": "SAÉ 1.06 | Gérer un projet de communication numérique"
       }
     },
     {
@@ -1297,7 +1340,8 @@
       "events": {
         "MMI3-App": "Entreprise S14",
         "MMI3-crea": "Stage",
-        "MMI3-Dev": "Stage"
+        "MMI3-Dev": "Stage",
+        "MMI1": "SAÉ 2.04 | Construire sa présence en ligne"
       },
       "week": 8
     },
@@ -1307,7 +1351,8 @@
       "events": {
         "MMI3-App": "Entreprise S14",
         "MMI3-crea": "Stage",
-        "MMI3-Dev": "Stage"
+        "MMI3-Dev": "Stage",
+        "MMI1": "SAÉ 2.04 | Construire sa présence en ligne"
       }
     },
     {
@@ -1316,7 +1361,8 @@
       "events": {
         "MMI3-App": "Entreprise S14",
         "MMI3-crea": "Stage",
-        "MMI3-Dev": "Stage"
+        "MMI3-Dev": "Stage",
+        "MMI1": "SAÉ 2.04 | Construire sa présence en ligne"
       }
     },
     {
@@ -1325,7 +1371,8 @@
       "events": {
         "MMI3-App": "Entreprise S14",
         "MMI3-crea": "Stage",
-        "MMI3-Dev": "Stage"
+        "MMI3-Dev": "Stage",
+        "MMI1": "SAÉ 2.04 | Construire sa présence en ligne"
       }
     },
     {
@@ -1334,7 +1381,9 @@
       "events": {
         "MMI3-App": "Entreprise S14",
         "MMI3-crea": "Stage",
-        "MMI3-Dev": "Stage"
+        "MMI3-Dev": "Stage",
+        "JPO": "JPO Demain Samedi 27",
+        "MMI1": "SAÉ 2.04 | Construire sa présence en ligne"
       }
     },
     {
