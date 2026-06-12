@@ -322,5 +322,14 @@
     "description": "Modification CHOLLET Antoine",
     "prev": "Vacataire, dû:187, max:—",
     "next": "Vacataire (CEV), dû:187, max:—"
+  },
+  {
+    "date": "12/06/2026",
+    "heure": "18:54:37",
+    "utilisateur": "nicolas.maurin",
+    "type": "Enseignants",
+    "description": "Modification SELIGHINI Valérie",
+    "prev": "Vacataire, dû:—, max:187",
+    "next": "Vacataire (CEV), dû:—, max:187"
   }
 ]
