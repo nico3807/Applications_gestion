@@ -623,15 +623,6 @@ window.exportXLSX = function () {
       },
     });
 
-    const S_SEM_HDR = {
-      font:      { name: "Arial", bold: true, sz: 11, color: { rgb: "FFFFFF" } },
-      fill:      { patternType: "solid", fgColor: { rgb: "374151" } },
-      alignment: { horizontal: "left", vertical: "center", wrapText: false },
-      border: {
-        top: OUTER, bottom: OUTER, left: OUTER, right: OUTER,
-      },
-    };
-
     const aoa = [[
       { v: "SAÉ", t: "s", s: S_HDR },
       { v: "Compétence ciblée", t: "s", s: S_HDR },
@@ -670,31 +661,63 @@ window.exportXLSX = function () {
       });
     };
 
+    const wbSae = XLSX.utils.book_new();
+
     if (isTout) {
       semestres.forEach((s) => {
         const semList = APP_DATA.sae.sae[s] || [];
         if (!semList.length) return;
-        // Ligne d'en-tête de semestre (fusionnée sur 4 colonnes)
-        aoa.push([
-          { v: s, t: "s", s: S_SEM_HDR },
-          { v: "", t: "s", s: S_SEM_HDR },
-          { v: "", t: "s", s: S_SEM_HDR },
-          { v: "", t: "s", s: S_SEM_HDR },
-        ]);
-        merges.push({ s: { r: rowIdx, c: 0 }, e: { r: rowIdx, c: 3 } });
-        rowIdx++;
-        _addSaeList(semList);
+        // Réinitialise le tableau et les merges pour cet onglet
+        const sheetAoa = [[
+          { v: "SAÉ", t: "s", s: S_HDR },
+          { v: "Compétence ciblée", t: "s", s: S_HDR },
+          { v: "Ressources nécessaires", t: "s", s: S_HDR },
+          { v: "Responsable SAÉ", t: "s", s: S_HDR },
+        ]];
+        const sheetMerges = [];
+        rowIdx = 1;
+        globalSaeIdx = 0;
+        // Redirige _addSaeList vers ce tableau local
+        const _addLocal = (list2) => {
+          list2.forEach((s2) => {
+            const res2   = s2.ressources || [];
+            const nRows2 = Math.max(1, res2.length);
+            const fill2  = globalSaeIdx % 2 === 0 ? "F0F4FB" : "FFFFFF";
+            for (let i = 0; i < nRows2; i++) {
+              const isFirst2 = i === 0;
+              const isLast2  = i === nRows2 - 1;
+              sheetAoa.push([
+                mkCell(isFirst2 ? s2.code               : "", isFirst2, fill2, isFirst2, isLast2, 0),
+                mkCell(isFirst2 ? (s2.competence || "") : "", false,    fill2, isFirst2, isLast2, 1),
+                mkCell(res2[i] ?? "",                         false,    fill2, isFirst2, isLast2, 2),
+                mkCell(isFirst2 ? (s2.responsable || ""): "", false,    fill2, isFirst2, isLast2, 3),
+              ]);
+            }
+            if (nRows2 > 1) {
+              sheetMerges.push({ s: { r: rowIdx, c: 0 }, e: { r: rowIdx + nRows2 - 1, c: 0 } });
+              sheetMerges.push({ s: { r: rowIdx, c: 1 }, e: { r: rowIdx + nRows2 - 1, c: 1 } });
+              sheetMerges.push({ s: { r: rowIdx, c: 3 }, e: { r: rowIdx + nRows2 - 1, c: 3 } });
+            }
+            rowIdx += nRows2;
+            globalSaeIdx++;
+          });
+        };
+        _addLocal(semList);
+        const wsSem = XLSX.utils.aoa_to_sheet(sheetAoa, { cellStyles: true });
+        wsSem["!cols"]   = [{ wch: 45 }, { wch: 35 }, { wch: 45 }, { wch: 20 }];
+        wsSem["!merges"] = sheetMerges;
+        wsSem["!freeze"] = { xSplit: 0, ySplit: 1 };
+        XLSX.utils.book_append_sheet(wbSae, wsSem, `SAÉ ${s}`.substring(0, 31));
       });
     } else {
       _addSaeList(list);
+      const wsSae = XLSX.utils.aoa_to_sheet(aoa, { cellStyles: true });
+      wsSae["!cols"]   = [{ wch: 45 }, { wch: 35 }, { wch: 45 }, { wch: 20 }];
+      wsSae["!merges"] = merges;
+      wsSae["!freeze"] = { xSplit: 0, ySplit: 1 };
+      XLSX.utils.book_append_sheet(wbSae, wsSae, `SAÉ ${sem}`.substring(0, 31));
     }
 
-    const wsSae = XLSX.utils.aoa_to_sheet(aoa, { cellStyles: true });
-    wsSae["!cols"]   = [{ wch: 45 }, { wch: 35 }, { wch: 45 }, { wch: 20 }];
-    wsSae["!merges"] = merges;
-    wsSae["!freeze"] = { xSplit: 0, ySplit: 1 };
-    const wbSae = XLSX.utils.book_new();
-    XLSX.utils.book_append_sheet(wbSae, wsSae, `SAÉ ${sem}`.substring(0, 31));
     XLSX.writeFile(wbSae, `sae_${safeSem}.xlsx`);
     return;
   } else {
