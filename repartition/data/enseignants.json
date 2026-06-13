@@ -51,15 +51,6 @@
     "is_cev": false
   },
   {
-    "id": "CALOMINA Léo",
-    "nom": "CALOMINA",
-    "prenom": "Léo",
-    "is_vac": true,
-    "service_du": 187,
-    "service_max": null,
-    "is_cev": false
-  },
-  {
     "id": "CHOLLET Antoine",
     "nom": "CHOLLET",
     "prenom": "Antoine",
@@ -67,6 +58,15 @@
     "service_du": 187,
     "service_max": null,
     "is_cev": true
+  },
+  {
+    "id": "COLOMINA Léo",
+    "nom": "COLOMINA",
+    "prenom": "Léo",
+    "is_vac": true,
+    "service_du": 187,
+    "service_max": null,
+    "is_cev": false
   },
   {
     "id": "DARTIES Benoit",
