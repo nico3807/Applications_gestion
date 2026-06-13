@@ -2754,7 +2754,7 @@ window.clearModificationsGH = async function () {
   renderView();
 };
 
-window.revertModification = function (actualIdx) {
+window.revertModification = async function (actualIdx) {
   if (ARCHIVE_MODE || !AUTH.canWrite()) return;
   const mod = APP_DATA.modifications[actualIdx];
   if (!mod) return;
@@ -2832,6 +2832,17 @@ window.revertModification = function (actualIdx) {
       sae.responsable = prev === "—" ? "" : prev;
     } else {
       return alert("Ce type de modification ne peut pas être rétabli automatiquement.");
+    }
+
+    // Flush immédiat dans APP_DATA.modifications pour affichage dans le journal
+    APP_DATA.modifications.push(..._pendingMods);
+    _pendingMods = [];
+    if (isGHConfigured()) {
+      try {
+        await saveFileGH("modifications.json", APP_DATA.modifications, "Update modifications.json via Web UI");
+      } catch (e) {
+        console.warn("Could not save modifications.json:", e);
+      }
     }
 
     showToast("Modification rétablie — pensez à enregistrer sur GitHub");
