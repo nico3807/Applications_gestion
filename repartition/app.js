@@ -585,29 +585,84 @@ window.exportXLSX = function () {
     filename = `maquette_${safeSem}.xlsx`;
     sheetName = sem || "Maquette";
   } else if (currentView === "sae") {
-    const sem = _saeSemFilter;
+    const sem     = _saeSemFilter;
     const safeSem = sem.replace(/\s+/g, "_");
-    const list = APP_DATA.sae.sae[sem] || [];
-    rows = [
-      [
-        "SAÉ",
-        "Intitulé",
-        "Compétence ciblée",
-        "Ressources nécessaires",
-        "Responsable",
-      ],
-    ];
-    list.forEach((s) => {
-      rows.push([
-        s.code,
-        s.intitule,
-        s.competence,
-        (s.ressources || []).join(", "),
-        s.responsable || "",
-      ]);
+    const list    = APP_DATA.sae.sae[sem] || [];
+
+    /* ── Styles identiques au calendrier ── */
+    const S_HDR = {
+      font:      { name: "Arial", bold: true, sz: 11, color: { rgb: "FFFFFF" } },
+      fill:      { patternType: "solid", fgColor: { rgb: "1E3A5F" } },
+      alignment: { horizontal: "center", vertical: "center", wrapText: true },
+      border: {
+        top: { style: "medium", color: { rgb: "1E3A5F" } }, bottom: { style: "medium", color: { rgb: "1E3A5F" } },
+        left: { style: "medium", color: { rgb: "1E3A5F" } }, right: { style: "medium", color: { rgb: "1E3A5F" } },
+      },
+    };
+    const OUTER = { style: "medium", color: { rgb: "1E3A5F" } };
+    const SEP   = { style: "thin",   color: { rgb: "D1D5DB" } };
+
+    /* Bordure d'une cellule selon sa position dans le bloc SAÉ */
+    const mkBorder = (isFirst, isLast, col) => {
+      const b = { left: col === 0 ? OUTER : SEP, right: col === 3 ? OUTER : SEP };
+      if (isFirst)        b.top    = OUTER;
+      else if (col === 2) b.top    = SEP;   // séparateur fin entre ressources
+      if (isLast)         b.bottom = OUTER;
+      return b;
+    };
+
+    const mkCell = (v, bold, fillHex, isFirst, isLast, col) => ({
+      v: v ?? "", t: "s",
+      s: {
+        font:      { name: "Arial", sz: 10, bold: bold || false },
+        fill:      { patternType: "solid", fgColor: { rgb: fillHex } },
+        alignment: { vertical: "top", wrapText: true },
+        border:    mkBorder(isFirst, isLast, col),
+      },
     });
-    filename = `sae_${safeSem}.xlsx`;
-    sheetName = `SAÉ ${sem}`.substring(0, 31);
+
+    const aoa = [[
+      { v: "SAÉ", t: "s", s: S_HDR },
+      { v: "Compétence ciblée", t: "s", s: S_HDR },
+      { v: "Ressources nécessaires", t: "s", s: S_HDR },
+      { v: "Responsable SAÉ", t: "s", s: S_HDR },
+    ]];
+
+    const merges = [];
+    let rowIdx = 1; // ligne 0 = en-têtes
+
+    list.forEach((s, si) => {
+      const res   = s.ressources || [];
+      const nRows = Math.max(1, res.length);
+      const fill  = si % 2 === 0 ? "F0F4FB" : "FFFFFF";
+
+      for (let i = 0; i < nRows; i++) {
+        const isFirst = i === 0;
+        const isLast  = i === nRows - 1;
+        aoa.push([
+          mkCell(isFirst ? s.code                    : "", isFirst, fill, isFirst, isLast, 0),
+          mkCell(isFirst ? (s.competence || "")      : "", false,   fill, isFirst, isLast, 1),
+          mkCell(res[i] ?? "",                             false,   fill, isFirst, isLast, 2),
+          mkCell(isFirst ? (s.responsable || "")     : "", false,   fill, isFirst, isLast, 3),
+        ]);
+      }
+
+      if (nRows > 1) {
+        merges.push({ s: { r: rowIdx, c: 0 }, e: { r: rowIdx + nRows - 1, c: 0 } });
+        merges.push({ s: { r: rowIdx, c: 1 }, e: { r: rowIdx + nRows - 1, c: 1 } });
+        merges.push({ s: { r: rowIdx, c: 3 }, e: { r: rowIdx + nRows - 1, c: 3 } });
+      }
+      rowIdx += nRows;
+    });
+
+    const wsSae = XLSX.utils.aoa_to_sheet(aoa, { cellStyles: true });
+    wsSae["!cols"]   = [{ wch: 45 }, { wch: 35 }, { wch: 45 }, { wch: 20 }];
+    wsSae["!merges"] = merges;
+    wsSae["!freeze"] = { xSplit: 0, ySplit: 1 };
+    const wbSae = XLSX.utils.book_new();
+    XLSX.utils.book_append_sheet(wbSae, wsSae, `SAÉ ${sem}`.substring(0, 31));
+    XLSX.writeFile(wbSae, `sae_${safeSem}.xlsx`);
+    return;
   } else {
     return;
   }
