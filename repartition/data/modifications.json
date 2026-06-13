@@ -349,5 +349,14 @@
     "description": "Modification CALOMINA Léo",
     "prev": "CALOMINA Léo — Vacataire, dû:187, max:—",
     "next": "COLOMINA Léo — Vacataire, dû:187, max:—"
+  },
+  {
+    "date": "13/06/2026",
+    "heure": "08:41:53",
+    "utilisateur": "nicolas.maurin",
+    "type": "Répartition",
+    "description": "S1 / R1.20 | Soutien, remise a niveau / cm",
+    "prev": "0",
+    "next": "0.5"
   }
 ]
