@@ -585,9 +585,11 @@ window.exportXLSX = function () {
     filename = `maquette_${safeSem}.xlsx`;
     sheetName = sem || "Maquette";
   } else if (currentView === "sae") {
-    const sem     = _saeSemFilter;
+    const isTout  = _saeSemFilter === "Tout";
+    const sem     = isTout ? "tout" : _saeSemFilter;
     const safeSem = sem.replace(/\s+/g, "_");
-    const list    = APP_DATA.sae.sae[sem] || [];
+    const semestres = isTout ? (APP_DATA.sae.semestres || []) : null;
+    const list    = isTout ? null : (APP_DATA.sae.sae[_saeSemFilter] || []);
 
     /* ── Styles identiques au calendrier ── */
     const S_HDR = {
@@ -621,6 +623,15 @@ window.exportXLSX = function () {
       },
     });
 
+    const S_SEM_HDR = {
+      font:      { name: "Arial", bold: true, sz: 11, color: { rgb: "FFFFFF" } },
+      fill:      { patternType: "solid", fgColor: { rgb: "374151" } },
+      alignment: { horizontal: "left", vertical: "center", wrapText: false },
+      border: {
+        top: OUTER, bottom: OUTER, left: OUTER, right: OUTER,
+      },
+    };
+
     const aoa = [[
       { v: "SAÉ", t: "s", s: S_HDR },
       { v: "Compétence ciblée", t: "s", s: S_HDR },
@@ -630,30 +641,53 @@ window.exportXLSX = function () {
 
     const merges = [];
     let rowIdx = 1; // ligne 0 = en-têtes
+    let globalSaeIdx = 0;
 
-    list.forEach((s, si) => {
-      const res   = s.ressources || [];
-      const nRows = Math.max(1, res.length);
-      const fill  = si % 2 === 0 ? "F0F4FB" : "FFFFFF";
+    const _addSaeList = (saeList) => {
+      saeList.forEach((s) => {
+        const res   = s.ressources || [];
+        const nRows = Math.max(1, res.length);
+        const fill  = globalSaeIdx % 2 === 0 ? "F0F4FB" : "FFFFFF";
 
-      for (let i = 0; i < nRows; i++) {
-        const isFirst = i === 0;
-        const isLast  = i === nRows - 1;
+        for (let i = 0; i < nRows; i++) {
+          const isFirst = i === 0;
+          const isLast  = i === nRows - 1;
+          aoa.push([
+            mkCell(isFirst ? s.code               : "", isFirst, fill, isFirst, isLast, 0),
+            mkCell(isFirst ? (s.competence || "") : "", false,   fill, isFirst, isLast, 1),
+            mkCell(res[i] ?? "",                        false,   fill, isFirst, isLast, 2),
+            mkCell(isFirst ? (s.responsable || ""): "", false,   fill, isFirst, isLast, 3),
+          ]);
+        }
+
+        if (nRows > 1) {
+          merges.push({ s: { r: rowIdx, c: 0 }, e: { r: rowIdx + nRows - 1, c: 0 } });
+          merges.push({ s: { r: rowIdx, c: 1 }, e: { r: rowIdx + nRows - 1, c: 1 } });
+          merges.push({ s: { r: rowIdx, c: 3 }, e: { r: rowIdx + nRows - 1, c: 3 } });
+        }
+        rowIdx += nRows;
+        globalSaeIdx++;
+      });
+    };
+
+    if (isTout) {
+      semestres.forEach((s) => {
+        const semList = APP_DATA.sae.sae[s] || [];
+        if (!semList.length) return;
+        // Ligne d'en-tête de semestre (fusionnée sur 4 colonnes)
         aoa.push([
-          mkCell(isFirst ? s.code                    : "", isFirst, fill, isFirst, isLast, 0),
-          mkCell(isFirst ? (s.competence || "")      : "", false,   fill, isFirst, isLast, 1),
-          mkCell(res[i] ?? "",                             false,   fill, isFirst, isLast, 2),
-          mkCell(isFirst ? (s.responsable || "")     : "", false,   fill, isFirst, isLast, 3),
+          { v: s, t: "s", s: S_SEM_HDR },
+          { v: "", t: "s", s: S_SEM_HDR },
+          { v: "", t: "s", s: S_SEM_HDR },
+          { v: "", t: "s", s: S_SEM_HDR },
         ]);
-      }
-
-      if (nRows > 1) {
-        merges.push({ s: { r: rowIdx, c: 0 }, e: { r: rowIdx + nRows - 1, c: 0 } });
-        merges.push({ s: { r: rowIdx, c: 1 }, e: { r: rowIdx + nRows - 1, c: 1 } });
-        merges.push({ s: { r: rowIdx, c: 3 }, e: { r: rowIdx + nRows - 1, c: 3 } });
-      }
-      rowIdx += nRows;
-    });
+        merges.push({ s: { r: rowIdx, c: 0 }, e: { r: rowIdx, c: 3 } });
+        rowIdx++;
+        _addSaeList(semList);
+      });
+    } else {
+      _addSaeList(list);
+    }
 
     const wsSae = XLSX.utils.aoa_to_sheet(aoa, { cellStyles: true });
     wsSae["!cols"]   = [{ wch: 45 }, { wch: 35 }, { wch: 45 }, { wch: 20 }];
@@ -2291,7 +2325,7 @@ function renderSae(root) {
   const titulaires = APP_DATA.enseignants.filter((e) => !e.is_vac);
 
   /* S'assurer que le filtre courant est valide */
-  if (!semestres.includes(_saeSemFilter) && semestres.length > 0) {
+  if (_saeSemFilter !== "Tout" && !semestres.includes(_saeSemFilter) && semestres.length > 0) {
     _saeSemFilter = semestres[0];
   }
 
@@ -2302,10 +2336,12 @@ function renderSae(root) {
     )
     .join("");
 
+  const toutBtn = `<button class="sem-btn ${_saeSemFilter === "Tout" && !_saeShowRecap ? "active" : ""}" onclick="setSaeSemFilter('Tout')">Tout</button>`;
   const recapBtn = `<button class="sem-btn ${_saeShowRecap ? "active" : ""}" onclick="setSaeShowRecap(true)">Responsables</button>`;
 
   const filterBar = `
     <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-bottom:1.25rem;">
+      ${toutBtn}
       ${semBtns}
       <span style="color:#d1d5db;font-size:18px;margin:0 2px;">|</span>
       ${recapBtn}
@@ -2365,29 +2401,20 @@ function renderSae(root) {
     return;
   }
 
-  const rows = saeData.sae[_saeSemFilter] || [];
-
   const respOptions =
     `<option value="">— Aucun —</option>` +
     titulaires.map((e) => `<option value="${esc(e.id)}">${esc(e.id)}</option>`).join("");
 
-  const tableRows = rows
-    .map((sae, i) => {
-      const ressBadges = sae.ressources
-        .map(
-          (r) =>
-            `<span style="display:inline-block;background:#dbeafe;color:#1e3a5f;border:1px solid #93c5fd;border-radius:4px;padding:1px 7px;font-size:11px;margin:2px 2px 2px 0;">${esc(r)}</span>`,
-        )
+  /* ── Génère les lignes <tr> d'un semestre (vue éditée) ── */
+  const _buildSaeRows = (semRows, sem, startIdx) => {
+    const escSem = sem.replace(/'/g, "\\'");
+    return semRows.map((sae, i) => {
+      const ressBadges = (sae.ressources || [])
+        .map((r) => `<span style="display:inline-block;background:#dbeafe;color:#1e3a5f;border:1px solid #93c5fd;border-radius:4px;padding:1px 7px;font-size:11px;margin:2px 2px 2px 0;">${esc(r)}</span>`)
         .join("");
-
-      const escSem = _saeSemFilter.replace(/'/g, "\\'");
       const escCode = sae.code.replace(/'/g, "\\'");
-
-      const [codeRef, codeName] = sae.code.includes(" | ")
-        ? sae.code.split(" | ")
-        : [sae.code, sae.intitule];
-
-      return `<tr class="${i % 2 === 0 ? "group-even" : "group-odd"}">
+      const [codeRef, codeName] = sae.code.includes(" | ") ? sae.code.split(" | ") : [sae.code, sae.intitule];
+      return `<tr class="${(startIdx + i) % 2 === 0 ? "group-even" : "group-odd"}">
       <td style="font-weight:600;">
         <span style="color:#1e3a5f;font-size:12px;white-space:nowrap;">${esc(codeRef)}</span><br>
         <span style="font-weight:400;font-size:13px;">${esc(codeName || "")}</span>
@@ -2398,15 +2425,54 @@ function renderSae(root) {
         <select class="select-enseignant" autocomplete="off"
                 onchange="updateSaeResponsable('${escSem}','${escCode}',this.value)"
                 style="min-width:160px;">
-          ${respOptions.replace(
-            `value="${esc(sae.responsable)}"`,
-            `value="${esc(sae.responsable)}" selected`,
-          )}
+          ${respOptions.replace(`value="${esc(sae.responsable)}"`, `value="${esc(sae.responsable)}" selected`)}
         </select>
       </td>
     </tr>`;
-    })
-    .join("");
+    }).join("");
+  };
+
+  /* ── Vue "Tout" : tous les semestres groupés ── */
+  if (_saeSemFilter === "Tout") {
+    let bodyRows = "";
+    let rowIdx = 0;
+    semestres.forEach((sem) => {
+      const semRows = saeData.sae[sem] || [];
+      if (!semRows.length) return;
+      bodyRows += `<tr><td colspan="4" style="background:#1e3a5f;color:#fff;font-weight:700;font-size:13px;padding:7px 14px;letter-spacing:.03em;border:none;">${sem}</td></tr>`;
+      bodyRows += _buildSaeRows(semRows, sem, rowIdx);
+      rowIdx += semRows.length;
+    });
+
+    root.innerHTML = `
+      <div class="page-header" style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;">
+        <h1 style="margin:0;">Responsables SAÉ</h1>
+        <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap;">
+          <button class="btn-print-action" onclick="window.print()">🖨 Imprimer</button>
+          <button class="btn-pdf-action" onclick="exportXLSX()">⬇ Exporter XLSX</button>
+          <button class="btn-add-res" onclick="openSaeEditModal()">✏️ Modifier ou supprimer Ressources/SAÉ</button>
+          <button class="btn-save" onclick="saveSaeGH()">💾 Enregistrer sur GitHub</button>
+        </div>
+      </div>
+      ${filterBar}
+      <div class="table-wrapper table-wrapper--semestre">
+        <table class="ressources-table">
+          <thead>
+            <tr>
+              <th style="min-width:220px;">SAÉ</th>
+              <th>Compétence ciblée</th>
+              <th>Ressources nécessaires</th>
+              <th style="min-width:180px;">Responsable SAÉ</th>
+            </tr>
+          </thead>
+          <tbody>${bodyRows}</tbody>
+        </table>
+      </div>`;
+    return;
+  }
+
+  const rows = saeData.sae[_saeSemFilter] || [];
+  const tableRows = _buildSaeRows(rows, _saeSemFilter, 0);
 
   root.innerHTML = `
     <div class="page-header" style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;">
