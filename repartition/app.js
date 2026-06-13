@@ -458,6 +458,24 @@ async function _flushMods() {
   }
 }
 
+function _isRevertible(mod) {
+  if (ARCHIVE_MODE) return false;
+  const { type, description } = mod;
+  if (type === "Rétablissement") return false;
+  if (type === "Répartition") {
+    const parts = description.split(" / ");
+    return parts.length === 3 || (parts.length === 4 && parts[2].startsWith("sous-groupe "));
+  }
+  if (type === "Maquette") {
+    if (description.split(" / ").length === 3) return true;
+    if (description.startsWith("Renommage — ") && mod.prev !== "—") return true;
+    return false;
+  }
+  if (type === "Maquette PN") return description.split(" / ").length === 3;
+  if (type === "SAÉ") return /^Responsable .+ \(.+\)$/.test(description);
+  return false;
+}
+
 let currentView = "home";
 let currentParam = null;
 let enseignantsSortMode = "alpha"; // "alpha" ou "status"
@@ -2669,6 +2687,8 @@ function renderModifications(root) {
     return;
   }
 
+  const canRevert = AUTH.canWrite() && !ARCHIVE_MODE;
+
   /* Pas de .table-wrapper ici : overflow-x bloquerait position:sticky sur thead */
   html += `<table class="ressources-table" style="width:100%;">
     <thead class="journal-thead">
@@ -2679,19 +2699,25 @@ function renderModifications(root) {
         <th>Type</th>
         <th>Valeur précédente</th>
         <th>Valeur modifiée</th>
+        ${canRevert ? `<th style="width:90px">Actions</th>` : ""}
       </tr>
     </thead>
     <tbody>`;
 
   mods.forEach((m, i) => {
+    const actualIdx = APP_DATA.modifications.length - 1 - i;
     const rowClass = i % 2 === 0 ? "mod-row-blue" : "mod-row-green";
+    const revertBtn = canRevert && _isRevertible(m)
+      ? `<button class="btn-revert-mod" onclick="revertModification(${actualIdx})" title="Rétablir la valeur précédente">↩ Rétablir</button>`
+      : "";
     html += `<tr class="${rowClass}">
       <td>${m.date}</td>
       <td>${m.heure}</td>
-      <td><strong>${m.utilisateur}</strong></td>
-      <td>${m.type}${m.description ? `<br><small class="mod-desc">${m.description}</small>` : ""}</td>
-      <td>${m.prev}</td>
-      <td>${m.next}</td>
+      <td><strong>${esc(m.utilisateur)}</strong></td>
+      <td>${esc(m.type)}${m.description ? `<br><small class="mod-desc">${esc(m.description)}</small>` : ""}</td>
+      <td>${esc(m.prev)}</td>
+      <td>${esc(m.next)}</td>
+      ${canRevert ? `<td style="text-align:center;">${revertBtn}</td>` : ""}
     </tr>`;
   });
 
@@ -2726,6 +2752,93 @@ window.clearModificationsGH = async function () {
     }
   }
   renderView();
+};
+
+window.revertModification = function (actualIdx) {
+  if (ARCHIVE_MODE || !AUTH.canWrite()) return;
+  const mod = APP_DATA.modifications[actualIdx];
+  if (!mod) return;
+
+  const { type, description, prev, next } = mod;
+  const prevDisplay = prev === "—" ? "(vide)" : prev;
+  if (!confirm(`Rétablir la valeur précédente ?\n"${description}" → "${prevDisplay}"`)) return;
+
+  try {
+    if (type === "Répartition") {
+      const parts = description.split(" / ");
+      if (parts.length === 4 && parts[2].startsWith("sous-groupe ")) {
+        const [sem, res, subLabel, field] = parts;
+        const subIdx = parseInt(subLabel.replace("sous-groupe ", "")) - 1;
+        const subrows = APP_DATA.affectations[sem]?.[res]?.subrows;
+        if (!subrows || subIdx < 0 || subIdx >= subrows.length) {
+          return alert("Impossible de rétablir : le sous-groupe n'existe plus.");
+        }
+        const prevVal = ["cm", "td", "tp"].includes(field) ? (parseFloat(prev) || 0) : (prev === "—" ? "" : prev);
+        _logMod("Rétablissement", description, next, prev);
+        subrows[subIdx][field] = prevVal;
+      } else if (parts.length === 3) {
+        const [sem, res, field] = parts;
+        if (!APP_DATA.affectations[sem]?.[res]) {
+          return alert("Impossible de rétablir : la ressource n'existe plus.");
+        }
+        const prevVal = ["cm", "td", "tp"].includes(field) ? (parseFloat(prev) || 0) : (prev === "—" ? "" : prev);
+        _logMod("Rétablissement", description, next, prev);
+        APP_DATA.affectations[sem][res][field] = prevVal;
+      } else {
+        return alert("Format de modification non reconnu.");
+      }
+    } else if (type === "Maquette") {
+      const parts = description.split(" / ");
+      if (parts.length === 3) {
+        const [sem, res, field] = parts;
+        if (!APP_DATA.maquette_overrides[sem]?.[res]) {
+          return alert("Impossible de rétablir : la ressource n'existe plus.");
+        }
+        _logMod("Rétablissement", description, next, prev);
+        APP_DATA.maquette_overrides[sem][res][field] = parseFloat(prev) || 0;
+      } else if (description.startsWith("Renommage — ")) {
+        const sem = description.replace("Renommage — ", "");
+        if (!APP_DATA.affectations[sem]?.[next]) {
+          return alert(`Impossible de rétablir : la ressource "${next}" n'existe plus.`);
+        }
+        const affSem = APP_DATA.affectations[sem];
+        const maqSem = APP_DATA.maquette_overrides[sem] || {};
+        const vhnSem = APP_DATA.volume_horaire_national[sem] || {};
+        const aff = affSem[next], maq = maqSem[next], vhn = vhnSem[next];
+        delete affSem[next]; delete maqSem[next]; delete vhnSem[next];
+        if (aff !== undefined) affSem[prev] = aff;
+        if (maq !== undefined) maqSem[prev] = maq;
+        if (vhn !== undefined) vhnSem[prev] = vhn;
+        _logMod("Rétablissement", description, next, prev);
+      } else {
+        return alert("Ce type de modification ne peut pas être rétabli automatiquement.");
+      }
+    } else if (type === "Maquette PN") {
+      const parts = description.split(" / ");
+      if (parts.length !== 3) return alert("Format de modification PN non reconnu.");
+      const [sem, res, field] = parts;
+      if (!APP_DATA.volume_horaire_national[sem]?.[res]) {
+        return alert("Impossible de rétablir : la ressource n'existe plus.");
+      }
+      _logMod("Rétablissement", description, next, prev);
+      APP_DATA.volume_horaire_national[sem][res][field] = parseFloat(prev) || 0;
+    } else if (type === "SAÉ") {
+      const match = description.match(/^Responsable (.+) \((.+)\)$/);
+      if (!match) return alert("Ce type de modification SAÉ ne peut pas être rétabli automatiquement.");
+      const [, code, sem] = match;
+      const sae = APP_DATA.sae?.sae?.[sem]?.find((s) => s.code === code);
+      if (!sae) return alert("Impossible de rétablir : la SAÉ n'existe plus.");
+      _logMod("Rétablissement", description, next, prev);
+      sae.responsable = prev === "—" ? "" : prev;
+    } else {
+      return alert("Ce type de modification ne peut pas être rétabli automatiquement.");
+    }
+
+    showToast("Modification rétablie — pensez à enregistrer sur GitHub");
+    renderView();
+  } catch (e) {
+    alert("Erreur lors du rétablissement : " + e.message);
+  }
 };
 
 window.switchToArchive = async function () {

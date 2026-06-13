@@ -1291,6 +1291,21 @@ th.pilotage-total-col small {
   background: #fde68a;
 }
 
+/* ── Bouton rétablir (journal) ── */
+.btn-revert-mod {
+  background: #f59e0b;
+  color: #fff;
+  border: none;
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s;
+  white-space: nowrap;
+}
+.btn-revert-mod:hover { background: #d97706; }
+
 /* ── Bouton ajout ressource ── */
 .btn-add-res {
   background: #059669;
