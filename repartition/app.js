@@ -1162,10 +1162,7 @@ function renderSemestre(root, sem) {
         <td></td>
     </tr>`;
 
-  html += `</tbody></table></div>
-    <div class="form-actions">
-        ${canEditAff ? `<button class="btn-save" onclick="saveAffectationsGH()">💾 Enregistrer les affectations sur GitHub</button>` : ""}
-    </div>`;
+  html += `</tbody></table></div>`;
 
   root.innerHTML = html;
 }
@@ -1176,6 +1173,7 @@ window.updateAff = function (sem, res, field, value) {
   _logMod("Répartition", `${sem} / ${res} / ${field}`, prev, value);
   APP_DATA.affectations[sem][res][field] = value;
   if (field === "enseignant" || field === "responsable") renderView();
+  scheduleAffAutoSave();
 };
 window.updateSub = function (sem, res, idx, field, value) {
   const prev = APP_DATA.affectations[sem]?.[res]?.subrows?.[idx]?.[field] ?? "";
@@ -1188,6 +1186,7 @@ window.updateSub = function (sem, res, idx, field, value) {
   );
   APP_DATA.affectations[sem][res].subrows[idx][field] = value;
   if (field === "enseignant") renderView();
+  scheduleAffAutoSave();
 };
 window.addSubrow = function (sem, res) {
   if (!APP_DATA.affectations[sem][res].subrows)
@@ -1199,10 +1198,12 @@ window.addSubrow = function (sem, res) {
     tp: 0,
   });
   renderView();
+  scheduleAffAutoSave();
 };
 window.removeSubrow = function (sem, res, idx) {
   APP_DATA.affectations[sem][res].subrows.splice(idx, 1);
   renderView();
+  scheduleAffAutoSave();
 };
 
 /* ── Vues : Maquette ─────────────────────────────────────────────────────── */
@@ -2241,6 +2242,31 @@ async function saveFileGH(filename, dataObj, msg, basePath = GH_BASE_PATH) {
       else errMsg = errJson.message || errJson.error || errMsg;
     } catch {}
     throw new Error(errMsg);
+  }
+}
+
+/* ── Auto-save répartition (déclenché après délai sur chaque modification) ── */
+let _affAutoSaveTimer = null;
+
+function scheduleAffAutoSave() {
+  if (!AUTH.canWrite() || !isGHConfigured()) return;
+  clearTimeout(_affAutoSaveTimer);
+  _affAutoSaveTimer = setTimeout(_doAffAutoSave, 1800);
+}
+
+async function _doAffAutoSave() {
+  if (ARCHIVE_MODE) return;
+  const ts = new Date().toLocaleString("fr-FR");
+  try {
+    await _flushMods();
+    await saveFileGH(
+      "affectations.json",
+      APP_DATA.affectations,
+      `Mise à jour affectations — ${ts}`,
+    );
+    showToast("✓ Sauvegardé automatiquement");
+  } catch (e) {
+    showToast("✗ Erreur sauvegarde : " + e.message);
   }
 }
 
