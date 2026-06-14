@@ -23,6 +23,7 @@
         Accueil
       </a>
       <span class="nav-title">Signalement cours non assuré — MMI</span>
+      <div class="header-inner" style="margin-left:auto;"></div>
     </nav>
 
     <div class="form-page">
@@ -131,6 +132,11 @@
       </div>
     </div>
 
+    <script src="../auth.js"></script>
+    <script>
+      if (AUTH.isAuth()) AUTH.injectBadge();
+      else window.addEventListener("auth-success", () => AUTH.injectBadge(), { once: true });
+    </script>
     <script src="script.js"></script>
   </body>
 </html>
