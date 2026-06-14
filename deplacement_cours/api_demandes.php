@@ -20,21 +20,13 @@ if (!$user) {
 
 $dataFile = __DIR__ . '/data/demandes.json';
 
-function loadDemandes($file) {
+function loadDemandes(string $file): array {
     if (!file_exists($file)) return [];
     return json_decode(file_get_contents($file), true) ?? [];
 }
 
-function saveDemandes($file, $demandes) {
-    $fp = fopen($file, 'c+');
-    if (!$fp) return false;
-    flock($fp, LOCK_EX);
-    ftruncate($fp, 0);
-    rewind($fp);
-    fwrite($fp, json_encode(array_values($demandes), JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE));
-    flock($fp, LOCK_UN);
-    fclose($fp);
-    return true;
+function saveDemandes(string $file, array $demandes): bool {
+    return file_put_contents($file, json_encode(array_values($demandes), JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE), LOCK_EX) !== false;
 }
 
 $method = $_SERVER['REQUEST_METHOD'];

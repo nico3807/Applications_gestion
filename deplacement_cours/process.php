@@ -50,15 +50,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (!is_dir($dataDir)) mkdir($dataDir, 0755, true);
     $existantes = file_exists($dataFile) ? (json_decode(file_get_contents($dataFile), true) ?? []) : [];
     $existantes[] = $demande;
-    $fp = fopen($dataFile, 'c+');
-    if ($fp) {
-        flock($fp, LOCK_EX);
-        ftruncate($fp, 0);
-        rewind($fp);
-        fwrite($fp, json_encode($existantes, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE));
-        flock($fp, LOCK_UN);
-        fclose($fp);
-    }
+    file_put_contents($dataFile, json_encode($existantes, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE), LOCK_EX);
 
     // --- CONFIGURATION DES EMAILS ---
 

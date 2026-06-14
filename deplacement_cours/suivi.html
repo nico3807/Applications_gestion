@@ -168,8 +168,12 @@
 
     <script src="../auth.js"></script>
     <script>
-      if (AUTH.isAuth()) AUTH.injectBadge();
-      else window.addEventListener("auth-success", () => AUTH.injectBadge(), { once: true });
+      if (AUTH.isAuth()) {
+        AUTH.injectBadge();
+      } else {
+        window.addEventListener("auth-success", () => AUTH.injectBadge(), { once: true });
+        AUTH.injectUI();
+      }
     </script>
     <script src="suivi.js"></script>
   </body>
