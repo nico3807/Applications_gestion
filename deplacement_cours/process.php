@@ -7,6 +7,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Récupération et nettoyage des données
     $nom          = htmlspecialchars(trim($_POST['nom']                  ?? ''));
     $parcours     = htmlspecialchars(trim($_POST['parcours']             ?? ''));
+    $ressource    = htmlspecialchars(trim($_POST['ressource']            ?? ''));
     $date_cours   = htmlspecialchars(trim($_POST['date_cours']           ?? ''));
     $heure_cours  = htmlspecialchars(trim($_POST['heure_cours']          ?? ''));
     $motif               = htmlspecialchars(trim($_POST['motif']                  ?? ''));
@@ -19,7 +20,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $date_fr          = $date_cours    ? date('d/m/Y', strtotime($date_cours))    : $date_cours;
     $date_souhaite_fr = $date_souhaite ? date('d/m/Y', strtotime($date_souhaite)) : $date_souhaite;
 
-    if (empty($nom) || empty($parcours) || empty($date_cours) || empty($heure_cours) || empty($date_souhaite) || empty($heure_souhaitee) || empty($motif)) {
+    if (empty($nom) || empty($parcours) || empty($ressource) || empty($date_cours) || empty($heure_cours) || empty($date_souhaite) || empty($heure_souhaitee) || empty($motif)) {
         echo json_encode(["status" => "error", "message" => "Veuillez remplir tous les champs obligatoires."]);
         exit;
     }
@@ -54,6 +55,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $message .= "<table style=\"border-collapse:collapse; margin-bottom:8px;\">";
     $message .= "<tr><td style=\"padding:3px 16px 3px 0; color:#555;\">Enseignant</td><td><strong>$nom</strong></td></tr>";
     $message .= "<tr><td style=\"padding:3px 16px 3px 0; color:#555;\">Parcours</td><td><strong>$parcours</strong></td></tr>";
+    $message .= "<tr><td style=\"padding:3px 16px 3px 0; color:#555;\">Ressource / SAE</td><td><strong>$ressource</strong></td></tr>";
     $message .= "<tr><td style=\"padding:3px 16px 3px 0; color:#555;\">Date du cours à modifier</td><td><strong>$date_fr</strong></td></tr>";
     $message .= "<tr><td style=\"padding:3px 16px 3px 0; color:#555;\">Heure du cours</td><td><strong>$heure_cours</strong></td></tr>";
     $message .= "<tr><td style=\"padding:3px 16px 3px 0; color:#555;\">Nouvelle date souhaitée</td><td><strong>$date_souhaite_fr</strong></td></tr>";
