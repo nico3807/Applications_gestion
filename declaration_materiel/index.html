@@ -23,7 +23,7 @@
         Accueil
       </a>
       <span class="nav-title">Déclaration de problèmes matériel — MMI</span>
-      <div class="header-inner" style="margin-left:auto;"></div>
+      <div class="header-inner" style="margin-left: auto"></div>
     </nav>
 
     <div class="form-page">
@@ -48,7 +48,7 @@
             <label class="flbl" for="salle">Salle concernée *</label>
             <select id="salle" name="salle" class="finput" required>
               <option value="">Sélectionnez une salle…</option>
-              <option value="D11">D11</option>
+              <option value="D11">D111</option>
               <option value="D112">D112</option>
               <option value="D114">D114</option>
               <option value="D115">D115</option>
@@ -60,7 +60,12 @@
 
           <div class="fg">
             <label class="flbl" for="type_materiel">Type de matériel *</label>
-            <select id="type_materiel" name="type_materiel" class="finput" required>
+            <select
+              id="type_materiel"
+              name="type_materiel"
+              class="finput"
+              required
+            >
               <option value="">Sélectionnez un type…</option>
               <option value="Informatique">Informatique</option>
               <option value="Chaise">Chaise</option>
@@ -93,7 +98,10 @@
     <script src="../auth.js"></script>
     <script>
       if (AUTH.isAuth()) AUTH.injectBadge();
-      else window.addEventListener("auth-success", () => AUTH.injectBadge(), { once: true });
+      else
+        window.addEventListener("auth-success", () => AUTH.injectBadge(), {
+          once: true,
+        });
     </script>
     <script src="script.js"></script>
   </body>
