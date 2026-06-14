@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Signalement cours non assuré — MMI</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <nav class="nav">
+      <a href="../index.html" class="nav-back">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <polyline points="15 18 9 12 15 6" />
+        </svg>
+        Accueil
+      </a>
+      <span class="nav-title">Signalement cours non assuré — MMI</span>
+    </nav>
+
+    <div class="form-page">
+      <div class="form-card">
+        <h1 class="form-title">Signalement de cours non assuré</h1>
+        <p class="form-sub">IUT de Béziers · Département MMI</p>
+
+        <form id="absenceForm">
+          <div class="fg">
+            <label class="flbl" for="nom_etudiant">Votre nom et prénom *</label>
+            <input
+              type="text"
+              id="nom_etudiant"
+              name="nom_etudiant"
+              class="finput"
+              required
+              placeholder="Ex : Jean Dupont"
+            />
+          </div>
+
+          <div class="fg">
+            <label class="flbl" for="groupe">Votre parcours *</label>
+            <select id="groupe" name="groupe" class="finput" required>
+              <option value="">Sélectionnez un parcours…</option>
+              <option value="MMI1">MMI1</option>
+              <option value="MMI2 Créa">MMI2 Créa</option>
+              <option value="MMI2 Dev">MMI2 Dev</option>
+              <option value="MMI3 Créa">MMI3 Créa</option>
+              <option value="MMI3 Dev">MMI3 Dev</option>
+            </select>
+          </div>
+
+          <div class="fg">
+            <label class="flbl" for="enseignant">Enseignant absent *</label>
+            <select id="enseignant" name="enseignant" class="finput" required>
+              <option value="">Chargement…</option>
+            </select>
+          </div>
+
+          <div class="fg">
+            <label class="flbl" for="matiere">Matière concernée *</label>
+            <input
+              type="text"
+              id="matiere"
+              name="matiere"
+              class="finput"
+              required
+              placeholder="Ex : Développement Web"
+            />
+          </div>
+
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem">
+            <div class="fg">
+              <label class="flbl" for="date_cours">Date du cours *</label>
+              <input
+                type="date"
+                id="date_cours"
+                name="date_cours"
+                class="finput"
+                required
+                style="width: auto"
+              />
+            </div>
+            <div class="fg">
+              <label class="flbl" for="creneau">Créneau horaire *</label>
+              <select id="creneau" name="creneau" class="finput" required>
+                <option value="">Sélectionnez un créneau…</option>
+                <option value="08h – 9h30">08h – 9h30</option>
+                <option value="9h30 – 11h">9h30 – 11h</option>
+                <option value="11h – 12h30">11h – 12h30</option>
+                <option value="14h – 15h30">14h – 15h30</option>
+                <option value="15h30 – 17h">15h30 – 17h</option>
+                <option value="17h – 18h30">17h – 18h30</option>
+                <option value="08h – 11h">08h – 11h</option>
+                <option value="9h30 – 12h30">9h30 – 12h30</option>
+                <option value="14h – 17h">14h – 17h</option>
+                <option value="15h30 – 18h30">15h30 – 18h30</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="fg">
+            <label class="flbl" for="type_signalement">Type de signalement *</label>
+            <select id="type_signalement" name="type_signalement" class="finput" required>
+              <option value="Absent">L'enseignant est absent (salle fermée)</option>
+              <option value="Annulé">Le cours a été annulé au dernier moment</option>
+              <option value="Autre">Autre situation</option>
+            </select>
+          </div>
+
+          <div class="fg">
+            <label class="flbl" for="commentaire">Précisions (optionnel)</label>
+            <textarea
+              id="commentaire"
+              name="commentaire"
+              class="finput"
+              rows="3"
+            ></textarea>
+          </div>
+
+          <button type="submit" id="submitBtn" class="fsubmit">
+            Envoyer le signalement
+          </button>
+          <div id="formMessage"></div>
+        </form>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
