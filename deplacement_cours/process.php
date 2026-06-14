@@ -56,11 +56,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $message .= "<tr><td style=\"padding:3px 16px 3px 0; color:#555;\">Enseignant</td><td><strong>$nom</strong></td></tr>";
     $message .= "<tr><td style=\"padding:3px 16px 3px 0; color:#555;\">Parcours</td><td><strong>$parcours</strong></td></tr>";
     $message .= "<tr><td style=\"padding:3px 16px 3px 0; color:#555;\">Ressource / SAE</td><td><strong>$ressource</strong></td></tr>";
+    $message .= "</table>";
+
+    $message .= "<div style=\"border:1.5px solid #f59e0b; background:#fffbeb; border-radius:8px; padding:0.6rem 0.75rem; margin-bottom:8px;\">";
+    $message .= "<table style=\"border-collapse:collapse;\">";
     $message .= "<tr><td style=\"padding:3px 16px 3px 0; color:#555;\">Date du cours à modifier</td><td><strong>$date_fr</strong></td></tr>";
     $message .= "<tr><td style=\"padding:3px 16px 3px 0; color:#555;\">Heure du cours</td><td><strong>$heure_cours</strong></td></tr>";
+    $message .= "</table></div>";
+
+    $message .= "<div style=\"border:1.5px solid #6ee7b7; background:#f0fdf4; border-radius:8px; padding:0.6rem 0.75rem; margin-bottom:8px;\">";
+    $message .= "<table style=\"border-collapse:collapse;\">";
     $message .= "<tr><td style=\"padding:3px 16px 3px 0; color:#555;\">Nouvelle date souhaitée</td><td><strong>$date_souhaite_fr</strong></td></tr>";
     $message .= "<tr><td style=\"padding:3px 16px 3px 0; color:#555;\">Nouveau créneau souhaité</td><td><strong>$heure_souhaitee</strong></td></tr>";
-    $message .= "</table>";
+    $message .= "</table></div>";
     $message .= "<p></p><p><strong>Motif :</strong></p><p>" . nl2br($motif) . "</p><p></p>";
 
     if ($is_urgent) {
