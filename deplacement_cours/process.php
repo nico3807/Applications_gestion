@@ -47,10 +47,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $dataFile = __DIR__ . '/data/demandes.json';
     $dataDir  = dirname($dataFile);
-    if (!is_dir($dataDir)) mkdir($dataDir, 0755, true);
-    $existantes = file_exists($dataFile) ? (json_decode(file_get_contents($dataFile), true) ?? []) : [];
+    $dirOk    = is_dir($dataDir) || mkdir($dataDir, 0755, true);
+    $existantes = ($dirOk && file_exists($dataFile)) ? (json_decode(file_get_contents($dataFile), true) ?? []) : [];
     $existantes[] = $demande;
-    file_put_contents($dataFile, json_encode($existantes, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE), LOCK_EX);
+    $writeOk = $dirOk && (file_put_contents($dataFile, json_encode($existantes, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE)) !== false);
+    $debugInfo = $writeOk ? null : ['dir_ok' => $dirOk, 'path' => $dataFile, 'php_error' => error_get_last()['message'] ?? 'aucune'];
 
     // --- CONFIGURATION DES EMAILS ---
 
@@ -105,7 +106,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $mail_sent = mail($to, $subject, $message, $headers, '-f nicolas.maurin2@gmail.com');
 
     if ($mail_sent) {
-        echo json_encode(["status" => "success", "message" => "Votre demande a été transmise avec succès à l'équipe pédagogique."]);
+        $resp = ["status" => "success", "message" => "Votre demande a été transmise avec succès à l'équipe pédagogique."];
+        if ($debugInfo) $resp["_debug"] = $debugInfo;
+        echo json_encode($resp);
     } else {
         echo json_encode(["status" => "error", "message" => "Erreur lors de l'envoi de l'email de notification."]);
     }
