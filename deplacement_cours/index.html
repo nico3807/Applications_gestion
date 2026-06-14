@@ -23,7 +23,7 @@
         Accueil
       </a>
       <span class="nav-title">Déplacement de cours — MMI</span>
-      <div class="header-inner" style="margin-left:auto;"></div>
+      <div class="header-inner" style="margin-left: auto"></div>
     </nav>
 
     <div class="form-page">
@@ -51,81 +51,85 @@
             </select>
           </div>
 
-          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem">
-            <div class="fg">
-              <label class="flbl" for="date_cours"
-                >Date du cours à modifier *</label
-              >
-              <input
-                type="date"
-                id="date_cours"
-                name="date_cours"
-                class="finput"
-                required
-                style="width: auto"
-              />
-            </div>
-            <div class="fg">
-              <label class="flbl" for="heure_cours"
-                >Plage horaire du cours *</label
-              >
-              <select
-                id="heure_cours"
-                name="heure_cours"
-                class="finput"
-                required
-              >
-                <option value="">Sélectionnez un créneau…</option>
-                <option value="08h-9h30">08h – 9h30</option>
-                <option value="09h30-11h">9h30 – 11h</option>
-                <option value="11h-12h30">11h – 12h30</option>
-                <option value="14h-15h30">14h – 15h30</option>
-                <option value="15h30-17h">15h30 – 17h</option>
-                <option value="17h-18h30">17h – 18h30</option>
-                <option value="08h-11h">08h – 11h</option>
-                <option value="9h30-12h30">9h30 – 12h30</option>
-                <option value="14h-17h">14h – 17h</option>
-                <option value="15h30-18h30">15h30 – 18h30</option>
-              </select>
+          <div style="border:1.5px solid #f59e0b; background:#fffbeb; border-radius:8px; padding:1rem; margin-bottom:1.25rem;">
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem">
+              <div class="fg" style="margin-bottom:0;">
+                <label class="flbl" for="date_cours"
+                  >Date du cours à modifier *</label
+                >
+                <input
+                  type="date"
+                  id="date_cours"
+                  name="date_cours"
+                  class="finput"
+                  required
+                  style="width: auto"
+                />
+              </div>
+              <div class="fg" style="margin-bottom:0;">
+                <label class="flbl" for="heure_cours"
+                  >Plage horaire du cours *</label
+                >
+                <select
+                  id="heure_cours"
+                  name="heure_cours"
+                  class="finput"
+                  required
+                >
+                  <option value="">Sélectionnez un créneau…</option>
+                  <option value="08h-9h30">08h - 9h30</option>
+                  <option value="09h30-11h">9h30 - 11h</option>
+                  <option value="11h-12h30">11h - 12h30</option>
+                  <option value="14h-15h30">14h - 15h30</option>
+                  <option value="15h30-17h">15h30 - 17h</option>
+                  <option value="17h-18h30">17h - 18h30</option>
+                  <option value="08h-11h">08h - 11h</option>
+                  <option value="9h30-12h30">9h30 - 12h30</option>
+                  <option value="14h-17h">14h - 17h</option>
+                  <option value="15h30-18h30">15h30 - 18h30</option>
+                </select>
+              </div>
             </div>
           </div>
 
-          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem">
-            <div class="fg">
-              <label class="flbl" for="date_cours_souhaite"
-                >Nouvelle date souhaitée *</label
-              >
-              <input
-                type="date"
-                id="date_cours_souhaite"
-                name="date_cours_souhaite"
-                class="finput"
-                required
-                style="width: auto"
-              />
-            </div>
-            <div class="fg">
-              <label class="flbl" for="heure_cours_souhaitee"
-                >Nouveau créneau horaire souhaité *</label
-              >
-              <select
-                id="heure_cours_souhaitee"
-                name="heure_cours_souhaitee"
-                class="finput"
-                required
-              >
-                <option value="">Sélectionnez un créneau…</option>
-                <option value="08h-9h30">08h – 9h30</option>
-                <option value="09h30-11h">9h30 – 11h</option>
-                <option value="11h-12h30">11h – 12h30</option>
-                <option value="14h-15h30">14h – 15h30</option>
-                <option value="15h30-17h">15h30 – 17h</option>
-                <option value="17h-18h30">17h – 18h30</option>
-                <option value="08h-11h">08h – 11h</option>
-                <option value="9h30-12h30">9h30 – 12h30</option>
-                <option value="14h-17h">14h – 17h</option>
-                <option value="15h30-18h30">15h30 – 18h30</option>
-              </select>
+          <div style="border:1.5px solid #6ee7b7; background:#f0fdf4; border-radius:8px; padding:1rem; margin-bottom:1.25rem;">
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem">
+              <div class="fg" style="margin-bottom:0;">
+                <label class="flbl" for="date_cours_souhaite"
+                  >Nouvelle date souhaitée *</label
+                >
+                <input
+                  type="date"
+                  id="date_cours_souhaite"
+                  name="date_cours_souhaite"
+                  class="finput"
+                  required
+                  style="width: auto"
+                />
+              </div>
+              <div class="fg" style="margin-bottom:0;">
+                <label class="flbl" for="heure_cours_souhaitee"
+                  >Nouveau créneau horaire souhaité *</label
+                >
+                <select
+                  id="heure_cours_souhaitee"
+                  name="heure_cours_souhaitee"
+                  class="finput"
+                  required
+                >
+                  <option value="">Sélectionnez un créneau…</option>
+                  <option value="08h-9h30">08h – 9h30</option>
+                  <option value="09h30-11h">9h30 – 11h</option>
+                  <option value="11h-12h30">11h – 12h30</option>
+                  <option value="14h-15h30">14h – 15h30</option>
+                  <option value="15h30-17h">15h30 – 17h</option>
+                  <option value="17h-18h30">17h – 18h30</option>
+                  <option value="08h-11h">08h – 11h</option>
+                  <option value="9h30-12h30">9h30 – 12h30</option>
+                  <option value="14h-17h">14h – 17h</option>
+                  <option value="15h30-18h30">15h30 – 18h30</option>
+                </select>
+              </div>
             </div>
           </div>
 
@@ -171,7 +175,10 @@
     <script src="../auth.js"></script>
     <script>
       if (AUTH.isAuth()) AUTH.injectBadge();
-      else window.addEventListener("auth-success", () => AUTH.injectBadge(), { once: true });
+      else
+        window.addEventListener("auth-success", () => AUTH.injectBadge(), {
+          once: true,
+        });
     </script>
     <script src="script.js"></script>
   </body>
