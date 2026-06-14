@@ -20,6 +20,14 @@
         content: ''; position: absolute; inset: 3px;
         border-radius: 50%; background: #fff;
       }
+      .perm-radio { accent-color: #1e3a5f; cursor: pointer; width: 15px; height: 15px; }
+      .perm-tbl { width:100%; border-collapse:collapse; font-size:13px; margin-bottom:.5rem; }
+      .perm-tbl th { font-size:11px; font-weight:600; color:#6b7280; text-transform:uppercase; letter-spacing:.04em; padding:5px 8px; border-bottom:2px solid #e5e7eb; }
+      .perm-tbl th:first-child { text-align:left; }
+      .perm-tbl th:not(:first-child) { text-align:center; }
+      .perm-tbl td { padding:7px 8px; border-bottom:1px solid #f3f4f6; }
+      .perm-tbl td:not(:first-child) { text-align:center; }
+      .perm-tbl tbody tr:last-child td { border-bottom:none; }
     </style>
   </head>
   <body>
@@ -108,36 +116,64 @@
         </div>
 
         <!-- Droits -->
-        <label style="font-size:12px; font-weight:500; color:#374151; display:block; margin-bottom:6px;">Droits d'accès</label>
-        <div style="display:flex; flex-direction:column; gap:6px; font-size:13px; margin-bottom:.75rem;">
-          <label><input type="radio" name="add-mode" value="rw"> Lecture / Écriture complète (toutes les apps)</label>
-          <label><input type="radio" name="add-mode" value="rwapps" checked> R/W sur certaines applications seulement</label>
-          <label><input type="radio" name="add-mode" value="readonly"> Lecture seule (toutes les apps)</label>
-          <label><input type="radio" name="add-mode" value="deny-rep"> Lecture seule + interdit sur Répartition</label>
-        </div>
-        <div id="add-dep-box" style="padding-left:1.5rem; margin-bottom:.5rem;">
-          <label style="display:flex; align-items:center; gap:7px; font-size:13px; color:#374151; cursor:pointer;">
-            <input type="checkbox" id="add-dep-cours" class="round-cb"> Déplacement cours
-          </label>
-        </div>
-        <div id="add-rwapps-box" style="padding-left:1.5rem; margin-bottom:.75rem;">
-          <label style="font-size:12px; font-weight:500; color:#111; display:block; margin-bottom:5px;">Applications avec R/W :</label>
-          <div style="display:flex; gap:14px; flex-wrap:wrap; font-size:13px;">
-            <label><input type="checkbox" class="add-rwapp" value="planning-web"> Planning</label>
-            <label><input type="checkbox" class="add-rwapp" value="repartition"> Répartition</label>
-            <label><input type="checkbox" class="add-rwapp" value="soutenances_portfolio"> Soutenances Portfolio</label>
-            <label><input type="checkbox" class="add-rwapp" value="soutenances_stages"> Soutenances Stages</label>
-            <label><input type="checkbox" class="add-rwapp" value="journal"> Accès Journal</label>
+        <label style="font-size:12px; font-weight:500; color:#374151; display:block; margin-bottom:8px;">Droits d'accès</label>
+        <table class="perm-tbl">
+          <thead><tr>
+            <th>Application</th><th>Lecture</th><th>Écriture</th><th>Interdit</th>
+          </tr></thead>
+          <tbody>
+            <tr>
+              <td>Planning</td>
+              <td><input type="radio" class="perm-radio" name="add-perm-planning-web" value="lecture" checked></td>
+              <td><input type="radio" class="perm-radio" name="add-perm-planning-web" value="write"></td>
+              <td><input type="radio" class="perm-radio" name="add-perm-planning-web" value="deny"></td>
+            </tr>
+            <tr>
+              <td>Répartition</td>
+              <td><input type="radio" class="perm-radio" name="add-perm-repartition" value="lecture" checked></td>
+              <td><input type="radio" class="perm-radio" name="add-perm-repartition" value="write"></td>
+              <td><input type="radio" class="perm-radio" name="add-perm-repartition" value="deny"></td>
+            </tr>
+            <tr>
+              <td>Soutenances Stages</td>
+              <td><input type="radio" class="perm-radio" name="add-perm-soutenances_stages" value="lecture" checked></td>
+              <td><input type="radio" class="perm-radio" name="add-perm-soutenances_stages" value="write"></td>
+              <td><input type="radio" class="perm-radio" name="add-perm-soutenances_stages" value="deny"></td>
+            </tr>
+            <tr>
+              <td>Sout. Portfolio</td>
+              <td><input type="radio" class="perm-radio" name="add-perm-soutenances_portfolio" value="lecture" checked></td>
+              <td><input type="radio" class="perm-radio" name="add-perm-soutenances_portfolio" value="write"></td>
+              <td><input type="radio" class="perm-radio" name="add-perm-soutenances_portfolio" value="deny"></td>
+            </tr>
+          </tbody>
+        </table>
+        <div id="add-maquette-box" style="padding-left:1rem; margin-bottom:.5rem; display:none;">
+          <label style="font-size:12px; font-weight:500; color:#111; display:block; margin-bottom:5px;">Groupes Maquette (Répartition) :</label>
+          <div style="display:flex; flex-direction:column; gap:4px; font-size:13px;">
+            <label><input type="checkbox" class="add-maquette-grp" value="s123"> Semestres S1, S2, S3</label>
+            <label><input type="checkbox" class="add-maquette-grp" value="crea"> Semestres S4/S5/S6 Créa</label>
+            <label><input type="checkbox" class="add-maquette-grp" value="dev"> Semestres S4/S5/S6 Dev</label>
           </div>
-          <div id="add-maquette-box" style="margin-top:10px; display:none;">
-            <label style="font-size:12px; font-weight:500; color:#111; display:block; margin-bottom:5px;">Accès en écriture à la Maquette (par groupe de semestres) :</label>
-            <div style="display:flex; flex-direction:column; gap:4px; font-size:13px;">
-              <label><input type="checkbox" class="add-maquette-grp" value="s123"> Semestres S1, S2, S3</label>
-              <label><input type="checkbox" class="add-maquette-grp" value="crea"> Semestres S4/S5/S6 Créa</label>
-              <label><input type="checkbox" class="add-maquette-grp" value="dev"> Semestres S4/S5/S6 Dev</label>
-            </div>
-          </div>
         </div>
+        <label style="font-size:12px; font-weight:500; color:#374151; display:block; margin-bottom:6px; border-top:1px solid #e5e7eb; padding-top:.75rem; margin-top:.25rem;">Tags page d'accueil</label>
+        <table class="perm-tbl" style="margin-bottom:.75rem;">
+          <thead><tr>
+            <th>Application</th><th>Visible</th><th>Non visible</th>
+          </tr></thead>
+          <tbody>
+            <tr>
+              <td>Souhaits 2026-2027</td>
+              <td><input type="radio" class="perm-radio" name="add-perm-souhaits" value="visible"></td>
+              <td><input type="radio" class="perm-radio" name="add-perm-souhaits" value="hidden" checked></td>
+            </tr>
+            <tr>
+              <td>Déplacement cours</td>
+              <td><input type="radio" class="perm-radio" name="add-perm-deplacement_cours" value="visible"></td>
+              <td><input type="radio" class="perm-radio" name="add-perm-deplacement_cours" value="hidden" checked></td>
+            </tr>
+          </tbody>
+        </table>
 
         <p id="add-err" class="adm-err"></p>
         <div class="adm-actions">
@@ -210,35 +246,63 @@
 
           <!-- Modifier les droits -->
           <label style="font-size:13px;font-weight:600;color:#111;display:block;margin-bottom:8px;">Droits d'accès</label>
-          <div style="display:flex;flex-direction:column;gap:6px;font-size:13px;margin-bottom:.75rem;">
-            <label><input type="radio" name="edit-mode" value="rw"> Lecture / Écriture complète (toutes les apps)</label>
-            <label><input type="radio" name="edit-mode" value="rwapps"> R/W sur certaines applications seulement</label>
-            <label><input type="radio" name="edit-mode" value="readonly" checked> Lecture seule (toutes les apps)</label>
-            <label><input type="radio" name="edit-mode" value="deny-rep"> Lecture seule + interdit sur Répartition</label>
-          </div>
-          <div id="edit-dep-box" style="padding-left:1.5rem; margin-bottom:.5rem;">
-            <label style="display:flex; align-items:center; gap:7px; font-size:13px; color:#374151; cursor:pointer;">
-              <input type="checkbox" id="edit-dep-cours" class="round-cb"> Déplacement cours
-            </label>
-          </div>
-          <div id="edit-rwapps-box" style="padding-left:1.5rem;margin-bottom:.75rem;display:none;">
-            <label style="font-size:12px;font-weight:500;color:#111;display:block;margin-bottom:5px;">Applications avec R/W :</label>
-            <div style="display:flex;gap:14px;flex-wrap:wrap;font-size:13px;">
-              <label><input type="checkbox" class="edit-rwapp" value="planning-web"> Planning</label>
-              <label><input type="checkbox" class="edit-rwapp" value="repartition"> Répartition</label>
-              <label><input type="checkbox" class="edit-rwapp" value="soutenances_portfolio"> Soutenances Portfolio</label>
-              <label><input type="checkbox" class="edit-rwapp" value="soutenances_stages"> Soutenances Stages</label>
-              <label><input type="checkbox" class="edit-rwapp" value="journal"> Accès Journal</label>
+          <table class="perm-tbl">
+            <thead><tr>
+              <th>Application</th><th>Lecture</th><th>Écriture</th><th>Interdit</th>
+            </tr></thead>
+            <tbody>
+              <tr>
+                <td>Planning</td>
+                <td><input type="radio" class="perm-radio" name="edit-perm-planning-web" value="lecture" checked></td>
+                <td><input type="radio" class="perm-radio" name="edit-perm-planning-web" value="write"></td>
+                <td><input type="radio" class="perm-radio" name="edit-perm-planning-web" value="deny"></td>
+              </tr>
+              <tr>
+                <td>Répartition</td>
+                <td><input type="radio" class="perm-radio" name="edit-perm-repartition" value="lecture" checked></td>
+                <td><input type="radio" class="perm-radio" name="edit-perm-repartition" value="write"></td>
+                <td><input type="radio" class="perm-radio" name="edit-perm-repartition" value="deny"></td>
+              </tr>
+              <tr>
+                <td>Soutenances Stages</td>
+                <td><input type="radio" class="perm-radio" name="edit-perm-soutenances_stages" value="lecture" checked></td>
+                <td><input type="radio" class="perm-radio" name="edit-perm-soutenances_stages" value="write"></td>
+                <td><input type="radio" class="perm-radio" name="edit-perm-soutenances_stages" value="deny"></td>
+              </tr>
+              <tr>
+                <td>Sout. Portfolio</td>
+                <td><input type="radio" class="perm-radio" name="edit-perm-soutenances_portfolio" value="lecture" checked></td>
+                <td><input type="radio" class="perm-radio" name="edit-perm-soutenances_portfolio" value="write"></td>
+                <td><input type="radio" class="perm-radio" name="edit-perm-soutenances_portfolio" value="deny"></td>
+              </tr>
+            </tbody>
+          </table>
+          <div id="edit-maquette-box" style="padding-left:1rem; margin-bottom:.5rem; display:none;">
+            <label style="font-size:12px;font-weight:500;color:#111;display:block;margin-bottom:5px;">Groupes Maquette (Répartition) :</label>
+            <div style="display:flex;flex-direction:column;gap:4px;font-size:13px;">
+              <label><input type="checkbox" class="edit-maquette-grp" value="s123"> Semestres S1, S2, S3</label>
+              <label><input type="checkbox" class="edit-maquette-grp" value="crea"> Semestres S4/S5/S6 Créa</label>
+              <label><input type="checkbox" class="edit-maquette-grp" value="dev"> Semestres S4/S5/S6 Dev</label>
             </div>
-            <div id="edit-maquette-box" style="margin-top:10px; display:none;">
-              <label style="font-size:12px;font-weight:500;color:#111;display:block;margin-bottom:5px;">Accès en écriture à la Maquette (par groupe de semestres) :</label>
-              <div style="display:flex;flex-direction:column;gap:4px;font-size:13px;">
-                <label><input type="checkbox" class="edit-maquette-grp" value="s123"> Semestres S1, S2, S3</label>
-                <label><input type="checkbox" class="edit-maquette-grp" value="crea"> Semestres S4/S5/S6 Créa</label>
-                <label><input type="checkbox" class="edit-maquette-grp" value="dev"> Semestres S4/S5/S6 Dev</label>
-              </div>
-            </div>
           </div>
+          <label style="font-size:12px;font-weight:500;color:#374151;display:block;margin-bottom:6px;border-top:1px solid #e5e7eb;padding-top:.75rem;margin-top:.25rem;">Tags page d'accueil</label>
+          <table class="perm-tbl" style="margin-bottom:.75rem;">
+            <thead><tr>
+              <th>Application</th><th>Visible</th><th>Non visible</th>
+            </tr></thead>
+            <tbody>
+              <tr>
+                <td>Souhaits 2026-2027</td>
+                <td><input type="radio" class="perm-radio" name="edit-perm-souhaits" value="visible"></td>
+                <td><input type="radio" class="perm-radio" name="edit-perm-souhaits" value="hidden" checked></td>
+              </tr>
+              <tr>
+                <td>Déplacement cours</td>
+                <td><input type="radio" class="perm-radio" name="edit-perm-deplacement_cours" value="visible"></td>
+                <td><input type="radio" class="perm-radio" name="edit-perm-deplacement_cours" value="hidden" checked></td>
+              </tr>
+            </tbody>
+          </table>
           <p id="edit-rights-err" style="color:#dc2626;font-size:12px;margin-bottom:.5rem;display:none;"></p>
           <p id="edit-rights-ok"  style="color:#16a34a;font-size:12px;margin-bottom:.5rem;display:none;">✓ Droits modifiés avec succès.</p>
           <button id="edit-rights-btn" onclick="editSaveRights()"
@@ -269,32 +333,61 @@
         if (cardDep) cardDep.style.display = AUTH.user() === "nicolas.maurin" ? "" : "none";
       }
 
+      const _PERM_MAIN  = ["planning-web","repartition","soutenances_stages","soutenances_portfolio"];
+      const _PERM_CARDS = ["souhaits","deplacement_cours"];
+
+      function _buildPermCfg(prefix) {
+        const rwApps = [], denyApps = [];
+        _PERM_MAIN.forEach(app => {
+          const v = document.querySelector(`input[name="${prefix}-perm-${app}"]:checked`)?.value;
+          if (v === "write") rwApps.push(app);
+          else if (v === "deny") denyApps.push(app);
+        });
+        _PERM_CARDS.forEach(app => {
+          if (document.querySelector(`input[name="${prefix}-perm-${app}"][value="visible"]`)?.checked)
+            rwApps.push(app);
+        });
+        const maquetteGroups = rwApps.includes("repartition")
+          ? [...document.querySelectorAll(`.${prefix}-maquette-grp:checked`)].map(c => c.value)
+          : [];
+        return { rwApps, denyApps, maquetteGroups };
+      }
+
+      function _applyPermToForm(u, prefix) {
+        const rwApps   = u.rw ? [..._PERM_MAIN] : (u.rwApps  || []);
+        const denyApps = u.denyApps || [];
+        _PERM_MAIN.forEach(app => {
+          let v = "lecture";
+          if (rwApps.includes(app))   v = "write";
+          else if (denyApps.includes(app)) v = "deny";
+          const r = document.querySelector(`input[name="${prefix}-perm-${app}"][value="${v}"]`);
+          if (r) r.checked = true;
+        });
+        _PERM_CARDS.forEach(app => {
+          const v = rwApps.includes(app) ? "visible" : "hidden";
+          const r = document.querySelector(`input[name="${prefix}-perm-${app}"][value="${v}"]`);
+          if (r) r.checked = true;
+        });
+        _toggleMaquetteBox(prefix);
+        document.querySelectorAll(`.${prefix}-maquette-grp`).forEach(c => {
+          c.checked = (u.maquetteGroups || []).includes(c.value);
+        });
+      }
+
       function initAdmin() {
         if (!AUTH.isAdmin()) return;
         document.getElementById("adm-btns").style.display = "flex";
-        document.querySelectorAll("input[name='add-mode']").forEach(r =>
-          r.addEventListener("change", () => {
-            document.getElementById("add-rwapps-box").style.display = r.value === "rwapps" ? "" : "none";
-            _toggleMaquetteBox("add");
-          })
+        ["add","edit"].forEach(p =>
+          document.querySelectorAll(`input[name="${p}-perm-repartition"]`).forEach(r =>
+            r.addEventListener("change", () => _toggleMaquetteBox(p))
+          )
         );
-        document.querySelectorAll("input[name='edit-mode']").forEach(r =>
-          r.addEventListener("change", () => {
-            document.getElementById("edit-rwapps-box").style.display = r.value === "rwapps" ? "" : "none";
-            _toggleMaquetteBox("edit");
-          })
-        );
-        document.querySelectorAll(".add-rwapp").forEach(c => c.addEventListener("change", () => _toggleMaquetteBox("add")));
-        document.querySelectorAll(".edit-rwapp").forEach(c => c.addEventListener("change", () => _toggleMaquetteBox("edit")));
       }
 
-      /* Affiche les cases d'accès Maquette uniquement quand "Répartition" est cochée
-         parmi les applications R/W (l'accès maquette par groupe est un complément
-         à un R/W déjà accordé sur l'application répartition). */
       function _toggleMaquetteBox(prefix) {
-        const repCb = document.querySelector(`.${prefix}-rwapp[value="repartition"]`);
-        const box   = document.getElementById(prefix + "-maquette-box");
-        const show  = !!(repCb && repCb.checked);
+        const repWrite = document.querySelector(`input[name="${prefix}-perm-repartition"][value="write"]`);
+        const box = document.getElementById(prefix + "-maquette-box");
+        const show = !!(repWrite && repWrite.checked);
         box.style.display = show ? "" : "none";
         if (!show) document.querySelectorAll(`.${prefix}-maquette-grp`).forEach(c => c.checked = false);
       }
@@ -304,11 +397,15 @@
         document.getElementById("add-login").value = "";
         document.getElementById("add-pwd").value = "";
         document.getElementById("add-err").style.display = "none";
-        document.querySelectorAll(".add-rwapp").forEach(c => c.checked = false);
+        _PERM_MAIN.forEach(app => {
+          const r = document.querySelector(`input[name="add-perm-${app}"][value="lecture"]`);
+          if (r) r.checked = true;
+        });
+        _PERM_CARDS.forEach(app => {
+          const r = document.querySelector(`input[name="add-perm-${app}"][value="hidden"]`);
+          if (r) r.checked = true;
+        });
         document.querySelectorAll(".add-maquette-grp").forEach(c => c.checked = false);
-        document.getElementById("add-dep-cours").checked = false;
-        document.querySelector("input[name='add-mode'][value='rwapps']").checked = true;
-        document.getElementById("add-rwapps-box").style.display = "";
         _toggleMaquetteBox("add");
         document.getElementById("modal-add").classList.add("open");
         document.getElementById("add-login").focus();
@@ -326,28 +423,16 @@
       async function admCreateUser() {
         const login = document.getElementById("add-login").value.trim().toLowerCase();
         const pwd   = document.getElementById("add-pwd").value;
-        const mode  = document.querySelector("input[name='add-mode']:checked").value;
         const err   = document.getElementById("add-err");
         err.style.display = "none";
-
         if (!login || !pwd) { err.textContent = "Identifiant et mot de passe requis."; err.style.display = "block"; return; }
         if (AUTH.listExtraUsers()[login]) { err.textContent = `"${login}" existe déjà.`; err.style.display = "block"; return; }
-
         const btn = document.getElementById("add-submit");
         btn.disabled = true; btn.textContent = "…";
         try {
-          const h   = await AUTH.hashPwd(pwd);
-          const cfg = { login, h, rw:false, rwApps:[], denyApps:[], maquetteGroups:[] };
-          if (mode === "rw")         cfg.rw = true;
-          else if (mode === "rwapps") {
-            cfg.rwApps = [...document.querySelectorAll(".add-rwapp:checked")].map(c => c.value);
-            if (cfg.rwApps.includes("repartition"))
-              cfg.maquetteGroups = [...document.querySelectorAll(".add-maquette-grp:checked")].map(c => c.value);
-          }
-          else if (mode === "deny-rep") cfg.denyApps = ["repartition"];
-          if (mode !== "rw" && document.getElementById("add-dep-cours").checked)
-            cfg.rwApps = [...new Set([...cfg.rwApps, "deplacement_cours"])];
-          await AUTH.createUser(cfg);
+          const h = await AUTH.hashPwd(pwd);
+          const { rwApps, denyApps, maquetteGroups } = _buildPermCfg("add");
+          await AUTH.createUser({ login, h, rw:false, rwApps, denyApps, maquetteGroups });
           closeModal("modal-add");
         } catch(e) {
           err.textContent = "Erreur : " + e.message;
@@ -389,23 +474,7 @@
         /* Pré-remplir les droits actuels */
         if (login) {
           const u = AUTH.getUserInfo(login);
-          let mode = "readonly";
-          if (u.rw)                                                   mode = "rw";
-          else if (u.denyApps && u.denyApps.includes("repartition")) mode = "deny-rep";
-          else if (u.rwApps && u.rwApps.length > 0)                  mode = "rwapps";
-
-          const radio = document.querySelector(`input[name="edit-mode"][value="${mode}"]`);
-          if (radio) radio.checked = true;
-          document.getElementById("edit-rwapps-box").style.display = mode === "rwapps" ? "" : "none";
-          const depCb = document.getElementById("edit-dep-cours");
-          if (depCb) depCb.checked = (u.rwApps || []).includes("deplacement_cours");
-          document.querySelectorAll(".edit-rwapp").forEach(c => {
-            c.checked = mode === "rwapps" && (u.rwApps || []).includes(c.value);
-          });
-          document.querySelectorAll(".edit-maquette-grp").forEach(c => {
-            c.checked = (u.maquetteGroups || []).includes(c.value);
-          });
-          _toggleMaquetteBox("edit");
+          _applyPermToForm(u, "edit");
           document.getElementById("edit-new-pwd").focus();
         }
       }
@@ -444,27 +513,15 @@
       }
 
       async function editSaveRights() {
-        const login  = document.getElementById("edit-select").value;
-        const mode   = document.querySelector("input[name='edit-mode']:checked")?.value;
-        const errEl  = document.getElementById("edit-rights-err");
-        const okEl   = document.getElementById("edit-rights-ok");
+        const login = document.getElementById("edit-select").value;
+        const errEl = document.getElementById("edit-rights-err");
+        const okEl  = document.getElementById("edit-rights-ok");
         errEl.style.display = "none"; okEl.style.display = "none";
-
-        const cfg = { login, rw: false, rwApps: [], denyApps: [], maquetteGroups: [] };
-        if (mode === "rw")          cfg.rw = true;
-        else if (mode === "rwapps") {
-          cfg.rwApps = [...document.querySelectorAll(".edit-rwapp:checked")].map(c => c.value);
-          if (cfg.rwApps.includes("repartition"))
-            cfg.maquetteGroups = [...document.querySelectorAll(".edit-maquette-grp:checked")].map(c => c.value);
-        }
-        else if (mode === "deny-rep") cfg.denyApps = ["repartition"];
-        if (mode !== "rw" && document.getElementById("edit-dep-cours").checked)
-          cfg.rwApps = [...new Set([...cfg.rwApps, "deplacement_cours"])];
-
+        const { rwApps, denyApps, maquetteGroups } = _buildPermCfg("edit");
         const btn = document.getElementById("edit-rights-btn");
         btn.disabled = true; btn.textContent = "…";
         try {
-          await AUTH.createUser(cfg);
+          await AUTH.createUser({ login, rw:false, rwApps, denyApps, maquetteGroups });
           okEl.style.display = "block";
         } catch(e) {
           errEl.textContent = "Erreur : " + e.message; errEl.style.display = "block";
