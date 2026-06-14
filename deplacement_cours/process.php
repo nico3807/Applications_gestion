@@ -9,14 +9,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $parcours     = htmlspecialchars(trim($_POST['parcours']             ?? ''));
     $date_cours   = htmlspecialchars(trim($_POST['date_cours']           ?? ''));
     $heure_cours  = htmlspecialchars(trim($_POST['heure_cours']          ?? ''));
-    $motif        = htmlspecialchars(trim($_POST['motif']                ?? ''));
-    $is_urgent    = isset($_POST['urgence']);
-    $justification = htmlspecialchars(trim($_POST['justification_urgence'] ?? ''));
+    $motif               = htmlspecialchars(trim($_POST['motif']                  ?? ''));
+    $date_souhaite       = htmlspecialchars(trim($_POST['date_cours_souhaite']    ?? ''));
+    $heure_souhaitee     = htmlspecialchars(trim($_POST['heure_cours_souhaitee']  ?? ''));
+    $is_urgent           = isset($_POST['urgence']);
+    $justification       = htmlspecialchars(trim($_POST['justification_urgence']  ?? ''));
 
-    // Date au format français
-    $date_fr = $date_cours ? date('d/m/Y', strtotime($date_cours)) : $date_cours;
+    // Dates au format français
+    $date_fr          = $date_cours    ? date('d/m/Y', strtotime($date_cours))    : $date_cours;
+    $date_souhaite_fr = $date_souhaite ? date('d/m/Y', strtotime($date_souhaite)) : $date_souhaite;
 
-    if (empty($nom) || empty($parcours) || empty($date_cours) || empty($heure_cours) || empty($motif)) {
+    if (empty($nom) || empty($parcours) || empty($date_cours) || empty($heure_cours) || empty($date_souhaite) || empty($heure_souhaitee) || empty($motif)) {
         echo json_encode(["status" => "error", "message" => "Veuillez remplir tous les champs obligatoires."]);
         exit;
     }
@@ -42,7 +45,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Sujet de l'email
     $urgence_tag = $is_urgent ? "[URGENCE] " : "[STANDARD] ";
-    $subject = "Guichet Unique EDT - $urgence_tag Demande de $nom ($parcours)";
+    $subject = "Demande de modification EDT - $urgence_tag Demande de $nom ($parcours)";
 
     // Construction du corps du message (HTML)
     $s = 'font-family: Arial, sans-serif; font-size: 12pt; color: #222;';
@@ -51,8 +54,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $message .= "<table style=\"border-collapse:collapse; margin-bottom:8px;\">";
     $message .= "<tr><td style=\"padding:3px 16px 3px 0; color:#555;\">Enseignant</td><td><strong>$nom</strong></td></tr>";
     $message .= "<tr><td style=\"padding:3px 16px 3px 0; color:#555;\">Parcours</td><td><strong>$parcours</strong></td></tr>";
-    $message .= "<tr><td style=\"padding:3px 16px 3px 0; color:#555;\">Date du cours</td><td><strong>$date_fr</strong></td></tr>";
+    $message .= "<tr><td style=\"padding:3px 16px 3px 0; color:#555;\">Date du cours à modifier</td><td><strong>$date_fr</strong></td></tr>";
     $message .= "<tr><td style=\"padding:3px 16px 3px 0; color:#555;\">Heure du cours</td><td><strong>$heure_cours</strong></td></tr>";
+    $message .= "<tr><td style=\"padding:3px 16px 3px 0; color:#555;\">Date du cours souhaitée</td><td><strong>$date_souhaite_fr</strong></td></tr>";
+    $message .= "<tr><td style=\"padding:3px 16px 3px 0; color:#555;\">Heure souhaitée</td><td><strong>$heure_souhaitee</strong></td></tr>";
     $message .= "</table>";
     $message .= "<p></p><p><strong>Motif :</strong></p><p>" . nl2br($motif) . "</p><p></p>";
 
