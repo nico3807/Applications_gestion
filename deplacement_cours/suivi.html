@@ -148,6 +148,10 @@
         Déplacement de cours
       </a>
       <span class="nav-title">Suivi des demandes</span>
+      <a href="statut.html" id="statut-link" class="nav-back"
+         style="display:none; margin-left:auto; font-size:.8rem; white-space:nowrap;">
+        État des demandes
+      </a>
       <div class="header-inner" style="margin-left: auto"></div>
     </nav>
 
@@ -174,10 +178,14 @@
 
     <script src="../auth.js"></script>
     <script>
-      if (AUTH.isAuth()) {
+      function _setupNav() {
         AUTH.injectBadge();
-      } else {
-        window.addEventListener("auth-success", () => AUTH.injectBadge(), { once: true });
+        if (AUTH.isAuth())
+          document.getElementById("statut-link").style.display = "";
+      }
+      if (AUTH.isAuth()) _setupNav();
+      else {
+        window.addEventListener("auth-success", _setupNav, { once: true });
         AUTH.injectUI();
       }
     </script>
