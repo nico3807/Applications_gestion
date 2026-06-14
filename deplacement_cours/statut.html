@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>État des demandes — Déplacement de cours</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      .statut-wrap  { max-width: 800px; margin: 2rem auto; padding: 0 1rem 3rem; }
+      .statut-title { font-size: 1.4rem; font-weight: 700; color: #1e3a5f; margin-bottom: .2rem; }
+      .statut-sub   { font-size: .85rem; color: #6b7280; margin-bottom: 1.5rem; }
+
+      .filter-tabs { display: flex; gap: .5rem; margin-bottom: 1.25rem; flex-wrap: wrap; }
+      .filter-tab  {
+        padding: .38rem 1rem; border-radius: 20px; cursor: pointer;
+        font-size: .84rem; font-weight: 600; border: 1.5px solid #d1d5db;
+        background: #fff; color: #374151; transition: background .13s, color .13s;
+      }
+      .filter-tab.active { background: #1e3a5f; color: #fff; border-color: #1e3a5f; }
+      .filter-tab .cnt {
+        display: inline-flex; align-items: center; justify-content: center;
+        background: #ef4444; color: #fff; border-radius: 10px;
+        font-size: .7rem; min-width: 18px; height: 18px; padding: 0 4px; margin-left: 4px;
+      }
+
+      .demandes-list { display: flex; flex-direction: column; gap: .85rem; }
+
+      .dc-card {
+        background: #fff; border: 1.5px solid #e5e7eb;
+        border-radius: 10px; overflow: hidden;
+        box-shadow: 0 1px 4px rgba(0,0,0,.06);
+      }
+      .dc-header {
+        padding: .6rem 1rem; display: flex; align-items: center; gap: .6rem;
+        background: #f9fafb; border-bottom: 1px solid #e5e7eb; flex-wrap: wrap;
+      }
+      .sbadge {
+        font-size: .7rem; font-weight: 700; padding: 2px 9px;
+        border-radius: 10px; text-transform: uppercase; letter-spacing: .04em;
+      }
+      .sbadge-attente { background: #fef3c7; color: #92400e; }
+      .sbadge-validee { background: #d1fae5; color: #065f46; }
+      .sbadge-rejetee { background: #fee2e2; color: #991b1b; }
+      .urgence-tag {
+        font-size: .7rem; font-weight: 700; padding: 2px 8px;
+        border-radius: 10px; background: #fee2e2; color: #991b1b;
+        text-transform: uppercase;
+      }
+      .dc-meta { font-size: .76rem; color: #9ca3af; margin-left: auto; white-space: nowrap; }
+
+      .dc-body { padding: .8rem 1rem; }
+      .dc-ressource {
+        font-size: .78rem; color: #6b7280; background: #f1f5f9;
+        border-radius: 5px; padding: .25rem .6rem; display: inline-block; margin-bottom: .6rem;
+      }
+      .dc-bloc { border-radius: 6px; padding: .45rem .7rem; margin-bottom: .5rem; }
+      .dc-bloc-o { border: 1.5px solid #f59e0b; background: #fffbeb; }
+      .dc-bloc-g { border: 1.5px solid #6ee7b7; background: #f0fdf4; }
+      .dc-bloc-row { display: flex; gap: 2rem; flex-wrap: wrap; }
+      .dc-field span   { font-size: .74rem; color: #78716c; display: block; }
+      .dc-field strong { font-size: .84rem; color: #1e293b; }
+
+      .dc-motif { font-size: .82rem; color: #374151; background: #f8fafc; border-radius: 6px; padding: .45rem .7rem; margin-top: .4rem; }
+      .dc-motif-lbl { font-weight: 600; color: #1e3a5f; font-size: .76rem; margin-bottom: .2rem; }
+
+      .dc-footer { padding: .6rem 1rem; border-top: 1px solid #e5e7eb; font-size: .82rem; }
+      .decision-attente { color: #92400e; font-weight: 600; }
+      .decision-ok  { color: #065f46; }
+      .decision-rej { color: #991b1b; }
+      .decision-just { font-size: .8rem; color: #6b7280; margin-top: .3rem; font-style: italic; }
+
+      .empty-msg { text-align: center; color: #9ca3af; padding: 2.5rem 1rem; font-size: .95rem; }
+      .load-msg  { text-align: center; color: #6b7280; padding: 2rem; font-size: .9rem; }
+    </style>
+  </head>
+  <body>
+    <nav class="nav">
+      <a href="index.html" class="nav-back">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="15 18 9 12 15 6" />
+        </svg>
+        Déplacement de cours
+      </a>
+      <span class="nav-title">État des demandes</span>
+      <div class="header-inner" style="margin-left: auto"></div>
+    </nav>
+
+    <div class="statut-wrap">
+      <h1 class="statut-title">État des demandes de déplacement</h1>
+      <p class="statut-sub">IUT de Béziers · Département MMI</p>
+
+      <div class="filter-tabs">
+        <button class="filter-tab active" data-f="en_attente">En attente <span class="cnt" id="cnt-attente"></span></button>
+        <button class="filter-tab" data-f="validee">Validées</button>
+        <button class="filter-tab" data-f="rejetee">Rejetées</button>
+        <button class="filter-tab" data-f="all">Toutes</button>
+      </div>
+
+      <div class="demandes-list" id="list">
+        <div class="load-msg">Chargement…</div>
+      </div>
+    </div>
+
+    <script src="../auth.js"></script>
+    <script>
+      if (AUTH.isAuth()) {
+        AUTH.injectBadge();
+      } else {
+        window.addEventListener("auth-success", () => AUTH.injectBadge(), { once: true });
+        AUTH.injectUI();
+      }
+    </script>
+    <script src="statut.js"></script>
+  </body>
+</html>

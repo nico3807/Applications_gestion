@@ -23,8 +23,12 @@
         Accueil
       </a>
       <span class="nav-title">Déplacement de cours — MMI</span>
-      <a href="suivi.html" id="suivi-link" class="nav-back"
+      <a href="statut.html" id="statut-link" class="nav-back"
          style="display:none; margin-left:auto; font-size:.8rem; white-space:nowrap;">
+        État des demandes
+      </a>
+      <a href="suivi.html" id="suivi-link" class="nav-back"
+         style="display:none; font-size:.8rem; white-space:nowrap;">
         Suivi des demandes
       </a>
       <div class="header-inner"></div>
@@ -186,13 +190,17 @@
     <script src="../auth.js"></script>
     <script>
       const _VALIDATORS = ["nicolas.maurin", "sylvie.escaig", "william.bernard"];
-      function _setupSuivi() {
+      function _setupLinks() {
         AUTH.injectBadge();
-        if (_VALIDATORS.includes(AUTH.user()))
+        if (AUTH.isAuth()) {
+          document.getElementById("statut-link").style.display = "";
+        }
+        if (_VALIDATORS.includes(AUTH.user())) {
           document.getElementById("suivi-link").style.display = "";
+        }
       }
-      if (AUTH.isAuth()) _setupSuivi();
-      else window.addEventListener("auth-success", _setupSuivi, { once: true });
+      if (AUTH.isAuth()) _setupLinks();
+      else window.addEventListener("auth-success", _setupLinks, { once: true });
     </script>
     <script src="script.js"></script>
   </body>
