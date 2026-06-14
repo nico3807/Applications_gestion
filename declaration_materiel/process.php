@@ -16,7 +16,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $recipients = ["nicolas.maurin1@umontpellier.fr"];
     $to = implode(", ", $recipients);
 
-    $subject = "[MATÉRIEL] Problème signalé — $type_materiel en $salle par $nom_etudiant";
+    $subject_raw = "[MATERIEL] Probleme signale - $type_materiel en $salle par $nom_etudiant";
+    $subject = "=?UTF-8?B?" . base64_encode($subject_raw) . "?=";
 
     $s = 'font-family: Arial, sans-serif; font-size: 12pt; color: #222;';
     $message  = "<div style=\"$s\">";

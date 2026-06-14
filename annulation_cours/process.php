@@ -22,7 +22,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $recipients = ["nicolas.maurin1@umontpellier.fr"];
     $to = implode(", ", $recipients);
 
-    $subject = "[SIGNALEMENT] Cours non assuré — $enseignant ($groupe) le $date_fr";
+    $subject_raw = "[SIGNALEMENT] Cours non assure - $enseignant ($groupe) le $date_fr";
+    $subject = "=?UTF-8?B?" . base64_encode($subject_raw) . "?=";
 
     $s = 'font-family: Arial, sans-serif; font-size: 12pt; color: #222;';
     $message  = "<div style=\"$s\">";
