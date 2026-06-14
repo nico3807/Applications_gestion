@@ -86,6 +86,12 @@
             <div class="icard-sub">Demande de modification d'emploi du temps</div>
             <div class="icard-arrow">Accéder →</div>
           </a>
+          <a href="annulation_cours/index.html" class="icard" data-app="annulation_cours" style="display:none;">
+            <div class="icard-icon">🚫</div>
+            <h2>Annulation de cours</h2>
+            <div class="icard-sub">Signalement d'un cours non assuré</div>
+            <div class="icard-arrow">Accéder →</div>
+          </a>
         </div>
 
         <!-- Boutons admin (nicolas.maurin uniquement) -->
@@ -171,6 +177,11 @@
               <td>Déplacement cours</td>
               <td><input type="radio" class="perm-radio" name="add-perm-deplacement_cours" value="visible"></td>
               <td><input type="radio" class="perm-radio" name="add-perm-deplacement_cours" value="hidden" checked></td>
+            </tr>
+            <tr>
+              <td>Annulation cours</td>
+              <td><input type="radio" class="perm-radio" name="add-perm-annulation_cours" value="visible"></td>
+              <td><input type="radio" class="perm-radio" name="add-perm-annulation_cours" value="hidden" checked></td>
             </tr>
           </tbody>
         </table>
@@ -301,6 +312,11 @@
                 <td><input type="radio" class="perm-radio" name="edit-perm-deplacement_cours" value="visible"></td>
                 <td><input type="radio" class="perm-radio" name="edit-perm-deplacement_cours" value="hidden" checked></td>
               </tr>
+              <tr>
+                <td>Annulation cours</td>
+                <td><input type="radio" class="perm-radio" name="edit-perm-annulation_cours" value="visible"></td>
+                <td><input type="radio" class="perm-radio" name="edit-perm-annulation_cours" value="hidden" checked></td>
+              </tr>
             </tbody>
           </table>
           <p id="edit-rights-err" style="color:#dc2626;font-size:12px;margin-bottom:.5rem;display:none;"></p>
@@ -327,7 +343,7 @@
 
       function applyCardVisibility() {
         // souhaits et deplacement_cours : visibles seulement si explicitement dans rwApps (ou admin)
-        const GRANT_ONLY = new Set(["souhaits", "deplacement_cours"]);
+        const GRANT_ONLY = new Set(["souhaits", "deplacement_cours", "annulation_cours"]);
         document.querySelectorAll(".icard[data-app]").forEach(card => {
           const app = card.dataset.app;
           if (GRANT_ONLY.has(app)) {
@@ -339,7 +355,7 @@
       }
 
       const _PERM_MAIN  = ["planning-web","repartition","soutenances_stages","soutenances_portfolio"];
-      const _PERM_CARDS = ["souhaits","deplacement_cours"];
+      const _PERM_CARDS = ["souhaits","deplacement_cours","annulation_cours"];
 
       function _buildPermCfg(prefix) {
         const rwApps = [], denyApps = [];
