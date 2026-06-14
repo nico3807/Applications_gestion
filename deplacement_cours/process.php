@@ -5,13 +5,16 @@ header('Content-Type: application/json');
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Récupération et nettoyage des données
-    $nom = htmlspecialchars(trim($_POST['nom'] ?? ''));
-    $parcours = htmlspecialchars(trim($_POST['parcours'] ?? ''));
-    $date_cours = htmlspecialchars(trim($_POST['date_cours'] ?? ''));
-    $heure_cours = htmlspecialchars(trim($_POST['heure_cours'] ?? ''));
-    $motif = htmlspecialchars(trim($_POST['motif'] ?? ''));
-    $is_urgent = isset($_POST['urgence']) ? true : false;
+    $nom          = htmlspecialchars(trim($_POST['nom']                  ?? ''));
+    $parcours     = htmlspecialchars(trim($_POST['parcours']             ?? ''));
+    $date_cours   = htmlspecialchars(trim($_POST['date_cours']           ?? ''));
+    $heure_cours  = htmlspecialchars(trim($_POST['heure_cours']          ?? ''));
+    $motif        = htmlspecialchars(trim($_POST['motif']                ?? ''));
+    $is_urgent    = isset($_POST['urgence']);
     $justification = htmlspecialchars(trim($_POST['justification_urgence'] ?? ''));
+
+    // Date au format français
+    $date_fr = $date_cours ? date('d/m/Y', strtotime($date_cours)) : $date_cours;
 
     if (empty($nom) || empty($parcours) || empty($date_cours) || empty($heure_cours) || empty($motif)) {
         echo json_encode(["status" => "error", "message" => "Veuillez remplir tous les champs obligatoires."]);
@@ -41,22 +44,30 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $urgence_tag = $is_urgent ? "[URGENCE] " : "[STANDARD] ";
     $subject = "Guichet Unique EDT - $urgence_tag Demande de $nom ($parcours)";
 
-    // Construction du corps du message
-    $message = "Une nouvelle demande de modification d'emploi du temps a été soumise.\n\n";
-    $message .= "Enseignant : $nom\n";
-    $message .= "Parcours : $parcours\n";
-    $message .= "Date du cours concerné : $date_cours\n";
-    $message .= "Heure du cours : $heure_cours\n";
-    $message .= "Motif : $motif\n";
+    // Construction du corps du message (HTML)
+    $s = 'font-family: Arial, sans-serif; font-size: 12pt; color: #222;';
+    $message  = "<div style=\"$s\">";
+    $message .= "<p>Une nouvelle demande de modification d'emploi du temps a été soumise.</p>";
+    $message .= "<table style=\"border-collapse:collapse; margin-bottom:8px;\">";
+    $message .= "<tr><td style=\"padding:3px 16px 3px 0; color:#555;\">Enseignant</td><td><strong>$nom</strong></td></tr>";
+    $message .= "<tr><td style=\"padding:3px 16px 3px 0; color:#555;\">Parcours</td><td><strong>$parcours</strong></td></tr>";
+    $message .= "<tr><td style=\"padding:3px 16px 3px 0; color:#555;\">Date du cours</td><td><strong>$date_fr</strong></td></tr>";
+    $message .= "<tr><td style=\"padding:3px 16px 3px 0; color:#555;\">Heure du cours</td><td><strong>$heure_cours</strong></td></tr>";
+    $message .= "</table>";
+    $message .= "<p></p><p><strong>Motif :</strong></p><p>" . nl2br($motif) . "</p><p></p>";
 
     if ($is_urgent) {
-        $message .= "\nATTENTION - DEMANDE HORS DÉLAI :\n";
-        $message .= "Justification : $justification\n";
+        $message .= "<p style=\"color:#b91c1c;\"><strong>⚠️ ATTENTION — DEMANDE HORS DÉLAI</strong></p>";
+        $message .= "<p></p><p><strong>Justification :</strong></p><p>" . nl2br($justification) . "</p><p></p>";
     }
 
+    $message .= "</div>";
+
     // En-têtes de l'email
-    $headers = "From: nicolas.maurin2@gmail.com\r\n";
+    $headers  = "From: nicolas.maurin2@gmail.com\r\n";
     $headers .= "Reply-To: nicolas.maurin2@gmail.com\r\n";
+    $headers .= "MIME-Version: 1.0\r\n";
+    $headers .= "Content-Type: text/html; charset=UTF-8\r\n";
     $headers .= "X-Mailer: PHP/" . phpversion();
 
     // Envoi de l'email via la fonction native mail()
