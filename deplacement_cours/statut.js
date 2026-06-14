@@ -55,7 +55,8 @@ async function loadDemandes() {
   try {
     const resp = await fetch("api_demandes.php", { credentials: "include" });
     if (!resp.ok) throw new Error(`Erreur ${resp.status}`);
-    allDemandes = await resp.json();
+    const all = await resp.json();
+    allDemandes = all.filter(d => d.soumis_par === AUTH.user());
     allDemandes.sort((a, b) => new Date(b.soumis_le) - new Date(a.soumis_le));
     updateCnt();
     render();
