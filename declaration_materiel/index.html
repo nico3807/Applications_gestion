@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Déclaration de problèmes matériel — MMI</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <nav class="nav">
+      <a href="../index.html" class="nav-back">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <polyline points="15 18 9 12 15 6" />
+        </svg>
+        Accueil
+      </a>
+      <span class="nav-title">Déclaration de problèmes matériel — MMI</span>
+      <div class="header-inner" style="margin-left:auto;"></div>
+    </nav>
+
+    <div class="form-page">
+      <div class="form-card">
+        <h1 class="form-title">Déclaration de problèmes matériel</h1>
+        <p class="form-sub">IUT de Béziers · Département MMI</p>
+
+        <form id="materielForm">
+          <div class="fg">
+            <label class="flbl" for="nom_etudiant">Votre nom et prénom *</label>
+            <input
+              type="text"
+              id="nom_etudiant"
+              name="nom_etudiant"
+              class="finput"
+              required
+              placeholder="Ex : Jean Dupont"
+            />
+          </div>
+
+          <div class="fg">
+            <label class="flbl" for="salle">Salle concernée *</label>
+            <select id="salle" name="salle" class="finput" required>
+              <option value="">Sélectionnez une salle…</option>
+              <option value="D11">D11</option>
+              <option value="D112">D112</option>
+              <option value="D114">D114</option>
+              <option value="D115">D115</option>
+              <option value="D116">D116</option>
+              <option value="D117">D117</option>
+              <option value="D118">D118</option>
+            </select>
+          </div>
+
+          <div class="fg">
+            <label class="flbl" for="type_materiel">Type de matériel *</label>
+            <select id="type_materiel" name="type_materiel" class="finput" required>
+              <option value="">Sélectionnez un type…</option>
+              <option value="Informatique">Informatique</option>
+              <option value="Chaise">Chaise</option>
+              <option value="Bureau">Bureau</option>
+              <option value="Vidéoprojecteur">Vidéoprojecteur</option>
+              <option value="Autre">Autre</option>
+            </select>
+          </div>
+
+          <div class="fg">
+            <label class="flbl" for="defaut">Type de défaut constaté *</label>
+            <textarea
+              id="defaut"
+              name="defaut"
+              class="finput"
+              rows="4"
+              required
+              placeholder="Décrivez le problème observé…"
+            ></textarea>
+          </div>
+
+          <button type="submit" id="submitBtn" class="fsubmit">
+            Envoyer la déclaration
+          </button>
+          <div id="formMessage"></div>
+        </form>
+      </div>
+    </div>
+
+    <script src="../auth.js"></script>
+    <script>
+      if (AUTH.isAuth()) AUTH.injectBadge();
+      else window.addEventListener("auth-success", () => AUTH.injectBadge(), { once: true });
+    </script>
+    <script src="script.js"></script>
+  </body>
+</html>
