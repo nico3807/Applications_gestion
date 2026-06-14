@@ -32,12 +32,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // --- CONFIGURATION DES EMAILS ---
 
     // Destinataires
-    //$to_resp_edt_1 = "sylvie.escaig@umontpellier.fr";
-    //$to_resp_edt_2 = "william.bernard@umontpellier.fr";
-    $to_chef_dept = "nicolas.maurin1@umontpellier.fr"; // Vous !
-
-    // Regroupement des destinataires (séparés par des virgules)
-    $to = implode(", ", [$to_directeur_etudes, $to_resp_edt_1, $to_resp_edt_2, $to_chef_dept]);
+    $recipients = ["nicolas.maurin1@umontpellier.fr"];
+    // $recipients[] = "sylvie.escaig@umontpellier.fr";   // resp EDT 1
+    // $recipients[] = "william.bernard@umontpellier.fr";  // resp EDT 2
+    $to = implode(", ", $recipients);
 
     // Sujet de l'email
     $urgence_tag = $is_urgent ? "[URGENCE] " : "[STANDARD] ";
