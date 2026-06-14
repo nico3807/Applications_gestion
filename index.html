@@ -115,7 +115,7 @@
           <label><input type="radio" name="add-mode" value="readonly"> Lecture seule (toutes les apps)</label>
           <label><input type="radio" name="add-mode" value="deny-rep"> Lecture seule + interdit sur Répartition</label>
         </div>
-        <div id="add-dep-box" style="padding-left:1.5rem; margin-bottom:.5rem; display:none;">
+        <div id="add-dep-box" style="padding-left:1.5rem; margin-bottom:.5rem;">
           <label style="display:flex; align-items:center; gap:7px; font-size:13px; color:#374151; cursor:pointer;">
             <input type="checkbox" id="add-dep-cours" class="round-cb"> Déplacement cours
           </label>
@@ -216,7 +216,7 @@
             <label><input type="radio" name="edit-mode" value="readonly" checked> Lecture seule (toutes les apps)</label>
             <label><input type="radio" name="edit-mode" value="deny-rep"> Lecture seule + interdit sur Répartition</label>
           </div>
-          <div id="edit-dep-box" style="padding-left:1.5rem; margin-bottom:.5rem; display:none;">
+          <div id="edit-dep-box" style="padding-left:1.5rem; margin-bottom:.5rem;">
             <label style="display:flex; align-items:center; gap:7px; font-size:13px; color:#374151; cursor:pointer;">
               <input type="checkbox" id="edit-dep-cours" class="round-cb"> Déplacement cours
             </label>
@@ -274,17 +274,13 @@
         document.getElementById("adm-btns").style.display = "flex";
         document.querySelectorAll("input[name='add-mode']").forEach(r =>
           r.addEventListener("change", () => {
-            document.getElementById("add-rwapps-box").style.display = r.value === "rwapps"   ? "" : "none";
-            document.getElementById("add-dep-box").style.display    = r.value === "deny-rep" ? "" : "none";
-            if (r.value !== "deny-rep") document.getElementById("add-dep-cours").checked = false;
+            document.getElementById("add-rwapps-box").style.display = r.value === "rwapps" ? "" : "none";
             _toggleMaquetteBox("add");
           })
         );
         document.querySelectorAll("input[name='edit-mode']").forEach(r =>
           r.addEventListener("change", () => {
-            document.getElementById("edit-rwapps-box").style.display = r.value === "rwapps"   ? "" : "none";
-            document.getElementById("edit-dep-box").style.display    = r.value === "deny-rep" ? "" : "none";
-            if (r.value !== "deny-rep") document.getElementById("edit-dep-cours").checked = false;
+            document.getElementById("edit-rwapps-box").style.display = r.value === "rwapps" ? "" : "none";
             _toggleMaquetteBox("edit");
           })
         );
@@ -311,7 +307,6 @@
         document.querySelectorAll(".add-rwapp").forEach(c => c.checked = false);
         document.querySelectorAll(".add-maquette-grp").forEach(c => c.checked = false);
         document.getElementById("add-dep-cours").checked = false;
-        document.getElementById("add-dep-box").style.display = "none";
         document.querySelector("input[name='add-mode'][value='rwapps']").checked = true;
         document.getElementById("add-rwapps-box").style.display = "";
         _toggleMaquetteBox("add");
@@ -349,10 +344,9 @@
             if (cfg.rwApps.includes("repartition"))
               cfg.maquetteGroups = [...document.querySelectorAll(".add-maquette-grp:checked")].map(c => c.value);
           }
-          else if (mode === "deny-rep") {
-            cfg.denyApps = ["repartition"];
-            if (document.getElementById("add-dep-cours").checked) cfg.rwApps = ["deplacement_cours"];
-          }
+          else if (mode === "deny-rep") cfg.denyApps = ["repartition"];
+          if (mode !== "rw" && document.getElementById("add-dep-cours").checked)
+            cfg.rwApps = [...new Set([...cfg.rwApps, "deplacement_cours"])];
           await AUTH.createUser(cfg);
           closeModal("modal-add");
         } catch(e) {
@@ -402,10 +396,9 @@
 
           const radio = document.querySelector(`input[name="edit-mode"][value="${mode}"]`);
           if (radio) radio.checked = true;
-          document.getElementById("edit-rwapps-box").style.display = mode === "rwapps"   ? "" : "none";
-          document.getElementById("edit-dep-box").style.display    = mode === "deny-rep" ? "" : "none";
+          document.getElementById("edit-rwapps-box").style.display = mode === "rwapps" ? "" : "none";
           const depCb = document.getElementById("edit-dep-cours");
-          if (depCb) depCb.checked = mode === "deny-rep" && (u.rwApps || []).includes("deplacement_cours");
+          if (depCb) depCb.checked = (u.rwApps || []).includes("deplacement_cours");
           document.querySelectorAll(".edit-rwapp").forEach(c => {
             c.checked = mode === "rwapps" && (u.rwApps || []).includes(c.value);
           });
@@ -464,10 +457,9 @@
           if (cfg.rwApps.includes("repartition"))
             cfg.maquetteGroups = [...document.querySelectorAll(".edit-maquette-grp:checked")].map(c => c.value);
         }
-        else if (mode === "deny-rep") {
-          cfg.denyApps = ["repartition"];
-          if (document.getElementById("edit-dep-cours").checked) cfg.rwApps = ["deplacement_cours"];
-        }
+        else if (mode === "deny-rep") cfg.denyApps = ["repartition"];
+        if (mode !== "rw" && document.getElementById("edit-dep-cours").checked)
+          cfg.rwApps = [...new Set([...cfg.rwApps, "deplacement_cours"])];
 
         const btn = document.getElementById("edit-rights-btn");
         btn.disabled = true; btn.textContent = "…";
