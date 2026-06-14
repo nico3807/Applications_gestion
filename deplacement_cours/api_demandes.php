@@ -140,5 +140,39 @@ if ($method === 'POST') {
     exit;
 }
 
+if ($method === 'DELETE') {
+    if (!in_array($user, $VALIDATORS)) {
+        http_response_code(403);
+        echo json_encode(['error' => 'Accès refusé']);
+        exit;
+    }
+
+    $data = json_decode(file_get_contents('php://input'), true);
+    $id   = $data['id'] ?? null;
+
+    if (!$id) {
+        http_response_code(400);
+        echo json_encode(['error' => 'ID manquant']);
+        exit;
+    }
+
+    $demandes = loadDemandes($dataFile);
+    $before   = count($demandes);
+    $demandes = array_values(array_filter(
+        $demandes,
+        fn($d) => !($d['id'] === $id && in_array($d['statut'], ['validee', 'rejetee']))
+    ));
+
+    if (count($demandes) === $before) {
+        http_response_code(404);
+        echo json_encode(['error' => 'Demande introuvable ou non supprimable.']);
+        exit;
+    }
+
+    saveDemandes($dataFile, $demandes);
+    echo json_encode(['success' => true]);
+    exit;
+}
+
 http_response_code(405);
 echo json_encode(['error' => 'Méthode non autorisée']);

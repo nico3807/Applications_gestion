@@ -118,19 +118,27 @@ function render() {
       decide(b.dataset.id, "rejeter", txt.value);
     })
   );
+  list.querySelectorAll(".btn-delete").forEach((b) =>
+    b.addEventListener("click", () => deleteDemande(b.dataset.id))
+  );
 }
 
 function cardHtml(d) {
   const urgTag = d.urgence ? `<span class="urgence-tag">Urgence</span>` : "";
   const footer =
     d.statut !== "en_attente"
-      ? `<div class="decision-line">
-           ${d.statut === "validee" ? "✓" : "✕"}
-           <strong>${LABELS[d.statut]}</strong> par
-           <strong>${esc(d.decision_par)}</strong>
-           le ${fmtDate(d.decision_date)}
-         </div>
-         ${d.justification_decision ? `<div class="decision-just">"${esc(d.justification_decision)}"</div>` : ""}`
+      ? `<div style="display:flex;justify-content:space-between;align-items:flex-start;gap:.5rem;flex-wrap:wrap;">
+           <div>
+             <div class="decision-line">
+               ${d.statut === "validee" ? "✓" : "✕"}
+               <strong>${LABELS[d.statut]}</strong> par
+               <strong>${esc(d.decision_par)}</strong>
+               le ${fmtDate(d.decision_date)}
+             </div>
+             ${d.justification_decision ? `<div class="decision-just">"${esc(d.justification_decision)}"</div>` : ""}
+           </div>
+           <button class="btn-delete" data-id="${d.id}">Supprimer</button>
+         </div>`
       : `<div class="action-btns">
            <button class="btn-val" data-id="${d.id}">✓ Valider</button>
            <button class="btn-rej" data-id="${d.id}">✕ Rejeter</button>
@@ -201,6 +209,26 @@ function toggleBox(id, type) {
   const other = type === "val" ? "rej" : "val";
   document.getElementById(`box-${other}-${id}`)?.classList.remove("show");
   document.getElementById(`box-${type}-${id}`)?.classList.toggle("show");
+}
+
+async function deleteDemande(id) {
+  if (!confirm("Supprimer définitivement cette demande ?")) return;
+  try {
+    const resp = await fetch("api_demandes.php", {
+      method: "DELETE",
+      credentials: "include",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ id }),
+    });
+    const result = await resp.json();
+    if (!resp.ok) {
+      alert(result.error ?? "Erreur lors de la suppression.");
+      return;
+    }
+    await loadDemandes();
+  } catch (e) {
+    alert("Erreur réseau : " + e.message);
+  }
 }
 
 async function decide(id, action, justification) {
