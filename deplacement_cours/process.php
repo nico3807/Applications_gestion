@@ -62,7 +62,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Envoi de l'email via la fonction native mail()
     // Remarque : Sur un serveur Nginx de production, assurez-vous que Postfix ou Sendmail est configuré,
     // ou utilisez une librairie comme PHPMailer pour passer par un relais SMTP (recommandé pour éviter les spams).
-    $mail_sent = mail($to, $subject, $message, $headers);
+    $mail_sent = mail($to, $subject, $message, $headers, '-f nicolas.maurin2@gmail.com');
 
     if ($mail_sent) {
         echo json_encode(["status" => "success", "message" => "Votre demande a été transmise avec succès à l'équipe pédagogique."]);
