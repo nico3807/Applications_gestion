@@ -46,7 +46,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Sujet de l'email
     $urgence_tag = $is_urgent ? "[URGENCE] " : "[STANDARD] ";
-    $subject = "Demande de modification EDT - $urgence_tag Demande de $nom ($parcours)";
+    $subject_raw = "Demande de modification EDT - $urgence_tag Demande de $nom ($parcours)";
+    $subject = "=?UTF-8?B?" . base64_encode($subject_raw) . "?=";
 
     // Construction du corps du message (HTML)
     $s = 'font-family: Arial, sans-serif; font-size: 12pt; color: #222;';
