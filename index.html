@@ -62,7 +62,7 @@
             <div class="icard-sub">Gestion des enseignants et services</div>
             <div class="icard-arrow">Accéder →</div>
           </a>
-          <a href="repartition/index.html#souhaits" class="icard" data-app="souhaits">
+          <a href="repartition/index.html#souhaits" class="icard" data-app="souhaits" style="display:none;">
             <div class="icard-icon">📝</div>
             <h2>Souhaits 2026-2027</h2>
             <div class="icard-sub">Saisie des souhaits d'enseignement</div>
@@ -80,7 +80,7 @@
             <div class="icard-sub">Gestion des jurys de portfolio</div>
             <div class="icard-arrow">Accéder →</div>
           </a>
-          <a href="deplacement_cours/index.html" class="icard" id="card-deplacement" style="display:none;">
+          <a href="deplacement_cours/index.html" class="icard" id="card-deplacement" data-app="deplacement_cours" style="display:none;">
             <div class="icard-icon">📋</div>
             <h2>Déplacement de cours</h2>
             <div class="icard-sub">Demande de modification d'emploi du temps</div>
@@ -326,11 +326,16 @@
       else window.addEventListener("auth-success", () => { AUTH.injectBadge(); initAdmin(); applyCardVisibility(); }, { once:true });
 
       function applyCardVisibility() {
+        // souhaits et deplacement_cours : visibles seulement si explicitement dans rwApps (ou admin)
+        const GRANT_ONLY = new Set(["souhaits", "deplacement_cours"]);
         document.querySelectorAll(".icard[data-app]").forEach(card => {
-          if (!AUTH.canAccess(card.dataset.app)) card.style.display = "none";
+          const app = card.dataset.app;
+          if (GRANT_ONLY.has(app)) {
+            card.style.display = (AUTH.isAdmin() || AUTH.hasRwApp(app)) ? "" : "none";
+          } else {
+            if (!AUTH.canAccess(app)) card.style.display = "none";
+          }
         });
-        const cardDep = document.getElementById("card-deplacement");
-        if (cardDep) cardDep.style.display = AUTH.user() === "nicolas.maurin" ? "" : "none";
       }
 
       const _PERM_MAIN  = ["planning-web","repartition","soutenances_stages","soutenances_portfolio"];
