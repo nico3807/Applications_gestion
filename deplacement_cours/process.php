@@ -55,8 +55,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     // En-têtes de l'email
-    $headers = "From: noreply-edt@iut-beziers.fr\r\n";
-    $headers .= "Reply-To: noreply-edt@iut-beziers.fr\r\n";
+    $headers = "From: nicolas.maurin2@gmail.com\r\n";
+    $headers .= "Reply-To: nicolas.maurin2@gmail.com\r\n";
     $headers .= "X-Mailer: PHP/" . phpversion();
 
     // Envoi de l'email via la fonction native mail()
