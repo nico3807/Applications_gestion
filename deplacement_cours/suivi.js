@@ -167,7 +167,7 @@ function cardHtml(d) {
         <span style="color:#d1d5db">·</span>
         <span style="font-size:.84rem">${esc(d.parcours)}</span>
         ${urgTag}
-        <span class="dc-meta">Soumis le ${fmtDateTime(d.soumis_le)}</span>
+        <span class="dc-meta">Soumis le ${fmtDateTime(d.soumis_le)}${d.soumis_par ? ` par : ${esc(d.soumis_par)}` : ""}</span>
       </div>
       <div class="dc-body">
         ${d.ressource ? `<div class="dc-ressource">${esc(d.ressource)}</div>` : ""}

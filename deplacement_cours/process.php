@@ -1,6 +1,10 @@
 <?php
 header('Content-Type: application/json');
 
+session_set_cookie_params(['path' => '/', 'samesite' => 'Lax']);
+session_start();
+$soumis_par = $_SESSION['user']['login'] ?? '';
+
 // Vérification que la requête est bien en POST
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
@@ -43,6 +47,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         'decision_date'          => null,
         'justification_decision' => null,
         'soumis_le'              => date('c'),
+        'soumis_par'             => $soumis_par,
     ];
 
     $dataFile = dirname(__DIR__) . '/api/data/deplacement_demandes.json';
