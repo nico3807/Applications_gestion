@@ -32,10 +32,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // --- CONFIGURATION DES EMAILS ---
 
     // Destinataires
-    $to_directeur_etudes = "dir-etudes@iut-beziers.fr";
-    $to_resp_edt_1 = "planning1@iut-beziers.fr";
-    $to_resp_edt_2 = "planning2@iut-beziers.fr";
-    $to_chef_dept = "chef-dept@iut-beziers.fr"; // Vous !
+    //$to_resp_edt_1 = "sylvie.escaig@umontpellier.fr";
+    //$to_resp_edt_2 = "william.bernard@umontpellier.fr";
+    $to_chef_dept = "nicolas.maurin1@umontpellier.fr"; // Vous !
 
     // Regroupement des destinataires (séparés par des virgules)
     $to = implode(", ", [$to_directeur_etudes, $to_resp_edt_1, $to_resp_edt_2, $to_chef_dept]);
