@@ -84,12 +84,13 @@ document.addEventListener("DOMContentLoaded", async () => {
   form.addEventListener("submit", async (e) => {
     e.preventDefault();
     const formData = new FormData(form);
+    formData.append('soumis_par', AUTH.user() ?? '');
     const submitBtn = document.getElementById("submitBtn");
     submitBtn.disabled = true;
     submitBtn.textContent = "Envoi en cours…";
     messageDiv.style.display = "none";
     try {
-      const response = await fetch("process.php", { method: "POST", body: formData });
+      const response = await fetch("process.php", { method: "POST", credentials: "include", body: formData });
       const result = await response.json();
       messageDiv.style.display = "block";
       if (result.status === "success") {
