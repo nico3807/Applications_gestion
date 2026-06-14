@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Suivi des demandes — Déplacement de cours</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      .suivi-wrap  { max-width: 860px; margin: 2rem auto; padding: 0 1rem 3rem; }
+      .suivi-title { font-size: 1.4rem; font-weight: 700; color: #1e3a5f; margin-bottom: .2rem; }
+      .suivi-sub   { font-size: .85rem; color: #6b7280; margin-bottom: 1.5rem; }
+
+      .filter-tabs { display: flex; gap: .5rem; margin-bottom: 1.25rem; flex-wrap: wrap; }
+      .filter-tab  {
+        padding: .38rem 1rem; border-radius: 20px; cursor: pointer;
+        font-size: .84rem; font-weight: 600; border: 1.5px solid #d1d5db;
+        background: #fff; color: #374151; transition: background .13s, color .13s;
+      }
+      .filter-tab.active { background: #1e3a5f; color: #fff; border-color: #1e3a5f; }
+      .filter-tab .cnt {
+        display: inline-flex; align-items: center; justify-content: center;
+        background: #ef4444; color: #fff; border-radius: 10px;
+        font-size: .7rem; min-width: 18px; height: 18px; padding: 0 4px; margin-left: 4px;
+      }
+
+      .demandes-list { display: flex; flex-direction: column; gap: .85rem; }
+      .demande-card  {
+        background: #fff; border: 1.5px solid #e5e7eb;
+        border-radius: 10px; overflow: hidden;
+        box-shadow: 0 1px 4px rgba(0,0,0,.06);
+      }
+      .dc-header {
+        padding: .6rem 1rem; display: flex; align-items: center; gap: .6rem;
+        background: #f9fafb; border-bottom: 1px solid #e5e7eb; flex-wrap: wrap;
+      }
+      .sbadge {
+        font-size: .7rem; font-weight: 700; padding: 2px 9px;
+        border-radius: 10px; text-transform: uppercase; letter-spacing: .04em; white-space: nowrap;
+      }
+      .sbadge-attente  { background: #fef3c7; color: #92400e; }
+      .sbadge-validee  { background: #d1fae5; color: #065f46; }
+      .sbadge-rejetee  { background: #fee2e2; color: #991b1b; }
+      .urgence-tag {
+        font-size: .7rem; font-weight: 700; padding: 2px 8px;
+        border-radius: 10px; background: #fee2e2; color: #991b1b;
+        text-transform: uppercase; white-space: nowrap;
+      }
+      .dc-meta { font-size: .76rem; color: #9ca3af; margin-left: auto; white-space: nowrap; }
+
+      .dc-body { padding: .8rem 1rem; }
+      .dc-ens  { font-size: .9rem; font-weight: 700; color: #1e3a5f; margin-bottom: .2rem; }
+      .dc-parc { font-size: .82rem; color: #374151; margin-bottom: .55rem; }
+      .dc-ressource {
+        font-size: .78rem; color: #6b7280; background: #f1f5f9;
+        border-radius: 5px; padding: .25rem .6rem; display: inline-block; margin-bottom: .6rem;
+      }
+
+      .dc-bloc { border-radius: 6px; padding: .45rem .7rem; margin-bottom: .5rem; }
+      .dc-bloc-o { border: 1.5px solid #f59e0b; background: #fffbeb; }
+      .dc-bloc-g { border: 1.5px solid #6ee7b7; background: #f0fdf4; }
+      .dc-bloc-row { display: flex; gap: 2rem; flex-wrap: wrap; }
+      .dc-field span  { font-size: .74rem; color: #78716c; display: block; }
+      .dc-field strong { font-size: .84rem; color: #1e293b; }
+
+      .dc-motif {
+        font-size: .82rem; color: #374151; background: #f8fafc;
+        border-radius: 6px; padding: .45rem .7rem; margin-top: .4rem;
+      }
+      .dc-motif-lbl { font-weight: 600; color: #1e3a5f; font-size: .76rem; margin-bottom: .2rem; }
+      .dc-motif-urg { border-left: 3px solid #dc2626; margin-top: .4rem; }
+      .dc-motif-urg .dc-motif-lbl { color: #dc2626; }
+
+      .dc-footer { padding: .6rem 1rem; border-top: 1px solid #e5e7eb; }
+
+      .decision-line {
+        font-size: .82rem; color: #374151; display: flex; align-items: flex-start;
+        gap: .4rem; flex-wrap: wrap;
+      }
+      .decision-just {
+        font-size: .8rem; color: #6b7280; margin-top: .3rem;
+        font-style: italic; padding-left: 1.2rem;
+      }
+
+      .action-btns { display: flex; gap: .5rem; flex-wrap: wrap; }
+      .btn-val {
+        background: #16a34a; color: #fff; border: none;
+        padding: .4rem 1.1rem; border-radius: 6px; font-size: .84rem;
+        font-weight: 600; cursor: pointer;
+      }
+      .btn-val:hover  { background: #15803d; }
+      .btn-rej {
+        background: #fff; color: #dc2626; border: 1.5px solid #dc2626;
+        padding: .4rem 1.1rem; border-radius: 6px; font-size: .84rem;
+        font-weight: 600; cursor: pointer;
+      }
+      .btn-rej:hover  { background: #fef2f2; }
+
+      .confirm-box {
+        margin-top: .65rem; padding: .65rem .8rem;
+        border-radius: 8px; display: none;
+      }
+      .confirm-box.show { display: block; }
+      .confirm-box-val { border: 1px solid #bbf7d0; background: #f0fdf4; }
+      .confirm-box-rej { border: 1px solid #fecaca; background: #fef2f2; }
+      .confirm-box p   { font-size: .84rem; margin: 0 0 .45rem; }
+      .confirm-box-val p { color: #166534; }
+      .confirm-box-rej p { color: #991b1b; }
+      .confirm-box textarea {
+        width: 100%; box-sizing: border-box; border: 1.5px solid #fca5a5;
+        border-radius: 6px; padding: .45rem .65rem; font-size: .83rem;
+        resize: vertical; min-height: 56px; font-family: inherit; margin-bottom: .45rem;
+      }
+      .confirm-box textarea:focus { outline: none; border-color: #dc2626; }
+      .confirm-btns { display: flex; gap: .5rem; }
+      .btn-ok-val {
+        background: #16a34a; color: #fff; border: none;
+        padding: .35rem .85rem; border-radius: 6px; font-size: .82rem;
+        font-weight: 600; cursor: pointer;
+      }
+      .btn-ok-rej {
+        background: #dc2626; color: #fff; border: none;
+        padding: .35rem .85rem; border-radius: 6px; font-size: .82rem;
+        font-weight: 600; cursor: pointer;
+      }
+      .btn-cancel-action {
+        background: none; color: #6b7280; border: 1.5px solid #d1d5db;
+        padding: .35rem .85rem; border-radius: 6px; font-size: .82rem; cursor: pointer;
+      }
+
+      .empty-msg { text-align: center; color: #9ca3af; padding: 2.5rem 1rem; font-size: .95rem; }
+      .load-msg  { text-align: center; color: #6b7280; padding: 2rem; font-size: .9rem; }
+      .denied-msg { text-align: center; color: #dc2626; padding: 3rem 1rem; }
+    </style>
+  </head>
+  <body>
+    <nav class="nav">
+      <a href="index.html" class="nav-back">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="15 18 9 12 15 6" />
+        </svg>
+        Déplacement de cours
+      </a>
+      <span class="nav-title">Suivi des demandes</span>
+      <div class="header-inner" style="margin-left: auto"></div>
+    </nav>
+
+    <div class="suivi-wrap">
+      <div id="denied" class="denied-msg" style="display:none">
+        <p>Accès réservé aux responsables EDT.</p>
+      </div>
+      <div id="main" style="display:none">
+        <h1 class="suivi-title">Suivi des demandes de déplacement</h1>
+        <p class="suivi-sub">IUT de Béziers · Département MMI</p>
+
+        <div class="filter-tabs">
+          <button class="filter-tab active" data-f="en_attente">En attente <span class="cnt" id="cnt-attente"></span></button>
+          <button class="filter-tab" data-f="validee">Validées</button>
+          <button class="filter-tab" data-f="rejetee">Rejetées</button>
+          <button class="filter-tab" data-f="all">Toutes</button>
+        </div>
+
+        <div class="demandes-list" id="list">
+          <div class="load-msg">Chargement…</div>
+        </div>
+      </div>
+    </div>
+
+    <script src="../auth.js"></script>
+    <script>
+      if (AUTH.isAuth()) AUTH.injectBadge();
+      else window.addEventListener("auth-success", () => AUTH.injectBadge(), { once: true });
+    </script>
+    <script src="suivi.js"></script>
+  </body>
+</html>

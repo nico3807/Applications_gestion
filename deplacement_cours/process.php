@@ -25,28 +25,49 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         exit;
     }
 
-    // --- OPTIONNEL : Enregistrement en Base de données (MySQL/MariaDB) ---
-    /*
-    try {
-        $pdo = new PDO('mysql:host=localhost;dbname=iut_mmi;charset=utf8', 'utilisateur', 'mot_de_passe');
-        $stmt = $pdo->prepare('INSERT INTO demandes_edt (nom, parcours, date_cours, motif, urgence, justification) VALUES (?, ?, ?, ?, ?, ?)');
-        $stmt->execute([$nom, $parcours, $date_cours, $motif, $is_urgent ? 1 : 0, $justification]);
-    } catch (Exception $e) {
-        // Gérer l'erreur silencieusement ou alerter l'admin
+    // --- Enregistrement de la demande en JSON ---
+    $demande = [
+        'id'                     => uniqid("", true),
+        'nom'                    => trim($_POST['nom']                   ?? ''),
+        'parcours'               => trim($_POST['parcours']              ?? ''),
+        'ressource'              => trim($_POST['ressource']             ?? ''),
+        'date_cours'             => trim($_POST['date_cours']            ?? ''),
+        'heure_cours'            => trim($_POST['heure_cours']           ?? ''),
+        'motif'                  => trim($_POST['motif']                 ?? ''),
+        'date_souhaite'          => trim($_POST['date_cours_souhaite']   ?? ''),
+        'heure_souhaitee'        => trim($_POST['heure_cours_souhaitee'] ?? ''),
+        'urgence'                => isset($_POST['urgence']),
+        'justification_urgence'  => trim($_POST['justification_urgence'] ?? ''),
+        'statut'                 => 'en_attente',
+        'decision_par'           => null,
+        'decision_date'          => null,
+        'justification_decision' => null,
+        'soumis_le'              => date('c'),
+    ];
+
+    $dataFile = __DIR__ . '/data/demandes.json';
+    $dataDir  = dirname($dataFile);
+    if (!is_dir($dataDir)) mkdir($dataDir, 0755, true);
+    $existantes = file_exists($dataFile) ? (json_decode(file_get_contents($dataFile), true) ?? []) : [];
+    $existantes[] = $demande;
+    $fp = fopen($dataFile, 'c+');
+    if ($fp) {
+        flock($fp, LOCK_EX);
+        ftruncate($fp, 0);
+        rewind($fp);
+        fwrite($fp, json_encode($existantes, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE));
+        flock($fp, LOCK_UN);
+        fclose($fp);
     }
-    */
 
     // --- CONFIGURATION DES EMAILS ---
 
-    // Destinataires
-    $recipients = ["nicolas.maurin1@umontpellier.fr"];
-    // $recipients[] = "sylvie.escaig@umontpellier.fr";   // resp EDT 1
-    // $recipients[] = "william.bernard@umontpellier.fr";  // resp EDT 2
-    $to = implode(", ", $recipients);
+    // Destinataires (les 3 valideurs)
+    $to = "nicolas.maurin1@umontpellier.fr, sylvie.escaig@umontpellier.fr, william.bernard@umontpellier.fr";
 
     // Sujet de l'email
-    $urgence_tag = $is_urgent ? "[URGENCE] " : "[STANDARD] ";
-    $subject_raw = "Demande de modification EDT - $urgence_tag Demande de $nom ($parcours)";
+    $urgence_tag = $is_urgent ? "[URGENCE] " : "";
+    $subject_raw = "[EDT] {$urgence_tag}Nouvelle demande - $nom ($parcours)";
     $subject = "=?UTF-8?B?" . base64_encode($subject_raw) . "?=";
 
     // Construction du corps du message (HTML)
