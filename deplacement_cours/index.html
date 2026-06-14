@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Déplacement de cours — MMI</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <nav class="nav">
+      <a href="../index.html" class="nav-back">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+        Accueil
+      </a>
+      <span class="nav-title">Déplacement de cours — MMI</span>
+    </nav>
+
+    <div class="form-page">
+      <div class="form-card">
+        <h1 class="form-title">Modification d'emploi du temps</h1>
+        <p class="form-sub">IUT de Béziers · Département MMI</p>
+
+        <form id="edtForm">
+          <div class="fg">
+            <label class="flbl" for="nom">Nom de l'enseignant *</label>
+            <select id="nom" name="nom" class="finput" required>
+              <option value="">Chargement…</option>
+            </select>
+          </div>
+
+          <div class="fg">
+            <label class="flbl" for="parcours">Parcours concerné *</label>
+            <select id="parcours" name="parcours" class="finput" required>
+              <option value="">Sélectionnez un parcours…</option>
+              <option value="CN">Création Numérique</option>
+              <option value="DWDI">Développement Web et Dispositifs Interactifs</option>
+              <option value="Tronc_Commun">Tronc Commun</option>
+            </select>
+          </div>
+
+          <div class="fg">
+            <label class="flbl" for="date_cours">Date du cours à modifier *</label>
+            <input type="date" id="date_cours" name="date_cours" class="finput" required />
+          </div>
+
+          <div class="fg">
+            <label class="flbl" for="heure_cours">Heure du cours *</label>
+            <select id="heure_cours" name="heure_cours" class="finput" required>
+              <option value="">Sélectionnez un créneau…</option>
+              <option value="08h-9h30">08h – 9h30</option>
+              <option value="09h30-11h">9h30 – 11h</option>
+              <option value="11h-12h30">11h – 12h30</option>
+              <option value="14h-15h30">14h – 15h30</option>
+              <option value="15h30-17h">15h30 – 17h</option>
+              <option value="17h-18h30">17h – 18h30</option>
+              <option value="08h-11h">08h – 11h</option>
+              <option value="9h30-12h30">9h30 – 12h30</option>
+              <option value="14h-17h">14h – 17h</option>
+              <option value="15h30-18h30">15h30 – 18h30</option>
+            </select>
+          </div>
+
+          <div class="fg">
+            <label class="flbl" for="motif">Motif de la demande *</label>
+            <textarea id="motif" name="motif" class="finput" rows="4" required></textarea>
+          </div>
+
+          <div class="fg fg--urgence">
+            <input type="checkbox" id="urgence" name="urgence" />
+            <label for="urgence"><strong>Urgence absolue / Force majeure</strong> (délai du jeudi dépassé)</label>
+          </div>
+
+          <div class="fg hidden" id="justification_urgence_container">
+            <label class="flbl" for="justification_urgence">Justification de l'urgence *</label>
+            <textarea id="justification_urgence" name="justification_urgence" class="finput" rows="3"></textarea>
+          </div>
+
+          <button type="submit" id="submitBtn" class="fsubmit">Soumettre la demande</button>
+          <div id="formMessage"></div>
+        </form>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -56,6 +56,12 @@
             <div class="icard-sub">Gestion des jurys de portfolio</div>
             <div class="icard-arrow">Accéder →</div>
           </a>
+          <a href="deplacement_cours/index.html" class="icard" id="card-deplacement" style="display:none;">
+            <div class="icard-icon">📋</div>
+            <h2>Déplacement de cours</h2>
+            <div class="icard-sub">Demande de modification d'emploi du temps</div>
+            <div class="icard-arrow">Accéder →</div>
+          </a>
         </div>
 
         <!-- Boutons admin (nicolas.maurin uniquement) -->
@@ -233,6 +239,8 @@
         document.querySelectorAll(".icard[data-app]").forEach(card => {
           if (!AUTH.canAccess(card.dataset.app)) card.style.display = "none";
         });
+        const cardDep = document.getElementById("card-deplacement");
+        if (cardDep) cardDep.style.display = AUTH.user() === "nicolas.maurin" ? "" : "none";
       }
 
       function initAdmin() {
