@@ -18,7 +18,7 @@ if (!$user) {
     exit;
 }
 
-$dataFile = __DIR__ . '/data/demandes.json';
+$dataFile = dirname(__DIR__) . '/api/data/deplacement_demandes.json';
 
 function loadDemandes(string $file): array {
     if (!file_exists($file)) return [];
