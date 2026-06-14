@@ -56,14 +56,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $message .= "<tr><td style=\"padding:3px 16px 3px 0; color:#555;\">Parcours</td><td><strong>$parcours</strong></td></tr>";
     $message .= "<tr><td style=\"padding:3px 16px 3px 0; color:#555;\">Date du cours à modifier</td><td><strong>$date_fr</strong></td></tr>";
     $message .= "<tr><td style=\"padding:3px 16px 3px 0; color:#555;\">Heure du cours</td><td><strong>$heure_cours</strong></td></tr>";
-    $message .= "<tr><td style=\"padding:3px 16px 3px 0; color:#555;\">Date du cours souhaitée</td><td><strong>$date_souhaite_fr</strong></td></tr>";
-    $message .= "<tr><td style=\"padding:3px 16px 3px 0; color:#555;\">Heure souhaitée</td><td><strong>$heure_souhaitee</strong></td></tr>";
+    $message .= "<tr><td style=\"padding:3px 16px 3px 0; color:#555;\">Nouvelle date souhaitée</td><td><strong>$date_souhaite_fr</strong></td></tr>";
+    $message .= "<tr><td style=\"padding:3px 16px 3px 0; color:#555;\">Nouveau créneau souhaité</td><td><strong>$heure_souhaitee</strong></td></tr>";
     $message .= "</table>";
     $message .= "<p></p><p><strong>Motif :</strong></p><p>" . nl2br($motif) . "</p><p></p>";
 
     if ($is_urgent) {
         $message .= "<p style=\"color:#b91c1c;\"><strong>⚠️ ATTENTION — DEMANDE HORS DÉLAI</strong></p>";
-        $message .= "<p></p><p><strong>Justification :</strong></p><p>" . nl2br($justification) . "</p><p></p>";
+        $message .= "<p></p><p><strong>Justification de l'urgence :</strong></p><p>" . nl2br($justification) . "</p><p></p>";
     }
 
     $message .= "</div>";
