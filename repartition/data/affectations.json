@@ -1678,7 +1678,14 @@
       "cm": 0,
       "td": 9,
       "tp": 6,
-      "subrows": [],
+      "subrows": [
+        {
+          "enseignant": "",
+          "cm": 0,
+          "td": 0,
+          "tp": 0
+        }
+      ],
       "responsable": ""
     },
     "R3.08 | Écriture multimédia et narration": {
