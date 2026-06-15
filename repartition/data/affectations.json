@@ -1179,7 +1179,14 @@
       "cm": 0,
       "td": 21,
       "tp": 3,
-      "subrows": [],
+      "subrows": [
+        {
+          "enseignant": "",
+          "cm": 0,
+          "td": 0,
+          "tp": 0
+        }
+      ],
       "responsable": ""
     },
     "R5.DWeb-DI.07 | Dispositifs interactifs": {
