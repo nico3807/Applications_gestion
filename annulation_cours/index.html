@@ -65,14 +65,9 @@
 
           <div class="fg">
             <label class="flbl" for="matiere">Matière concernée *</label>
-            <input
-              type="text"
-              id="matiere"
-              name="matiere"
-              class="finput"
-              required
-              placeholder="Ex : Développement Web"
-            />
+            <select id="matiere" name="matiere" class="finput" required>
+              <option value="">Sélectionnez d'abord un parcours…</option>
+            </select>
           </div>
 
           <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem">
