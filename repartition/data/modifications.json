@@ -442,29 +442,92 @@
   },
   {
     "date": "15/06/2026",
-    "heure": "09:45:06",
-    "utilisateur": "emmanuel.therond",
+    "heure": "09:43:27",
+    "utilisateur": "damien.marill",
     "type": "Répartition",
-    "description": "S5 crea / SAÉ 5.Crea.03 | SAE Conception d'interface / tp",
-    "prev": "24",
-    "next": "0"
+    "description": "S5 dev / R5.DWeb-DI.05 | Développement front avancé / enseignant",
+    "prev": "MARILL Damien",
+    "next": ""
   },
   {
     "date": "15/06/2026",
-    "heure": "09:45:24",
-    "utilisateur": "emmanuel.therond",
+    "heure": "09:43:36",
+    "utilisateur": "damien.marill",
     "type": "Répartition",
-    "description": "S5 crea / SAÉ 5.Crea.03 | SAE Conception d'interface / tp",
-    "prev": "0",
-    "next": "48"
+    "description": "S5 dev / R5.DWeb-DI.06 | Développement back avancé / enseignant",
+    "prev": "MARILL Damien",
+    "next": ""
   },
   {
     "date": "15/06/2026",
-    "heure": "09:45:56",
-    "utilisateur": "emmanuel.therond",
+    "heure": "09:43:41",
+    "utilisateur": "damien.marill",
     "type": "Répartition",
-    "description": "S5 crea / SAÉ 5.Crea.03 | SAE Conception d'interface / tp",
-    "prev": "48",
-    "next": "24"
+    "description": "S5 dev / R5.DWeb-DI.07 | Dispositifs interactifs / enseignant",
+    "prev": "MARZOUK Reda",
+    "next": ""
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "09:44:12",
+    "utilisateur": "damien.marill",
+    "type": "Répartition",
+    "description": "S6 dev / R6.DWeb-DI.02 | Développement Web et dispositif interactif / sous-groupe 1 / enseignant",
+    "prev": "MARILL Damien",
+    "next": ""
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "09:44:14",
+    "utilisateur": "damien.marill",
+    "type": "Répartition",
+    "description": "S6 dev / R6.DWeb-DI.02 | Développement Web et dispositif interactif / enseignant",
+    "prev": "MARZOUK Reda",
+    "next": ""
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "09:44:18",
+    "utilisateur": "damien.marill",
+    "type": "Répartition",
+    "description": "S6 dev / R6.DWeb-DI.02 | Développement Web et dispositif interactif / sous-groupe 2 / enseignant",
+    "prev": "DARTIES Benoit",
+    "next": ""
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "09:44:28",
+    "utilisateur": "damien.marill",
+    "type": "Répartition",
+    "description": "S6 dev / R6.DWeb-DI.03 | Fonctionnement des IA / enseignant",
+    "prev": "MAURIN Nicolas",
+    "next": ""
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "09:44:51",
+    "utilisateur": "damien.marill",
+    "type": "Répartition",
+    "description": "S4 dev / R4.DWeb-DI.05 | Création et design interactif / enseignant",
+    "prev": "MAURIN Nicolas",
+    "next": ""
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "09:45:10",
+    "utilisateur": "damien.marill",
+    "type": "Répartition",
+    "description": "S4 dev / R4.DWeb-DI.07 | Développement back / enseignant",
+    "prev": "MARZOUK Reda",
+    "next": ""
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "09:46:34",
+    "utilisateur": "nicolas.maurin",
+    "type": "Enseignants",
+    "description": "Ajout",
+    "prev": "—",
+    "next": "SALTET Marius"
   }
 ]
