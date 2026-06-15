@@ -1177,14 +1177,7 @@
       "cm": 0,
       "td": 30,
       "tp": 1.5,
-      "subrows": [
-        {
-          "enseignant": "LAGIEWKA Arnaud",
-          "cm": 0,
-          "td": 0,
-          "tp": 6
-        }
-      ],
+      "subrows": [],
       "responsable": ""
     },
     "R5.DWeb-DI.06 | Développement back avancé": {
