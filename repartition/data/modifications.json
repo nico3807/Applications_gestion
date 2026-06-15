@@ -952,5 +952,14 @@
     "description": "S5 dev / R5.DWeb-DI.07 | Dispositifs interactifs / tp",
     "prev": "12",
     "next": "9"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "13:13:21",
+    "utilisateur": "damien.marill",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.07 | Dispositifs interactifs / sous-groupe 1 / enseignant",
+    "prev": "",
+    "next": "MAURIN Nicolas"
   }
 ]
