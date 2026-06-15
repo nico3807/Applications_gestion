@@ -547,5 +547,113 @@
     "description": "Modification DI PIERRO Davide",
     "prev": "DI PIERRO Davide — Titulaire, dû:128, max:—",
     "next": "DI PIERRO Davide — Titulaire, dû:128, max:128"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "10:13:46",
+    "utilisateur": "damien.marill",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.05 | Développement front avancé / enseignant",
+    "prev": "",
+    "next": "MARILL Damien"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "10:13:54",
+    "utilisateur": "damien.marill",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.06 | Développement back avancé / enseignant",
+    "prev": "",
+    "next": "MARILL Damien"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "10:16:04",
+    "utilisateur": "damien.marill",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.05 | Développement front avancé / td",
+    "prev": "30",
+    "next": "20"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "10:16:09",
+    "utilisateur": "damien.marill",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.05 | Développement front avancé / tp",
+    "prev": "1.5",
+    "next": "2"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "10:16:09",
+    "utilisateur": "damien.marill",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.05 | Développement front avancé / tp",
+    "prev": "2",
+    "next": "2.5"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "10:16:09",
+    "utilisateur": "damien.marill",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.05 | Développement front avancé / tp",
+    "prev": "2.5",
+    "next": "3"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "10:16:09",
+    "utilisateur": "damien.marill",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.05 | Développement front avancé / tp",
+    "prev": "3",
+    "next": "3.5"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "10:16:11",
+    "utilisateur": "damien.marill",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.05 | Développement front avancé / tp",
+    "prev": "3.5",
+    "next": "3"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "10:16:24",
+    "utilisateur": "damien.marill",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.05 | Développement front avancé / td",
+    "prev": "20",
+    "next": "21"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "10:16:31",
+    "utilisateur": "damien.marill",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.06 | Développement back avancé / td",
+    "prev": "22.5",
+    "next": "22"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "10:16:31",
+    "utilisateur": "damien.marill",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.06 | Développement back avancé / td",
+    "prev": "22",
+    "next": "21.5"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "10:16:32",
+    "utilisateur": "damien.marill",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.06 | Développement back avancé / td",
+    "prev": "21.5",
+    "next": "21"
   }
 ]
