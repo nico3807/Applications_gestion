@@ -2041,5 +2041,14 @@
     "description": "S3 / R3.14 | Déploiement de services / sous-groupe 1 / enseignant",
     "prev": "PELTRIAUX Philippe",
     "next": "DARTIES Benoit"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "14:49:45",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S3 / R3.15 | Représentation et traitement de l'information / enseignant",
+    "prev": "ESCAIG Sylvie",
+    "next": ""
   }
 ]
