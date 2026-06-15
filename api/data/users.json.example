@@ -9,6 +9,7 @@
     "h": "REPLACE_WITH_PASSWORD_HASH",
     "rw": false,
     "rwApps": ["planning-web", "repartition"],
-    "denyApps": []
+    "denyApps": [],
+    "visibleApps": ["deplacement_cours", "annulation_cours", "declaration_materiel"]
   }
 ]

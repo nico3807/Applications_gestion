@@ -34,7 +34,12 @@
       <div class="header-inner"></div>
     </nav>
 
-    <div class="form-page">
+    <div id="access-denied" style="display:none; text-align:center; padding:4rem 1rem;">
+      <p style="font-size:1.1rem; font-weight:700; color:#dc2626;">Accès non autorisé</p>
+      <p style="color:#6b7280;">Vous n'avez pas l'autorisation d'accéder à cette application.</p>
+    </div>
+
+    <div class="form-page" id="app-content" style="display:none">
       <div class="form-card">
         <h1 class="form-title">Modification d'emploi du temps</h1>
         <p class="form-sub">IUT de Béziers · Département MMI</p>
@@ -190,17 +195,21 @@
     <script src="../auth.js"></script>
     <script>
       const _VALIDATORS = ["nicolas.maurin", "sylvie.escaig", "william.bernard"];
-      function _setupLinks() {
+      function _setup() {
         AUTH.injectBadge();
-        if (AUTH.isAuth()) {
-          document.getElementById("statut-link").style.display = "";
+        if (!AUTH.canView("deplacement_cours")) {
+          document.getElementById("access-denied").style.display = "";
+          return;
         }
-        if (_VALIDATORS.includes(AUTH.user())) {
-          document.getElementById("suivi-link").style.display = "";
-        }
+        document.getElementById("app-content").style.display = "";
+        if (AUTH.isAuth()) document.getElementById("statut-link").style.display = "";
+        if (_VALIDATORS.includes(AUTH.user())) document.getElementById("suivi-link").style.display = "";
       }
-      if (AUTH.isAuth()) _setupLinks();
-      else window.addEventListener("auth-success", _setupLinks, { once: true });
+      if (AUTH.isAuth()) _setup();
+      else {
+        window.addEventListener("auth-success", _setup, { once: true });
+        AUTH.injectUI();
+      }
     </script>
     <script src="script.js"></script>
   </body>

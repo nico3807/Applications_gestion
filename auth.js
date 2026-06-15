@@ -177,6 +177,12 @@ window.AUTH = {
   },
   isAdmin:    () => _sess()?.login === "nicolas.maurin",
   hasRwApp:   (app) => _sess()?.rwApps?.includes(app) ?? false,
+  canView:    (app) => {
+    const s = _sess();
+    if (!s) return false;
+    if (s.rw) return true;
+    return s.visibleApps?.includes(app) ?? false;
+  },
   user:       () => _sess()?.login ?? null,
   hashPwd:    (pwd) => _sha256(pwd),
 

@@ -86,9 +86,10 @@ saveAttempts($attemptsFile, $attempts);
 $_SESSION['user'] = [
     'login'          => $user['login'],
     'rw'             => !empty($user['rw']),
-    'rwApps'         => $user['rwApps']   ?? [],
-    'denyApps'       => $user['denyApps'] ?? [],
+    'rwApps'         => $user['rwApps']      ?? [],
+    'denyApps'       => $user['denyApps']    ?? [],
     'maquetteGroups' => $user['maquetteGroups'] ?? [],
+    'visibleApps'    => $user['visibleApps'] ?? [],
 ];
 
 echo json_encode(['success' => true, 'user' => $_SESSION['user']]);
