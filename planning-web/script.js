@@ -1726,9 +1726,25 @@ window.switchToCurrent = async function () {
 
 window.printMonth = function () {
   const titleEl = document.getElementById("print-title");
-  if (titleEl) titleEl.textContent = `Planning MMI — ${currentMonth}`;
+  if (titleEl) {
+    const yearLabel = document.getElementById("app-year")?.textContent || "";
+    titleEl.textContent = currentView === "year"
+      ? `Planning MMI — ${yearLabel}`
+      : `Planning MMI — ${currentMonth}`;
+  }
   window.print();
 };
+
+window.addEventListener("beforeprint", () => {
+  if (currentView !== "year") return;
+  const s = document.createElement("style");
+  s.id = "_print-portrait-override";
+  s.textContent = "@page { size: A4 portrait; margin: 1cm; }";
+  document.head.appendChild(s);
+});
+window.addEventListener("afterprint", () => {
+  document.getElementById("_print-portrait-override")?.remove();
+});
 
 /* =====================================================================
      EXPORT XLSX
