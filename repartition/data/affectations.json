@@ -1068,28 +1068,15 @@
       "responsable": ""
     },
     "R6.DWeb-DI.02 | Développement Web et dispositif interactif": {
-      "enseignant": "MARZOUK Reda",
+      "enseignant": "",
       "cm": 0,
       "td": 13.5,
       "tp": 0,
-      "subrows": [
-        {
-          "enseignant": "MARILL Damien",
-          "cm": 0,
-          "td": 12,
-          "tp": 0
-        },
-        {
-          "enseignant": "DARTIES Benoit",
-          "cm": 0,
-          "td": 7.5,
-          "tp": 9
-        }
-      ],
+      "subrows": [],
       "responsable": ""
     },
     "R6.DWeb-DI.03 | Fonctionnement des IA": {
-      "enseignant": "MAURIN Nicolas",
+      "enseignant": "",
       "cm": 0,
       "td": 12,
       "tp": 0,
@@ -1177,14 +1164,7 @@
       "cm": 0,
       "td": 30,
       "tp": 1.5,
-      "subrows": [
-        {
-          "enseignant": "LAGIEWKA Arnaud",
-          "cm": 0,
-          "td": 0,
-          "tp": 6
-        }
-      ],
+      "subrows": [],
       "responsable": ""
     },
     "R5.DWeb-DI.06 | Développement back avancé": {
@@ -1192,29 +1172,15 @@
       "cm": 0,
       "td": 22.5,
       "tp": 3,
-      "subrows": [
-        {
-          "enseignant": "MARZOUK Reda",
-          "cm": 0,
-          "td": 21,
-          "tp": 15
-        }
-      ],
+      "subrows": [],
       "responsable": ""
     },
     "R5.DWeb-DI.07 | Dispositifs interactifs": {
-      "enseignant": "MARZOUK Reda",
+      "enseignant": "",
       "cm": 0,
       "td": 39,
       "tp": 12,
-      "subrows": [
-        {
-          "enseignant": "AZE Jérome",
-          "cm": 0,
-          "td": 3,
-          "tp": 12
-        }
-      ],
+      "subrows": [],
       "responsable": ""
     },
     "R5.DWeb-DI.08 | Hébergement et cybersécurité": {
@@ -1222,14 +1188,7 @@
       "cm": 0,
       "td": 21,
       "tp": 7.5,
-      "subrows": [
-        {
-          "enseignant": "MARILL Damien",
-          "cm": 0,
-          "td": 7.5,
-          "tp": 0
-        }
-      ],
+      "subrows": [],
       "responsable": ""
     },
     "R5.DWeb-DI.09 | Mathématiques avancées, complexité algorithmique": {
@@ -1237,14 +1196,7 @@
       "cm": 0,
       "td": 9,
       "tp": 0,
-      "subrows": [
-        {
-          "enseignant": "MENDEZ Nicolas",
-          "cm": 0,
-          "td": 6,
-          "tp": 0
-        }
-      ],
+      "subrows": [],
       "responsable": ""
     },
     "SAÉ 5D.01 | Développer pour le web": {
@@ -1385,7 +1337,7 @@
       "responsable": ""
     },
     "R4.DWeb-DI.05 | Création et design interactif": {
-      "enseignant": "MAURIN Nicolas",
+      "enseignant": "",
       "cm": 0,
       "td": 7.5,
       "tp": 7.5,
@@ -1401,18 +1353,11 @@
       "responsable": ""
     },
     "R4.DWeb-DI.07 | Développement back": {
-      "enseignant": "MARZOUK Reda",
+      "enseignant": "",
       "cm": 0,
       "td": 13.5,
       "tp": 0,
-      "subrows": [
-        {
-          "enseignant": "DARTIES Benoit",
-          "cm": 0,
-          "td": 0,
-          "tp": 7.5
-        }
-      ],
+      "subrows": [],
       "responsable": ""
     },
     "R4.DWeb-DI.08 | Déploiement de services": {
