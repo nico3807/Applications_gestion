@@ -1924,5 +1924,14 @@
     "description": "S2 / SAÉ 2.99 | Marathon MMI / sous-groupe 2 / enseignant",
     "prev": "",
     "next": "SURRIBAS Caroline"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "14:00:05",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S2 / SAÉ 2.99 | Marathon MMI / sous-groupe 3 / enseignant",
+    "prev": "",
+    "next": "THEROND Emmanuel"
   }
 ]
