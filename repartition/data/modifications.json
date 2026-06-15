@@ -1915,5 +1915,14 @@
     "description": "S2 / SAÉ 2.99 | Marathon MMI / sous-groupe 1 / enseignant",
     "prev": "",
     "next": "MAURIN Nicolas"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "13:59:54",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S2 / SAÉ 2.99 | Marathon MMI / sous-groupe 2 / enseignant",
+    "prev": "",
+    "next": "SURRIBAS Caroline"
   }
 ]
