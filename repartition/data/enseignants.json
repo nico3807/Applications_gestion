@@ -90,7 +90,7 @@
     "prenom": "Davide",
     "is_vac": false,
     "service_du": 128,
-    "service_max": null
+    "service_max": 128
   },
   {
     "id": "ESCAIG Sylvie",

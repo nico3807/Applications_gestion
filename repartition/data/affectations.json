@@ -365,12 +365,6 @@
       "tp": 0,
       "subrows": [
         {
-          "enseignant": "HERVY Dominique",
-          "cm": 0,
-          "td": 7.5,
-          "tp": 0
-        },
-        {
           "enseignant": "THEROND Emmanuel",
           "cm": 0,
           "td": 21,
@@ -751,7 +745,7 @@
       "tp": 3,
       "subrows": [
         {
-          "enseignant": "LAGIEWKA Arnaud",
+          "enseignant": "THEROND Emmanuel",
           "cm": 0,
           "td": 4.5,
           "tp": 1.5
@@ -934,16 +928,9 @@
     "R5.Crea.05 | Définir une direction artistique": {
       "enseignant": "THEROND Emmanuel",
       "cm": 0,
-      "td": 30,
-      "tp": 9,
-      "subrows": [
-        {
-          "enseignant": "GRENIER Sandrine",
-          "cm": 0,
-          "td": 9,
-          "tp": 9
-        }
-      ],
+      "td": 18,
+      "tp": 18,
+      "subrows": [],
       "responsable": ""
     },
     "R5 Crea.06 | Création numérique": {
@@ -953,16 +940,10 @@
       "tp": 30,
       "subrows": [
         {
-          "enseignant": "LAGIEWKA Arnaud",
-          "cm": 0,
-          "td": 0,
-          "tp": 6
-        },
-        {
           "enseignant": "THEROND Emmanuel",
           "cm": 0,
           "td": 9,
-          "tp": 0
+          "tp": 6
         },
         {
           "enseignant": "MEUNIER Dylan",
@@ -1033,15 +1014,8 @@
       "enseignant": "LAGIEWKA Arnaud",
       "cm": 0,
       "td": 3,
-      "tp": 12,
-      "subrows": [
-        {
-          "enseignant": "THEROND Emmanuel",
-          "cm": 0,
-          "td": 0,
-          "tp": 12
-        }
-      ],
+      "tp": 24,
+      "subrows": [],
       "responsable": ""
     },
     "PORTFOLIO | Portfolio-Parcours Création Numérique": {
