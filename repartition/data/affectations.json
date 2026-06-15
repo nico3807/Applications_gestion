@@ -70,7 +70,14 @@
       "cm": 6,
       "td": 12,
       "tp": 0,
-      "subrows": [],
+      "subrows": [
+        {
+          "enseignant": "THEROND Emmanuel",
+          "cm": 0,
+          "td": 0,
+          "tp": 0
+        }
+      ],
       "responsable": ""
     },
     "R1.05 | Stratégies de communication et marketing": {
@@ -78,17 +85,24 @@
       "cm": 12,
       "td": 13.5,
       "tp": 0,
-      "subrows": [],
+      "subrows": [
+        {
+          "enseignant": "THEROND Emmanuel",
+          "cm": 0,
+          "td": 0,
+          "tp": 0
+        }
+      ],
       "responsable": ""
     },
     "R1.06 | Expression, communication et rhétorique": {
-      "enseignant": "RAMPON Candice",
+      "enseignant": "DE VELDER Sophie",
       "cm": 0,
       "td": 9,
       "tp": 0,
       "subrows": [
         {
-          "enseignant": "KLAIBI Noel",
+          "enseignant": "THEROND Emmanuel",
           "cm": 0,
           "td": 4.5,
           "tp": 6
@@ -116,7 +130,14 @@
       "cm": 0,
       "td": 6,
       "tp": 15,
-      "subrows": [],
+      "subrows": [
+        {
+          "enseignant": "THEROND Emmanuel",
+          "cm": 0,
+          "td": 0,
+          "tp": 0
+        }
+      ],
       "responsable": ""
     },
     "R1.09 | Culture artistique": {
@@ -1233,60 +1254,17 @@
       "responsable": ""
     },
     "SAÉ 5D.01 | Développer pour le web": {
-      "enseignant": "PIEDEVACHE Magalie",
+      "enseignant": "MARILL Damien",
       "cm": 0,
-      "td": 12,
+      "td": 27,
       "tp": 0,
-      "subrows": [
-        {
-          "enseignant": "",
-          "cm": 0,
-          "td": 0,
-          "tp": 0
-        },
-        {
-          "enseignant": "MARILL Damien",
-          "cm": 0,
-          "td": 30,
-          "tp": 0
-        },
-        {
-          "enseignant": "SURRIBAS Caroline",
-          "cm": 0,
-          "td": 15,
-          "tp": 0
-        },
-        {
-          "enseignant": "AZE Jérome",
-          "cm": 0,
-          "td": 15,
-          "tp": 0
-        },
-        {
-          "enseignant": "",
-          "cm": 0,
-          "td": 0,
-          "tp": 0
-        },
-        {
-          "enseignant": "MAURIN Nicolas",
-          "cm": 0,
-          "td": 15,
-          "tp": 0
-        },
-        {
-          "enseignant": "DI PIERRO Davide",
-          "cm": 0,
-          "td": 15,
-          "tp": 0
-        }
-      ],
+      "subrows": [],
       "responsable": ""
     },
     "SAÉ 5D.02 | SAE Management": {
-      "enseignant": "",
+      "enseignant": "PIEDEVACHE Magalie",
       "cm": 0,
-      "td": 0,
+      "td": 6,
       "tp": 0,
       "subrows": [],
       "responsable": ""
