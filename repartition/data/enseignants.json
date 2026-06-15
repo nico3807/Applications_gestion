@@ -42,15 +42,6 @@
     "is_vac": false
   },
   {
-    "id": "BOYER Tom",
-    "nom": "BOYER",
-    "prenom": "Tom",
-    "is_vac": true,
-    "is_cev": false,
-    "service_du": null,
-    "service_max": 187
-  },
-  {
     "id": "CALLET Caroline",
     "nom": "CALLET",
     "prenom": "Caroline",
@@ -99,7 +90,7 @@
     "prenom": "Davide",
     "is_vac": false,
     "service_du": 128,
-    "service_max": null
+    "service_max": 128
   },
   {
     "id": "ESCAIG Sylvie",
@@ -302,15 +293,6 @@
     "service_max": 187,
     "is_vac": true,
     "is_cev": false
-  },
-  {
-    "id": "SALTET Marius",
-    "nom": "SALTET",
-    "prenom": "Marius",
-    "is_vac": true,
-    "is_cev": false,
-    "service_du": null,
-    "service_max": 187
   },
   {
     "id": "SELIGHINI Valérie",
