@@ -1196,7 +1196,7 @@
       "tp": 9,
       "subrows": [
         {
-          "enseignant": "",
+          "enseignant": "MAURIN Nicolas",
           "cm": 0,
           "td": 0,
           "tp": 12
@@ -1211,7 +1211,7 @@
           "enseignant": "",
           "cm": 0,
           "td": 0,
-          "tp": 0
+          "tp": 2.5
         }
       ],
       "responsable": ""
