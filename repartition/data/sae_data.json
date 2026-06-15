@@ -204,8 +204,7 @@
           "R4.03 | Design d'expérience",
           "R4.Crea.06 | Culture artistique"
         ],
-        "responsable": "SURRIBAS Caroline",
-        "intitule": "Créer pour une campagne de communication visuelle"
+        "responsable": "SURRIBAS Caroline"
       },
       {
         "code": "SAÉ 4.Crea.02 | Produire du contenu multimédia",
@@ -218,22 +217,25 @@
           "R4.Crea.07 | Audiovisuel – Motion design",
           "R4.Crea.08 | Écriture multimédia et narration"
         ],
-        "responsable": "THEROND Emmanuel",
-        "intitule": "Produire du contenu multimédia"
+        "responsable": "THEROND Emmanuel"
+      },
+      {
+        "code": "SAÉ 4.Crea.03 | SAE langues",
+        "competence": "",
+        "ressources": [],
+        "responsable": ""
       },
       {
         "code": "SAÉ 4.98 | Hackathon",
         "competence": "",
         "ressources": [],
-        "responsable": "",
-        "intitule": "Hackathon"
+        "responsable": ""
       },
       {
         "code": "SAÉ 4.99 | Marathon MMI",
         "competence": "",
         "ressources": [],
-        "responsable": "",
-        "intitule": "Marathon MMI"
+        "responsable": ""
       }
     ],
     "S4 dev": [
@@ -249,8 +251,7 @@
           "R4.DWeb-DI.07 | Développement back",
           "R4.DWeb-DI.08 | Déploiement de services"
         ],
-        "responsable": "DARTIES Benoit",
-        "intitule": "Développer pour le Web"
+        "responsable": "DARTIES Benoit"
       },
       {
         "code": "SAÉ 4.DWeb-DI.02 | Concevoir un dispositif interactif",
@@ -260,29 +261,25 @@
           "R4.DWeb-DI.05 | Création et design interactif",
           "R4.DWeb-DI.06 | Développement front"
         ],
-        "responsable": "MAURIN Nicolas",
-        "intitule": "Concevoir un dispositif interactif"
+        "responsable": "MAURIN Nicolas"
       },
       {
         "code": "SAÉ 4.DWeb-DI.04 | Apprentis : Interface, contenus et visualisation",
         "competence": "",
         "ressources": [],
-        "responsable": "",
-        "intitule": "Apprentis : Interface, contenus et visualisation"
+        "responsable": ""
       },
       {
         "code": "SAÉ 4.98 | Hackathon",
         "competence": "",
         "ressources": [],
-        "responsable": "",
-        "intitule": "Hackathon"
+        "responsable": ""
       },
       {
         "code": "SAÉ 4.99 | Marathon MMI",
         "competence": "",
         "ressources": [],
-        "responsable": "",
-        "intitule": "Marathon MMI"
+        "responsable": ""
       }
     ],
     "S5 crea": [
@@ -327,25 +324,8 @@
           "R5.DWeb-DI.07 | Dispositifs interactifs",
           "R5.DWeb-DI.08 | Hébergement et cybersécurité"
         ],
-        "responsable": ""
-      },
-      {
-        "code": "SAÉ 5D.02 | SAE Management",
-        "competence": "",
-        "ressources": [],
-        "responsable": ""
-      },
-      {
-        "code": "SAÉ 5D.03 | Concevoir un dispositif interactif",
-        "competence": "",
-        "ressources": [],
-        "responsable": ""
-      },
-      {
-        "code": "SAÉ 5D.04 | Integration d'un LLM",
-        "competence": "",
-        "ressources": [],
-        "responsable": ""
+        "responsable": "",
+        "intitule": "Développer pour le web"
       }
     ],
     "S6 crea": [
