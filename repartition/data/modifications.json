@@ -2347,5 +2347,23 @@
     "description": "Suppression — S4 dev",
     "prev": "SAÉ 4.DWeb-DI.04 | Apprentis : Interface, contenus et visualisation",
     "next": "—"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "17:18:51",
+    "utilisateur": "nicolas.maurin",
+    "type": "SAÉ",
+    "description": "Suppression — S5 crea",
+    "prev": "SAÉ 5.Crea.02 | SAE Management",
+    "next": "—"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "17:18:54",
+    "utilisateur": "nicolas.maurin",
+    "type": "SAÉ",
+    "description": "Suppression — S5 crea",
+    "prev": "SAÉ 5.Crea.03 | SAE Conception d'interface",
+    "next": "—"
   }
 ]
