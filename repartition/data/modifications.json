@@ -1555,5 +1555,77 @@
     "description": "S1 / SAÉ 1.01 | Auditer une communication numérique / sous-groupe 2 / enseignant",
     "prev": "ESCAIG Sylvie",
     "next": "THEROND Emmanuel"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "13:39:14",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S1 / SAÉ 1.01 | Auditer une communication numérique / sous-groupe 3 / td",
+    "prev": "4.5",
+    "next": "4"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "13:39:15",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S1 / SAÉ 1.01 | Auditer une communication numérique / sous-groupe 3 / td",
+    "prev": "4",
+    "next": "3.5"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "13:39:15",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S1 / SAÉ 1.01 | Auditer une communication numérique / sous-groupe 3 / td",
+    "prev": "3.5",
+    "next": "3"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "13:39:16",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S1 / SAÉ 1.01 | Auditer une communication numérique / sous-groupe 3 / td",
+    "prev": "3",
+    "next": "2.5"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "13:39:18",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S1 / SAÉ 1.01 | Auditer une communication numérique / sous-groupe 3 / td",
+    "prev": "2.5",
+    "next": "3"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "13:39:18",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S1 / SAÉ 1.01 | Auditer une communication numérique / sous-groupe 3 / td",
+    "prev": "3",
+    "next": "3.5"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "13:39:18",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S1 / SAÉ 1.01 | Auditer une communication numérique / sous-groupe 3 / td",
+    "prev": "3.5",
+    "next": "4"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "13:39:20",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S1 / SAÉ 1.01 | Auditer une communication numérique / sous-groupe 3 / td",
+    "prev": "4",
+    "next": "4.5"
   }
 ]
