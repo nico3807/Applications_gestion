@@ -1021,14 +1021,7 @@
       "cm": 0,
       "td": 3,
       "tp": 12,
-      "subrows": [
-        {
-          "enseignant": "THEROND Emmanuel",
-          "cm": 0,
-          "td": 0,
-          "tp": 12
-        }
-      ],
+      "subrows": [],
       "responsable": ""
     },
     "PORTFOLIO | Portfolio-Parcours Création Numérique": {
