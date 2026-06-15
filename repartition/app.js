@@ -2866,8 +2866,13 @@ window.deleteSaeEntry = function (sem, idx) {
   const saeCode = list[idx]?.code;
   _logMod("SAÉ", `Suppression — ${sem}`, saeCode || idx, "—");
   list.splice(idx, 1);
-  if (saeCode && APP_DATA.affectations?.[sem]?.[saeCode] !== undefined) {
-    delete APP_DATA.affectations[sem][saeCode];
+  if (saeCode) {
+    if (APP_DATA.affectations?.[sem]?.[saeCode] !== undefined) {
+      delete APP_DATA.affectations[sem][saeCode];
+    }
+    if (APP_DATA.maquette_overrides?.[sem]?.[saeCode] !== undefined) {
+      delete APP_DATA.maquette_overrides[sem][saeCode];
+    }
   }
   renderSaeEditList(sem);
   renderView();
@@ -2887,16 +2892,9 @@ window.saveSaeGH = async function () {
   if (!isGHConfigured()) return alert("Veuillez configurer GitHub d'abord !");
   try {
     await _flushMods();
-    await saveFileGH(
-      "sae_data.json",
-      APP_DATA.sae,
-      "Update sae_data.json via Web UI",
-    );
-    await saveFileGH(
-      "affectations.json",
-      APP_DATA.affectations,
-      "Update affectations.json via Web UI",
-    );
+    await saveFileGH("sae_data.json",          APP_DATA.sae,                "Update sae_data.json via Web UI");
+    await saveFileGH("affectations.json",       APP_DATA.affectations,       "Update affectations.json via Web UI");
+    await saveFileGH("maquette_overrides.json", APP_DATA.maquette_overrides, "Update maquette_overrides.json via Web UI");
     showToast("SAÉ sauvegardées sur GitHub !");
     renderView();
   } catch (e) {
