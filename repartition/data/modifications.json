@@ -664,5 +664,14 @@
     "description": "S5 dev / SAÉ 5D.04 | Integration d'un LLM / td",
     "prev": "15",
     "next": "0"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "10:55:52",
+    "utilisateur": "damien.marill",
+    "type": "Répartition",
+    "description": "S5 dev / SAÉ 5D.04 | Integration d'un LLM / enseignant",
+    "prev": "MARILL Damien",
+    "next": ""
   }
 ]
