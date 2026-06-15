@@ -700,5 +700,1508 @@
     "description": "S5 dev / SAÉ 5D.03 | Concevoir un dispositif interactif / td",
     "prev": "0",
     "next": "0"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "12:14:44",
+    "utilisateur": "damien.marill",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.05 | Développement front avancé / tp",
+    "prev": "3",
+    "next": "2.5"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "12:14:45",
+    "utilisateur": "damien.marill",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.05 | Développement front avancé / tp",
+    "prev": "2.5",
+    "next": "2"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "12:14:45",
+    "utilisateur": "damien.marill",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.05 | Développement front avancé / tp",
+    "prev": "2",
+    "next": "1.5"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "12:14:55",
+    "utilisateur": "damien.marill",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.05 | Développement front avancé / sous-groupe 1 / enseignant",
+    "prev": "",
+    "next": "DI PIERRO Davide"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "12:15:04",
+    "utilisateur": "damien.marill",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.05 | Développement front avancé / sous-groupe 1 / td",
+    "prev": "0",
+    "next": "30"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "12:15:07",
+    "utilisateur": "damien.marill",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.05 | Développement front avancé / sous-groupe 1 / tp",
+    "prev": "0",
+    "next": "6"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "12:15:19",
+    "utilisateur": "damien.marill",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.06 | Développement back avancé / sous-groupe 1 / enseignant",
+    "prev": "",
+    "next": "DI PIERRO Davide"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "12:15:34",
+    "utilisateur": "damien.marill",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.06 | Développement back avancé / sous-groupe 1 / td",
+    "prev": "0",
+    "next": "21"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "12:15:36",
+    "utilisateur": "damien.marill",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.06 | Développement back avancé / sous-groupe 1 / tp",
+    "prev": "0",
+    "next": "3"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "12:16:06",
+    "utilisateur": "damien.marill",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.05 | Développement front avancé / sous-groupe 1 / td",
+    "prev": "30",
+    "next": "29.5"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "12:16:06",
+    "utilisateur": "damien.marill",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.05 | Développement front avancé / sous-groupe 1 / td",
+    "prev": "29.5",
+    "next": "29"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "12:16:06",
+    "utilisateur": "damien.marill",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.05 | Développement front avancé / sous-groupe 1 / td",
+    "prev": "29",
+    "next": "28.5"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "12:16:07",
+    "utilisateur": "damien.marill",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.05 | Développement front avancé / sous-groupe 1 / td",
+    "prev": "28.5",
+    "next": "28"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "12:16:07",
+    "utilisateur": "damien.marill",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.05 | Développement front avancé / sous-groupe 1 / td",
+    "prev": "28",
+    "next": "27.5"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "12:16:07",
+    "utilisateur": "damien.marill",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.05 | Développement front avancé / sous-groupe 1 / td",
+    "prev": "27.5",
+    "next": "27"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "12:16:07",
+    "utilisateur": "damien.marill",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.05 | Développement front avancé / sous-groupe 1 / td",
+    "prev": "27",
+    "next": "26.5"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "12:16:07",
+    "utilisateur": "damien.marill",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.05 | Développement front avancé / sous-groupe 1 / td",
+    "prev": "26.5",
+    "next": "26"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "12:16:08",
+    "utilisateur": "damien.marill",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.05 | Développement front avancé / sous-groupe 1 / td",
+    "prev": "26",
+    "next": "25.5"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "12:16:08",
+    "utilisateur": "damien.marill",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.05 | Développement front avancé / sous-groupe 1 / td",
+    "prev": "25.5",
+    "next": "25"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "12:16:08",
+    "utilisateur": "damien.marill",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.05 | Développement front avancé / sous-groupe 1 / td",
+    "prev": "25",
+    "next": "24.5"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "12:16:08",
+    "utilisateur": "damien.marill",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.05 | Développement front avancé / sous-groupe 1 / td",
+    "prev": "24.5",
+    "next": "24"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "12:16:26",
+    "utilisateur": "damien.marill",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.07 | Dispositifs interactifs / enseignant",
+    "prev": "",
+    "next": "DI PIERRO Davide"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "12:16:44",
+    "utilisateur": "damien.marill",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.07 | Dispositifs interactifs / sous-groupe 2 / enseignant",
+    "prev": "",
+    "next": "AZE Jérome"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "12:16:55",
+    "utilisateur": "damien.marill",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.07 | Dispositifs interactifs / sous-groupe 2 / td",
+    "prev": "0",
+    "next": "6"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "12:16:57",
+    "utilisateur": "damien.marill",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.07 | Dispositifs interactifs / sous-groupe 2 / tp",
+    "prev": "0",
+    "next": "6"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "12:17:03",
+    "utilisateur": "damien.marill",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.07 | Dispositifs interactifs / td",
+    "prev": "39",
+    "next": "30"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "12:17:11",
+    "utilisateur": "damien.marill",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.07 | Dispositifs interactifs / sous-groupe 1 / tp",
+    "prev": "0",
+    "next": "12"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "12:17:14",
+    "utilisateur": "damien.marill",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.07 | Dispositifs interactifs / tp",
+    "prev": "12",
+    "next": "9"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "13:13:21",
+    "utilisateur": "damien.marill",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.07 | Dispositifs interactifs / sous-groupe 1 / enseignant",
+    "prev": "",
+    "next": "MAURIN Nicolas"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "13:13:28",
+    "utilisateur": "damien.marill",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.07 | Dispositifs interactifs / sous-groupe 3 / tp",
+    "prev": "0",
+    "next": "0.5"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "13:13:28",
+    "utilisateur": "damien.marill",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.07 | Dispositifs interactifs / sous-groupe 3 / tp",
+    "prev": "0.5",
+    "next": "1"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "13:13:28",
+    "utilisateur": "damien.marill",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.07 | Dispositifs interactifs / sous-groupe 3 / tp",
+    "prev": "1",
+    "next": "1.5"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "13:13:28",
+    "utilisateur": "damien.marill",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.07 | Dispositifs interactifs / sous-groupe 3 / tp",
+    "prev": "1.5",
+    "next": "2"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "13:13:28",
+    "utilisateur": "damien.marill",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.07 | Dispositifs interactifs / sous-groupe 3 / tp",
+    "prev": "2",
+    "next": "2.5"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "13:13:29",
+    "utilisateur": "damien.marill",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.07 | Dispositifs interactifs / sous-groupe 3 / tp",
+    "prev": "2.5",
+    "next": "7"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "13:13:31",
+    "utilisateur": "damien.marill",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.07 | Dispositifs interactifs / sous-groupe 3 / tp",
+    "prev": "7",
+    "next": "7.5"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "13:13:31",
+    "utilisateur": "damien.marill",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.07 | Dispositifs interactifs / sous-groupe 3 / tp",
+    "prev": "7.5",
+    "next": "8"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "13:13:31",
+    "utilisateur": "damien.marill",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.07 | Dispositifs interactifs / sous-groupe 3 / tp",
+    "prev": "8",
+    "next": "8.5"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "13:13:31",
+    "utilisateur": "damien.marill",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.07 | Dispositifs interactifs / sous-groupe 3 / tp",
+    "prev": "8.5",
+    "next": "9"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "13:13:32",
+    "utilisateur": "damien.marill",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.07 | Dispositifs interactifs / sous-groupe 3 / tp",
+    "prev": "9",
+    "next": "9.5"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "13:13:32",
+    "utilisateur": "damien.marill",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.07 | Dispositifs interactifs / sous-groupe 3 / tp",
+    "prev": "9.5",
+    "next": "10"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "13:13:32",
+    "utilisateur": "damien.marill",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.07 | Dispositifs interactifs / sous-groupe 3 / tp",
+    "prev": "10",
+    "next": "10.5"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "13:13:32",
+    "utilisateur": "damien.marill",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.07 | Dispositifs interactifs / sous-groupe 3 / tp",
+    "prev": "10.5",
+    "next": "11"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "13:13:33",
+    "utilisateur": "damien.marill",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.07 | Dispositifs interactifs / sous-groupe 3 / tp",
+    "prev": "11",
+    "next": "11.5"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "13:13:33",
+    "utilisateur": "damien.marill",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.07 | Dispositifs interactifs / sous-groupe 3 / tp",
+    "prev": "11.5",
+    "next": "12"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "13:15:44",
+    "utilisateur": "damien.marill",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.07 | Dispositifs interactifs / sous-groupe 1 / tp",
+    "prev": "12",
+    "next": "0"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "13:15:49",
+    "utilisateur": "damien.marill",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.07 | Dispositifs interactifs / td",
+    "prev": "30",
+    "next": "15"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "13:15:57",
+    "utilisateur": "damien.marill",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.07 | Dispositifs interactifs / sous-groupe 1 / td",
+    "prev": "0",
+    "next": "15"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "13:20:09",
+    "utilisateur": "damien.marill",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.07 | Dispositifs interactifs / tp",
+    "prev": "9",
+    "next": "8.5"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "13:20:09",
+    "utilisateur": "damien.marill",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.07 | Dispositifs interactifs / tp",
+    "prev": "8.5",
+    "next": "8"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "13:20:10",
+    "utilisateur": "damien.marill",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.07 | Dispositifs interactifs / tp",
+    "prev": "8",
+    "next": "7.5"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "13:20:14",
+    "utilisateur": "damien.marill",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.07 | Dispositifs interactifs / tp",
+    "prev": "7.5",
+    "next": "7"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "13:20:14",
+    "utilisateur": "damien.marill",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.07 | Dispositifs interactifs / tp",
+    "prev": "7",
+    "next": "6.5"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "13:20:15",
+    "utilisateur": "damien.marill",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.07 | Dispositifs interactifs / tp",
+    "prev": "6.5",
+    "next": "6"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "13:20:18",
+    "utilisateur": "damien.marill",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.07 | Dispositifs interactifs / sous-groupe 1 / tp",
+    "prev": "0",
+    "next": "3"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "13:20:27",
+    "utilisateur": "damien.marill",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.05 | Développement front avancé / sous-groupe 1 / td",
+    "prev": "24",
+    "next": "23.5"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "13:20:29",
+    "utilisateur": "damien.marill",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.05 | Développement front avancé / sous-groupe 1 / td",
+    "prev": "23.5",
+    "next": "23"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "13:20:30",
+    "utilisateur": "damien.marill",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.05 | Développement front avancé / sous-groupe 1 / td",
+    "prev": "23",
+    "next": "22.5"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "13:20:30",
+    "utilisateur": "damien.marill",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.05 | Développement front avancé / sous-groupe 1 / td",
+    "prev": "22.5",
+    "next": "22"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "13:20:30",
+    "utilisateur": "damien.marill",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.05 | Développement front avancé / sous-groupe 1 / td",
+    "prev": "22",
+    "next": "21"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "13:20:31",
+    "utilisateur": "damien.marill",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.05 | Développement front avancé / sous-groupe 1 / td",
+    "prev": "21",
+    "next": "20.5"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "13:20:31",
+    "utilisateur": "damien.marill",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.05 | Développement front avancé / sous-groupe 1 / td",
+    "prev": "20.5",
+    "next": "20"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "13:20:31",
+    "utilisateur": "damien.marill",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.05 | Développement front avancé / sous-groupe 1 / td",
+    "prev": "20",
+    "next": "19.5"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "13:20:31",
+    "utilisateur": "damien.marill",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.05 | Développement front avancé / sous-groupe 1 / td",
+    "prev": "19.5",
+    "next": "19"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "13:20:31",
+    "utilisateur": "damien.marill",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.05 | Développement front avancé / sous-groupe 1 / td",
+    "prev": "19",
+    "next": "18.5"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "13:20:32",
+    "utilisateur": "damien.marill",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.05 | Développement front avancé / sous-groupe 1 / td",
+    "prev": "18.5",
+    "next": "18"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "13:20:32",
+    "utilisateur": "damien.marill",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.05 | Développement front avancé / sous-groupe 1 / td",
+    "prev": "18",
+    "next": "17.5"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "13:20:32",
+    "utilisateur": "damien.marill",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.05 | Développement front avancé / sous-groupe 1 / td",
+    "prev": "17.5",
+    "next": "17"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "13:20:34",
+    "utilisateur": "damien.marill",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.05 | Développement front avancé / sous-groupe 1 / td",
+    "prev": "17",
+    "next": "17.5"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "13:20:35",
+    "utilisateur": "damien.marill",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.05 | Développement front avancé / sous-groupe 1 / td",
+    "prev": "17.5",
+    "next": "18.5"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "13:20:35",
+    "utilisateur": "damien.marill",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.05 | Développement front avancé / sous-groupe 1 / td",
+    "prev": "18.5",
+    "next": "19"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "13:20:36",
+    "utilisateur": "damien.marill",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.05 | Développement front avancé / sous-groupe 1 / tp",
+    "prev": "6",
+    "next": "5.5"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "13:20:36",
+    "utilisateur": "damien.marill",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.05 | Développement front avancé / sous-groupe 1 / tp",
+    "prev": "5.5",
+    "next": "5"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "13:20:37",
+    "utilisateur": "damien.marill",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.05 | Développement front avancé / sous-groupe 1 / tp",
+    "prev": "5",
+    "next": "4"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "13:20:37",
+    "utilisateur": "damien.marill",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.05 | Développement front avancé / sous-groupe 1 / tp",
+    "prev": "4",
+    "next": "2"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "13:20:37",
+    "utilisateur": "damien.marill",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.05 | Développement front avancé / sous-groupe 1 / tp",
+    "prev": "2",
+    "next": "1.5"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "13:20:39",
+    "utilisateur": "damien.marill",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.05 | Développement front avancé / sous-groupe 1 / tp",
+    "prev": "1.5",
+    "next": "2"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "13:20:39",
+    "utilisateur": "damien.marill",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.05 | Développement front avancé / sous-groupe 1 / tp",
+    "prev": "2",
+    "next": "3"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "13:20:40",
+    "utilisateur": "damien.marill",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.05 | Développement front avancé / sous-groupe 1 / tp",
+    "prev": "3",
+    "next": "6"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "13:20:41",
+    "utilisateur": "damien.marill",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.05 | Développement front avancé / sous-groupe 1 / tp",
+    "prev": "6",
+    "next": "6.5"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "13:20:43",
+    "utilisateur": "damien.marill",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.05 | Développement front avancé / sous-groupe 1 / tp",
+    "prev": "6.5",
+    "next": "6"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "13:20:44",
+    "utilisateur": "damien.marill",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.05 | Développement front avancé / sous-groupe 1 / tp",
+    "prev": "6",
+    "next": "5.5"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "13:20:44",
+    "utilisateur": "damien.marill",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.05 | Développement front avancé / sous-groupe 1 / tp",
+    "prev": "5.5",
+    "next": "5"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "13:20:45",
+    "utilisateur": "damien.marill",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.05 | Développement front avancé / sous-groupe 1 / tp",
+    "prev": "5",
+    "next": "4.5"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "13:20:45",
+    "utilisateur": "damien.marill",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.05 | Développement front avancé / sous-groupe 1 / tp",
+    "prev": "4.5",
+    "next": "4"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "13:20:46",
+    "utilisateur": "damien.marill",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.05 | Développement front avancé / sous-groupe 1 / tp",
+    "prev": "4",
+    "next": "3.5"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "13:20:46",
+    "utilisateur": "damien.marill",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.05 | Développement front avancé / sous-groupe 1 / tp",
+    "prev": "3.5",
+    "next": "3"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "13:32:20",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S1 / R1.04 | Culture numérique / sous-groupe 1 / enseignant",
+    "prev": "",
+    "next": "THEROND Emmanuel"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "13:32:44",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S1 / R1.05 | Stratégies de communication et marketing / sous-groupe 1 / enseignant",
+    "prev": "",
+    "next": "THEROND Emmanuel"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "13:33:28",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S1 / R1.06 | Expression, communication et rhétorique / enseignant",
+    "prev": "RAMPON Candice",
+    "next": "DE VELDER Sophie"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "13:33:52",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S1 / R1.06 | Expression, communication et rhétorique / sous-groupe 1 / enseignant",
+    "prev": "KLAIBI Noel",
+    "next": "THEROND Emmanuel"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "13:34:47",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S1 / R1.08 | Production graphique / sous-groupe 1 / enseignant",
+    "prev": "",
+    "next": "THEROND Emmanuel"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "13:35:39",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S1 / R1.09 | Culture artistique / sous-groupe 2 / enseignant",
+    "prev": "",
+    "next": "THEROND Emmanuel"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "13:37:17",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S1 / R1.16 | Économie, gestion et droit du numérique / enseignant",
+    "prev": "DE VELDER Sophie",
+    "next": ""
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "13:38:20",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S1 / SAÉ 1.01 | Auditer une communication numérique / sous-groupe 2 / enseignant",
+    "prev": "ESCAIG Sylvie",
+    "next": "THEROND Emmanuel"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "13:39:14",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S1 / SAÉ 1.01 | Auditer une communication numérique / sous-groupe 3 / td",
+    "prev": "4.5",
+    "next": "4"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "13:39:15",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S1 / SAÉ 1.01 | Auditer une communication numérique / sous-groupe 3 / td",
+    "prev": "4",
+    "next": "3.5"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "13:39:15",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S1 / SAÉ 1.01 | Auditer une communication numérique / sous-groupe 3 / td",
+    "prev": "3.5",
+    "next": "3"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "13:39:16",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S1 / SAÉ 1.01 | Auditer une communication numérique / sous-groupe 3 / td",
+    "prev": "3",
+    "next": "2.5"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "13:39:18",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S1 / SAÉ 1.01 | Auditer une communication numérique / sous-groupe 3 / td",
+    "prev": "2.5",
+    "next": "3"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "13:39:18",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S1 / SAÉ 1.01 | Auditer une communication numérique / sous-groupe 3 / td",
+    "prev": "3",
+    "next": "3.5"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "13:39:18",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S1 / SAÉ 1.01 | Auditer une communication numérique / sous-groupe 3 / td",
+    "prev": "3.5",
+    "next": "4"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "13:39:20",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S1 / SAÉ 1.01 | Auditer une communication numérique / sous-groupe 3 / td",
+    "prev": "4",
+    "next": "4.5"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "13:39:27",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S1 / SAÉ 1.01 | Auditer une communication numérique / sous-groupe 3 / td",
+    "prev": "4.5",
+    "next": "5"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "13:39:27",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S1 / SAÉ 1.01 | Auditer une communication numérique / sous-groupe 3 / td",
+    "prev": "5",
+    "next": "5.5"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "13:39:28",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S1 / SAÉ 1.01 | Auditer une communication numérique / sous-groupe 3 / td",
+    "prev": "5.5",
+    "next": "6"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "13:40:40",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S1 / SAÉ 1.02 | Concevoir une recommandation de communication numérique / sous-groupe 4 / enseignant",
+    "prev": "",
+    "next": "THEROND Emmanuel"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "13:41:28",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S1 / SAÉ 1.03 | Produire les éléments d'une communication visuelle / sous-groupe 1 / enseignant",
+    "prev": "SELIGHINI Valérie",
+    "next": "THEROND Emmanuel"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "13:42:03",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S1 / SAÉ 1.03 | Produire les éléments d'une communication visuelle / sous-groupe 2 / enseignant",
+    "prev": "",
+    "next": "SELIGHINI Valérie"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "13:42:49",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S1 / SAÉ 1.05 | Produire un site Web / sous-groupe 2 / enseignant",
+    "prev": "",
+    "next": "DI PIERRO Davide"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "13:43:39",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S1 / SAÉ 1.06 | Gérer un projet de communication numérique / sous-groupe 1 / enseignant",
+    "prev": "",
+    "next": "BERNARD William"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "13:43:57",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S1 / SAÉ 1.06 | Gérer un projet de communication numérique / sous-groupe 2 / enseignant",
+    "prev": "",
+    "next": "THEROND Emmanuel"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "13:46:51",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S2 / R2.06 | Expression, communication et rhétorique / sous-groupe 1 / enseignant",
+    "prev": "",
+    "next": "THEROND Emmanuel"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "13:47:17",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S2 / R2.07 | Écriture multimédia et narration / enseignant",
+    "prev": "MOCQUET Bertrand",
+    "next": "JAECKLE Luc"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "13:47:26",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S2 / R2.07 | Écriture multimédia et narration / sous-groupe 1 / enseignant",
+    "prev": "RAMPON Candice",
+    "next": ""
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "13:47:40",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S2 / R2.07 | Écriture multimédia et narration / sous-groupe 1 / enseignant",
+    "prev": "",
+    "next": "RAMPON Candice"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "13:48:22",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S2 / R2.08 | Production graphique / sous-groupe 2 / enseignant",
+    "prev": "",
+    "next": "THEROND Emmanuel"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "13:49:05",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S2 / R2.09 | Culture artistique / sous-groupe 2 / enseignant",
+    "prev": "",
+    "next": "THEROND Emmanuel"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "13:49:49",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S2 / R2.12 | Intégration / sous-groupe 1 / enseignant",
+    "prev": "THEROND Emmanuel",
+    "next": "DI PIERRO Davide"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "13:50:53",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S2 / R2.11 | Gestion de contenus / enseignant",
+    "prev": "THEROND Emmanuel",
+    "next": ""
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "13:51:41",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S2 / R2.13 | Développement Web / sous-groupe 1 / enseignant",
+    "prev": "ESCAIG Sylvie",
+    "next": "MAURIN Nicolas"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "13:52:04",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S2 / R2.13 | Développement Web / sous-groupe 2 / enseignant",
+    "prev": "",
+    "next": "DI PIERRO Davide"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "13:52:42",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S2 / R2.14 | Système d'information / sous-groupe 1 / enseignant",
+    "prev": "",
+    "next": "DI PIERRO Davide"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "13:53:29",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S2 / R2.18 | Économie, gestion et droit du numérique / sous-groupe 1 / enseignant",
+    "prev": "",
+    "next": "DE VELDER Sophie"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "13:54:17",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S2 / R2.19 | Projet Personnel et Professionnel / sous-groupe 3 / enseignant",
+    "prev": "",
+    "next": "THEROND Emmanuel"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "13:54:43",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S2 / R2.19 | Projet Personnel et Professionnel / sous-groupe 4 / enseignant",
+    "prev": "",
+    "next": "SURRIBAS Caroline"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "13:55:05",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S2 / SAÉ 2.01 | Explorer les usages du numérique / sous-groupe 1 / enseignant",
+    "prev": "",
+    "next": "THEROND Emmanuel"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "13:55:50",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S2 / SAÉ 2.02 | Concevoir un produit ou un service et sa communication / sous-groupe 2 / enseignant",
+    "prev": "",
+    "next": "THEROND Emmanuel"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "13:56:30",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S2 / SAÉ 2.03 | Concevoir un site web avec une source de données / sous-groupe 1 / enseignant",
+    "prev": "DARTIES Benoit",
+    "next": "DI PIERRO Davide"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "13:57:06",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S2 / SAÉ 2.04 | Construire sa présence en ligne / sous-groupe 2 / enseignant",
+    "prev": "",
+    "next": "SURRIBAS Caroline"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "13:57:52",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S2 / SAÉ 2.98 | Hackathon / enseignant",
+    "prev": "",
+    "next": "BERNARD William"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "13:58:15",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S2 / SAÉ 2.98 | Hackathon / sous-groupe 1 / enseignant",
+    "prev": "",
+    "next": "MAURIN Nicolas"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "13:58:37",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S2 / SAÉ 2.98 | Hackathon / sous-groupe 2 / enseignant",
+    "prev": "",
+    "next": "PELISSIER Chrysta"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "13:59:32",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S2 / SAÉ 2.99 | Marathon MMI / enseignant",
+    "prev": "",
+    "next": "DARTIES Benoit"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "13:59:42",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S2 / SAÉ 2.99 | Marathon MMI / sous-groupe 1 / enseignant",
+    "prev": "",
+    "next": "MAURIN Nicolas"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "13:59:54",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S2 / SAÉ 2.99 | Marathon MMI / sous-groupe 2 / enseignant",
+    "prev": "",
+    "next": "SURRIBAS Caroline"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "14:00:05",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S2 / SAÉ 2.99 | Marathon MMI / sous-groupe 3 / enseignant",
+    "prev": "",
+    "next": "THEROND Emmanuel"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "14:00:20",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S2 / SAÉ 2.99 | Marathon MMI / sous-groupe 4 / enseignant",
+    "prev": "",
+    "next": "BERNARD William"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "14:00:58",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S3 / R3.01 | Anglais / enseignant",
+    "prev": "BERNARD William",
+    "next": ""
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "14:18:28",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S3 / R3.09 | Création et design interactif (UI) / enseignant",
+    "prev": "LAGIEWKA Arnaud",
+    "next": ""
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "14:43:57",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S3 / R3.05 | Stratégies de communication et marketing / sous-groupe 2 / enseignant",
+    "prev": "",
+    "next": "THEROND Emmanuel"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "14:44:41",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S3 / R3.07 | Expression, communication et rhétorique / sous-groupe 1 / enseignant",
+    "prev": "",
+    "next": "DE VELDER Sophie"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "14:45:11",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S3 / R3.07 | Expression, communication et rhétorique / sous-groupe 2 / enseignant",
+    "prev": "",
+    "next": "THEROND Emmanuel"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "14:46:26",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S3 / R3.10 | Culture artistique / sous-groupe 2 / enseignant",
+    "prev": "",
+    "next": "THEROND Emmanuel"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "14:47:48",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S3 / R3.11 | Audiovisuel et Motion design / sous-groupe 2 / enseignant",
+    "prev": "",
+    "next": "CALLET Caroline"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "14:48:03",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S3 / R3.11 | Audiovisuel et Motion design / sous-groupe 2 / enseignant",
+    "prev": "CALLET Caroline",
+    "next": "DARTIES Benoit"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "14:48:46",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S3 / R3.13 | Gestion de contenus avancée / Dév Back / enseignant",
+    "prev": "DARTIES Benoit",
+    "next": ""
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "14:48:55",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S3 / R3.13 | Gestion de contenus avancée / Dév Back / sous-groupe 1 / enseignant",
+    "prev": "MAURIN Nicolas",
+    "next": ""
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "14:49:17",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S3 / R3.14 | Déploiement de services / sous-groupe 1 / enseignant",
+    "prev": "PELTRIAUX Philippe",
+    "next": "DARTIES Benoit"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "14:49:45",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S3 / R3.15 | Représentation et traitement de l'information / enseignant",
+    "prev": "ESCAIG Sylvie",
+    "next": ""
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "14:50:36",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S3 / R3.17 | Economie, gestion et droit du numérique / sous-groupe 1 / enseignant",
+    "prev": "",
+    "next": "DE VELDER Sophie"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "14:51:07",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S3 / R3.18 | Projet Personnel et Professionnel / enseignant",
+    "prev": "DE VELDER Sophie",
+    "next": "THEROND Emmanuel"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "14:51:53",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S3 / SAÉ 3.02 | Produire des contenus pour une communication plurimédia / sous-groupe 2 / enseignant",
+    "prev": "",
+    "next": "THEROND Emmanuel"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "14:52:22",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S3 / SAÉ 3.03 | Concevoir des visualisations de données pour le web et un support animé / enseignant",
+    "prev": "SURRIBAS Caroline",
+    "next": "LAGIEWKA Arnaud"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "15:24:21",
+    "utilisateur": "nicolas.maurin",
+    "type": "Enseignants",
+    "description": "Ajout",
+    "prev": "—",
+    "next": "SALTET Marius"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "15:25:20",
+    "utilisateur": "nicolas.maurin",
+    "type": "SAÉ",
+    "description": "Suppression — S4 crea",
+    "prev": "SAÉ 4.Crea.03 | SAE langues",
+    "next": "—"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "15:31:34",
+    "utilisateur": "nicolas.maurin",
+    "type": "Enseignants",
+    "description": "Ajout",
+    "prev": "—",
+    "next": "BOYER Tom"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "15:41:49",
+    "utilisateur": "nicolas.maurin",
+    "type": "SAÉ",
+    "description": "Suppression — S5 dev",
+    "prev": "SAÉ 5D.02 | SAE Management",
+    "next": "—"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "15:41:53",
+    "utilisateur": "nicolas.maurin",
+    "type": "SAÉ",
+    "description": "Suppression — S5 dev",
+    "prev": "SAÉ 5D.03 | Concevoir un dispositif interactif",
+    "next": "—"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "15:41:57",
+    "utilisateur": "nicolas.maurin",
+    "type": "SAÉ",
+    "description": "Suppression — S5 dev",
+    "prev": "SAÉ 5D.04 | Integration d'un LLM",
+    "next": "—"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "15:42:17",
+    "utilisateur": "nicolas.maurin",
+    "type": "SAÉ",
+    "description": "Suppression — S5 crea",
+    "prev": "SAÉ 5.Crea.03 | SAE Conception d'interface",
+    "next": "—"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "15:42:20",
+    "utilisateur": "nicolas.maurin",
+    "type": "SAÉ",
+    "description": "Suppression — S5 crea",
+    "prev": "SAÉ 5.Crea.02 | SAE Management",
+    "next": "—"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "15:42:56",
+    "utilisateur": "nicolas.maurin",
+    "type": "SAÉ",
+    "description": "Suppression — S4 dev",
+    "prev": "SAÉ 4.DWeb-DI.04 | Apprentis : Interface, contenus et visualisation",
+    "next": "—"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "15:57:20",
+    "utilisateur": "nicolas.maurin",
+    "type": "Maquette",
+    "description": "Ajout ressource — S5 crea",
+    "prev": "—",
+    "next": "R5.Crea.03 | Entrepreunariat"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "16:07:21",
+    "utilisateur": "nicolas.maurin",
+    "type": "Maquette",
+    "description": "Renommage — S5 crea",
+    "prev": "R5 Crea.03 | Entrepreunariat",
+    "next": "R5.Crea.03 | Entrepreunariat"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "16:07:21",
+    "utilisateur": "nicolas.maurin",
+    "type": "Maquette",
+    "description": "Renommage — S5 crea",
+    "prev": "R5 Crea.06 | Création numérique",
+    "next": "R5.Crea.06 | Création numérique"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "16:28:22",
+    "utilisateur": "nicolas.maurin",
+    "type": "SAÉ",
+    "description": "Suppression — S5 crea",
+    "prev": "SAÉ 5.Crea.02 | SAE Management",
+    "next": "—"
   }
 ]
