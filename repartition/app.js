@@ -797,11 +797,14 @@ function _exportXLSXParEnseignant(sem, safeSem) {
   });
   sortedRes.forEach((res) => {
     const d = aff[res];
-    const entries = [{ ens: d.enseignant || "" }, ...(d.subrows || []).map((s) => ({ ens: s.enseignant || "" }))];
-    entries.forEach(({ ens }) => {
+    const entries = [
+      { ens: d.enseignant || "", cm: parseFloat(d.cm) || 0, td: parseFloat(d.td) || 0, tp: parseFloat(d.tp) || 0 },
+      ...(d.subrows || []).map((s) => ({ ens: s.enseignant || "", cm: parseFloat(s.cm) || 0, td: parseFloat(s.td) || 0, tp: parseFloat(s.tp) || 0 })),
+    ];
+    entries.forEach(({ ens, cm, td, tp }) => {
       if (!ens) return;
       if (!byEns[ens]) byEns[ens] = [];
-      if (!byEns[ens].includes(res)) byEns[ens].push(res);
+      byEns[ens].push({ res, cm, td, tp });
     });
   });
 
@@ -823,6 +826,9 @@ function _exportXLSXParEnseignant(sem, safeSem) {
   const aoa = [[
     _xlsxCell("Enseignant",      S_HDR),
     _xlsxCell("Ressource / SAÉ", S_HDR),
+    _xlsxCell("CM",              S_HDR),
+    _xlsxCell("TD",              S_HDR),
+    _xlsxCell("TP",              S_HDR),
   ]];
   const merges = [];
   let rowIdx = 1;
@@ -832,9 +838,13 @@ function _exportXLSXParEnseignant(sem, safeSem) {
     const nRows = resources.length;
     const s = mkS(ensIdx % 2 === 0);
     for (let i = 0; i < nRows; i++) {
+      const { res, cm, td, tp } = resources[i];
       aoa.push([
         _xlsxCell(i === 0 ? ens : "", s),
-        _xlsxCell(resources[i],       s),
+        _xlsxCell(res,  s),
+        _xlsxCell(cm,   s),
+        _xlsxCell(td,   s),
+        _xlsxCell(tp,   s),
       ]);
     }
     if (nRows > 1) {
@@ -844,7 +854,7 @@ function _exportXLSXParEnseignant(sem, safeSem) {
   });
 
   const ws = XLSX.utils.aoa_to_sheet(aoa, { cellStyles: true });
-  ws["!cols"]   = [{ wch: 28 }, { wch: 55 }];
+  ws["!cols"]   = [{ wch: 28 }, { wch: 55 }, { wch: 8 }, { wch: 8 }, { wch: 8 }];
   ws["!merges"] = merges;
   ws["!freeze"] = { xSplit: 0, ySplit: 1 };
 
