@@ -309,25 +309,8 @@
           "R5.DWeb-DI.07 | Dispositifs interactifs",
           "R5.DWeb-DI.08 | Hébergement et cybersécurité"
         ],
-        "responsable": ""
-      },
-      {
-        "code": "SAÉ 5D.02 | SAE Management",
-        "competence": "",
-        "ressources": [],
-        "responsable": ""
-      },
-      {
-        "code": "SAÉ 5D.03 | Concevoir un dispositif interactif",
-        "competence": "",
-        "ressources": [],
-        "responsable": ""
-      },
-      {
-        "code": "SAÉ 5D.04 | Integration d'un LLM",
-        "competence": "",
-        "ressources": [],
-        "responsable": ""
+        "responsable": "",
+        "intitule": "Développer pour le web"
       }
     ],
     "S6 crea": [
