@@ -1206,6 +1206,12 @@
           "cm": 0,
           "td": 6,
           "tp": 6
+        },
+        {
+          "enseignant": "",
+          "cm": 0,
+          "td": 0,
+          "tp": 0
         }
       ],
       "responsable": ""
