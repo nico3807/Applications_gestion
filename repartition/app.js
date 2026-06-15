@@ -2717,6 +2717,7 @@ window.deleteSaeEntry = function (sem, idx) {
   _logMod("SAÉ", `Suppression — ${sem}`, list[idx]?.code || idx, "—");
   list.splice(idx, 1);
   renderSaeEditList(sem);
+  renderView();
 };
 
 window.addSaeEntry = function (sem) {
@@ -2739,6 +2740,7 @@ window.saveSaeGH = async function () {
       "Update sae_data.json via Web UI",
     );
     showToast("SAÉ sauvegardées sur GitHub !");
+    renderView();
   } catch (e) {
     alert("Erreur : " + e.message);
   }
