@@ -1654,5 +1654,14 @@
     "description": "S1 / SAÉ 1.01 | Auditer une communication numérique / sous-groupe 3 / td",
     "prev": "5.5",
     "next": "6"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "13:40:40",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S1 / SAÉ 1.02 | Concevoir une recommandation de communication numérique / sous-groupe 4 / enseignant",
+    "prev": "",
+    "next": "THEROND Emmanuel"
   }
 ]
