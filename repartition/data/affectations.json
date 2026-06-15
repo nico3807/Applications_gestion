@@ -70,14 +70,7 @@
       "cm": 6,
       "td": 12,
       "tp": 0,
-      "subrows": [
-        {
-          "enseignant": "THEROND Emmanuel",
-          "cm": 0,
-          "td": 0,
-          "tp": 0
-        }
-      ],
+      "subrows": [],
       "responsable": ""
     },
     "R1.05 | Stratégies de communication et marketing": {
@@ -85,14 +78,7 @@
       "cm": 12,
       "td": 13.5,
       "tp": 0,
-      "subrows": [
-        {
-          "enseignant": "THEROND Emmanuel",
-          "cm": 0,
-          "td": 0,
-          "tp": 0
-        }
-      ],
+      "subrows": [],
       "responsable": ""
     },
     "R1.06 | Expression, communication et rhétorique": {
@@ -1247,17 +1233,24 @@
       "responsable": ""
     },
     "SAÉ 5D.01 | Développer pour le web": {
-      "enseignant": "MARILL Damien",
-      "cm": 0,
-      "td": 27,
-      "tp": 0,
-      "subrows": [],
-      "responsable": ""
-    },
-    "SAÉ 5D.02 | SAE Management": {
       "enseignant": "PIEDEVACHE Magalie",
       "cm": 0,
       "td": 6,
+      "tp": 0,
+      "subrows": [
+        {
+          "enseignant": "",
+          "cm": 0,
+          "td": 0,
+          "tp": 0
+        }
+      ],
+      "responsable": ""
+    },
+    "SAÉ 5D.02 | SAE Management": {
+      "enseignant": "",
+      "cm": 0,
+      "td": 0,
       "tp": 0,
       "subrows": [],
       "responsable": ""
