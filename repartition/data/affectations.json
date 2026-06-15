@@ -1009,21 +1009,6 @@
       ],
       "responsable": ""
     },
-    "SAÉ 4.Crea.03 | SAE langues": {
-      "enseignant": "BLANCO Sandy",
-      "cm": 0,
-      "td": 0,
-      "tp": 6,
-      "subrows": [
-        {
-          "enseignant": "BARON Mathilde",
-          "cm": 0,
-          "td": 0,
-          "tp": 6
-        }
-      ],
-      "responsable": ""
-    },
     "SAÉ 4.98 | Hackathon": {
       "enseignant": "",
       "cm": 0,
@@ -1099,27 +1084,6 @@
       "subrows": [],
       "responsable": ""
     },
-    "R5 Crea.06 | Création numérique": {
-      "enseignant": "BLANCO Sandy",
-      "cm": 0,
-      "td": 21,
-      "tp": 30,
-      "subrows": [
-        {
-          "enseignant": "THEROND Emmanuel",
-          "cm": 0,
-          "td": 9,
-          "tp": 6
-        },
-        {
-          "enseignant": "MEUNIER Dylan",
-          "cm": 0,
-          "td": 12.5,
-          "tp": 7.5
-        }
-      ],
-      "responsable": ""
-    },
     "R5.Crea.07 | Ecriture Multimédia et narration": {
       "enseignant": "BLANCO Sandy",
       "cm": 0,
@@ -1191,7 +1155,15 @@
       "subrows": [],
       "responsable": ""
     },
-    "R5 Crea.03 | Entrepreunariat": {
+    "R5.Crea.04 | PPP": {
+      "enseignant": "PIEDEVACHE Magalie",
+      "cm": 0,
+      "td": 9,
+      "tp": 0,
+      "subrows": [],
+      "responsable": ""
+    },
+    "R5.Crea.03 | Entrepreunariat": {
       "enseignant": "ROMAIN Celine",
       "cm": 0,
       "td": 10.5,
@@ -1199,12 +1171,25 @@
       "subrows": [],
       "responsable": ""
     },
-    "R5.Crea.04 | PPP": {
-      "enseignant": "PIEDEVACHE Magalie",
+    "R5.Crea.06 | Création numérique": {
+      "enseignant": "BLANCO Sandy",
       "cm": 0,
-      "td": 9,
-      "tp": 0,
-      "subrows": [],
+      "td": 21,
+      "tp": 30,
+      "subrows": [
+        {
+          "enseignant": "THEROND Emmanuel",
+          "cm": 0,
+          "td": 9,
+          "tp": 6
+        },
+        {
+          "enseignant": "MEUNIER Dylan",
+          "cm": 0,
+          "td": 12.5,
+          "tp": 7.5
+        }
+      ],
       "responsable": ""
     }
   },
@@ -1386,30 +1371,6 @@
       "enseignant": "MARILL Damien",
       "cm": 0,
       "td": 27,
-      "tp": 0,
-      "subrows": [],
-      "responsable": ""
-    },
-    "SAÉ 5D.02 | SAE Management": {
-      "enseignant": "PIEDEVACHE Magalie",
-      "cm": 0,
-      "td": 6,
-      "tp": 0,
-      "subrows": [],
-      "responsable": ""
-    },
-    "SAÉ 5D.03 | Concevoir un dispositif interactif": {
-      "enseignant": "",
-      "cm": 0,
-      "td": 0,
-      "tp": 0,
-      "subrows": [],
-      "responsable": ""
-    },
-    "SAÉ 5D.04 | Integration d'un LLM": {
-      "enseignant": "",
-      "cm": 0,
-      "td": 0,
       "tp": 0,
       "subrows": [],
       "responsable": ""
