@@ -2167,5 +2167,59 @@
     "description": "S5 dev / R5.DWeb-DI.06 | Développement back avancé / tp",
     "prev": "1",
     "next": "1.5"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "14:05:09",
+    "utilisateur": "damien.marill",
+    "type": "Répartition",
+    "description": "S6 dev / R6.DWeb-DI.02 | Développement Web et dispositif interactif / tp",
+    "prev": "0",
+    "next": "0.5"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "14:05:09",
+    "utilisateur": "damien.marill",
+    "type": "Répartition",
+    "description": "S6 dev / R6.DWeb-DI.02 | Développement Web et dispositif interactif / tp",
+    "prev": "0.5",
+    "next": "1"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "14:05:09",
+    "utilisateur": "damien.marill",
+    "type": "Répartition",
+    "description": "S6 dev / R6.DWeb-DI.02 | Développement Web et dispositif interactif / tp",
+    "prev": "1",
+    "next": "1.5"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "14:05:10",
+    "utilisateur": "damien.marill",
+    "type": "Répartition",
+    "description": "S6 dev / R6.DWeb-DI.02 | Développement Web et dispositif interactif / tp",
+    "prev": "1.5",
+    "next": "2"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "14:05:10",
+    "utilisateur": "damien.marill",
+    "type": "Répartition",
+    "description": "S6 dev / R6.DWeb-DI.02 | Développement Web et dispositif interactif / tp",
+    "prev": "2",
+    "next": "2.5"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "14:05:10",
+    "utilisateur": "damien.marill",
+    "type": "Répartition",
+    "description": "S6 dev / R6.DWeb-DI.02 | Développement Web et dispositif interactif / tp",
+    "prev": "2.5",
+    "next": "3"
   }
 ]
