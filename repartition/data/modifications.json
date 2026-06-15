@@ -1486,236 +1486,236 @@
   },
   {
     "date": "15/06/2026",
-    "heure": "13:32:18",
-    "utilisateur": "damien.marill",
+    "heure": "13:32:20",
+    "utilisateur": "chrysta.pelissier",
     "type": "Répartition",
-    "description": "S5 dev / SAÉ 5D.02 | SAE Management / enseignant",
-    "prev": "PIEDEVACHE Magalie",
+    "description": "S1 / R1.04 | Culture numérique / sous-groupe 1 / enseignant",
+    "prev": "",
+    "next": "THEROND Emmanuel"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "13:32:44",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S1 / R1.05 | Stratégies de communication et marketing / sous-groupe 1 / enseignant",
+    "prev": "",
+    "next": "THEROND Emmanuel"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "13:33:28",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S1 / R1.06 | Expression, communication et rhétorique / enseignant",
+    "prev": "RAMPON Candice",
+    "next": "DE VELDER Sophie"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "13:33:52",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S1 / R1.06 | Expression, communication et rhétorique / sous-groupe 1 / enseignant",
+    "prev": "KLAIBI Noel",
+    "next": "THEROND Emmanuel"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "13:34:47",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S1 / R1.08 | Production graphique / sous-groupe 1 / enseignant",
+    "prev": "",
+    "next": "THEROND Emmanuel"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "13:35:39",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S1 / R1.09 | Culture artistique / sous-groupe 2 / enseignant",
+    "prev": "",
+    "next": "THEROND Emmanuel"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "13:37:17",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S1 / R1.16 | Économie, gestion et droit du numérique / enseignant",
+    "prev": "DE VELDER Sophie",
     "next": ""
   },
   {
     "date": "15/06/2026",
-    "heure": "13:32:30",
-    "utilisateur": "damien.marill",
+    "heure": "13:38:20",
+    "utilisateur": "chrysta.pelissier",
     "type": "Répartition",
-    "description": "S5 dev / SAÉ 5D.02 | SAE Management / td",
-    "prev": "6",
-    "next": "0"
+    "description": "S1 / SAÉ 1.01 | Auditer une communication numérique / sous-groupe 2 / enseignant",
+    "prev": "ESCAIG Sylvie",
+    "next": "THEROND Emmanuel"
   },
   {
     "date": "15/06/2026",
-    "heure": "13:32:40",
-    "utilisateur": "damien.marill",
+    "heure": "13:39:14",
+    "utilisateur": "chrysta.pelissier",
     "type": "Répartition",
-    "description": "S5 dev / SAÉ 5D.01 | Développer pour le web / enseignant",
-    "prev": "MARILL Damien",
-    "next": "PIEDEVACHE Magalie"
+    "description": "S1 / SAÉ 1.01 | Auditer une communication numérique / sous-groupe 3 / td",
+    "prev": "4.5",
+    "next": "4"
   },
   {
     "date": "15/06/2026",
-    "heure": "13:32:46",
-    "utilisateur": "damien.marill",
+    "heure": "13:39:15",
+    "utilisateur": "chrysta.pelissier",
     "type": "Répartition",
-    "description": "S5 dev / SAÉ 5D.01 | Développer pour le web / td",
-    "prev": "27",
+    "description": "S1 / SAÉ 1.01 | Auditer une communication numérique / sous-groupe 3 / td",
+    "prev": "4",
+    "next": "3.5"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "13:39:15",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S1 / SAÉ 1.01 | Auditer une communication numérique / sous-groupe 3 / td",
+    "prev": "3.5",
+    "next": "3"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "13:39:16",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S1 / SAÉ 1.01 | Auditer une communication numérique / sous-groupe 3 / td",
+    "prev": "3",
+    "next": "2.5"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "13:39:18",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S1 / SAÉ 1.01 | Auditer une communication numérique / sous-groupe 3 / td",
+    "prev": "2.5",
+    "next": "3"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "13:39:18",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S1 / SAÉ 1.01 | Auditer une communication numérique / sous-groupe 3 / td",
+    "prev": "3",
+    "next": "3.5"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "13:39:18",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S1 / SAÉ 1.01 | Auditer une communication numérique / sous-groupe 3 / td",
+    "prev": "3.5",
+    "next": "4"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "13:39:20",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S1 / SAÉ 1.01 | Auditer une communication numérique / sous-groupe 3 / td",
+    "prev": "4",
+    "next": "4.5"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "13:39:27",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S1 / SAÉ 1.01 | Auditer une communication numérique / sous-groupe 3 / td",
+    "prev": "4.5",
+    "next": "5"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "13:39:27",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S1 / SAÉ 1.01 | Auditer une communication numérique / sous-groupe 3 / td",
+    "prev": "5",
+    "next": "5.5"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "13:39:28",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S1 / SAÉ 1.01 | Auditer une communication numérique / sous-groupe 3 / td",
+    "prev": "5.5",
     "next": "6"
   },
   {
     "date": "15/06/2026",
-    "heure": "13:33:11",
-    "utilisateur": "damien.marill",
+    "heure": "13:40:40",
+    "utilisateur": "chrysta.pelissier",
     "type": "Répartition",
-    "description": "S5 dev / SAÉ 5D.01 | Développer pour le web / td",
-    "prev": "6",
-    "next": "12"
-  },
-  {
-    "date": "15/06/2026",
-    "heure": "13:33:35",
-    "utilisateur": "damien.marill",
-    "type": "Répartition",
-    "description": "S5 dev / SAÉ 5D.01 | Développer pour le web / sous-groupe 2 / enseignant",
+    "description": "S1 / SAÉ 1.02 | Concevoir une recommandation de communication numérique / sous-groupe 4 / enseignant",
     "prev": "",
-    "next": "MARILL Damien"
+    "next": "THEROND Emmanuel"
   },
   {
     "date": "15/06/2026",
-    "heure": "13:33:44",
-    "utilisateur": "damien.marill",
+    "heure": "13:41:28",
+    "utilisateur": "chrysta.pelissier",
     "type": "Répartition",
-    "description": "S5 dev / SAÉ 5D.01 | Développer pour le web / sous-groupe 3 / enseignant",
+    "description": "S1 / SAÉ 1.03 | Produire les éléments d'une communication visuelle / sous-groupe 1 / enseignant",
+    "prev": "SELIGHINI Valérie",
+    "next": "THEROND Emmanuel"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "13:42:03",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S1 / SAÉ 1.03 | Produire les éléments d'une communication visuelle / sous-groupe 2 / enseignant",
     "prev": "",
-    "next": "SURRIBAS Caroline"
+    "next": "SELIGHINI Valérie"
   },
   {
     "date": "15/06/2026",
-    "heure": "13:34:06",
-    "utilisateur": "damien.marill",
+    "heure": "13:42:49",
+    "utilisateur": "chrysta.pelissier",
     "type": "Répartition",
-    "description": "S5 dev / SAÉ 5D.01 | Développer pour le web / sous-groupe 4 / enseignant",
-    "prev": "",
-    "next": "AZE Jérome"
-  },
-  {
-    "date": "15/06/2026",
-    "heure": "13:34:15",
-    "utilisateur": "damien.marill",
-    "type": "Répartition",
-    "description": "S5 dev / SAÉ 5D.01 | Développer pour le web / sous-groupe 6 / enseignant",
-    "prev": "",
-    "next": "MAURIN Nicolas"
-  },
-  {
-    "date": "15/06/2026",
-    "heure": "13:34:21",
-    "utilisateur": "damien.marill",
-    "type": "Répartition",
-    "description": "S5 dev / SAÉ 5D.01 | Développer pour le web / sous-groupe 7 / enseignant",
+    "description": "S1 / SAÉ 1.05 | Produire un site Web / sous-groupe 2 / enseignant",
     "prev": "",
     "next": "DI PIERRO Davide"
   },
   {
     "date": "15/06/2026",
-    "heure": "13:34:30",
-    "utilisateur": "damien.marill",
+    "heure": "13:43:39",
+    "utilisateur": "chrysta.pelissier",
     "type": "Répartition",
-    "description": "S5 dev / SAÉ 5D.01 | Développer pour le web / sous-groupe 6 / td",
-    "prev": "0",
-    "next": "15"
+    "description": "S1 / SAÉ 1.06 | Gérer un projet de communication numérique / sous-groupe 1 / enseignant",
+    "prev": "",
+    "next": "BERNARD William"
   },
   {
     "date": "15/06/2026",
-    "heure": "13:34:33",
-    "utilisateur": "damien.marill",
+    "heure": "13:43:57",
+    "utilisateur": "chrysta.pelissier",
     "type": "Répartition",
-    "description": "S5 dev / SAÉ 5D.01 | Développer pour le web / sous-groupe 7 / td",
-    "prev": "0",
-    "next": "15"
+    "description": "S1 / SAÉ 1.06 | Gérer un projet de communication numérique / sous-groupe 2 / enseignant",
+    "prev": "",
+    "next": "THEROND Emmanuel"
   },
   {
     "date": "15/06/2026",
-    "heure": "13:34:40",
-    "utilisateur": "damien.marill",
+    "heure": "13:46:51",
+    "utilisateur": "chrysta.pelissier",
     "type": "Répartition",
-    "description": "S5 dev / SAÉ 5D.01 | Développer pour le web / sous-groupe 2 / td",
-    "prev": "0",
-    "next": "30"
-  },
-  {
-    "date": "15/06/2026",
-    "heure": "13:34:44",
-    "utilisateur": "damien.marill",
-    "type": "Répartition",
-    "description": "S5 dev / SAÉ 5D.01 | Développer pour le web / sous-groupe 4 / td",
-    "prev": "0",
-    "next": "15"
-  },
-  {
-    "date": "15/06/2026",
-    "heure": "13:34:47",
-    "utilisateur": "damien.marill",
-    "type": "Répartition",
-    "description": "S5 dev / SAÉ 5D.01 | Développer pour le web / sous-groupe 3 / td",
-    "prev": "0",
-    "next": "15"
-  },
-  {
-    "date": "15/06/2026",
-    "heure": "13:45:22",
-    "utilisateur": "damien.marill",
-    "type": "Répartition",
-    "description": "S5 dev / SAÉ 5D.01 | Développer pour le web / sous-groupe 3 / td",
-    "prev": "15",
-    "next": "15.5"
-  },
-  {
-    "date": "15/06/2026",
-    "heure": "13:45:22",
-    "utilisateur": "damien.marill",
-    "type": "Répartition",
-    "description": "S5 dev / SAÉ 5D.01 | Développer pour le web / sous-groupe 3 / td",
-    "prev": "15.5",
-    "next": "16"
-  },
-  {
-    "date": "15/06/2026",
-    "heure": "13:45:23",
-    "utilisateur": "damien.marill",
-    "type": "Répartition",
-    "description": "S5 dev / SAÉ 5D.01 | Développer pour le web / sous-groupe 3 / td",
-    "prev": "16",
-    "next": "16.5"
-  },
-  {
-    "date": "15/06/2026",
-    "heure": "13:45:23",
-    "utilisateur": "damien.marill",
-    "type": "Répartition",
-    "description": "S5 dev / SAÉ 5D.01 | Développer pour le web / sous-groupe 3 / td",
-    "prev": "16.5",
-    "next": "17"
-  },
-  {
-    "date": "15/06/2026",
-    "heure": "13:45:23",
-    "utilisateur": "damien.marill",
-    "type": "Répartition",
-    "description": "S5 dev / SAÉ 5D.01 | Développer pour le web / sous-groupe 3 / td",
-    "prev": "17",
-    "next": "17.5"
-  },
-  {
-    "date": "15/06/2026",
-    "heure": "13:45:24",
-    "utilisateur": "damien.marill",
-    "type": "Répartition",
-    "description": "S5 dev / SAÉ 5D.01 | Développer pour le web / sous-groupe 3 / td",
-    "prev": "17.5",
-    "next": "18"
-  },
-  {
-    "date": "15/06/2026",
-    "heure": "13:45:25",
-    "utilisateur": "damien.marill",
-    "type": "Répartition",
-    "description": "S5 dev / SAÉ 5D.01 | Développer pour le web / sous-groupe 4 / td",
-    "prev": "15",
-    "next": "15.5"
-  },
-  {
-    "date": "15/06/2026",
-    "heure": "13:45:26",
-    "utilisateur": "damien.marill",
-    "type": "Répartition",
-    "description": "S5 dev / SAÉ 5D.01 | Développer pour le web / sous-groupe 4 / td",
-    "prev": "15.5",
-    "next": "16"
-  },
-  {
-    "date": "15/06/2026",
-    "heure": "13:45:26",
-    "utilisateur": "damien.marill",
-    "type": "Répartition",
-    "description": "S5 dev / SAÉ 5D.01 | Développer pour le web / sous-groupe 4 / td",
-    "prev": "16",
-    "next": "17"
-  },
-  {
-    "date": "15/06/2026",
-    "heure": "13:45:27",
-    "utilisateur": "damien.marill",
-    "type": "Répartition",
-    "description": "S5 dev / SAÉ 5D.01 | Développer pour le web / sous-groupe 4 / td",
-    "prev": "17",
-    "next": "17.5"
-  },
-  {
-    "date": "15/06/2026",
-    "heure": "13:45:27",
-    "utilisateur": "damien.marill",
-    "type": "Répartition",
-    "description": "S5 dev / SAÉ 5D.01 | Développer pour le web / sous-groupe 4 / td",
-    "prev": "17.5",
-    "next": "18"
+    "description": "S2 / R2.06 | Expression, communication et rhétorique / sous-groupe 1 / enseignant",
+    "prev": "",
+    "next": "THEROND Emmanuel"
   }
 ]
