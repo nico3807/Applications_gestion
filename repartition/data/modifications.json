@@ -2275,5 +2275,41 @@
     "description": "Renommage — S5 crea",
     "prev": "R5 Crea.06 | Création numérique",
     "next": "R5.Crea.06 | Création numérique"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "17:04:51",
+    "utilisateur": "nicolas.maurin",
+    "type": "SAÉ",
+    "description": "Suppression — S5 crea",
+    "prev": "SAÉ 5.Crea.02 | SAE Management",
+    "next": "—"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "17:05:20",
+    "utilisateur": "nicolas.maurin",
+    "type": "SAÉ",
+    "description": "Suppression — S5 crea",
+    "prev": "SAÉ 5.Crea.03 | SAE Conception d'interface",
+    "next": "—"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "17:06:59",
+    "utilisateur": "nicolas.maurin",
+    "type": "Maquette",
+    "description": "Renommage — S5 crea",
+    "prev": "R5 Crea.03 | Entrepreunariat",
+    "next": "R5.Crea.03 | Entrepreunariat"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "17:07:35",
+    "utilisateur": "nicolas.maurin",
+    "type": "Maquette",
+    "description": "Renommage — S5 crea",
+    "prev": "R5 Crea.06 | Création numérique",
+    "next": "R5.Crea.06 | Création numérique"
   }
 ]
