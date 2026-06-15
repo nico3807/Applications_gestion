@@ -375,7 +375,14 @@
       "cm": 1.5,
       "td": 13.5,
       "tp": 0,
-      "subrows": [],
+      "subrows": [
+        {
+          "enseignant": "",
+          "cm": 0,
+          "td": 0,
+          "tp": 0
+        }
+      ],
       "responsable": ""
     }
   },
