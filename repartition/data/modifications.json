@@ -1771,5 +1771,14 @@
     "description": "S2 / R2.12 | Intégration / sous-groupe 1 / enseignant",
     "prev": "THEROND Emmanuel",
     "next": "DI PIERRO Davide"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "13:50:53",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S2 / R2.11 | Gestion de contenus / enseignant",
+    "prev": "THEROND Emmanuel",
+    "next": ""
   }
 ]
