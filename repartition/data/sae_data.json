@@ -204,7 +204,8 @@
           "R4.03 | Design d'expérience",
           "R4.Crea.06 | Culture artistique"
         ],
-        "responsable": "SURRIBAS Caroline"
+        "responsable": "SURRIBAS Caroline",
+        "intitule": "Créer pour une campagne de communication visuelle"
       },
       {
         "code": "SAÉ 4.Crea.02 | Produire du contenu multimédia",
@@ -217,25 +218,22 @@
           "R4.Crea.07 | Audiovisuel – Motion design",
           "R4.Crea.08 | Écriture multimédia et narration"
         ],
-        "responsable": "THEROND Emmanuel"
-      },
-      {
-        "code": "SAÉ 4.Crea.03 | SAE langues",
-        "competence": "",
-        "ressources": [],
-        "responsable": ""
+        "responsable": "THEROND Emmanuel",
+        "intitule": "Produire du contenu multimédia"
       },
       {
         "code": "SAÉ 4.98 | Hackathon",
         "competence": "",
         "ressources": [],
-        "responsable": ""
+        "responsable": "",
+        "intitule": "Hackathon"
       },
       {
         "code": "SAÉ 4.99 | Marathon MMI",
         "competence": "",
         "ressources": [],
-        "responsable": ""
+        "responsable": "",
+        "intitule": "Marathon MMI"
       }
     ],
     "S4 dev": [
@@ -295,8 +293,19 @@
           "R5.Crea.06 | Création numérique",
           "R5.Crea.07 | Écriture Multimédia et narration"
         ],
-        "responsable": "BLANCO Sandy",
-        "intitule": "Créer par/pour le numérique"
+        "responsable": "BLANCO Sandy"
+      },
+      {
+        "code": "SAÉ 5.Crea.02 | SAE Management",
+        "competence": "",
+        "ressources": [],
+        "responsable": ""
+      },
+      {
+        "code": "SAÉ 5.Crea.03 | SAE Conception d'interface",
+        "competence": "",
+        "ressources": [],
+        "responsable": ""
       }
     ],
     "S5 dev": [
