@@ -439,5 +439,14 @@
     "description": "S5 crea / SAÉ 5.Crea.03 | SAE Conception d'interface / tp",
     "prev": "12",
     "next": "24"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "09:43:27",
+    "utilisateur": "damien.marill",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.05 | Développement front avancé / enseignant",
+    "prev": "MARILL Damien",
+    "next": ""
   }
 ]
