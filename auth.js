@@ -181,7 +181,7 @@ window.AUTH = {
     const s = _sess();
     if (!s) return false;
     if (s.rw) return true;
-    return s.visibleApps?.includes(app) ?? false;
+    return s.rwApps?.includes(app) ?? false;
   },
   user:       () => _sess()?.login ?? null,
   hashPwd:    (pwd) => _sha256(pwd),
