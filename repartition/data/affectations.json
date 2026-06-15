@@ -1072,20 +1072,7 @@
       "cm": 0,
       "td": 13.5,
       "tp": 0,
-      "subrows": [
-        {
-          "enseignant": "",
-          "cm": 0,
-          "td": 12,
-          "tp": 0
-        },
-        {
-          "enseignant": "",
-          "cm": 0,
-          "td": 7.5,
-          "tp": 9
-        }
-      ],
+      "subrows": [],
       "responsable": ""
     },
     "R6.DWeb-DI.03 | Fonctionnement des IA": {
