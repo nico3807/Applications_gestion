@@ -5,6 +5,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $nom_etudiant = htmlspecialchars(trim($_POST['nom_etudiant']     ?? ''));
     $groupe       = htmlspecialchars(trim($_POST['groupe']           ?? ''));
+    $groupe_cours = htmlspecialchars(trim($_POST['groupe_cours']     ?? ''));
     $enseignant   = htmlspecialchars(trim($_POST['enseignant']       ?? ''));
     $matiere      = htmlspecialchars(trim($_POST['matiere']          ?? ''));
     $date_cours   = htmlspecialchars(trim($_POST['date_cours']       ?? ''));
@@ -14,7 +15,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $date_fr = $date_cours ? date('d/m/Y', strtotime($date_cours)) : $date_cours;
 
-    if (empty($nom_etudiant) || empty($groupe) || empty($enseignant) || empty($matiere) || empty($date_cours) || empty($creneau) || empty($type)) {
+    if (empty($nom_etudiant) || empty($groupe) || empty($groupe_cours) || empty($enseignant) || empty($matiere) || empty($date_cours) || empty($creneau) || empty($type)) {
         echo json_encode(["status" => "error", "message" => "Veuillez remplir tous les champs obligatoires."]);
         exit;
     }
@@ -31,6 +32,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $message .= "<table style=\"border-collapse:collapse; margin-bottom:8px;\">";
     $message .= "<tr><td style=\"padding:3px 16px 3px 0; color:#555;\">Enseignant</td><td><strong>$enseignant</strong></td></tr>";
     $message .= "<tr><td style=\"padding:3px 16px 3px 0; color:#555;\">Parcours</td><td><strong>$groupe</strong></td></tr>";
+    $message .= "<tr><td style=\"padding:3px 16px 3px 0; color:#555;\">Groupe</td><td><strong>$groupe_cours</strong></td></tr>";
     $message .= "<tr><td style=\"padding:3px 16px 3px 0; color:#555;\">Matière</td><td><strong>$matiere</strong></td></tr>";
     $message .= "<tr><td style=\"padding:3px 16px 3px 0; color:#555;\">Date</td><td><strong>$date_fr</strong></td></tr>";
     $message .= "<tr><td style=\"padding:3px 16px 3px 0; color:#555;\">Créneau</td><td><strong>$creneau</strong></td></tr>";
