@@ -1220,8 +1220,15 @@
       "enseignant": "DI PIERRO Davide",
       "cm": 0,
       "td": 10.5,
-      "tp": 0,
-      "subrows": [],
+      "tp": 3,
+      "subrows": [
+        {
+          "enseignant": "",
+          "cm": 0,
+          "td": 0,
+          "tp": 0
+        }
+      ],
       "responsable": ""
     },
     "R5.DWeb-DI.09 | Mathématiques avancées, complexité algorithmique": {
