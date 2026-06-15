@@ -2122,5 +2122,50 @@
     "description": "S5 dev / R5.DWeb-DI.06 | Développement back avancé / td",
     "prev": "24.5",
     "next": "25"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "14:03:57",
+    "utilisateur": "damien.marill",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.06 | Développement back avancé / tp",
+    "prev": "3",
+    "next": "2.5"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "14:03:58",
+    "utilisateur": "damien.marill",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.06 | Développement back avancé / tp",
+    "prev": "2.5",
+    "next": "2"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "14:03:58",
+    "utilisateur": "damien.marill",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.06 | Développement back avancé / tp",
+    "prev": "2",
+    "next": "1.5"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "14:03:58",
+    "utilisateur": "damien.marill",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.06 | Développement back avancé / tp",
+    "prev": "1.5",
+    "next": "1"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "14:03:59",
+    "utilisateur": "damien.marill",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.06 | Développement back avancé / tp",
+    "prev": "1",
+    "next": "1.5"
   }
 ]
