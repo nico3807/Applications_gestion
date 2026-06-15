@@ -768,15 +768,19 @@ window._confirmExportXLSX = function () {
 
 function _exportXLSXNormal(sem, safeSem) {
   const aff = APP_DATA.affectations[sem] || {};
-  const rows = [["Ressource", "Enseignant", "CM", "TD", "TP"]];
+  const dataRows = [];
   Object.keys(aff).forEach((res) => {
     const d = aff[res];
-    rows.push([res, d.enseignant || "", parseFloat(d.cm) || 0, parseFloat(d.td) || 0, parseFloat(d.tp) || 0]);
+    dataRows.push([res, d.enseignant || "", parseFloat(d.cm) || 0, parseFloat(d.td) || 0, parseFloat(d.tp) || 0]);
     (d.subrows || []).forEach((s) => {
-      rows.push(["", s.enseignant || "", parseFloat(s.cm) || 0, parseFloat(s.td) || 0, parseFloat(s.tp) || 0]);
+      dataRows.push(["", s.enseignant || "", parseFloat(s.cm) || 0, parseFloat(s.td) || 0, parseFloat(s.tp) || 0]);
     });
   });
-  const ws = XLSX.utils.aoa_to_sheet(rows);
+  const ws = _xlsxBuildSheet(
+    ["Ressource", "Enseignant", "CM", "TD", "TP"],
+    dataRows,
+    [{ wch: 45 }, { wch: 25 }, { wch: 8 }, { wch: 8 }, { wch: 8 }],
+  );
   const wb = XLSX.utils.book_new();
   XLSX.utils.book_append_sheet(wb, ws, (sem || "Répartition").substring(0, 31));
   XLSX.writeFile(wb, `repartition_${safeSem}.xlsx`);
@@ -803,34 +807,34 @@ function _exportXLSXParEnseignant(sem, safeSem) {
 
   const sortedEns = Object.keys(byEns).sort((a, b) => a.localeCompare(b, "fr"));
 
+  /* Mêmes constantes de style que _xlsxBuildSheet */
   const S_HDR = {
     font:      { name: "Arial", bold: true, sz: 11, color: { rgb: "FFFFFF" } },
     fill:      { patternType: "solid", fgColor: { rgb: "1E3A5F" } },
     alignment: { horizontal: "center", vertical: "center", wrapText: true },
     border:    { bottom: { style: "thin", color: { rgb: "AAAAAA" } } },
   };
-  const mkStyle = (even) => ({
+  const mkS = (even) => ({
     font:      { name: "Arial", sz: 10 },
     fill:      { patternType: "solid", fgColor: { rgb: even ? "F0F4FB" : "FFFFFF" } },
-    alignment: { vertical: "center", horizontal: "left", wrapText: true },
+    alignment: { vertical: "top", wrapText: true },
   });
 
   const aoa = [[
-    { v: "Enseignant",     t: "s", s: S_HDR },
-    { v: "Ressource / SAÉ", t: "s", s: S_HDR },
+    _xlsxCell("Enseignant",      S_HDR),
+    _xlsxCell("Ressource / SAÉ", S_HDR),
   ]];
   const merges = [];
   let rowIdx = 1;
 
   sortedEns.forEach((ens, ensIdx) => {
     const resources = byEns[ens];
-    const nRows  = resources.length;
-    const style  = mkStyle(ensIdx % 2 === 0);
-
+    const nRows = resources.length;
+    const s = mkS(ensIdx % 2 === 0);
     for (let i = 0; i < nRows; i++) {
       aoa.push([
-        { v: i === 0 ? ens : "", t: "s", s: style },
-        { v: resources[i],       t: "s", s: style },
+        _xlsxCell(i === 0 ? ens : "", s),
+        _xlsxCell(resources[i],       s),
       ]);
     }
     if (nRows > 1) {
