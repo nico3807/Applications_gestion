@@ -475,5 +475,14 @@
     "description": "S6 dev / R6.DWeb-DI.02 | Développement Web et dispositif interactif / sous-groupe 1 / enseignant",
     "prev": "MARILL Damien",
     "next": ""
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "09:44:14",
+    "utilisateur": "damien.marill",
+    "type": "Répartition",
+    "description": "S6 dev / R6.DWeb-DI.02 | Développement Web et dispositif interactif / enseignant",
+    "prev": "MARZOUK Reda",
+    "next": ""
   }
 ]
