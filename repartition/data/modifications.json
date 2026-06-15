@@ -1537,5 +1537,14 @@
     "description": "S1 / R1.09 | Culture artistique / sous-groupe 2 / enseignant",
     "prev": "",
     "next": "THEROND Emmanuel"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "13:37:17",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S1 / R1.16 | Économie, gestion et droit du numérique / enseignant",
+    "prev": "DE VELDER Sophie",
+    "next": ""
   }
 ]
