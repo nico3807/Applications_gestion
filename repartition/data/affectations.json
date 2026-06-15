@@ -624,6 +624,12 @@
           "cm": 0,
           "td": 0,
           "tp": 15
+        },
+        {
+          "enseignant": "",
+          "cm": 0,
+          "td": 0,
+          "tp": 0
         }
       ],
       "responsable": "DARTIES Benoit"
