@@ -70,7 +70,14 @@
       "cm": 6,
       "td": 12,
       "tp": 0,
-      "subrows": [],
+      "subrows": [
+        {
+          "enseignant": "",
+          "cm": 0,
+          "td": 0,
+          "tp": 0
+        }
+      ],
       "responsable": ""
     },
     "R1.05 | Stratégies de communication et marketing": {
