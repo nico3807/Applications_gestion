@@ -754,5 +754,14 @@
     "description": "S5 dev / R5.DWeb-DI.05 | Développement front avancé / sous-groupe 1 / tp",
     "prev": "0",
     "next": "6"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "12:15:19",
+    "utilisateur": "damien.marill",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.06 | Développement back avancé / sous-groupe 1 / enseignant",
+    "prev": "",
+    "next": "DI PIERRO Davide"
   }
 ]
