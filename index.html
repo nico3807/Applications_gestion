@@ -401,7 +401,7 @@
           if (r) r.checked = true;
         });
         _PERM_CARDS.forEach(app => {
-          const v = rwApps.includes(app) ? "visible" : "hidden";
+          const v = (u.rw || rwApps.includes(app)) ? "visible" : "hidden";
           const r = document.querySelector(`input[name="${prefix}-perm-${app}"][value="${v}"]`);
           if (r) r.checked = true;
         });
@@ -558,7 +558,8 @@
         const btn = document.getElementById("edit-rights-btn");
         btn.disabled = true; btn.textContent = "…";
         try {
-          await AUTH.createUser({ login, rw:false, rwApps, denyApps, maquetteGroups });
+          const existing = AUTH.getUserInfo(login) || {};
+          await AUTH.createUser({ login, rw: existing.rw ?? false, rwApps, denyApps, maquetteGroups });
           okEl.style.display = "block";
         } catch(e) {
           errEl.textContent = "Erreur : " + e.message; errEl.style.display = "block";

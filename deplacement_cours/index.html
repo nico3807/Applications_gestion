@@ -197,13 +197,14 @@
       const _VALIDATORS = ["nicolas.maurin", "sylvie.escaig", "william.bernard"];
       function _setup() {
         AUTH.injectBadge();
-        if (!AUTH.canView("deplacement_cours")) {
+        const isValidator = _VALIDATORS.includes(AUTH.user());
+        if (!AUTH.canView("deplacement_cours") && !isValidator) {
           document.getElementById("access-denied").style.display = "";
           return;
         }
         document.getElementById("app-content").style.display = "";
         if (AUTH.isAuth()) document.getElementById("statut-link").style.display = "";
-        if (_VALIDATORS.includes(AUTH.user())) document.getElementById("suivi-link").style.display = "";
+        if (isValidator) document.getElementById("suivi-link").style.display = "";
       }
       window.addEventListener("auth-success", _setup, { once: true });
       AUTH.injectUI();
