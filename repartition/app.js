@@ -525,29 +525,8 @@ window.exportXLSX = function () {
   let rows, filename, sheetName;
 
   if (currentView === "semestre") {
-    const aff = APP_DATA.affectations[sem] || {};
-    rows = [["Ressource", "Enseignant", "CM", "TD", "TP"]];
-    Object.keys(aff).forEach((res) => {
-      const d = aff[res];
-      rows.push([
-        res,
-        d.enseignant || "",
-        parseFloat(d.cm) || 0,
-        parseFloat(d.td) || 0,
-        parseFloat(d.tp) || 0,
-      ]);
-      (d.subrows || []).forEach((s) => {
-        rows.push([
-          "",
-          s.enseignant || "",
-          parseFloat(s.cm) || 0,
-          parseFloat(s.td) || 0,
-          parseFloat(s.tp) || 0,
-        ]);
-      });
-    });
-    filename = `repartition_${safeSem}.xlsx`;
-    sheetName = sem || "Répartition";
+    _openExportTypeModal(sem, safeSem);
+    return;
   } else if (currentView === "maquette_semestre") {
     const aff = APP_DATA.affectations[sem] || {};
     const maq = APP_DATA.maquette_overrides[sem] || {};
@@ -729,6 +708,146 @@ window.exportXLSX = function () {
   XLSX.utils.book_append_sheet(wb, ws, sheetName.substring(0, 31));
   XLSX.writeFile(wb, filename);
 };
+
+/* ── Modale choix type d'export XLSX ────────────────────────────────────── */
+function _openExportTypeModal(sem, safeSem) {
+  let modal = document.getElementById("export-type-modal");
+  if (!modal) {
+    modal = document.createElement("div");
+    modal.id = "export-type-modal";
+    modal.className = "modal-overlay";
+    modal.innerHTML = `
+      <div class="modal-box">
+        <h3>Exporter en XLSX</h3>
+        <p class="modal-sub">Choisissez le format d'export</p>
+        <div class="modal-fields" style="gap:.5rem;">
+          <label class="modal-field-label" style="display:flex;align-items:flex-start;gap:.75rem;cursor:pointer;padding:.6rem .5rem;border-radius:6px;">
+            <input type="radio" name="export-type" value="normal" checked style="margin-top:3px;flex-shrink:0;">
+            <span>
+              <strong>Export tel quel</strong>
+              <span class="modal-hint" style="display:block;margin-top:2px;">Ressources avec enseignants, CM / TD / TP</span>
+            </span>
+          </label>
+          <label class="modal-field-label" style="display:flex;align-items:flex-start;gap:.75rem;cursor:pointer;padding:.6rem .5rem;border-radius:6px;">
+            <input type="radio" name="export-type" value="par_enseignant" style="margin-top:3px;flex-shrink:0;">
+            <span>
+              <strong>Export par enseignant</strong>
+              <span class="modal-hint" style="display:block;margin-top:2px;">Deux colonnes : enseignant (cellule fusionnée) et ses ressources / SAÉ</span>
+            </span>
+          </label>
+        </div>
+        <div class="modal-actions">
+          <button class="btn-cancel" onclick="document.getElementById('export-type-modal').style.display='none'">Annuler</button>
+          <button class="btn-save" onclick="_confirmExportXLSX()">Exporter</button>
+        </div>
+      </div>`;
+    document.body.appendChild(modal);
+    modal.addEventListener("click", (e) => {
+      if (e.target === modal) modal.style.display = "none";
+    });
+  }
+  modal.dataset.sem    = sem;
+  modal.dataset.safeSem = safeSem;
+  modal.querySelector("input[value='normal']").checked = true;
+  modal.style.display = "flex";
+}
+
+window._confirmExportXLSX = function () {
+  const modal  = document.getElementById("export-type-modal");
+  const type   = modal.querySelector("input[name='export-type']:checked")?.value || "normal";
+  const sem    = modal.dataset.sem;
+  const safeSem = modal.dataset.safeSem;
+  modal.style.display = "none";
+
+  if (type === "par_enseignant") {
+    _exportXLSXParEnseignant(sem, safeSem);
+  } else {
+    _exportXLSXNormal(sem, safeSem);
+  }
+};
+
+function _exportXLSXNormal(sem, safeSem) {
+  const aff = APP_DATA.affectations[sem] || {};
+  const rows = [["Ressource", "Enseignant", "CM", "TD", "TP"]];
+  Object.keys(aff).forEach((res) => {
+    const d = aff[res];
+    rows.push([res, d.enseignant || "", parseFloat(d.cm) || 0, parseFloat(d.td) || 0, parseFloat(d.tp) || 0]);
+    (d.subrows || []).forEach((s) => {
+      rows.push(["", s.enseignant || "", parseFloat(s.cm) || 0, parseFloat(s.td) || 0, parseFloat(s.tp) || 0]);
+    });
+  });
+  const ws = XLSX.utils.aoa_to_sheet(rows);
+  const wb = XLSX.utils.book_new();
+  XLSX.utils.book_append_sheet(wb, ws, (sem || "Répartition").substring(0, 31));
+  XLSX.writeFile(wb, `repartition_${safeSem}.xlsx`);
+}
+
+function _exportXLSXParEnseignant(sem, safeSem) {
+  const aff = APP_DATA.affectations[sem] || {};
+
+  /* Regroupe les ressources par enseignant (ordre : ressources → SAÉs → ...) */
+  const byEns = {};
+  const sortedRes = Object.keys(aff).sort((a, b) => {
+    const d = _resPrio(a) - _resPrio(b);
+    return d !== 0 ? d : a.localeCompare(b, "fr");
+  });
+  sortedRes.forEach((res) => {
+    const d = aff[res];
+    const entries = [{ ens: d.enseignant || "" }, ...(d.subrows || []).map((s) => ({ ens: s.enseignant || "" }))];
+    entries.forEach(({ ens }) => {
+      if (!ens) return;
+      if (!byEns[ens]) byEns[ens] = [];
+      if (!byEns[ens].includes(res)) byEns[ens].push(res);
+    });
+  });
+
+  const sortedEns = Object.keys(byEns).sort((a, b) => a.localeCompare(b, "fr"));
+
+  const S_HDR = {
+    font:      { name: "Arial", bold: true, sz: 11, color: { rgb: "FFFFFF" } },
+    fill:      { patternType: "solid", fgColor: { rgb: "1E3A5F" } },
+    alignment: { horizontal: "center", vertical: "center", wrapText: true },
+    border:    { bottom: { style: "thin", color: { rgb: "AAAAAA" } } },
+  };
+  const mkStyle = (even) => ({
+    font:      { name: "Arial", sz: 10 },
+    fill:      { patternType: "solid", fgColor: { rgb: even ? "F0F4FB" : "FFFFFF" } },
+    alignment: { vertical: "center", horizontal: "left", wrapText: true },
+  });
+
+  const aoa = [[
+    { v: "Enseignant",     t: "s", s: S_HDR },
+    { v: "Ressource / SAÉ", t: "s", s: S_HDR },
+  ]];
+  const merges = [];
+  let rowIdx = 1;
+
+  sortedEns.forEach((ens, ensIdx) => {
+    const resources = byEns[ens];
+    const nRows  = resources.length;
+    const style  = mkStyle(ensIdx % 2 === 0);
+
+    for (let i = 0; i < nRows; i++) {
+      aoa.push([
+        { v: i === 0 ? ens : "", t: "s", s: style },
+        { v: resources[i],       t: "s", s: style },
+      ]);
+    }
+    if (nRows > 1) {
+      merges.push({ s: { r: rowIdx, c: 0 }, e: { r: rowIdx + nRows - 1, c: 0 } });
+    }
+    rowIdx += nRows;
+  });
+
+  const ws = XLSX.utils.aoa_to_sheet(aoa, { cellStyles: true });
+  ws["!cols"]   = [{ wch: 28 }, { wch: 55 }];
+  ws["!merges"] = merges;
+  ws["!freeze"] = { xSplit: 0, ySplit: 1 };
+
+  const wb = XLSX.utils.book_new();
+  XLSX.utils.book_append_sheet(wb, ws, (sem || "Par enseignant").substring(0, 31));
+  XLSX.writeFile(wb, `repartition_enseignants_${safeSem}.xlsx`);
+}
 
 /* ── Tooltip Total / étudiant ────────────────────────────────────────────── */
 function _ensureTooltip() {
