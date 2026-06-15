@@ -2714,8 +2714,12 @@ window.deleteSaeEntry = function (sem, idx) {
   window._flushSaeEditInputs(sem);
   const list = APP_DATA.sae?.sae?.[sem];
   if (!list) return;
-  _logMod("SAÉ", `Suppression — ${sem}`, list[idx]?.code || idx, "—");
+  const saeCode = list[idx]?.code;
+  _logMod("SAÉ", `Suppression — ${sem}`, saeCode || idx, "—");
   list.splice(idx, 1);
+  if (saeCode && APP_DATA.affectations?.[sem]?.[saeCode] !== undefined) {
+    delete APP_DATA.affectations[sem][saeCode];
+  }
   renderSaeEditList(sem);
   renderView();
 };
@@ -2738,6 +2742,11 @@ window.saveSaeGH = async function () {
       "sae_data.json",
       APP_DATA.sae,
       "Update sae_data.json via Web UI",
+    );
+    await saveFileGH(
+      "affectations.json",
+      APP_DATA.affectations,
+      "Update affectations.json via Web UI",
     );
     showToast("SAÉ sauvegardées sur GitHub !");
     renderView();
