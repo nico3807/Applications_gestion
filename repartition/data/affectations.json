@@ -1163,8 +1163,15 @@
       "enseignant": "MARILL Damien",
       "cm": 0,
       "td": 21,
-      "tp": 3,
-      "subrows": [],
+      "tp": 1.5,
+      "subrows": [
+        {
+          "enseignant": "",
+          "cm": 0,
+          "td": 0,
+          "tp": 0
+        }
+      ],
       "responsable": ""
     },
     "R5.DWeb-DI.06 | Développement back avancé": {
