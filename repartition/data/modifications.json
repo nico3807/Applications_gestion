@@ -1906,5 +1906,14 @@
     "description": "S2 / SAÉ 2.99 | Marathon MMI / enseignant",
     "prev": "",
     "next": "DARTIES Benoit"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "13:59:42",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S2 / SAÉ 2.99 | Marathon MMI / sous-groupe 1 / enseignant",
+    "prev": "",
+    "next": "MAURIN Nicolas"
   }
 ]
