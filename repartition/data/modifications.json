@@ -547,5 +547,14 @@
     "description": "Modification DI PIERRO Davide",
     "prev": "DI PIERRO Davide — Titulaire, dû:128, max:—",
     "next": "DI PIERRO Davide — Titulaire, dû:128, max:128"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "10:13:46",
+    "utilisateur": "damien.marill",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.05 | Développement front avancé / enseignant",
+    "prev": "",
+    "next": "MARILL Damien"
   }
 ]
