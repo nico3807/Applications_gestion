@@ -2365,5 +2365,32 @@
     "description": "Suppression — S5 crea",
     "prev": "SAÉ 5.Crea.03 | SAE Conception d'interface",
     "next": "—"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "17:19:10",
+    "utilisateur": "nicolas.maurin",
+    "type": "SAÉ",
+    "description": "Suppression — S5 dev",
+    "prev": "SAÉ 5D.02 | SAE Management",
+    "next": "—"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "17:19:12",
+    "utilisateur": "nicolas.maurin",
+    "type": "SAÉ",
+    "description": "Suppression — S5 dev",
+    "prev": "SAÉ 5D.03 | Concevoir un dispositif interactif",
+    "next": "—"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "17:19:16",
+    "utilisateur": "nicolas.maurin",
+    "type": "SAÉ",
+    "description": "Suppression — S5 dev",
+    "prev": "SAÉ 5D.04 | Integration d'un LLM",
+    "next": "—"
   }
 ]
