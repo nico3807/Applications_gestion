@@ -2050,5 +2050,77 @@
     "description": "S5 dev / R5.DWeb-DI.06 | Développement back avancé / sous-groupe 1 / td",
     "prev": "15.5",
     "next": "15"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "14:03:46",
+    "utilisateur": "damien.marill",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.06 | Développement back avancé / td",
+    "prev": "21",
+    "next": "21.5"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "14:03:47",
+    "utilisateur": "damien.marill",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.06 | Développement back avancé / td",
+    "prev": "21.5",
+    "next": "22"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "14:03:47",
+    "utilisateur": "damien.marill",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.06 | Développement back avancé / td",
+    "prev": "22",
+    "next": "22.5"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "14:03:47",
+    "utilisateur": "damien.marill",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.06 | Développement back avancé / td",
+    "prev": "22.5",
+    "next": "23"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "14:03:47",
+    "utilisateur": "damien.marill",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.06 | Développement back avancé / td",
+    "prev": "23",
+    "next": "23.5"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "14:03:47",
+    "utilisateur": "damien.marill",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.06 | Développement back avancé / td",
+    "prev": "23.5",
+    "next": "24"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "14:03:47",
+    "utilisateur": "damien.marill",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.06 | Développement back avancé / td",
+    "prev": "24",
+    "next": "24.5"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "14:03:49",
+    "utilisateur": "damien.marill",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.06 | Développement back avancé / td",
+    "prev": "24.5",
+    "next": "25"
   }
 ]
