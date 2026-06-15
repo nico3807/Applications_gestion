@@ -1209,14 +1209,7 @@
       "cm": 0,
       "td": 9,
       "tp": 0,
-      "subrows": [
-        {
-          "enseignant": "MENDEZ Nicolas",
-          "cm": 0,
-          "td": 6,
-          "tp": 0
-        }
-      ],
+      "subrows": [],
       "responsable": ""
     },
     "SAÉ 5D.01 | Développer pour le web": {
