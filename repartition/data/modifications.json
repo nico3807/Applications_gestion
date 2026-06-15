@@ -1627,5 +1627,32 @@
     "description": "S1 / SAÉ 1.01 | Auditer une communication numérique / sous-groupe 3 / td",
     "prev": "4",
     "next": "4.5"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "13:39:27",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S1 / SAÉ 1.01 | Auditer une communication numérique / sous-groupe 3 / td",
+    "prev": "4.5",
+    "next": "5"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "13:39:27",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S1 / SAÉ 1.01 | Auditer une communication numérique / sous-groupe 3 / td",
+    "prev": "5",
+    "next": "5.5"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "13:39:28",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S1 / SAÉ 1.01 | Auditer une communication numérique / sous-groupe 3 / td",
+    "prev": "5.5",
+    "next": "6"
   }
 ]
