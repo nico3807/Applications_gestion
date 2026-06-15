@@ -655,5 +655,50 @@
     "description": "S5 dev / R5.DWeb-DI.06 | Développement back avancé / td",
     "prev": "21.5",
     "next": "21"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "10:55:45",
+    "utilisateur": "damien.marill",
+    "type": "Répartition",
+    "description": "S5 dev / SAÉ 5D.04 | Integration d'un LLM / td",
+    "prev": "15",
+    "next": "0"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "10:55:52",
+    "utilisateur": "damien.marill",
+    "type": "Répartition",
+    "description": "S5 dev / SAÉ 5D.04 | Integration d'un LLM / enseignant",
+    "prev": "MARILL Damien",
+    "next": ""
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "10:55:57",
+    "utilisateur": "damien.marill",
+    "type": "Répartition",
+    "description": "S5 dev / SAÉ 5D.03 | Concevoir un dispositif interactif / enseignant",
+    "prev": "MARZOUK Reda",
+    "next": ""
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "10:56:02",
+    "utilisateur": "damien.marill",
+    "type": "Répartition",
+    "description": "S5 dev / SAÉ 5D.03 | Concevoir un dispositif interactif / td",
+    "prev": "34.5",
+    "next": "0"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "10:56:15",
+    "utilisateur": "damien.marill",
+    "type": "Répartition",
+    "description": "S5 dev / SAÉ 5D.03 | Concevoir un dispositif interactif / td",
+    "prev": "0",
+    "next": "0"
   }
 ]
