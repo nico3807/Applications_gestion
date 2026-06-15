@@ -1726,5 +1726,14 @@
     "description": "S2 / R2.07 | Écriture multimédia et narration / enseignant",
     "prev": "MOCQUET Bertrand",
     "next": "JAECKLE Luc"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "13:47:26",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S2 / R2.07 | Écriture multimédia et narration / sous-groupe 1 / enseignant",
+    "prev": "RAMPON Candice",
+    "next": ""
   }
 ]
