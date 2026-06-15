@@ -70,14 +70,7 @@
       "cm": 6,
       "td": 12,
       "tp": 0,
-      "subrows": [
-        {
-          "enseignant": "THEROND Emmanuel",
-          "cm": 0,
-          "td": 0,
-          "tp": 0
-        }
-      ],
+      "subrows": [],
       "responsable": ""
     },
     "R1.05 | Stratégies de communication et marketing": {
@@ -1248,7 +1241,7 @@
       "responsable": ""
     },
     "SAÉ 5D.02 | SAE Management": {
-      "enseignant": "PIEDEVACHE Magalie",
+      "enseignant": "",
       "cm": 0,
       "td": 6,
       "tp": 0,
