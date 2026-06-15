@@ -1192,14 +1192,14 @@
     "R5.DWeb-DI.07 | Dispositifs interactifs": {
       "enseignant": "DI PIERRO Davide",
       "cm": 0,
-      "td": 30,
+      "td": 15,
       "tp": 9,
       "subrows": [
         {
           "enseignant": "MAURIN Nicolas",
           "cm": 0,
           "td": 0,
-          "tp": 12
+          "tp": 0
         },
         {
           "enseignant": "AZE Jérome",
