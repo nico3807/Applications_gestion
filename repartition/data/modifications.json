@@ -2455,5 +2455,32 @@
     "description": "S5 dev / R5.DWeb-DI.07 | Dispositifs interactifs / sous-groupe 1 / td",
     "prev": "12.5",
     "next": "12"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "14:06:24",
+    "utilisateur": "damien.marill",
+    "type": "Répartition",
+    "description": "S6 dev / R6.DWeb-DI.02 | Développement Web et dispositif interactif / td",
+    "prev": "13.5",
+    "next": "13"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "14:06:25",
+    "utilisateur": "damien.marill",
+    "type": "Répartition",
+    "description": "S6 dev / R6.DWeb-DI.02 | Développement Web et dispositif interactif / td",
+    "prev": "13",
+    "next": "12.5"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "14:06:26",
+    "utilisateur": "damien.marill",
+    "type": "Répartition",
+    "description": "S6 dev / R6.DWeb-DI.02 | Développement Web et dispositif interactif / td",
+    "prev": "12.5",
+    "next": "12"
   }
 ]
