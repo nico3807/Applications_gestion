@@ -70,7 +70,14 @@
       "cm": 6,
       "td": 12,
       "tp": 0,
-      "subrows": [],
+      "subrows": [
+        {
+          "enseignant": "THEROND Emmanuel",
+          "cm": 0,
+          "td": 0,
+          "tp": 0
+        }
+      ],
       "responsable": ""
     },
     "R1.05 | Stratégies de communication et marketing": {
@@ -78,17 +85,24 @@
       "cm": 12,
       "td": 13.5,
       "tp": 0,
-      "subrows": [],
+      "subrows": [
+        {
+          "enseignant": "THEROND Emmanuel",
+          "cm": 0,
+          "td": 0,
+          "tp": 0
+        }
+      ],
       "responsable": ""
     },
     "R1.06 | Expression, communication et rhétorique": {
-      "enseignant": "RAMPON Candice",
+      "enseignant": "DE VELDER Sophie",
       "cm": 0,
       "td": 9,
       "tp": 0,
       "subrows": [
         {
-          "enseignant": "KLAIBI Noel",
+          "enseignant": "THEROND Emmanuel",
           "cm": 0,
           "td": 4.5,
           "tp": 6
@@ -116,7 +130,14 @@
       "cm": 0,
       "td": 6,
       "tp": 15,
-      "subrows": [],
+      "subrows": [
+        {
+          "enseignant": "THEROND Emmanuel",
+          "cm": 0,
+          "td": 0,
+          "tp": 0
+        }
+      ],
       "responsable": ""
     },
     "R1.09 | Culture artistique": {
@@ -130,6 +151,12 @@
           "cm": 0,
           "td": 0,
           "tp": 12
+        },
+        {
+          "enseignant": "THEROND Emmanuel",
+          "cm": 0,
+          "td": 0,
+          "tp": 0
         }
       ],
       "responsable": ""
@@ -211,7 +238,7 @@
       "responsable": ""
     },
     "R1.16 | Économie, gestion et droit du numérique": {
-      "enseignant": "DE VELDER Sophie",
+      "enseignant": "",
       "cm": 9,
       "td": 6,
       "tp": 0,
@@ -246,7 +273,7 @@
           "tp": 0
         },
         {
-          "enseignant": "ESCAIG Sylvie",
+          "enseignant": "THEROND Emmanuel",
           "cm": 0,
           "td": 3,
           "tp": 0
@@ -254,7 +281,7 @@
         {
           "enseignant": "PELISSIER Chrysta",
           "cm": 3,
-          "td": 4.5,
+          "td": 6,
           "tp": 0
         }
       ],
@@ -283,6 +310,12 @@
           "cm": 0,
           "td": 3,
           "tp": 0
+        },
+        {
+          "enseignant": "THEROND Emmanuel",
+          "cm": 0,
+          "td": 0,
+          "tp": 0
         }
       ],
       "responsable": ""
@@ -294,9 +327,15 @@
       "tp": 3,
       "subrows": [
         {
-          "enseignant": "SELIGHINI Valérie",
+          "enseignant": "THEROND Emmanuel",
           "cm": 0,
           "td": 1.5,
+          "tp": 0
+        },
+        {
+          "enseignant": "SELIGHINI Valérie",
+          "cm": 0,
+          "td": 0,
           "tp": 0
         }
       ],
@@ -321,6 +360,12 @@
           "cm": 0,
           "td": 7.5,
           "tp": 0
+        },
+        {
+          "enseignant": "DI PIERRO Davide",
+          "cm": 0,
+          "td": 0,
+          "tp": 0
         }
       ],
       "responsable": ""
@@ -330,7 +375,20 @@
       "cm": 1.5,
       "td": 13.5,
       "tp": 0,
-      "subrows": [],
+      "subrows": [
+        {
+          "enseignant": "BERNARD William",
+          "cm": 0,
+          "td": 0,
+          "tp": 0
+        },
+        {
+          "enseignant": "THEROND Emmanuel",
+          "cm": 0,
+          "td": 0,
+          "tp": 0
+        }
+      ],
       "responsable": ""
     }
   },
@@ -457,11 +515,18 @@
       "cm": 0,
       "td": 6,
       "tp": 7.5,
-      "subrows": [],
+      "subrows": [
+        {
+          "enseignant": "THEROND Emmanuel",
+          "cm": 0,
+          "td": 0,
+          "tp": 0
+        }
+      ],
       "responsable": "DE VELDER Sophie"
     },
     "R2.07 | Écriture multimédia et narration": {
-      "enseignant": "MOCQUET Bertrand",
+      "enseignant": "JAECKLE Luc",
       "cm": 3,
       "td": 0,
       "tp": 9,
@@ -486,6 +551,12 @@
           "cm": 0,
           "td": 0,
           "tp": 9
+        },
+        {
+          "enseignant": "THEROND Emmanuel",
+          "cm": 0,
+          "td": 0,
+          "tp": 0
         }
       ],
       "responsable": ""
@@ -501,6 +572,12 @@
           "cm": 0,
           "td": 0,
           "tp": 10.5
+        },
+        {
+          "enseignant": "THEROND Emmanuel",
+          "cm": 0,
+          "td": 0,
+          "tp": 0
         }
       ],
       "responsable": ""
@@ -514,7 +591,7 @@
       "responsable": "BLANCO Sandy"
     },
     "R2.11 | Gestion de contenus": {
-      "enseignant": "THEROND Emmanuel",
+      "enseignant": "",
       "cm": 0,
       "td": 3,
       "tp": 6,
@@ -528,7 +605,7 @@
       "tp": 6,
       "subrows": [
         {
-          "enseignant": "THEROND Emmanuel",
+          "enseignant": "DI PIERRO Davide",
           "cm": 0,
           "td": 1.5,
           "tp": 7.5
@@ -543,10 +620,16 @@
       "tp": 15,
       "subrows": [
         {
-          "enseignant": "ESCAIG Sylvie",
+          "enseignant": "MAURIN Nicolas",
           "cm": 0,
           "td": 0,
           "tp": 15
+        },
+        {
+          "enseignant": "DI PIERRO Davide",
+          "cm": 0,
+          "td": 0,
+          "tp": 0
         }
       ],
       "responsable": "DARTIES Benoit"
@@ -556,7 +639,14 @@
       "cm": 0,
       "td": 4.5,
       "tp": 6,
-      "subrows": [],
+      "subrows": [
+        {
+          "enseignant": "DI PIERRO Davide",
+          "cm": 0,
+          "td": 0,
+          "tp": 0
+        }
+      ],
       "responsable": ""
     },
     "R2.15 | Hébergement": {
@@ -595,7 +685,14 @@
       "cm": 6,
       "td": 6,
       "tp": 0,
-      "subrows": [],
+      "subrows": [
+        {
+          "enseignant": "DE VELDER Sophie",
+          "cm": 0,
+          "td": 0,
+          "tp": 0
+        }
+      ],
       "responsable": ""
     },
     "R2.19 | Projet Personnel et Professionnel": {
@@ -615,6 +712,18 @@
           "cm": 0,
           "td": 3,
           "tp": 0
+        },
+        {
+          "enseignant": "THEROND Emmanuel",
+          "cm": 0,
+          "td": 0,
+          "tp": 0
+        },
+        {
+          "enseignant": "SURRIBAS Caroline",
+          "cm": 0,
+          "td": 0,
+          "tp": 0
         }
       ],
       "responsable": "DE VELDER Sophie"
@@ -624,7 +733,14 @@
       "cm": 1.5,
       "td": 21,
       "tp": 0,
-      "subrows": [],
+      "subrows": [
+        {
+          "enseignant": "THEROND Emmanuel",
+          "cm": 0,
+          "td": 0,
+          "tp": 0
+        }
+      ],
       "responsable": "DE VELDER Sophie"
     },
     "SAÉ 2.02 | Concevoir un produit ou un service et sa communication": {
@@ -638,6 +754,12 @@
           "cm": 1.5,
           "td": 1.5,
           "tp": 0
+        },
+        {
+          "enseignant": "THEROND Emmanuel",
+          "cm": 0,
+          "td": 0,
+          "tp": 0
         }
       ],
       "responsable": "SURRIBAS Caroline"
@@ -649,7 +771,7 @@
       "tp": 0,
       "subrows": [
         {
-          "enseignant": "DARTIES Benoit",
+          "enseignant": "DI PIERRO Davide",
           "cm": 1.5,
           "td": 7.5,
           "tp": 0
@@ -668,16 +790,35 @@
           "cm": 0,
           "td": 3,
           "tp": 0
+        },
+        {
+          "enseignant": "SURRIBAS Caroline",
+          "cm": 0,
+          "td": 0,
+          "tp": 0
         }
       ],
       "responsable": "DE VELDER Sophie"
     },
     "SAÉ 2.98 | Hackathon": {
-      "enseignant": "",
+      "enseignant": "BERNARD William",
       "cm": 0,
       "td": 0,
       "tp": 0,
-      "subrows": [],
+      "subrows": [
+        {
+          "enseignant": "MAURIN Nicolas",
+          "cm": 0,
+          "td": 0,
+          "tp": 0
+        },
+        {
+          "enseignant": "PELISSIER Chrysta",
+          "cm": 0,
+          "td": 0,
+          "tp": 0
+        }
+      ],
       "responsable": ""
     },
     "SAÉ 2.99 | Marathon MMI": {
@@ -685,7 +826,14 @@
       "cm": 0,
       "td": 0,
       "tp": 0,
-      "subrows": [],
+      "subrows": [
+        {
+          "enseignant": "",
+          "cm": 0,
+          "td": 0,
+          "tp": 0
+        }
+      ],
       "responsable": ""
     },
     "PORTFOLIO | Portfolio": {
@@ -1068,7 +1216,7 @@
       "responsable": ""
     },
     "R6.DWeb-DI.02 | Développement Web et dispositif interactif": {
-      "enseignant": "DI PIERRO Davide",
+      "enseignant": "",
       "cm": 0,
       "td": 13.5,
       "tp": 0,
@@ -1217,18 +1365,11 @@
       "responsable": ""
     },
     "R5.DWeb-DI.08 | Hébergement et cybersécurité": {
-      "enseignant": "DI PIERRO Davide",
+      "enseignant": "WILLEMS Eric",
       "cm": 0,
-      "td": 10.5,
-      "tp": 3,
-      "subrows": [
-        {
-          "enseignant": "",
-          "cm": 0,
-          "td": 0,
-          "tp": 0
-        }
-      ],
+      "td": 21,
+      "tp": 7.5,
+      "subrows": [],
       "responsable": ""
     },
     "R5.DWeb-DI.09 | Mathématiques avancées, complexité algorithmique": {
@@ -1240,60 +1381,17 @@
       "responsable": ""
     },
     "SAÉ 5D.01 | Développer pour le web": {
-      "enseignant": "PIEDEVACHE Magalie",
+      "enseignant": "MARILL Damien",
       "cm": 0,
-      "td": 12,
+      "td": 27,
       "tp": 0,
-      "subrows": [
-        {
-          "enseignant": "",
-          "cm": 0,
-          "td": 0,
-          "tp": 0
-        },
-        {
-          "enseignant": "MARILL Damien",
-          "cm": 0,
-          "td": 30,
-          "tp": 0
-        },
-        {
-          "enseignant": "SURRIBAS Caroline",
-          "cm": 0,
-          "td": 18,
-          "tp": 0
-        },
-        {
-          "enseignant": "AZE Jérome",
-          "cm": 0,
-          "td": 18,
-          "tp": 0
-        },
-        {
-          "enseignant": "",
-          "cm": 0,
-          "td": 0,
-          "tp": 0
-        },
-        {
-          "enseignant": "MAURIN Nicolas",
-          "cm": 0,
-          "td": 15,
-          "tp": 0
-        },
-        {
-          "enseignant": "DI PIERRO Davide",
-          "cm": 0,
-          "td": 15,
-          "tp": 0
-        }
-      ],
+      "subrows": [],
       "responsable": ""
     },
     "SAÉ 5D.02 | SAE Management": {
-      "enseignant": "",
+      "enseignant": "PIEDEVACHE Magalie",
       "cm": 0,
-      "td": 0,
+      "td": 6,
       "tp": 0,
       "subrows": [],
       "responsable": ""
