@@ -1486,29 +1486,20 @@
   },
   {
     "date": "15/06/2026",
-    "heure": "13:32:18",
-    "utilisateur": "damien.marill",
+    "heure": "13:32:20",
+    "utilisateur": "chrysta.pelissier",
     "type": "Répartition",
-    "description": "S5 dev / SAÉ 5D.02 | SAE Management / enseignant",
-    "prev": "PIEDEVACHE Magalie",
-    "next": ""
+    "description": "S1 / R1.04 | Culture numérique / sous-groupe 1 / enseignant",
+    "prev": "",
+    "next": "THEROND Emmanuel"
   },
   {
     "date": "15/06/2026",
-    "heure": "13:32:30",
-    "utilisateur": "damien.marill",
+    "heure": "13:32:44",
+    "utilisateur": "chrysta.pelissier",
     "type": "Répartition",
-    "description": "S5 dev / SAÉ 5D.02 | SAE Management / td",
-    "prev": "6",
-    "next": "0"
-  },
-  {
-    "date": "15/06/2026",
-    "heure": "13:32:40",
-    "utilisateur": "damien.marill",
-    "type": "Répartition",
-    "description": "S5 dev / SAÉ 5D.01 | Développer pour le web / enseignant",
-    "prev": "MARILL Damien",
-    "next": "PIEDEVACHE Magalie"
+    "description": "S1 / R1.05 | Stratégies de communication et marketing / sous-groupe 1 / enseignant",
+    "prev": "",
+    "next": "THEROND Emmanuel"
   }
 ]
