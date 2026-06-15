@@ -44,16 +44,31 @@
             />
           </div>
 
-          <div class="fg">
-            <label class="flbl" for="groupe">Votre parcours *</label>
-            <select id="groupe" name="groupe" class="finput" required>
-              <option value="">Sélectionnez un parcours…</option>
-              <option value="MMI1">MMI1</option>
-              <option value="MMI2 Créa">MMI2 Créa</option>
-              <option value="MMI2 Dev">MMI2 Dev</option>
-              <option value="MMI3 Créa">MMI3 Créa</option>
-              <option value="MMI3 Dev">MMI3 Dev</option>
-            </select>
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem">
+            <div class="fg" style="margin-bottom:0">
+              <label class="flbl" for="groupe">Votre parcours *</label>
+              <select id="groupe" name="groupe" class="finput" required>
+                <option value="">Sélectionnez un parcours…</option>
+                <option value="MMI1">MMI1</option>
+                <option value="MMI2 Créa">MMI2 Créa</option>
+                <option value="MMI2 Dev">MMI2 Dev</option>
+                <option value="MMI3 Créa">MMI3 Créa</option>
+                <option value="MMI3 Dev">MMI3 Dev</option>
+              </select>
+            </div>
+            <div class="fg" style="margin-bottom:0">
+              <label class="flbl" for="groupe_cours">Groupe *</label>
+              <select id="groupe_cours" name="groupe_cours" class="finput" required>
+                <option value="">Sélectionnez un groupe…</option>
+                <option value="CM">CM</option>
+                <option value="TDA">TDA</option>
+                <option value="TDB">TDB</option>
+                <option value="TPA1">TPA1</option>
+                <option value="TPA2">TPA2</option>
+                <option value="TPB1">TPB1</option>
+                <option value="TPB2">TPB2</option>
+              </select>
+            </div>
           </div>
 
           <div class="fg">
