@@ -1762,5 +1762,14 @@
     "description": "S2 / R2.09 | Culture artistique / sous-groupe 2 / enseignant",
     "prev": "",
     "next": "THEROND Emmanuel"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "13:49:49",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S2 / R2.12 | Intégration / sous-groupe 1 / enseignant",
+    "prev": "THEROND Emmanuel",
+    "next": "DI PIERRO Davide"
   }
 ]
