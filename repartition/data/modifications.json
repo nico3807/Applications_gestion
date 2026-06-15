@@ -565,5 +565,14 @@
     "description": "S5 dev / R5.DWeb-DI.06 | Développement back avancé / enseignant",
     "prev": "",
     "next": "MARILL Damien"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "10:16:04",
+    "utilisateur": "damien.marill",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.05 | Développement front avancé / td",
+    "prev": "30",
+    "next": "20"
   }
 ]
