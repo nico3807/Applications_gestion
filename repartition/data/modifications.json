@@ -2113,5 +2113,32 @@
     "description": "Ajout",
     "prev": "—",
     "next": "BOYER Tom"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "15:41:49",
+    "utilisateur": "nicolas.maurin",
+    "type": "SAÉ",
+    "description": "Suppression — S5 dev",
+    "prev": "SAÉ 5D.02 | SAE Management",
+    "next": "—"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "15:41:53",
+    "utilisateur": "nicolas.maurin",
+    "type": "SAÉ",
+    "description": "Suppression — S5 dev",
+    "prev": "SAÉ 5D.03 | Concevoir un dispositif interactif",
+    "next": "—"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "15:41:57",
+    "utilisateur": "nicolas.maurin",
+    "type": "SAÉ",
+    "description": "Suppression — S5 dev",
+    "prev": "SAÉ 5D.04 | Integration d'un LLM",
+    "next": "—"
   }
 ]
