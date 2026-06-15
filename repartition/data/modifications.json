@@ -1789,5 +1789,14 @@
     "description": "S2 / R2.13 | Développement Web / sous-groupe 1 / enseignant",
     "prev": "ESCAIG Sylvie",
     "next": "MAURIN Nicolas"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "13:52:04",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S2 / R2.13 | Développement Web / sous-groupe 2 / enseignant",
+    "prev": "",
+    "next": "DI PIERRO Davide"
   }
 ]
