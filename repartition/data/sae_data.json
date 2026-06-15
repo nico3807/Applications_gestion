@@ -249,7 +249,8 @@
           "R4.DWeb-DI.07 | Développement back",
           "R4.DWeb-DI.08 | Déploiement de services"
         ],
-        "responsable": "DARTIES Benoit"
+        "responsable": "DARTIES Benoit",
+        "intitule": "Développer pour le Web"
       },
       {
         "code": "SAÉ 4.DWeb-DI.02 | Concevoir un dispositif interactif",
@@ -259,25 +260,22 @@
           "R4.DWeb-DI.05 | Création et design interactif",
           "R4.DWeb-DI.06 | Développement front"
         ],
-        "responsable": "MAURIN Nicolas"
-      },
-      {
-        "code": "SAÉ 4.DWeb-DI.04 | Apprentis : Interface, contenus et visualisation",
-        "competence": "",
-        "ressources": [],
-        "responsable": ""
+        "responsable": "MAURIN Nicolas",
+        "intitule": "Concevoir un dispositif interactif"
       },
       {
         "code": "SAÉ 4.98 | Hackathon",
         "competence": "",
         "ressources": [],
-        "responsable": ""
+        "responsable": "",
+        "intitule": "Hackathon"
       },
       {
         "code": "SAÉ 4.99 | Marathon MMI",
         "competence": "",
         "ressources": [],
-        "responsable": ""
+        "responsable": "",
+        "intitule": "Marathon MMI"
       }
     ],
     "S5 crea": [
