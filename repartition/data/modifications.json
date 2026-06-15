@@ -925,5 +925,14 @@
     "description": "S5 dev / R5.DWeb-DI.07 | Dispositifs interactifs / sous-groupe 2 / tp",
     "prev": "0",
     "next": "6"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "12:17:03",
+    "utilisateur": "damien.marill",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.07 | Dispositifs interactifs / td",
+    "prev": "39",
+    "next": "30"
   }
 ]
