@@ -1486,65 +1486,38 @@
   },
   {
     "date": "15/06/2026",
-    "heure": "13:32:18",
-    "utilisateur": "damien.marill",
+    "heure": "13:32:20",
+    "utilisateur": "chrysta.pelissier",
     "type": "Répartition",
-    "description": "S5 dev / SAÉ 5D.02 | SAE Management / enseignant",
-    "prev": "PIEDEVACHE Magalie",
-    "next": ""
-  },
-  {
-    "date": "15/06/2026",
-    "heure": "13:32:30",
-    "utilisateur": "damien.marill",
-    "type": "Répartition",
-    "description": "S5 dev / SAÉ 5D.02 | SAE Management / td",
-    "prev": "6",
-    "next": "0"
-  },
-  {
-    "date": "15/06/2026",
-    "heure": "13:32:40",
-    "utilisateur": "damien.marill",
-    "type": "Répartition",
-    "description": "S5 dev / SAÉ 5D.01 | Développer pour le web / enseignant",
-    "prev": "MARILL Damien",
-    "next": "PIEDEVACHE Magalie"
-  },
-  {
-    "date": "15/06/2026",
-    "heure": "13:32:46",
-    "utilisateur": "damien.marill",
-    "type": "Répartition",
-    "description": "S5 dev / SAÉ 5D.01 | Développer pour le web / td",
-    "prev": "27",
-    "next": "6"
-  },
-  {
-    "date": "15/06/2026",
-    "heure": "13:33:11",
-    "utilisateur": "damien.marill",
-    "type": "Répartition",
-    "description": "S5 dev / SAÉ 5D.01 | Développer pour le web / td",
-    "prev": "6",
-    "next": "12"
-  },
-  {
-    "date": "15/06/2026",
-    "heure": "13:33:35",
-    "utilisateur": "damien.marill",
-    "type": "Répartition",
-    "description": "S5 dev / SAÉ 5D.01 | Développer pour le web / sous-groupe 2 / enseignant",
+    "description": "S1 / R1.04 | Culture numérique / sous-groupe 1 / enseignant",
     "prev": "",
-    "next": "MARILL Damien"
+    "next": "THEROND Emmanuel"
   },
   {
     "date": "15/06/2026",
-    "heure": "13:33:44",
-    "utilisateur": "damien.marill",
+    "heure": "13:32:44",
+    "utilisateur": "chrysta.pelissier",
     "type": "Répartition",
-    "description": "S5 dev / SAÉ 5D.01 | Développer pour le web / sous-groupe 3 / enseignant",
+    "description": "S1 / R1.05 | Stratégies de communication et marketing / sous-groupe 1 / enseignant",
     "prev": "",
-    "next": "SURRIBAS Caroline"
+    "next": "THEROND Emmanuel"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "13:33:28",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S1 / R1.06 | Expression, communication et rhétorique / enseignant",
+    "prev": "RAMPON Candice",
+    "next": "DE VELDER Sophie"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "13:33:52",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S1 / R1.06 | Expression, communication et rhétorique / sous-groupe 1 / enseignant",
+    "prev": "KLAIBI Noel",
+    "next": "THEROND Emmanuel"
   }
 ]
