@@ -1942,5 +1942,14 @@
     "description": "S2 / SAÉ 2.99 | Marathon MMI / sous-groupe 4 / enseignant",
     "prev": "",
     "next": "BERNARD William"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "14:00:58",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S3 / R3.01 | Anglais / enseignant",
+    "prev": "BERNARD William",
+    "next": ""
   }
 ]
