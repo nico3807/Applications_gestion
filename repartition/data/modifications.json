@@ -1807,5 +1807,14 @@
     "description": "S2 / R2.14 | Système d'information / sous-groupe 1 / enseignant",
     "prev": "",
     "next": "DI PIERRO Davide"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "13:53:29",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S2 / R2.18 | Économie, gestion et droit du numérique / sous-groupe 1 / enseignant",
+    "prev": "",
+    "next": "DE VELDER Sophie"
   }
 ]
