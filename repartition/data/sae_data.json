@@ -264,6 +264,13 @@
         "intitule": "Concevoir un dispositif interactif"
       },
       {
+        "code": "SAÉ 4.DWeb-DI.04 | Apprentis : Interface, contenus et visualisation",
+        "competence": "",
+        "ressources": [],
+        "responsable": "",
+        "intitule": "Apprentis : Interface, contenus et visualisation"
+      },
+      {
         "code": "SAÉ 4.98 | Hackathon",
         "competence": "",
         "ressources": [],
@@ -291,8 +298,19 @@
           "R5.Crea.06 | Création numérique",
           "R5.Crea.07 | Écriture Multimédia et narration"
         ],
-        "responsable": "BLANCO Sandy",
-        "intitule": "Créer par/pour le numérique"
+        "responsable": "BLANCO Sandy"
+      },
+      {
+        "code": "SAÉ 5.Crea.02 | SAE Management",
+        "competence": "",
+        "ressources": [],
+        "responsable": ""
+      },
+      {
+        "code": "SAÉ 5.Crea.03 | SAE Conception d'interface",
+        "competence": "",
+        "ressources": [],
+        "responsable": ""
       }
     ],
     "S5 dev": [
@@ -309,8 +327,25 @@
           "R5.DWeb-DI.07 | Dispositifs interactifs",
           "R5.DWeb-DI.08 | Hébergement et cybersécurité"
         ],
-        "responsable": "",
-        "intitule": "Développer pour le web"
+        "responsable": ""
+      },
+      {
+        "code": "SAÉ 5D.02 | SAE Management",
+        "competence": "",
+        "ressources": [],
+        "responsable": ""
+      },
+      {
+        "code": "SAÉ 5D.03 | Concevoir un dispositif interactif",
+        "competence": "",
+        "ressources": [],
+        "responsable": ""
+      },
+      {
+        "code": "SAÉ 5D.04 | Integration d'un LLM",
+        "competence": "",
+        "ressources": [],
+        "responsable": ""
       }
     ],
     "S6 crea": [
@@ -318,8 +353,7 @@
         "code": "SAÉ 6.Crea.01 | UX / UI avancé",
         "competence": "",
         "ressources": [],
-        "responsable": "THEROND Emmanuel",
-        "intitule": "UX / UI avancé"
+        "responsable": "THEROND Emmanuel"
       }
     ],
     "S6 dev": [
@@ -327,8 +361,7 @@
         "code": "SAÉ 6.dev.01 | Developpement avancé",
         "competence": "",
         "ressources": [],
-        "responsable": "",
-        "intitule": "Developpement avancé"
+        "responsable": ""
       }
     ]
   }
