@@ -64,7 +64,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Construction du corps du message (HTML)
     $s = 'font-family: Arial, sans-serif; font-size: 12pt; color: #222;';
-    $message  = "<div style=\"$s\">";
+    $message  = "<table width=\"100%\" cellpadding=\"0\" cellspacing=\"0\"><tr><td style=\"$s\">";
     $message .= "<p>Une nouvelle demande de modification d'emploi du temps a été soumise.</p>";
     $message .= "<table style=\"border-collapse:collapse; margin-bottom:8px;\">";
     $message .= "<tr><td style=\"padding:3px 16px 3px 0; color:#555;\">Enseignant</td><td><strong>$nom</strong></td></tr>";
@@ -72,17 +72,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $message .= "<tr><td style=\"padding:3px 16px 3px 0; color:#555;\">Ressource / SAE</td><td><strong>$ressource</strong></td></tr>";
     $message .= "</table>";
 
-    $message .= "<div style=\"border:1.5px solid #f59e0b; background:#fffbeb; border-radius:8px; padding:0.6rem 0.75rem; margin-bottom:8px;\">";
-    $message .= "<table style=\"border-collapse:collapse;\">";
+    $message .= "<table width=\"100%\" cellpadding=\"0\" cellspacing=\"0\" style=\"border:1.5px solid #f59e0b; background:#fffbeb; border-radius:8px; margin-bottom:8px;\">";
+    $message .= "<tr><td style=\"padding:8px 12px;\">";
+    $message .= "<table cellpadding=\"0\" cellspacing=\"0\">";
     $message .= "<tr><td style=\"padding:3px 16px 3px 0; color:#555;\">Date du cours à modifier</td><td><strong>$date_fr</strong></td></tr>";
     $message .= "<tr><td style=\"padding:3px 16px 3px 0; color:#555;\">Heure du cours</td><td><strong>$heure_cours</strong></td></tr>";
-    $message .= "</table></div>";
+    $message .= "</table></td></tr></table>";
 
-    $message .= "<div style=\"border:1.5px solid #6ee7b7; background:#f0fdf4; border-radius:8px; padding:0.6rem 0.75rem; margin-bottom:8px;\">";
-    $message .= "<table style=\"border-collapse:collapse;\">";
+    $message .= "<table width=\"100%\" cellpadding=\"0\" cellspacing=\"0\" style=\"border:1.5px solid #6ee7b7; background:#f0fdf4; border-radius:8px; margin-bottom:8px;\">";
+    $message .= "<tr><td style=\"padding:8px 12px;\">";
+    $message .= "<table cellpadding=\"0\" cellspacing=\"0\">";
     $message .= "<tr><td style=\"padding:3px 16px 3px 0; color:#555;\">Nouvelle date souhaitée</td><td><strong>$date_souhaite_fr</strong></td></tr>";
     $message .= "<tr><td style=\"padding:3px 16px 3px 0; color:#555;\">Nouveau créneau souhaité</td><td><strong>$heure_souhaitee</strong></td></tr>";
-    $message .= "</table></div>";
+    $message .= "</table></td></tr></table>";
     $message .= "<p></p><p><strong>Motif :</strong></p><p>" . nl2br($motif) . "</p><p></p>";
 
     if ($is_urgent) {
@@ -90,7 +92,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $message .= "<p></p><p><strong>Justification de l'urgence :</strong></p><p>" . nl2br($justification) . "</p><p></p>";
     }
 
-    $message .= "</div>";
+    $message .= "</td></tr></table>";
 
     // En-têtes de l'email
     $headers  = "From: nicolas.maurin2@gmail.com\r\n";
