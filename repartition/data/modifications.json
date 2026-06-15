@@ -376,5 +376,14 @@
     "description": "S1 / R1.20 | Soutien, remise a niveau / cm",
     "prev": "0.5",
     "next": "0"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "09:08:30",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S4 crea / R4.Crea.03 | Design d'expérience / sous-groupe 1 / enseignant",
+    "prev": "LAGIEWKA Arnaud",
+    "next": "THEROND Emmanuel"
   }
 ]
