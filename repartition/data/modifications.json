@@ -493,5 +493,14 @@
     "description": "S6 dev / R6.DWeb-DI.02 | Développement Web et dispositif interactif / sous-groupe 2 / enseignant",
     "prev": "DARTIES Benoit",
     "next": ""
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "09:44:28",
+    "utilisateur": "damien.marill",
+    "type": "Répartition",
+    "description": "S6 dev / R6.DWeb-DI.03 | Fonctionnement des IA / enseignant",
+    "prev": "MAURIN Nicolas",
+    "next": ""
   }
 ]
