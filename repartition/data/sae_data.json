@@ -291,19 +291,8 @@
           "R5.Crea.06 | Création numérique",
           "R5.Crea.07 | Écriture Multimédia et narration"
         ],
-        "responsable": "BLANCO Sandy"
-      },
-      {
-        "code": "SAÉ 5.Crea.02 | SAE Management",
-        "competence": "",
-        "ressources": [],
-        "responsable": ""
-      },
-      {
-        "code": "SAÉ 5.Crea.03 | SAE Conception d'interface",
-        "competence": "",
-        "ressources": [],
-        "responsable": ""
+        "responsable": "BLANCO Sandy",
+        "intitule": "Créer par/pour le numérique"
       }
     ],
     "S5 dev": [
