@@ -1193,13 +1193,13 @@
       "enseignant": "DI PIERRO Davide",
       "cm": 0,
       "td": 30,
-      "tp": 12,
+      "tp": 9,
       "subrows": [
         {
           "enseignant": "",
           "cm": 0,
           "td": 0,
-          "tp": 0
+          "tp": 12
         },
         {
           "enseignant": "AZE Jérome",
