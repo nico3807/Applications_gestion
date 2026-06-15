@@ -2347,5 +2347,113 @@
     "description": "S5 dev / R5.DWeb-DI.06 | Développement back avancé / sous-groupe 1 / td",
     "prev": "18.5",
     "next": "18"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "14:05:27",
+    "utilisateur": "damien.marill",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.07 | Dispositifs interactifs / td",
+    "prev": "15",
+    "next": "15.5"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "14:05:27",
+    "utilisateur": "damien.marill",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.07 | Dispositifs interactifs / td",
+    "prev": "15.5",
+    "next": "16"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "14:05:27",
+    "utilisateur": "damien.marill",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.07 | Dispositifs interactifs / td",
+    "prev": "16",
+    "next": "16.5"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "14:05:27",
+    "utilisateur": "damien.marill",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.07 | Dispositifs interactifs / td",
+    "prev": "16.5",
+    "next": "17"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "14:05:28",
+    "utilisateur": "damien.marill",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.07 | Dispositifs interactifs / td",
+    "prev": "17",
+    "next": "17.5"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "14:05:28",
+    "utilisateur": "damien.marill",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.07 | Dispositifs interactifs / td",
+    "prev": "17.5",
+    "next": "18"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "14:05:30",
+    "utilisateur": "damien.marill",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.07 | Dispositifs interactifs / sous-groupe 1 / td",
+    "prev": "15",
+    "next": "14.5"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "14:05:30",
+    "utilisateur": "damien.marill",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.07 | Dispositifs interactifs / sous-groupe 1 / td",
+    "prev": "14.5",
+    "next": "14"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "14:05:30",
+    "utilisateur": "damien.marill",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.07 | Dispositifs interactifs / sous-groupe 1 / td",
+    "prev": "14",
+    "next": "13.5"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "14:05:31",
+    "utilisateur": "damien.marill",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.07 | Dispositifs interactifs / sous-groupe 1 / td",
+    "prev": "13.5",
+    "next": "13"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "14:05:31",
+    "utilisateur": "damien.marill",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.07 | Dispositifs interactifs / sous-groupe 1 / td",
+    "prev": "13",
+    "next": "12.5"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "14:05:31",
+    "utilisateur": "damien.marill",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.07 | Dispositifs interactifs / sous-groupe 1 / td",
+    "prev": "12.5",
+    "next": "12"
   }
 ]
