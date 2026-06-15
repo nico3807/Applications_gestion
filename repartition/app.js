@@ -1539,7 +1539,7 @@ window.closeRenameRessourcesModal = function () {
   if (modal) modal.style.display = "none";
 };
 
-window.confirmRenameRessources = function () {
+window.confirmRenameRessources = async function () {
   const modal = document.getElementById("rename-res-modal");
   const sem = modal.dataset.sem;
   const err = document.getElementById("rename-res-err");
@@ -1598,15 +1598,34 @@ window.confirmRenameRessources = function () {
     delete maqSem[r.old];
     delete vhnSem[r.old];
   });
+  let saeDirty = false;
   saved.forEach((r) => {
     if (r.aff !== undefined) affSem[r.new] = r.aff;
     if (r.maq !== undefined) maqSem[r.new] = r.maq;
     if (r.vhn !== undefined) vhnSem[r.new] = r.vhn;
+    const saeList = APP_DATA.sae?.sae?.[sem];
+    if (saeList) {
+      const saeEntry = saeList.find((s) => s.code === r.old);
+      if (saeEntry) { saeEntry.code = r.new; saeDirty = true; }
+    }
     _logMod("Maquette", `Renommage — ${sem}`, r.old, r.new);
   });
 
   closeRenameRessourcesModal();
   renderView();
+
+  if (!isGHConfigured()) return;
+  try {
+    await _flushMods();
+    await saveFileGH("affectations.json", APP_DATA.affectations, "Update affectations.json via Web UI");
+    await saveFileGH("maquette_overrides.json", APP_DATA.maquette_overrides, "Update maquette_overrides.json via Web UI");
+    if (saeDirty) {
+      await saveFileGH("sae_data.json", APP_DATA.sae, "Update sae_data.json via Web UI");
+    }
+    showToast("Renommage sauvegardé sur GitHub !");
+  } catch (e) {
+    alert("Erreur lors de la sauvegarde : " + e.message);
+  }
 };
 
 window.deleteRessourceMaq = function (sem, res) {
