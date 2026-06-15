@@ -2176,5 +2176,23 @@
     "description": "Ajout ressource — S5 crea",
     "prev": "—",
     "next": "R5.Crea.03 | Entrepreunariat"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "16:07:21",
+    "utilisateur": "nicolas.maurin",
+    "type": "Maquette",
+    "description": "Renommage — S5 crea",
+    "prev": "R5 Crea.03 | Entrepreunariat",
+    "next": "R5.Crea.03 | Entrepreunariat"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "16:07:21",
+    "utilisateur": "nicolas.maurin",
+    "type": "Maquette",
+    "description": "Renommage — S5 crea",
+    "prev": "R5 Crea.06 | Création numérique",
+    "next": "R5.Crea.06 | Création numérique"
   }
 ]
