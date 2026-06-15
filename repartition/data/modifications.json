@@ -2167,5 +2167,14 @@
     "description": "Suppression — S4 dev",
     "prev": "SAÉ 4.DWeb-DI.04 | Apprentis : Interface, contenus et visualisation",
     "next": "—"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "15:57:20",
+    "utilisateur": "nicolas.maurin",
+    "type": "Maquette",
+    "description": "Ajout ressource — S5 crea",
+    "prev": "—",
+    "next": "R5.Crea.03 | Entrepreunariat"
   }
 ]
