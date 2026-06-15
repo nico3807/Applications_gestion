@@ -1194,7 +1194,14 @@
       "cm": 0,
       "td": 39,
       "tp": 12,
-      "subrows": [],
+      "subrows": [
+        {
+          "enseignant": "",
+          "cm": 0,
+          "td": 0,
+          "tp": 0
+        }
+      ],
       "responsable": ""
     },
     "R5.DWeb-DI.08 | Hébergement et cybersécurité": {
