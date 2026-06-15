@@ -497,10 +497,8 @@ const _PRINTABLE_VIEWS = new Set([
 /* Priorité de tri des ressources (module-level, réutilisée dans export et maquette) */
 function _resPrio(r) {
   const l = r.toLowerCase();
-  if (l.includes("hackathon")) return 4;
-  if (l.includes("marathon")) return 3;
   if (l.includes("portfolio")) return 2;
-  if (l.includes("saé")) return 1;
+  if (l.includes("saé") || l.includes("hackathon") || l.includes("marathon")) return 1;
   return 0;
 }
 
@@ -941,14 +939,11 @@ function renderSemestre(root, sem) {
     </thead>
     <tbody>`;
 
-  /* Tri des ressources : Hackathon/Marathon en avant-dernier, Portfolio en dernier */
-  const _rowPrio = (r) => {
-    const l = r.toLowerCase();
-    if (l.includes("portfolio")) return 2;
-    if (l.includes("hackathon") || l.includes("marathon")) return 1;
-    return 0;
-  };
-  const _affKeys = Object.keys(aff).sort((a, b) => _rowPrio(a) - _rowPrio(b));
+  /* Tri : Ressources (R*) d'abord, SAÉs ensuite, Portfolio en dernier — alphabétique dans chaque groupe */
+  const _affKeys = Object.keys(aff).sort((a, b) => {
+    const d = _resPrio(a) - _resPrio(b);
+    return d !== 0 ? d : a.localeCompare(b, "fr");
+  });
 
   /* Volume horaire à financer = total/étudiant pondéré par des coefficients
      qui dépendent du semestre (S1-S3 vs S4-S6 crea/dev). */
