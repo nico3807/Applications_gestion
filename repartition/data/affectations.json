@@ -639,7 +639,14 @@
       "cm": 0,
       "td": 4.5,
       "tp": 6,
-      "subrows": [],
+      "subrows": [
+        {
+          "enseignant": "",
+          "cm": 0,
+          "td": 0,
+          "tp": 0
+        }
+      ],
       "responsable": ""
     },
     "R2.15 | Hébergement": {
