@@ -1933,5 +1933,14 @@
     "description": "S2 / SAÉ 2.99 | Marathon MMI / sous-groupe 3 / enseignant",
     "prev": "",
     "next": "THEROND Emmanuel"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "14:00:20",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S2 / SAÉ 2.99 | Marathon MMI / sous-groupe 4 / enseignant",
+    "prev": "",
+    "next": "BERNARD William"
   }
 ]
