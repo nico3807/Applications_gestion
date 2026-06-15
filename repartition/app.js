@@ -497,8 +497,10 @@ const _PRINTABLE_VIEWS = new Set([
 /* Priorité de tri des ressources (module-level, réutilisée dans export et maquette) */
 function _resPrio(r) {
   const l = r.toLowerCase();
-  if (l.includes("portfolio")) return 2;
-  if (l.includes("saé") || l.includes("hackathon") || l.includes("marathon")) return 1;
+  if (l.includes("portfolio")) return 4;
+  if (l.includes("hackathon")) return 3;
+  if (l.includes("marathon")) return 2;
+  if (l.includes("saé")) return 1;
   return 0;
 }
 
