@@ -54,7 +54,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // --- CONFIGURATION DES EMAILS ---
 
     // Destinataires (les 3 valideurs)
-    $to = "nicolas.maurin1@umontpellier.fr, sylvie.escaig@umontpellier.fr, william.bernard@umontpellier.fr";
+    //$to = "nicolas.maurin1@umontpellier.fr, sylvie.escaig@umontpellier.fr, william.bernard@umontpellier.fr";
+    $to = "nicolas.maurin1@umontpellier.fr";
 
     // Sujet de l'email
     $urgence_tag = $is_urgent ? "[URGENCE] " : "";
