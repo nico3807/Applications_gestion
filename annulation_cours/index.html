@@ -157,11 +157,8 @@
         }
         document.getElementById("app-content").style.display = "";
       }
-      if (AUTH.isAuth()) _setup();
-      else {
-        window.addEventListener("auth-success", _setup, { once: true });
-        AUTH.injectUI();
-      }
+      window.addEventListener("auth-success", _setup, { once: true });
+      AUTH.injectUI();
     </script>
     <script src="script.js"></script>
   </body>

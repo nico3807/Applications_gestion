@@ -242,19 +242,20 @@ window.AUTH = {
 
   /* ── Interface utilisateur ───────────────────────────────────────────────── */
   async injectUI() {
-    /* 1. Vérifier la session PHP si sessionStorage vide */
-    if (!_sess()) {
-      try {
-        const resp = await fetch("/api/me.php", { credentials: "include" });
-        if (resp.ok) {
-          const data = await resp.json();
-          if (data.authenticated) {
-            const { authenticated, ...user } = data;
-            sessionStorage.setItem(_SK, JSON.stringify(user));
-          }
+    /* 1. Toujours vérifier la session PHP pour avoir les permissions à jour */
+    try {
+      const resp = await fetch("/api/me.php", { credentials: "include" });
+      if (resp.ok) {
+        const data = await resp.json();
+        if (data.authenticated) {
+          const { authenticated, ...user } = data;
+          sessionStorage.setItem(_SK, JSON.stringify(user));
+        } else {
+          sessionStorage.removeItem(_SK);
         }
-      } catch {}
-    }
+      }
+    } catch {}
+
 
     /* 2. Déjà authentifié → afficher l'app et charger le cache utilisateurs */
     if (_sess()) {
