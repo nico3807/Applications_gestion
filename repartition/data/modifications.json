@@ -2284,5 +2284,14 @@
     "description": "Suppression — S5 crea",
     "prev": "SAÉ 5.Crea.02 | SAE Management",
     "next": "—"
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "17:05:20",
+    "utilisateur": "nicolas.maurin",
+    "type": "SAÉ",
+    "description": "Suppression — S5 crea",
+    "prev": "SAÉ 5.Crea.03 | SAE Conception d'interface",
+    "next": "—"
   }
 ]
