@@ -1486,11 +1486,20 @@
   },
   {
     "date": "15/06/2026",
-    "heure": "13:32:20",
-    "utilisateur": "chrysta.pelissier",
+    "heure": "13:32:18",
+    "utilisateur": "damien.marill",
     "type": "Répartition",
-    "description": "S1 / R1.04 | Culture numérique / sous-groupe 1 / enseignant",
-    "prev": "",
-    "next": "THEROND Emmanuel"
+    "description": "S5 dev / SAÉ 5D.02 | SAE Management / enseignant",
+    "prev": "PIEDEVACHE Magalie",
+    "next": ""
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "13:32:30",
+    "utilisateur": "damien.marill",
+    "type": "Répartition",
+    "description": "S5 dev / SAÉ 5D.02 | SAE Management / td",
+    "prev": "6",
+    "next": "0"
   }
 ]
