@@ -1780,5 +1780,14 @@
     "description": "S2 / R2.11 | Gestion de contenus / enseignant",
     "prev": "THEROND Emmanuel",
     "next": ""
+  },
+  {
+    "date": "15/06/2026",
+    "heure": "13:51:41",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S2 / R2.13 | Développement Web / sous-groupe 1 / enseignant",
+    "prev": "ESCAIG Sylvie",
+    "next": "MAURIN Nicolas"
   }
 ]
