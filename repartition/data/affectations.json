@@ -1241,14 +1241,7 @@
       "cm": 0,
       "td": 15,
       "tp": 0,
-      "subrows": [
-        {
-          "enseignant": "DE VELDER Sophie",
-          "cm": 0,
-          "td": 6,
-          "tp": 0
-        }
-      ],
+      "subrows": [],
       "responsable": ""
     },
     "PORTFOLIO Portfolio-Parcours Dev Web": {
