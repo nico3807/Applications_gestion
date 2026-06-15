@@ -1201,14 +1201,7 @@
       "cm": 0,
       "td": 21,
       "tp": 7.5,
-      "subrows": [
-        {
-          "enseignant": "MARILL Damien",
-          "cm": 0,
-          "td": 7.5,
-          "tp": 0
-        }
-      ],
+      "subrows": [],
       "responsable": ""
     },
     "R5.DWeb-DI.09 | Mathématiques avancées, complexité algorithmique": {
