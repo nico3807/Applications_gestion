@@ -1004,6 +1004,14 @@ function _exportServicesXLSX(targetEns) {
   const COL_WIDTHS = [{ wch: 14 }, { wch: 55 }, { wch: 8 }, { wch: 8 }, { wch: 8 }];
   const wb = XLSX.utils.book_new();
 
+  const _SEM_S1S3 = new Set(["S1", "S2", "S3"]);
+  const _semCoeffs = (sem) => {
+    const prefix = (sem.match(/^S\d/) || [""])[0];
+    return _SEM_S1S3.has(prefix)
+      ? { cm: 1.5, td: 2, tp: 4 }
+      : { cm: 1.5, td: 1, tp: 2 };
+  };
+
   sortedEns.forEach((ens) => {
     const rows = par_enseignant[ens] || [];
     let totalCM = 0, totalTD = 0, totalTP = 0;
@@ -1013,7 +1021,10 @@ function _exportServicesXLSX(targetEns) {
     rows.forEach((r, i) => {
       const even = i % 2 === 0;
       const s = mkS(even);
-      totalCM += r.cm; totalTD += r.td; totalTP += r.tp;
+      const c = _semCoeffs(r.semestre);
+      totalCM += r.cm * c.cm;
+      totalTD += r.td * c.td;
+      totalTP += r.tp * c.tp;
       aoa.push([
         _xlsxCell(r.semestre, mkSemStyle(r.semestre, even)),
         _xlsxCell(r.ressource, s),
@@ -1023,14 +1034,14 @@ function _exportServicesXLSX(targetEns) {
       ]);
     });
 
-    /* Ligne vide + ligne TOTAL */
+    /* Ligne vide + ligne TOTAL (valeurs pondérées en EqTD) */
     aoa.push(Array(5).fill(_xlsxCell("", S_BLANK)));
     aoa.push([
       _xlsxCell("", S_TOT_LBL),
-      _xlsxCell("TOTAL", S_TOT_LBL),
-      _xlsxCell(totalCM, S_TOT_NUM),
-      _xlsxCell(totalTD, S_TOT_NUM),
-      _xlsxCell(totalTP, S_TOT_NUM),
+      _xlsxCell("TOTAL EqTD", S_TOT_LBL),
+      _xlsxCell(Math.round(totalCM * 10) / 10, S_TOT_NUM),
+      _xlsxCell(Math.round(totalTD * 10) / 10, S_TOT_NUM),
+      _xlsxCell(Math.round(totalTP * 10) / 10, S_TOT_NUM),
     ]);
 
     const ws = XLSX.utils.aoa_to_sheet(aoa, { cellStyles: true });
