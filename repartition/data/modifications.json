@@ -2446,5 +2446,14 @@
     "description": "Renommage — S2",
     "prev": "R2.02 | Anglais renforcé",
     "next": "R2.02 | Espagnol - Anglais renforcé"
+  },
+  {
+    "date": "16/06/2026",
+    "heure": "13:35:56",
+    "utilisateur": "nicolas.maurin",
+    "type": "Maquette",
+    "description": "Renommage — S1",
+    "prev": "R1.02 | Espagnol (LV2)",
+    "next": "R1.02 | Anglais renforcé - Espagnol"
   }
 ]
