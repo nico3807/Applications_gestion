@@ -10,11 +10,6 @@
       "td_final": 4.5,
       "tp_final": 9
     },
-    "R1.02 | Espagnol (LV2)": {
-      "cm_final": 1.5,
-      "td_final": 4.5,
-      "tp_final": 4.5
-    },
     "PORTFOLIO | Portfolio": {
       "cm_final": 0,
       "td_final": 7.5,
@@ -124,6 +119,11 @@
       "cm_final": 1.5,
       "td_final": 18,
       "tp_final": 0
+    },
+    "R1.02 | Anglais renforcé - Espagnol": {
+      "cm_final": 1.5,
+      "td_final": 4.5,
+      "tp_final": 4.5
     }
   },
   "S2": {
