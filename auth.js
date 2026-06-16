@@ -520,7 +520,7 @@ window.AUTH = {
 
   applyPermissions() {
     const navMods    = document.getElementById("nav-modifications");
-    if (navMods)    navMods.style.display    = (this.isAdmin() || this.hasRwApp("journal")) ? "" : "none";
+    if (navMods)    navMods.style.display    = (this.isAdmin() || this.hasRwApp("journal") || this.canAccess("repartition")) ? "" : "none";
     const navPilotage = document.getElementById("nav-pilotage");
     if (navPilotage) navPilotage.style.display = this.isAdmin() ? "" : "none";
     const navSae     = document.getElementById("nav-sae");
