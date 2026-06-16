@@ -264,11 +264,6 @@
       "td_final": 4.5,
       "tp_final": 9
     },
-    "R3.02 | Espagnol (LV2)": {
-      "cm_final": 0,
-      "td_final": 4.5,
-      "tp_final": 4.5
-    },
     "R3.03 | Design d'expérience": {
       "cm_final": 3,
       "td_final": 4.5,
@@ -368,6 +363,11 @@
       "cm_final": 0,
       "td_final": 7.5,
       "tp_final": 0
+    },
+    "R3.02 | Anglais renforcé - Espagnol": {
+      "cm_final": 0,
+      "td_final": 4.5,
+      "tp_final": 4.5
     }
   },
   "S4 dev": {
