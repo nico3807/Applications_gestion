@@ -699,6 +699,9 @@ window.exportXLSX = function () {
 
     XLSX.writeFile(wbSae, `sae_${safeSem}.xlsx`);
     return;
+  } else if (currentView === "services") {
+    openServicesExportModal();
+    return;
   } else {
     return;
   }
@@ -861,6 +864,110 @@ function _exportXLSXParEnseignant(sem, safeSem) {
   const wb = XLSX.utils.book_new();
   XLSX.utils.book_append_sheet(wb, ws, (sem || "Par enseignant").substring(0, 31));
   XLSX.writeFile(wb, `repartition_enseignants_${safeSem}.xlsx`);
+}
+
+/* ── Export XLSX — Services des enseignants ─────────────────────────────── */
+function _buildServicesData() {
+  const par_enseignant = {};
+  SEMESTRES.forEach((sem) => {
+    const sem_data = APP_DATA.affectations[sem] || {};
+    Object.keys(sem_data).forEach((res) => {
+      const data = sem_data[res];
+      const entries = [
+        { enseignant: data.enseignant, cm: data.cm, td: data.td, tp: data.tp },
+        ...(data.subrows || []).map((s) => ({ enseignant: s.enseignant, cm: s.cm, td: s.td, tp: s.tp })),
+      ];
+      entries.forEach(({ enseignant, cm, td, tp }) => {
+        const ens = (enseignant || "").trim();
+        if (!ens) return;
+        const cmV = parseFloat(cm) || 0;
+        const tdV = parseFloat(td) || 0;
+        const tpV = parseFloat(tp) || 0;
+        if (cmV === 0 && tdV === 0 && tpV === 0) return;
+        if (!par_enseignant[ens]) par_enseignant[ens] = [];
+        par_enseignant[ens].push({ semestre: sem, ressource: res, cm: cmV, td: tdV, tp: tpV });
+      });
+    });
+  });
+  return par_enseignant;
+}
+
+function openServicesExportModal() {
+  const par_enseignant = _buildServicesData();
+  const sortedEns = Object.keys(par_enseignant).sort((a, b) => a.localeCompare(b, "fr"));
+
+  let modal = document.getElementById("services-export-modal");
+  if (modal) modal.remove();
+
+  modal = document.createElement("div");
+  modal.id = "services-export-modal";
+  modal.className = "modal-overlay";
+  const ensOptions = sortedEns.map((e) => `<option value="${esc(e)}">${esc(e)}</option>`).join("");
+  modal.innerHTML = `
+    <div class="modal-box">
+      <h3>Exporter les services en XLSX</h3>
+      <p class="modal-sub">Choisissez le périmètre d'export</p>
+      <div class="modal-fields" style="gap:.5rem;">
+        <label class="modal-field-label" style="display:flex;align-items:flex-start;gap:.75rem;cursor:pointer;padding:.6rem .5rem;border-radius:6px;">
+          <input type="radio" name="svc-export-type" value="tous" checked style="margin-top:3px;flex-shrink:0;"
+            onchange="document.getElementById('svc-ens-select').style.display='none'">
+          <span>
+            <strong>Tous les enseignants</strong>
+            <span class="modal-hint" style="display:block;margin-top:2px;">Un onglet par enseignant</span>
+          </span>
+        </label>
+        <label class="modal-field-label" style="display:flex;align-items:flex-start;gap:.75rem;cursor:pointer;padding:.6rem .5rem;border-radius:6px;">
+          <input type="radio" name="svc-export-type" value="un" style="margin-top:3px;flex-shrink:0;"
+            onchange="document.getElementById('svc-ens-select').style.display=''">
+          <span>
+            <strong>Un enseignant</strong>
+            <span class="modal-hint" style="display:block;margin-top:2px;">Export individuel</span>
+          </span>
+        </label>
+        <select id="svc-ens-select" class="input-editable" style="display:none;margin-top:.4rem;width:100%;">
+          ${ensOptions}
+        </select>
+      </div>
+      <div class="modal-actions">
+        <button class="btn-cancel" onclick="document.getElementById('services-export-modal').remove()">Annuler</button>
+        <button class="btn-save" onclick="_confirmServicesExport()">Exporter</button>
+      </div>
+    </div>`;
+  modal.addEventListener("click", (e) => { if (e.target === modal) modal.remove(); });
+  document.body.appendChild(modal);
+  modal.style.display = "flex";
+}
+
+window._confirmServicesExport = function () {
+  const modal = document.getElementById("services-export-modal");
+  const type  = modal.querySelector("input[name='svc-export-type']:checked")?.value || "tous";
+  const ens   = type === "un" ? document.getElementById("svc-ens-select").value : null;
+  modal.remove();
+  _exportServicesXLSX(ens);
+};
+
+function _exportServicesXLSX(targetEns) {
+  if (typeof XLSX === "undefined") { alert("Bibliothèque XLSX non chargée."); return; }
+
+  const par_enseignant = _buildServicesData();
+  const sortedEns = targetEns
+    ? [targetEns]
+    : Object.keys(par_enseignant).sort((a, b) => a.localeCompare(b, "fr"));
+
+  const wb = XLSX.utils.book_new();
+  const COL_WIDTHS = [{ wch: 14 }, { wch: 55 }, { wch: 8 }, { wch: 8 }, { wch: 8 }];
+  const HEADERS = ["Semestre", "Ressource / SAÉ", "CM", "TD", "TP"];
+
+  sortedEns.forEach((ens) => {
+    const rows = (par_enseignant[ens] || []).map((r) => [r.semestre, r.ressource, r.cm, r.td, r.tp]);
+    const ws = _xlsxBuildSheet(HEADERS, rows, COL_WIDTHS);
+    XLSX.utils.book_append_sheet(wb, ws, ens.substring(0, 31));
+  });
+
+  const filename = targetEns
+    ? `service_${targetEns.replace(/[\s.]/g, "_")}.xlsx`
+    : "services_enseignants.xlsx";
+  XLSX.writeFile(wb, filename);
 }
 
 /* ── Tooltip Total / étudiant ────────────────────────────────────────────── */
