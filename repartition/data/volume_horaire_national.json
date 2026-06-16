@@ -310,12 +310,6 @@
       "adapt_locale": 0,
       "dont_tp_al": 0
     },
-    "R3.02 | Espagnol (LV2)": {
-      "vol_hn": 10,
-      "dont_tp_hn": 5,
-      "adapt_locale": 0,
-      "dont_tp_al": 0
-    },
     "R3.03 | Design d'expérience": {
       "vol_hn": 15,
       "dont_tp_hn": 5,
@@ -433,6 +427,12 @@
     "PORTFOLIO | Portfolio-Parcours Dev": {
       "vol_hn": 0,
       "dont_tp_hn": 0,
+      "adapt_locale": 0,
+      "dont_tp_al": 0
+    },
+    "R3.02 | Anglais renforcé - Espagnol": {
+      "vol_hn": 10,
+      "dont_tp_hn": 5,
       "adapt_locale": 0,
       "dont_tp_al": 0
     }
