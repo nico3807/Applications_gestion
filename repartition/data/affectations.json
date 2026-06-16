@@ -464,21 +464,6 @@
       "subrows": [],
       "responsable": "BERNARD William"
     },
-    "R2.02 | Anglais renforcé": {
-      "enseignant": "BARON Mathilde",
-      "cm": 0,
-      "td": 4.5,
-      "tp": 4.5,
-      "subrows": [
-        {
-          "enseignant": "BERNARD William",
-          "cm": 0,
-          "td": 4.5,
-          "tp": 4.5
-        }
-      ],
-      "responsable": "BERNARD William"
-    },
     "R2.03 | Ergonomie et Accessibilité": {
       "enseignant": "PELISSIER Chrysta",
       "cm": 0,
@@ -886,6 +871,21 @@
         }
       ],
       "responsable": ""
+    },
+    "R2.02 | Espagnol - Anglais renforcé": {
+      "enseignant": "BARON Mathilde",
+      "cm": 0,
+      "td": 4.5,
+      "tp": 4.5,
+      "subrows": [
+        {
+          "enseignant": "BERNARD William",
+          "cm": 0,
+          "td": 4.5,
+          "tp": 4.5
+        }
+      ],
+      "responsable": "BERNARD William"
     }
   },
   "S4 crea": {
