@@ -12,12 +12,6 @@
       "adapt_locale": 0,
       "dont_tp_al": 0
     },
-    "R1.02 | Espagnol (LV2)": {
-      "vol_hn": 10,
-      "dont_tp_hn": 5,
-      "adapt_locale": 0.5,
-      "dont_tp_al": 0
-    },
     "PORTFOLIO | Portfolio": {
       "vol_hn": 0,
       "dont_tp_hn": 0,
@@ -148,6 +142,12 @@
       "vol_hn": 0,
       "dont_tp_hn": 0,
       "adapt_locale": 19.5,
+      "dont_tp_al": 0
+    },
+    "R1.02 | Anglais renforcé - Espagnol": {
+      "vol_hn": 10,
+      "dont_tp_hn": 5,
+      "adapt_locale": 0.5,
       "dont_tp_al": 0
     }
   },
