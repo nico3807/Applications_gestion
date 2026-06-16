@@ -1558,14 +1558,6 @@
       "subrows": [],
       "responsable": "BERNARD William"
     },
-    "R3.02 | Espagnol (LV2)": {
-      "enseignant": "CALLET Caroline",
-      "cm": 0,
-      "td": 4.5,
-      "tp": 4.5,
-      "subrows": [],
-      "responsable": ""
-    },
     "R3.03 | Design d'expérience": {
       "enseignant": "RAMPON Candice",
       "cm": 3,
@@ -1909,6 +1901,14 @@
           "tp": 0
         }
       ],
+      "responsable": ""
+    },
+    "R3.02 | Anglais renforcé - Espagnol": {
+      "enseignant": "CALLET Caroline",
+      "cm": 0,
+      "td": 4.5,
+      "tp": 4.5,
+      "subrows": [],
       "responsable": ""
     }
   }
