@@ -16,14 +16,6 @@
       "subrows": [],
       "responsable": ""
     },
-    "R1.02 | Espagnol (LV2)": {
-      "enseignant": "BARON Mathilde",
-      "cm": 1.5,
-      "td": 4.5,
-      "tp": 4.5,
-      "subrows": [],
-      "responsable": ""
-    },
     "PORTFOLIO | Portfolio": {
       "enseignant": "BLANCO Sandy",
       "cm": 0,
@@ -390,6 +382,21 @@
         }
       ],
       "responsable": ""
+    },
+    "R1.02 | Anglais renforcé - Espagnol": {
+      "enseignant": "BARON Mathilde",
+      "cm": 1.5,
+      "td": 4.5,
+      "tp": 4.5,
+      "subrows": [
+        {
+          "enseignant": "BERNARD William",
+          "cm": 0,
+          "td": 0,
+          "tp": 0
+        }
+      ],
+      "responsable": ""
     }
   },
   "S6 crea": {
@@ -462,21 +469,6 @@
       "td": 4.5,
       "tp": 9,
       "subrows": [],
-      "responsable": "BERNARD William"
-    },
-    "R2.02 | Anglais renforcé": {
-      "enseignant": "BARON Mathilde",
-      "cm": 0,
-      "td": 4.5,
-      "tp": 4.5,
-      "subrows": [
-        {
-          "enseignant": "BERNARD William",
-          "cm": 0,
-          "td": 4.5,
-          "tp": 4.5
-        }
-      ],
       "responsable": "BERNARD William"
     },
     "R2.03 | Ergonomie et Accessibilité": {
@@ -886,6 +878,21 @@
         }
       ],
       "responsable": ""
+    },
+    "R2.02 | Anglais renforcé - Espagnol": {
+      "enseignant": "BARON Mathilde",
+      "cm": 0,
+      "td": 4.5,
+      "tp": 4.5,
+      "subrows": [
+        {
+          "enseignant": "BERNARD William",
+          "cm": 0,
+          "td": 4.5,
+          "tp": 4.5
+        }
+      ],
+      "responsable": "BERNARD William"
     }
   },
   "S4 crea": {
@@ -1551,20 +1558,12 @@
   },
   "S3": {
     "R3.01 | Anglais": {
-      "enseignant": "",
+      "enseignant": "BERNARD William",
       "cm": 0,
       "td": 4.5,
       "tp": 9,
       "subrows": [],
       "responsable": "BERNARD William"
-    },
-    "R3.02 | Espagnol (LV2)": {
-      "enseignant": "CALLET Caroline",
-      "cm": 0,
-      "td": 4.5,
-      "tp": 4.5,
-      "subrows": [],
-      "responsable": ""
     },
     "R3.03 | Design d'expérience": {
       "enseignant": "RAMPON Candice",
@@ -1907,6 +1906,21 @@
           "cm": 0,
           "td": 1.5,
           "tp": 0
+        }
+      ],
+      "responsable": ""
+    },
+    "R3.02 | Anglais renforcé - Espagnol": {
+      "enseignant": "CALLET Caroline",
+      "cm": 0,
+      "td": 4.5,
+      "tp": 4.5,
+      "subrows": [
+        {
+          "enseignant": "BERNARD William",
+          "cm": 0,
+          "td": 0,
+          "tp": 4.5
         }
       ],
       "responsable": ""
