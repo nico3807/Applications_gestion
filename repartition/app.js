@@ -954,13 +954,88 @@ function _exportServicesXLSX(targetEns) {
     ? [targetEns]
     : Object.keys(par_enseignant).sort((a, b) => a.localeCompare(b, "fr"));
 
-  const wb = XLSX.utils.book_new();
+  /* Couleurs des tags semestre (identiques au CSS .badge-semestre) */
+  const SEM_COLORS = {
+    S1: { bg: "DBEAFE", fg: "1E40AF" },
+    S2: { bg: "DCFCE7", fg: "166534" },
+    S3: { bg: "FEF9C3", fg: "854D0E" },
+    S4: { bg: "FFE4E6", fg: "9F1239" },
+    S5: { bg: "F3E8FF", fg: "6B21A8" },
+    S6: { bg: "FFEDD5", fg: "9A3412" },
+  };
+
+  const S_HDR = {
+    font:      { name: "Arial", bold: true, sz: 11, color: { rgb: "FFFFFF" } },
+    fill:      { patternType: "solid", fgColor: { rgb: "1E3A5F" } },
+    alignment: { horizontal: "center", vertical: "center", wrapText: true },
+    border:    { bottom: { style: "thin", color: { rgb: "AAAAAA" } } },
+  };
+  const mkS = (even) => ({
+    font:      { name: "Arial", sz: 10 },
+    fill:      { patternType: "solid", fgColor: { rgb: even ? "F0F4FB" : "FFFFFF" } },
+    alignment: { vertical: "top", wrapText: true },
+  });
+  const mkSemStyle = (sem, even) => {
+    const prefix = sem.match(/^S\d/)?.[0] || "";
+    const col = SEM_COLORS[prefix];
+    return col ? {
+      font:      { name: "Arial", sz: 10, bold: true, color: { rgb: col.fg } },
+      fill:      { patternType: "solid", fgColor: { rgb: col.bg } },
+      alignment: { vertical: "top", horizontal: "center" },
+    } : mkS(even);
+  };
+  const S_BLANK = {
+    font: { name: "Arial", sz: 10 },
+    fill: { patternType: "solid", fgColor: { rgb: "FFFFFF" } },
+  };
+  const S_TOT_LBL = {
+    font:      { name: "Arial", sz: 10, bold: true },
+    fill:      { patternType: "solid", fgColor: { rgb: "E8EEF8" } },
+    alignment: { vertical: "top", horizontal: "right" },
+    border:    { top: { style: "thin", color: { rgb: "1E3A5F" } } },
+  };
+  const S_TOT_NUM = {
+    font:      { name: "Arial", sz: 10, bold: true },
+    fill:      { patternType: "solid", fgColor: { rgb: "E8EEF8" } },
+    alignment: { vertical: "top", horizontal: "center" },
+    border:    { top: { style: "thin", color: { rgb: "1E3A5F" } } },
+  };
+
   const COL_WIDTHS = [{ wch: 14 }, { wch: 55 }, { wch: 8 }, { wch: 8 }, { wch: 8 }];
-  const HEADERS = ["Semestre", "Ressource / SAÉ", "CM", "TD", "TP"];
+  const wb = XLSX.utils.book_new();
 
   sortedEns.forEach((ens) => {
-    const rows = (par_enseignant[ens] || []).map((r) => [r.semestre, r.ressource, r.cm, r.td, r.tp]);
-    const ws = _xlsxBuildSheet(HEADERS, rows, COL_WIDTHS);
+    const rows = par_enseignant[ens] || [];
+    let totalCM = 0, totalTD = 0, totalTP = 0;
+
+    const aoa = [["Semestre", "Ressource / SAÉ", "CM", "TD", "TP"].map((h) => _xlsxCell(h, S_HDR))];
+
+    rows.forEach((r, i) => {
+      const even = i % 2 === 0;
+      const s = mkS(even);
+      totalCM += r.cm; totalTD += r.td; totalTP += r.tp;
+      aoa.push([
+        _xlsxCell(r.semestre, mkSemStyle(r.semestre, even)),
+        _xlsxCell(r.ressource, s),
+        _xlsxCell(r.cm, s),
+        _xlsxCell(r.td, s),
+        _xlsxCell(r.tp, s),
+      ]);
+    });
+
+    /* Ligne vide + ligne TOTAL */
+    aoa.push(Array(5).fill(_xlsxCell("", S_BLANK)));
+    aoa.push([
+      _xlsxCell("", S_TOT_LBL),
+      _xlsxCell("TOTAL", S_TOT_LBL),
+      _xlsxCell(totalCM, S_TOT_NUM),
+      _xlsxCell(totalTD, S_TOT_NUM),
+      _xlsxCell(totalTP, S_TOT_NUM),
+    ]);
+
+    const ws = XLSX.utils.aoa_to_sheet(aoa, { cellStyles: true });
+    ws["!cols"]   = COL_WIDTHS;
+    ws["!freeze"] = { xSplit: 0, ySplit: 1 };
     XLSX.utils.book_append_sheet(wb, ws, ens.substring(0, 31));
   });
 
