@@ -16,14 +16,6 @@
       "subrows": [],
       "responsable": ""
     },
-    "R1.02 | Espagnol (LV2)": {
-      "enseignant": "BARON Mathilde",
-      "cm": 1.5,
-      "td": 4.5,
-      "tp": 4.5,
-      "subrows": [],
-      "responsable": ""
-    },
     "PORTFOLIO | Portfolio": {
       "enseignant": "BLANCO Sandy",
       "cm": 0,
@@ -389,6 +381,14 @@
           "tp": 0
         }
       ],
+      "responsable": ""
+    },
+    "R1.02 | Anglais renforcé - Espagnol": {
+      "enseignant": "BARON Mathilde",
+      "cm": 1.5,
+      "td": 4.5,
+      "tp": 4.5,
+      "subrows": [],
       "responsable": ""
     }
   },
