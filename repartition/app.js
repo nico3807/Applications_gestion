@@ -1332,8 +1332,16 @@ function renderSemestre(root, sem) {
         : "select-tit"
       : "";
 
+    /* Tag durée pour les SAÉ */
+    let dureeBadge = "";
+    if (isSae && _saeDurations !== null) {
+      const codePrefix = res.includes(" | ") ? res.substring(0, res.indexOf(" | ")).trim() : res.trim();
+      const nbSem = _saeDurations.get(codePrefix);
+      if (nbSem) dureeBadge = `<span class="badge-duree">Durée : ${nbSem} sem.</span>`;
+    }
+
     html += `<tr class="${rowClass} row-main-resource">
-            <td>${res}</td>
+            <td>${res}${dureeBadge}</td>
             <td><span class="prev-badge">CM: ${prev.cm_final || 0} | TD: ${prev.td_final || 0} | TP: ${prev.tp_final || 0}</span></td>
             <td>
                 <select class="select-enseignant ${selClass}" onchange="updateAff('${sem}', '${res.replace(/'/g, "\\'")}', 'enseignant', this.value)">
@@ -3425,6 +3433,40 @@ function _mergeSaeResponsables(loaded) {
   });
 }
 
+/* ── Durées des SAÉ issues du planning-web ──────────────────────────────── */
+let _saeDurations = null; // Map<codePrefix, nbSemaines>
+
+async function _loadSaeDurations() {
+  if (_saeDurations !== null) return;
+  _saeDurations = new Map();
+  try {
+    const r = await fetch("../planning-web/calendar_data.json");
+    if (!r.ok) return;
+    const cal = await r.json();
+    const weekSets = new Map(); // codePrefix → Set<"mois:semaine">
+    Object.entries(cal).forEach(([monthName, days]) => {
+      let currentWeek = null;
+      days.forEach((day) => {
+        if (day.week !== undefined) currentWeek = day.week;
+        if (currentWeek === null) return;
+        const weekId = `${monthName}:${currentWeek}`;
+        Object.values(day.events || {}).forEach((evtText) => {
+          if (typeof evtText !== "string") return;
+          const lower = evtText.toLowerCase();
+          if (!lower.includes("saé") && !lower.includes("sae")) return;
+          const sepIdx = evtText.indexOf(" | ");
+          const prefix = sepIdx !== -1 ? evtText.substring(0, sepIdx).trim() : evtText.trim();
+          if (!weekSets.has(prefix)) weekSets.set(prefix, new Set());
+          weekSets.get(prefix).add(weekId);
+        });
+      });
+    });
+    weekSets.forEach((weeks, code) => _saeDurations.set(code, weeks.size));
+  } catch (e) {
+    console.warn("Impossible de charger le planning-web pour les durées SAÉ", e);
+  }
+}
+
 async function loadData() {
   const localBase = ARCHIVE_MODE ? "archive_25-26/data" : "data";
   const ghBase = ARCHIVE_MODE ? GH_ARCHIVE_PATH : GH_BASE_PATH;
@@ -3484,6 +3526,9 @@ async function loadData() {
     }
 
   }
+
+  // Charge les durées SAÉ depuis le planning (non-bloquant)
+  _loadSaeDurations();
 
   // Sync souhaits de l'utilisateur courant depuis le serveur vers localStorage
   try {
