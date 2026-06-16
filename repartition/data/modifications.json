@@ -2392,5 +2392,14 @@
     "description": "Suppression — S5 dev",
     "prev": "SAÉ 5D.04 | Integration d'un LLM",
     "next": "—"
+  },
+  {
+    "date": "16/06/2026",
+    "heure": "08:14:38",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S1 / R1.06 | Expression, communication et rhétorique / enseignant",
+    "prev": "DE VELDER Sophie",
+    "next": ""
   }
 ]
