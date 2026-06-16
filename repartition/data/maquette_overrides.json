@@ -132,11 +132,6 @@
       "td_final": 4.5,
       "tp_final": 9
     },
-    "R2.02 | Anglais renforcé": {
-      "cm_final": 0,
-      "td_final": 4.5,
-      "tp_final": 4.5
-    },
     "R2.03 | Ergonomie et Accessibilité": {
       "cm_final": 0,
       "td_final": 4.5,
@@ -256,6 +251,11 @@
       "cm_final": 0,
       "td_final": 7.5,
       "tp_final": 0
+    },
+    "R2.02 | Espagnol - Anglais renforcé": {
+      "cm_final": 0,
+      "td_final": 4.5,
+      "tp_final": 4.5
     }
   },
   "S3": {
