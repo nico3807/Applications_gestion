@@ -2401,5 +2401,14 @@
     "description": "S1 / R1.06 | Expression, communication et rhétorique / enseignant",
     "prev": "DE VELDER Sophie",
     "next": ""
+  },
+  {
+    "date": "16/06/2026",
+    "heure": "08:15:25",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S1 / R1.16 | Économie, gestion et droit du numérique / enseignant",
+    "prev": "",
+    "next": "DE VELDER Sophie"
   }
 ]
