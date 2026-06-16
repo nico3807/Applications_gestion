@@ -2509,5 +2509,14 @@
     "description": "S2 / R2.02 | Anglais renforcé - Espagnol / sous-groupe 1 / td",
     "prev": "4.5",
     "next": "0"
+  },
+  {
+    "date": "16/06/2026",
+    "heure": "13:41:02",
+    "utilisateur": "nicolas.maurin",
+    "type": "Répartition",
+    "description": "S2 / R2.02 | Anglais renforcé - Espagnol / sous-groupe 1 / td",
+    "prev": "0",
+    "next": "4.5"
   }
 ]
