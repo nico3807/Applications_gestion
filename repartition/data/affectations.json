@@ -1817,6 +1817,12 @@
           "cm": 0,
           "td": 1.5,
           "tp": 1.5
+        },
+        {
+          "enseignant": "",
+          "cm": 0,
+          "td": 0,
+          "tp": 0
         }
       ],
       "responsable": ""
