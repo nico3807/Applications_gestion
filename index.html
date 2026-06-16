@@ -384,6 +384,8 @@
           if (document.querySelector(`input[name="${prefix}-perm-${app}"][value="visible"]`)?.checked)
             rwApps.push(app);
         });
+        /* Journal : accordé automatiquement si repartition est en lecture ou écriture */
+        if (!denyApps.includes("repartition")) rwApps.push("journal");
         const maquetteGroups = rwApps.includes("repartition")
           ? [...document.querySelectorAll(`.${prefix}-maquette-grp:checked`)].map(c => c.value)
           : [];
