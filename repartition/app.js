@@ -1337,7 +1337,7 @@ function renderSemestre(root, sem) {
     if (isSae && _saeDurations !== null) {
       const codePrefix = res.includes(" | ") ? res.substring(0, res.indexOf(" | ")).trim() : res.trim();
       const nbSem = _saeDurations.get(codePrefix);
-      if (nbSem) dureeBadge = `<span class="badge-duree">Durée : ${nbSem} sem.</span>`;
+      if (nbSem) dureeBadge = `<span class="badge-duree">Durée : ${nbSem} semaine${nbSem > 1 ? "s" : ""}</span>`;
     }
 
     html += `<tr class="${rowClass} row-main-resource">
