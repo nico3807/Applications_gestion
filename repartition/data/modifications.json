@@ -9457,5 +9457,32 @@
     "description": "S4 crea / R4.Crea.07 | Audiovisuel - Motion design / sous-groupe 1 / td",
     "prev": "4",
     "next": "4.5"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "10:24:32",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S4 crea / R4.Crea.08 | Ecriture multimédia et narration / td",
+    "prev": "9",
+    "next": "9.5"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "10:24:33",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S4 crea / R4.Crea.08 | Ecriture multimédia et narration / td",
+    "prev": "9.5",
+    "next": "10"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "10:24:33",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S4 crea / R4.Crea.08 | Ecriture multimédia et narration / td",
+    "prev": "10",
+    "next": "10.5"
   }
 ]
