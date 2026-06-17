@@ -11113,5 +11113,14 @@
     "description": "S3 / R3.12 | Développement Front et intégration / sous-groupe 1 / td",
     "prev": "7",
     "next": "7.5"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "15:49:37",
+    "utilisateur": "nicolas.maurin",
+    "type": "Répartition",
+    "description": "S3 / R3.13 | Gestion de contenus avancée / Dév Back / sous-groupe 1 / td",
+    "prev": "3",
+    "next": "2.5"
   }
 ]
