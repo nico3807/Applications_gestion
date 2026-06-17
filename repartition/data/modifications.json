@@ -10897,5 +10897,14 @@
     "description": "S5 dev / R5.DWeb-DI.07 | Dispositifs interactifs / td",
     "prev": "15",
     "next": "18"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "15:12:12",
+    "utilisateur": "damien.marill",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.08 | Hébergement et cybersécurité / enseignant",
+    "prev": "WILLEMS Eric",
+    "next": "DI PIERRO Davide"
   }
 ]
