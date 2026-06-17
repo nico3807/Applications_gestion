@@ -4075,7 +4075,9 @@ window.filterAllSouhaitsRecap = function (sem) {
 /* ── Ordre de tri pour les codes souhaits ────────────────────────────────── */
 function _codeTypeOrder(code, saeList) {
   const l = code.toLowerCase();
-  if (l.includes("hackathon") || l.includes("marathon")) return 2;
+  if (l.includes("hackathon")) return 4;
+  if (l.includes("marathon"))  return 3;
+  if (l.includes("portfolio")) return 2;
   if (saeList.find((s) => s.code === code)) return 1;
   return 0;
 }
