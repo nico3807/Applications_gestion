@@ -9016,5 +9016,14 @@
     "description": "S5 crea / R5.Crea.06 | Création numérique / tp",
     "prev": "30",
     "next": "7.5"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "09:48:33",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.06 | Création numérique / sous-groupe 3 / enseignant",
+    "prev": "",
+    "next": "BOYER Tom"
   }
 ]
