@@ -6,6 +6,7 @@ session_set_cookie_params([
     'httponly' => true,
     'samesite' => 'Lax',
 ]);
+ini_set('session.gc_maxlifetime', 28800);
 session_start();
 header('Content-Type: application/json; charset=utf-8');
 

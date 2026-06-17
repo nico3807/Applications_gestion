@@ -17,6 +17,24 @@ function _sess() {
   catch { return null; }
 }
 
+/* ── Surveillance de session (vérification périodique toutes les 5 min) ──────── */
+let _sessionWatchStarted = false;
+function _startSessionWatch() {
+  if (_sessionWatchStarted) return;
+  _sessionWatchStarted = true;
+  setInterval(async () => {
+    try {
+      const resp = await fetch("/api/me.php", { credentials: "include" });
+      if (!resp.ok) return;
+      const data = await resp.json();
+      if (!data.authenticated) {
+        sessionStorage.removeItem(_SK);
+        location.href = "/index.html";
+      }
+    } catch {}
+  }, 5 * 60 * 1000);
+}
+
 /* ── SHA-256 (hachage côté client avant envoi au serveur) ───────────────────── */
 function _sha256Pure(bytes) {
   function w(n) { return n >>> 0; }
@@ -260,6 +278,7 @@ window.AUTH = {
     /* 2. Déjà authentifié → afficher l'app et charger le cache utilisateurs */
     if (_sess()) {
       _loadUsersCache();
+      _startSessionWatch();
       const appRoot = document.getElementById("app-root");
       if (appRoot) appRoot.style.display = "";
       window.dispatchEvent(new Event("auth-success"));
@@ -516,6 +535,7 @@ window.AUTH = {
       <button class="auth-badge-logout" onclick="AUTH.logout()">Déconnexion</button>`;
     const hdr = document.querySelector(".header-inner");
     if (hdr) hdr.appendChild(badge);
+    _startSessionWatch();
   },
 
   applyPermissions() {
