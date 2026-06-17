@@ -2698,5 +2698,14 @@
     "description": "S1 / R1.02 | Anglais renforcé - Espagnol / grpe_tp",
     "prev": "4",
     "next": "3"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "08:02:15",
+    "utilisateur": "nicolas.maurin",
+    "type": "Répartition",
+    "description": "S1 / R1.05 | Stratégies de communication et marketing / grpe_tp",
+    "prev": "",
+    "next": "4"
   }
 ]
