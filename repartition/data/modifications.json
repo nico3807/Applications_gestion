@@ -8872,5 +8872,23 @@
     "description": "S2 / R2.14 | Système d'information / tp",
     "prev": "6",
     "next": "0"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "09:40:58",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S2 / R2.14 | Système d'information / td",
+    "prev": "4.5",
+    "next": "0"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "09:40:59",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S2 / R2.14 | Système d'information / grpe_td",
+    "prev": "1",
+    "next": "0"
   }
 ]
