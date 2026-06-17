@@ -8278,5 +8278,59 @@
     "description": "S5 crea / R5.Crea.06 | Création numérique / sous-groupe 2 / enseignant",
     "prev": "",
     "next": "SALTET Marius"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "09:25:47",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.06 | Création numérique / td",
+    "prev": "21",
+    "next": "20.5"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "09:25:47",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.06 | Création numérique / td",
+    "prev": "20.5",
+    "next": "20"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "09:25:47",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.06 | Création numérique / td",
+    "prev": "20",
+    "next": "19.5"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "09:25:47",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.06 | Création numérique / td",
+    "prev": "19.5",
+    "next": "19"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "09:25:48",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.06 | Création numérique / td",
+    "prev": "19",
+    "next": "18.5"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "09:25:48",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.06 | Création numérique / td",
+    "prev": "18.5",
+    "next": "18"
   }
 ]
