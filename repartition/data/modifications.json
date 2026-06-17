@@ -11140,5 +11140,14 @@
     "description": "S3 / R3.13 | Gestion de contenus avancée / Dév Back / sous-groupe 1 / tp",
     "prev": "6",
     "next": "0"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "15:54:47",
+    "utilisateur": "nicolas.maurin",
+    "type": "Répartition",
+    "description": "S3 / R3.14 | Déploiement de services / sous-groupe 1 / enseignant",
+    "prev": "DARTIES Benoit",
+    "next": "PELTRIAUX Philippe"
   }
 ]
