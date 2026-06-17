@@ -9025,5 +9025,14 @@
     "description": "S5 crea / R5.Crea.06 | Création numérique / sous-groupe 3 / enseignant",
     "prev": "",
     "next": "BOYER Tom"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "09:48:38",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.06 | Création numérique / sous-groupe 3 / td",
+    "prev": "0",
+    "next": "12.5"
   }
 ]
