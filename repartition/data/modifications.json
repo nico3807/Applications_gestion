@@ -8575,5 +8575,23 @@
     "description": "S5 crea / R5.Crea.06 | Création numérique / td",
     "prev": "12.5",
     "next": "13"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "09:26:51",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.06 | Création numérique / td",
+    "prev": "13",
+    "next": "13.5"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "09:26:51",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.06 | Création numérique / td",
+    "prev": "13.5",
+    "next": "14"
   }
 ]
