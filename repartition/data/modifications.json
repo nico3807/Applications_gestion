@@ -9064,20 +9064,38 @@
   },
   {
     "date": "17/06/2026",
-    "heure": "09:53:26",
-    "utilisateur": "nicolas.maurin",
+    "heure": "09:53:08",
+    "utilisateur": "chrysta.pelissier",
     "type": "Répartition",
-    "description": "S5 crea / R5.Crea.06 | Création numérique / sous-groupe 2 / grpe_td",
-    "prev": "",
-    "next": "1"
+    "description": "S2 / R2.19 | Projet Personnel et Professionnel / sous-groupe 2 / tp",
+    "prev": "0.5",
+    "next": "0"
   },
   {
     "date": "17/06/2026",
-    "heure": "09:53:39",
-    "utilisateur": "nicolas.maurin",
+    "heure": "10:11:45",
+    "utilisateur": "emmanuel.therond",
     "type": "Répartition",
-    "description": "S5 crea / R5.Crea.06 | Création numérique / sous-groupe 2 / grpe_tp",
-    "prev": "",
-    "next": "2"
+    "description": "S4 crea / R4.Crea.07 | Audiovisuel - Motion design / sous-groupe 1 / tp",
+    "prev": "4.5",
+    "next": "5"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "10:11:45",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S4 crea / R4.Crea.07 | Audiovisuel - Motion design / sous-groupe 1 / tp",
+    "prev": "5",
+    "next": "5.5"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "10:11:47",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S4 crea / R4.Crea.07 | Audiovisuel - Motion design / sous-groupe 1 / tp",
+    "prev": "5.5",
+    "next": "6"
   }
 ]
