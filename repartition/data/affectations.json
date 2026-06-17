@@ -109,7 +109,8 @@
           "enseignant": "THEROND Emmanuel",
           "cm": 0,
           "td": 4.5,
-          "tp": 6
+          "tp": 6,
+          "grpe_td": 2
         }
       ],
       "responsable": "",
