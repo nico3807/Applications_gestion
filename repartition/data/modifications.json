@@ -9034,5 +9034,32 @@
     "description": "S4 crea / R4.Crea.04 | Expression, communication / sous-groupe 2 / td",
     "prev": "3",
     "next": "4.5"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "09:50:11",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S4 crea / R4.Crea.08 | Ecriture multimédia et narration / td",
+    "prev": "9",
+    "next": "9.5"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "09:50:12",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S4 crea / R4.Crea.08 | Ecriture multimédia et narration / td",
+    "prev": "9.5",
+    "next": "10"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "09:50:12",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S4 crea / R4.Crea.08 | Ecriture multimédia et narration / td",
+    "prev": "10",
+    "next": "10.5"
   }
 ]
