@@ -10933,5 +10933,14 @@
     "description": "S5 dev / SAÉ 5D.01 | Développer pour le web / enseignant",
     "prev": "MARILL Damien",
     "next": "PIEDEVACHE Magalie"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "15:13:27",
+    "utilisateur": "damien.marill",
+    "type": "Répartition",
+    "description": "S5 dev / SAÉ 5D.01 | Développer pour le web / td",
+    "prev": "27",
+    "next": "12"
   }
 ]
