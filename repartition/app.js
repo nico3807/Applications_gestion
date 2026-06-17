@@ -2633,6 +2633,7 @@ async function _doAffAutoSave() {
       `Mise à jour affectations — ${ts}`,
     );
     showToast("✓ Sauvegardé automatiquement");
+    renderView();
   } catch (e) {
     showToast("✗ Erreur sauvegarde : " + e.message);
   }
