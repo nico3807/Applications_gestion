@@ -8962,5 +8962,86 @@
     "description": "S5 crea / R5.Crea.06 | Création numérique / td",
     "prev": "13",
     "next": "13.5"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "09:38:01",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.06 | Création numérique / sous-groupe 3 / tp",
+    "prev": "0",
+    "next": "0.5"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "09:38:02",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.06 | Création numérique / sous-groupe 3 / tp",
+    "prev": "0.5",
+    "next": "1"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "09:38:02",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.06 | Création numérique / sous-groupe 3 / tp",
+    "prev": "1",
+    "next": "1.5"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "09:38:02",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.06 | Création numérique / sous-groupe 3 / tp",
+    "prev": "1.5",
+    "next": "2"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "09:38:02",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.06 | Création numérique / sous-groupe 3 / tp",
+    "prev": "2",
+    "next": "2.5"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "09:38:03",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.06 | Création numérique / sous-groupe 3 / tp",
+    "prev": "2.5",
+    "next": "3"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "09:38:03",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.06 | Création numérique / sous-groupe 3 / tp",
+    "prev": "3",
+    "next": "3.5"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "09:38:04",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.06 | Création numérique / sous-groupe 3 / tp",
+    "prev": "3.5",
+    "next": "4"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "09:38:04",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.06 | Création numérique / sous-groupe 3 / tp",
+    "prev": "4",
+    "next": "4.5"
   }
 ]
