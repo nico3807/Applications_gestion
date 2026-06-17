@@ -9061,5 +9061,14 @@
     "description": "S5 crea / R5.Crea.06 | Création numérique / sous-groupe 2 / tp",
     "prev": "0",
     "next": "7.5"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "09:53:01",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.06 | Création numérique / sous-groupe 2 / grpe_td",
+    "prev": "",
+    "next": "1"
   }
 ]
