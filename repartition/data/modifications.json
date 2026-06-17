@@ -9592,5 +9592,59 @@
     "description": "S4 crea / R4.Crea.03 | Design d'expérience / td",
     "prev": "5",
     "next": "4.5"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "11:56:29",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S4 crea / R4.Crea.03 | Design d'expérience / sous-groupe 1 / td",
+    "prev": "4.5",
+    "next": "4"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "11:56:30",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S4 crea / R4.Crea.03 | Design d'expérience / sous-groupe 1 / td",
+    "prev": "4",
+    "next": "3.5"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "11:56:31",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S4 crea / R4.Crea.03 | Design d'expérience / sous-groupe 1 / td",
+    "prev": "3.5",
+    "next": "3"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "11:56:33",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S4 crea / R4.Crea.03 | Design d'expérience / td",
+    "prev": "4.5",
+    "next": "4"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "11:56:33",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S4 crea / R4.Crea.03 | Design d'expérience / td",
+    "prev": "4",
+    "next": "3.5"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "11:56:33",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S4 crea / R4.Crea.03 | Design d'expérience / td",
+    "prev": "3.5",
+    "next": "3"
   }
 ]
