@@ -2554,5 +2554,14 @@
     "description": "S1 / R1.02 | Anglais renforcé - Espagnol / grpe_td",
     "prev": "2",
     "next": "1"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "07:59:20",
+    "utilisateur": "nicolas.maurin",
+    "type": "Répartition",
+    "description": "S1 / R1.02 | Anglais renforcé - Espagnol / grpe_tp",
+    "prev": "",
+    "next": "1"
   }
 ]
