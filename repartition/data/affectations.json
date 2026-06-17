@@ -1137,7 +1137,7 @@
     "R4.Crea.02 | Economie, gestion et Droit du numérique": {
       "enseignant": "MOCQUET Bertrand",
       "cm": 0,
-      "td": 10.5,
+      "td": 12,
       "tp": 0,
       "subrows": [
         {
@@ -1189,7 +1189,7 @@
         {
           "enseignant": "EVANO Jérome",
           "cm": 0,
-          "td": 3,
+          "td": 4.5,
           "tp": 0,
           "grpe_td": 1,
           "grpe_tp": 2
@@ -1496,7 +1496,7 @@
       "enseignant": "BLANCO Sandy",
       "cm": 0,
       "td": 12.5,
-      "tp": 7.5,
+      "tp": 30,
       "subrows": [
         {
           "enseignant": "MEUNIER Dylan",
@@ -1509,14 +1509,8 @@
         {
           "enseignant": "SALTET Marius",
           "cm": 0,
-          "td": 12.5,
-          "tp": 7.5
-        },
-        {
-          "enseignant": "BOYER Tom",
-          "cm": 0,
-          "td": 12.5,
-          "tp": 7.5
+          "td": 0,
+          "tp": 0
         }
       ],
       "responsable": "",
@@ -2239,7 +2233,7 @@
       "enseignant": "",
       "cm": 1.5,
       "td": 4.5,
-      "tp": 6,
+      "tp": 0,
       "subrows": [
         {
           "enseignant": "MENDEZ Nicolas",
