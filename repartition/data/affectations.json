@@ -1508,6 +1508,12 @@
           "cm": 0,
           "td": 4.5,
           "tp": 4.5
+        },
+        {
+          "enseignant": "THEROND Emmanuel",
+          "cm": 0,
+          "td": 0,
+          "tp": 0
         }
       ],
       "responsable": "",
