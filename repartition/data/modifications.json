@@ -10825,5 +10825,23 @@
     "description": "S5 dev / R5.DWeb-DI.05 | Développement front avancé / tp",
     "prev": "2.5",
     "next": "3"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "15:09:36",
+    "utilisateur": "damien.marill",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.05 | Développement front avancé / td",
+    "prev": "21",
+    "next": "30"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "15:09:39",
+    "utilisateur": "damien.marill",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.06 | Développement back avancé / td",
+    "prev": "21",
+    "next": "30"
   }
 ]
