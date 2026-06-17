@@ -1128,10 +1128,14 @@
           "enseignant": "GRENIER Sandrine",
           "cm": 0,
           "td": 3,
-          "tp": 0
+          "tp": 0,
+          "grpe_td": 2,
+          "grpe_tp": 4
         }
       ],
-      "responsable": ""
+      "responsable": "",
+      "grpe_td": 2,
+      "grpe_tp": 4
     },
     "R4.Crea.03 | Design d'expérience": {
       "enseignant": "RAMPON Candice",
@@ -1143,10 +1147,14 @@
           "enseignant": "THEROND Emmanuel",
           "cm": 0,
           "td": 4.5,
-          "tp": 1.5
+          "tp": 1.5,
+          "grpe_td": 2,
+          "grpe_tp": 4
         }
       ],
-      "responsable": ""
+      "responsable": "",
+      "grpe_td": 2,
+      "grpe_tp": 4
     },
     "R4.Crea.04 | Expression, communication": {
       "enseignant": "THEROND Emmanuel",
@@ -1158,16 +1166,22 @@
           "enseignant": "BARTHELEMY Veronique",
           "cm": 0,
           "td": 4.5,
-          "tp": 0
+          "tp": 0,
+          "grpe_td": 2,
+          "grpe_tp": 4
         },
         {
           "enseignant": "EVANO Jérome",
           "cm": 0,
           "td": 3,
-          "tp": 0
+          "tp": 0,
+          "grpe_td": 2,
+          "grpe_tp": 4
         }
       ],
-      "responsable": ""
+      "responsable": "",
+      "grpe_td": 2,
+      "grpe_tp": 4
     },
     "R4.Crea.05 | Gestion de contenus spécialisée": {
       "enseignant": "THEROND Emmanuel",
@@ -1175,7 +1189,9 @@
       "td": 9,
       "tp": 9,
       "subrows": [],
-      "responsable": ""
+      "responsable": "",
+      "grpe_td": 2,
+      "grpe_tp": 4
     },
     "R4.Crea.06 | Culture artistique": {
       "enseignant": "SURRIBAS Caroline",
@@ -1183,7 +1199,9 @@
       "td": 4.5,
       "tp": 9,
       "subrows": [],
-      "responsable": ""
+      "responsable": "",
+      "grpe_td": 2,
+      "grpe_tp": 4
     },
     "R4.Crea.07 | Audiovisuel - Motion design": {
       "enseignant": "BLANCO Sandy",
@@ -1195,10 +1213,14 @@
           "enseignant": "THEROND Emmanuel",
           "cm": 0,
           "td": 3,
-          "tp": 4.5
+          "tp": 4.5,
+          "grpe_td": 2,
+          "grpe_tp": 4
         }
       ],
-      "responsable": ""
+      "responsable": "",
+      "grpe_td": 2,
+      "grpe_tp": 4
     },
     "R4.Crea.08 | Ecriture multimédia et narration": {
       "enseignant": "DE VELDER Sophie",
@@ -1206,7 +1228,9 @@
       "td": 9,
       "tp": 0,
       "subrows": [],
-      "responsable": ""
+      "responsable": "",
+      "grpe_td": 2,
+      "grpe_tp": 4
     },
     "SAÉ 4.Crea.01 | Créer pour une campagne de communication visuelle": {
       "enseignant": "SURRIBAS Caroline",
@@ -1218,10 +1242,14 @@
           "enseignant": "THEROND Emmanuel",
           "cm": 0,
           "td": 9,
-          "tp": 1.5
+          "tp": 1.5,
+          "grpe_td": 2,
+          "grpe_tp": 4
         }
       ],
-      "responsable": ""
+      "responsable": "",
+      "grpe_td": 2,
+      "grpe_tp": 4
     },
     "SAÉ 4.Crea.02 | Produire du contenu multimédia": {
       "enseignant": "THEROND Emmanuel",
@@ -1233,10 +1261,14 @@
           "enseignant": "BERNARD William",
           "cm": 0,
           "td": 3,
-          "tp": 0
+          "tp": 0,
+          "grpe_td": 2,
+          "grpe_tp": 4
         }
       ],
-      "responsable": ""
+      "responsable": "",
+      "grpe_td": 2,
+      "grpe_tp": 4
     },
     "SAÉ 4.98 | Hackathon": {
       "enseignant": "",
@@ -1244,7 +1276,9 @@
       "td": 0,
       "tp": 0,
       "subrows": [],
-      "responsable": ""
+      "responsable": "",
+      "grpe_td": 2,
+      "grpe_tp": 4
     },
     "SAÉ 4.99 | Marathon MMI": {
       "enseignant": "",
@@ -1252,7 +1286,9 @@
       "td": 0,
       "tp": 0,
       "subrows": [],
-      "responsable": ""
+      "responsable": "",
+      "grpe_td": 2,
+      "grpe_tp": 4
     },
     "PORTFOLIO | Portfolio-Parcours Création Numérique": {
       "enseignant": "MAURIN Nicolas",
@@ -1264,28 +1300,38 @@
           "enseignant": "THEROND Emmanuel",
           "cm": 0,
           "td": 1.5,
-          "tp": 0
+          "tp": 0,
+          "grpe_td": 2,
+          "grpe_tp": 4
         },
         {
           "enseignant": "BLANCO Sandy",
           "cm": 0,
           "td": 1.5,
-          "tp": 0
+          "tp": 0,
+          "grpe_td": 2,
+          "grpe_tp": 4
         },
         {
           "enseignant": "BARON Mathilde",
           "cm": 0,
           "td": 1.5,
-          "tp": 0
+          "tp": 0,
+          "grpe_td": 2,
+          "grpe_tp": 4
         },
         {
           "enseignant": "PELISSIER Chrysta",
           "cm": 0,
           "td": 1.5,
-          "tp": 0
+          "tp": 0,
+          "grpe_td": 2,
+          "grpe_tp": 4
         }
       ],
-      "responsable": ""
+      "responsable": "",
+      "grpe_td": 2,
+      "grpe_tp": 4
     },
     "R4.Crea.01 | Anglais": {
       "enseignant": "BERNARD William",
@@ -1293,7 +1339,9 @@
       "td": 9,
       "tp": 4.5,
       "subrows": [],
-      "responsable": ""
+      "responsable": "",
+      "grpe_td": 2,
+      "grpe_tp": 4
     }
   },
   "S5 crea": {
