@@ -506,13 +506,13 @@
     "R6 crea 02 | Création numérique intéractive": {
       "enseignant": "THEROND Emmanuel",
       "cm": 0,
-      "td": 24,
+      "td": 22.5,
       "tp": 0,
       "subrows": [
         {
           "enseignant": "SELIGHINI Valérie",
           "cm": 0,
-          "td": 13.5,
+          "td": 15,
           "tp": 0,
           "grpe_td": 1,
           "grpe_tp": 2
