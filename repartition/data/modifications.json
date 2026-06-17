@@ -9025,5 +9025,14 @@
     "description": "S4 crea / R4.Crea.02 | Economie, gestion et Droit du numérique / td",
     "prev": "10.5",
     "next": "12"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "09:49:30",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S4 crea / R4.Crea.04 | Expression, communication / sous-groupe 2 / td",
+    "prev": "3",
+    "next": "4.5"
   }
 ]
