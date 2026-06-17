@@ -858,7 +858,7 @@
           "td": 0,
           "tp": 0,
           "grpe_td": 0,
-          "grpe_tp": 4
+          "grpe_tp": 0
         }
       ],
       "responsable": "",
@@ -883,7 +883,7 @@
           "enseignant": "CHOLLET Antoine",
           "cm": 0,
           "td": 3,
-          "tp": 0,
+          "tp": 0.5,
           "grpe_td": 2,
           "grpe_tp": 4
         },
@@ -1509,14 +1509,8 @@
         {
           "enseignant": "SALTET Marius",
           "cm": 0,
-          "td": 12.5,
-          "tp": 7.5
-        },
-        {
-          "enseignant": "BOYER Tom",
-          "cm": 0,
-          "td": 12.5,
-          "tp": 7.5
+          "td": 0,
+          "tp": 0
         }
       ],
       "responsable": "",
@@ -2016,14 +2010,14 @@
     },
     "R3.05 | Stratégies de communication et marketing": {
       "enseignant": "DE VELDER Sophie",
-      "cm": 0,
+      "cm": 4.5,
       "td": 3,
       "tp": 0,
       "subrows": [
         {
           "enseignant": "RAMPON Candice",
           "cm": 4.5,
-          "td": 2,
+          "td": 3,
           "tp": 0,
           "grpe_td": 2,
           "grpe_tp": 4
@@ -2101,13 +2095,13 @@
       "enseignant": "",
       "cm": 0,
       "td": 0,
-      "tp": 4.5,
+      "tp": 0,
       "subrows": [
         {
           "enseignant": "THEROND Emmanuel",
           "cm": 1.5,
           "td": 4.5,
-          "tp": 7.5,
+          "tp": 10.5,
           "grpe_td": 2,
           "grpe_tp": 4
         }
