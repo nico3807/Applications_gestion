@@ -352,6 +352,28 @@ footer {
   width: 72px;
   text-align: center;
 }
+.col-grpe {
+  width: 72px;
+  text-align: center;
+  font-size: 11px;
+  white-space: nowrap;
+}
+
+/* Select nombre de groupes */
+.select-grpe {
+  width: 52px;
+  padding: 4px 2px;
+  border: 1px solid #d1d5db;
+  border-radius: 5px;
+  font-size: 13px;
+  text-align: center;
+  background: #f8fafc;
+  cursor: pointer;
+}
+.select-grpe:focus {
+  outline: 2px solid #6366f1;
+  border-color: transparent;
+}
 
 /* Select enseignant */
 .select-enseignant {

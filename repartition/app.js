@@ -1262,6 +1262,8 @@ function renderSemestre(root, sem) {
             <th class="col-h">CM</th>
             <th class="col-h">TD</th>
             <th class="col-h">TP</th>
+            <th class="col-grpe">Nbre grpe TD</th>
+            <th class="col-grpe">Nbre grpe TP</th>
             <th style="width:50px"></th>
         </tr>
     </thead>
@@ -1340,6 +1342,8 @@ function renderSemestre(root, sem) {
       if (nbSem) dureeBadge = `<span class="badge-duree">Durée : ${nbSem} semaine${nbSem > 1 ? "s" : ""}</span>`;
     }
 
+    const grpeTDOpts = [0,1,2,3,4].map(v=>`<option value="${v}" ${(data.grpe_td??0)==v?"selected":""}>${v}</option>`).join("");
+    const grpeTPOpts = [0,1,2,3,4].map(v=>`<option value="${v}" ${(data.grpe_tp??0)==v?"selected":""}>${v}</option>`).join("");
     html += `<tr class="${rowClass} row-main-resource">
             <td>${res}${dureeBadge}</td>
             <td><span class="prev-badge">CM: ${prev.cm_final || 0} | TD: ${prev.td_final || 0} | TP: ${prev.tp_final || 0}</span></td>
@@ -1352,6 +1356,8 @@ function renderSemestre(root, sem) {
             <td><input type="number" class="input-h" value="${data.cm || 0}" onchange="updateAff('${sem}', '${res.replace(/'/g, "\\'")}', 'cm', this.value)" step="0.5"></td>
             <td><input type="number" class="input-h" value="${data.td || 0}" onchange="updateAff('${sem}', '${res.replace(/'/g, "\\'")}', 'td', this.value)" step="0.5"></td>
             <td><input type="number" class="input-h" value="${data.tp || 0}" onchange="updateAff('${sem}', '${res.replace(/'/g, "\\'")}', 'tp', this.value)" step="0.5"></td>
+            <td><select class="select-grpe" onchange="updateAff('${sem}', '${res.replace(/'/g, "\\'")}', 'grpe_td', this.value)">${grpeTDOpts}</select></td>
+            <td><select class="select-grpe" onchange="updateAff('${sem}', '${res.replace(/'/g, "\\'")}', 'grpe_tp', this.value)">${grpeTPOpts}</select></td>
             <td><button class="btn-add-subrow" onclick="addSubrow('${sem}', '${res.replace(/'/g, "\\'")}')">+</button></td>
         </tr>`;
 
@@ -1381,6 +1387,8 @@ function renderSemestre(root, sem) {
                     <td><input type="number" class="input-h" value="${sub.cm || 0}" onchange="updateSub('${sem}', '${res.replace(/'/g, "\\'")}', ${j}, 'cm', this.value)" step="0.5"></td>
                     <td><input type="number" class="input-h" value="${sub.td || 0}" onchange="updateSub('${sem}', '${res.replace(/'/g, "\\'")}', ${j}, 'td', this.value)" step="0.5"></td>
                     <td><input type="number" class="input-h" value="${sub.tp || 0}" onchange="updateSub('${sem}', '${res.replace(/'/g, "\\'")}', ${j}, 'tp', this.value)" step="0.5"></td>
+                    <td><select class="select-grpe" onchange="updateSub('${sem}', '${res.replace(/'/g, "\\'")}', ${j}, 'grpe_td', this.value)">${[0,1,2,3,4].map(v=>`<option value="${v}" ${(sub.grpe_td??0)==v?"selected":""}>${v}</option>`).join("")}</select></td>
+                    <td><select class="select-grpe" onchange="updateSub('${sem}', '${res.replace(/'/g, "\\'")}', ${j}, 'grpe_tp', this.value)">${[0,1,2,3,4].map(v=>`<option value="${v}" ${(sub.grpe_tp??0)==v?"selected":""}>${v}</option>`).join("")}</select></td>
                     <td><button class="btn-remove-subrow" onclick="removeSubrow('${sem}', '${res.replace(/'/g, "\\'")}', ${j})">-</button></td>
                 </tr>`;
       });
@@ -1442,8 +1450,14 @@ function renderSemestre(root, sem) {
          </td>`;
 
     const financeCM = resCM * _financeCoefs.cm;
-    const financeTD = resTD * _financeCoefs.td;
-    const financeTP = resTP * _financeCoefs.tp;
+    let rawFinanceTD = (parseFloat(data.td) || 0) * (parseFloat(data.grpe_td) || 0);
+    let rawFinanceTP = (parseFloat(data.tp) || 0) * (parseFloat(data.grpe_tp) || 0);
+    if (data.subrows) data.subrows.forEach(s => {
+      rawFinanceTD += (parseFloat(s.td) || 0) * (parseFloat(s.grpe_td) || 0);
+      rawFinanceTP += (parseFloat(s.tp) || 0) * (parseFloat(s.grpe_tp) || 0);
+    });
+    const financeTD = rawFinanceTD;
+    const financeTP = rawFinanceTP;
     totFinanceCM += financeCM;
     totFinanceTD += financeTD;
     totFinanceTP += financeTP;
@@ -1454,7 +1468,7 @@ function renderSemestre(root, sem) {
             <td style="text-align:center;"><span class="prev-badge res-total-badge" style="${cmStyle}" data-field="cm" data-val="${resCM}" data-maq-cm="${prev.cm_final || 0}" data-maq-td="${prev.td_final || 0}" data-maq-tp="${prev.tp_final || 0}">${fmtR(resCM)}</span></td>
             <td style="text-align:center;"><span class="prev-badge res-total-badge" style="${tdStyle}" data-field="td" data-val="${resTD}" data-maq-cm="${prev.cm_final || 0}" data-maq-td="${prev.td_final || 0}" data-maq-tp="${prev.tp_final || 0}">${fmtR(resTD)}</span></td>
             <td style="text-align:center;"><span class="prev-badge res-total-badge" style="${tpStyle}" data-field="tp" data-val="${resTP}" data-maq-cm="${prev.cm_final || 0}" data-maq-td="${prev.td_final || 0}" data-maq-tp="${prev.tp_final || 0}">${fmtR(resTP)}</span></td>
-            <td></td>
+            <td></td><td></td><td></td>
         </tr>
         <tr class="row-responsable ${rowClass}">
             ${respCell}
@@ -1462,7 +1476,7 @@ function renderSemestre(root, sem) {
             <td style="text-align:center;"><span class="prev-badge">${fmtR(financeCM)}</span></td>
             <td style="text-align:center;"><span class="prev-badge">${fmtR(financeTD)}</span></td>
             <td style="text-align:center;"><span class="prev-badge">${fmtR(financeTP)}</span></td>
-            <td></td>
+            <td></td><td></td><td></td>
         </tr>`;
   });
 
@@ -1475,6 +1489,8 @@ function renderSemestre(root, sem) {
         <td></td>
         <td></td>
         <td></td>
+        <td></td>
+        <td></td>
     </tr>
     <tr class="row-total-pose">
         <td></td>
@@ -1482,7 +1498,7 @@ function renderSemestre(root, sem) {
         <td class="total-pose-val">${fmtT(totCM)}</td>
         <td class="total-pose-val">${fmtT(totTD)}</td>
         <td class="total-pose-val">${fmtT(totTP)}</td>
-        <td></td>
+        <td></td><td></td><td></td>
     </tr>
     <tr class="row-total-pose">
         <td></td>
@@ -1490,7 +1506,7 @@ function renderSemestre(root, sem) {
         <td class="total-pose-val">${fmtT(totFinanceCM)}</td>
         <td class="total-pose-val">${fmtT(totFinanceTD)}</td>
         <td class="total-pose-val">${fmtT(totFinanceTP)}</td>
-        <td></td>
+        <td></td><td></td><td></td>
     </tr>`;
 
   html += `</tbody></table></div>`;
@@ -1501,14 +1517,16 @@ function renderSemestre(root, sem) {
 window.updateAff = function (sem, res, field, value) {
   const prev = APP_DATA.affectations[sem]?.[res]?.[field] ?? "";
   if (["cm", "td", "tp"].includes(field)) value = parseFloat(value) || 0;
+  if (["grpe_td", "grpe_tp"].includes(field)) value = parseInt(value) || 0;
   _logMod("Répartition", `${sem} / ${res} / ${field}`, prev, value);
   APP_DATA.affectations[sem][res][field] = value;
-  if (field === "enseignant" || field === "responsable") renderView();
+  if (["enseignant", "responsable", "grpe_td", "grpe_tp"].includes(field)) renderView();
   scheduleAffAutoSave();
 };
 window.updateSub = function (sem, res, idx, field, value) {
   const prev = APP_DATA.affectations[sem]?.[res]?.subrows?.[idx]?.[field] ?? "";
   if (["cm", "td", "tp"].includes(field)) value = parseFloat(value) || 0;
+  if (["grpe_td", "grpe_tp"].includes(field)) value = parseInt(value) || 0;
   _logMod(
     "Répartition",
     `${sem} / ${res} / sous-groupe ${idx + 1} / ${field}`,
@@ -1516,7 +1534,7 @@ window.updateSub = function (sem, res, idx, field, value) {
     value,
   );
   APP_DATA.affectations[sem][res].subrows[idx][field] = value;
-  if (field === "enseignant") renderView();
+  if (["enseignant", "grpe_td", "grpe_tp"].includes(field)) renderView();
   scheduleAffAutoSave();
 };
 window.addSubrow = function (sem, res) {
