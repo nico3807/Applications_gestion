@@ -1726,7 +1726,14 @@
       "cm": 0,
       "td": 10.5,
       "tp": 3,
-      "subrows": [],
+      "subrows": [
+        {
+          "enseignant": "",
+          "cm": 0,
+          "td": 0,
+          "tp": 0
+        }
+      ],
       "responsable": "",
       "grpe_td": 1,
       "grpe_tp": 2
