@@ -9502,5 +9502,23 @@
     "description": "S3 / R3.13 | Gestion de contenus avancée / Dév Back / sous-groupe 1 / enseignant",
     "prev": "",
     "next": "MAURIN Nicolas"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "11:05:58",
+    "utilisateur": "nicolas.maurin",
+    "type": "Répartition",
+    "description": "S3 / R3.13 | Gestion de contenus avancée / Dév Back / td",
+    "prev": "8.25",
+    "next": "7.75"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "11:05:59",
+    "utilisateur": "nicolas.maurin",
+    "type": "Répartition",
+    "description": "S3 / R3.13 | Gestion de contenus avancée / Dév Back / td",
+    "prev": "7.75",
+    "next": "7.25"
   }
 ]
