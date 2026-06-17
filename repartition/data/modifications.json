@@ -9538,5 +9538,14 @@
     "description": "S3 / R3.13 | Gestion de contenus avancée / Dév Back / sous-groupe 1 / tp",
     "prev": "6.75",
     "next": "6"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "11:06:54",
+    "utilisateur": "nicolas.maurin",
+    "type": "Répartition",
+    "description": "S1 / R1.12 | Développement Web / sous-groupe 1 / tp",
+    "prev": "12.75",
+    "next": "12"
   }
 ]
