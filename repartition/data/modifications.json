@@ -9745,5 +9745,59 @@
     "description": "S4 crea / SAÉ 4.Crea.01 | Créer pour une campagne de communication visuelle / sous-groupe 1 / td",
     "prev": "9",
     "next": "24"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "12:01:20",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S4 crea / SAÉ 4.Crea.02 | Produire du contenu multimédia / td",
+    "prev": "21",
+    "next": "21.5"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "12:01:20",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S4 crea / SAÉ 4.Crea.02 | Produire du contenu multimédia / td",
+    "prev": "21.5",
+    "next": "22"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "12:01:22",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S4 crea / SAÉ 4.Crea.02 | Produire du contenu multimédia / td",
+    "prev": "22",
+    "next": "22.5"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "12:01:22",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S4 crea / SAÉ 4.Crea.02 | Produire du contenu multimédia / td",
+    "prev": "22.5",
+    "next": "23"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "12:01:24",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S4 crea / SAÉ 4.Crea.02 | Produire du contenu multimédia / td",
+    "prev": "23",
+    "next": "23.5"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "12:01:24",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S4 crea / SAÉ 4.Crea.02 | Produire du contenu multimédia / td",
+    "prev": "23.5",
+    "next": "24"
   }
 ]
