@@ -9826,5 +9826,23 @@
     "description": "S4 crea / SAÉ 4.Crea.02 | Produire du contenu multimédia / sous-groupe 1 / td",
     "prev": "3",
     "next": "5"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "12:01:35",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S4 crea / SAÉ 4.Crea.02 | Produire du contenu multimédia / tp",
+    "prev": "0",
+    "next": "6"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "12:01:36",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S4 crea / SAÉ 4.Crea.02 | Produire du contenu multimédia / sous-groupe 1 / tp",
+    "prev": "0",
+    "next": "6"
   }
 ]
