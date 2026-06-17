@@ -9448,5 +9448,14 @@
     "description": "S4 crea / R4.Crea.07 | Audiovisuel - Motion design / sous-groupe 1 / td",
     "prev": "3.5",
     "next": "4"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "10:20:28",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S4 crea / R4.Crea.07 | Audiovisuel - Motion design / sous-groupe 1 / td",
+    "prev": "4",
+    "next": "4.5"
   }
 ]
