@@ -10879,5 +10879,14 @@
     "description": "S5 dev / R5.DWeb-DI.05 | Développement front avancé / sous-groupe 1 / td",
     "prev": "19",
     "next": "18"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "15:11:41",
+    "utilisateur": "damien.marill",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.06 | Développement back avancé / sous-groupe 1 / td",
+    "prev": "21",
+    "next": "18"
   }
 ]
