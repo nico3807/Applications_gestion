@@ -233,7 +233,7 @@
         {
           "enseignant": "MAURIN Nicolas",
           "cm": 0,
-          "td": 0,
+          "td": 3,
           "tp": 12,
           "grpe_td": 2,
           "grpe_tp": 4
@@ -245,8 +245,8 @@
     },
     "R1.13 | Hébergement": {
       "enseignant": "MAURIN Nicolas",
-      "cm": 4.5,
-      "td": 0,
+      "cm": 3,
+      "td": 1.5,
       "tp": 10.5,
       "subrows": [],
       "responsable": "",
@@ -428,14 +428,6 @@
           "enseignant": "MAURIN Nicolas",
           "cm": 0,
           "td": 7.5,
-          "tp": 0,
-          "grpe_td": 2,
-          "grpe_tp": 4
-        },
-        {
-          "enseignant": "DI PIERRO Davide",
-          "cm": 0,
-          "td": 0,
           "tp": 0,
           "grpe_td": 2,
           "grpe_tp": 4
@@ -952,7 +944,7 @@
       "tp": 0,
       "subrows": [
         {
-          "enseignant": "DI PIERRO Davide",
+          "enseignant": "DARTIES Benoit",
           "cm": 1.5,
           "td": 7.5,
           "tp": 0,
@@ -2187,14 +2179,14 @@
     "R3.12 | Développement Front et intégration": {
       "enseignant": "MAURIN Nicolas",
       "cm": 0,
-      "td": 6,
+      "td": 9,
       "tp": 12,
       "subrows": [
         {
           "enseignant": "DARTIES Benoit",
           "cm": 0,
-          "td": 7.5,
-          "tp": 6,
+          "td": 12,
+          "tp": 9,
           "grpe_td": 2,
           "grpe_tp": 4
         }
@@ -2209,14 +2201,6 @@
       "td": 4.5,
       "tp": 10.5,
       "subrows": [
-        {
-          "enseignant": "MAURIN Nicolas",
-          "cm": 0,
-          "td": 0,
-          "tp": 0,
-          "grpe_td": 2,
-          "grpe_tp": 4
-        },
         {
           "enseignant": "TALLEUX Johann",
           "cm": 0,
@@ -2335,13 +2319,13 @@
     "SAÉ 3.01 | Intégrer des interfaces utilisateurs au sein d'un système d'information": {
       "enseignant": "DARTIES Benoit",
       "cm": 1.5,
-      "td": 17.25,
+      "td": 18,
       "tp": 0,
       "subrows": [
         {
           "enseignant": "MAURIN Nicolas",
           "cm": 0,
-          "td": 22.5,
+          "td": 18,
           "tp": 0,
           "grpe_td": 2,
           "grpe_tp": 4
