@@ -2599,5 +2599,14 @@
     "description": "S1 / R1.03 | Ergonomie et Accessibilité / grpe_td",
     "prev": "",
     "next": "2"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "08:01:28",
+    "utilisateur": "nicolas.maurin",
+    "type": "Répartition",
+    "description": "S1 / R1.04 | Culture numérique / grpe_td",
+    "prev": "",
+    "next": "2"
   }
 ]
