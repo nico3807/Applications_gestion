@@ -11203,5 +11203,32 @@
     "description": "S3 / R3.13 | Gestion de contenus avancée / Dév Back / td",
     "prev": "6.5",
     "next": "6"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "16:01:43",
+    "utilisateur": "nicolas.maurin",
+    "type": "Répartition",
+    "description": "S3 / R3.13 | Gestion de contenus avancée / Dév Back / td",
+    "prev": "6",
+    "next": "5.5"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "16:01:43",
+    "utilisateur": "nicolas.maurin",
+    "type": "Répartition",
+    "description": "S3 / R3.13 | Gestion de contenus avancée / Dév Back / td",
+    "prev": "5.5",
+    "next": "5"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "16:01:43",
+    "utilisateur": "nicolas.maurin",
+    "type": "Répartition",
+    "description": "S3 / R3.13 | Gestion de contenus avancée / Dév Back / td",
+    "prev": "5",
+    "next": "4.5"
   }
 ]
