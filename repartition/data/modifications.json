@@ -8098,5 +8098,14 @@
     "description": "S2 / R2.02 | Anglais renforcé - Espagnol / sous-groupe 1 / grpe_td",
     "prev": "2",
     "next": "1"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "08:10:45",
+    "utilisateur": "nicolas.maurin",
+    "type": "Répartition",
+    "description": "S2 / R2.02 | Anglais renforcé - Espagnol / sous-groupe 1 / grpe_tp",
+    "prev": "4",
+    "next": "1"
   }
 ]
