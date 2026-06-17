@@ -2590,5 +2590,14 @@
     "description": "S1 / R1.02 | Anglais renforcé - Espagnol / grpe_tp",
     "prev": "1",
     "next": "3"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "08:01:25",
+    "utilisateur": "nicolas.maurin",
+    "type": "Répartition",
+    "description": "S1 / R1.03 | Ergonomie et Accessibilité / grpe_td",
+    "prev": "",
+    "next": "2"
   }
 ]
