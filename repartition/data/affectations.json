@@ -1511,7 +1511,8 @@
           "cm": 0,
           "td": 12.5,
           "tp": 7.5,
-          "grpe_td": 1
+          "grpe_td": 1,
+          "grpe_tp": 2
         },
         {
           "enseignant": "BOYER Tom",
