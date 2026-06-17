@@ -1495,7 +1495,7 @@
     "R5.Crea.06 | Création numérique": {
       "enseignant": "BLANCO Sandy",
       "cm": 0,
-      "td": 12.5,
+      "td": 12,
       "tp": 5,
       "subrows": [
         {
@@ -1515,7 +1515,7 @@
         {
           "enseignant": "BOYER Tom",
           "cm": 0,
-          "td": 0,
+          "td": 7.5,
           "tp": 0
         }
       ],
