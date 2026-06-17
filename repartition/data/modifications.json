@@ -10519,5 +10519,14 @@
     "description": "S5 crea / R5.Crea.06 | Création numérique / sous-groupe 3 / td",
     "prev": "10.5",
     "next": "11"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "14:54:53",
+    "utilisateur": "damien.marill",
+    "type": "Répartition",
+    "description": "S5 dev / SAÉ 5D.01 | Développer pour le web / enseignant",
+    "prev": "MARILL Damien",
+    "next": "PIEDEVACHE Magalie"
   }
 ]
