@@ -11626,5 +11626,14 @@
     "description": "S2 / SAÉ 2.03 | Concevoir un site web avec une source de données / sous-groupe 1 / enseignant",
     "prev": "DI PIERRO Davide",
     "next": "DARTIES Benoit"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "16:40:08",
+    "utilisateur": "nicolas.maurin",
+    "type": "Répartition",
+    "description": "S3 / SAÉ 3.01 | Intégrer des interfaces utilisateurs au sein d'un système d'information / td",
+    "prev": "17.25",
+    "next": "18"
   }
 ]
