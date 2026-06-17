@@ -12526,5 +12526,14 @@
     "description": "S1 / SAÉ 1.05 | Produire un site Web / sous-groupe 1 / cm",
     "prev": "0",
     "next": "1.5"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "19:13:50",
+    "utilisateur": "nicolas.maurin",
+    "type": "SAÉ",
+    "description": "Responsable SAÉ 1.05 | Produire un site Web (S1)",
+    "prev": "DARTIES Benoit",
+    "next": "MAURIN Nicolas"
   }
 ]
