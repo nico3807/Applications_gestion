@@ -199,14 +199,6 @@
     "is_cev": false
   },
   {
-    "id": "MARZOUK Reda",
-    "nom": "MARZOUK",
-    "prenom": "Reda",
-    "service_du": 192,
-    "service_max": null,
-    "is_vac": false
-  },
-  {
     "id": "MAURIN Nicolas",
     "nom": "MAURIN",
     "prenom": "Nicolas",
