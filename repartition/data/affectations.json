@@ -1511,6 +1511,12 @@
           "cm": 0,
           "td": 12.5,
           "tp": 7.5
+        },
+        {
+          "enseignant": "BOYER Tom",
+          "cm": 0,
+          "td": 0,
+          "tp": 0
         }
       ],
       "responsable": "",
