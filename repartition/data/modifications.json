@@ -2563,5 +2563,32 @@
     "description": "S1 / R1.02 | Anglais renforcé - Espagnol / grpe_tp",
     "prev": "",
     "next": "1"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "07:59:23",
+    "utilisateur": "nicolas.maurin",
+    "type": "Répartition",
+    "description": "S1 / R1.02 | Anglais renforcé - Espagnol / sous-groupe 1 / grpe_td",
+    "prev": "",
+    "next": "1"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "07:59:25",
+    "utilisateur": "nicolas.maurin",
+    "type": "Répartition",
+    "description": "S1 / R1.02 | Anglais renforcé - Espagnol / sous-groupe 1 / grpe_tp",
+    "prev": "",
+    "next": "1"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "07:59:27",
+    "utilisateur": "nicolas.maurin",
+    "type": "Répartition",
+    "description": "S1 / R1.02 | Anglais renforcé - Espagnol / grpe_tp",
+    "prev": "1",
+    "next": "3"
   }
 ]
