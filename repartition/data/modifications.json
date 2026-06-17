@@ -11698,5 +11698,14 @@
     "description": "S2 / R2.14 | Système d'information / sous-groupe 1 / td",
     "prev": "4.5",
     "next": "0"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "18:33:17",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S2 / R2.12 | Intégration / td",
+    "prev": "1.5",
+    "next": "3"
   }
 ]
