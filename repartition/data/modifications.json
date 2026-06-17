@@ -9727,5 +9727,14 @@
     "description": "S4 crea / SAÉ 4.Crea.01 | Créer pour une campagne de communication visuelle / td",
     "prev": "12",
     "next": "11.5"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "12:01:02",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S4 crea / SAÉ 4.Crea.01 | Créer pour une campagne de communication visuelle / td",
+    "prev": "11.5",
+    "next": "24"
   }
 ]
