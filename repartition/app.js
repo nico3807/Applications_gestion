@@ -2633,7 +2633,13 @@ async function _doAffAutoSave() {
       `Mise à jour affectations — ${ts}`,
     );
     showToast("✓ Sauvegardé automatiquement");
+    const _sy = window.scrollY;
+    const _sw = document.querySelector(".table-wrapper--semestre");
+    const _swTop = _sw ? _sw.scrollTop : 0;
     renderView();
+    window.scrollTo(0, _sy);
+    const _sw2 = document.querySelector(".table-wrapper--semestre");
+    if (_sw2) _sw2.scrollTop = _swTop;
   } catch (e) {
     showToast("✗ Erreur sauvegarde : " + e.message);
   }
