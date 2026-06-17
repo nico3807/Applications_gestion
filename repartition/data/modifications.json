@@ -7477,5 +7477,617 @@
     "description": "S5 crea / PORTFOLIO | Portfolio-Parcours Création Numérique / sous-groupe 1 / grpe_tp",
     "prev": "",
     "next": "2"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "08:10:08",
+    "utilisateur": "nicolas.maurin",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.01 | Anglais / grpe_td",
+    "prev": "",
+    "next": "1"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "08:10:08",
+    "utilisateur": "nicolas.maurin",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.01 | Anglais / grpe_tp",
+    "prev": "",
+    "next": "2"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "08:10:08",
+    "utilisateur": "nicolas.maurin",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.02 | Management et Assurance Qualité / grpe_td",
+    "prev": "",
+    "next": "1"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "08:10:08",
+    "utilisateur": "nicolas.maurin",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.02 | Management et Assurance Qualité / grpe_tp",
+    "prev": "",
+    "next": "2"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "08:10:08",
+    "utilisateur": "nicolas.maurin",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.03 | Entrepreunariat / grpe_td",
+    "prev": "",
+    "next": "1"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "08:10:08",
+    "utilisateur": "nicolas.maurin",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.03 | Entrepreunariat / grpe_tp",
+    "prev": "",
+    "next": "2"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "08:10:08",
+    "utilisateur": "nicolas.maurin",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.04 | PPP / grpe_td",
+    "prev": "",
+    "next": "1"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "08:10:08",
+    "utilisateur": "nicolas.maurin",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.04 | PPP / grpe_tp",
+    "prev": "",
+    "next": "2"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "08:10:08",
+    "utilisateur": "nicolas.maurin",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.05 | Développement front avancé / grpe_td",
+    "prev": "",
+    "next": "1"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "08:10:08",
+    "utilisateur": "nicolas.maurin",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.05 | Développement front avancé / grpe_tp",
+    "prev": "",
+    "next": "2"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "08:10:08",
+    "utilisateur": "nicolas.maurin",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.05 | Développement front avancé / sous-groupe 1 / grpe_td",
+    "prev": "",
+    "next": "1"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "08:10:08",
+    "utilisateur": "nicolas.maurin",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.05 | Développement front avancé / sous-groupe 1 / grpe_tp",
+    "prev": "",
+    "next": "2"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "08:10:08",
+    "utilisateur": "nicolas.maurin",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.06 | Développement back avancé / grpe_td",
+    "prev": "",
+    "next": "1"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "08:10:08",
+    "utilisateur": "nicolas.maurin",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.06 | Développement back avancé / grpe_tp",
+    "prev": "",
+    "next": "2"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "08:10:08",
+    "utilisateur": "nicolas.maurin",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.06 | Développement back avancé / sous-groupe 1 / grpe_td",
+    "prev": "",
+    "next": "1"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "08:10:08",
+    "utilisateur": "nicolas.maurin",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.06 | Développement back avancé / sous-groupe 1 / grpe_tp",
+    "prev": "",
+    "next": "2"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "08:10:08",
+    "utilisateur": "nicolas.maurin",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.07 | Dispositifs interactifs / grpe_td",
+    "prev": "",
+    "next": "1"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "08:10:08",
+    "utilisateur": "nicolas.maurin",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.07 | Dispositifs interactifs / grpe_tp",
+    "prev": "",
+    "next": "2"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "08:10:08",
+    "utilisateur": "nicolas.maurin",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.07 | Dispositifs interactifs / sous-groupe 1 / grpe_td",
+    "prev": "",
+    "next": "1"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "08:10:08",
+    "utilisateur": "nicolas.maurin",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.07 | Dispositifs interactifs / sous-groupe 1 / grpe_tp",
+    "prev": "",
+    "next": "2"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "08:10:08",
+    "utilisateur": "nicolas.maurin",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.07 | Dispositifs interactifs / sous-groupe 2 / grpe_td",
+    "prev": "",
+    "next": "1"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "08:10:08",
+    "utilisateur": "nicolas.maurin",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.07 | Dispositifs interactifs / sous-groupe 2 / grpe_tp",
+    "prev": "",
+    "next": "2"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "08:10:08",
+    "utilisateur": "nicolas.maurin",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.07 | Dispositifs interactifs / sous-groupe 3 / grpe_td",
+    "prev": "",
+    "next": "1"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "08:10:08",
+    "utilisateur": "nicolas.maurin",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.07 | Dispositifs interactifs / sous-groupe 3 / grpe_tp",
+    "prev": "",
+    "next": "2"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "08:10:08",
+    "utilisateur": "nicolas.maurin",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.08 | Hébergement et cybersécurité / grpe_td",
+    "prev": "",
+    "next": "1"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "08:10:08",
+    "utilisateur": "nicolas.maurin",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.08 | Hébergement et cybersécurité / grpe_tp",
+    "prev": "",
+    "next": "2"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "08:10:08",
+    "utilisateur": "nicolas.maurin",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.09 | Mathématiques avancées, complexité algorithmique / grpe_td",
+    "prev": "",
+    "next": "1"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "08:10:08",
+    "utilisateur": "nicolas.maurin",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.09 | Mathématiques avancées, complexité algorithmique / grpe_tp",
+    "prev": "",
+    "next": "2"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "08:10:08",
+    "utilisateur": "nicolas.maurin",
+    "type": "Répartition",
+    "description": "S5 dev / SAÉ 5D.01 | Développer pour le web / grpe_td",
+    "prev": "",
+    "next": "1"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "08:10:08",
+    "utilisateur": "nicolas.maurin",
+    "type": "Répartition",
+    "description": "S5 dev / SAÉ 5D.01 | Développer pour le web / grpe_tp",
+    "prev": "",
+    "next": "2"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "08:10:08",
+    "utilisateur": "nicolas.maurin",
+    "type": "Répartition",
+    "description": "S5 dev / PORTFOLIO Portfolio-Parcours Dev Web / grpe_td",
+    "prev": "",
+    "next": "1"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "08:10:08",
+    "utilisateur": "nicolas.maurin",
+    "type": "Répartition",
+    "description": "S5 dev / PORTFOLIO Portfolio-Parcours Dev Web / grpe_tp",
+    "prev": "",
+    "next": "2"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "08:10:08",
+    "utilisateur": "nicolas.maurin",
+    "type": "Répartition",
+    "description": "S5 dev / PORTFOLIO Portfolio-Parcours Dev Web / sous-groupe 1 / grpe_td",
+    "prev": "",
+    "next": "1"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "08:10:08",
+    "utilisateur": "nicolas.maurin",
+    "type": "Répartition",
+    "description": "S5 dev / PORTFOLIO Portfolio-Parcours Dev Web / sous-groupe 1 / grpe_tp",
+    "prev": "",
+    "next": "2"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "08:10:08",
+    "utilisateur": "nicolas.maurin",
+    "type": "Répartition",
+    "description": "S6 crea / R6 crea 01 | Entrepreunariat / grpe_td",
+    "prev": "",
+    "next": "1"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "08:10:08",
+    "utilisateur": "nicolas.maurin",
+    "type": "Répartition",
+    "description": "S6 crea / R6 crea 01 | Entrepreunariat / grpe_tp",
+    "prev": "",
+    "next": "2"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "08:10:08",
+    "utilisateur": "nicolas.maurin",
+    "type": "Répartition",
+    "description": "S6 crea / R6 crea 02 | Création numérique intéractive / grpe_td",
+    "prev": "",
+    "next": "1"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "08:10:08",
+    "utilisateur": "nicolas.maurin",
+    "type": "Répartition",
+    "description": "S6 crea / R6 crea 02 | Création numérique intéractive / grpe_tp",
+    "prev": "",
+    "next": "2"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "08:10:08",
+    "utilisateur": "nicolas.maurin",
+    "type": "Répartition",
+    "description": "S6 crea / R6 crea 02 | Création numérique intéractive / sous-groupe 1 / grpe_td",
+    "prev": "",
+    "next": "1"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "08:10:08",
+    "utilisateur": "nicolas.maurin",
+    "type": "Répartition",
+    "description": "S6 crea / R6 crea 02 | Création numérique intéractive / sous-groupe 1 / grpe_tp",
+    "prev": "",
+    "next": "2"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "08:10:08",
+    "utilisateur": "nicolas.maurin",
+    "type": "Répartition",
+    "description": "S6 crea / SAÉ 6.Crea.01 | UX / UI avancé / grpe_td",
+    "prev": "",
+    "next": "1"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "08:10:08",
+    "utilisateur": "nicolas.maurin",
+    "type": "Répartition",
+    "description": "S6 crea / SAÉ 6.Crea.01 | UX / UI avancé / grpe_tp",
+    "prev": "",
+    "next": "2"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "08:10:08",
+    "utilisateur": "nicolas.maurin",
+    "type": "Répartition",
+    "description": "S6 crea / SAÉ 6.Crea.01 | UX / UI avancé / sous-groupe 1 / grpe_td",
+    "prev": "",
+    "next": "1"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "08:10:08",
+    "utilisateur": "nicolas.maurin",
+    "type": "Répartition",
+    "description": "S6 crea / SAÉ 6.Crea.01 | UX / UI avancé / sous-groupe 1 / grpe_tp",
+    "prev": "",
+    "next": "2"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "08:10:08",
+    "utilisateur": "nicolas.maurin",
+    "type": "Répartition",
+    "description": "S6 crea / SAÉ 4.99 | Marathon MMI / grpe_td",
+    "prev": "",
+    "next": "1"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "08:10:08",
+    "utilisateur": "nicolas.maurin",
+    "type": "Répartition",
+    "description": "S6 crea / SAÉ 4.99 | Marathon MMI / grpe_tp",
+    "prev": "",
+    "next": "2"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "08:10:08",
+    "utilisateur": "nicolas.maurin",
+    "type": "Répartition",
+    "description": "S6 crea / PORTFOLIO | Portfolio-Parcours Création Numérique / grpe_td",
+    "prev": "",
+    "next": "1"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "08:10:08",
+    "utilisateur": "nicolas.maurin",
+    "type": "Répartition",
+    "description": "S6 crea / PORTFOLIO | Portfolio-Parcours Création Numérique / grpe_tp",
+    "prev": "",
+    "next": "2"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "08:10:08",
+    "utilisateur": "nicolas.maurin",
+    "type": "Répartition",
+    "description": "S6 crea / PORTFOLIO | Portfolio-Parcours Création Numérique / sous-groupe 1 / grpe_td",
+    "prev": "",
+    "next": "1"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "08:10:08",
+    "utilisateur": "nicolas.maurin",
+    "type": "Répartition",
+    "description": "S6 crea / PORTFOLIO | Portfolio-Parcours Création Numérique / sous-groupe 1 / grpe_tp",
+    "prev": "",
+    "next": "2"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "08:10:08",
+    "utilisateur": "nicolas.maurin",
+    "type": "Répartition",
+    "description": "S6 dev / R6.DWeb-DI.01 | Entrepreunariat / grpe_td",
+    "prev": "",
+    "next": "1"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "08:10:08",
+    "utilisateur": "nicolas.maurin",
+    "type": "Répartition",
+    "description": "S6 dev / R6.DWeb-DI.01 | Entrepreunariat / grpe_tp",
+    "prev": "",
+    "next": "2"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "08:10:08",
+    "utilisateur": "nicolas.maurin",
+    "type": "Répartition",
+    "description": "S6 dev / R6.DWeb-DI.02 | Développement Web et dispositif interactif / grpe_td",
+    "prev": "",
+    "next": "1"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "08:10:08",
+    "utilisateur": "nicolas.maurin",
+    "type": "Répartition",
+    "description": "S6 dev / R6.DWeb-DI.02 | Développement Web et dispositif interactif / grpe_tp",
+    "prev": "",
+    "next": "2"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "08:10:08",
+    "utilisateur": "nicolas.maurin",
+    "type": "Répartition",
+    "description": "S6 dev / R6.DWeb-DI.03 | Fonctionnement des IA / grpe_td",
+    "prev": "",
+    "next": "1"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "08:10:08",
+    "utilisateur": "nicolas.maurin",
+    "type": "Répartition",
+    "description": "S6 dev / R6.DWeb-DI.03 | Fonctionnement des IA / grpe_tp",
+    "prev": "",
+    "next": "2"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "08:10:08",
+    "utilisateur": "nicolas.maurin",
+    "type": "Répartition",
+    "description": "S6 dev / SAÉ 6.dev.01 | Developpement avancé / grpe_td",
+    "prev": "",
+    "next": "1"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "08:10:08",
+    "utilisateur": "nicolas.maurin",
+    "type": "Répartition",
+    "description": "S6 dev / SAÉ 6.dev.01 | Developpement avancé / grpe_tp",
+    "prev": "",
+    "next": "2"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "08:10:08",
+    "utilisateur": "nicolas.maurin",
+    "type": "Répartition",
+    "description": "S6 dev / SAÉ 6.dev.01 | Developpement avancé / sous-groupe 1 / grpe_td",
+    "prev": "",
+    "next": "1"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "08:10:08",
+    "utilisateur": "nicolas.maurin",
+    "type": "Répartition",
+    "description": "S6 dev / SAÉ 6.dev.01 | Developpement avancé / sous-groupe 1 / grpe_tp",
+    "prev": "",
+    "next": "2"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "08:10:08",
+    "utilisateur": "nicolas.maurin",
+    "type": "Répartition",
+    "description": "S6 dev / SAÉ 6.dev.01 | Developpement avancé / sous-groupe 2 / grpe_td",
+    "prev": "",
+    "next": "1"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "08:10:08",
+    "utilisateur": "nicolas.maurin",
+    "type": "Répartition",
+    "description": "S6 dev / SAÉ 6.dev.01 | Developpement avancé / sous-groupe 2 / grpe_tp",
+    "prev": "",
+    "next": "2"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "08:10:08",
+    "utilisateur": "nicolas.maurin",
+    "type": "Répartition",
+    "description": "S6 dev / SAÉ 6.dev.01 | Developpement avancé / sous-groupe 3 / grpe_td",
+    "prev": "",
+    "next": "1"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "08:10:08",
+    "utilisateur": "nicolas.maurin",
+    "type": "Répartition",
+    "description": "S6 dev / SAÉ 6.dev.01 | Developpement avancé / sous-groupe 3 / grpe_tp",
+    "prev": "",
+    "next": "2"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "08:10:08",
+    "utilisateur": "nicolas.maurin",
+    "type": "Répartition",
+    "description": "S6 dev / PORTFOLIO | Portfolio-Parcours Dev / grpe_td",
+    "prev": "",
+    "next": "1"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "08:10:08",
+    "utilisateur": "nicolas.maurin",
+    "type": "Répartition",
+    "description": "S6 dev / PORTFOLIO | Portfolio-Parcours Dev / grpe_tp",
+    "prev": "",
+    "next": "2"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "08:10:08",
+    "utilisateur": "nicolas.maurin",
+    "type": "Répartition",
+    "description": "S6 dev / PORTFOLIO | Portfolio-Parcours Dev / sous-groupe 1 / grpe_td",
+    "prev": "",
+    "next": "1"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "08:10:08",
+    "utilisateur": "nicolas.maurin",
+    "type": "Répartition",
+    "description": "S6 dev / PORTFOLIO | Portfolio-Parcours Dev / sous-groupe 1 / grpe_tp",
+    "prev": "",
+    "next": "2"
   }
 ]
