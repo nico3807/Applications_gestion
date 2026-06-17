@@ -12310,5 +12310,59 @@
     "description": "S2 / R2.12 | Intégration / sous-groupe 1 / tp",
     "prev": "-2.5",
     "next": "-2"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "18:35:12",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S2 / R2.12 | Intégration / sous-groupe 1 / tp",
+    "prev": "-2",
+    "next": "-2.5"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "18:35:13",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S2 / R2.12 | Intégration / sous-groupe 1 / tp",
+    "prev": "-2.5",
+    "next": "-2"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "18:35:14",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S2 / R2.12 | Intégration / sous-groupe 1 / tp",
+    "prev": "-2",
+    "next": "-1.5"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "18:35:14",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S2 / R2.12 | Intégration / sous-groupe 1 / tp",
+    "prev": "-1.5",
+    "next": "-1"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "18:35:14",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S2 / R2.12 | Intégration / sous-groupe 1 / tp",
+    "prev": "-1",
+    "next": "-0.5"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "18:35:15",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S2 / R2.12 | Intégration / sous-groupe 1 / tp",
+    "prev": "-0.5",
+    "next": "0"
   }
 ]
