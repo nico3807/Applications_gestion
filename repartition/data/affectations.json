@@ -14,7 +14,9 @@
       "td": 4.5,
       "tp": 9,
       "subrows": [],
-      "responsable": ""
+      "responsable": "",
+      "grpe_td": 2,
+      "grpe_tp": 4
     },
     "PORTFOLIO | Portfolio": {
       "enseignant": "BLANCO Sandy",
@@ -390,7 +392,8 @@
           "tp": 0
         }
       ],
-      "responsable": ""
+      "responsable": "",
+      "grpe_td": 2
     }
   },
   "S6 crea": {
