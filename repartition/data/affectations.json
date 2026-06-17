@@ -508,7 +508,9 @@
       "td": 13.5,
       "tp": 0,
       "subrows": [],
-      "responsable": ""
+      "responsable": "",
+      "grpe_td": 1,
+      "grpe_tp": 2
     },
     "R6 crea 02 | Création numérique intéractive": {
       "enseignant": "THEROND Emmanuel",
@@ -520,10 +522,14 @@
           "enseignant": "SELIGHINI Valérie",
           "cm": 0,
           "td": 12,
-          "tp": 0
+          "tp": 0,
+          "grpe_td": 1,
+          "grpe_tp": 2
         }
       ],
-      "responsable": ""
+      "responsable": "",
+      "grpe_td": 1,
+      "grpe_tp": 2
     },
     "SAÉ 6.Crea.01 | UX / UI avancé": {
       "enseignant": "SELIGHINI Valérie",
@@ -535,10 +541,14 @@
           "enseignant": "THEROND Emmanuel",
           "cm": 0,
           "td": 21,
-          "tp": 0
+          "tp": 0,
+          "grpe_td": 1,
+          "grpe_tp": 2
         }
       ],
-      "responsable": ""
+      "responsable": "",
+      "grpe_td": 1,
+      "grpe_tp": 2
     },
     "SAÉ 4.99 | Marathon MMI": {
       "enseignant": "",
@@ -546,7 +556,9 @@
       "td": 0,
       "tp": 0,
       "subrows": [],
-      "responsable": ""
+      "responsable": "",
+      "grpe_td": 1,
+      "grpe_tp": 2
     },
     "PORTFOLIO | Portfolio-Parcours Création Numérique": {
       "enseignant": "THEROND Emmanuel",
@@ -558,10 +570,14 @@
           "enseignant": "BLANCO Sandy",
           "cm": 0,
           "td": 1.5,
-          "tp": 0
+          "tp": 0,
+          "grpe_td": 1,
+          "grpe_tp": 2
         }
       ],
-      "responsable": ""
+      "responsable": "",
+      "grpe_td": 1,
+      "grpe_tp": 2
     }
   },
   "S2": {
@@ -1511,7 +1527,9 @@
       "td": 13.5,
       "tp": 0,
       "subrows": [],
-      "responsable": ""
+      "responsable": "",
+      "grpe_td": 1,
+      "grpe_tp": 2
     },
     "R6.DWeb-DI.02 | Développement Web et dispositif interactif": {
       "enseignant": "",
@@ -1519,7 +1537,9 @@
       "td": 13.5,
       "tp": 0,
       "subrows": [],
-      "responsable": ""
+      "responsable": "",
+      "grpe_td": 1,
+      "grpe_tp": 2
     },
     "R6.DWeb-DI.03 | Fonctionnement des IA": {
       "enseignant": "",
@@ -1527,7 +1547,9 @@
       "td": 12,
       "tp": 0,
       "subrows": [],
-      "responsable": ""
+      "responsable": "",
+      "grpe_td": 1,
+      "grpe_tp": 2
     },
     "SAÉ 6.dev.01 | Developpement avancé": {
       "enseignant": "MARILL Damien",
@@ -1539,22 +1561,30 @@
           "enseignant": "SURRIBAS Caroline",
           "cm": 0,
           "td": 13.5,
-          "tp": 0
+          "tp": 0,
+          "grpe_td": 1,
+          "grpe_tp": 2
         },
         {
           "enseignant": "DARTIES Benoit",
           "cm": 0,
           "td": 6,
-          "tp": 0
+          "tp": 0,
+          "grpe_td": 1,
+          "grpe_tp": 2
         },
         {
           "enseignant": "HADDAD Gatien",
           "cm": 0,
           "td": 13.5,
-          "tp": 0
+          "tp": 0,
+          "grpe_td": 1,
+          "grpe_tp": 2
         }
       ],
-      "responsable": ""
+      "responsable": "",
+      "grpe_td": 1,
+      "grpe_tp": 2
     },
     "PORTFOLIO | Portfolio-Parcours Dev": {
       "enseignant": "THEROND Emmanuel",
@@ -1566,10 +1596,14 @@
           "enseignant": "MAURIN Nicolas",
           "cm": 0,
           "td": 1.5,
-          "tp": 0
+          "tp": 0,
+          "grpe_td": 1,
+          "grpe_tp": 2
         }
       ],
-      "responsable": ""
+      "responsable": "",
+      "grpe_td": 1,
+      "grpe_tp": 2
     }
   },
   "S5 dev": {
@@ -1579,7 +1613,9 @@
       "td": 6,
       "tp": 12,
       "subrows": [],
-      "responsable": ""
+      "responsable": "",
+      "grpe_td": 1,
+      "grpe_tp": 2
     },
     "R5.DWeb-DI.02 | Management et Assurance Qualité": {
       "enseignant": "PIEDEVACHE Magalie",
@@ -1587,7 +1623,9 @@
       "td": 15,
       "tp": 0,
       "subrows": [],
-      "responsable": ""
+      "responsable": "",
+      "grpe_td": 1,
+      "grpe_tp": 2
     },
     "R5.DWeb-DI.03 | Entrepreunariat": {
       "enseignant": "ROMAIN Celine",
@@ -1595,7 +1633,9 @@
       "td": 10.5,
       "tp": 0,
       "subrows": [],
-      "responsable": ""
+      "responsable": "",
+      "grpe_td": 1,
+      "grpe_tp": 2
     },
     "R5.DWeb-DI.04 | PPP": {
       "enseignant": "PIEDEVACHE Magalie",
@@ -1603,7 +1643,9 @@
       "td": 9,
       "tp": 0,
       "subrows": [],
-      "responsable": ""
+      "responsable": "",
+      "grpe_td": 1,
+      "grpe_tp": 2
     },
     "R5.DWeb-DI.05 | Développement front avancé": {
       "enseignant": "MARILL Damien",
@@ -1615,10 +1657,14 @@
           "enseignant": "DI PIERRO Davide",
           "cm": 0,
           "td": 19,
-          "tp": 3
+          "tp": 3,
+          "grpe_td": 1,
+          "grpe_tp": 2
         }
       ],
-      "responsable": ""
+      "responsable": "",
+      "grpe_td": 1,
+      "grpe_tp": 2
     },
     "R5.DWeb-DI.06 | Développement back avancé": {
       "enseignant": "MARILL Damien",
@@ -1630,10 +1676,14 @@
           "enseignant": "DI PIERRO Davide",
           "cm": 0,
           "td": 21,
-          "tp": 3
+          "tp": 3,
+          "grpe_td": 1,
+          "grpe_tp": 2
         }
       ],
-      "responsable": ""
+      "responsable": "",
+      "grpe_td": 1,
+      "grpe_tp": 2
     },
     "R5.DWeb-DI.07 | Dispositifs interactifs": {
       "enseignant": "DI PIERRO Davide",
@@ -1645,22 +1695,30 @@
           "enseignant": "MAURIN Nicolas",
           "cm": 0,
           "td": 15,
-          "tp": 3
+          "tp": 3,
+          "grpe_td": 1,
+          "grpe_tp": 2
         },
         {
           "enseignant": "AZE Jérome",
           "cm": 0,
           "td": 6,
-          "tp": 6
+          "tp": 6,
+          "grpe_td": 1,
+          "grpe_tp": 2
         },
         {
           "enseignant": "",
           "cm": 0,
           "td": 0,
-          "tp": 12
+          "tp": 12,
+          "grpe_td": 1,
+          "grpe_tp": 2
         }
       ],
-      "responsable": ""
+      "responsable": "",
+      "grpe_td": 1,
+      "grpe_tp": 2
     },
     "R5.DWeb-DI.08 | Hébergement et cybersécurité": {
       "enseignant": "WILLEMS Eric",
@@ -1668,7 +1726,9 @@
       "td": 21,
       "tp": 7.5,
       "subrows": [],
-      "responsable": ""
+      "responsable": "",
+      "grpe_td": 1,
+      "grpe_tp": 2
     },
     "R5.DWeb-DI.09 | Mathématiques avancées, complexité algorithmique": {
       "enseignant": "DARTIES Benoit",
@@ -1676,7 +1736,9 @@
       "td": 9,
       "tp": 0,
       "subrows": [],
-      "responsable": ""
+      "responsable": "",
+      "grpe_td": 1,
+      "grpe_tp": 2
     },
     "SAÉ 5D.01 | Développer pour le web": {
       "enseignant": "MARILL Damien",
@@ -1684,7 +1746,9 @@
       "td": 27,
       "tp": 0,
       "subrows": [],
-      "responsable": ""
+      "responsable": "",
+      "grpe_td": 1,
+      "grpe_tp": 2
     },
     "PORTFOLIO Portfolio-Parcours Dev Web": {
       "enseignant": "MAURIN Nicolas",
@@ -1696,10 +1760,14 @@
           "enseignant": "THEROND Emmanuel",
           "cm": 0,
           "td": 1.5,
-          "tp": 0
+          "tp": 0,
+          "grpe_td": 1,
+          "grpe_tp": 2
         }
       ],
-      "responsable": ""
+      "responsable": "",
+      "grpe_td": 1,
+      "grpe_tp": 2
     }
   },
   "S4 dev": {
