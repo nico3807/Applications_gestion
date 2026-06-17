@@ -8710,5 +8710,14 @@
     "description": "S2 / R2.07 | Écriture multimédia et narration / cm",
     "prev": "1",
     "next": "1.5"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "09:38:31",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S2 / R2.07 | Écriture multimédia et narration / td",
+    "prev": "0",
+    "next": "0.5"
   }
 ]
