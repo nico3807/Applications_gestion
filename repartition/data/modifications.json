@@ -12391,5 +12391,14 @@
     "description": "S2 / R2.12 | Intégration / sous-groupe 1 / td",
     "prev": "0.5",
     "next": "0"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "18:35:50",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S2 / R2.12 | Intégration / grpe_td",
+    "prev": "1",
+    "next": "2"
   }
 ]
