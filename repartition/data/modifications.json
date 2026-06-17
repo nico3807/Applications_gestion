@@ -12472,5 +12472,14 @@
     "description": "S2 / R2.12 | Intégration / sous-groupe 1 / grpe_tp",
     "prev": "4",
     "next": "0"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "19:10:30",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S2 / R2.14 | Système d'information / grpe_tp",
+    "prev": "0",
+    "next": "4"
   }
 ]
