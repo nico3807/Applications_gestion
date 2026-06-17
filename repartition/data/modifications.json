@@ -11644,5 +11644,14 @@
     "description": "S3 / SAÉ 3.01 | Intégrer des interfaces utilisateurs au sein d'un système d'information / sous-groupe 1 / td",
     "prev": "22.5",
     "next": "18"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "18:31:10",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S2 / R2.14 | Système d'information / cm",
+    "prev": "0",
+    "next": "4.5"
   }
 ]
