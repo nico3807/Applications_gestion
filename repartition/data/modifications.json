@@ -11635,5 +11635,14 @@
     "description": "S3 / SAÉ 3.01 | Intégrer des interfaces utilisateurs au sein d'un système d'information / td",
     "prev": "17.25",
     "next": "18"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "16:40:32",
+    "utilisateur": "nicolas.maurin",
+    "type": "Répartition",
+    "description": "S3 / SAÉ 3.01 | Intégrer des interfaces utilisateurs au sein d'un système d'information / sous-groupe 1 / td",
+    "prev": "22.5",
+    "next": "18"
   }
 ]
