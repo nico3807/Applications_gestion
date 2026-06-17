@@ -1506,14 +1506,8 @@
         {
           "enseignant": "SALTET Marius",
           "cm": 0,
-          "td": 4.5,
-          "tp": 4.5
-        },
-        {
-          "enseignant": "THEROND Emmanuel",
-          "cm": 0,
-          "td": 11,
-          "tp": 0
+          "td": 7.5,
+          "tp": 7.5
         }
       ],
       "responsable": "",
@@ -1533,10 +1527,10 @@
       "grpe_tp": 2
     },
     "R6.DWeb-DI.02 | Développement Web et dispositif interactif": {
-      "enseignant": "DI PIERRO Davide",
+      "enseignant": "",
       "cm": 0,
-      "td": 12,
-      "tp": 3,
+      "td": 13.5,
+      "tp": 0,
       "subrows": [],
       "responsable": "",
       "grpe_td": 1,
@@ -1651,13 +1645,13 @@
     "R5.DWeb-DI.05 | Développement front avancé": {
       "enseignant": "MARILL Damien",
       "cm": 0,
-      "td": 30,
-      "tp": 3,
+      "td": 21,
+      "tp": 1.5,
       "subrows": [
         {
           "enseignant": "DI PIERRO Davide",
           "cm": 0,
-          "td": 18,
+          "td": 19,
           "tp": 3,
           "grpe_td": 1,
           "grpe_tp": 2
@@ -1670,13 +1664,13 @@
     "R5.DWeb-DI.06 | Développement back avancé": {
       "enseignant": "MARILL Damien",
       "cm": 0,
-      "td": 30,
+      "td": 21,
       "tp": 3,
       "subrows": [
         {
           "enseignant": "DI PIERRO Davide",
           "cm": 0,
-          "td": 18,
+          "td": 21,
           "tp": 3,
           "grpe_td": 1,
           "grpe_tp": 2
@@ -1689,7 +1683,7 @@
     "R5.DWeb-DI.07 | Dispositifs interactifs": {
       "enseignant": "DI PIERRO Davide",
       "cm": 0,
-      "td": 18,
+      "td": 15,
       "tp": 6,
       "subrows": [
         {
@@ -1722,18 +1716,11 @@
       "grpe_tp": 2
     },
     "R5.DWeb-DI.08 | Hébergement et cybersécurité": {
-      "enseignant": "DI PIERRO Davide",
+      "enseignant": "WILLEMS Eric",
       "cm": 0,
-      "td": 10.5,
-      "tp": 3,
-      "subrows": [
-        {
-          "enseignant": "",
-          "cm": 0,
-          "td": 0,
-          "tp": 0
-        }
-      ],
+      "td": 21,
+      "tp": 7.5,
+      "subrows": [],
       "responsable": "",
       "grpe_td": 1,
       "grpe_tp": 2
@@ -1749,52 +1736,11 @@
       "grpe_tp": 2
     },
     "SAÉ 5D.01 | Développer pour le web": {
-      "enseignant": "PIEDEVACHE Magalie",
+      "enseignant": "MARILL Damien",
       "cm": 0,
-      "td": 6,
+      "td": 27,
       "tp": 0,
-      "subrows": [
-        {
-          "enseignant": "MARILL Damien",
-          "cm": 0,
-          "td": 30,
-          "tp": 0,
-          "grpe_tp": 2,
-          "grpe_td": 1
-        },
-        {
-          "enseignant": "SURRIBAS Caroline",
-          "cm": 0,
-          "td": 18,
-          "tp": 0,
-          "grpe_tp": 2,
-          "grpe_td": 1
-        },
-        {
-          "enseignant": "AZE Jérome",
-          "cm": 0,
-          "td": 18,
-          "tp": 0,
-          "grpe_tp": 2,
-          "grpe_td": 1
-        },
-        {
-          "enseignant": "DI PIERRO Davide",
-          "cm": 0,
-          "td": 15,
-          "tp": 0,
-          "grpe_tp": 2,
-          "grpe_td": 1
-        },
-        {
-          "enseignant": "MAURIN Nicolas",
-          "cm": 0,
-          "td": 15,
-          "tp": 0,
-          "grpe_tp": 2,
-          "grpe_td": 1
-        }
-      ],
+      "subrows": [],
       "responsable": "",
       "grpe_td": 1,
       "grpe_tp": 2
@@ -2199,14 +2145,6 @@
           "cm": 0,
           "td": 6,
           "tp": 4.5,
-          "grpe_td": 2,
-          "grpe_tp": 4
-        },
-        {
-          "enseignant": "DARTIES Benoit",
-          "cm": 0,
-          "td": 0,
-          "tp": 0,
           "grpe_td": 2,
           "grpe_tp": 4
         }
