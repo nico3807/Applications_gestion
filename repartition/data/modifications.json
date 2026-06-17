@@ -9037,65 +9037,11 @@
   },
   {
     "date": "17/06/2026",
-    "heure": "09:50:11",
-    "utilisateur": "chrysta.pelissier",
+    "heure": "09:51:08",
+    "utilisateur": "nicolas.maurin",
     "type": "Répartition",
-    "description": "S4 crea / R4.Crea.08 | Ecriture multimédia et narration / td",
-    "prev": "9",
-    "next": "9.5"
-  },
-  {
-    "date": "17/06/2026",
-    "heure": "09:50:12",
-    "utilisateur": "chrysta.pelissier",
-    "type": "Répartition",
-    "description": "S4 crea / R4.Crea.08 | Ecriture multimédia et narration / td",
-    "prev": "9.5",
-    "next": "10"
-  },
-  {
-    "date": "17/06/2026",
-    "heure": "09:50:12",
-    "utilisateur": "chrysta.pelissier",
-    "type": "Répartition",
-    "description": "S4 crea / R4.Crea.08 | Ecriture multimédia et narration / td",
-    "prev": "10",
-    "next": "10.5"
-  },
-  {
-    "date": "17/06/2026",
-    "heure": "09:50:42",
-    "utilisateur": "emmanuel.therond",
-    "type": "Répartition",
-    "description": "S5 crea / R5.Crea.06 | Création numérique / sous-groupe 2 / grpe_td",
-    "prev": "",
-    "next": "1"
-  },
-  {
-    "date": "17/06/2026",
-    "heure": "09:50:44",
-    "utilisateur": "emmanuel.therond",
-    "type": "Répartition",
-    "description": "S5 crea / R5.Crea.06 | Création numérique / sous-groupe 2 / grpe_tp",
-    "prev": "",
-    "next": "2"
-  },
-  {
-    "date": "17/06/2026",
-    "heure": "09:50:51",
-    "utilisateur": "emmanuel.therond",
-    "type": "Répartition",
-    "description": "S5 crea / R5.Crea.06 | Création numérique / sous-groupe 2 / td",
-    "prev": "0",
-    "next": "12.5"
-  },
-  {
-    "date": "17/06/2026",
-    "heure": "09:50:56",
-    "utilisateur": "emmanuel.therond",
-    "type": "Répartition",
-    "description": "S5 crea / R5.Crea.06 | Création numérique / sous-groupe 2 / tp",
-    "prev": "0",
+    "description": "S5 crea / R5.Crea.06 | Création numérique / tp",
+    "prev": "30",
     "next": "7.5"
   }
 ]
