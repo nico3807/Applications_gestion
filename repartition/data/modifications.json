@@ -10096,5 +10096,32 @@
     "description": "S6 crea / R6 crea 02 | Création numérique intéractive / sous-groupe 1 / td",
     "prev": "13",
     "next": "13.5"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "12:13:44",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S6 crea / R6 crea 02 | Création numérique intéractive / td",
+    "prev": "24",
+    "next": "23.5"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "12:13:45",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S6 crea / R6 crea 02 | Création numérique intéractive / td",
+    "prev": "23.5",
+    "next": "23"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "12:13:45",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S6 crea / R6 crea 02 | Création numérique intéractive / td",
+    "prev": "23",
+    "next": "22.5"
   }
 ]
