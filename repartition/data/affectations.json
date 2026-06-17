@@ -248,16 +248,7 @@
       "cm": 4.5,
       "td": 0,
       "tp": 9,
-      "subrows": [
-        {
-          "enseignant": "MAURIN Nicolas",
-          "cm": 0,
-          "td": 0,
-          "tp": 9,
-          "grpe_td": 2,
-          "grpe_tp": 4
-        }
-      ],
+      "subrows": [],
       "responsable": "",
       "grpe_td": 2,
       "grpe_tp": 4
