@@ -2820,7 +2820,10 @@ function renderSae(root) {
 
   const respOptions =
     `<option value="">— Aucun —</option>` +
-    titulaires.map((e) => `<option value="${esc(e.id)}">${esc(e.id)}</option>`).join("");
+    APP_DATA.enseignants
+      .slice()
+      .sort((a, b) => a.id.localeCompare(b.id))
+      .map((e) => `<option value="${esc(e.id)}">${esc(e.id)}</option>`).join("");
 
   /* ── Génère les lignes <tr> d'un semestre (vue éditée) ── */
   const _buildSaeRows = (semRows, sem, startIdx) => {
