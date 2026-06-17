@@ -9646,5 +9646,77 @@
     "description": "S4 crea / R4.Crea.03 | Design d'expérience / td",
     "prev": "3.5",
     "next": "3"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "12:00:53",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S4 crea / SAÉ 4.Crea.01 | Créer pour une campagne de communication visuelle / tp",
+    "prev": "1.5",
+    "next": "1"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "12:00:54",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S4 crea / SAÉ 4.Crea.01 | Créer pour une campagne de communication visuelle / tp",
+    "prev": "1",
+    "next": "0.5"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "12:00:54",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S4 crea / SAÉ 4.Crea.01 | Créer pour une campagne de communication visuelle / tp",
+    "prev": "0.5",
+    "next": "0"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "12:00:54",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S4 crea / SAÉ 4.Crea.01 | Créer pour une campagne de communication visuelle / tp",
+    "prev": "0",
+    "next": "-0.5"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "12:00:55",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S4 crea / SAÉ 4.Crea.01 | Créer pour une campagne de communication visuelle / tp",
+    "prev": "-0.5",
+    "next": "0"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "12:00:56",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S4 crea / SAÉ 4.Crea.01 | Créer pour une campagne de communication visuelle / sous-groupe 1 / tp",
+    "prev": "1.5",
+    "next": "1"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "12:00:56",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S4 crea / SAÉ 4.Crea.01 | Créer pour une campagne de communication visuelle / sous-groupe 1 / tp",
+    "prev": "1",
+    "next": "0.5"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "12:00:57",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S4 crea / SAÉ 4.Crea.01 | Créer pour une campagne de communication visuelle / sous-groupe 1 / tp",
+    "prev": "0.5",
+    "next": "0"
   }
 ]
