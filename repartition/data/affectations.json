@@ -1751,7 +1751,8 @@
           "enseignant": "MARILL Damien",
           "cm": 0,
           "td": 30,
-          "tp": 0
+          "tp": 0,
+          "grpe_tp": 2
         },
         {
           "enseignant": "SURRIBAS Caroline",
