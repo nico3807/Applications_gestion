@@ -8089,5 +8089,14 @@
     "description": "S6 dev / PORTFOLIO | Portfolio-Parcours Dev / sous-groupe 1 / grpe_tp",
     "prev": "",
     "next": "2"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "08:10:42",
+    "utilisateur": "nicolas.maurin",
+    "type": "Répartition",
+    "description": "S2 / R2.02 | Anglais renforcé - Espagnol / sous-groupe 1 / grpe_td",
+    "prev": "2",
+    "next": "1"
   }
 ]
