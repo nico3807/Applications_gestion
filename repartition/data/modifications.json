@@ -12445,5 +12445,14 @@
     "description": "S2 / R2.07 | Écriture multimédia et narration / tp",
     "prev": "10",
     "next": "10.5"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "19:09:00",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S2 / R2.13 | Développement Web / sous-groupe 2 / grpe_td",
+    "prev": "2",
+    "next": "0"
   }
 ]
