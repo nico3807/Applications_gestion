@@ -8980,5 +8980,14 @@
     "description": "S3 / R3.15 | Représentation et traitement de l'information / cm",
     "prev": "0",
     "next": "1.5"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "09:47:25",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S3 / R3.15 | Représentation et traitement de l'information / td",
+    "prev": "0",
+    "next": "4.5"
   }
 ]
