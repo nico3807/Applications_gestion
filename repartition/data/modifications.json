@@ -8251,5 +8251,14 @@
     "description": "S2 / R2.14 | Système d'information / grpe_td",
     "prev": "2",
     "next": "1"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "08:48:49",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S1 / R1.02 | Anglais renforcé - Espagnol / sous-groupe 1 / grpe_td",
+    "prev": "1",
+    "next": "0"
   }
 ]
