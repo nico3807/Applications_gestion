@@ -728,8 +728,8 @@
     "R2.12 | Intégration": {
       "enseignant": "MARILL Damien",
       "cm": 0,
-      "td": 1.5,
-      "tp": 6,
+      "td": 3,
+      "tp": 3,
       "subrows": [
         {
           "enseignant": "DI PIERRO Davide",
