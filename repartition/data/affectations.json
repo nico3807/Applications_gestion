@@ -90,7 +90,8 @@
           "enseignant": "THEROND Emmanuel",
           "cm": 0,
           "td": 0,
-          "tp": 0
+          "tp": 0,
+          "grpe_td": 2
         }
       ],
       "responsable": "",
@@ -110,7 +111,8 @@
           "tp": 6
         }
       ],
-      "responsable": ""
+      "responsable": "",
+      "grpe_td": 2
     },
     "R1.07 | Écriture multimédia et narration": {
       "enseignant": "PELISSIER Chrysta",
