@@ -8998,5 +8998,23 @@
     "description": "S3 / R3.15 | Représentation et traitement de l'information / tp",
     "prev": "6",
     "next": "0"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "09:48:17",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S4 crea / R4.Crea.02 | Economie, gestion et Droit du numérique / cm",
+    "prev": "0",
+    "next": "0.5"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "09:48:18",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S4 crea / R4.Crea.02 | Economie, gestion et Droit du numérique / cm",
+    "prev": "0.5",
+    "next": "0"
   }
 ]
