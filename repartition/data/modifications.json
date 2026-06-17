@@ -8242,5 +8242,14 @@
     "description": "S2 / R2.14 | Système d'information / sous-groupe 1 / cm",
     "prev": "4",
     "next": "4.5"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "08:43:15",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S2 / R2.14 | Système d'information / grpe_td",
+    "prev": "2",
+    "next": "1"
   }
 ]
