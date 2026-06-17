@@ -11707,5 +11707,14 @@
     "description": "S2 / R2.12 | Intégration / td",
     "prev": "1.5",
     "next": "3"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "18:33:21",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S2 / R2.12 | Intégration / tp",
+    "prev": "6",
+    "next": "3"
   }
 ]
