@@ -734,8 +734,8 @@
         {
           "enseignant": "DI PIERRO Davide",
           "cm": 0,
-          "td": 1.5,
-          "tp": -2,
+          "td": 0,
+          "tp": 0,
           "grpe_td": 2,
           "grpe_tp": 4
         }
