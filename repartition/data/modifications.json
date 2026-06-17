@@ -10150,5 +10150,59 @@
     "description": "S6 crea / R6 crea 02 | Création numérique intéractive / sous-groupe 1 / td",
     "prev": "14.5",
     "next": "15"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "14:26:29",
+    "utilisateur": "nicolas.maurin",
+    "type": "Répartition",
+    "description": "S1 / R1.12 | Développement Web / td",
+    "prev": "0",
+    "next": "0.5"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "14:26:29",
+    "utilisateur": "nicolas.maurin",
+    "type": "Répartition",
+    "description": "S1 / R1.12 | Développement Web / td",
+    "prev": "0.5",
+    "next": "1"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "14:26:30",
+    "utilisateur": "nicolas.maurin",
+    "type": "Répartition",
+    "description": "S1 / R1.12 | Développement Web / td",
+    "prev": "1",
+    "next": "1.5"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "14:26:31",
+    "utilisateur": "nicolas.maurin",
+    "type": "Répartition",
+    "description": "S1 / R1.12 | Développement Web / td",
+    "prev": "1.5",
+    "next": "1"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "14:26:31",
+    "utilisateur": "nicolas.maurin",
+    "type": "Répartition",
+    "description": "S1 / R1.12 | Développement Web / td",
+    "prev": "1",
+    "next": "0.5"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "14:26:31",
+    "utilisateur": "nicolas.maurin",
+    "type": "Répartition",
+    "description": "S1 / R1.12 | Développement Web / td",
+    "prev": "0.5",
+    "next": "0"
   }
 ]
