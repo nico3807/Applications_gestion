@@ -8992,29 +8992,29 @@
   },
   {
     "date": "17/06/2026",
-    "heure": "09:48:15",
-    "utilisateur": "chrysta.pelissier",
+    "heure": "09:48:16",
+    "utilisateur": "emmanuel.therond",
     "type": "Répartition",
-    "description": "S3 / R3.15 | Représentation et traitement de l'information / tp",
-    "prev": "6",
-    "next": "0"
-  },
-  {
-    "date": "17/06/2026",
-    "heure": "09:48:17",
-    "utilisateur": "chrysta.pelissier",
-    "type": "Répartition",
-    "description": "S4 crea / R4.Crea.02 | Economie, gestion et Droit du numérique / cm",
+    "description": "S5 crea / R5.Crea.06 | Création numérique / sous-groupe 2 / td",
     "prev": "0",
-    "next": "0.5"
+    "next": "12.5"
   },
   {
     "date": "17/06/2026",
-    "heure": "09:48:18",
-    "utilisateur": "chrysta.pelissier",
+    "heure": "09:48:20",
+    "utilisateur": "emmanuel.therond",
     "type": "Répartition",
-    "description": "S4 crea / R4.Crea.02 | Economie, gestion et Droit du numérique / cm",
-    "prev": "0.5",
-    "next": "0"
+    "description": "S5 crea / R5.Crea.06 | Création numérique / sous-groupe 2 / tp",
+    "prev": "0",
+    "next": "7.5"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "09:48:24",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.06 | Création numérique / tp",
+    "prev": "30",
+    "next": "7.5"
   }
 ]
