@@ -11473,5 +11473,59 @@
     "description": "S3 / R3.12 | Développement Front et intégration / sous-groupe 1 / td",
     "prev": "11.5",
     "next": "12"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "16:10:41",
+    "utilisateur": "nicolas.maurin",
+    "type": "Répartition",
+    "description": "S3 / R3.12 | Développement Front et intégration / tp",
+    "prev": "12",
+    "next": "12.5"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "16:10:41",
+    "utilisateur": "nicolas.maurin",
+    "type": "Répartition",
+    "description": "S3 / R3.12 | Développement Front et intégration / tp",
+    "prev": "12.5",
+    "next": "13"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "16:10:42",
+    "utilisateur": "nicolas.maurin",
+    "type": "Répartition",
+    "description": "S3 / R3.12 | Développement Front et intégration / tp",
+    "prev": "13",
+    "next": "13.5"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "16:10:43",
+    "utilisateur": "nicolas.maurin",
+    "type": "Répartition",
+    "description": "S3 / R3.12 | Développement Front et intégration / tp",
+    "prev": "13.5",
+    "next": "14"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "16:10:44",
+    "utilisateur": "nicolas.maurin",
+    "type": "Répartition",
+    "description": "S3 / R3.12 | Développement Front et intégration / tp",
+    "prev": "14",
+    "next": "14.5"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "16:10:44",
+    "utilisateur": "nicolas.maurin",
+    "type": "Répartition",
+    "description": "S3 / R3.12 | Développement Front et intégration / tp",
+    "prev": "14.5",
+    "next": "15"
   }
 ]
