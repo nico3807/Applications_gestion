@@ -8908,5 +8908,14 @@
     "description": "S2 / R2.18 | Économie, gestion et droit du numérique / sous-groupe 1 / grpe_td",
     "prev": "2",
     "next": "0"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "09:42:17",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S2 / R2.18 | Économie, gestion et droit du numérique / sous-groupe 1 / grpe_tp",
+    "prev": "4",
+    "next": "0"
   }
 ]
