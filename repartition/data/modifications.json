@@ -11653,5 +11653,14 @@
     "description": "S2 / R2.14 | Système d'information / cm",
     "prev": "0",
     "next": "4.5"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "18:31:14",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S2 / R2.14 | Système d'information / td",
+    "prev": "0",
+    "next": "4.5"
   }
 ]
