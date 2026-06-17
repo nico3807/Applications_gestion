@@ -11050,5 +11050,14 @@
     "description": "S5 dev / R5.DWeb-DI.09 | Mathématiques avancées, complexité algorithmique / td",
     "prev": "9",
     "next": "12"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "15:18:04",
+    "utilisateur": "damien.marill",
+    "type": "Répartition",
+    "description": "S6 dev / R6.DWeb-DI.02 | Développement Web et dispositif interactif / enseignant",
+    "prev": "",
+    "next": "DI PIERRO Davide"
   }
 ]
