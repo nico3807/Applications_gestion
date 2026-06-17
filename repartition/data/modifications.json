@@ -8911,56 +8911,56 @@
   },
   {
     "date": "17/06/2026",
-    "heure": "09:42:17",
-    "utilisateur": "chrysta.pelissier",
+    "heure": "09:44:40",
+    "utilisateur": "emmanuel.therond",
     "type": "Répartition",
-    "description": "S2 / R2.18 | Économie, gestion et droit du numérique / sous-groupe 1 / grpe_tp",
-    "prev": "4",
-    "next": "0"
+    "description": "S5 crea / R5.Crea.06 | Création numérique / sous-groupe 3 / enseignant",
+    "prev": "",
+    "next": "BOYER Tom"
   },
   {
     "date": "17/06/2026",
-    "heure": "09:42:56",
-    "utilisateur": "chrysta.pelissier",
+    "heure": "09:44:54",
+    "utilisateur": "emmanuel.therond",
     "type": "Répartition",
-    "description": "S2 / R2.19 | Projet Personnel et Professionnel / sous-groupe 2 / tp",
+    "description": "S5 crea / R5.Crea.06 | Création numérique / sous-groupe 2 / td",
     "prev": "0",
-    "next": "0.5"
+    "next": "12.5"
   },
   {
     "date": "17/06/2026",
-    "heure": "09:44:22",
-    "utilisateur": "chrysta.pelissier",
+    "heure": "09:44:57",
+    "utilisateur": "emmanuel.therond",
     "type": "Répartition",
-    "description": "S3 / R3.05 | Stratégies de communication et marketing / cm",
+    "description": "S5 crea / R5.Crea.06 | Création numérique / sous-groupe 3 / td",
     "prev": "0",
-    "next": "4.5"
+    "next": "12.5"
   },
   {
     "date": "17/06/2026",
-    "heure": "09:44:34",
-    "utilisateur": "chrysta.pelissier",
+    "heure": "09:45:01",
+    "utilisateur": "emmanuel.therond",
     "type": "Répartition",
-    "description": "S3 / R3.05 | Stratégies de communication et marketing / sous-groupe 1 / td",
-    "prev": "2",
-    "next": "3"
+    "description": "S5 crea / R5.Crea.06 | Création numérique / sous-groupe 2 / tp",
+    "prev": "0",
+    "next": "7.5"
   },
   {
     "date": "17/06/2026",
-    "heure": "09:45:21",
-    "utilisateur": "chrysta.pelissier",
+    "heure": "09:45:04",
+    "utilisateur": "emmanuel.therond",
     "type": "Répartition",
-    "description": "S3 / R3.09 | Création et design interactif (UI) / sous-groupe 1 / tp",
-    "prev": "7.5",
-    "next": "10.5"
+    "description": "S5 crea / R5.Crea.06 | Création numérique / sous-groupe 3 / tp",
+    "prev": "0",
+    "next": "7.5"
   },
   {
     "date": "17/06/2026",
-    "heure": "09:45:25",
-    "utilisateur": "chrysta.pelissier",
+    "heure": "09:45:30",
+    "utilisateur": "emmanuel.therond",
     "type": "Répartition",
-    "description": "S3 / R3.09 | Création et design interactif (UI) / tp",
-    "prev": "4.5",
-    "next": "0"
+    "description": "S5 crea / R5.Crea.06 | Création numérique / tp",
+    "prev": "30",
+    "next": "7.5"
   }
 ]
