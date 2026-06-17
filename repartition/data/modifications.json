@@ -2716,5 +2716,14 @@
     "description": "S1 / R1.05 | Stratégies de communication et marketing / sous-groupe 1 / grpe_td",
     "prev": "",
     "next": "2"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "08:02:23",
+    "utilisateur": "nicolas.maurin",
+    "type": "Répartition",
+    "description": "S1 / R1.06 | Expression, communication et rhétorique / grpe_td",
+    "prev": "",
+    "next": "2"
   }
 ]
