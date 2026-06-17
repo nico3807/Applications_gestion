@@ -9097,5 +9097,32 @@
     "description": "S4 crea / R4.Crea.07 | Audiovisuel - Motion design / sous-groupe 1 / tp",
     "prev": "5.5",
     "next": "6"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "10:13:11",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.06 | Création numérique / sous-groupe 2 / td",
+    "prev": "12.5",
+    "next": "12"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "10:13:11",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.06 | Création numérique / sous-groupe 2 / td",
+    "prev": "12",
+    "next": "11.5"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "10:13:12",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.06 | Création numérique / sous-groupe 2 / td",
+    "prev": "11.5",
+    "next": "11"
   }
 ]
