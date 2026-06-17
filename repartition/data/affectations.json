@@ -1750,6 +1750,18 @@
         {
           "enseignant": "MARILL Damien",
           "cm": 0,
+          "td": 30,
+          "tp": 0
+        },
+        {
+          "enseignant": "",
+          "cm": 0,
+          "td": 0,
+          "tp": 0
+        },
+        {
+          "enseignant": "",
+          "cm": 0,
           "td": 0,
           "tp": 0
         }
