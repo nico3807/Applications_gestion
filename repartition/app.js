@@ -2259,6 +2259,26 @@ function renderEnseignants(root) {
       </button>
     </div>
   </div>`;
+  // Calcul des heures Parcours (S4–S6 crea/dev uniquement)
+  const _PARCOURS_SEMS = new Set(["S4 crea", "S4 dev", "S5 crea", "S5 dev", "S6 crea", "S6 dev"]);
+  const totalsParc = {};
+  _PARCOURS_SEMS.forEach((sem) => {
+    const sem_data = APP_DATA.affectations[sem] || {};
+    Object.keys(sem_data).forEach((res) => {
+      const data = sem_data[res];
+      const entries = [{ enseignant: data.enseignant, cm: data.cm, td: data.td, tp: data.tp }];
+      if (data.subrows) data.subrows.forEach((sub) => entries.push({ enseignant: sub.enseignant, cm: sub.cm, td: sub.td, tp: sub.tp }));
+      entries.forEach((entry) => {
+        const ens = (entry.enseignant || "").trim();
+        if (!ens) return;
+        const td = parseFloat(entry.td) || 0;
+        const tp = parseFloat(entry.tp) || 0;
+        if (!totalsParc[ens]) totalsParc[ens] = 0;
+        totalsParc[ens] += td + tp * 2;
+      });
+    });
+  });
+
   html += `<div class="table-wrapper"><table class="ressources-table">
     <thead><tr><th>Nom complet</th><th>Statut</th><th>Service Dû</th><th>Service Max</th><th>Total Réalisé</th><th>Différence</th><th class="col-h">CM</th><th class="col-h">TD</th><th class="col-h">TP</th><th>Eq TD</th><th style="width:80px; text-align:center;">Actions</th></tr></thead><tbody>`;
 
@@ -2316,12 +2336,10 @@ function renderEnseignants(root) {
 
   html += `</tbody></table></div>`;
 
-  // Calcul du pourcentage de vacataire
+  // Calcul du pourcentage de vacataires (Total)
   const ensMapStat = {};
   APP_DATA.enseignants.forEach((e) => (ensMapStat[e.id] = e));
-  let heuresPermanents = 0,
-    heuresCEV = 0,
-    heuresVacSimples = 0;
+  let heuresPermanents = 0, heuresCEV = 0, heuresVacSimples = 0;
   Object.keys(totals).forEach((id) => {
     const e = ensMapStat[id];
     if (!e) return;
@@ -2335,14 +2353,38 @@ function renderEnseignants(root) {
   const pctBg = pctVac < 25 ? "#fef2f2" : "#f0fdf4";
   const pctBorder = pctVac < 25 ? "#fecaca" : "#bbf7d0";
 
-  html += `<div style="display:flex; justify-content:center; margin-top:2rem">
+  // Calcul du pourcentage de vacataires (Parcours S4–S6)
+  let heuresPermanentsParc = 0, heuresCEVParc = 0, heuresVacSimplesParc = 0;
+  Object.keys(totalsParc).forEach((id) => {
+    const e = ensMapStat[id];
+    if (!e) return;
+    if (!e.is_vac) heuresPermanentsParc += totalsParc[id];
+    else if (e.is_cev) heuresCEVParc += totalsParc[id];
+    else heuresVacSimplesParc += totalsParc[id];
+  });
+  const grandTotalParc = heuresPermanentsParc + heuresCEVParc + heuresVacSimplesParc;
+  const pctVacParc = grandTotalParc > 0 ? (heuresVacSimplesParc / grandTotalParc) * 100 : 0;
+  const pctColorParc = pctVacParc < 25 ? "#dc2626" : "#16a34a";
+  const pctBgParc = pctVacParc < 25 ? "#fef2f2" : "#f0fdf4";
+  const pctBorderParc = pctVacParc < 25 ? "#fecaca" : "#bbf7d0";
+
+  html += `<div style="display:flex; justify-content:center; gap:2rem; flex-wrap:wrap; margin-top:2rem">
     <div class="form-card" style="max-width:280px; background:${pctBg}; border-color:${pctBorder}">
-        <h3 style="margin-bottom:1.25rem; color:#1e3a5f">Pourcentage de vacataires</h3>
+        <h3 style="margin-bottom:1.25rem; color:#1e3a5f">Pourcentage de vacataires Total</h3>
         <div style="font-size:3rem; font-weight:800; color:${pctColor}; text-align:center; line-height:1; margin-bottom:1.25rem">${pctVac.toFixed(1)}<span style="font-size:1.5rem">%</span></div>
         <div style="font-size:13px; color:#374151; display:flex; flex-direction:column; gap:6px; border-top:1px solid ${pctBorder}; padding-top:1rem">
             <div style="display:flex; justify-content:space-between; gap:1rem"><span>Titulaires + CEV</span><strong>${(heuresPermanents + heuresCEV).toFixed(1)} h</strong></div>
             <div style="display:flex; justify-content:space-between; gap:1rem"><span>Vacataires simples</span><strong>${heuresVacSimples.toFixed(1)} h</strong></div>
             <div style="display:flex; justify-content:space-between; gap:1rem; margin-top:4px; border-top:1px solid ${pctBorder}; padding-top:6px; font-weight:600"><span>Total</span><strong>${grandTotal.toFixed(1)} h</strong></div>
+        </div>
+    </div>
+    <div class="form-card" style="max-width:280px; background:${pctBgParc}; border-color:${pctBorderParc}">
+        <h3 style="margin-bottom:1.25rem; color:#1e3a5f">Pourcentage de vacataires Parcours</h3>
+        <div style="font-size:3rem; font-weight:800; color:${pctColorParc}; text-align:center; line-height:1; margin-bottom:1.25rem">${pctVacParc.toFixed(1)}<span style="font-size:1.5rem">%</span></div>
+        <div style="font-size:13px; color:#374151; display:flex; flex-direction:column; gap:6px; border-top:1px solid ${pctBorderParc}; padding-top:1rem">
+            <div style="display:flex; justify-content:space-between; gap:1rem"><span>Titulaires + CEV</span><strong>${(heuresPermanentsParc + heuresCEVParc).toFixed(1)} h</strong></div>
+            <div style="display:flex; justify-content:space-between; gap:1rem"><span>Vacataires simples</span><strong>${heuresVacSimplesParc.toFixed(1)} h</strong></div>
+            <div style="display:flex; justify-content:space-between; gap:1rem; margin-top:4px; border-top:1px solid ${pctBorderParc}; padding-top:6px; font-weight:600"><span>Total</span><strong>${grandTotalParc.toFixed(1)} h</strong></div>
         </div>
     </div>
   </div>`;
