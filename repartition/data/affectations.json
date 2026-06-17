@@ -420,13 +420,13 @@
     },
     "SAÉ 1.05 | Produire un site Web": {
       "enseignant": "DARTIES Benoit",
-      "cm": 1.5,
+      "cm": 0,
       "td": 5,
       "tp": 0,
       "subrows": [
         {
           "enseignant": "MAURIN Nicolas",
-          "cm": 0,
+          "cm": 1.5,
           "td": 7.5,
           "tp": 0,
           "grpe_td": 2,
@@ -636,7 +636,7 @@
       "enseignant": "JAECKLE Luc",
       "cm": 1.5,
       "td": 7.5,
-      "tp": 9,
+      "tp": 10.5,
       "subrows": [
         {
           "enseignant": "RAMPON Candice",
@@ -728,16 +728,16 @@
     "R2.12 | Intégration": {
       "enseignant": "MARILL Damien",
       "cm": 0,
-      "td": 1.5,
-      "tp": 6,
+      "td": 3,
+      "tp": 15,
       "subrows": [
         {
           "enseignant": "DI PIERRO Davide",
           "cm": 0,
-          "td": 1.5,
-          "tp": 7.5,
-          "grpe_td": 2,
-          "grpe_tp": 4
+          "td": 0,
+          "tp": 0,
+          "grpe_td": 0,
+          "grpe_tp": 0
         }
       ],
       "responsable": "THEROND Emmanuel",
@@ -763,8 +763,8 @@
           "cm": 0,
           "td": 0,
           "tp": 0,
-          "grpe_td": 2,
-          "grpe_tp": 4
+          "grpe_td": 0,
+          "grpe_tp": 0
         }
       ],
       "responsable": "DARTIES Benoit",
@@ -773,22 +773,22 @@
     },
     "R2.14 | Système d'information": {
       "enseignant": "TALLEUX Johann",
-      "cm": 0,
-      "td": 0,
-      "tp": 0,
+      "cm": 4.5,
+      "td": 4.5,
+      "tp": 4.5,
       "subrows": [
         {
-          "enseignant": "DI PIERRO Davide",
-          "cm": 4.5,
-          "td": 4.5,
-          "tp": 4.5,
-          "grpe_td": 2,
-          "grpe_tp": 4
+          "enseignant": "",
+          "cm": 0,
+          "td": 0,
+          "tp": 0,
+          "grpe_td": 0,
+          "grpe_tp": 0
         }
       ],
       "responsable": "",
-      "grpe_td": 0,
-      "grpe_tp": 0
+      "grpe_td": 2,
+      "grpe_tp": 4
     },
     "R2.15 | Hébergement": {
       "enseignant": "MAURIN Nicolas",
