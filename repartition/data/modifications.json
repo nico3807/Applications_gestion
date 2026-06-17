@@ -8125,5 +8125,14 @@
     "description": "S3 / R3.02 | Anglais renforcé - Espagnol / grpe_tp",
     "prev": "4",
     "next": "3"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "08:11:10",
+    "utilisateur": "nicolas.maurin",
+    "type": "Répartition",
+    "description": "S3 / R3.02 | Anglais renforcé - Espagnol / sous-groupe 1 / grpe_td",
+    "prev": "2",
+    "next": "1"
   }
 ]
