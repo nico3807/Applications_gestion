@@ -8161,5 +8161,86 @@
     "description": "Responsable SAÉ 1.06 | Gérer un projet de communication numérique (S1)",
     "prev": "—",
     "next": "TOURNIE Laetitia"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "08:42:59",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S2 / R2.14 | Système d'information / sous-groupe 1 / cm",
+    "prev": "0",
+    "next": "0.5"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "08:43:00",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S2 / R2.14 | Système d'information / sous-groupe 1 / cm",
+    "prev": "0.5",
+    "next": "1"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "08:43:00",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S2 / R2.14 | Système d'information / sous-groupe 1 / cm",
+    "prev": "1",
+    "next": "1.5"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "08:43:01",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S2 / R2.14 | Système d'information / sous-groupe 1 / cm",
+    "prev": "1.5",
+    "next": "2"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "08:43:01",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S2 / R2.14 | Système d'information / sous-groupe 1 / cm",
+    "prev": "2",
+    "next": "2.5"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "08:43:01",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S2 / R2.14 | Système d'information / sous-groupe 1 / cm",
+    "prev": "2.5",
+    "next": "3"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "08:43:02",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S2 / R2.14 | Système d'information / sous-groupe 1 / cm",
+    "prev": "3",
+    "next": "3.5"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "08:43:03",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S2 / R2.14 | Système d'information / sous-groupe 1 / cm",
+    "prev": "3.5",
+    "next": "4"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "08:43:03",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S2 / R2.14 | Système d'information / sous-groupe 1 / cm",
+    "prev": "4",
+    "next": "4.5"
   }
 ]
