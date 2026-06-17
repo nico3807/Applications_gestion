@@ -9916,5 +9916,14 @@
     "description": "S4 crea / SAÉ 4.Crea.02 | Produire du contenu multimédia / td",
     "prev": "21.5",
     "next": "21"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "12:10:19",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S4 crea / SAÉ 4.Crea.02 | Produire du contenu multimédia / sous-groupe 1 / td",
+    "prev": "5",
+    "next": "4.5"
   }
 ]
