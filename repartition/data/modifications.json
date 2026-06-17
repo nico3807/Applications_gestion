@@ -9556,5 +9556,14 @@
     "description": "S1 / R1.13 | Hébergement / tp",
     "prev": "0",
     "next": "9"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "11:07:31",
+    "utilisateur": "nicolas.maurin",
+    "type": "Répartition",
+    "description": "S1 / R1.13 | Hébergement / enseignant",
+    "prev": "DARTIES Benoit",
+    "next": "MAURIN Nicolas"
   }
 ]
