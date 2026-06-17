@@ -208,14 +208,14 @@
     "R1.11 | Intégration": {
       "enseignant": "PELISSIER Chrysta",
       "cm": 1.5,
-      "td": 1.5,
-      "tp": 9,
+      "td": 0,
+      "tp": 7.5,
       "subrows": [
         {
           "enseignant": "TALLEUX Johann",
           "cm": 0,
-          "td": 12,
-          "tp": 6,
+          "td": 13.5,
+          "tp": 7.5,
           "grpe_td": 2,
           "grpe_tp": 4
         }
@@ -651,7 +651,7 @@
     },
     "R2.07 | Écriture multimédia et narration": {
       "enseignant": "JAECKLE Luc",
-      "cm": 3,
+      "cm": 1.5,
       "td": 0,
       "tp": 9,
       "subrows": [
@@ -1495,13 +1495,13 @@
     "R5.Crea.06 | Création numérique": {
       "enseignant": "BLANCO Sandy",
       "cm": 0,
-      "td": 13.5,
-      "tp": 5,
+      "td": 12.5,
+      "tp": 30,
       "subrows": [
         {
           "enseignant": "MEUNIER Dylan",
           "cm": 0,
-          "td": 12,
+          "td": 12.5,
           "tp": 7.5,
           "grpe_td": 1,
           "grpe_tp": 2
@@ -1509,14 +1509,8 @@
         {
           "enseignant": "SALTET Marius",
           "cm": 0,
-          "td": 7.5,
-          "tp": 8
-        },
-        {
-          "enseignant": "BOYER Tom",
-          "cm": 0,
-          "td": 7.5,
-          "tp": 4.5
+          "td": 0,
+          "tp": 0
         }
       ],
       "responsable": "",
