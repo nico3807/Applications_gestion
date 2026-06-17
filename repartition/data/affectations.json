@@ -729,13 +729,13 @@
       "enseignant": "MARILL Damien",
       "cm": 0,
       "td": 3,
-      "tp": 3,
+      "tp": 15,
       "subrows": [
         {
           "enseignant": "DI PIERRO Davide",
           "cm": 0,
           "td": 1.5,
-          "tp": 7.5,
+          "tp": -7,
           "grpe_td": 2,
           "grpe_tp": 4
         }
