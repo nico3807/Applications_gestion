@@ -10069,5 +10069,32 @@
     "description": "S4 crea / SAÉ 4.Crea.02 | Produire du contenu multimédia / sous-groupe 2 / enseignant",
     "prev": "",
     "next": "BLANCO Sandy"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "12:13:33",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S6 crea / R6 crea 02 | Création numérique intéractive / sous-groupe 1 / td",
+    "prev": "12",
+    "next": "12.5"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "12:13:34",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S6 crea / R6 crea 02 | Création numérique intéractive / sous-groupe 1 / td",
+    "prev": "12.5",
+    "next": "13"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "12:13:34",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S6 crea / R6 crea 02 | Création numérique intéractive / sous-groupe 1 / td",
+    "prev": "13",
+    "next": "13.5"
   }
 ]
