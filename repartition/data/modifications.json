@@ -11671,5 +11671,14 @@
     "description": "S2 / R2.14 | Système d'information / tp",
     "prev": "0",
     "next": "4.5"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "18:31:55",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S2 / R2.14 | Système d'information / sous-groupe 1 / enseignant",
+    "prev": "DI PIERRO Davide",
+    "next": ""
   }
 ]
