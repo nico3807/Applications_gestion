@@ -10744,5 +10744,14 @@
     "description": "S5 dev / R5.DWeb-DI.08 | Hébergement et cybersécurité / tp",
     "prev": "7.5",
     "next": "3"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "15:04:35",
+    "utilisateur": "damien.marill",
+    "type": "Répartition",
+    "description": "S6 dev / R6.DWeb-DI.02 | Développement Web et dispositif interactif / enseignant",
+    "prev": "",
+    "next": "DI PIERRO Davide"
   }
 ]
