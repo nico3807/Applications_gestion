@@ -775,10 +775,10 @@
       "enseignant": "TALLEUX Johann",
       "cm": 4.5,
       "td": 4.5,
-      "tp": 0,
+      "tp": 4.5,
       "subrows": [
         {
-          "enseignant": "DI PIERRO Davide",
+          "enseignant": "",
           "cm": 4.5,
           "td": 4.5,
           "tp": 4.5,
