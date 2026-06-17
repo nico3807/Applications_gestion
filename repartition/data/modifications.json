@@ -11059,5 +11059,14 @@
     "description": "S6 dev / R6.DWeb-DI.02 | Développement Web et dispositif interactif / enseignant",
     "prev": "",
     "next": "DI PIERRO Davide"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "15:18:19",
+    "utilisateur": "damien.marill",
+    "type": "Répartition",
+    "description": "S6 dev / R6.DWeb-DI.02 | Développement Web et dispositif interactif / td",
+    "prev": "13.5",
+    "next": "12"
   }
 ]
