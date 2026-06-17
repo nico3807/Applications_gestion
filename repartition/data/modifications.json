@@ -10771,5 +10771,14 @@
     "description": "S6 dev / R6.DWeb-DI.02 | Développement Web et dispositif interactif / tp",
     "prev": "0",
     "next": "3"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "15:06:32",
+    "utilisateur": "damien.marill",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.05 | Développement front avancé / sous-groupe 1 / td",
+    "prev": "19",
+    "next": "18"
   }
 ]
