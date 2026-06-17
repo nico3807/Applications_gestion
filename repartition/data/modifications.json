@@ -2770,5 +2770,14 @@
     "description": "S1 / R1.07 | Écriture multimédia et narration / sous-groupe 1 / grpe_tp",
     "prev": "",
     "next": "4"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "08:02:56",
+    "utilisateur": "nicolas.maurin",
+    "type": "Répartition",
+    "description": "S1 / R1.06 | Expression, communication et rhétorique / sous-groupe 1 / grpe_td",
+    "prev": "",
+    "next": "2"
   }
 ]
