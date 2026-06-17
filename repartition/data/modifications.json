@@ -9925,5 +9925,86 @@
     "description": "S4 crea / SAÉ 4.Crea.02 | Produire du contenu multimédia / sous-groupe 1 / td",
     "prev": "5",
     "next": "4.5"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "12:10:22",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S4 crea / SAÉ 4.Crea.02 | Produire du contenu multimédia / sous-groupe 2 / td",
+    "prev": "0",
+    "next": "0.5"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "12:10:22",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S4 crea / SAÉ 4.Crea.02 | Produire du contenu multimédia / sous-groupe 2 / td",
+    "prev": "0.5",
+    "next": "1"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "12:10:22",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S4 crea / SAÉ 4.Crea.02 | Produire du contenu multimédia / sous-groupe 2 / td",
+    "prev": "1",
+    "next": "1.5"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "12:10:22",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S4 crea / SAÉ 4.Crea.02 | Produire du contenu multimédia / sous-groupe 2 / td",
+    "prev": "1.5",
+    "next": "2"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "12:10:23",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S4 crea / SAÉ 4.Crea.02 | Produire du contenu multimédia / sous-groupe 2 / td",
+    "prev": "2",
+    "next": "2.5"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "12:10:23",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S4 crea / SAÉ 4.Crea.02 | Produire du contenu multimédia / sous-groupe 2 / td",
+    "prev": "2.5",
+    "next": "3"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "12:10:24",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S4 crea / SAÉ 4.Crea.02 | Produire du contenu multimédia / sous-groupe 2 / td",
+    "prev": "3",
+    "next": "3.5"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "12:10:24",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S4 crea / SAÉ 4.Crea.02 | Produire du contenu multimédia / sous-groupe 2 / td",
+    "prev": "3.5",
+    "next": "4"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "12:10:25",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S4 crea / SAÉ 4.Crea.02 | Produire du contenu multimédia / sous-groupe 2 / td",
+    "prev": "4",
+    "next": "4.5"
   }
 ]
