@@ -9430,5 +9430,23 @@
     "description": "S4 crea / R4.Crea.06 | Culture artistique / tp",
     "prev": "10",
     "next": "10.5"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "10:20:21",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S4 crea / R4.Crea.07 | Audiovisuel - Motion design / sous-groupe 1 / td",
+    "prev": "3",
+    "next": "3.5"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "10:20:22",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S4 crea / R4.Crea.07 | Audiovisuel - Motion design / sous-groupe 1 / td",
+    "prev": "3.5",
+    "next": "4"
   }
 ]
