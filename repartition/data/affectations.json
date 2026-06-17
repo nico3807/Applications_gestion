@@ -91,7 +91,8 @@
           "cm": 0,
           "td": 0,
           "tp": 0,
-          "grpe_td": 2
+          "grpe_td": 2,
+          "grpe_tp": 4
         }
       ],
       "responsable": "",
@@ -128,7 +129,8 @@
         }
       ],
       "responsable": "",
-      "grpe_td": 2
+      "grpe_td": 2,
+      "grpe_tp": 4
     },
     "R1.08 | Production graphique": {
       "enseignant": "SURRIBAS Caroline",
