@@ -5551,5 +5551,437 @@
     "description": "S3 / PORTFOLIO | Portfolio-Parcours Dev / sous-groupe 4 / grpe_tp",
     "prev": "",
     "next": "4"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "08:07:23",
+    "utilisateur": "nicolas.maurin",
+    "type": "Répartition",
+    "description": "S4 crea / R4.Crea.01 | Anglais / grpe_td",
+    "prev": "",
+    "next": "2"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "08:07:23",
+    "utilisateur": "nicolas.maurin",
+    "type": "Répartition",
+    "description": "S4 crea / R4.Crea.01 | Anglais / grpe_tp",
+    "prev": "",
+    "next": "4"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "08:07:23",
+    "utilisateur": "nicolas.maurin",
+    "type": "Répartition",
+    "description": "S4 crea / R4.Crea.02 | Economie, gestion et Droit du numérique / grpe_td",
+    "prev": "",
+    "next": "2"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "08:07:23",
+    "utilisateur": "nicolas.maurin",
+    "type": "Répartition",
+    "description": "S4 crea / R4.Crea.02 | Economie, gestion et Droit du numérique / grpe_tp",
+    "prev": "",
+    "next": "4"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "08:07:23",
+    "utilisateur": "nicolas.maurin",
+    "type": "Répartition",
+    "description": "S4 crea / R4.Crea.02 | Economie, gestion et Droit du numérique / sous-groupe 1 / grpe_td",
+    "prev": "",
+    "next": "2"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "08:07:23",
+    "utilisateur": "nicolas.maurin",
+    "type": "Répartition",
+    "description": "S4 crea / R4.Crea.02 | Economie, gestion et Droit du numérique / sous-groupe 1 / grpe_tp",
+    "prev": "",
+    "next": "4"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "08:07:23",
+    "utilisateur": "nicolas.maurin",
+    "type": "Répartition",
+    "description": "S4 crea / R4.Crea.03 | Design d'expérience / grpe_td",
+    "prev": "",
+    "next": "2"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "08:07:23",
+    "utilisateur": "nicolas.maurin",
+    "type": "Répartition",
+    "description": "S4 crea / R4.Crea.03 | Design d'expérience / grpe_tp",
+    "prev": "",
+    "next": "4"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "08:07:23",
+    "utilisateur": "nicolas.maurin",
+    "type": "Répartition",
+    "description": "S4 crea / R4.Crea.03 | Design d'expérience / sous-groupe 1 / grpe_td",
+    "prev": "",
+    "next": "2"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "08:07:24",
+    "utilisateur": "nicolas.maurin",
+    "type": "Répartition",
+    "description": "S4 crea / R4.Crea.03 | Design d'expérience / sous-groupe 1 / grpe_tp",
+    "prev": "",
+    "next": "4"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "08:07:24",
+    "utilisateur": "nicolas.maurin",
+    "type": "Répartition",
+    "description": "S4 crea / R4.Crea.04 | Expression, communication / grpe_td",
+    "prev": "",
+    "next": "2"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "08:07:24",
+    "utilisateur": "nicolas.maurin",
+    "type": "Répartition",
+    "description": "S4 crea / R4.Crea.04 | Expression, communication / grpe_tp",
+    "prev": "",
+    "next": "4"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "08:07:24",
+    "utilisateur": "nicolas.maurin",
+    "type": "Répartition",
+    "description": "S4 crea / R4.Crea.04 | Expression, communication / sous-groupe 1 / grpe_td",
+    "prev": "",
+    "next": "2"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "08:07:24",
+    "utilisateur": "nicolas.maurin",
+    "type": "Répartition",
+    "description": "S4 crea / R4.Crea.04 | Expression, communication / sous-groupe 1 / grpe_tp",
+    "prev": "",
+    "next": "4"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "08:07:24",
+    "utilisateur": "nicolas.maurin",
+    "type": "Répartition",
+    "description": "S4 crea / R4.Crea.04 | Expression, communication / sous-groupe 2 / grpe_td",
+    "prev": "",
+    "next": "2"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "08:07:24",
+    "utilisateur": "nicolas.maurin",
+    "type": "Répartition",
+    "description": "S4 crea / R4.Crea.04 | Expression, communication / sous-groupe 2 / grpe_tp",
+    "prev": "",
+    "next": "4"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "08:07:24",
+    "utilisateur": "nicolas.maurin",
+    "type": "Répartition",
+    "description": "S4 crea / R4.Crea.05 | Gestion de contenus spécialisée / grpe_td",
+    "prev": "",
+    "next": "2"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "08:07:24",
+    "utilisateur": "nicolas.maurin",
+    "type": "Répartition",
+    "description": "S4 crea / R4.Crea.05 | Gestion de contenus spécialisée / grpe_tp",
+    "prev": "",
+    "next": "4"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "08:07:24",
+    "utilisateur": "nicolas.maurin",
+    "type": "Répartition",
+    "description": "S4 crea / R4.Crea.06 | Culture artistique / grpe_td",
+    "prev": "",
+    "next": "2"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "08:07:24",
+    "utilisateur": "nicolas.maurin",
+    "type": "Répartition",
+    "description": "S4 crea / R4.Crea.06 | Culture artistique / grpe_tp",
+    "prev": "",
+    "next": "4"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "08:07:24",
+    "utilisateur": "nicolas.maurin",
+    "type": "Répartition",
+    "description": "S4 crea / R4.Crea.07 | Audiovisuel - Motion design / grpe_td",
+    "prev": "",
+    "next": "2"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "08:07:24",
+    "utilisateur": "nicolas.maurin",
+    "type": "Répartition",
+    "description": "S4 crea / R4.Crea.07 | Audiovisuel - Motion design / grpe_tp",
+    "prev": "",
+    "next": "4"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "08:07:24",
+    "utilisateur": "nicolas.maurin",
+    "type": "Répartition",
+    "description": "S4 crea / R4.Crea.07 | Audiovisuel - Motion design / sous-groupe 1 / grpe_td",
+    "prev": "",
+    "next": "2"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "08:07:24",
+    "utilisateur": "nicolas.maurin",
+    "type": "Répartition",
+    "description": "S4 crea / R4.Crea.07 | Audiovisuel - Motion design / sous-groupe 1 / grpe_tp",
+    "prev": "",
+    "next": "4"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "08:07:24",
+    "utilisateur": "nicolas.maurin",
+    "type": "Répartition",
+    "description": "S4 crea / R4.Crea.08 | Ecriture multimédia et narration / grpe_td",
+    "prev": "",
+    "next": "2"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "08:07:24",
+    "utilisateur": "nicolas.maurin",
+    "type": "Répartition",
+    "description": "S4 crea / R4.Crea.08 | Ecriture multimédia et narration / grpe_tp",
+    "prev": "",
+    "next": "4"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "08:07:24",
+    "utilisateur": "nicolas.maurin",
+    "type": "Répartition",
+    "description": "S4 crea / SAÉ 4.Crea.01 | Créer pour une campagne de communication visuelle / grpe_td",
+    "prev": "",
+    "next": "2"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "08:07:24",
+    "utilisateur": "nicolas.maurin",
+    "type": "Répartition",
+    "description": "S4 crea / SAÉ 4.Crea.01 | Créer pour une campagne de communication visuelle / grpe_tp",
+    "prev": "",
+    "next": "4"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "08:07:24",
+    "utilisateur": "nicolas.maurin",
+    "type": "Répartition",
+    "description": "S4 crea / SAÉ 4.Crea.01 | Créer pour une campagne de communication visuelle / sous-groupe 1 / grpe_td",
+    "prev": "",
+    "next": "2"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "08:07:24",
+    "utilisateur": "nicolas.maurin",
+    "type": "Répartition",
+    "description": "S4 crea / SAÉ 4.Crea.01 | Créer pour une campagne de communication visuelle / sous-groupe 1 / grpe_tp",
+    "prev": "",
+    "next": "4"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "08:07:24",
+    "utilisateur": "nicolas.maurin",
+    "type": "Répartition",
+    "description": "S4 crea / SAÉ 4.Crea.02 | Produire du contenu multimédia / grpe_td",
+    "prev": "",
+    "next": "2"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "08:07:24",
+    "utilisateur": "nicolas.maurin",
+    "type": "Répartition",
+    "description": "S4 crea / SAÉ 4.Crea.02 | Produire du contenu multimédia / grpe_tp",
+    "prev": "",
+    "next": "4"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "08:07:24",
+    "utilisateur": "nicolas.maurin",
+    "type": "Répartition",
+    "description": "S4 crea / SAÉ 4.Crea.02 | Produire du contenu multimédia / sous-groupe 1 / grpe_td",
+    "prev": "",
+    "next": "2"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "08:07:24",
+    "utilisateur": "nicolas.maurin",
+    "type": "Répartition",
+    "description": "S4 crea / SAÉ 4.Crea.02 | Produire du contenu multimédia / sous-groupe 1 / grpe_tp",
+    "prev": "",
+    "next": "4"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "08:07:24",
+    "utilisateur": "nicolas.maurin",
+    "type": "Répartition",
+    "description": "S4 crea / SAÉ 4.99 | Marathon MMI / grpe_td",
+    "prev": "",
+    "next": "2"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "08:07:24",
+    "utilisateur": "nicolas.maurin",
+    "type": "Répartition",
+    "description": "S4 crea / SAÉ 4.99 | Marathon MMI / grpe_tp",
+    "prev": "",
+    "next": "4"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "08:07:24",
+    "utilisateur": "nicolas.maurin",
+    "type": "Répartition",
+    "description": "S4 crea / SAÉ 4.98 | Hackathon / grpe_td",
+    "prev": "",
+    "next": "2"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "08:07:24",
+    "utilisateur": "nicolas.maurin",
+    "type": "Répartition",
+    "description": "S4 crea / SAÉ 4.98 | Hackathon / grpe_tp",
+    "prev": "",
+    "next": "4"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "08:07:24",
+    "utilisateur": "nicolas.maurin",
+    "type": "Répartition",
+    "description": "S4 crea / PORTFOLIO | Portfolio-Parcours Création Numérique / grpe_td",
+    "prev": "",
+    "next": "2"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "08:07:24",
+    "utilisateur": "nicolas.maurin",
+    "type": "Répartition",
+    "description": "S4 crea / PORTFOLIO | Portfolio-Parcours Création Numérique / grpe_tp",
+    "prev": "",
+    "next": "4"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "08:07:24",
+    "utilisateur": "nicolas.maurin",
+    "type": "Répartition",
+    "description": "S4 crea / PORTFOLIO | Portfolio-Parcours Création Numérique / sous-groupe 1 / grpe_td",
+    "prev": "",
+    "next": "2"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "08:07:25",
+    "utilisateur": "nicolas.maurin",
+    "type": "Répartition",
+    "description": "S4 crea / PORTFOLIO | Portfolio-Parcours Création Numérique / sous-groupe 1 / grpe_tp",
+    "prev": "",
+    "next": "4"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "08:07:25",
+    "utilisateur": "nicolas.maurin",
+    "type": "Répartition",
+    "description": "S4 crea / PORTFOLIO | Portfolio-Parcours Création Numérique / sous-groupe 2 / grpe_td",
+    "prev": "",
+    "next": "2"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "08:07:25",
+    "utilisateur": "nicolas.maurin",
+    "type": "Répartition",
+    "description": "S4 crea / PORTFOLIO | Portfolio-Parcours Création Numérique / sous-groupe 2 / grpe_tp",
+    "prev": "",
+    "next": "4"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "08:07:25",
+    "utilisateur": "nicolas.maurin",
+    "type": "Répartition",
+    "description": "S4 crea / PORTFOLIO | Portfolio-Parcours Création Numérique / sous-groupe 3 / grpe_td",
+    "prev": "",
+    "next": "2"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "08:07:25",
+    "utilisateur": "nicolas.maurin",
+    "type": "Répartition",
+    "description": "S4 crea / PORTFOLIO | Portfolio-Parcours Création Numérique / sous-groupe 3 / grpe_tp",
+    "prev": "",
+    "next": "4"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "08:07:25",
+    "utilisateur": "nicolas.maurin",
+    "type": "Répartition",
+    "description": "S4 crea / PORTFOLIO | Portfolio-Parcours Création Numérique / sous-groupe 4 / grpe_td",
+    "prev": "",
+    "next": "2"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "08:07:25",
+    "utilisateur": "nicolas.maurin",
+    "type": "Répartition",
+    "description": "S4 crea / PORTFOLIO | Portfolio-Parcours Création Numérique / sous-groupe 4 / grpe_tp",
+    "prev": "",
+    "next": "4"
   }
 ]
