@@ -208,14 +208,14 @@
     "R1.11 | Intégration": {
       "enseignant": "PELISSIER Chrysta",
       "cm": 1.5,
-      "td": 0,
-      "tp": 7.5,
+      "td": 1.5,
+      "tp": 9,
       "subrows": [
         {
           "enseignant": "TALLEUX Johann",
           "cm": 0,
-          "td": 13.5,
-          "tp": 7.5,
+          "td": 12,
+          "tp": 6,
           "grpe_td": 2,
           "grpe_tp": 4
         }
@@ -1495,19 +1495,25 @@
     "R5.Crea.06 | Création numérique": {
       "enseignant": "BLANCO Sandy",
       "cm": 0,
-      "td": 12.5,
-      "tp": 30,
+      "td": 14,
+      "tp": 5,
       "subrows": [
         {
           "enseignant": "MEUNIER Dylan",
           "cm": 0,
-          "td": 12.5,
+          "td": 12,
           "tp": 7.5,
           "grpe_td": 1,
           "grpe_tp": 2
         },
         {
           "enseignant": "SALTET Marius",
+          "cm": 0,
+          "td": 7.5,
+          "tp": 8
+        },
+        {
+          "enseignant": "",
           "cm": 0,
           "td": 0,
           "tp": 0
