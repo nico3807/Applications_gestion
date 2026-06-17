@@ -8899,5 +8899,32 @@
     "description": "S5 crea / R5.Crea.06 | Création numérique / sous-groupe 3 / enseignant",
     "prev": "",
     "next": "BOYER Tom"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "09:37:13",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.06 | Création numérique / td",
+    "prev": "14",
+    "next": "13.5"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "09:37:14",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.06 | Création numérique / td",
+    "prev": "13.5",
+    "next": "13"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "09:37:15",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.06 | Création numérique / td",
+    "prev": "13",
+    "next": "12.5"
   }
 ]
