@@ -1267,7 +1267,7 @@
         {
           "enseignant": "BERNARD William",
           "cm": 0,
-          "td": 5,
+          "td": 4.5,
           "tp": 6,
           "grpe_td": 1,
           "grpe_tp": 2
@@ -1275,7 +1275,7 @@
         {
           "enseignant": "",
           "cm": 0,
-          "td": 0,
+          "td": 3.5,
           "tp": 0
         }
       ],
