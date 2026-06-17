@@ -9124,5 +9124,32 @@
     "description": "S5 crea / R5.Crea.06 | Création numérique / sous-groupe 2 / td",
     "prev": "11.5",
     "next": "11"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "10:13:15",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.06 | Création numérique / sous-groupe 2 / td",
+    "prev": "11",
+    "next": "10.5"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "10:13:16",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.06 | Création numérique / sous-groupe 2 / td",
+    "prev": "10.5",
+    "next": "10"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "10:13:16",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.06 | Création numérique / sous-groupe 2 / td",
+    "prev": "10",
+    "next": "9.5"
   }
 ]
