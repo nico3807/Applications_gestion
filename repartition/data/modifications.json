@@ -8143,5 +8143,3200 @@
     "description": "S3 / R3.02 | Anglais renforcé - Espagnol / sous-groupe 1 / grpe_tp",
     "prev": "4",
     "next": "1"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "08:33:18",
+    "utilisateur": "nicolas.maurin",
+    "type": "SAÉ",
+    "description": "Responsable SAÉ 3.03 | Concevoir des visualisations de données pour le web et un support animé (S3)",
+    "prev": "—",
+    "next": "LAGIEWKA Arnaud"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "08:33:54",
+    "utilisateur": "nicolas.maurin",
+    "type": "SAÉ",
+    "description": "Responsable SAÉ 1.06 | Gérer un projet de communication numérique (S1)",
+    "prev": "—",
+    "next": "TOURNIE Laetitia"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "08:42:59",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S2 / R2.14 | Système d'information / sous-groupe 1 / cm",
+    "prev": "0",
+    "next": "0.5"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "08:43:00",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S2 / R2.14 | Système d'information / sous-groupe 1 / cm",
+    "prev": "0.5",
+    "next": "1"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "08:43:00",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S2 / R2.14 | Système d'information / sous-groupe 1 / cm",
+    "prev": "1",
+    "next": "1.5"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "08:43:01",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S2 / R2.14 | Système d'information / sous-groupe 1 / cm",
+    "prev": "1.5",
+    "next": "2"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "08:43:01",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S2 / R2.14 | Système d'information / sous-groupe 1 / cm",
+    "prev": "2",
+    "next": "2.5"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "08:43:01",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S2 / R2.14 | Système d'information / sous-groupe 1 / cm",
+    "prev": "2.5",
+    "next": "3"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "08:43:02",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S2 / R2.14 | Système d'information / sous-groupe 1 / cm",
+    "prev": "3",
+    "next": "3.5"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "08:43:03",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S2 / R2.14 | Système d'information / sous-groupe 1 / cm",
+    "prev": "3.5",
+    "next": "4"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "08:43:03",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S2 / R2.14 | Système d'information / sous-groupe 1 / cm",
+    "prev": "4",
+    "next": "4.5"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "08:43:15",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S2 / R2.14 | Système d'information / grpe_td",
+    "prev": "2",
+    "next": "1"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "08:48:49",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S1 / R1.02 | Anglais renforcé - Espagnol / sous-groupe 1 / grpe_td",
+    "prev": "1",
+    "next": "0"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "08:48:51",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S1 / R1.02 | Anglais renforcé - Espagnol / sous-groupe 1 / grpe_tp",
+    "prev": "1",
+    "next": "0"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "09:25:40",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.06 | Création numérique / sous-groupe 2 / enseignant",
+    "prev": "",
+    "next": "SALTET Marius"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "09:25:47",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.06 | Création numérique / td",
+    "prev": "21",
+    "next": "20.5"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "09:25:47",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.06 | Création numérique / td",
+    "prev": "20.5",
+    "next": "20"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "09:25:47",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.06 | Création numérique / td",
+    "prev": "20",
+    "next": "19.5"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "09:25:47",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.06 | Création numérique / td",
+    "prev": "19.5",
+    "next": "19"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "09:25:48",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.06 | Création numérique / td",
+    "prev": "19",
+    "next": "18.5"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "09:25:48",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.06 | Création numérique / td",
+    "prev": "18.5",
+    "next": "18"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "09:25:50",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.06 | Création numérique / td",
+    "prev": "18",
+    "next": "17.5"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "09:25:50",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.06 | Création numérique / td",
+    "prev": "17.5",
+    "next": "17"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "09:25:51",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.06 | Création numérique / td",
+    "prev": "17",
+    "next": "16.5"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "09:25:51",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.06 | Création numérique / td",
+    "prev": "16.5",
+    "next": "16"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "09:25:51",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.06 | Création numérique / td",
+    "prev": "16",
+    "next": "15.5"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "09:25:52",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.06 | Création numérique / td",
+    "prev": "15.5",
+    "next": "15"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "09:25:52",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.06 | Création numérique / td",
+    "prev": "15",
+    "next": "14.5"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "09:25:52",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.06 | Création numérique / td",
+    "prev": "14.5",
+    "next": "14"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "09:25:53",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.06 | Création numérique / td",
+    "prev": "14",
+    "next": "13.5"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "09:25:53",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.06 | Création numérique / td",
+    "prev": "13.5",
+    "next": "13"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "09:25:53",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.06 | Création numérique / td",
+    "prev": "13",
+    "next": "12.5"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "09:25:54",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.06 | Création numérique / td",
+    "prev": "12.5",
+    "next": "12"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "09:25:55",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.06 | Création numérique / td",
+    "prev": "12",
+    "next": "12.5"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "09:34:35",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S1 / R1.11 | Intégration / sous-groupe 1 / td",
+    "prev": "12",
+    "next": "12.5"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "09:34:35",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S1 / R1.11 | Intégration / sous-groupe 1 / td",
+    "prev": "12.5",
+    "next": "13"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "09:34:36",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S1 / R1.11 | Intégration / sous-groupe 1 / td",
+    "prev": "13",
+    "next": "13.5"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "09:34:41",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S1 / R1.11 | Intégration / td",
+    "prev": "1.5",
+    "next": "0"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "09:35:23",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S1 / R1.11 | Intégration / tp",
+    "prev": "9",
+    "next": "8.5"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "09:35:24",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S1 / R1.11 | Intégration / tp",
+    "prev": "8.5",
+    "next": "8"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "09:35:24",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S1 / R1.11 | Intégration / tp",
+    "prev": "8",
+    "next": "7.5"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "09:35:27",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S1 / R1.11 | Intégration / sous-groupe 1 / tp",
+    "prev": "6",
+    "next": "6.5"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "09:35:27",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S1 / R1.11 | Intégration / sous-groupe 1 / tp",
+    "prev": "6.5",
+    "next": "7"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "09:35:28",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S1 / R1.11 | Intégration / sous-groupe 1 / tp",
+    "prev": "7",
+    "next": "7.5"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "09:38:12",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S2 / R2.07 | Écriture multimédia et narration / cm",
+    "prev": "3",
+    "next": "3.5"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "09:38:13",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S2 / R2.07 | Écriture multimédia et narration / cm",
+    "prev": "3.5",
+    "next": "4"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "09:38:13",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S2 / R2.07 | Écriture multimédia et narration / cm",
+    "prev": "4",
+    "next": "4.5"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "09:38:13",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S2 / R2.07 | Écriture multimédia et narration / cm",
+    "prev": "4.5",
+    "next": "5"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "09:38:14",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S2 / R2.07 | Écriture multimédia et narration / cm",
+    "prev": "5",
+    "next": "5.5"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "09:38:14",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S2 / R2.07 | Écriture multimédia et narration / cm",
+    "prev": "5.5",
+    "next": "6"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "09:38:15",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S2 / R2.07 | Écriture multimédia et narration / cm",
+    "prev": "6",
+    "next": "6.5"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "09:38:16",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S2 / R2.07 | Écriture multimédia et narration / cm",
+    "prev": "6.5",
+    "next": "6"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "09:38:16",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S2 / R2.07 | Écriture multimédia et narration / cm",
+    "prev": "6",
+    "next": "5.5"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "09:38:17",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S2 / R2.07 | Écriture multimédia et narration / cm",
+    "prev": "5.5",
+    "next": "5"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "09:38:17",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S2 / R2.07 | Écriture multimédia et narration / cm",
+    "prev": "5",
+    "next": "4.5"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "09:38:17",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S2 / R2.07 | Écriture multimédia et narration / cm",
+    "prev": "4.5",
+    "next": "4"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "09:38:18",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S2 / R2.07 | Écriture multimédia et narration / cm",
+    "prev": "4",
+    "next": "3.5"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "09:38:18",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S2 / R2.07 | Écriture multimédia et narration / cm",
+    "prev": "3.5",
+    "next": "3"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "09:38:18",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S2 / R2.07 | Écriture multimédia et narration / cm",
+    "prev": "3",
+    "next": "2.5"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "09:38:19",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S2 / R2.07 | Écriture multimédia et narration / cm",
+    "prev": "2.5",
+    "next": "2"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "09:38:19",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S2 / R2.07 | Écriture multimédia et narration / cm",
+    "prev": "2",
+    "next": "1.5"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "09:38:19",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S2 / R2.07 | Écriture multimédia et narration / cm",
+    "prev": "1.5",
+    "next": "1"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "09:38:22",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S2 / R2.07 | Écriture multimédia et narration / cm",
+    "prev": "1",
+    "next": "1.5"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "09:38:31",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S2 / R2.07 | Écriture multimédia et narration / td",
+    "prev": "0",
+    "next": "0.5"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "09:38:33",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S2 / R2.07 | Écriture multimédia et narration / td",
+    "prev": "0.5",
+    "next": "1"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "09:38:34",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S2 / R2.07 | Écriture multimédia et narration / td",
+    "prev": "1",
+    "next": "1.5"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "09:38:34",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S2 / R2.07 | Écriture multimédia et narration / td",
+    "prev": "1.5",
+    "next": "2"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "09:38:34",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S2 / R2.07 | Écriture multimédia et narration / td",
+    "prev": "2",
+    "next": "2.5"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "09:38:34",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S2 / R2.07 | Écriture multimédia et narration / td",
+    "prev": "2.5",
+    "next": "3"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "09:38:35",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S2 / R2.07 | Écriture multimédia et narration / td",
+    "prev": "3",
+    "next": "3.5"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "09:38:35",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S2 / R2.07 | Écriture multimédia et narration / td",
+    "prev": "3.5",
+    "next": "4"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "09:38:35",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S2 / R2.07 | Écriture multimédia et narration / td",
+    "prev": "4",
+    "next": "4.5"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "09:38:36",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S2 / R2.07 | Écriture multimédia et narration / td",
+    "prev": "4.5",
+    "next": "5"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "09:38:36",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S2 / R2.07 | Écriture multimédia et narration / td",
+    "prev": "5",
+    "next": "5.5"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "09:38:37",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S2 / R2.07 | Écriture multimédia et narration / td",
+    "prev": "5.5",
+    "next": "6"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "09:38:37",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S2 / R2.07 | Écriture multimédia et narration / td",
+    "prev": "6",
+    "next": "6.5"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "09:38:38",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S2 / R2.07 | Écriture multimédia et narration / td",
+    "prev": "6.5",
+    "next": "7"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "09:38:38",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S2 / R2.07 | Écriture multimédia et narration / td",
+    "prev": "7",
+    "next": "7.5"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "09:40:41",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S2 / R2.14 | Système d'information / sous-groupe 1 / td",
+    "prev": "0",
+    "next": "4.5"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "09:40:45",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S2 / R2.14 | Système d'information / sous-groupe 1 / tp",
+    "prev": "0",
+    "next": "4.5"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "09:40:48",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S2 / R2.14 | Système d'information / tp",
+    "prev": "6",
+    "next": "0"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "09:40:58",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S2 / R2.14 | Système d'information / td",
+    "prev": "4.5",
+    "next": "0"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "09:40:59",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S2 / R2.14 | Système d'information / grpe_td",
+    "prev": "1",
+    "next": "0"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "09:41:22",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S2 / R2.14 | Système d'information / grpe_tp",
+    "prev": "4",
+    "next": "0"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "09:42:08",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S2 / R2.18 | Économie, gestion et droit du numérique / sous-groupe 1 / grpe_td",
+    "prev": "2",
+    "next": "0"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "09:42:17",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S2 / R2.18 | Économie, gestion et droit du numérique / sous-groupe 1 / grpe_tp",
+    "prev": "4",
+    "next": "0"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "09:42:56",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S2 / R2.19 | Projet Personnel et Professionnel / sous-groupe 2 / tp",
+    "prev": "0",
+    "next": "0.5"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "09:44:22",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S3 / R3.05 | Stratégies de communication et marketing / cm",
+    "prev": "0",
+    "next": "4.5"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "09:44:34",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S3 / R3.05 | Stratégies de communication et marketing / sous-groupe 1 / td",
+    "prev": "2",
+    "next": "3"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "09:45:21",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S3 / R3.09 | Création et design interactif (UI) / sous-groupe 1 / tp",
+    "prev": "7.5",
+    "next": "10.5"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "09:45:25",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S3 / R3.09 | Création et design interactif (UI) / tp",
+    "prev": "4.5",
+    "next": "0"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "09:46:03",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S3 / R3.11 | Audiovisuel et Motion design / sous-groupe 1 / tp",
+    "prev": "6",
+    "next": "4.5"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "09:47:20",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S3 / R3.15 | Représentation et traitement de l'information / cm",
+    "prev": "0",
+    "next": "1.5"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "09:47:25",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S3 / R3.15 | Représentation et traitement de l'information / td",
+    "prev": "0",
+    "next": "4.5"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "09:48:15",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S3 / R3.15 | Représentation et traitement de l'information / tp",
+    "prev": "6",
+    "next": "0"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "09:48:17",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S4 crea / R4.Crea.02 | Economie, gestion et Droit du numérique / cm",
+    "prev": "0",
+    "next": "0.5"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "09:48:18",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S4 crea / R4.Crea.02 | Economie, gestion et Droit du numérique / cm",
+    "prev": "0.5",
+    "next": "0"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "09:49:25",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S4 crea / R4.Crea.02 | Economie, gestion et Droit du numérique / td",
+    "prev": "10.5",
+    "next": "12"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "09:49:30",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S4 crea / R4.Crea.04 | Expression, communication / sous-groupe 2 / td",
+    "prev": "3",
+    "next": "4.5"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "09:51:08",
+    "utilisateur": "nicolas.maurin",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.06 | Création numérique / tp",
+    "prev": "30",
+    "next": "7.5"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "09:51:53",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.06 | Création numérique / sous-groupe 2 / td",
+    "prev": "0",
+    "next": "12.5"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "09:51:55",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.06 | Création numérique / sous-groupe 2 / tp",
+    "prev": "0",
+    "next": "7.5"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "09:53:08",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S2 / R2.19 | Projet Personnel et Professionnel / sous-groupe 2 / tp",
+    "prev": "0.5",
+    "next": "0"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "10:11:45",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S4 crea / R4.Crea.07 | Audiovisuel - Motion design / sous-groupe 1 / tp",
+    "prev": "4.5",
+    "next": "5"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "10:11:45",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S4 crea / R4.Crea.07 | Audiovisuel - Motion design / sous-groupe 1 / tp",
+    "prev": "5",
+    "next": "5.5"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "10:11:47",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S4 crea / R4.Crea.07 | Audiovisuel - Motion design / sous-groupe 1 / tp",
+    "prev": "5.5",
+    "next": "6"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "10:13:11",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.06 | Création numérique / sous-groupe 2 / td",
+    "prev": "12.5",
+    "next": "12"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "10:13:11",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.06 | Création numérique / sous-groupe 2 / td",
+    "prev": "12",
+    "next": "11.5"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "10:13:12",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.06 | Création numérique / sous-groupe 2 / td",
+    "prev": "11.5",
+    "next": "11"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "10:13:15",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.06 | Création numérique / sous-groupe 2 / td",
+    "prev": "11",
+    "next": "10.5"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "10:13:16",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.06 | Création numérique / sous-groupe 2 / td",
+    "prev": "10.5",
+    "next": "10"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "10:13:16",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.06 | Création numérique / sous-groupe 2 / td",
+    "prev": "10",
+    "next": "9.5"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "10:13:21",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.06 | Création numérique / sous-groupe 2 / td",
+    "prev": "9.5",
+    "next": "9"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "10:13:21",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.06 | Création numérique / sous-groupe 2 / td",
+    "prev": "9",
+    "next": "8.5"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "10:13:21",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.06 | Création numérique / sous-groupe 2 / td",
+    "prev": "8.5",
+    "next": "8"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "10:13:28",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.06 | Création numérique / sous-groupe 2 / td",
+    "prev": "8",
+    "next": "7.5"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "10:14:08",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.06 | Création numérique / tp",
+    "prev": "7.5",
+    "next": "8"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "10:14:08",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.06 | Création numérique / tp",
+    "prev": "8",
+    "next": "8.5"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "10:14:09",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.06 | Création numérique / tp",
+    "prev": "8.5",
+    "next": "9"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "10:14:09",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.06 | Création numérique / tp",
+    "prev": "9",
+    "next": "9.5"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "10:14:11",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.06 | Création numérique / tp",
+    "prev": "9.5",
+    "next": "10"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "10:14:12",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.06 | Création numérique / tp",
+    "prev": "10",
+    "next": "10.5"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "10:16:30",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S4 crea / R4.Crea.03 | Design d'expérience / sous-groupe 1 / tp",
+    "prev": "1.5",
+    "next": "2"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "10:16:32",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S4 crea / R4.Crea.03 | Design d'expérience / sous-groupe 1 / tp",
+    "prev": "2",
+    "next": "2.5"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "10:16:32",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S4 crea / R4.Crea.03 | Design d'expérience / sous-groupe 1 / tp",
+    "prev": "2.5",
+    "next": "3"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "10:16:38",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S4 crea / R4.Crea.03 | Design d'expérience / sous-groupe 1 / tp",
+    "prev": "3",
+    "next": "3.5"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "10:16:40",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S4 crea / R4.Crea.03 | Design d'expérience / sous-groupe 1 / tp",
+    "prev": "3.5",
+    "next": "4"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "10:16:42",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S4 crea / R4.Crea.03 | Design d'expérience / sous-groupe 1 / tp",
+    "prev": "4",
+    "next": "4.5"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "10:16:44",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S4 crea / R4.Crea.03 | Design d'expérience / tp",
+    "prev": "3",
+    "next": "3.5"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "10:16:44",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S4 crea / R4.Crea.03 | Design d'expérience / tp",
+    "prev": "3.5",
+    "next": "4"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "10:16:44",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S4 crea / R4.Crea.03 | Design d'expérience / tp",
+    "prev": "4",
+    "next": "4.5"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "10:16:53",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S4 crea / R4.Crea.03 | Design d'expérience / sous-groupe 1 / tp",
+    "prev": "4.5",
+    "next": "5"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "10:16:54",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S4 crea / R4.Crea.03 | Design d'expérience / sous-groupe 1 / tp",
+    "prev": "5",
+    "next": "5.5"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "10:16:56",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S4 crea / R4.Crea.03 | Design d'expérience / sous-groupe 1 / tp",
+    "prev": "5.5",
+    "next": "6"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "10:20:04",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S4 crea / R4.Crea.05 | Gestion de contenus spécialisée / tp",
+    "prev": "9",
+    "next": "9.5"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "10:20:04",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S4 crea / R4.Crea.05 | Gestion de contenus spécialisée / tp",
+    "prev": "9.5",
+    "next": "10"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "10:20:04",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S4 crea / R4.Crea.05 | Gestion de contenus spécialisée / tp",
+    "prev": "10",
+    "next": "10.5"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "10:20:04",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S4 crea / R4.Crea.05 | Gestion de contenus spécialisée / tp",
+    "prev": "10.5",
+    "next": "11"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "10:20:05",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S4 crea / R4.Crea.05 | Gestion de contenus spécialisée / tp",
+    "prev": "11",
+    "next": "11.5"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "10:20:05",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S4 crea / R4.Crea.05 | Gestion de contenus spécialisée / tp",
+    "prev": "11.5",
+    "next": "12"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "10:20:10",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S4 crea / R4.Crea.06 | Culture artistique / tp",
+    "prev": "9",
+    "next": "9.5"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "10:20:11",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S4 crea / R4.Crea.06 | Culture artistique / tp",
+    "prev": "9.5",
+    "next": "10"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "10:20:11",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S4 crea / R4.Crea.06 | Culture artistique / tp",
+    "prev": "10",
+    "next": "10.5"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "10:20:21",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S4 crea / R4.Crea.07 | Audiovisuel - Motion design / sous-groupe 1 / td",
+    "prev": "3",
+    "next": "3.5"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "10:20:22",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S4 crea / R4.Crea.07 | Audiovisuel - Motion design / sous-groupe 1 / td",
+    "prev": "3.5",
+    "next": "4"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "10:20:28",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S4 crea / R4.Crea.07 | Audiovisuel - Motion design / sous-groupe 1 / td",
+    "prev": "4",
+    "next": "4.5"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "10:24:32",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S4 crea / R4.Crea.08 | Ecriture multimédia et narration / td",
+    "prev": "9",
+    "next": "9.5"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "10:24:33",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S4 crea / R4.Crea.08 | Ecriture multimédia et narration / td",
+    "prev": "9.5",
+    "next": "10"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "10:24:33",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S4 crea / R4.Crea.08 | Ecriture multimédia et narration / td",
+    "prev": "10",
+    "next": "10.5"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "11:05:41",
+    "utilisateur": "nicolas.maurin",
+    "type": "Répartition",
+    "description": "S3 / R3.13 | Gestion de contenus avancée / Dév Back / enseignant",
+    "prev": "",
+    "next": "DARTIES Benoit"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "11:05:48",
+    "utilisateur": "nicolas.maurin",
+    "type": "Répartition",
+    "description": "S3 / R3.13 | Gestion de contenus avancée / Dév Back / sous-groupe 1 / enseignant",
+    "prev": "",
+    "next": "MAURIN Nicolas"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "11:05:58",
+    "utilisateur": "nicolas.maurin",
+    "type": "Répartition",
+    "description": "S3 / R3.13 | Gestion de contenus avancée / Dév Back / td",
+    "prev": "8.25",
+    "next": "7.75"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "11:05:59",
+    "utilisateur": "nicolas.maurin",
+    "type": "Répartition",
+    "description": "S3 / R3.13 | Gestion de contenus avancée / Dév Back / td",
+    "prev": "7.75",
+    "next": "7.25"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "11:06:03",
+    "utilisateur": "nicolas.maurin",
+    "type": "Répartition",
+    "description": "S3 / R3.13 | Gestion de contenus avancée / Dév Back / td",
+    "prev": "7.25",
+    "next": "7.5"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "11:06:12",
+    "utilisateur": "nicolas.maurin",
+    "type": "Répartition",
+    "description": "S3 / R3.13 | Gestion de contenus avancée / Dév Back / sous-groupe 1 / tp",
+    "prev": "6.75",
+    "next": "6"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "11:06:54",
+    "utilisateur": "nicolas.maurin",
+    "type": "Répartition",
+    "description": "S1 / R1.12 | Développement Web / sous-groupe 1 / tp",
+    "prev": "12.75",
+    "next": "12"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "11:07:25",
+    "utilisateur": "nicolas.maurin",
+    "type": "Répartition",
+    "description": "S1 / R1.13 | Hébergement / tp",
+    "prev": "0",
+    "next": "9"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "11:07:31",
+    "utilisateur": "nicolas.maurin",
+    "type": "Répartition",
+    "description": "S1 / R1.13 | Hébergement / enseignant",
+    "prev": "DARTIES Benoit",
+    "next": "MAURIN Nicolas"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "11:08:02",
+    "utilisateur": "nicolas.maurin",
+    "type": "Répartition",
+    "description": "S1 / R1.13 | Hébergement / tp",
+    "prev": "9",
+    "next": "10.5"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "11:56:22",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S4 crea / R4.Crea.03 | Design d'expérience / td",
+    "prev": "4.5",
+    "next": "5"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "11:56:23",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S4 crea / R4.Crea.03 | Design d'expérience / td",
+    "prev": "5",
+    "next": "4.5"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "11:56:29",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S4 crea / R4.Crea.03 | Design d'expérience / sous-groupe 1 / td",
+    "prev": "4.5",
+    "next": "4"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "11:56:30",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S4 crea / R4.Crea.03 | Design d'expérience / sous-groupe 1 / td",
+    "prev": "4",
+    "next": "3.5"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "11:56:31",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S4 crea / R4.Crea.03 | Design d'expérience / sous-groupe 1 / td",
+    "prev": "3.5",
+    "next": "3"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "11:56:33",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S4 crea / R4.Crea.03 | Design d'expérience / td",
+    "prev": "4.5",
+    "next": "4"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "11:56:33",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S4 crea / R4.Crea.03 | Design d'expérience / td",
+    "prev": "4",
+    "next": "3.5"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "11:56:33",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S4 crea / R4.Crea.03 | Design d'expérience / td",
+    "prev": "3.5",
+    "next": "3"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "12:00:53",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S4 crea / SAÉ 4.Crea.01 | Créer pour une campagne de communication visuelle / tp",
+    "prev": "1.5",
+    "next": "1"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "12:00:54",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S4 crea / SAÉ 4.Crea.01 | Créer pour une campagne de communication visuelle / tp",
+    "prev": "1",
+    "next": "0.5"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "12:00:54",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S4 crea / SAÉ 4.Crea.01 | Créer pour une campagne de communication visuelle / tp",
+    "prev": "0.5",
+    "next": "0"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "12:00:54",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S4 crea / SAÉ 4.Crea.01 | Créer pour une campagne de communication visuelle / tp",
+    "prev": "0",
+    "next": "-0.5"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "12:00:55",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S4 crea / SAÉ 4.Crea.01 | Créer pour une campagne de communication visuelle / tp",
+    "prev": "-0.5",
+    "next": "0"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "12:00:56",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S4 crea / SAÉ 4.Crea.01 | Créer pour une campagne de communication visuelle / sous-groupe 1 / tp",
+    "prev": "1.5",
+    "next": "1"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "12:00:56",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S4 crea / SAÉ 4.Crea.01 | Créer pour une campagne de communication visuelle / sous-groupe 1 / tp",
+    "prev": "1",
+    "next": "0.5"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "12:00:57",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S4 crea / SAÉ 4.Crea.01 | Créer pour une campagne de communication visuelle / sous-groupe 1 / tp",
+    "prev": "0.5",
+    "next": "0"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "12:00:59",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S4 crea / SAÉ 4.Crea.01 | Créer pour une campagne de communication visuelle / td",
+    "prev": "12",
+    "next": "11.5"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "12:01:02",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S4 crea / SAÉ 4.Crea.01 | Créer pour une campagne de communication visuelle / td",
+    "prev": "11.5",
+    "next": "24"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "12:01:05",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S4 crea / SAÉ 4.Crea.01 | Créer pour une campagne de communication visuelle / sous-groupe 1 / td",
+    "prev": "9",
+    "next": "24"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "12:01:20",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S4 crea / SAÉ 4.Crea.02 | Produire du contenu multimédia / td",
+    "prev": "21",
+    "next": "21.5"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "12:01:20",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S4 crea / SAÉ 4.Crea.02 | Produire du contenu multimédia / td",
+    "prev": "21.5",
+    "next": "22"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "12:01:22",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S4 crea / SAÉ 4.Crea.02 | Produire du contenu multimédia / td",
+    "prev": "22",
+    "next": "22.5"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "12:01:22",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S4 crea / SAÉ 4.Crea.02 | Produire du contenu multimédia / td",
+    "prev": "22.5",
+    "next": "23"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "12:01:24",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S4 crea / SAÉ 4.Crea.02 | Produire du contenu multimédia / td",
+    "prev": "23",
+    "next": "23.5"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "12:01:24",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S4 crea / SAÉ 4.Crea.02 | Produire du contenu multimédia / td",
+    "prev": "23.5",
+    "next": "24"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "12:01:27",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S4 crea / SAÉ 4.Crea.02 | Produire du contenu multimédia / td",
+    "prev": "24",
+    "next": "24.5"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "12:01:27",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S4 crea / SAÉ 4.Crea.02 | Produire du contenu multimédia / td",
+    "prev": "24.5",
+    "next": "25"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "12:01:32",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S4 crea / SAÉ 4.Crea.02 | Produire du contenu multimédia / sous-groupe 1 / td",
+    "prev": "3",
+    "next": "5"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "12:01:35",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S4 crea / SAÉ 4.Crea.02 | Produire du contenu multimédia / tp",
+    "prev": "0",
+    "next": "6"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "12:01:36",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S4 crea / SAÉ 4.Crea.02 | Produire du contenu multimédia / sous-groupe 1 / tp",
+    "prev": "0",
+    "next": "6"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "12:09:09",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S4 crea / SAÉ 4.Crea.02 | Produire du contenu multimédia / td",
+    "prev": "25",
+    "next": "24.5"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "12:09:09",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S4 crea / SAÉ 4.Crea.02 | Produire du contenu multimédia / td",
+    "prev": "24.5",
+    "next": "24"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "12:09:10",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S4 crea / SAÉ 4.Crea.02 | Produire du contenu multimédia / td",
+    "prev": "24",
+    "next": "23.5"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "12:09:28",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S4 crea / SAÉ 4.Crea.02 | Produire du contenu multimédia / td",
+    "prev": "23.5",
+    "next": "23"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "12:09:42",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S4 crea / SAÉ 4.Crea.02 | Produire du contenu multimédia / td",
+    "prev": "23",
+    "next": "22.5"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "12:09:49",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S4 crea / SAÉ 4.Crea.02 | Produire du contenu multimédia / td",
+    "prev": "22.5",
+    "next": "22"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "12:09:50",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S4 crea / SAÉ 4.Crea.02 | Produire du contenu multimédia / td",
+    "prev": "22",
+    "next": "21.5"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "12:09:50",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S4 crea / SAÉ 4.Crea.02 | Produire du contenu multimédia / td",
+    "prev": "21.5",
+    "next": "21"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "12:10:19",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S4 crea / SAÉ 4.Crea.02 | Produire du contenu multimédia / sous-groupe 1 / td",
+    "prev": "5",
+    "next": "4.5"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "12:10:22",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S4 crea / SAÉ 4.Crea.02 | Produire du contenu multimédia / sous-groupe 2 / td",
+    "prev": "0",
+    "next": "0.5"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "12:10:22",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S4 crea / SAÉ 4.Crea.02 | Produire du contenu multimédia / sous-groupe 2 / td",
+    "prev": "0.5",
+    "next": "1"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "12:10:22",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S4 crea / SAÉ 4.Crea.02 | Produire du contenu multimédia / sous-groupe 2 / td",
+    "prev": "1",
+    "next": "1.5"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "12:10:22",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S4 crea / SAÉ 4.Crea.02 | Produire du contenu multimédia / sous-groupe 2 / td",
+    "prev": "1.5",
+    "next": "2"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "12:10:23",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S4 crea / SAÉ 4.Crea.02 | Produire du contenu multimédia / sous-groupe 2 / td",
+    "prev": "2",
+    "next": "2.5"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "12:10:23",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S4 crea / SAÉ 4.Crea.02 | Produire du contenu multimédia / sous-groupe 2 / td",
+    "prev": "2.5",
+    "next": "3"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "12:10:24",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S4 crea / SAÉ 4.Crea.02 | Produire du contenu multimédia / sous-groupe 2 / td",
+    "prev": "3",
+    "next": "3.5"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "12:10:24",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S4 crea / SAÉ 4.Crea.02 | Produire du contenu multimédia / sous-groupe 2 / td",
+    "prev": "3.5",
+    "next": "4"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "12:10:25",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S4 crea / SAÉ 4.Crea.02 | Produire du contenu multimédia / sous-groupe 2 / td",
+    "prev": "4",
+    "next": "4.5"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "12:10:32",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S4 crea / SAÉ 4.Crea.02 | Produire du contenu multimédia / td",
+    "prev": "21",
+    "next": "20.5"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "12:10:32",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S4 crea / SAÉ 4.Crea.02 | Produire du contenu multimédia / td",
+    "prev": "20.5",
+    "next": "20"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "12:10:33",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S4 crea / SAÉ 4.Crea.02 | Produire du contenu multimédia / td",
+    "prev": "20",
+    "next": "19.5"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "12:10:38",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S4 crea / SAÉ 4.Crea.02 | Produire du contenu multimédia / sous-groupe 2 / td",
+    "prev": "4.5",
+    "next": "5"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "12:10:39",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S4 crea / SAÉ 4.Crea.02 | Produire du contenu multimédia / sous-groupe 2 / td",
+    "prev": "5",
+    "next": "5.5"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "12:10:39",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S4 crea / SAÉ 4.Crea.02 | Produire du contenu multimédia / sous-groupe 2 / td",
+    "prev": "5.5",
+    "next": "6"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "12:10:49",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S4 crea / SAÉ 4.Crea.02 | Produire du contenu multimédia / sous-groupe 2 / enseignant",
+    "prev": "",
+    "next": "BLANCO Sandy"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "12:13:33",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S6 crea / R6 crea 02 | Création numérique intéractive / sous-groupe 1 / td",
+    "prev": "12",
+    "next": "12.5"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "12:13:34",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S6 crea / R6 crea 02 | Création numérique intéractive / sous-groupe 1 / td",
+    "prev": "12.5",
+    "next": "13"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "12:13:34",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S6 crea / R6 crea 02 | Création numérique intéractive / sous-groupe 1 / td",
+    "prev": "13",
+    "next": "13.5"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "12:13:44",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S6 crea / R6 crea 02 | Création numérique intéractive / td",
+    "prev": "24",
+    "next": "23.5"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "12:13:45",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S6 crea / R6 crea 02 | Création numérique intéractive / td",
+    "prev": "23.5",
+    "next": "23"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "12:13:45",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S6 crea / R6 crea 02 | Création numérique intéractive / td",
+    "prev": "23",
+    "next": "22.5"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "12:13:47",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S6 crea / R6 crea 02 | Création numérique intéractive / sous-groupe 1 / td",
+    "prev": "13.5",
+    "next": "14"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "12:13:47",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S6 crea / R6 crea 02 | Création numérique intéractive / sous-groupe 1 / td",
+    "prev": "14",
+    "next": "14.5"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "12:13:48",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S6 crea / R6 crea 02 | Création numérique intéractive / sous-groupe 1 / td",
+    "prev": "14.5",
+    "next": "15"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "14:26:29",
+    "utilisateur": "nicolas.maurin",
+    "type": "Répartition",
+    "description": "S1 / R1.12 | Développement Web / td",
+    "prev": "0",
+    "next": "0.5"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "14:26:29",
+    "utilisateur": "nicolas.maurin",
+    "type": "Répartition",
+    "description": "S1 / R1.12 | Développement Web / td",
+    "prev": "0.5",
+    "next": "1"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "14:26:30",
+    "utilisateur": "nicolas.maurin",
+    "type": "Répartition",
+    "description": "S1 / R1.12 | Développement Web / td",
+    "prev": "1",
+    "next": "1.5"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "14:26:31",
+    "utilisateur": "nicolas.maurin",
+    "type": "Répartition",
+    "description": "S1 / R1.12 | Développement Web / td",
+    "prev": "1.5",
+    "next": "1"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "14:26:31",
+    "utilisateur": "nicolas.maurin",
+    "type": "Répartition",
+    "description": "S1 / R1.12 | Développement Web / td",
+    "prev": "1",
+    "next": "0.5"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "14:26:31",
+    "utilisateur": "nicolas.maurin",
+    "type": "Répartition",
+    "description": "S1 / R1.12 | Développement Web / td",
+    "prev": "0.5",
+    "next": "0"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "14:51:54",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.06 | Création numérique / sous-groupe 2 / td",
+    "prev": "7.5",
+    "next": "7"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "14:51:54",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.06 | Création numérique / sous-groupe 2 / td",
+    "prev": "7",
+    "next": "6.5"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "14:51:54",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.06 | Création numérique / sous-groupe 2 / td",
+    "prev": "6.5",
+    "next": "6"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "14:51:55",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.06 | Création numérique / sous-groupe 2 / td",
+    "prev": "6",
+    "next": "5.5"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "14:51:55",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.06 | Création numérique / sous-groupe 2 / td",
+    "prev": "5.5",
+    "next": "5"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "14:51:55",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.06 | Création numérique / sous-groupe 2 / td",
+    "prev": "5",
+    "next": "4.5"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "14:51:56",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.06 | Création numérique / sous-groupe 2 / tp",
+    "prev": "7.5",
+    "next": "7"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "14:51:56",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.06 | Création numérique / sous-groupe 2 / tp",
+    "prev": "7",
+    "next": "6.5"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "14:51:57",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.06 | Création numérique / sous-groupe 2 / tp",
+    "prev": "6.5",
+    "next": "6"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "14:51:57",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.06 | Création numérique / sous-groupe 2 / tp",
+    "prev": "6",
+    "next": "5.5"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "14:51:57",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.06 | Création numérique / sous-groupe 2 / tp",
+    "prev": "5.5",
+    "next": "5"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "14:51:58",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.06 | Création numérique / sous-groupe 2 / tp",
+    "prev": "5",
+    "next": "4.5"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "14:52:15",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.06 | Création numérique / sous-groupe 3 / enseignant",
+    "prev": "",
+    "next": "THEROND Emmanuel"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "14:52:21",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.06 | Création numérique / sous-groupe 3 / td",
+    "prev": "0",
+    "next": "0.5"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "14:52:22",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.06 | Création numérique / sous-groupe 3 / td",
+    "prev": "0.5",
+    "next": "1"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "14:52:22",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.06 | Création numérique / sous-groupe 3 / td",
+    "prev": "1",
+    "next": "1.5"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "14:52:22",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.06 | Création numérique / sous-groupe 3 / td",
+    "prev": "1.5",
+    "next": "2"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "14:52:22",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.06 | Création numérique / sous-groupe 3 / td",
+    "prev": "2",
+    "next": "2.5"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "14:52:22",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.06 | Création numérique / sous-groupe 3 / td",
+    "prev": "2.5",
+    "next": "3"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "14:52:22",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.06 | Création numérique / sous-groupe 3 / td",
+    "prev": "3",
+    "next": "3.5"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "14:52:23",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.06 | Création numérique / sous-groupe 3 / td",
+    "prev": "3.5",
+    "next": "4"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "14:52:23",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.06 | Création numérique / sous-groupe 3 / td",
+    "prev": "4",
+    "next": "4.5"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "14:52:23",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.06 | Création numérique / sous-groupe 3 / td",
+    "prev": "4.5",
+    "next": "5"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "14:52:23",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.06 | Création numérique / sous-groupe 3 / td",
+    "prev": "5",
+    "next": "5.5"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "14:52:23",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.06 | Création numérique / sous-groupe 3 / td",
+    "prev": "5.5",
+    "next": "6"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "14:52:24",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.06 | Création numérique / sous-groupe 3 / td",
+    "prev": "6",
+    "next": "6.5"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "14:52:24",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.06 | Création numérique / sous-groupe 3 / td",
+    "prev": "6.5",
+    "next": "7"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "14:52:24",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.06 | Création numérique / sous-groupe 3 / td",
+    "prev": "7",
+    "next": "7.5"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "14:52:25",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.06 | Création numérique / sous-groupe 3 / td",
+    "prev": "7.5",
+    "next": "8"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "14:52:25",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.06 | Création numérique / sous-groupe 3 / td",
+    "prev": "8",
+    "next": "8.5"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "14:52:25",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.06 | Création numérique / sous-groupe 3 / td",
+    "prev": "8.5",
+    "next": "9"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "14:52:27",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.06 | Création numérique / sous-groupe 3 / td",
+    "prev": "9",
+    "next": "9.5"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "14:52:27",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.06 | Création numérique / sous-groupe 3 / td",
+    "prev": "9.5",
+    "next": "10"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "14:52:27",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.06 | Création numérique / sous-groupe 3 / td",
+    "prev": "10",
+    "next": "10.5"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "14:52:28",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.06 | Création numérique / sous-groupe 3 / td",
+    "prev": "10.5",
+    "next": "11"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "14:54:53",
+    "utilisateur": "damien.marill",
+    "type": "Répartition",
+    "description": "S5 dev / SAÉ 5D.01 | Développer pour le web / enseignant",
+    "prev": "MARILL Damien",
+    "next": "PIEDEVACHE Magalie"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "14:55:00",
+    "utilisateur": "damien.marill",
+    "type": "Répartition",
+    "description": "S5 dev / SAÉ 5D.01 | Développer pour le web / td",
+    "prev": "27",
+    "next": "6"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "14:55:19",
+    "utilisateur": "damien.marill",
+    "type": "Répartition",
+    "description": "S5 dev / SAÉ 5D.01 | Développer pour le web / sous-groupe 1 / enseignant",
+    "prev": "",
+    "next": "MARILL Damien"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "14:55:26",
+    "utilisateur": "damien.marill",
+    "type": "Répartition",
+    "description": "S5 dev / SAÉ 5D.01 | Développer pour le web / sous-groupe 1 / td",
+    "prev": "0",
+    "next": "30"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "14:55:38",
+    "utilisateur": "damien.marill",
+    "type": "Répartition",
+    "description": "S5 dev / SAÉ 5D.01 | Développer pour le web / sous-groupe 2 / enseignant",
+    "prev": "",
+    "next": "SURRIBAS Caroline"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "14:55:44",
+    "utilisateur": "damien.marill",
+    "type": "Répartition",
+    "description": "S5 dev / SAÉ 5D.01 | Développer pour le web / sous-groupe 2 / td",
+    "prev": "0",
+    "next": "18"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "14:55:47",
+    "utilisateur": "damien.marill",
+    "type": "Répartition",
+    "description": "S5 dev / SAÉ 5D.01 | Développer pour le web / sous-groupe 3 / enseignant",
+    "prev": "",
+    "next": "AZE Jérome"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "14:55:54",
+    "utilisateur": "damien.marill",
+    "type": "Répartition",
+    "description": "S5 dev / SAÉ 5D.01 | Développer pour le web / sous-groupe 3 / td",
+    "prev": "0",
+    "next": "18"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "14:56:10",
+    "utilisateur": "damien.marill",
+    "type": "Répartition",
+    "description": "S5 dev / SAÉ 5D.01 | Développer pour le web / sous-groupe 4 / enseignant",
+    "prev": "",
+    "next": "DI PIERRO Davide"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "14:56:18",
+    "utilisateur": "damien.marill",
+    "type": "Répartition",
+    "description": "S5 dev / SAÉ 5D.01 | Développer pour le web / sous-groupe 5 / enseignant",
+    "prev": "",
+    "next": "MAURIN Nicolas"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "14:57:22",
+    "utilisateur": "damien.marill",
+    "type": "Répartition",
+    "description": "S5 dev / SAÉ 5D.01 | Développer pour le web / sous-groupe 4 / td",
+    "prev": "0",
+    "next": "15"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "14:57:26",
+    "utilisateur": "damien.marill",
+    "type": "Répartition",
+    "description": "S5 dev / SAÉ 5D.01 | Développer pour le web / sous-groupe 5 / td",
+    "prev": "0",
+    "next": "15"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "14:57:27",
+    "utilisateur": "damien.marill",
+    "type": "Répartition",
+    "description": "S5 dev / SAÉ 5D.01 | Développer pour le web / sous-groupe 1 / grpe_tp",
+    "prev": "",
+    "next": "2"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "14:57:33",
+    "utilisateur": "damien.marill",
+    "type": "Répartition",
+    "description": "S5 dev / SAÉ 5D.01 | Développer pour le web / sous-groupe 2 / grpe_tp",
+    "prev": "",
+    "next": "2"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "14:57:38",
+    "utilisateur": "damien.marill",
+    "type": "Répartition",
+    "description": "S5 dev / SAÉ 5D.01 | Développer pour le web / sous-groupe 3 / grpe_tp",
+    "prev": "",
+    "next": "2"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "14:57:41",
+    "utilisateur": "damien.marill",
+    "type": "Répartition",
+    "description": "S5 dev / SAÉ 5D.01 | Développer pour le web / sous-groupe 4 / grpe_tp",
+    "prev": "",
+    "next": "2"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "14:57:44",
+    "utilisateur": "damien.marill",
+    "type": "Répartition",
+    "description": "S5 dev / SAÉ 5D.01 | Développer pour le web / sous-groupe 5 / grpe_tp",
+    "prev": "",
+    "next": "2"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "14:57:47",
+    "utilisateur": "damien.marill",
+    "type": "Répartition",
+    "description": "S5 dev / SAÉ 5D.01 | Développer pour le web / sous-groupe 1 / grpe_td",
+    "prev": "",
+    "next": "1"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "14:57:50",
+    "utilisateur": "damien.marill",
+    "type": "Répartition",
+    "description": "S5 dev / SAÉ 5D.01 | Développer pour le web / sous-groupe 2 / grpe_td",
+    "prev": "",
+    "next": "1"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "14:57:53",
+    "utilisateur": "damien.marill",
+    "type": "Répartition",
+    "description": "S5 dev / SAÉ 5D.01 | Développer pour le web / sous-groupe 3 / grpe_td",
+    "prev": "",
+    "next": "1"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "14:57:56",
+    "utilisateur": "damien.marill",
+    "type": "Répartition",
+    "description": "S5 dev / SAÉ 5D.01 | Développer pour le web / sous-groupe 4 / grpe_td",
+    "prev": "",
+    "next": "1"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "14:57:59",
+    "utilisateur": "damien.marill",
+    "type": "Répartition",
+    "description": "S5 dev / SAÉ 5D.01 | Développer pour le web / sous-groupe 5 / grpe_td",
+    "prev": "",
+    "next": "1"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "14:59:12",
+    "utilisateur": "damien.marill",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.08 | Hébergement et cybersécurité / enseignant",
+    "prev": "WILLEMS Eric",
+    "next": "DI PIERRO Davide"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "14:59:26",
+    "utilisateur": "damien.marill",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.08 | Hébergement et cybersécurité / td",
+    "prev": "21",
+    "next": "10.5"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "14:59:28",
+    "utilisateur": "damien.marill",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.08 | Hébergement et cybersécurité / tp",
+    "prev": "7.5",
+    "next": "3"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "15:04:35",
+    "utilisateur": "damien.marill",
+    "type": "Répartition",
+    "description": "S6 dev / R6.DWeb-DI.02 | Développement Web et dispositif interactif / enseignant",
+    "prev": "",
+    "next": "DI PIERRO Davide"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "15:04:52",
+    "utilisateur": "damien.marill",
+    "type": "Répartition",
+    "description": "S6 dev / R6.DWeb-DI.02 | Développement Web et dispositif interactif / td",
+    "prev": "13.5",
+    "next": "12"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "15:04:57",
+    "utilisateur": "damien.marill",
+    "type": "Répartition",
+    "description": "S6 dev / R6.DWeb-DI.02 | Développement Web et dispositif interactif / tp",
+    "prev": "0",
+    "next": "3"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "15:06:32",
+    "utilisateur": "damien.marill",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.05 | Développement front avancé / sous-groupe 1 / td",
+    "prev": "19",
+    "next": "18"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "15:06:35",
+    "utilisateur": "damien.marill",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.06 | Développement back avancé / sous-groupe 1 / td",
+    "prev": "21",
+    "next": "18"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "15:06:43",
+    "utilisateur": "damien.marill",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.07 | Dispositifs interactifs / td",
+    "prev": "15",
+    "next": "18"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "15:09:32",
+    "utilisateur": "damien.marill",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.05 | Développement front avancé / tp",
+    "prev": "1.5",
+    "next": "2"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "15:09:32",
+    "utilisateur": "damien.marill",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.05 | Développement front avancé / tp",
+    "prev": "2",
+    "next": "2.5"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "15:09:32",
+    "utilisateur": "damien.marill",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.05 | Développement front avancé / tp",
+    "prev": "2.5",
+    "next": "3"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "15:09:36",
+    "utilisateur": "damien.marill",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.05 | Développement front avancé / td",
+    "prev": "21",
+    "next": "30"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "15:09:39",
+    "utilisateur": "damien.marill",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.06 | Développement back avancé / td",
+    "prev": "21",
+    "next": "30"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "15:11:02",
+    "utilisateur": "damien.marill",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.06 | Développement back avancé / td",
+    "prev": "21",
+    "next": "30"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "15:11:09",
+    "utilisateur": "damien.marill",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.05 | Développement front avancé / td",
+    "prev": "21",
+    "next": "30"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "15:11:12",
+    "utilisateur": "damien.marill",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.05 | Développement front avancé / tp",
+    "prev": "1.5",
+    "next": "3"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "15:11:37",
+    "utilisateur": "damien.marill",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.05 | Développement front avancé / sous-groupe 1 / td",
+    "prev": "19",
+    "next": "18"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "15:11:41",
+    "utilisateur": "damien.marill",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.06 | Développement back avancé / sous-groupe 1 / td",
+    "prev": "21",
+    "next": "18"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "15:11:55",
+    "utilisateur": "damien.marill",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.07 | Dispositifs interactifs / td",
+    "prev": "15",
+    "next": "18"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "15:12:12",
+    "utilisateur": "damien.marill",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.08 | Hébergement et cybersécurité / enseignant",
+    "prev": "WILLEMS Eric",
+    "next": "DI PIERRO Davide"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "15:12:35",
+    "utilisateur": "damien.marill",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.08 | Hébergement et cybersécurité / td",
+    "prev": "21",
+    "next": "10.5"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "15:12:38",
+    "utilisateur": "damien.marill",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.08 | Hébergement et cybersécurité / tp",
+    "prev": "7.5",
+    "next": "3"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "15:13:16",
+    "utilisateur": "damien.marill",
+    "type": "Répartition",
+    "description": "S5 dev / SAÉ 5D.01 | Développer pour le web / enseignant",
+    "prev": "MARILL Damien",
+    "next": "PIEDEVACHE Magalie"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "15:13:27",
+    "utilisateur": "damien.marill",
+    "type": "Répartition",
+    "description": "S5 dev / SAÉ 5D.01 | Développer pour le web / td",
+    "prev": "27",
+    "next": "12"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "15:13:53",
+    "utilisateur": "damien.marill",
+    "type": "Répartition",
+    "description": "S5 dev / SAÉ 5D.01 | Développer pour le web / sous-groupe 1 / td",
+    "prev": "0",
+    "next": "30"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "15:13:57",
+    "utilisateur": "damien.marill",
+    "type": "Répartition",
+    "description": "S5 dev / SAÉ 5D.01 | Développer pour le web / sous-groupe 2 / td",
+    "prev": "0",
+    "next": "18"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "15:13:59",
+    "utilisateur": "damien.marill",
+    "type": "Répartition",
+    "description": "S5 dev / SAÉ 5D.01 | Développer pour le web / sous-groupe 3 / td",
+    "prev": "0",
+    "next": "18"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "15:14:06",
+    "utilisateur": "damien.marill",
+    "type": "Répartition",
+    "description": "S5 dev / SAÉ 5D.01 | Développer pour le web / sous-groupe 4 / td",
+    "prev": "0",
+    "next": "0"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "15:14:28",
+    "utilisateur": "damien.marill",
+    "type": "Répartition",
+    "description": "S5 dev / SAÉ 5D.01 | Développer pour le web / sous-groupe 4 / td",
+    "prev": "0",
+    "next": "15"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "15:14:32",
+    "utilisateur": "damien.marill",
+    "type": "Répartition",
+    "description": "S5 dev / SAÉ 5D.01 | Développer pour le web / sous-groupe 5 / td",
+    "prev": "0",
+    "next": "15"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "15:15:01",
+    "utilisateur": "damien.marill",
+    "type": "Répartition",
+    "description": "S5 dev / SAÉ 5D.01 | Développer pour le web / sous-groupe 1 / enseignant",
+    "prev": "",
+    "next": "MARILL Damien"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "15:15:19",
+    "utilisateur": "damien.marill",
+    "type": "Répartition",
+    "description": "S5 dev / SAÉ 5D.01 | Développer pour le web / sous-groupe 2 / enseignant",
+    "prev": "",
+    "next": "SURRIBAS Caroline"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "15:15:23",
+    "utilisateur": "damien.marill",
+    "type": "Répartition",
+    "description": "S5 dev / SAÉ 5D.01 | Développer pour le web / sous-groupe 3 / enseignant",
+    "prev": "",
+    "next": "AZE Jérome"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "15:15:30",
+    "utilisateur": "damien.marill",
+    "type": "Répartition",
+    "description": "S5 dev / SAÉ 5D.01 | Développer pour le web / sous-groupe 4 / enseignant",
+    "prev": "",
+    "next": "DI PIERRO Davide"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "15:15:34",
+    "utilisateur": "damien.marill",
+    "type": "Répartition",
+    "description": "S5 dev / SAÉ 5D.01 | Développer pour le web / sous-groupe 5 / enseignant",
+    "prev": "",
+    "next": "MAURIN Nicolas"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "15:16:39",
+    "utilisateur": "damien.marill",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.09 | Mathématiques avancées, complexité algorithmique / td",
+    "prev": "9",
+    "next": "12"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "15:18:04",
+    "utilisateur": "damien.marill",
+    "type": "Répartition",
+    "description": "S6 dev / R6.DWeb-DI.02 | Développement Web et dispositif interactif / enseignant",
+    "prev": "",
+    "next": "DI PIERRO Davide"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "15:18:19",
+    "utilisateur": "damien.marill",
+    "type": "Répartition",
+    "description": "S6 dev / R6.DWeb-DI.02 | Développement Web et dispositif interactif / td",
+    "prev": "13.5",
+    "next": "12"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "15:18:22",
+    "utilisateur": "damien.marill",
+    "type": "Répartition",
+    "description": "S6 dev / R6.DWeb-DI.02 | Développement Web et dispositif interactif / tp",
+    "prev": "0",
+    "next": "3"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "15:48:21",
+    "utilisateur": "nicolas.maurin",
+    "type": "Répartition",
+    "description": "S3 / R3.12 | Développement Front et intégration / td",
+    "prev": "1.5",
+    "next": "6"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "15:48:30",
+    "utilisateur": "nicolas.maurin",
+    "type": "Répartition",
+    "description": "S3 / R3.12 | Développement Front et intégration / sous-groupe 1 / td",
+    "prev": "6",
+    "next": "6.5"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "15:48:30",
+    "utilisateur": "nicolas.maurin",
+    "type": "Répartition",
+    "description": "S3 / R3.12 | Développement Front et intégration / sous-groupe 1 / td",
+    "prev": "6.5",
+    "next": "7"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "15:48:30",
+    "utilisateur": "nicolas.maurin",
+    "type": "Répartition",
+    "description": "S3 / R3.12 | Développement Front et intégration / sous-groupe 1 / td",
+    "prev": "7",
+    "next": "7.5"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "15:49:37",
+    "utilisateur": "nicolas.maurin",
+    "type": "Répartition",
+    "description": "S3 / R3.13 | Gestion de contenus avancée / Dév Back / sous-groupe 1 / td",
+    "prev": "3",
+    "next": "2.5"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "15:49:40",
+    "utilisateur": "nicolas.maurin",
+    "type": "Répartition",
+    "description": "S3 / R3.13 | Gestion de contenus avancée / Dév Back / sous-groupe 1 / td",
+    "prev": "2.5",
+    "next": "0"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "15:49:42",
+    "utilisateur": "nicolas.maurin",
+    "type": "Répartition",
+    "description": "S3 / R3.13 | Gestion de contenus avancée / Dév Back / sous-groupe 1 / tp",
+    "prev": "6",
+    "next": "0"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "15:54:47",
+    "utilisateur": "nicolas.maurin",
+    "type": "Répartition",
+    "description": "S3 / R3.14 | Déploiement de services / sous-groupe 1 / enseignant",
+    "prev": "DARTIES Benoit",
+    "next": "PELTRIAUX Philippe"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "15:57:19",
+    "utilisateur": "nicolas.maurin",
+    "type": "Répartition",
+    "description": "S3 / R3.14 | Déploiement de services / sous-groupe 1 / td",
+    "prev": "4.5",
+    "next": "4"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "15:57:20",
+    "utilisateur": "nicolas.maurin",
+    "type": "Répartition",
+    "description": "S3 / R3.14 | Déploiement de services / sous-groupe 1 / td",
+    "prev": "4",
+    "next": "3.5"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "15:57:21",
+    "utilisateur": "nicolas.maurin",
+    "type": "Répartition",
+    "description": "S3 / R3.14 | Déploiement de services / sous-groupe 1 / td",
+    "prev": "3.5",
+    "next": "3"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "16:01:31",
+    "utilisateur": "nicolas.maurin",
+    "type": "Répartition",
+    "description": "S3 / R3.13 | Gestion de contenus avancée / Dév Back / td",
+    "prev": "7.5",
+    "next": "7"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "16:01:31",
+    "utilisateur": "nicolas.maurin",
+    "type": "Répartition",
+    "description": "S3 / R3.13 | Gestion de contenus avancée / Dév Back / td",
+    "prev": "7",
+    "next": "6.5"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "16:01:32",
+    "utilisateur": "nicolas.maurin",
+    "type": "Répartition",
+    "description": "S3 / R3.13 | Gestion de contenus avancée / Dév Back / td",
+    "prev": "6.5",
+    "next": "6"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "16:01:43",
+    "utilisateur": "nicolas.maurin",
+    "type": "Répartition",
+    "description": "S3 / R3.13 | Gestion de contenus avancée / Dév Back / td",
+    "prev": "6",
+    "next": "5.5"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "16:01:43",
+    "utilisateur": "nicolas.maurin",
+    "type": "Répartition",
+    "description": "S3 / R3.13 | Gestion de contenus avancée / Dév Back / td",
+    "prev": "5.5",
+    "next": "5"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "16:01:43",
+    "utilisateur": "nicolas.maurin",
+    "type": "Répartition",
+    "description": "S3 / R3.13 | Gestion de contenus avancée / Dév Back / td",
+    "prev": "5",
+    "next": "4.5"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "16:01:53",
+    "utilisateur": "nicolas.maurin",
+    "type": "Répartition",
+    "description": "S3 / R3.13 | Gestion de contenus avancée / Dév Back / tp",
+    "prev": "16.5",
+    "next": "16"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "16:01:53",
+    "utilisateur": "nicolas.maurin",
+    "type": "Répartition",
+    "description": "S3 / R3.13 | Gestion de contenus avancée / Dév Back / tp",
+    "prev": "16",
+    "next": "15.5"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "16:01:54",
+    "utilisateur": "nicolas.maurin",
+    "type": "Répartition",
+    "description": "S3 / R3.13 | Gestion de contenus avancée / Dév Back / tp",
+    "prev": "15.5",
+    "next": "15"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "16:01:54",
+    "utilisateur": "nicolas.maurin",
+    "type": "Répartition",
+    "description": "S3 / R3.13 | Gestion de contenus avancée / Dév Back / tp",
+    "prev": "15",
+    "next": "14.5"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "16:01:54",
+    "utilisateur": "nicolas.maurin",
+    "type": "Répartition",
+    "description": "S3 / R3.13 | Gestion de contenus avancée / Dév Back / tp",
+    "prev": "14.5",
+    "next": "14"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "16:01:54",
+    "utilisateur": "nicolas.maurin",
+    "type": "Répartition",
+    "description": "S3 / R3.13 | Gestion de contenus avancée / Dév Back / tp",
+    "prev": "14",
+    "next": "13.5"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "16:01:55",
+    "utilisateur": "nicolas.maurin",
+    "type": "Répartition",
+    "description": "S3 / R3.13 | Gestion de contenus avancée / Dév Back / tp",
+    "prev": "13.5",
+    "next": "13"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "16:01:55",
+    "utilisateur": "nicolas.maurin",
+    "type": "Répartition",
+    "description": "S3 / R3.13 | Gestion de contenus avancée / Dév Back / tp",
+    "prev": "13",
+    "next": "12.5"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "16:01:55",
+    "utilisateur": "nicolas.maurin",
+    "type": "Répartition",
+    "description": "S3 / R3.13 | Gestion de contenus avancée / Dév Back / tp",
+    "prev": "12.5",
+    "next": "12"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "16:01:56",
+    "utilisateur": "nicolas.maurin",
+    "type": "Répartition",
+    "description": "S3 / R3.13 | Gestion de contenus avancée / Dév Back / tp",
+    "prev": "12",
+    "next": "11.5"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "16:01:56",
+    "utilisateur": "nicolas.maurin",
+    "type": "Répartition",
+    "description": "S3 / R3.13 | Gestion de contenus avancée / Dév Back / tp",
+    "prev": "11.5",
+    "next": "11"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "16:01:57",
+    "utilisateur": "nicolas.maurin",
+    "type": "Répartition",
+    "description": "S3 / R3.13 | Gestion de contenus avancée / Dév Back / tp",
+    "prev": "11",
+    "next": "10.5"
   }
 ]

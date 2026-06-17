@@ -23,8 +23,7 @@
           "R1.14 | Représentation et traitement de l'information",
           "R1.16 | Économie, gestion et droit du numérique"
         ],
-        "responsable": "PELISSIER Chrysta",
-        "intitule": "Auditer une communication numérique"
+        "responsable": "PELISSIER Chrysta"
       },
       {
         "code": "SAÉ 1.02 | Concevoir une recommandation de communication numérique",
@@ -35,8 +34,7 @@
           "R1.05 | Stratégies de communication et marketing",
           "R1.06 | Expression, communication et rhétorique"
         ],
-        "responsable": "",
-        "intitule": "Concevoir une recommandation de communication numérique"
+        "responsable": ""
       },
       {
         "code": "SAÉ 1.03 | Produire les éléments d'une communication visuelle",
@@ -47,8 +45,7 @@
           "R1.09 | Culture artistique",
           "R1.14 | Représentation et traitement de l'information"
         ],
-        "responsable": "SURRIBAS Caroline",
-        "intitule": "Produire les éléments d'une communication visuelle"
+        "responsable": "SURRIBAS Caroline"
       },
       {
         "code": "SAÉ 1.04 | Produire un contenu audio et vidéo",
@@ -58,8 +55,7 @@
           "R1.10 | Production audio et vidéo",
           "R1.14 | Représentation et traitement de l'information"
         ],
-        "responsable": "BLANCO Sandy",
-        "intitule": "Produire un contenu audio et vidéo"
+        "responsable": "BLANCO Sandy"
       },
       {
         "code": "SAÉ 1.05 | Produire un site Web",
@@ -69,8 +65,7 @@
           "R1.12 | Développement Web",
           "R1.13 | Hébergement"
         ],
-        "responsable": "DARTIES Benoit",
-        "intitule": "Produire un site Web"
+        "responsable": "DARTIES Benoit"
       },
       {
         "code": "SAÉ 1.06 | Gérer un projet de communication numérique",
@@ -83,8 +78,7 @@
           "R1.16 | Économie, gestion et droit du numérique",
           "R1.17 | Projet Personnel et Professionnel"
         ],
-        "responsable": "",
-        "intitule": "Gérer un projet de communication numérique"
+        "responsable": "TOURNIE Laetitia"
       }
     ],
     "S2": [
@@ -191,7 +185,7 @@
           "R3.12 | Développement Front et intégration",
           "R3.15 | Représentation et traitement de l'information"
         ],
-        "responsable": ""
+        "responsable": "LAGIEWKA Arnaud"
       }
     ],
     "S4 crea": [
@@ -204,8 +198,7 @@
           "R4.03 | Design d'expérience",
           "R4.Crea.06 | Culture artistique"
         ],
-        "responsable": "SURRIBAS Caroline",
-        "intitule": "Créer pour une campagne de communication visuelle"
+        "responsable": "SURRIBAS Caroline"
       },
       {
         "code": "SAÉ 4.Crea.02 | Produire du contenu multimédia",
@@ -218,22 +211,25 @@
           "R4.Crea.07 | Audiovisuel – Motion design",
           "R4.Crea.08 | Écriture multimédia et narration"
         ],
-        "responsable": "THEROND Emmanuel",
-        "intitule": "Produire du contenu multimédia"
+        "responsable": "THEROND Emmanuel"
+      },
+      {
+        "code": "SAÉ 4.Crea.03 | SAE langues",
+        "competence": "",
+        "ressources": [],
+        "responsable": ""
       },
       {
         "code": "SAÉ 4.98 | Hackathon",
         "competence": "",
         "ressources": [],
-        "responsable": "",
-        "intitule": "Hackathon"
+        "responsable": ""
       },
       {
         "code": "SAÉ 4.99 | Marathon MMI",
         "competence": "",
         "ressources": [],
-        "responsable": "",
-        "intitule": "Marathon MMI"
+        "responsable": ""
       }
     ],
     "S4 dev": [
@@ -249,8 +245,7 @@
           "R4.DWeb-DI.07 | Développement back",
           "R4.DWeb-DI.08 | Déploiement de services"
         ],
-        "responsable": "DARTIES Benoit",
-        "intitule": "Développer pour le Web"
+        "responsable": "DARTIES Benoit"
       },
       {
         "code": "SAÉ 4.DWeb-DI.02 | Concevoir un dispositif interactif",
@@ -260,22 +255,25 @@
           "R4.DWeb-DI.05 | Création et design interactif",
           "R4.DWeb-DI.06 | Développement front"
         ],
-        "responsable": "MAURIN Nicolas",
-        "intitule": "Concevoir un dispositif interactif"
+        "responsable": "MAURIN Nicolas"
+      },
+      {
+        "code": "SAÉ 4.DWeb-DI.04 | Apprentis : Interface, contenus et visualisation",
+        "competence": "",
+        "ressources": [],
+        "responsable": ""
       },
       {
         "code": "SAÉ 4.98 | Hackathon",
         "competence": "",
         "ressources": [],
-        "responsable": "",
-        "intitule": "Hackathon"
+        "responsable": ""
       },
       {
         "code": "SAÉ 4.99 | Marathon MMI",
         "competence": "",
         "ressources": [],
-        "responsable": "",
-        "intitule": "Marathon MMI"
+        "responsable": ""
       }
     ],
     "S5 crea": [
@@ -291,8 +289,19 @@
           "R5.Crea.06 | Création numérique",
           "R5.Crea.07 | Écriture Multimédia et narration"
         ],
-        "responsable": "BLANCO Sandy",
-        "intitule": "Créer par/pour le numérique"
+        "responsable": "BLANCO Sandy"
+      },
+      {
+        "code": "SAÉ 5.Crea.02 | SAE Management",
+        "competence": "",
+        "ressources": [],
+        "responsable": ""
+      },
+      {
+        "code": "SAÉ 5.Crea.03 | SAE Conception d'interface",
+        "competence": "",
+        "ressources": [],
+        "responsable": ""
       }
     ],
     "S5 dev": [
@@ -309,8 +318,25 @@
           "R5.DWeb-DI.07 | Dispositifs interactifs",
           "R5.DWeb-DI.08 | Hébergement et cybersécurité"
         ],
-        "responsable": "",
-        "intitule": "Développer pour le web"
+        "responsable": ""
+      },
+      {
+        "code": "SAÉ 5D.02 | SAE Management",
+        "competence": "",
+        "ressources": [],
+        "responsable": ""
+      },
+      {
+        "code": "SAÉ 5D.03 | Concevoir un dispositif interactif",
+        "competence": "",
+        "ressources": [],
+        "responsable": ""
+      },
+      {
+        "code": "SAÉ 5D.04 | Integration d'un LLM",
+        "competence": "",
+        "ressources": [],
+        "responsable": ""
       }
     ],
     "S6 crea": [
@@ -318,8 +344,7 @@
         "code": "SAÉ 6.Crea.01 | UX / UI avancé",
         "competence": "",
         "ressources": [],
-        "responsable": "THEROND Emmanuel",
-        "intitule": "UX / UI avancé"
+        "responsable": "THEROND Emmanuel"
       }
     ],
     "S6 dev": [
