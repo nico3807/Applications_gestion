@@ -883,7 +883,7 @@
           "enseignant": "CHOLLET Antoine",
           "cm": 0,
           "td": 3,
-          "tp": 0,
+          "tp": 0.5,
           "grpe_td": 2,
           "grpe_tp": 4
         },
@@ -1510,7 +1510,8 @@
           "enseignant": "SALTET Marius",
           "cm": 0,
           "td": 12.5,
-          "tp": 7.5
+          "tp": 7.5,
+          "grpe_td": 1
         }
       ],
       "responsable": "",
