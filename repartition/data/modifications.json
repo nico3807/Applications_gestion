@@ -9403,5 +9403,32 @@
     "description": "S4 crea / R4.Crea.05 | Gestion de contenus spécialisée / tp",
     "prev": "11.5",
     "next": "12"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "10:20:10",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S4 crea / R4.Crea.06 | Culture artistique / tp",
+    "prev": "9",
+    "next": "9.5"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "10:20:11",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S4 crea / R4.Crea.06 | Culture artistique / tp",
+    "prev": "9.5",
+    "next": "10"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "10:20:11",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S4 crea / R4.Crea.06 | Culture artistique / tp",
+    "prev": "10",
+    "next": "10.5"
   }
 ]
