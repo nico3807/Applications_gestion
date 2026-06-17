@@ -858,7 +858,7 @@
           "td": 0,
           "tp": 0,
           "grpe_td": 0,
-          "grpe_tp": 0
+          "grpe_tp": 4
         }
       ],
       "responsable": "",
@@ -883,7 +883,7 @@
           "enseignant": "CHOLLET Antoine",
           "cm": 0,
           "td": 3,
-          "tp": 0.5,
+          "tp": 0,
           "grpe_td": 2,
           "grpe_tp": 4
         },
@@ -1511,6 +1511,12 @@
           "cm": 0,
           "td": 0,
           "tp": 0
+        },
+        {
+          "enseignant": "",
+          "cm": 0,
+          "td": 0,
+          "tp": 0
         }
       ],
       "responsable": "",
@@ -2010,7 +2016,7 @@
     },
     "R3.05 | Stratégies de communication et marketing": {
       "enseignant": "DE VELDER Sophie",
-      "cm": 4.5,
+      "cm": 0,
       "td": 3,
       "tp": 0,
       "subrows": [
