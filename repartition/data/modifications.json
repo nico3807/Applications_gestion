@@ -11149,5 +11149,32 @@
     "description": "S3 / R3.14 | Déploiement de services / sous-groupe 1 / enseignant",
     "prev": "DARTIES Benoit",
     "next": "PELTRIAUX Philippe"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "15:57:19",
+    "utilisateur": "nicolas.maurin",
+    "type": "Répartition",
+    "description": "S3 / R3.14 | Déploiement de services / sous-groupe 1 / td",
+    "prev": "4.5",
+    "next": "4"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "15:57:20",
+    "utilisateur": "nicolas.maurin",
+    "type": "Répartition",
+    "description": "S3 / R3.14 | Déploiement de services / sous-groupe 1 / td",
+    "prev": "4",
+    "next": "3.5"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "15:57:21",
+    "utilisateur": "nicolas.maurin",
+    "type": "Répartition",
+    "description": "S3 / R3.14 | Déploiement de services / sous-groupe 1 / td",
+    "prev": "3.5",
+    "next": "3"
   }
 ]
