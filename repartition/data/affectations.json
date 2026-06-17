@@ -1242,14 +1242,14 @@
     "SAÉ 4.Crea.01 | Créer pour une campagne de communication visuelle": {
       "enseignant": "SURRIBAS Caroline",
       "cm": 0,
-      "td": 12,
-      "tp": 1.5,
+      "td": 24,
+      "tp": 0,
       "subrows": [
         {
           "enseignant": "THEROND Emmanuel",
           "cm": 0,
           "td": 9,
-          "tp": 1.5,
+          "tp": 0,
           "grpe_td": 1,
           "grpe_tp": 2
         }
