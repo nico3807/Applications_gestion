@@ -1651,8 +1651,8 @@
     "R5.DWeb-DI.05 | Développement front avancé": {
       "enseignant": "MARILL Damien",
       "cm": 0,
-      "td": 21,
-      "tp": 1.5,
+      "td": 30,
+      "tp": 3,
       "subrows": [
         {
           "enseignant": "DI PIERRO Davide",
@@ -1670,7 +1670,7 @@
     "R5.DWeb-DI.06 | Développement back avancé": {
       "enseignant": "MARILL Damien",
       "cm": 0,
-      "td": 21,
+      "td": 30,
       "tp": 3,
       "subrows": [
         {
