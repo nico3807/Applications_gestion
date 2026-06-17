@@ -2635,5 +2635,14 @@
     "description": "S1 / R1.04 | Culture numérique / sous-groupe 1 / grpe_tp",
     "prev": "",
     "next": "4"
+  },
+  {
+    "date": "17/06/2026",
+    "heure": "08:01:38",
+    "utilisateur": "nicolas.maurin",
+    "type": "Répartition",
+    "description": "S1 / R1.03 | Ergonomie et Accessibilité / grpe_tp",
+    "prev": "",
+    "next": "4"
   }
 ]
