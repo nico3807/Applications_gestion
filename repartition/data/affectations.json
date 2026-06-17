@@ -1752,7 +1752,8 @@
           "cm": 0,
           "td": 30,
           "tp": 0,
-          "grpe_tp": 2
+          "grpe_tp": 2,
+          "grpe_td": 1
         },
         {
           "enseignant": "SURRIBAS Caroline",
@@ -1779,7 +1780,8 @@
           "enseignant": "MAURIN Nicolas",
           "cm": 0,
           "td": 15,
-          "tp": 0
+          "tp": 0,
+          "grpe_tp": 2
         }
       ],
       "responsable": "",
