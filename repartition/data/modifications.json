@@ -12688,5 +12688,23 @@
     "description": "Renommage — S6 crea",
     "prev": "R6 crea 02 | Création numérique intéractive",
     "next": "R6.Crea.02 | Création numérique intéractive"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "07:58:47",
+    "utilisateur": "nicolas.maurin",
+    "type": "Maquette",
+    "description": "Renommage — S6 dev",
+    "prev": "SAÉ 6.dev.01 | Developpement avancé",
+    "next": "SAÉ 6.DWeb-DI.01 | Developpement avancé"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "07:58:47",
+    "utilisateur": "nicolas.maurin",
+    "type": "Maquette",
+    "description": "Renommage — S6 dev",
+    "prev": "SAÉ 6.dev.99 | Marathon MMI",
+    "next": "SAÉ 6.DWeb-DI.99 | Marathon MMI"
   }
 ]
