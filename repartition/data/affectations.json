@@ -552,7 +552,7 @@
       "grpe_td": 1,
       "grpe_tp": 2
     },
-    "SAÉ 6.99 | Marathon MMI": {
+    "SAÉ 6.crea.99 | Marathon MMI": {
       "enseignant": "",
       "cm": 0,
       "td": 0,
@@ -1591,6 +1591,14 @@
       "responsable": "",
       "grpe_td": 1,
       "grpe_tp": 2
+    },
+    "SAÉ 6.dev.99 | Marathon MMI": {
+      "enseignant": "",
+      "cm": 0,
+      "td": 0,
+      "tp": 0,
+      "responsable": "",
+      "subrows": []
     }
   },
   "S5 dev": {
