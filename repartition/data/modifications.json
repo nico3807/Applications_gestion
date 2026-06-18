@@ -15055,5 +15055,14 @@
     "description": "Ajout",
     "prev": "—",
     "next": "GASSIN Philippe"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "19:08:56",
+    "utilisateur": "nicolas.maurin",
+    "type": "Enseignants",
+    "description": "Modification GASSIN Philippe",
+    "prev": "GASSIN Philippe — Vacataire (CEV), dû:—, max:187",
+    "next": "GASSIN Philippe — Titulaire, dû:—, max:—"
   }
 ]
