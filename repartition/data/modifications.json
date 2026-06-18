@@ -12706,5 +12706,14 @@
     "description": "Renommage — S6 dev",
     "prev": "SAÉ 6.dev.99 | Marathon MMI",
     "next": "SAÉ 6.DWeb-DI.99 | Marathon MMI"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "08:35:38",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S1 / R1.06 | Expression, communication et rhétorique / enseignant",
+    "prev": "",
+    "next": "JAECKLE Luc"
   }
 ]
