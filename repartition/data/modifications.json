@@ -13012,5 +13012,14 @@
     "description": "S5 crea / R5.Crea.06 | Création numérique / sous-groupe 3 / td",
     "prev": "0",
     "next": "9"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "11:07:38",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.06 | Création numérique / sous-groupe 3 / tp",
+    "prev": "0",
+    "next": "4.5"
   }
 ]
