@@ -872,6 +872,7 @@ function _buildServicesData() {
   SEMESTRES.forEach((sem) => {
     const sem_data = APP_DATA.affectations[sem] || {};
     Object.keys(sem_data).forEach((res) => {
+      if (res.toLowerCase().includes("portfolio")) return;
       const data = sem_data[res];
       const entries = [
         { enseignant: data.enseignant, cm: data.cm, td: data.td, tp: data.tp },
@@ -2033,6 +2034,7 @@ function renderServices(root) {
   SEMESTRES.forEach((sem) => {
     const sem_data = APP_DATA.affectations[sem] || {};
     Object.keys(sem_data).forEach((res) => {
+      if (res.toLowerCase().includes("portfolio")) return;
       const data = sem_data[res];
       const entries = [
         { enseignant: data.enseignant, cm: data.cm, td: data.td, tp: data.tp },
@@ -2200,6 +2202,7 @@ function renderEnseignants(root) {
   SEMESTRES.forEach((sem) => {
     const sem_data = APP_DATA.affectations[sem] || {};
     Object.keys(sem_data).forEach((res) => {
+      if (res.toLowerCase().includes("portfolio")) return;
       const data = sem_data[res];
       const entries = [
         { enseignant: data.enseignant, cm: data.cm, td: data.td, tp: data.tp },
