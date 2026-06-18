@@ -14101,5 +14101,32 @@
     "description": "S5 crea / R5.Crea.01 | Anglais / td",
     "prev": "3.5",
     "next": "3"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "11:27:57",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.01 | Anglais / sous-groupe 1 / td",
+    "prev": "4.5",
+    "next": "4"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "11:27:57",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.01 | Anglais / sous-groupe 1 / td",
+    "prev": "4",
+    "next": "3.5"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "11:27:58",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.01 | Anglais / sous-groupe 1 / td",
+    "prev": "3.5",
+    "next": "3"
   }
 ]
