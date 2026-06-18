@@ -432,7 +432,8 @@ function renderJuries(level) {
     const juries = sectionJuries[si] || [];
     if (juries.length === 0) continue;
     const dateKey = `${level}_date${si + 1}`;
-    html += `<div class="section"><div class="sec-date"><h2 id="${dateKey}"></h2></div><div class="jgrid">`;
+    const sectionRenduHtml = showRendu ? `<span class="rendu-lbl">— Date de RENDU&nbsp;:&nbsp;</span><select class="rendu-sel" id="${level}_date${si+1}_rendu_dow" onchange="saveRendu(this)"${rendudisabled}>${dowOpts}</select><select class="rendu-sel" id="${level}_date${si+1}_rendu_day" onchange="saveRendu(this)"${rendudisabled}>${dayOpts}</select><select class="rendu-sel" id="${level}_date${si+1}_rendu_month" onchange="saveRendu(this)"${rendudisabled}>${monthOpts}</select><span class="print-val rendu-print-val" id="${level}_date${si+1}_rendu_print"></span>` : "";
+    html += `<div class="section"><div class="sec-date"><h2 id="${dateKey}"></h2>${sectionRenduHtml}</div><div class="jgrid">`;
     juries.forEach((juryN, pos) => {
       const bi = getBadgeClass(h[`${level}_jury${juryN}_badge`]);
       let meta = "";
@@ -447,8 +448,7 @@ function renderJuries(level) {
         const sk = `${level}_jury${juryN}_sname${m}`;
         rows += `<tr><td><span id="${ck}"></span></td><td><span class="sname sname-edit" contenteditable="true" data-skey="${sk}" spellcheck="false"></span></td><td><span class="${bi.cls}">${bi.lbl}</span></td></tr>`;
       }
-      const renduHtml = showRendu ? `<div class="rendu-row"><span class="rendu-lbl">— Date de RENDU&nbsp;:&nbsp;</span><select class="rendu-sel" id="${level}_jury${juryN}_rendu_dow" onchange="saveRendu(this)"${rendudisabled}>${dowOpts}</select><select class="rendu-sel" id="${level}_jury${juryN}_rendu_day" onchange="saveRendu(this)"${rendudisabled}>${dayOpts}</select><select class="rendu-sel" id="${level}_jury${juryN}_rendu_month" onchange="saveRendu(this)"${rendudisabled}>${monthOpts}</select><span class="print-val rendu-print-val" id="${level}_jury${juryN}_rendu_print"></span></div>` : "";
-      html += `<div class="jcard"><div class="jcard-hdr"><span class="jury-name">Jury ${juryN}</span><span class="jury-date" id="${level}_jury${juryN}_date"></span>${renduHtml}</div><div class="jcard-meta">${meta}</div><table class="stable"><thead><tr><th>Horaire</th><th>Étudiant</th><th>Parcours</th></tr></thead><tbody>${rows}</tbody></table></div>`;
+      html += `<div class="jcard"><div class="jcard-hdr"><span class="jury-name">Jury ${juryN}</span><span class="jury-date" id="${level}_jury${juryN}_date"></span></div><div class="jcard-meta">${meta}</div><table class="stable"><thead><tr><th>Horaire</th><th>Étudiant</th><th>Parcours</th></tr></thead><tbody>${rows}</tbody></table></div>`;
     });
     html += `</div></div>`;
   }
