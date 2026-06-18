@@ -12715,5 +12715,14 @@
     "description": "S1 / R1.06 | Expression, communication et rhétorique / enseignant",
     "prev": "",
     "next": "JAECKLE Luc"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "08:36:14",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S1 / R1.06 | Expression, communication et rhétorique / td",
+    "prev": "9",
+    "next": "13.5"
   }
 ]
