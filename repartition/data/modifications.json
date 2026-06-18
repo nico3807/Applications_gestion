@@ -14038,5 +14038,68 @@
     "description": "S5 crea / R5.Crea.01 | Anglais / sous-groupe 1 / grpe_td",
     "prev": "0",
     "next": "1"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "11:27:51",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.01 | Anglais / td",
+    "prev": "4.5",
+    "next": "5"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "11:27:52",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.01 | Anglais / td",
+    "prev": "5",
+    "next": "5.5"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "11:27:53",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.01 | Anglais / td",
+    "prev": "5.5",
+    "next": "5"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "11:27:53",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.01 | Anglais / td",
+    "prev": "5",
+    "next": "4.5"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "11:27:53",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.01 | Anglais / td",
+    "prev": "4.5",
+    "next": "4"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "11:27:53",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.01 | Anglais / td",
+    "prev": "4",
+    "next": "3.5"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "11:27:54",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.01 | Anglais / td",
+    "prev": "3.5",
+    "next": "3"
   }
 ]
