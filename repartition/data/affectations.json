@@ -485,35 +485,6 @@
     }
   },
   "S6 crea": {
-    "R6 crea 01 | Entrepreunariat": {
-      "enseignant": "KLAIBI Noel",
-      "cm": 0,
-      "td": 13.5,
-      "tp": 0,
-      "subrows": [],
-      "responsable": "",
-      "grpe_td": 1,
-      "grpe_tp": 2
-    },
-    "R6 crea 02 | Création numérique intéractive": {
-      "enseignant": "THEROND Emmanuel",
-      "cm": 0,
-      "td": 22.5,
-      "tp": 0,
-      "subrows": [
-        {
-          "enseignant": "SELIGHINI Valérie",
-          "cm": 0,
-          "td": 15,
-          "tp": 0,
-          "grpe_td": 1,
-          "grpe_tp": 2
-        }
-      ],
-      "responsable": "",
-      "grpe_td": 1,
-      "grpe_tp": 2
-    },
     "SAÉ 6.Crea.01 | UX / UI avancé": {
       "enseignant": "SELIGHINI Valérie",
       "cm": 0,
@@ -533,16 +504,6 @@
       "grpe_td": 1,
       "grpe_tp": 2
     },
-    "SAÉ 4.99 | Marathon MMI": {
-      "enseignant": "",
-      "cm": 0,
-      "td": 0,
-      "tp": 0,
-      "subrows": [],
-      "responsable": "",
-      "grpe_td": 1,
-      "grpe_tp": 2
-    },
     "PORTFOLIO | Portfolio-Parcours Création Numérique": {
       "enseignant": "THEROND Emmanuel",
       "cm": 0,
@@ -553,6 +514,45 @@
           "enseignant": "BLANCO Sandy",
           "cm": 0,
           "td": 1.5,
+          "tp": 0,
+          "grpe_td": 1,
+          "grpe_tp": 2
+        }
+      ],
+      "responsable": "",
+      "grpe_td": 1,
+      "grpe_tp": 2
+    },
+    "SAÉ 6.Crea.99 | Marathon MMI": {
+      "enseignant": "",
+      "cm": 0,
+      "td": 0,
+      "tp": 0,
+      "subrows": [],
+      "responsable": "",
+      "grpe_td": 1,
+      "grpe_tp": 2
+    },
+    "R6.Crea.01 | Entrepreunariat": {
+      "enseignant": "KLAIBI Noel",
+      "cm": 0,
+      "td": 13.5,
+      "tp": 0,
+      "subrows": [],
+      "responsable": "",
+      "grpe_td": 1,
+      "grpe_tp": 2
+    },
+    "R6.Crea.02 | Création numérique intéractive": {
+      "enseignant": "THEROND Emmanuel",
+      "cm": 0,
+      "td": 22.5,
+      "tp": 0,
+      "subrows": [
+        {
+          "enseignant": "SELIGHINI Valérie",
+          "cm": 0,
+          "td": 15,
           "tp": 0,
           "grpe_td": 1,
           "grpe_tp": 2
@@ -1538,7 +1538,26 @@
       "grpe_td": 1,
       "grpe_tp": 2
     },
-    "SAÉ 6.dev.01 | Developpement avancé": {
+    "PORTFOLIO | Portfolio-Parcours Dev": {
+      "enseignant": "THEROND Emmanuel",
+      "cm": 0,
+      "td": 1.5,
+      "tp": 0,
+      "subrows": [
+        {
+          "enseignant": "MAURIN Nicolas",
+          "cm": 0,
+          "td": 1.5,
+          "tp": 0,
+          "grpe_td": 1,
+          "grpe_tp": 2
+        }
+      ],
+      "responsable": "",
+      "grpe_td": 1,
+      "grpe_tp": 2
+    },
+    "SAÉ 6.DWeb-DI.01 | Developpement avancé": {
       "enseignant": "MARILL Damien",
       "cm": 0,
       "td": 6,
@@ -1573,24 +1592,13 @@
       "grpe_td": 1,
       "grpe_tp": 2
     },
-    "PORTFOLIO | Portfolio-Parcours Dev": {
-      "enseignant": "THEROND Emmanuel",
+    "SAÉ 6.DWeb-DI.99 | Marathon MMI": {
+      "enseignant": "",
       "cm": 0,
-      "td": 1.5,
+      "td": 0,
       "tp": 0,
-      "subrows": [
-        {
-          "enseignant": "MAURIN Nicolas",
-          "cm": 0,
-          "td": 1.5,
-          "tp": 0,
-          "grpe_td": 1,
-          "grpe_tp": 2
-        }
-      ],
       "responsable": "",
-      "grpe_td": 1,
-      "grpe_tp": 2
+      "subrows": []
     }
   },
   "S5 dev": {

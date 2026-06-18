@@ -587,29 +587,29 @@
     }
   },
   "S6 crea": {
-    "R6 crea 01 | Entrepreunariat": {
-      "cm_final": 0,
-      "td_final": 15,
-      "tp_final": 0
-    },
-    "R6 crea 02 | Création numérique intéractive": {
-      "cm_final": 0,
-      "td_final": 37.5,
-      "tp_final": 0
-    },
     "SAÉ 6.Crea.01 | UX / UI avancé": {
       "cm_final": 0,
       "td_final": 30,
       "tp_final": 0
     },
-    "SAÉ 4.99 | Marathon MMI": {
+    "PORTFOLIO | Portfolio-Parcours Création Numérique": {
+      "cm_final": 0,
+      "td_final": 3,
+      "tp_final": 0
+    },
+    "SAÉ 6.Crea.99 | Marathon MMI": {
       "cm_final": 0,
       "td_final": 27,
       "tp_final": 0
     },
-    "PORTFOLIO | Portfolio-Parcours Création Numérique": {
+    "R6.Crea.01 | Entrepreunariat": {
       "cm_final": 0,
-      "td_final": 3,
+      "td_final": 15,
+      "tp_final": 0
+    },
+    "R6.Crea.02 | Création numérique intéractive": {
+      "cm_final": 0,
+      "td_final": 37.5,
       "tp_final": 0
     }
   },
@@ -713,17 +713,17 @@
     },
     "SAÉ 6.DWeb-DI.01 | Developpement avancé": {
       "cm_final": 0,
-      "td_final": 30,
-      "tp_final": 0
-    },
-    "SAÉ 6.dev.01 | Developpement avancé": {
-      "cm_final": 0,
       "td_final": 39,
       "tp_final": 0
     },
     "SAÉ 6.dev.02 | saé Apprentis": {
       "cm_final": 0,
       "td_final": 21,
+      "tp_final": 0
+    },
+    "SAÉ 6.DWeb-DI.99 | Marathon MMI": {
+      "cm_final": 0,
+      "td_final": 27,
       "tp_final": 0
     }
   }

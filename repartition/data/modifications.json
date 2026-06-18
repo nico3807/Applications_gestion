@@ -12634,5 +12634,77 @@
     "description": "Renommage — S4 crea",
     "prev": "SAÉ 4.99 | Marathon MMI",
     "next": "SAÉ 3.99 | Marathon MMI"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "07:53:29",
+    "utilisateur": "nicolas.maurin",
+    "type": "Maquette",
+    "description": "Renommage — S6 crea",
+    "prev": "SAÉ 4.99 | Marathon MMI",
+    "next": "SAÉ 6.99 | Marathon MMI"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "07:54:52",
+    "utilisateur": "nicolas.maurin",
+    "type": "Maquette",
+    "description": "Ajout ressource — S6 dev",
+    "prev": "—",
+    "next": "SAÉ 6.dev.99 | Marathon MMI"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "07:55:35",
+    "utilisateur": "nicolas.maurin",
+    "type": "Maquette",
+    "description": "Renommage — S6 crea",
+    "prev": "SAÉ 6.99 | Marathon MMI",
+    "next": "SAÉ 6.crea.99 | Marathon MMI"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "07:55:48",
+    "utilisateur": "nicolas.maurin",
+    "type": "Maquette",
+    "description": "Renommage — S6 crea",
+    "prev": "SAÉ 6.crea.99 | Marathon MMI",
+    "next": "SAÉ 6.Crea.99 | Marathon MMI"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "07:56:22",
+    "utilisateur": "nicolas.maurin",
+    "type": "Maquette",
+    "description": "Renommage — S6 crea",
+    "prev": "R6 crea 01 | Entrepreunariat",
+    "next": "R6.Crea.01 | Entrepreunariat"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "07:56:22",
+    "utilisateur": "nicolas.maurin",
+    "type": "Maquette",
+    "description": "Renommage — S6 crea",
+    "prev": "R6 crea 02 | Création numérique intéractive",
+    "next": "R6.Crea.02 | Création numérique intéractive"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "07:58:47",
+    "utilisateur": "nicolas.maurin",
+    "type": "Maquette",
+    "description": "Renommage — S6 dev",
+    "prev": "SAÉ 6.dev.01 | Developpement avancé",
+    "next": "SAÉ 6.DWeb-DI.01 | Developpement avancé"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "07:58:47",
+    "utilisateur": "nicolas.maurin",
+    "type": "Maquette",
+    "description": "Renommage — S6 dev",
+    "prev": "SAÉ 6.dev.99 | Marathon MMI",
+    "next": "SAÉ 6.DWeb-DI.99 | Marathon MMI"
   }
 ]
