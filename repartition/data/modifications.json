@@ -14542,5 +14542,68 @@
     "description": "S5 dev / R5.DWeb-DI.01 | Anglais / td",
     "prev": "3.5",
     "next": "3"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "11:29:14",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.01 | Anglais / tp",
+    "prev": "12",
+    "next": "11.5"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "11:29:14",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.01 | Anglais / tp",
+    "prev": "11.5",
+    "next": "11"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "11:29:15",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.01 | Anglais / tp",
+    "prev": "11",
+    "next": "10.5"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "11:29:15",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.01 | Anglais / tp",
+    "prev": "10.5",
+    "next": "10"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "11:29:15",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.01 | Anglais / tp",
+    "prev": "10",
+    "next": "9.5"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "11:29:16",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.01 | Anglais / tp",
+    "prev": "9.5",
+    "next": "9"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "11:29:16",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.01 | Anglais / tp",
+    "prev": "9",
+    "next": "8.5"
   }
 ]
