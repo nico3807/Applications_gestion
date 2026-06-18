@@ -587,16 +587,6 @@
     }
   },
   "S6 crea": {
-    "R6 crea 01 | Entrepreunariat": {
-      "cm_final": 0,
-      "td_final": 15,
-      "tp_final": 0
-    },
-    "R6 crea 02 | Création numérique intéractive": {
-      "cm_final": 0,
-      "td_final": 37.5,
-      "tp_final": 0
-    },
     "SAÉ 6.Crea.01 | UX / UI avancé": {
       "cm_final": 0,
       "td_final": 30,
@@ -610,6 +600,16 @@
     "SAÉ 6.Crea.99 | Marathon MMI": {
       "cm_final": 0,
       "td_final": 27,
+      "tp_final": 0
+    },
+    "R6.Crea.01 | Entrepreunariat": {
+      "cm_final": 0,
+      "td_final": 15,
+      "tp_final": 0
+    },
+    "R6.Crea.02 | Création numérique intéractive": {
+      "cm_final": 0,
+      "td_final": 37.5,
       "tp_final": 0
     }
   },
