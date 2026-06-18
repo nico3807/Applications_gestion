@@ -15046,5 +15046,23 @@
     "description": "S4 crea / R4.Crea.02 | Economie, gestion et Droit du numérique / td",
     "prev": "14.5",
     "next": "15"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "19:06:30",
+    "utilisateur": "nicolas.maurin",
+    "type": "Enseignants",
+    "description": "Ajout",
+    "prev": "—",
+    "next": "GASSIN Philippe"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "19:08:56",
+    "utilisateur": "nicolas.maurin",
+    "type": "Enseignants",
+    "description": "Modification GASSIN Philippe",
+    "prev": "GASSIN Philippe — Vacataire (CEV), dû:—, max:187",
+    "next": "GASSIN Philippe — Titulaire, dû:—, max:—"
   }
 ]
