@@ -1500,6 +1500,12 @@
           "cm": 0,
           "td": 7.5,
           "tp": 7.5
+        },
+        {
+          "enseignant": "",
+          "cm": 0,
+          "td": 0,
+          "tp": 0
         }
       ],
       "responsable": "",
