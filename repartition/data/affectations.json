@@ -1354,13 +1354,13 @@
       "enseignant": "BERNARD William",
       "cm": 0,
       "td": 3,
-      "tp": 10.5,
+      "tp": 6,
       "subrows": [
         {
           "enseignant": "SOLDEVILA Loren",
           "cm": 0,
           "td": 3,
-          "tp": 10.5,
+          "tp": 6,
           "grpe_td": 1
         }
       ],
