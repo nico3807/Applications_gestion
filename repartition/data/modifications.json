@@ -12670,5 +12670,23 @@
     "description": "Renommage — S6 crea",
     "prev": "SAÉ 6.crea.99 | Marathon MMI",
     "next": "SAÉ 6.Crea.99 | Marathon MMI"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "07:56:22",
+    "utilisateur": "nicolas.maurin",
+    "type": "Maquette",
+    "description": "Renommage — S6 crea",
+    "prev": "R6 crea 01 | Entrepreunariat",
+    "next": "R6.Crea.01 | Entrepreunariat"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "07:56:22",
+    "utilisateur": "nicolas.maurin",
+    "type": "Maquette",
+    "description": "Renommage — S6 crea",
+    "prev": "R6 crea 02 | Création numérique intéractive",
+    "next": "R6.Crea.02 | Création numérique intéractive"
   }
 ]
