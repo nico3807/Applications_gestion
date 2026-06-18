@@ -421,7 +421,7 @@
     "SAÉ 1.05 | Produire un site Web": {
       "enseignant": "DARTIES Benoit",
       "cm": 0,
-      "td": 5,
+      "td": 7.5,
       "tp": 0,
       "subrows": [
         {
@@ -1010,49 +1010,6 @@
       "grpe_td": 2,
       "grpe_tp": 4
     },
-    "SAÉ 2.99 | Marathon MMI": {
-      "enseignant": "DARTIES Benoit",
-      "cm": 0,
-      "td": 0,
-      "tp": 0,
-      "subrows": [
-        {
-          "enseignant": "MAURIN Nicolas",
-          "cm": 0,
-          "td": 0,
-          "tp": 0,
-          "grpe_td": 2,
-          "grpe_tp": 4
-        },
-        {
-          "enseignant": "SURRIBAS Caroline",
-          "cm": 0,
-          "td": 0,
-          "tp": 0,
-          "grpe_td": 2,
-          "grpe_tp": 4
-        },
-        {
-          "enseignant": "THEROND Emmanuel",
-          "cm": 0,
-          "td": 0,
-          "tp": 0,
-          "grpe_td": 2,
-          "grpe_tp": 4
-        },
-        {
-          "enseignant": "BERNARD William",
-          "cm": 0,
-          "td": 0,
-          "tp": 0,
-          "grpe_td": 2,
-          "grpe_tp": 4
-        }
-      ],
-      "responsable": "",
-      "grpe_td": 2,
-      "grpe_tp": 4
-    },
     "PORTFOLIO | Portfolio": {
       "enseignant": "BLANCO Sandy",
       "cm": 0,
@@ -1114,6 +1071,49 @@
       "responsable": "BERNARD William",
       "grpe_td": 2,
       "grpe_tp": 3
+    },
+    "SAÉ 1.99 | Marathon MMI": {
+      "enseignant": "DARTIES Benoit",
+      "cm": 0,
+      "td": 0,
+      "tp": 0,
+      "subrows": [
+        {
+          "enseignant": "MAURIN Nicolas",
+          "cm": 0,
+          "td": 0,
+          "tp": 0,
+          "grpe_td": 2,
+          "grpe_tp": 4
+        },
+        {
+          "enseignant": "SURRIBAS Caroline",
+          "cm": 0,
+          "td": 0,
+          "tp": 0,
+          "grpe_td": 2,
+          "grpe_tp": 4
+        },
+        {
+          "enseignant": "THEROND Emmanuel",
+          "cm": 0,
+          "td": 0,
+          "tp": 0,
+          "grpe_td": 2,
+          "grpe_tp": 4
+        },
+        {
+          "enseignant": "BERNARD William",
+          "cm": 0,
+          "td": 0,
+          "tp": 0,
+          "grpe_td": 2,
+          "grpe_tp": 4
+        }
+      ],
+      "responsable": "",
+      "grpe_td": 2,
+      "grpe_tp": 4
     }
   },
   "S4 crea": {
@@ -1285,16 +1285,6 @@
       "grpe_td": 1,
       "grpe_tp": 2
     },
-    "SAÉ 4.99 | Marathon MMI": {
-      "enseignant": "",
-      "cm": 0,
-      "td": 0,
-      "tp": 0,
-      "subrows": [],
-      "responsable": "",
-      "grpe_td": 1,
-      "grpe_tp": 2
-    },
     "PORTFOLIO | Portfolio-Parcours Création Numérique": {
       "enseignant": "MAURIN Nicolas",
       "cm": 0,
@@ -1343,6 +1333,16 @@
       "cm": 0,
       "td": 9,
       "tp": 4.5,
+      "subrows": [],
+      "responsable": "",
+      "grpe_td": 1,
+      "grpe_tp": 2
+    },
+    "SAÉ 3.99 | Marathon MMI": {
+      "enseignant": "",
+      "cm": 0,
+      "td": 0,
+      "tp": 0,
       "subrows": [],
       "responsable": "",
       "grpe_td": 1,

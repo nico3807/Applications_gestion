@@ -112,7 +112,7 @@
     },
     "SAÉ 1.05 | Produire un site Web": {
       "cm_final": 1.5,
-      "td_final": 12.5,
+      "td_final": 15,
       "tp_final": 0
     },
     "SAÉ 1.06 | Gérer un projet de communication numérique": {
@@ -242,11 +242,6 @@
       "td_final": 6,
       "tp_final": 0
     },
-    "SAÉ 2.99 | Marathon MMI": {
-      "cm_final": 0,
-      "td_final": 12,
-      "tp_final": 0
-    },
     "PORTFOLIO | Portfolio": {
       "cm_final": 0,
       "td_final": 7.5,
@@ -256,6 +251,11 @@
       "cm_final": 0,
       "td_final": 4.5,
       "tp_final": 4.5
+    },
+    "SAÉ 1.99 | Marathon MMI": {
+      "cm_final": 0,
+      "td_final": 12,
+      "tp_final": 0
     }
   },
   "S3": {
@@ -498,11 +498,6 @@
       "td_final": 6,
       "tp_final": 0
     },
-    "SAÉ 4.99 | Marathon MMI": {
-      "cm_final": 0,
-      "td_final": 12,
-      "tp_final": 0
-    },
     "PORTFOLIO | Portfolio-Parcours Création Numérique": {
       "cm_final": 0,
       "td_final": 7.5,
@@ -527,6 +522,11 @@
       "cm_final": 0,
       "td_final": 4.5,
       "tp_final": 9
+    },
+    "SAÉ 3.99 | Marathon MMI": {
+      "cm_final": 0,
+      "td_final": 12,
+      "tp_final": 0
     }
   },
   "S5 crea": {
