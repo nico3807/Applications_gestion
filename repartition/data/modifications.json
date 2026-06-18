@@ -12985,5 +12985,14 @@
     "description": "S4 dev / PORTFOLIO | Portfolio-Parcours Développement Web et Dispositifs interactifs / enseignant",
     "prev": "JAECKLE Luc",
     "next": "THEROND Emmanuel"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "10:20:20",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S4 crea / PORTFOLIO | Portfolio-Parcours Création Numérique / sous-groupe 1 / enseignant",
+    "prev": "JAECKLE Luc",
+    "next": "THEROND Emmanuel"
   }
 ]
