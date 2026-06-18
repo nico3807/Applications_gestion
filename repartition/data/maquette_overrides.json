@@ -242,11 +242,6 @@
       "td_final": 6,
       "tp_final": 0
     },
-    "SAÉ 2.99 | Marathon MMI": {
-      "cm_final": 0,
-      "td_final": 12,
-      "tp_final": 0
-    },
     "PORTFOLIO | Portfolio": {
       "cm_final": 0,
       "td_final": 7.5,
@@ -256,6 +251,11 @@
       "cm_final": 0,
       "td_final": 4.5,
       "tp_final": 4.5
+    },
+    "SAÉ 1.99 | Marathon MMI": {
+      "cm_final": 0,
+      "td_final": 12,
+      "tp_final": 0
     }
   },
   "S3": {
