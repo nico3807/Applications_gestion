@@ -1353,13 +1353,13 @@
     "R5.Crea.01 | Anglais": {
       "enseignant": "BERNARD William",
       "cm": 0,
-      "td": 9,
+      "td": 4.5,
       "tp": 21,
       "subrows": [
         {
           "enseignant": "SOLDEVILA Loren",
           "cm": 0,
-          "td": 0,
+          "td": 4,
           "tp": 0
         }
       ],
