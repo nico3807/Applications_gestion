@@ -12832,5 +12832,95 @@
     "description": "S3 / R3.08 | Écriture multimédia et narration / cm",
     "prev": "0.5",
     "next": "0"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "08:38:40",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S3 / R3.08 | Écriture multimédia et narration / tp",
+    "prev": "3",
+    "next": "6"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "08:38:41",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S3 / R3.08 | Écriture multimédia et narration / td",
+    "prev": "0",
+    "next": "0.5"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "08:38:41",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S3 / R3.08 | Écriture multimédia et narration / td",
+    "prev": "0.5",
+    "next": "1"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "08:38:42",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S3 / R3.08 | Écriture multimédia et narration / td",
+    "prev": "1",
+    "next": "1.5"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "08:38:42",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S3 / R3.08 | Écriture multimédia et narration / td",
+    "prev": "1.5",
+    "next": "2"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "08:38:42",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S3 / R3.08 | Écriture multimédia et narration / td",
+    "prev": "2",
+    "next": "2.5"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "08:38:43",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S3 / R3.08 | Écriture multimédia et narration / td",
+    "prev": "2.5",
+    "next": "3"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "08:38:43",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S3 / R3.08 | Écriture multimédia et narration / td",
+    "prev": "3",
+    "next": "3.5"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "08:38:44",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S3 / R3.08 | Écriture multimédia et narration / td",
+    "prev": "3.5",
+    "next": "4"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "08:38:44",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S3 / R3.08 | Écriture multimédia et narration / td",
+    "prev": "4",
+    "next": "4.5"
   }
 ]
