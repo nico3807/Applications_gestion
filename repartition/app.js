@@ -2260,9 +2260,11 @@ function renderEnseignants(root) {
     </div>
   </div>`;
   // Calcul des heures Parcours (S4–S6 crea/dev uniquement)
-  const _PARCOURS_SEMS = new Set(["S4 crea", "S4 dev", "S5 crea", "S5 dev", "S6 crea", "S6 dev"]);
+  const _PARCOURS_LIST = ["S4 crea", "S4 dev", "S5 crea", "S5 dev", "S6 crea", "S6 dev"];
   const totalsParc = {};
-  _PARCOURS_SEMS.forEach((sem) => {
+  const totalsParc_bySem = {};
+  _PARCOURS_LIST.forEach((sem) => {
+    totalsParc_bySem[sem] = {};
     const sem_data = APP_DATA.affectations[sem] || {};
     Object.keys(sem_data).forEach((res) => {
       const data = sem_data[res];
@@ -2273,8 +2275,11 @@ function renderEnseignants(root) {
         if (!ens) return;
         const td = parseFloat(entry.td) || 0;
         const tp = parseFloat(entry.tp) || 0;
+        const h = td + tp * 2;
         if (!totalsParc[ens]) totalsParc[ens] = 0;
-        totalsParc[ens] += td + tp * 2;
+        totalsParc[ens] += h;
+        if (!totalsParc_bySem[sem][ens]) totalsParc_bySem[sem][ens] = 0;
+        totalsParc_bySem[sem][ens] += h;
       });
     });
   });
@@ -2368,6 +2373,22 @@ function renderEnseignants(root) {
   const pctBgParc = pctVacParc < 25 ? "#fef2f2" : "#f0fdf4";
   const pctBorderParc = pctVacParc < 25 ? "#fecaca" : "#bbf7d0";
 
+  // Données par parcours individuel pour le filtre interactif
+  const parcoursStats = {};
+  _PARCOURS_LIST.forEach((sem) => {
+    let perm = 0, cev = 0, vacS = 0;
+    Object.keys(totalsParc_bySem[sem]).forEach((id) => {
+      const e = ensMapStat[id];
+      if (!e) return;
+      if (!e.is_vac) perm += totalsParc_bySem[sem][id];
+      else if (e.is_cev) cev += totalsParc_bySem[sem][id];
+      else vacS += totalsParc_bySem[sem][id];
+    });
+    parcoursStats[sem] = { tit: perm + cev, vac: vacS, total: perm + cev + vacS };
+  });
+  parcoursStats["Tout"] = { tit: heuresPermanentsParc + heuresCEVParc, vac: heuresVacSimplesParc, total: grandTotalParc };
+  window._parcoursStatsData = parcoursStats;
+
   html += `<div style="display:flex; justify-content:center; gap:2rem; flex-wrap:wrap; margin-top:2rem">
     <div class="form-card" style="max-width:280px; background:${pctBg}; border-color:${pctBorder}">
         <h3 style="margin-bottom:1.25rem; color:#1e3a5f">Pourcentage de vacataires Total</h3>
@@ -2378,19 +2399,45 @@ function renderEnseignants(root) {
             <div style="display:flex; justify-content:space-between; gap:1rem; margin-top:4px; border-top:1px solid ${pctBorder}; padding-top:6px; font-weight:600"><span>Total</span><strong>${grandTotal.toFixed(1)} h</strong></div>
         </div>
     </div>
-    <div class="form-card" style="max-width:280px; background:${pctBgParc}; border-color:${pctBorderParc}">
-        <h3 style="margin-bottom:1.25rem; color:#1e3a5f">Pourcentage de vacataires Parcours</h3>
-        <div style="font-size:3rem; font-weight:800; color:${pctColorParc}; text-align:center; line-height:1; margin-bottom:1.25rem">${pctVacParc.toFixed(1)}<span style="font-size:1.5rem">%</span></div>
+    <div id="parcours-pct-card" class="form-card" style="max-width:340px; background:${pctBgParc}; border-color:${pctBorderParc}">
+        <h3 style="margin-bottom:.75rem; color:#1e3a5f">Pourcentage de vacataires Parcours</h3>
+        <div style="display:flex; gap:4px; flex-wrap:wrap; margin-bottom:.75rem;">
+          ${["Tout", ..._PARCOURS_LIST].map(s => `<button class="sem-btn parcours-tag${s === "Tout" ? " active" : ""}" style="font-size:11px;padding:2px 8px;" onclick="_switchParcours('${s}')">${s}</button>`).join("")}
+        </div>
+        <div id="parcours-pct-val" style="font-size:3rem; font-weight:800; color:${pctColorParc}; text-align:center; line-height:1; margin-bottom:1.25rem">${pctVacParc.toFixed(1)}<span style="font-size:1.5rem">%</span></div>
         <div style="font-size:13px; color:#374151; display:flex; flex-direction:column; gap:6px; border-top:1px solid ${pctBorderParc}; padding-top:1rem">
-            <div style="display:flex; justify-content:space-between; gap:1rem"><span>Titulaires + CEV</span><strong>${(heuresPermanentsParc + heuresCEVParc).toFixed(1)} h</strong></div>
-            <div style="display:flex; justify-content:space-between; gap:1rem"><span>Vacataires simples</span><strong>${heuresVacSimplesParc.toFixed(1)} h</strong></div>
-            <div style="display:flex; justify-content:space-between; gap:1rem; margin-top:4px; border-top:1px solid ${pctBorderParc}; padding-top:6px; font-weight:600"><span>Total</span><strong>${grandTotalParc.toFixed(1)} h</strong></div>
+            <div style="display:flex; justify-content:space-between; gap:1rem"><span>Titulaires + CEV</span><strong id="parcours-tit">${(heuresPermanentsParc + heuresCEVParc).toFixed(1)} h</strong></div>
+            <div style="display:flex; justify-content:space-between; gap:1rem"><span>Vacataires simples</span><strong id="parcours-vac">${heuresVacSimplesParc.toFixed(1)} h</strong></div>
+            <div style="display:flex; justify-content:space-between; gap:1rem; margin-top:4px; border-top:1px solid ${pctBorderParc}; padding-top:6px; font-weight:600"><span>Total</span><strong id="parcours-tot">${grandTotalParc.toFixed(1)} h</strong></div>
         </div>
     </div>
   </div>`;
 
   root.innerHTML = html;
 }
+
+window._switchParcours = function (sem) {
+  const stats = window._parcoursStatsData;
+  if (!stats || !stats[sem]) return;
+  const s = stats[sem];
+  const pct   = s.total > 0 ? (s.vac / s.total) * 100 : 0;
+  const color = pct < 25 ? "#dc2626" : "#16a34a";
+  const bg    = pct < 25 ? "#fef2f2" : "#f0fdf4";
+  const bord  = pct < 25 ? "#fecaca" : "#bbf7d0";
+  const card  = document.getElementById("parcours-pct-card");
+  if (!card) return;
+  card.style.background  = bg;
+  card.style.borderColor = bord;
+  const valEl = document.getElementById("parcours-pct-val");
+  if (valEl) { valEl.style.color = color; valEl.innerHTML = `${pct.toFixed(1)}<span style="font-size:1.5rem">%</span>`; }
+  const titEl = document.getElementById("parcours-tit");
+  if (titEl) titEl.textContent = `${s.tit.toFixed(1)} h`;
+  const vacEl = document.getElementById("parcours-vac");
+  if (vacEl) vacEl.textContent = `${s.vac.toFixed(1)} h`;
+  const totEl = document.getElementById("parcours-tot");
+  if (totEl) totEl.textContent = `${s.total.toFixed(1)} h`;
+  card.querySelectorAll(".parcours-tag").forEach(btn => btn.classList.toggle("active", btn.textContent === sem));
+};
 
 window.openAddEnsModal = function () {
   let modal = document.getElementById("add-ens-modal");
