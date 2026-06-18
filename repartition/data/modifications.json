@@ -12634,5 +12634,14 @@
     "description": "Renommage — S4 crea",
     "prev": "SAÉ 4.99 | Marathon MMI",
     "next": "SAÉ 3.99 | Marathon MMI"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "07:53:29",
+    "utilisateur": "nicolas.maurin",
+    "type": "Maquette",
+    "description": "Renommage — S6 crea",
+    "prev": "SAÉ 4.99 | Marathon MMI",
+    "next": "SAÉ 6.99 | Marathon MMI"
   }
 ]
