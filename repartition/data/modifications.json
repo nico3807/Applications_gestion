@@ -13246,5 +13246,86 @@
     "description": "S5 crea / R5.Crea.01 | Anglais / td",
     "prev": "5",
     "next": "4.5"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "11:25:47",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.01 | Anglais / sous-groupe 1 / td",
+    "prev": "0",
+    "next": "0.5"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "11:25:48",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.01 | Anglais / sous-groupe 1 / td",
+    "prev": "0.5",
+    "next": "1"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "11:25:48",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.01 | Anglais / sous-groupe 1 / td",
+    "prev": "1",
+    "next": "1.5"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "11:25:48",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.01 | Anglais / sous-groupe 1 / td",
+    "prev": "1.5",
+    "next": "2"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "11:25:48",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.01 | Anglais / sous-groupe 1 / td",
+    "prev": "2",
+    "next": "2.5"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "11:25:49",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.01 | Anglais / sous-groupe 1 / td",
+    "prev": "2.5",
+    "next": "3"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "11:25:49",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.01 | Anglais / sous-groupe 1 / td",
+    "prev": "3",
+    "next": "3.5"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "11:25:50",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.01 | Anglais / sous-groupe 1 / td",
+    "prev": "3.5",
+    "next": "4"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "11:25:50",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.01 | Anglais / sous-groupe 1 / td",
+    "prev": "4",
+    "next": "4.5"
   }
 ]
