@@ -1627,7 +1627,9 @@
           "enseignant": "SOLDEVILA Loren",
           "cm": 0,
           "td": 3,
-          "tp": 6
+          "tp": 6,
+          "grpe_td": 1,
+          "grpe_tp": 2
         }
       ],
       "responsable": "",
