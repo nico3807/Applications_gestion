@@ -12760,5 +12760,77 @@
     "description": "S3 / R3.08 | Écriture multimédia et narration / sous-groupe 1 / enseignant",
     "prev": "KLAIBI Noel",
     "next": ""
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "08:38:21",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S3 / R3.08 | Écriture multimédia et narration / cm",
+    "prev": "3",
+    "next": "3.5"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "08:38:22",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S3 / R3.08 | Écriture multimédia et narration / cm",
+    "prev": "3.5",
+    "next": "3"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "08:38:22",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S3 / R3.08 | Écriture multimédia et narration / cm",
+    "prev": "3",
+    "next": "2.5"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "08:38:23",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S3 / R3.08 | Écriture multimédia et narration / cm",
+    "prev": "2.5",
+    "next": "2"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "08:38:23",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S3 / R3.08 | Écriture multimédia et narration / cm",
+    "prev": "2",
+    "next": "1.5"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "08:38:23",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S3 / R3.08 | Écriture multimédia et narration / cm",
+    "prev": "1.5",
+    "next": "1"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "08:38:24",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S3 / R3.08 | Écriture multimédia et narration / cm",
+    "prev": "1",
+    "next": "0.5"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "08:38:24",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S3 / R3.08 | Écriture multimédia et narration / cm",
+    "prev": "0.5",
+    "next": "0"
   }
 ]
