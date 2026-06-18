@@ -12706,5 +12706,2345 @@
     "description": "Renommage — S6 dev",
     "prev": "SAÉ 6.dev.99 | Marathon MMI",
     "next": "SAÉ 6.DWeb-DI.99 | Marathon MMI"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "08:35:38",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S1 / R1.06 | Expression, communication et rhétorique / enseignant",
+    "prev": "",
+    "next": "JAECKLE Luc"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "08:36:14",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S1 / R1.06 | Expression, communication et rhétorique / td",
+    "prev": "9",
+    "next": "13.5"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "08:36:20",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S1 / R1.06 | Expression, communication et rhétorique / tp",
+    "prev": "0",
+    "next": "6"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "08:37:00",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S3 / R3.07 | Expression, communication et rhétorique / enseignant",
+    "prev": "RAMPON Candice",
+    "next": "JAECKLE Luc"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "08:37:12",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S3 / R3.08 | Écriture multimédia et narration / enseignant",
+    "prev": "RAMPON Candice",
+    "next": "JAECKLE Luc"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "08:37:44",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S3 / R3.08 | Écriture multimédia et narration / sous-groupe 1 / enseignant",
+    "prev": "KLAIBI Noel",
+    "next": ""
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "08:38:21",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S3 / R3.08 | Écriture multimédia et narration / cm",
+    "prev": "3",
+    "next": "3.5"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "08:38:22",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S3 / R3.08 | Écriture multimédia et narration / cm",
+    "prev": "3.5",
+    "next": "3"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "08:38:22",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S3 / R3.08 | Écriture multimédia et narration / cm",
+    "prev": "3",
+    "next": "2.5"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "08:38:23",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S3 / R3.08 | Écriture multimédia et narration / cm",
+    "prev": "2.5",
+    "next": "2"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "08:38:23",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S3 / R3.08 | Écriture multimédia et narration / cm",
+    "prev": "2",
+    "next": "1.5"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "08:38:23",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S3 / R3.08 | Écriture multimédia et narration / cm",
+    "prev": "1.5",
+    "next": "1"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "08:38:24",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S3 / R3.08 | Écriture multimédia et narration / cm",
+    "prev": "1",
+    "next": "0.5"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "08:38:24",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S3 / R3.08 | Écriture multimédia et narration / cm",
+    "prev": "0.5",
+    "next": "0"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "08:38:40",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S3 / R3.08 | Écriture multimédia et narration / tp",
+    "prev": "3",
+    "next": "6"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "08:38:41",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S3 / R3.08 | Écriture multimédia et narration / td",
+    "prev": "0",
+    "next": "0.5"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "08:38:41",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S3 / R3.08 | Écriture multimédia et narration / td",
+    "prev": "0.5",
+    "next": "1"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "08:38:42",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S3 / R3.08 | Écriture multimédia et narration / td",
+    "prev": "1",
+    "next": "1.5"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "08:38:42",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S3 / R3.08 | Écriture multimédia et narration / td",
+    "prev": "1.5",
+    "next": "2"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "08:38:42",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S3 / R3.08 | Écriture multimédia et narration / td",
+    "prev": "2",
+    "next": "2.5"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "08:38:43",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S3 / R3.08 | Écriture multimédia et narration / td",
+    "prev": "2.5",
+    "next": "3"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "08:38:43",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S3 / R3.08 | Écriture multimédia et narration / td",
+    "prev": "3",
+    "next": "3.5"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "08:38:44",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S3 / R3.08 | Écriture multimédia et narration / td",
+    "prev": "3.5",
+    "next": "4"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "08:38:44",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S3 / R3.08 | Écriture multimédia et narration / td",
+    "prev": "4",
+    "next": "4.5"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "08:43:44",
+    "utilisateur": "nicolas.maurin",
+    "type": "SAÉ",
+    "description": "Responsable SAÉ 1.02 | Concevoir une recommandation de communication numérique (S1)",
+    "prev": "—",
+    "next": "JAECKLE Luc"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "10:15:35",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S1 / PORTFOLIO | Portfolio / sous-groupe 4 / enseignant",
+    "prev": "THEROND Emmanuel",
+    "next": "JAECKLE Luc"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "10:16:13",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S2 / PORTFOLIO | Portfolio / sous-groupe 4 / enseignant",
+    "prev": "THEROND Emmanuel",
+    "next": "JAECKLE Luc"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "10:16:30",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S3 / PORTFOLIO | Portfolio-Parcours Dev / sous-groupe 4 / enseignant",
+    "prev": "THEROND Emmanuel",
+    "next": "JAECKLE Luc"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "10:16:43",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S4 crea / PORTFOLIO | Portfolio-Parcours Création Numérique / sous-groupe 1 / enseignant",
+    "prev": "THEROND Emmanuel",
+    "next": "JAECKLE Luc"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "10:16:57",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S4 dev / PORTFOLIO | Portfolio-Parcours Développement Web et Dispositifs interactifs / enseignant",
+    "prev": "THEROND Emmanuel",
+    "next": "JAECKLE Luc"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "10:17:33",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S4 dev / PORTFOLIO | Portfolio-Parcours Développement Web et Dispositifs interactifs / enseignant",
+    "prev": "JAECKLE Luc",
+    "next": "THEROND Emmanuel"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "10:20:20",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S4 crea / PORTFOLIO | Portfolio-Parcours Création Numérique / sous-groupe 1 / enseignant",
+    "prev": "JAECKLE Luc",
+    "next": "THEROND Emmanuel"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "11:07:19",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.06 | Création numérique / sous-groupe 3 / enseignant",
+    "prev": "",
+    "next": "BOYER Tom"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "11:07:34",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.06 | Création numérique / sous-groupe 3 / td",
+    "prev": "0",
+    "next": "9"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "11:07:38",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.06 | Création numérique / sous-groupe 3 / tp",
+    "prev": "0",
+    "next": "4.5"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "11:07:52",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.06 | Création numérique / sous-groupe 1 / td",
+    "prev": "12.5",
+    "next": "12"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "11:07:52",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.06 | Création numérique / sous-groupe 1 / td",
+    "prev": "12",
+    "next": "11.5"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "11:07:54",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.06 | Création numérique / sous-groupe 1 / td",
+    "prev": "11.5",
+    "next": "11"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "11:08:03",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.06 | Création numérique / sous-groupe 1 / td",
+    "prev": "11",
+    "next": "10.5"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "11:09:09",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.06 | Création numérique / td",
+    "prev": "12.5",
+    "next": "13"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "11:25:33",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.01 | Anglais / sous-groupe 1 / enseignant",
+    "prev": "",
+    "next": "SOLDEVILA Loren"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "11:25:38",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.01 | Anglais / td",
+    "prev": "9",
+    "next": "9.5"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "11:25:39",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.01 | Anglais / td",
+    "prev": "9.5",
+    "next": "10"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "11:25:39",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.01 | Anglais / td",
+    "prev": "10",
+    "next": "10.5"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "11:25:39",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.01 | Anglais / td",
+    "prev": "10.5",
+    "next": "11"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "11:25:40",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.01 | Anglais / td",
+    "prev": "11",
+    "next": "11.5"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "11:25:41",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.01 | Anglais / td",
+    "prev": "11.5",
+    "next": "11"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "11:25:41",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.01 | Anglais / td",
+    "prev": "11",
+    "next": "10.5"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "11:25:42",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.01 | Anglais / td",
+    "prev": "10.5",
+    "next": "10"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "11:25:42",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.01 | Anglais / td",
+    "prev": "10",
+    "next": "9.5"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "11:25:42",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.01 | Anglais / td",
+    "prev": "9.5",
+    "next": "9"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "11:25:42",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.01 | Anglais / td",
+    "prev": "9",
+    "next": "8.5"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "11:25:43",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.01 | Anglais / td",
+    "prev": "8.5",
+    "next": "8"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "11:25:43",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.01 | Anglais / td",
+    "prev": "8",
+    "next": "7.5"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "11:25:43",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.01 | Anglais / td",
+    "prev": "7.5",
+    "next": "7"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "11:25:44",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.01 | Anglais / td",
+    "prev": "7",
+    "next": "6.5"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "11:25:44",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.01 | Anglais / td",
+    "prev": "6.5",
+    "next": "6"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "11:25:44",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.01 | Anglais / td",
+    "prev": "6",
+    "next": "5.5"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "11:25:45",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.01 | Anglais / td",
+    "prev": "5.5",
+    "next": "5"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "11:25:45",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.01 | Anglais / td",
+    "prev": "5",
+    "next": "4.5"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "11:25:47",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.01 | Anglais / sous-groupe 1 / td",
+    "prev": "0",
+    "next": "0.5"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "11:25:48",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.01 | Anglais / sous-groupe 1 / td",
+    "prev": "0.5",
+    "next": "1"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "11:25:48",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.01 | Anglais / sous-groupe 1 / td",
+    "prev": "1",
+    "next": "1.5"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "11:25:48",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.01 | Anglais / sous-groupe 1 / td",
+    "prev": "1.5",
+    "next": "2"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "11:25:48",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.01 | Anglais / sous-groupe 1 / td",
+    "prev": "2",
+    "next": "2.5"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "11:25:49",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.01 | Anglais / sous-groupe 1 / td",
+    "prev": "2.5",
+    "next": "3"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "11:25:49",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.01 | Anglais / sous-groupe 1 / td",
+    "prev": "3",
+    "next": "3.5"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "11:25:50",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.01 | Anglais / sous-groupe 1 / td",
+    "prev": "3.5",
+    "next": "4"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "11:25:50",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.01 | Anglais / sous-groupe 1 / td",
+    "prev": "4",
+    "next": "4.5"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "11:25:53",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.01 | Anglais / tp",
+    "prev": "21",
+    "next": "21.5"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "11:25:53",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.01 | Anglais / tp",
+    "prev": "21.5",
+    "next": "22"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "11:25:53",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.01 | Anglais / tp",
+    "prev": "22",
+    "next": "22.5"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "11:25:53",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.01 | Anglais / tp",
+    "prev": "22.5",
+    "next": "23"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "11:25:54",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.01 | Anglais / tp",
+    "prev": "23",
+    "next": "23.5"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "11:25:54",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.01 | Anglais / tp",
+    "prev": "23.5",
+    "next": "24"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "11:25:54",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.01 | Anglais / tp",
+    "prev": "24",
+    "next": "24.5"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "11:25:54",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.01 | Anglais / tp",
+    "prev": "24.5",
+    "next": "25"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "11:25:54",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.01 | Anglais / tp",
+    "prev": "25",
+    "next": "25.5"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "11:25:55",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.01 | Anglais / tp",
+    "prev": "25.5",
+    "next": "26"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "11:25:55",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.01 | Anglais / tp",
+    "prev": "26",
+    "next": "26.5"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "11:25:56",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.01 | Anglais / tp",
+    "prev": "26.5",
+    "next": "27"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "11:25:56",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.01 | Anglais / tp",
+    "prev": "27",
+    "next": "27.5"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "11:25:56",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.01 | Anglais / tp",
+    "prev": "27.5",
+    "next": "28"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "11:25:56",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.01 | Anglais / tp",
+    "prev": "28",
+    "next": "28.5"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "11:25:57",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.01 | Anglais / tp",
+    "prev": "28.5",
+    "next": "29"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "11:25:58",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.01 | Anglais / tp",
+    "prev": "29",
+    "next": "28.5"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "11:25:58",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.01 | Anglais / tp",
+    "prev": "28.5",
+    "next": "28"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "11:25:58",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.01 | Anglais / tp",
+    "prev": "28",
+    "next": "27.5"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "11:25:58",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.01 | Anglais / tp",
+    "prev": "27.5",
+    "next": "27"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "11:25:59",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.01 | Anglais / tp",
+    "prev": "27",
+    "next": "26.5"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "11:25:59",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.01 | Anglais / tp",
+    "prev": "26.5",
+    "next": "26"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "11:25:59",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.01 | Anglais / tp",
+    "prev": "26",
+    "next": "25.5"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "11:25:59",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.01 | Anglais / tp",
+    "prev": "25.5",
+    "next": "25"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "11:25:59",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.01 | Anglais / tp",
+    "prev": "25",
+    "next": "24.5"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "11:25:59",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.01 | Anglais / tp",
+    "prev": "24.5",
+    "next": "24"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "11:25:59",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.01 | Anglais / tp",
+    "prev": "24",
+    "next": "23.5"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "11:25:59",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.01 | Anglais / tp",
+    "prev": "23.5",
+    "next": "23"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "11:25:59",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.01 | Anglais / tp",
+    "prev": "23",
+    "next": "22.5"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "11:26:00",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.01 | Anglais / tp",
+    "prev": "22.5",
+    "next": "22"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "11:26:00",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.01 | Anglais / tp",
+    "prev": "22",
+    "next": "21.5"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "11:26:00",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.01 | Anglais / tp",
+    "prev": "21.5",
+    "next": "21"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "11:26:00",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.01 | Anglais / tp",
+    "prev": "21",
+    "next": "20.5"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "11:26:00",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.01 | Anglais / tp",
+    "prev": "20.5",
+    "next": "20"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "11:26:00",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.01 | Anglais / tp",
+    "prev": "20",
+    "next": "19.5"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "11:26:01",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.01 | Anglais / tp",
+    "prev": "19.5",
+    "next": "19"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "11:26:01",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.01 | Anglais / tp",
+    "prev": "19",
+    "next": "18.5"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "11:26:01",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.01 | Anglais / tp",
+    "prev": "18.5",
+    "next": "18"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "11:26:02",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.01 | Anglais / tp",
+    "prev": "18",
+    "next": "17.5"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "11:26:02",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.01 | Anglais / tp",
+    "prev": "17.5",
+    "next": "17"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "11:26:02",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.01 | Anglais / tp",
+    "prev": "17",
+    "next": "16.5"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "11:26:02",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.01 | Anglais / tp",
+    "prev": "16.5",
+    "next": "16"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "11:26:03",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.01 | Anglais / tp",
+    "prev": "16",
+    "next": "15.5"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "11:26:03",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.01 | Anglais / tp",
+    "prev": "15.5",
+    "next": "15"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "11:26:03",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.01 | Anglais / tp",
+    "prev": "15",
+    "next": "14.5"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "11:26:04",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.01 | Anglais / tp",
+    "prev": "14.5",
+    "next": "14"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "11:26:04",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.01 | Anglais / tp",
+    "prev": "14",
+    "next": "13.5"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "11:26:05",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.01 | Anglais / tp",
+    "prev": "13.5",
+    "next": "13"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "11:26:05",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.01 | Anglais / tp",
+    "prev": "13",
+    "next": "12.5"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "11:26:05",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.01 | Anglais / tp",
+    "prev": "12.5",
+    "next": "12"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "11:26:06",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.01 | Anglais / tp",
+    "prev": "12",
+    "next": "11.5"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "11:26:06",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.01 | Anglais / tp",
+    "prev": "11.5",
+    "next": "11"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "11:26:07",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.01 | Anglais / tp",
+    "prev": "11",
+    "next": "10.5"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "11:26:11",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.01 | Anglais / sous-groupe 1 / tp",
+    "prev": "0",
+    "next": "-0.5"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "11:26:12",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.01 | Anglais / sous-groupe 1 / tp",
+    "prev": "-0.5",
+    "next": "0"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "11:26:12",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.01 | Anglais / sous-groupe 1 / tp",
+    "prev": "0",
+    "next": "0.5"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "11:26:13",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.01 | Anglais / sous-groupe 1 / tp",
+    "prev": "0.5",
+    "next": "1"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "11:26:13",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.01 | Anglais / sous-groupe 1 / tp",
+    "prev": "1",
+    "next": "1.5"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "11:26:13",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.01 | Anglais / sous-groupe 1 / tp",
+    "prev": "1.5",
+    "next": "2"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "11:26:15",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.01 | Anglais / sous-groupe 1 / tp",
+    "prev": "2",
+    "next": "2.5"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "11:26:15",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.01 | Anglais / sous-groupe 1 / tp",
+    "prev": "2.5",
+    "next": "3"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "11:26:15",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.01 | Anglais / sous-groupe 1 / tp",
+    "prev": "3",
+    "next": "3.5"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "11:26:16",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.01 | Anglais / sous-groupe 1 / tp",
+    "prev": "3.5",
+    "next": "4"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "11:26:16",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.01 | Anglais / sous-groupe 1 / tp",
+    "prev": "4",
+    "next": "4.5"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "11:26:16",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.01 | Anglais / sous-groupe 1 / tp",
+    "prev": "4.5",
+    "next": "5"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "11:26:17",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.01 | Anglais / sous-groupe 1 / tp",
+    "prev": "5",
+    "next": "5.5"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "11:26:17",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.01 | Anglais / sous-groupe 1 / tp",
+    "prev": "5.5",
+    "next": "6"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "11:26:17",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.01 | Anglais / sous-groupe 1 / tp",
+    "prev": "6",
+    "next": "6.5"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "11:26:18",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.01 | Anglais / sous-groupe 1 / tp",
+    "prev": "6.5",
+    "next": "7"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "11:26:18",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.01 | Anglais / sous-groupe 1 / tp",
+    "prev": "7",
+    "next": "7.5"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "11:26:18",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.01 | Anglais / sous-groupe 1 / tp",
+    "prev": "7.5",
+    "next": "8"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "11:26:19",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.01 | Anglais / sous-groupe 1 / tp",
+    "prev": "8",
+    "next": "8.5"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "11:26:19",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.01 | Anglais / sous-groupe 1 / tp",
+    "prev": "8.5",
+    "next": "9"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "11:26:19",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.01 | Anglais / sous-groupe 1 / tp",
+    "prev": "9",
+    "next": "9.5"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "11:26:20",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.01 | Anglais / sous-groupe 1 / tp",
+    "prev": "9.5",
+    "next": "10"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "11:26:20",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.01 | Anglais / sous-groupe 1 / tp",
+    "prev": "10",
+    "next": "10.5"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "11:26:48",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.01 | Anglais / sous-groupe 1 / grpe_td",
+    "prev": "",
+    "next": "1"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "11:27:11",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.01 | Anglais / sous-groupe 1 / grpe_td",
+    "prev": "1",
+    "next": "0"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "11:27:25",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.01 | Anglais / sous-groupe 1 / grpe_td",
+    "prev": "0",
+    "next": "1"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "11:27:51",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.01 | Anglais / td",
+    "prev": "4.5",
+    "next": "5"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "11:27:52",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.01 | Anglais / td",
+    "prev": "5",
+    "next": "5.5"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "11:27:53",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.01 | Anglais / td",
+    "prev": "5.5",
+    "next": "5"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "11:27:53",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.01 | Anglais / td",
+    "prev": "5",
+    "next": "4.5"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "11:27:53",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.01 | Anglais / td",
+    "prev": "4.5",
+    "next": "4"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "11:27:53",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.01 | Anglais / td",
+    "prev": "4",
+    "next": "3.5"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "11:27:54",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.01 | Anglais / td",
+    "prev": "3.5",
+    "next": "3"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "11:27:57",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.01 | Anglais / sous-groupe 1 / td",
+    "prev": "4.5",
+    "next": "4"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "11:27:57",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.01 | Anglais / sous-groupe 1 / td",
+    "prev": "4",
+    "next": "3.5"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "11:27:58",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.01 | Anglais / sous-groupe 1 / td",
+    "prev": "3.5",
+    "next": "3"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "11:28:04",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.01 | Anglais / tp",
+    "prev": "10.5",
+    "next": "10"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "11:28:04",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.01 | Anglais / tp",
+    "prev": "10",
+    "next": "9.5"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "11:28:04",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.01 | Anglais / tp",
+    "prev": "9.5",
+    "next": "9"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "11:28:05",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.01 | Anglais / tp",
+    "prev": "9",
+    "next": "8.5"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "11:28:05",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.01 | Anglais / tp",
+    "prev": "8.5",
+    "next": "8"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "11:28:05",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.01 | Anglais / tp",
+    "prev": "8",
+    "next": "7.5"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "11:28:07",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.01 | Anglais / tp",
+    "prev": "7.5",
+    "next": "7"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "11:28:07",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.01 | Anglais / tp",
+    "prev": "7",
+    "next": "6.5"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "11:28:08",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.01 | Anglais / tp",
+    "prev": "6.5",
+    "next": "6"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "11:28:10",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.01 | Anglais / sous-groupe 1 / tp",
+    "prev": "10.5",
+    "next": "10"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "11:28:10",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.01 | Anglais / sous-groupe 1 / tp",
+    "prev": "10",
+    "next": "9.5"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "11:28:11",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.01 | Anglais / sous-groupe 1 / tp",
+    "prev": "9.5",
+    "next": "9"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "11:28:11",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.01 | Anglais / sous-groupe 1 / tp",
+    "prev": "9",
+    "next": "8.5"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "11:28:11",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.01 | Anglais / sous-groupe 1 / tp",
+    "prev": "8.5",
+    "next": "8"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "11:28:11",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.01 | Anglais / sous-groupe 1 / tp",
+    "prev": "8",
+    "next": "7.5"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "11:28:12",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.01 | Anglais / sous-groupe 1 / tp",
+    "prev": "7.5",
+    "next": "7"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "11:28:12",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.01 | Anglais / sous-groupe 1 / tp",
+    "prev": "7",
+    "next": "6.5"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "11:28:13",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.01 | Anglais / sous-groupe 1 / tp",
+    "prev": "6.5",
+    "next": "6"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "11:28:23",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.01 | Anglais / sous-groupe 1 / grpe_tp",
+    "prev": "",
+    "next": "2"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "11:28:48",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.01 | Anglais / sous-groupe 1 / enseignant",
+    "prev": "",
+    "next": "SOLDEVILA Loren"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "11:28:53",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.01 | Anglais / sous-groupe 1 / td",
+    "prev": "0",
+    "next": "0.5"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "11:28:53",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.01 | Anglais / sous-groupe 1 / td",
+    "prev": "0.5",
+    "next": "1"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "11:28:53",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.01 | Anglais / sous-groupe 1 / td",
+    "prev": "1",
+    "next": "1.5"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "11:28:53",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.01 | Anglais / sous-groupe 1 / td",
+    "prev": "1.5",
+    "next": "2"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "11:28:54",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.01 | Anglais / sous-groupe 1 / td",
+    "prev": "2",
+    "next": "2.5"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "11:28:55",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.01 | Anglais / sous-groupe 1 / td",
+    "prev": "2.5",
+    "next": "3"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "11:28:58",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.01 | Anglais / td",
+    "prev": "6",
+    "next": "6.5"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "11:28:59",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.01 | Anglais / td",
+    "prev": "6.5",
+    "next": "7"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "11:28:59",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.01 | Anglais / td",
+    "prev": "7",
+    "next": "7.5"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "11:29:00",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.01 | Anglais / td",
+    "prev": "7.5",
+    "next": "8"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "11:29:00",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.01 | Anglais / td",
+    "prev": "8",
+    "next": "8.5"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "11:29:01",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.01 | Anglais / td",
+    "prev": "8.5",
+    "next": "9"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "11:29:01",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.01 | Anglais / td",
+    "prev": "9",
+    "next": "9.5"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "11:29:03",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.01 | Anglais / td",
+    "prev": "9.5",
+    "next": "9"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "11:29:03",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.01 | Anglais / td",
+    "prev": "9",
+    "next": "8.5"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "11:29:04",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.01 | Anglais / td",
+    "prev": "8.5",
+    "next": "8"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "11:29:04",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.01 | Anglais / td",
+    "prev": "8",
+    "next": "7.5"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "11:29:04",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.01 | Anglais / td",
+    "prev": "7.5",
+    "next": "7"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "11:29:04",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.01 | Anglais / td",
+    "prev": "7",
+    "next": "6.5"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "11:29:05",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.01 | Anglais / td",
+    "prev": "6.5",
+    "next": "6"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "11:29:05",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.01 | Anglais / td",
+    "prev": "6",
+    "next": "5.5"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "11:29:05",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.01 | Anglais / td",
+    "prev": "5.5",
+    "next": "5"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "11:29:06",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.01 | Anglais / td",
+    "prev": "5",
+    "next": "4.5"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "11:29:06",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.01 | Anglais / td",
+    "prev": "4.5",
+    "next": "4"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "11:29:06",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.01 | Anglais / td",
+    "prev": "4",
+    "next": "3.5"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "11:29:07",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.01 | Anglais / td",
+    "prev": "3.5",
+    "next": "3"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "11:29:14",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.01 | Anglais / tp",
+    "prev": "12",
+    "next": "11.5"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "11:29:14",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.01 | Anglais / tp",
+    "prev": "11.5",
+    "next": "11"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "11:29:15",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.01 | Anglais / tp",
+    "prev": "11",
+    "next": "10.5"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "11:29:15",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.01 | Anglais / tp",
+    "prev": "10.5",
+    "next": "10"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "11:29:15",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.01 | Anglais / tp",
+    "prev": "10",
+    "next": "9.5"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "11:29:16",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.01 | Anglais / tp",
+    "prev": "9.5",
+    "next": "9"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "11:29:16",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.01 | Anglais / tp",
+    "prev": "9",
+    "next": "8.5"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "11:30:22",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.01 | Anglais / tp",
+    "prev": "8.5",
+    "next": "8"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "11:30:23",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.01 | Anglais / tp",
+    "prev": "8",
+    "next": "7.5"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "11:30:23",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.01 | Anglais / tp",
+    "prev": "7.5",
+    "next": "7"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "11:30:24",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.01 | Anglais / tp",
+    "prev": "7",
+    "next": "6.5"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "11:30:24",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.01 | Anglais / tp",
+    "prev": "6.5",
+    "next": "6"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "11:30:26",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.01 | Anglais / sous-groupe 1 / tp",
+    "prev": "0",
+    "next": "-0.5"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "11:30:26",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.01 | Anglais / sous-groupe 1 / tp",
+    "prev": "-0.5",
+    "next": "-1"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "11:30:27",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.01 | Anglais / sous-groupe 1 / tp",
+    "prev": "-1",
+    "next": "-1.5"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "11:30:27",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.01 | Anglais / sous-groupe 1 / tp",
+    "prev": "-1.5",
+    "next": "-1"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "11:30:28",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.01 | Anglais / sous-groupe 1 / tp",
+    "prev": "-1",
+    "next": "-0.5"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "11:30:28",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.01 | Anglais / sous-groupe 1 / tp",
+    "prev": "-0.5",
+    "next": "0"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "11:30:28",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.01 | Anglais / sous-groupe 1 / tp",
+    "prev": "0",
+    "next": "0.5"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "11:30:28",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.01 | Anglais / sous-groupe 1 / tp",
+    "prev": "0.5",
+    "next": "1"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "11:30:29",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.01 | Anglais / sous-groupe 1 / tp",
+    "prev": "1",
+    "next": "1.5"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "11:30:29",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.01 | Anglais / sous-groupe 1 / tp",
+    "prev": "1.5",
+    "next": "2"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "11:30:29",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.01 | Anglais / sous-groupe 1 / tp",
+    "prev": "2",
+    "next": "2.5"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "11:30:29",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.01 | Anglais / sous-groupe 1 / tp",
+    "prev": "2.5",
+    "next": "3"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "11:30:30",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.01 | Anglais / sous-groupe 1 / tp",
+    "prev": "3",
+    "next": "3.5"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "11:30:30",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.01 | Anglais / sous-groupe 1 / tp",
+    "prev": "3.5",
+    "next": "4"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "11:30:31",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.01 | Anglais / sous-groupe 1 / tp",
+    "prev": "4",
+    "next": "4.5"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "11:30:31",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.01 | Anglais / sous-groupe 1 / tp",
+    "prev": "4.5",
+    "next": "5"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "11:30:32",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.01 | Anglais / sous-groupe 1 / tp",
+    "prev": "5",
+    "next": "5.5"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "11:30:33",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.01 | Anglais / sous-groupe 1 / tp",
+    "prev": "5.5",
+    "next": "6"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "11:30:41",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.01 | Anglais / sous-groupe 1 / grpe_td",
+    "prev": "",
+    "next": "1"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "11:30:44",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.01 | Anglais / sous-groupe 1 / grpe_tp",
+    "prev": "",
+    "next": "2"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "11:45:59",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S2 / R2.11 | Gestion de contenus / enseignant",
+    "prev": "",
+    "next": "THEROND Emmanuel"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "13:09:11",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S5 crea / PORTFOLIO | Portfolio-Parcours Création Numérique / sous-groupe 1 / tp",
+    "prev": "3",
+    "next": "0"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "13:10:01",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S5 crea / PORTFOLIO | Portfolio-Parcours Création Numérique / td",
+    "prev": "0",
+    "next": "4.5"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "13:10:01",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S5 crea / PORTFOLIO | Portfolio-Parcours Création Numérique / tp",
+    "prev": "3",
+    "next": "2.5"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "13:10:01",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S5 crea / PORTFOLIO | Portfolio-Parcours Création Numérique / tp",
+    "prev": "2.5",
+    "next": "2"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "13:10:01",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S5 crea / PORTFOLIO | Portfolio-Parcours Création Numérique / tp",
+    "prev": "2",
+    "next": "1.5"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "13:10:01",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S5 crea / PORTFOLIO | Portfolio-Parcours Création Numérique / tp",
+    "prev": "1.5",
+    "next": "1"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "13:10:01",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S5 crea / PORTFOLIO | Portfolio-Parcours Création Numérique / tp",
+    "prev": "1",
+    "next": "0.5"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "13:10:02",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S5 crea / PORTFOLIO | Portfolio-Parcours Création Numérique / tp",
+    "prev": "0.5",
+    "next": "0"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "13:10:03",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S5 crea / PORTFOLIO | Portfolio-Parcours Création Numérique / sous-groupe 1 / tp",
+    "prev": "3",
+    "next": "2.5"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "13:10:03",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S5 crea / PORTFOLIO | Portfolio-Parcours Création Numérique / sous-groupe 1 / tp",
+    "prev": "2.5",
+    "next": "2"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "13:10:04",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S5 crea / PORTFOLIO | Portfolio-Parcours Création Numérique / sous-groupe 1 / tp",
+    "prev": "2",
+    "next": "1.5"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "13:10:04",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S5 crea / PORTFOLIO | Portfolio-Parcours Création Numérique / sous-groupe 1 / tp",
+    "prev": "1.5",
+    "next": "1"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "13:10:04",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S5 crea / PORTFOLIO | Portfolio-Parcours Création Numérique / sous-groupe 1 / tp",
+    "prev": "1",
+    "next": "0.5"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "13:10:05",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S5 crea / PORTFOLIO | Portfolio-Parcours Création Numérique / sous-groupe 1 / tp",
+    "prev": "0.5",
+    "next": "0"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "17:44:17",
+    "utilisateur": "nicolas.maurin",
+    "type": "Maquette",
+    "description": "S4 crea / R4.Crea.02 | Economie, gestion et Droit du numérique / td_final",
+    "prev": "15",
+    "next": "16"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "17:44:18",
+    "utilisateur": "nicolas.maurin",
+    "type": "Maquette",
+    "description": "S4 crea / R4.Crea.02 | Economie, gestion et Droit du numérique / td_final",
+    "prev": "16",
+    "next": "17"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "17:44:18",
+    "utilisateur": "nicolas.maurin",
+    "type": "Maquette",
+    "description": "S4 crea / R4.Crea.02 | Economie, gestion et Droit du numérique / td_final",
+    "prev": "17",
+    "next": "18"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "17:44:44",
+    "utilisateur": "nicolas.maurin",
+    "type": "Répartition",
+    "description": "S4 crea / R4.Crea.02 | Economie, gestion et Droit du numérique / td",
+    "prev": "12",
+    "next": "12.5"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "17:44:44",
+    "utilisateur": "nicolas.maurin",
+    "type": "Répartition",
+    "description": "S4 crea / R4.Crea.02 | Economie, gestion et Droit du numérique / td",
+    "prev": "12.5",
+    "next": "13"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "17:44:44",
+    "utilisateur": "nicolas.maurin",
+    "type": "Répartition",
+    "description": "S4 crea / R4.Crea.02 | Economie, gestion et Droit du numérique / td",
+    "prev": "13",
+    "next": "13.5"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "17:44:45",
+    "utilisateur": "nicolas.maurin",
+    "type": "Répartition",
+    "description": "S4 crea / R4.Crea.02 | Economie, gestion et Droit du numérique / td",
+    "prev": "13.5",
+    "next": "14"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "17:44:45",
+    "utilisateur": "nicolas.maurin",
+    "type": "Répartition",
+    "description": "S4 crea / R4.Crea.02 | Economie, gestion et Droit du numérique / td",
+    "prev": "14",
+    "next": "14.5"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "17:44:45",
+    "utilisateur": "nicolas.maurin",
+    "type": "Répartition",
+    "description": "S4 crea / R4.Crea.02 | Economie, gestion et Droit du numérique / td",
+    "prev": "14.5",
+    "next": "15"
   }
 ]

@@ -51,7 +51,7 @@
           "grpe_tp": 4
         },
         {
-          "enseignant": "THEROND Emmanuel",
+          "enseignant": "JAECKLE Luc",
           "cm": 0,
           "td": 1.5,
           "tp": 0,
@@ -112,10 +112,10 @@
       "grpe_tp": 4
     },
     "R1.06 | Expression, communication et rhétorique": {
-      "enseignant": "",
+      "enseignant": "JAECKLE Luc",
       "cm": 0,
-      "td": 9,
-      "tp": 0,
+      "td": 13.5,
+      "tp": 6,
       "subrows": [
         {
           "enseignant": "THEROND Emmanuel",
@@ -716,7 +716,7 @@
       "grpe_tp": 4
     },
     "R2.11 | Gestion de contenus": {
-      "enseignant": "",
+      "enseignant": "THEROND Emmanuel",
       "cm": 0,
       "td": 3,
       "tp": 6,
@@ -1041,7 +1041,7 @@
           "grpe_tp": 4
         },
         {
-          "enseignant": "THEROND Emmanuel",
+          "enseignant": "JAECKLE Luc",
           "cm": 0,
           "td": 1.5,
           "tp": 0,
@@ -1120,7 +1120,7 @@
     "R4.Crea.02 | Economie, gestion et Droit du numérique": {
       "enseignant": "MOCQUET Bertrand",
       "cm": 0,
-      "td": 12,
+      "td": 15,
       "tp": 0,
       "subrows": [
         {
@@ -1353,9 +1353,18 @@
     "R5.Crea.01 | Anglais": {
       "enseignant": "BERNARD William",
       "cm": 0,
-      "td": 9,
-      "tp": 21,
-      "subrows": [],
+      "td": 3,
+      "tp": 6,
+      "subrows": [
+        {
+          "enseignant": "SOLDEVILA Loren",
+          "cm": 0,
+          "td": 3,
+          "tp": 6,
+          "grpe_td": 1,
+          "grpe_tp": 2
+        }
+      ],
       "responsable": "",
       "grpe_td": 1,
       "grpe_tp": 2
@@ -1435,14 +1444,14 @@
     "PORTFOLIO | Portfolio-Parcours Création Numérique": {
       "enseignant": "BLANCO Sandy",
       "cm": 0,
-      "td": 0,
-      "tp": 3,
+      "td": 4.5,
+      "tp": 0,
       "subrows": [
         {
           "enseignant": "THEROND Emmanuel",
           "cm": 0,
-          "td": 0,
-          "tp": 3,
+          "td": 3,
+          "tp": 0,
           "grpe_td": 1,
           "grpe_tp": 2
         }
@@ -1484,13 +1493,13 @@
     "R5.Crea.06 | Création numérique": {
       "enseignant": "BLANCO Sandy",
       "cm": 0,
-      "td": 12.5,
+      "td": 13.5,
       "tp": 10.5,
       "subrows": [
         {
           "enseignant": "MEUNIER Dylan",
           "cm": 0,
-          "td": 12.5,
+          "td": 10.5,
           "tp": 7.5,
           "grpe_td": 1,
           "grpe_tp": 2
@@ -1500,6 +1509,12 @@
           "cm": 0,
           "td": 7.5,
           "tp": 7.5
+        },
+        {
+          "enseignant": "BOYER Tom",
+          "cm": 0,
+          "td": 9,
+          "tp": 4.5
         }
       ],
       "responsable": "",
@@ -1605,9 +1620,18 @@
     "R5.DWeb-DI.01 | Anglais": {
       "enseignant": "BERNARD William",
       "cm": 0,
-      "td": 6,
-      "tp": 12,
-      "subrows": [],
+      "td": 3,
+      "tp": 6,
+      "subrows": [
+        {
+          "enseignant": "SOLDEVILA Loren",
+          "cm": 0,
+          "td": 3,
+          "tp": 6,
+          "grpe_td": 1,
+          "grpe_tp": 2
+        }
+      ],
       "responsable": "",
       "grpe_td": 1,
       "grpe_tp": 2
@@ -2074,7 +2098,7 @@
       "grpe_tp": 4
     },
     "R3.07 | Expression, communication et rhétorique": {
-      "enseignant": "RAMPON Candice",
+      "enseignant": "JAECKLE Luc",
       "cm": 0,
       "td": 9,
       "tp": 6,
@@ -2101,13 +2125,13 @@
       "grpe_tp": 4
     },
     "R3.08 | Écriture multimédia et narration": {
-      "enseignant": "RAMPON Candice",
-      "cm": 3,
-      "td": 0,
-      "tp": 3,
+      "enseignant": "JAECKLE Luc",
+      "cm": 0,
+      "td": 4.5,
+      "tp": 6,
       "subrows": [
         {
-          "enseignant": "KLAIBI Noel",
+          "enseignant": "",
           "cm": 1.5,
           "td": 0,
           "tp": 3,
@@ -2420,7 +2444,7 @@
           "grpe_tp": 4
         },
         {
-          "enseignant": "THEROND Emmanuel",
+          "enseignant": "JAECKLE Luc",
           "cm": 0,
           "td": 1.5,
           "tp": 0,
