@@ -47,6 +47,28 @@ function saveT(el) {
   scheduleAutoSave();
 }
 
+function saveRendu(el) {
+  localStorage.setItem(SK + el.id, el.value);
+  el.classList.toggle("filled", !!el.value);
+  const juryPrefix = el.id.replace(/_rendu_(dow|day|month)$/, "");
+  const dow   = document.getElementById(juryPrefix + "_rendu_dow")?.value   || "";
+  const day   = document.getElementById(juryPrefix + "_rendu_day")?.value   || "";
+  const month = document.getElementById(juryPrefix + "_rendu_month")?.value || "";
+  const pv = document.getElementById(juryPrefix + "_rendu_print");
+  if (pv) pv.textContent = [dow, day, month].filter(Boolean).join(" ");
+  scheduleAutoSave();
+}
+
+function refreshRenduPrintVals() {
+  document.querySelectorAll(".rendu-print-val").forEach((pv) => {
+    const juryPrefix = pv.id.replace(/_rendu_print$/, "");
+    const dow   = document.getElementById(juryPrefix + "_rendu_dow")?.value   || "";
+    const day   = document.getElementById(juryPrefix + "_rendu_day")?.value   || "";
+    const month = document.getElementById(juryPrefix + "_rendu_month")?.value || "";
+    pv.textContent = [dow, day, month].filter(Boolean).join(" ");
+  });
+}
+
 /* ── Auto-save GitHub (R/W uniquement, déclenché après délai) ────── */
 let _autoSaveTimer = null;
 
@@ -93,15 +115,18 @@ async function doAutoSave() {
 }
 
 function loadAll() {
-  document.querySelectorAll(".tselect").forEach((el) => {
+  document.querySelectorAll(".tselect, .rendu-sel").forEach((el) => {
     const v = localStorage.getItem(SK + el.id);
     if (v !== null) {
       el.value = v;
       el.classList.toggle("filled", !!v);
     }
-    const pv = el.parentElement.querySelector(".print-val");
-    if (pv) pv.textContent = el.value || "";
+    if (!el.classList.contains("rendu-sel")) {
+      const pv = el.parentElement.querySelector(".print-val");
+      if (pv) pv.textContent = el.value || "";
+    }
   });
+  refreshRenduPrintVals();
 }
 
 /* ── JSON helpers ─────────────────────────────────────────────────── */
@@ -152,6 +177,7 @@ function applyJSON(text) {
         if (pv) pv.textContent = val || "";
       }
     }
+    refreshRenduPrintVals();
   } catch (e) {
     console.error("Erreur de lecture JSON", e);
   }
@@ -394,6 +420,12 @@ function renderJuries(level) {
     sectionJuries[0] = Array.from({ length: juryCount }, (_, i) => i + 1);
   }
 
+  const RENDU_LEVELS = ["mmi1", "mmi2_init", "mmi2_alt"];
+  const showRendu = RENDU_LEVELS.includes(level);
+  const rendudisabled = (showRendu && !AUTH.canWrite()) ? " disabled" : "";
+  const dowOpts = showRendu ? `<option value="">—</option>${["Lundi","Mardi","Mercredi","Jeudi","Vendredi","Samedi","Dimanche"].map(d=>`<option value="${d}">${d}</option>`).join("")}` : "";
+  const dayOpts = showRendu ? `<option value="">—</option>${Array.from({length:31},(_,i)=>`<option value="${i+1}">${i+1}</option>`).join("")}` : "";
+  const monthOpts = showRendu ? `<option value="">—</option><option value="mai">mai</option><option value="juin">juin</option><option value="juillet">juillet</option>` : "";
   let html = "";
   const numSections = Math.max(sectionDates.length, 1);
   for (let si = 0; si < numSections; si++) {
@@ -415,7 +447,8 @@ function renderJuries(level) {
         const sk = `${level}_jury${juryN}_sname${m}`;
         rows += `<tr><td><span id="${ck}"></span></td><td><span class="sname sname-edit" contenteditable="true" data-skey="${sk}" spellcheck="false"></span></td><td><span class="${bi.cls}">${bi.lbl}</span></td></tr>`;
       }
-      html += `<div class="jcard"><div class="jcard-hdr"><span class="jury-name">Jury ${juryN}</span><span class="jury-date" id="${level}_jury${juryN}_date"></span></div><div class="jcard-meta">${meta}</div><table class="stable"><thead><tr><th>Horaire</th><th>Étudiant</th><th>Parcours</th></tr></thead><tbody>${rows}</tbody></table></div>`;
+      const renduHtml = showRendu ? `<div class="rendu-row"><span class="rendu-lbl">— Date de RENDU&nbsp;:&nbsp;</span><select class="rendu-sel" id="${level}_jury${juryN}_rendu_dow" onchange="saveRendu(this)"${rendudisabled}>${dowOpts}</select><select class="rendu-sel" id="${level}_jury${juryN}_rendu_day" onchange="saveRendu(this)"${rendudisabled}>${dayOpts}</select><select class="rendu-sel" id="${level}_jury${juryN}_rendu_month" onchange="saveRendu(this)"${rendudisabled}>${monthOpts}</select><span class="print-val rendu-print-val" id="${level}_jury${juryN}_rendu_print"></span></div>` : "";
+      html += `<div class="jcard"><div class="jcard-hdr"><span class="jury-name">Jury ${juryN}</span><span class="jury-date" id="${level}_jury${juryN}_date"></span>${renduHtml}</div><div class="jcard-meta">${meta}</div><table class="stable"><thead><tr><th>Horaire</th><th>Étudiant</th><th>Parcours</th></tr></thead><tbody>${rows}</tbody></table></div>`;
     });
     html += `</div></div>`;
   }
@@ -864,6 +897,7 @@ function exportPDF() {
     const pv = el.parentElement.querySelector(".print-val");
     if (pv) pv.textContent = el.value || "";
   });
+  refreshRenduPrintVals();
   showToast("Ouverture de la boîte de dialogue impression…");
   setTimeout(() => window.print(), 300);
 }

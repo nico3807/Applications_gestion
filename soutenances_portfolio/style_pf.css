@@ -291,6 +291,8 @@ a {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 4px 0;
 }
 .jury-name {
   font-weight: 700;
@@ -300,6 +302,44 @@ a {
 .jury-date {
   font-size: 12px;
   color: var(--sub);
+}
+.rendu-row {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding-top: 6px;
+  flex-wrap: wrap;
+}
+.rendu-lbl {
+  color: var(--sub);
+  white-space: nowrap;
+  font-size: 12px;
+}
+.rendu-sel {
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  color: var(--text);
+  padding: 5px 8px;
+  font-size: 12px;
+  cursor: pointer;
+  transition: border-color 0.15s;
+  font-family: inherit;
+}
+.rendu-sel:hover,
+.rendu-sel:focus {
+  border-color: var(--accent);
+  outline: none;
+}
+.rendu-sel.filled {
+  border-color: rgba(88, 166, 255, 0.4);
+  color: var(--accent2);
+}
+.rendu-sel:disabled {
+  pointer-events: none;
+  opacity: 0.65;
+  cursor: default;
 }
 .jcard-meta {
   padding: 10px 14px;
@@ -871,7 +911,8 @@ a {
   }
 
   /* hide select, show span with value */
-  .tselect {
+  .tselect,
+  .rendu-sel {
     display: none !important;
   }
   .print-val {
@@ -884,6 +925,13 @@ a {
     content: "—";
     color: #aaa;
     font-weight: 400;
+  }
+  .rendu-lbl {
+    font-size: 8pt;
+    color: #555;
+  }
+  .rendu-row {
+    padding-top: 4pt;
   }
 
   .stable {
