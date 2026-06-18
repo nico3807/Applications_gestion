@@ -34,7 +34,7 @@
           "R1.05 | Stratégies de communication et marketing",
           "R1.06 | Expression, communication et rhétorique"
         ],
-        "responsable": ""
+        "responsable": "JAECKLE Luc"
       },
       {
         "code": "SAÉ 1.03 | Produire les éléments d'une communication visuelle",
@@ -349,7 +349,7 @@
     ],
     "S6 dev": [
       {
-        "code": "SAÉ 6.DWeb-DI.01 | Developpement avancé",
+        "code": "SAÉ 6.dev.01 | Developpement avancé",
         "competence": "",
         "ressources": [],
         "responsable": ""
