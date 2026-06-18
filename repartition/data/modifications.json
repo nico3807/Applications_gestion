@@ -12616,5 +12616,14 @@
     "description": "S1 / SAÉ 1.05 | Produire un site Web / td",
     "prev": "5",
     "next": "7.5"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "07:45:31",
+    "utilisateur": "nicolas.maurin",
+    "type": "Maquette",
+    "description": "Renommage — S2",
+    "prev": "SAÉ 2.99 | Marathon MMI",
+    "next": "SAÉ 1.99 | Marathon MMI"
   }
 ]
