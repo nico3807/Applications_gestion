@@ -14308,5 +14308,59 @@
     "description": "S5 dev / R5.DWeb-DI.01 | Anglais / sous-groupe 1 / enseignant",
     "prev": "",
     "next": "SOLDEVILA Loren"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "11:28:53",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.01 | Anglais / sous-groupe 1 / td",
+    "prev": "0",
+    "next": "0.5"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "11:28:53",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.01 | Anglais / sous-groupe 1 / td",
+    "prev": "0.5",
+    "next": "1"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "11:28:53",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.01 | Anglais / sous-groupe 1 / td",
+    "prev": "1",
+    "next": "1.5"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "11:28:53",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.01 | Anglais / sous-groupe 1 / td",
+    "prev": "1.5",
+    "next": "2"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "11:28:54",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.01 | Anglais / sous-groupe 1 / td",
+    "prev": "2",
+    "next": "2.5"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "11:28:55",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.01 | Anglais / sous-groupe 1 / td",
+    "prev": "2.5",
+    "next": "3"
   }
 ]
