@@ -1538,7 +1538,26 @@
       "grpe_td": 1,
       "grpe_tp": 2
     },
-    "SAÉ 6.dev.01 | Developpement avancé": {
+    "PORTFOLIO | Portfolio-Parcours Dev": {
+      "enseignant": "THEROND Emmanuel",
+      "cm": 0,
+      "td": 1.5,
+      "tp": 0,
+      "subrows": [
+        {
+          "enseignant": "MAURIN Nicolas",
+          "cm": 0,
+          "td": 1.5,
+          "tp": 0,
+          "grpe_td": 1,
+          "grpe_tp": 2
+        }
+      ],
+      "responsable": "",
+      "grpe_td": 1,
+      "grpe_tp": 2
+    },
+    "SAÉ 6.DWeb-DI.01 | Developpement avancé": {
       "enseignant": "MARILL Damien",
       "cm": 0,
       "td": 6,
@@ -1573,26 +1592,7 @@
       "grpe_td": 1,
       "grpe_tp": 2
     },
-    "PORTFOLIO | Portfolio-Parcours Dev": {
-      "enseignant": "THEROND Emmanuel",
-      "cm": 0,
-      "td": 1.5,
-      "tp": 0,
-      "subrows": [
-        {
-          "enseignant": "MAURIN Nicolas",
-          "cm": 0,
-          "td": 1.5,
-          "tp": 0,
-          "grpe_td": 1,
-          "grpe_tp": 2
-        }
-      ],
-      "responsable": "",
-      "grpe_td": 1,
-      "grpe_tp": 2
-    },
-    "SAÉ 6.dev.99 | Marathon MMI": {
+    "SAÉ 6.DWeb-DI.99 | Marathon MMI": {
       "enseignant": "",
       "cm": 0,
       "td": 0,
