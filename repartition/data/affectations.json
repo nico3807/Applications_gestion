@@ -1285,16 +1285,6 @@
       "grpe_td": 1,
       "grpe_tp": 2
     },
-    "SAÉ 4.99 | Marathon MMI": {
-      "enseignant": "",
-      "cm": 0,
-      "td": 0,
-      "tp": 0,
-      "subrows": [],
-      "responsable": "",
-      "grpe_td": 1,
-      "grpe_tp": 2
-    },
     "PORTFOLIO | Portfolio-Parcours Création Numérique": {
       "enseignant": "MAURIN Nicolas",
       "cm": 0,
@@ -1343,6 +1333,16 @@
       "cm": 0,
       "td": 9,
       "tp": 4.5,
+      "subrows": [],
+      "responsable": "",
+      "grpe_td": 1,
+      "grpe_tp": 2
+    },
+    "SAÉ 3.99 | Marathon MMI": {
+      "enseignant": "",
+      "cm": 0,
+      "td": 0,
+      "tp": 0,
       "subrows": [],
       "responsable": "",
       "grpe_td": 1,
