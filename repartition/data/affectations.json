@@ -485,35 +485,6 @@
     }
   },
   "S6 crea": {
-    "R6 crea 01 | Entrepreunariat": {
-      "enseignant": "KLAIBI Noel",
-      "cm": 0,
-      "td": 13.5,
-      "tp": 0,
-      "subrows": [],
-      "responsable": "",
-      "grpe_td": 1,
-      "grpe_tp": 2
-    },
-    "R6 crea 02 | Création numérique intéractive": {
-      "enseignant": "THEROND Emmanuel",
-      "cm": 0,
-      "td": 22.5,
-      "tp": 0,
-      "subrows": [
-        {
-          "enseignant": "SELIGHINI Valérie",
-          "cm": 0,
-          "td": 15,
-          "tp": 0,
-          "grpe_td": 1,
-          "grpe_tp": 2
-        }
-      ],
-      "responsable": "",
-      "grpe_td": 1,
-      "grpe_tp": 2
-    },
     "SAÉ 6.Crea.01 | UX / UI avancé": {
       "enseignant": "SELIGHINI Valérie",
       "cm": 0,
@@ -558,6 +529,35 @@
       "td": 0,
       "tp": 0,
       "subrows": [],
+      "responsable": "",
+      "grpe_td": 1,
+      "grpe_tp": 2
+    },
+    "R6.Crea.01 | Entrepreunariat": {
+      "enseignant": "KLAIBI Noel",
+      "cm": 0,
+      "td": 13.5,
+      "tp": 0,
+      "subrows": [],
+      "responsable": "",
+      "grpe_td": 1,
+      "grpe_tp": 2
+    },
+    "R6.Crea.02 | Création numérique intéractive": {
+      "enseignant": "THEROND Emmanuel",
+      "cm": 0,
+      "td": 22.5,
+      "tp": 0,
+      "subrows": [
+        {
+          "enseignant": "SELIGHINI Valérie",
+          "cm": 0,
+          "td": 15,
+          "tp": 0,
+          "grpe_td": 1,
+          "grpe_tp": 2
+        }
+      ],
       "responsable": "",
       "grpe_td": 1,
       "grpe_tp": 2
