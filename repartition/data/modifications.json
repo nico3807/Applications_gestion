@@ -14992,5 +14992,59 @@
     "description": "S4 crea / R4.Crea.02 | Economie, gestion et Droit du numérique / td_final",
     "prev": "17",
     "next": "18"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "17:44:44",
+    "utilisateur": "nicolas.maurin",
+    "type": "Répartition",
+    "description": "S4 crea / R4.Crea.02 | Economie, gestion et Droit du numérique / td",
+    "prev": "12",
+    "next": "12.5"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "17:44:44",
+    "utilisateur": "nicolas.maurin",
+    "type": "Répartition",
+    "description": "S4 crea / R4.Crea.02 | Economie, gestion et Droit du numérique / td",
+    "prev": "12.5",
+    "next": "13"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "17:44:44",
+    "utilisateur": "nicolas.maurin",
+    "type": "Répartition",
+    "description": "S4 crea / R4.Crea.02 | Economie, gestion et Droit du numérique / td",
+    "prev": "13",
+    "next": "13.5"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "17:44:45",
+    "utilisateur": "nicolas.maurin",
+    "type": "Répartition",
+    "description": "S4 crea / R4.Crea.02 | Economie, gestion et Droit du numérique / td",
+    "prev": "13.5",
+    "next": "14"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "17:44:45",
+    "utilisateur": "nicolas.maurin",
+    "type": "Répartition",
+    "description": "S4 crea / R4.Crea.02 | Economie, gestion et Droit du numérique / td",
+    "prev": "14",
+    "next": "14.5"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "17:44:45",
+    "utilisateur": "nicolas.maurin",
+    "type": "Répartition",
+    "description": "S4 crea / R4.Crea.02 | Economie, gestion et Droit du numérique / td",
+    "prev": "14.5",
+    "next": "15"
   }
 ]
