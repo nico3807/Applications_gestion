@@ -12652,5 +12652,14 @@
     "description": "Ajout ressource — S6 dev",
     "prev": "—",
     "next": "SAÉ 6.dev.99 | Marathon MMI"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "07:55:35",
+    "utilisateur": "nicolas.maurin",
+    "type": "Maquette",
+    "description": "Renommage — S6 crea",
+    "prev": "SAÉ 6.99 | Marathon MMI",
+    "next": "SAÉ 6.crea.99 | Marathon MMI"
   }
 ]
