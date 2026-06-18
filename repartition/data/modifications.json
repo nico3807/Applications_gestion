@@ -15046,5 +15046,14 @@
     "description": "S4 crea / R4.Crea.02 | Economie, gestion et Droit du numérique / td",
     "prev": "14.5",
     "next": "15"
+  },
+  {
+    "date": "18/06/2026",
+    "heure": "19:06:30",
+    "utilisateur": "nicolas.maurin",
+    "type": "Enseignants",
+    "description": "Ajout",
+    "prev": "—",
+    "next": "GASSIN Philippe"
   }
 ]
