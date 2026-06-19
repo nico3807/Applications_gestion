@@ -16261,5 +16261,50 @@
     "description": "S3 / R3.08 | Écriture multimédia et narration / sous-groupe 1 / cm",
     "prev": "2",
     "next": "2.5"
+  },
+  {
+    "date": "19/06/2026",
+    "heure": "16:50:12",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S3 / R3.08 | Écriture multimédia et narration / sous-groupe 1 / cm",
+    "prev": "2.5",
+    "next": "2"
+  },
+  {
+    "date": "19/06/2026",
+    "heure": "16:50:12",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S3 / R3.08 | Écriture multimédia et narration / sous-groupe 1 / cm",
+    "prev": "2",
+    "next": "1.5"
+  },
+  {
+    "date": "19/06/2026",
+    "heure": "16:50:12",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S3 / R3.08 | Écriture multimédia et narration / sous-groupe 1 / cm",
+    "prev": "1.5",
+    "next": "1"
+  },
+  {
+    "date": "19/06/2026",
+    "heure": "16:50:13",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S3 / R3.08 | Écriture multimédia et narration / sous-groupe 1 / cm",
+    "prev": "1",
+    "next": "0.5"
+  },
+  {
+    "date": "19/06/2026",
+    "heure": "16:50:13",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S3 / R3.08 | Écriture multimédia et narration / sous-groupe 1 / cm",
+    "prev": "0.5",
+    "next": "0"
   }
 ]
