@@ -2132,7 +2132,7 @@
       "subrows": [
         {
           "enseignant": "",
-          "cm": 1.5,
+          "cm": 0,
           "td": 0,
           "tp": 3,
           "grpe_td": 2,
