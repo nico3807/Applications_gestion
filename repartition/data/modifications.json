@@ -16306,5 +16306,14 @@
     "description": "S3 / R3.08 | Écriture multimédia et narration / sous-groupe 1 / cm",
     "prev": "0.5",
     "next": "0"
+  },
+  {
+    "date": "19/06/2026",
+    "heure": "16:53:03",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S3 / R3.15 | Représentation et traitement de l'information / enseignant",
+    "prev": "",
+    "next": "JAECKLE Luc"
   }
 ]
