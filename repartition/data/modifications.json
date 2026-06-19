@@ -15478,5 +15478,41 @@
     "description": "S1 / SAÉ 1.06 | Gérer un projet de communication numérique / sous-groupe 1 / tp",
     "prev": "2.5",
     "next": "3"
+  },
+  {
+    "date": "19/06/2026",
+    "heure": "09:55:31",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S1 / SAÉ 1.06 | Gérer un projet de communication numérique / td",
+    "prev": "13.5",
+    "next": "14"
+  },
+  {
+    "date": "19/06/2026",
+    "heure": "09:55:31",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S1 / SAÉ 1.06 | Gérer un projet de communication numérique / td",
+    "prev": "14",
+    "next": "14.5"
+  },
+  {
+    "date": "19/06/2026",
+    "heure": "09:55:32",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S1 / SAÉ 1.06 | Gérer un projet de communication numérique / td",
+    "prev": "14.5",
+    "next": "15"
+  },
+  {
+    "date": "19/06/2026",
+    "heure": "09:55:33",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S1 / SAÉ 1.06 | Gérer un projet de communication numérique / td",
+    "prev": "15",
+    "next": "15.5"
   }
 ]
