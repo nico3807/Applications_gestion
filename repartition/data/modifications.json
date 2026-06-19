@@ -15901,5 +15901,86 @@
     "description": "S2 / R2.07 | Écriture multimédia et narration / td",
     "prev": "5",
     "next": "4.5"
+  },
+  {
+    "date": "19/06/2026",
+    "heure": "16:37:29",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S2 / R2.07 | Écriture multimédia et narration / sous-groupe 1 / td",
+    "prev": "0",
+    "next": "0.5"
+  },
+  {
+    "date": "19/06/2026",
+    "heure": "16:37:29",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S2 / R2.07 | Écriture multimédia et narration / sous-groupe 1 / td",
+    "prev": "0.5",
+    "next": "1"
+  },
+  {
+    "date": "19/06/2026",
+    "heure": "16:37:30",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S2 / R2.07 | Écriture multimédia et narration / sous-groupe 1 / td",
+    "prev": "1",
+    "next": "1.5"
+  },
+  {
+    "date": "19/06/2026",
+    "heure": "16:37:30",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S2 / R2.07 | Écriture multimédia et narration / sous-groupe 1 / td",
+    "prev": "1.5",
+    "next": "2"
+  },
+  {
+    "date": "19/06/2026",
+    "heure": "16:37:30",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S2 / R2.07 | Écriture multimédia et narration / sous-groupe 1 / td",
+    "prev": "2",
+    "next": "2.5"
+  },
+  {
+    "date": "19/06/2026",
+    "heure": "16:37:31",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S2 / R2.07 | Écriture multimédia et narration / sous-groupe 1 / td",
+    "prev": "2.5",
+    "next": "3"
+  },
+  {
+    "date": "19/06/2026",
+    "heure": "16:37:31",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S2 / R2.07 | Écriture multimédia et narration / sous-groupe 1 / td",
+    "prev": "3",
+    "next": "3.5"
+  },
+  {
+    "date": "19/06/2026",
+    "heure": "16:37:31",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S2 / R2.07 | Écriture multimédia et narration / sous-groupe 1 / td",
+    "prev": "3.5",
+    "next": "4"
+  },
+  {
+    "date": "19/06/2026",
+    "heure": "16:37:32",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S2 / R2.07 | Écriture multimédia et narration / sous-groupe 1 / td",
+    "prev": "4",
+    "next": "4.5"
   }
 ]
