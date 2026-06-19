@@ -15694,5 +15694,14 @@
     "description": "S5 crea / R5.Crea.06 | Création numérique / sous-groupe 3 / enseignant",
     "prev": "BOYER Tom",
     "next": "LOJDI Illyasse"
+  },
+  {
+    "date": "19/06/2026",
+    "heure": "16:32:33",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S1 / SAÉ 1.02 | Concevoir une recommandation de communication numérique / tp",
+    "prev": "0",
+    "next": "0.5"
   }
 ]
