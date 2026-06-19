@@ -15370,5 +15370,59 @@
     "description": "S1 / SAÉ 1.02 | Concevoir une recommandation de communication numérique / sous-groupe 2 / cm",
     "prev": "0.5",
     "next": "0"
+  },
+  {
+    "date": "19/06/2026",
+    "heure": "09:54:30",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S1 / SAÉ 1.06 | Gérer un projet de communication numérique / sous-groupe 1 / td",
+    "prev": "0",
+    "next": "0.5"
+  },
+  {
+    "date": "19/06/2026",
+    "heure": "09:54:30",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S1 / SAÉ 1.06 | Gérer un projet de communication numérique / sous-groupe 1 / td",
+    "prev": "0.5",
+    "next": "1"
+  },
+  {
+    "date": "19/06/2026",
+    "heure": "09:54:30",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S1 / SAÉ 1.06 | Gérer un projet de communication numérique / sous-groupe 1 / td",
+    "prev": "1",
+    "next": "1.5"
+  },
+  {
+    "date": "19/06/2026",
+    "heure": "09:54:31",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S1 / SAÉ 1.06 | Gérer un projet de communication numérique / sous-groupe 1 / td",
+    "prev": "1.5",
+    "next": "2"
+  },
+  {
+    "date": "19/06/2026",
+    "heure": "09:54:31",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S1 / SAÉ 1.06 | Gérer un projet de communication numérique / sous-groupe 1 / td",
+    "prev": "2",
+    "next": "2.5"
+  },
+  {
+    "date": "19/06/2026",
+    "heure": "09:54:31",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S1 / SAÉ 1.06 | Gérer un projet de communication numérique / sous-groupe 1 / td",
+    "prev": "2.5",
+    "next": "3"
   }
 ]
