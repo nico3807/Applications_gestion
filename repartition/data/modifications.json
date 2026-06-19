@@ -16243,5 +16243,23 @@
     "description": "S2 / SAÉ 2.01 | Explorer les usages du numérique / td",
     "prev": "18.5",
     "next": "18"
+  },
+  {
+    "date": "19/06/2026",
+    "heure": "16:50:08",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S3 / R3.08 | Écriture multimédia et narration / sous-groupe 1 / cm",
+    "prev": "1.5",
+    "next": "2"
+  },
+  {
+    "date": "19/06/2026",
+    "heure": "16:50:09",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S3 / R3.08 | Écriture multimédia et narration / sous-groupe 1 / cm",
+    "prev": "2",
+    "next": "2.5"
   }
 ]
