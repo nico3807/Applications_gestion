@@ -2324,13 +2324,13 @@
     "R3.18 | Projet Personnel et Professionnel": {
       "enseignant": "DE VELDER Sophie",
       "cm": 0,
-      "td": 7.5,
+      "td": 6,
       "tp": 4.5,
       "subrows": [
         {
           "enseignant": "KLAIBI Noel",
           "cm": 0,
-          "td": 1.5,
+          "td": 3,
           "tp": 1.5,
           "grpe_td": 2,
           "grpe_tp": 4
