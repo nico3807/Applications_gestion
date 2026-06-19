@@ -15514,5 +15514,23 @@
     "description": "S1 / SAÉ 1.06 | Gérer un projet de communication numérique / td",
     "prev": "15",
     "next": "15.5"
+  },
+  {
+    "date": "19/06/2026",
+    "heure": "09:55:34",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S1 / SAÉ 1.06 | Gérer un projet de communication numérique / td",
+    "prev": "15.5",
+    "next": "16"
+  },
+  {
+    "date": "19/06/2026",
+    "heure": "09:55:35",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S1 / SAÉ 1.06 | Gérer un projet de communication numérique / td",
+    "prev": "16",
+    "next": "16.5"
   }
 ]
