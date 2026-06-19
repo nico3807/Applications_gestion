@@ -15316,5 +15316,59 @@
     "description": "S1 / SAÉ 1.02 | Concevoir une recommandation de communication numérique / sous-groupe 2 / td",
     "prev": "0.5",
     "next": "0"
+  },
+  {
+    "date": "19/06/2026",
+    "heure": "09:06:37",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S1 / SAÉ 1.02 | Concevoir une recommandation de communication numérique / sous-groupe 2 / cm",
+    "prev": "3",
+    "next": "2.5"
+  },
+  {
+    "date": "19/06/2026",
+    "heure": "09:06:39",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S1 / SAÉ 1.02 | Concevoir une recommandation de communication numérique / sous-groupe 2 / cm",
+    "prev": "2.5",
+    "next": "2"
+  },
+  {
+    "date": "19/06/2026",
+    "heure": "09:06:40",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S1 / SAÉ 1.02 | Concevoir une recommandation de communication numérique / sous-groupe 2 / cm",
+    "prev": "2",
+    "next": "1.5"
+  },
+  {
+    "date": "19/06/2026",
+    "heure": "09:06:40",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S1 / SAÉ 1.02 | Concevoir une recommandation de communication numérique / sous-groupe 2 / cm",
+    "prev": "1.5",
+    "next": "1"
+  },
+  {
+    "date": "19/06/2026",
+    "heure": "09:06:41",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S1 / SAÉ 1.02 | Concevoir une recommandation de communication numérique / sous-groupe 2 / cm",
+    "prev": "1",
+    "next": "0.5"
+  },
+  {
+    "date": "19/06/2026",
+    "heure": "09:06:41",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S1 / SAÉ 1.02 | Concevoir une recommandation de communication numérique / sous-groupe 2 / cm",
+    "prev": "0.5",
+    "next": "0"
   }
 ]
