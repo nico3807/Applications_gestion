@@ -15982,5 +15982,32 @@
     "description": "S2 / R2.07 | Écriture multimédia et narration / sous-groupe 1 / td",
     "prev": "4",
     "next": "4.5"
+  },
+  {
+    "date": "19/06/2026",
+    "heure": "16:37:40",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S2 / R2.07 | Écriture multimédia et narration / tp",
+    "prev": "11.5",
+    "next": "11"
+  },
+  {
+    "date": "19/06/2026",
+    "heure": "16:37:41",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S2 / R2.07 | Écriture multimédia et narration / tp",
+    "prev": "11",
+    "next": "10.5"
+  },
+  {
+    "date": "19/06/2026",
+    "heure": "16:37:41",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S2 / R2.07 | Écriture multimédia et narration / tp",
+    "prev": "10.5",
+    "next": "10"
   }
 ]
