@@ -15793,5 +15793,23 @@
     "description": "S1 / SAÉ 1.02 | Concevoir une recommandation de communication numérique / sous-groupe 1 / tp",
     "prev": "4",
     "next": "4.5"
+  },
+  {
+    "date": "19/06/2026",
+    "heure": "16:36:46",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S2 / R2.07 | Écriture multimédia et narration / tp",
+    "prev": "10.5",
+    "next": "11"
+  },
+  {
+    "date": "19/06/2026",
+    "heure": "16:36:47",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S2 / R2.07 | Écriture multimédia et narration / tp",
+    "prev": "11",
+    "next": "11.5"
   }
 ]
