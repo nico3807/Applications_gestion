@@ -15676,5 +15676,14 @@
     "description": "Ajout",
     "prev": "—",
     "next": "LOJDI Illyasse"
+  },
+  {
+    "date": "19/06/2026",
+    "heure": "13:48:18",
+    "utilisateur": "nicolas.maurin",
+    "type": "Enseignants",
+    "description": "Suppression",
+    "prev": "BOYER Tom",
+    "next": "—"
   }
 ]
