@@ -15127,5 +15127,59 @@
     "description": "S1 / SAÉ 1.02 | Concevoir une recommandation de communication numérique / cm",
     "prev": "1",
     "next": "1.5"
+  },
+  {
+    "date": "19/06/2026",
+    "heure": "09:06:10",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S1 / SAÉ 1.02 | Concevoir une recommandation de communication numérique / td",
+    "prev": "3",
+    "next": "3.5"
+  },
+  {
+    "date": "19/06/2026",
+    "heure": "09:06:10",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S1 / SAÉ 1.02 | Concevoir une recommandation de communication numérique / td",
+    "prev": "3.5",
+    "next": "4"
+  },
+  {
+    "date": "19/06/2026",
+    "heure": "09:06:11",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S1 / SAÉ 1.02 | Concevoir une recommandation de communication numérique / td",
+    "prev": "4",
+    "next": "4.5"
+  },
+  {
+    "date": "19/06/2026",
+    "heure": "09:06:11",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S1 / SAÉ 1.02 | Concevoir une recommandation de communication numérique / td",
+    "prev": "4.5",
+    "next": "5"
+  },
+  {
+    "date": "19/06/2026",
+    "heure": "09:06:12",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S1 / SAÉ 1.02 | Concevoir une recommandation de communication numérique / td",
+    "prev": "5",
+    "next": "5.5"
+  },
+  {
+    "date": "19/06/2026",
+    "heure": "09:06:12",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S1 / SAÉ 1.02 | Concevoir une recommandation de communication numérique / td",
+    "prev": "5.5",
+    "next": "6"
   }
 ]
