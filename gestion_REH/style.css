@@ -43,6 +43,10 @@
 .mis-sel:hover, .mis-sel:focus { border-color: #3b82f6; outline: none; }
 .org-sel.filled, .mis-sel.filled { border-color: rgba(59,130,246,0.4); color: #1e3a8a; }
 
+.mis-table {
+  width: auto;
+}
+
 .mis-txt {
   background: #f8fafc;
   border: 1px solid #d1d5db;

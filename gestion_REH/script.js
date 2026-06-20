@@ -301,7 +301,7 @@ async function renderMissions(root) {
       return `
         <tr class="${i % 2 === 0 ? "group-even" : "group-odd"}">
           <td><select class="mis-sel${savedNom ? " filled" : ""}" id="mis_${i}_nom" onchange="saveMissionsField(this)">${makeOptions(nomList, savedNom)}</select></td>
-          <td><input type="text" class="mis-txt" id="mis_${i}_remarque" value="${escapeAttr(savedRemarque)}" oninput="saveMissionsField(this)" placeholder="Remarque…"></td>
+          <td><input type="text" class="mis-txt" id="mis_${i}_remarque" value="${escapeAttr(savedRemarque)}" oninput="saveMissionsField(this)" placeholder="Mission…"></td>
           <td style="text-align:center;"><select class="mis-sel${savedHeures ? " filled" : ""}" id="mis_${i}_heures" onchange="saveMissionsField(this)">${makeOptions(heuresList, savedHeures)}</select></td>
         </tr>`;
     }).join("");
@@ -313,12 +313,12 @@ async function renderMissions(root) {
       <div>
         <p class="subtitle">Missions enseignants</p>
         <div class="table-wrapper">
-          <table class="ressources-table">
+          <table class="ressources-table mis-table">
             <thead>
               <tr>
-                <th>Nom</th>
-                <th>Remarque</th>
-                <th style="text-align:center;">Heures</th>
+                <th style="width:200px;">Nom</th>
+                <th>Missions</th>
+                <th style="width:1%; white-space:nowrap; text-align:center;">Heures</th>
               </tr>
             </thead>
             <tbody>${misRows}</tbody>
