@@ -5,7 +5,8 @@ if (!AUTH.isAuth() || !AUTH.isAdmin()) location.href = '../index.html';
 const GH_OWNER  = "nico3807";
 const GH_REPO   = "Applications_gestion";
 const GH_BRANCH = "main";
-const SK        = "reh_v1_";
+const GH_ORG_FILE = "gestion_REH/orga_pf.json";
+const SK = "reh_v1_";
 
 /* ── Navigation ──────────────────────────────────────────────────────── */
 function navigate(view) {
@@ -22,7 +23,7 @@ function showToast(msg) {
   setTimeout(() => t.classList.remove("show"), 2500);
 }
 
-/* ── GitHub fetch ─────────────────────────────────────────────────────── */
+/* ── GitHub helpers ──────────────────────────────────────────────────── */
 async function fetchGHJson(path) {
   const url = `/api/gh-proxy.php?path=${encodeURIComponent(path)}&ref=${GH_BRANCH}`;
   const resp = await fetch(url, {
@@ -35,11 +36,65 @@ async function fetchGHJson(path) {
   return JSON.parse(decodeURIComponent(escape(atob(json.content.replace(/\n/g, "")))));
 }
 
-/* ── Organisation portfolio — sauvegarde ─────────────────────────────── */
+async function saveJsonToGitHub(path, jsonStr, message) {
+  const url = `/api/gh-proxy.php?path=${encodeURIComponent(path)}`;
+  const content = btoa(unescape(encodeURIComponent(jsonStr)));
+  let sha = null;
+  try {
+    const r = await fetch(`${url}&ref=${GH_BRANCH}&_t=${Date.now()}`, {
+      cache: "no-cache",
+      credentials: "include",
+      headers: { Accept: "application/vnd.github.v3+json" },
+    });
+    if (r.ok) sha = (await r.json()).sha;
+  } catch { /* fichier inexistant */ }
+  const body = { message, content };
+  if (sha) body.sha = sha;
+  const r = await fetch(url, {
+    method: "PUT",
+    credentials: "include",
+    headers: {
+      Accept: "application/vnd.github.v3+json",
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(body),
+  });
+  if (!r.ok) {
+    const err = await r.json().catch(() => ({}));
+    throw new Error(err.error || err.message || `Erreur ${r.status}`);
+  }
+}
+
+/* ── Auto-save organisation ──────────────────────────────────────────── */
+let _autoSaveTimer = null;
+
+function scheduleAutoSave() {
+  clearTimeout(_autoSaveTimer);
+  _autoSaveTimer = setTimeout(doAutoSave, 1800);
+}
+
+function buildOrgJson() {
+  const data = {};
+  document.querySelectorAll(".org-sel").forEach(el => {
+    if (el.value) data[el.id] = el.value;
+  });
+  return JSON.stringify(data, null, 2);
+}
+
+async function doAutoSave() {
+  const ts = new Date().toLocaleString("fr-FR");
+  try {
+    await saveJsonToGitHub(GH_ORG_FILE, buildOrgJson(), `Organisation portfolio — ${ts}`);
+    showToast("✓ Sauvegardé");
+  } catch (e) {
+    showToast("✗ GitHub : " + e.message);
+  }
+}
+
 function saveOrgSel(el) {
-  if (el.value) localStorage.setItem(SK + el.id, el.value);
-  else localStorage.removeItem(SK + el.id);
+  localStorage.setItem(SK + el.id, el.value);
   el.classList.toggle("filled", !!el.value);
+  scheduleAutoSave();
 }
 
 /* ── Vue Portfolio ────────────────────────────────────────────────────── */
@@ -81,20 +136,13 @@ function buildValidPortfolioKeys(horaires) {
   return validKeys;
 }
 
-function buildOrgNomOpts(enseignants) {
-  const opts = enseignants
-    .sort((a, b) => a.id.localeCompare(b.id, "fr"))
-    .map(e => `<option value="${e.id}">${e.nom} ${e.prenom}</option>`)
-    .join("");
-  return `<option value="">— Sélectionner —</option>${opts}`;
+function makeOptions(list, selectedVal) {
+  return list.map(([v, l]) =>
+    `<option value="${v}"${v === selectedVal ? " selected" : ""}>${l}</option>`
+  ).join("");
 }
 
-function buildValOpts() {
-  return `<option value="">—</option>` +
-    Array.from({ length: 6 }, (_, i) => `<option value="${i}">${i}</option>`).join("");
-}
-
-function renderPortfolio(root, pfData, horairesData, enseignants) {
+function renderPortfolio(root, pfData, horairesData, enseignants, orgData) {
   // ── Tableau REH Portfolio ────────────────────────────────────────────
   const validKeys = buildValidPortfolioKeys(horairesData);
   const counts = {};
@@ -115,19 +163,23 @@ function renderPortfolio(root, pfData, horairesData, enseignants) {
     </tr>`).join("");
 
   // ── Tableau Organisation portfolio ──────────────────────────────────
-  const nomOpts = buildOrgNomOpts(enseignants);
-  const valOpts = buildValOpts();
-  const N = rows.length;
+  const nomList = [["", "— Sélectionner —"]].concat(
+    enseignants
+      .sort((a, b) => a.id.localeCompare(b.id, "fr"))
+      .map(e => [e.id, `${e.nom} ${e.prenom}`])
+  );
+  const valList = [["", "—"]].concat(
+    Array.from({ length: 6 }, (_, i) => [String(i), String(i)])
+  );
 
+  const N = rows.length;
   const orgRows = Array.from({ length: N }, (_, i) => {
-    const savedNom = localStorage.getItem(SK + `org_${i}_nom`) || "";
-    const savedVal = localStorage.getItem(SK + `org_${i}_val`) || "";
-    const nomSel = nomOpts.replace(`value="${savedNom}"`, `value="${savedNom}" selected`);
-    const valSel = valOpts.replace(`value="${savedVal}"`, `value="${savedVal}" selected`);
+    const savedNom = orgData[`org_${i}_nom`] || localStorage.getItem(SK + `org_${i}_nom`) || "";
+    const savedVal = orgData[`org_${i}_val`] || localStorage.getItem(SK + `org_${i}_val`) || "";
     return `
       <tr class="${i % 2 === 0 ? "group-even" : "group-odd"}">
-        <td><select class="org-sel${savedNom ? " filled" : ""}" id="org_${i}_nom" onchange="saveOrgSel(this)">${nomSel}</select></td>
-        <td style="text-align:center;"><select class="org-sel${savedVal ? " filled" : ""}" id="org_${i}_val" onchange="saveOrgSel(this)">${valSel}</select></td>
+        <td><select class="org-sel${savedNom ? " filled" : ""}" id="org_${i}_nom" onchange="saveOrgSel(this)">${makeOptions(nomList, savedNom)}</select></td>
+        <td style="text-align:center;"><select class="org-sel${savedVal ? " filled" : ""}" id="org_${i}_val" onchange="saveOrgSel(this)">${makeOptions(valList, savedVal)}</select></td>
       </tr>`;
   }).join("");
 
@@ -181,12 +233,13 @@ async function renderView(view) {
   if (view === "portfolio") {
     root.innerHTML = `<div style="padding:3rem;text-align:center;color:#6b7280;">Chargement…</div>`;
     try {
-      const [pfData, horairesData, enseignants] = await Promise.all([
+      const [pfData, horairesData, enseignants, orgData] = await Promise.all([
         fetchGHJson("soutenances_portfolio/donnees_pf.json"),
         fetchGHJson("soutenances_portfolio/horaires_pf.json"),
         fetchGHJson("repartition/data/enseignants.json"),
+        fetchGHJson(GH_ORG_FILE).catch(() => ({})),
       ]);
-      renderPortfolio(root, pfData, horairesData, enseignants);
+      renderPortfolio(root, pfData, horairesData, enseignants, orgData);
     } catch (e) {
       root.innerHTML = `<div class="alert alert-danger" style="margin-top:1rem;">
         Erreur de chargement : ${e.message}</div>`;
