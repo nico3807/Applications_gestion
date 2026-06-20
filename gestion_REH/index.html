@@ -92,14 +92,30 @@
       }
 
       /* ── Vue Portfolio ────────────────────────────────────────────────── */
-      function renderPortfolio(root, data) {
-        // Seuls les noms présents dans _enseignants comptent comme membres de jury
-        const validTeachers = new Set(data._enseignants || []);
+      // Les deux apps partagent le même préfixe localStorage (sout_v1_), donc
+      // donnees_pf.json contient aussi des clés issues de l'app stages. On
+      // soustrait les clés présentes dans donnees_stages.json pour n'obtenir
+      // que les affectations purement portfolio.
+      function extractJuryKeys(data) {
+        const JURY_KEY = /^.+_\d+_\d+_\d+$/;
+        return new Set(
+          Object.entries(data)
+            .filter(([k, v]) => v && !k.startsWith("_") && !k.includes("_tuteur") && JURY_KEY.test(k))
+            .map(([k]) => k)
+        );
+      }
+
+      function renderPortfolio(root, pfData, stagesData) {
+        const validTeachers = new Set(pfData._enseignants || []);
+        // Clés jury dans stages → à exclure du comptage portfolio
+        const stagesKeys = extractJuryKeys(stagesData);
+
         const counts = {};
-        for (const [key, val] of Object.entries(data)) {
+        for (const [key, val] of Object.entries(pfData)) {
           if (!val || key.startsWith("_")) continue;
-          if (key.includes("_tuteur")) continue; // exclure les tuteurs de stage
-          if (!validTeachers.has(val)) continue;  // seules les valeurs = nom d'enseignant
+          if (key.includes("_tuteur")) continue;
+          if (!validTeachers.has(val)) continue;
+          if (stagesKeys.has(key)) continue; // clé provenant des stages
           counts[val] = (counts[val] || 0) + 1;
         }
 
@@ -148,8 +164,11 @@
         if (view === "portfolio") {
           root.innerHTML = `<div style="padding:3rem;text-align:center;color:#6b7280;">Chargement…</div>`;
           try {
-            const data = await fetchGHJson("soutenances_portfolio/donnees_pf.json");
-            renderPortfolio(root, data);
+            const [pfData, stagesData] = await Promise.all([
+              fetchGHJson("soutenances_portfolio/donnees_pf.json"),
+              fetchGHJson("soutenances_stages/donnees_stages.json"),
+            ]);
+            renderPortfolio(root, pfData, stagesData);
           } catch (e) {
             root.innerHTML = `<div class="alert alert-danger" style="margin-top:1rem;">
               Erreur de chargement : ${e.message}</div>`;
