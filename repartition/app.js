@@ -3268,6 +3268,7 @@ function renderPilotage(root) {
   const fmt = (n) => (n % 1 === 0 ? n : n.toFixed(2).replace(/\.?0+$/, ""));
 
   const fmtB = (n) => n === 0 ? "" : (n % 1 === 0 ? String(n) : n.toFixed(2).replace(/\.?0+$/, ""));
+  let budgetTotCM = 0, budgetTotTD = 0, budgetTotTP = 0, budgetTotEQTD = 0;
   const budgetRows = SEMESTRES.map((sem, i) => {
     const aff = APP_DATA.affectations[sem] || {};
     const maq = APP_DATA.maquette_overrides[sem] || {};
@@ -3281,6 +3282,10 @@ function renderPilotage(root) {
     const nbTD = isS123(sem) ? 2 : 1;
     const nbTP = isS123(sem) ? 4 : 2;
     const volHorTotal = cmFinal + tdFinal + tpFinal; // + Projets NE + Projet E quand remplis
+    budgetTotCM += cmFinal;
+    budgetTotTD += tdFinal * nbTD;
+    budgetTotTP += tpFinal * nbTP;
+    budgetTotEQTD += cmFinal * 1.5 + tdFinal * nbTD + tpFinal * nbTP * (2 / 3);
     return `
           <tr class="${i % 2 === 0 ? "group-even" : "group-odd"}">
             <td><span class="badge-semestre" data-sem="${sem}">${sem}</span></td>
@@ -3330,6 +3335,20 @@ function renderPilotage(root) {
           </tr>
         </thead>
         <tbody>${budgetRows}</tbody>
+        <tfoot>
+          <tr class="pilotage-total-row">
+            <td></td>
+            <td></td><td></td><td></td>
+            <td></td><td></td><td></td><td></td>
+            <td></td>
+            <td class="pilotage-h-val"><strong>TOTAL</strong></td>
+            <td class="pilotage-h-val"><strong>${budgetTotCM.toFixed(2)}</strong></td>
+            <td class="pilotage-h-val"><strong>${budgetTotTD.toFixed(2)}</strong></td>
+            <td class="pilotage-h-val"><strong>${budgetTotTP.toFixed(2)}</strong></td>
+            <td></td>
+            <td class="pilotage-h-val"><strong>${budgetTotEQTD.toFixed(2)}</strong></td>
+          </tr>
+        </tfoot>
       </table>
     </div>
 
