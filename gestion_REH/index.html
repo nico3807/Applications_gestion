@@ -22,6 +22,7 @@
           <a href="#" class="nav-link" id="nav-missions"
              onclick="navigate('missions'); return false;">Missions</a>
         </nav>
+        <button id="menu-toggle" aria-label="Ouvrir le menu" aria-expanded="false">&#9776;</button>
       </div>
     </header>
 
@@ -35,5 +36,24 @@
 
     <script src="../auth.js"></script>
     <script src="script.js"></script>
+    <script>
+      (function () {
+        var btn = document.getElementById('menu-toggle');
+        var nav = document.getElementById('main-nav');
+        if (!btn || !nav) return;
+        btn.addEventListener('click', function () {
+          var open = nav.classList.toggle('open');
+          btn.setAttribute('aria-expanded', String(open));
+          btn.textContent = open ? '✕' : '☰';
+        });
+        nav.addEventListener('click', function (e) {
+          if (e.target.closest('.nav-link')) {
+            nav.classList.remove('open');
+            btn.setAttribute('aria-expanded', 'false');
+            btn.textContent = '☰';
+          }
+        });
+      })();
+    </script>
   </body>
 </html>
