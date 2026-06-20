@@ -98,6 +98,12 @@
             <div class="icard-sub">Déclaration de problèmes matériel</div>
             <div class="icard-arrow">Accéder →</div>
           </a>
+          <a href="gestion_REH/index.html" class="icard" data-app="gestion_reh" style="display:none;">
+            <div class="icard-icon">📊</div>
+            <h2>Gestion REH</h2>
+            <div class="icard-sub">Suivi des ressources en heures d'enseignement</div>
+            <div class="icard-arrow">Accéder →</div>
+          </a>
         </div>
 
         <!-- Boutons admin (nicolas.maurin uniquement) -->
@@ -359,7 +365,7 @@
 
       function applyCardVisibility() {
         // souhaits et deplacement_cours : visibles seulement si explicitement dans rwApps (ou admin)
-        const GRANT_ONLY = new Set(["souhaits", "deplacement_cours", "annulation_cours", "declaration_materiel"]);
+        const GRANT_ONLY = new Set(["souhaits", "deplacement_cours", "annulation_cours", "declaration_materiel", "gestion_reh"]);
         document.querySelectorAll(".icard[data-app]").forEach(card => {
           const app = card.dataset.app;
           if (GRANT_ONLY.has(app)) {

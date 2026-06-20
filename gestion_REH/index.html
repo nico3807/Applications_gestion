@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gestion REH — MMI</title>
+    <link rel="stylesheet" href="../repartition/static/style.css" />
+    <style>
+      .toast {
+        position: fixed;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: #16a34a;
+        color: white;
+        padding: 10px 20px;
+        border-radius: 8px;
+        opacity: 0;
+        transition: opacity 0.3s;
+        pointer-events: none;
+        z-index: 2000;
+        font-weight: 600;
+      }
+      .toast.show { opacity: 1; }
+      .reh-table { max-width: 520px; }
+      .reh-table td:not(:first-child) { text-align: center; }
+      .reh-table th:not(:first-child) { text-align: center; }
+      .reh-total-row td { border-top: 2px solid #1e3a5f; background: #f1f5f9; font-size: 14px; }
+      .reh-total-row td:last-child { color: #064e3b; }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="header-inner">
+        <a href="../index.html" title="Retour à l'accueil MMI"
+           style="display:flex;align-items:center;flex-shrink:0;line-height:0;">
+          <img src="../logo_mmi.jpg" alt="MMI"
+               style="height:32px;width:auto;border-radius:4px;display:block;opacity:0.9;">
+        </a>
+        <span class="site-title">Gestion REH</span>
+        <nav id="main-nav">
+          <a href="#" class="nav-link" id="nav-portfolio"
+             onclick="navigate('portfolio'); return false;">Portfolio</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="app-root"></main>
+
+    <footer>
+      <p>Gestion REH — BUT MMI Béziers</p>
+    </footer>
+
+    <div id="toast" class="toast"></div>
+
+    <script src="../auth.js"></script>
+    <script>
+      if (!AUTH.isAuth() || !AUTH.isAdmin()) location.href = '../index.html';
+    </script>
+    <script>
+      "use strict";
+      const GH_OWNER  = "nico3807";
+      const GH_REPO   = "Applications_gestion";
+      const GH_BRANCH = "main";
+
+      /* ── Navigation ───────────────────────────────────────────────────── */
+      function navigate(view) {
+        document.querySelectorAll(".nav-link").forEach(l => l.classList.remove("active"));
+        const el = document.getElementById("nav-" + view);
+        if (el) el.classList.add("active");
+        renderView(view);
+      }
+
+      function showToast(msg) {
+        const t = document.getElementById("toast");
+        t.textContent = msg;
+        t.classList.add("show");
+        setTimeout(() => t.classList.remove("show"), 2500);
+      }
+
+      /* ── GitHub fetch ─────────────────────────────────────────────────── */
+      async function fetchGHJson(path) {
+        const url = `/api/gh-proxy.php?path=${encodeURIComponent(path)}&ref=${GH_BRANCH}`;
+        const resp = await fetch(url, {
+          cache: "no-cache",
+          credentials: "include",
+          headers: { Accept: "application/vnd.github.v3+json" },
+        });
+        if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
+        const json = await resp.json();
+        return JSON.parse(decodeURIComponent(escape(atob(json.content.replace(/\n/g, "")))));
+      }
+
+      /* ── Vue Portfolio ────────────────────────────────────────────────── */
+      // Clés de jury : ${level}_${si}_${pos}_${teacherIdx} → ex: mmi1_0_0_1
+      // On exclut : clés commençant par "_", contenant "_tuteur" ou "_rendu_"
+      const JURY_KEY = /^.+_\d+_\d+_\d+$/;
+
+      function renderPortfolio(root, data) {
+        const counts = {};
+        for (const [key, val] of Object.entries(data)) {
+          if (!val || key.startsWith("_")) continue;
+          if (!JURY_KEY.test(key)) continue;
+          if (key.includes("_tuteur") || key.includes("_rendu_")) continue;
+          counts[val] = (counts[val] || 0) + 1;
+        }
+
+        const rows = Object.entries(counts)
+          .sort(([a], [b]) => a.localeCompare(b, "fr"));
+
+        const totalJurys = rows.reduce((s, [, n]) => s + n, 0);
+        const totalREH   = totalJurys * 3;
+
+        const tableRows = rows.map(([nom, nbre], i) => `
+          <tr class="${i % 2 === 0 ? "group-even" : "group-odd"}">
+            <td>${nom}</td>
+            <td><strong>${nbre}</strong></td>
+            <td><strong>${nbre * 3}</strong></td>
+          </tr>`).join("");
+
+        root.innerHTML = `
+          <div class="page-header">
+            <h1>Portfolio</h1>
+            <p class="subtitle">REH Portfolio — participation aux jurys de soutenances stages</p>
+          </div>
+          <div class="table-wrapper reh-table">
+            <table class="ressources-table">
+              <thead>
+                <tr>
+                  <th>Nom</th>
+                  <th>Nbre de jurys</th>
+                  <th>REH Portfolio</th>
+                </tr>
+              </thead>
+              <tbody>${tableRows}</tbody>
+              <tfoot>
+                <tr class="reh-total-row">
+                  <td><strong>Total</strong></td>
+                  <td><strong>${totalJurys}</strong></td>
+                  <td><strong>${totalREH}</strong></td>
+                </tr>
+              </tfoot>
+            </table>
+          </div>`;
+      }
+
+      /* ── Rendu principal ──────────────────────────────────────────────── */
+      async function renderView(view) {
+        const root = document.getElementById("app-root");
+        if (view === "portfolio") {
+          root.innerHTML = `<div style="padding:3rem;text-align:center;color:#6b7280;">Chargement…</div>`;
+          try {
+            const data = await fetchGHJson("soutenances_stages/donnees_stages.json");
+            renderPortfolio(root, data);
+          } catch (e) {
+            root.innerHTML = `<div class="alert alert-danger" style="margin-top:1rem;">
+              Erreur de chargement : ${e.message}</div>`;
+          }
+        }
+      }
+
+      /* ── Init ─────────────────────────────────────────────────────────── */
+      AUTH.injectBadge();
+      navigate("portfolio");
+    </script>
+  </body>
+</html>
