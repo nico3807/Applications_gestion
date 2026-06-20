@@ -271,6 +271,64 @@ function renderPortfolio(root, pfData, horairesData, enseignants, orgData) {
     </div>`;
 }
 
+/* ── Vue SAÉ ──────────────────────────────────────────────────────────── */
+async function renderSAE(root) {
+  root.innerHTML = `<div style="padding:3rem;text-align:center;color:#6b7280;">Chargement…</div>`;
+  try {
+    const saeData = await fetchGHJson("repartition/data/sae_data.json");
+
+    const counts = {};
+    for (const sem of saeData.semestres) {
+      const list = saeData.sae[sem] || [];
+      for (const sae of list) {
+        const resp = (sae.responsable || "").trim();
+        if (resp) counts[resp] = (counts[resp] || 0) + 1;
+      }
+    }
+
+    const rows = Object.entries(counts).sort(([a], [b]) => a.localeCompare(b, "fr"));
+    const totalSae  = rows.reduce((s, [, n]) => s + n, 0);
+    const totalREH  = totalSae * 2;
+
+    const rehRows = rows.map(([nom, nbre], i) => `
+      <tr class="${i % 2 === 0 ? "group-even" : "group-odd"}">
+        <td>${nom}</td>
+        <td><strong>${nbre}</strong></td>
+        <td><strong>${nbre * 2}</strong></td>
+      </tr>`).join("");
+
+    root.innerHTML = `
+      <div class="page-header">
+        <h1>SAÉ</h1>
+      </div>
+      <div>
+        <p class="subtitle">REH SAÉ — responsabilité des Situations d'Apprentissage et d'Évaluation</p>
+        <div class="table-wrapper reh-table">
+          <table class="ressources-table">
+            <thead>
+              <tr>
+                <th>Nom</th>
+                <th>Nombre de SAÉ</th>
+                <th>Heures REH</th>
+              </tr>
+            </thead>
+            <tbody>${rehRows}</tbody>
+            <tfoot>
+              <tr class="reh-total-row">
+                <td><strong>Total</strong></td>
+                <td><strong>${totalSae}</strong></td>
+                <td><strong>${totalREH}</strong></td>
+              </tr>
+            </tfoot>
+          </table>
+        </div>
+      </div>`;
+  } catch (e) {
+    root.innerHTML = `<div class="alert alert-danger" style="margin-top:1rem;">
+      Erreur de chargement : ${e.message}</div>`;
+  }
+}
+
 /* ── Vue Missions ─────────────────────────────────────────────────────── */
 async function renderMissions(root) {
   root.innerHTML = `<div style="padding:3rem;text-align:center;color:#6b7280;">Chargement…</div>`;
@@ -348,6 +406,8 @@ async function renderView(view) {
       root.innerHTML = `<div class="alert alert-danger" style="margin-top:1rem;">
         Erreur de chargement : ${e.message}</div>`;
     }
+  } else if (view === "sae") {
+    await renderSAE(root);
   } else if (view === "missions") {
     await renderMissions(root);
   }
