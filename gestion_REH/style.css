@@ -45,6 +45,7 @@
 
 .mis-table {
   width: auto;
+  table-layout: fixed;
 }
 
 .mis-txt {

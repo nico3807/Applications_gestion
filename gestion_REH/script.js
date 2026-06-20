@@ -413,9 +413,9 @@ async function renderMissions(root) {
             <thead>
               <tr>
                 <th style="width:200px;">Nom</th>
-                <th>Missions</th>
-                <th style="width:1%; white-space:nowrap; text-align:center;">Heures</th>
-                <th style="width:1%;"></th>
+                <th style="width:100px;">Missions</th>
+                <th style="width:70px; text-align:center;">Heures</th>
+                <th style="width:40px;"></th>
               </tr>
             </thead>
             <tbody id="mis-tbody">${misRows}</tbody>
