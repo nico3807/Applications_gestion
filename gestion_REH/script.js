@@ -5,6 +5,7 @@ if (!AUTH.isAuth() || !AUTH.isAdmin()) location.href = '../index.html';
 const GH_OWNER  = "nico3807";
 const GH_REPO   = "Applications_gestion";
 const GH_BRANCH = "main";
+const SK        = "reh_v1_";
 
 /* ── Navigation ──────────────────────────────────────────────────────── */
 function navigate(view) {
@@ -34,11 +35,14 @@ async function fetchGHJson(path) {
   return JSON.parse(decodeURIComponent(escape(atob(json.content.replace(/\n/g, "")))));
 }
 
+/* ── Organisation portfolio — sauvegarde ─────────────────────────────── */
+function saveOrgSel(el) {
+  if (el.value) localStorage.setItem(SK + el.id, el.value);
+  else localStorage.removeItem(SK + el.id);
+  el.classList.toggle("filled", !!el.value);
+}
+
 /* ── Vue Portfolio ────────────────────────────────────────────────────── */
-// donnees_pf.json est contaminé par les données stages (même préfixe
-// localStorage sout_v1_). On utilise horaires_pf.json pour reconstruire
-// exactement les clés que l'app portfolio génère (même logique que
-// renderJuries() dans app_pf.js), puis on lit seulement celles-ci.
 const PF_LEVELS = ["mmi1", "mmi2_init", "mmi2_alt", "mmi3_init", "mmi3_alt"];
 const PF_DEFAULT_TEACHERS = { mmi1: 3, mmi2_init: 2, mmi2_alt: 2, mmi3_init: 2, mmi3_alt: 2 };
 
@@ -77,7 +81,21 @@ function buildValidPortfolioKeys(horaires) {
   return validKeys;
 }
 
-function renderPortfolio(root, pfData, horairesData) {
+function buildOrgNomOpts(enseignants) {
+  const opts = enseignants
+    .sort((a, b) => a.id.localeCompare(b.id, "fr"))
+    .map(e => `<option value="${e.id}">${e.nom} ${e.prenom}</option>`)
+    .join("");
+  return `<option value="">— Sélectionner —</option>${opts}`;
+}
+
+function buildValOpts() {
+  return `<option value="">—</option>` +
+    Array.from({ length: 6 }, (_, i) => `<option value="${i}">${i}</option>`).join("");
+}
+
+function renderPortfolio(root, pfData, horairesData, enseignants) {
+  // ── Tableau REH Portfolio ────────────────────────────────────────────
   const validKeys = buildValidPortfolioKeys(horairesData);
   const counts = {};
   for (const key of validKeys) {
@@ -85,42 +103,75 @@ function renderPortfolio(root, pfData, horairesData) {
     if (val) counts[val] = (counts[val] || 0) + 1;
   }
 
-  const rows = Object.entries(counts)
-    .sort(([a], [b]) => a.localeCompare(b, "fr"));
-
+  const rows = Object.entries(counts).sort(([a], [b]) => a.localeCompare(b, "fr"));
   const totalJurys = rows.reduce((s, [, n]) => s + n, 0);
   const totalREH   = totalJurys * 3;
 
-  const tableRows = rows.map(([nom, nbre], i) => `
+  const rehRows = rows.map(([nom, nbre], i) => `
     <tr class="${i % 2 === 0 ? "group-even" : "group-odd"}">
       <td>${nom}</td>
       <td><strong>${nbre}</strong></td>
       <td><strong>${nbre * 3}</strong></td>
     </tr>`).join("");
 
+  // ── Tableau Organisation portfolio ──────────────────────────────────
+  const nomOpts = buildOrgNomOpts(enseignants);
+  const valOpts = buildValOpts();
+  const N = rows.length;
+
+  const orgRows = Array.from({ length: N }, (_, i) => {
+    const savedNom = localStorage.getItem(SK + `org_${i}_nom`) || "";
+    const savedVal = localStorage.getItem(SK + `org_${i}_val`) || "";
+    const nomSel = nomOpts.replace(`value="${savedNom}"`, `value="${savedNom}" selected`);
+    const valSel = valOpts.replace(`value="${savedVal}"`, `value="${savedVal}" selected`);
+    return `
+      <tr class="${i % 2 === 0 ? "group-even" : "group-odd"}">
+        <td><select class="org-sel${savedNom ? " filled" : ""}" id="org_${i}_nom" onchange="saveOrgSel(this)">${nomSel}</select></td>
+        <td style="text-align:center;"><select class="org-sel${savedVal ? " filled" : ""}" id="org_${i}_val" onchange="saveOrgSel(this)">${valSel}</select></td>
+      </tr>`;
+  }).join("");
+
   root.innerHTML = `
     <div class="page-header">
       <h1>Portfolio</h1>
-      <p class="subtitle">REH Portfolio — participation aux jurys de soutenances portfolio</p>
     </div>
-    <div class="table-wrapper reh-table">
-      <table class="ressources-table">
-        <thead>
-          <tr>
-            <th>Nom</th>
-            <th>Nbre de jurys</th>
-            <th>REH Portfolio</th>
-          </tr>
-        </thead>
-        <tbody>${tableRows}</tbody>
-        <tfoot>
-          <tr class="reh-total-row">
-            <td><strong>Total</strong></td>
-            <td><strong>${totalJurys}</strong></td>
-            <td><strong>${totalREH}</strong></td>
-          </tr>
-        </tfoot>
-      </table>
+    <div class="tables-row">
+      <div>
+        <p class="subtitle">REH Portfolio — participation aux jurys de soutenances portfolio</p>
+        <div class="table-wrapper reh-table">
+          <table class="ressources-table">
+            <thead>
+              <tr>
+                <th>Nom</th>
+                <th>Nbre de jurys</th>
+                <th>REH Portfolio</th>
+              </tr>
+            </thead>
+            <tbody>${rehRows}</tbody>
+            <tfoot>
+              <tr class="reh-total-row">
+                <td><strong>Total</strong></td>
+                <td><strong>${totalJurys}</strong></td>
+                <td><strong>${totalREH}</strong></td>
+              </tr>
+            </tfoot>
+          </table>
+        </div>
+      </div>
+      <div>
+        <p class="subtitle">Organisation portfolio</p>
+        <div class="table-wrapper">
+          <table class="ressources-table">
+            <thead>
+              <tr>
+                <th>Nom</th>
+                <th style="text-align:center;">Nb</th>
+              </tr>
+            </thead>
+            <tbody>${orgRows}</tbody>
+          </table>
+        </div>
+      </div>
     </div>`;
 }
 
@@ -130,11 +181,12 @@ async function renderView(view) {
   if (view === "portfolio") {
     root.innerHTML = `<div style="padding:3rem;text-align:center;color:#6b7280;">Chargement…</div>`;
     try {
-      const [pfData, horairesData] = await Promise.all([
+      const [pfData, horairesData, enseignants] = await Promise.all([
         fetchGHJson("soutenances_portfolio/donnees_pf.json"),
         fetchGHJson("soutenances_portfolio/horaires_pf.json"),
+        fetchGHJson("repartition/data/enseignants.json"),
       ]);
-      renderPortfolio(root, pfData, horairesData);
+      renderPortfolio(root, pfData, horairesData, enseignants);
     } catch (e) {
       root.innerHTML = `<div class="alert alert-danger" style="margin-top:1rem;">
         Erreur de chargement : ${e.message}</div>`;
