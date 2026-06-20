@@ -3271,18 +3271,15 @@ function renderPilotage(root) {
   const budgetRows = SEMESTRES.map((sem, i) => {
     const aff = APP_DATA.affectations[sem] || {};
     const maq = APP_DATA.maquette_overrides[sem] || {};
-    let cmFinal = 0, tdFinal = 0, tpFinal = 0, nbTD = 0, nbTP = 0;
+    let cmFinal = 0, tdFinal = 0, tpFinal = 0;
     Object.keys(aff).forEach(res => {
       const m = maq[res] || {};
       cmFinal += parseFloat(m.cm_final) || 0;
       tdFinal += parseFloat(m.td_final) || 0;
       tpFinal += parseFloat(m.tp_final) || 0;
-      const data = aff[res];
-      [data, ...(data.subrows || [])].forEach(r => {
-        nbTD += parseInt(r.grpe_td) || 0;
-        nbTP += parseInt(r.grpe_tp) || 0;
-      });
     });
+    const nbTD = isS123(sem) ? 2 : 1;
+    const nbTP = isS123(sem) ? 4 : 2;
     const volHorTotal = cmFinal + tdFinal + tpFinal; // + Projets NE + Projet E quand remplis
     return `
           <tr class="${i % 2 === 0 ? "group-even" : "group-odd"}">
