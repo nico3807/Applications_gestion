@@ -5,8 +5,10 @@ if (!AUTH.isAuth() || !AUTH.isAdmin()) location.href = '../index.html';
 const GH_OWNER  = "nico3807";
 const GH_REPO   = "Applications_gestion";
 const GH_BRANCH = "main";
-const GH_ORG_FILE = "gestion_REH/orga_pf.json";
+const GH_ORG_FILE      = "gestion_REH/orga_pf.json";
+const GH_MISSIONS_FILE = "gestion_REH/missions.json";
 const SK = "reh_v1_";
+const MISSIONS_ROWS = 10;
 
 /* ── Navigation ──────────────────────────────────────────────────────── */
 function navigate(view) {
@@ -97,6 +99,44 @@ function saveOrgSel(el) {
   scheduleAutoSave();
 }
 
+/* ── Auto-save missions ───────────────────────────────────────────────── */
+let _autoSaveMissionsTimer = null;
+
+function scheduleMissionsAutoSave() {
+  clearTimeout(_autoSaveMissionsTimer);
+  _autoSaveMissionsTimer = setTimeout(doMissionsAutoSave, 1800);
+}
+
+function buildMissionsJson() {
+  const rows = [];
+  let i = 0;
+  while (document.getElementById(`mis_${i}_nom`) !== null) {
+    rows.push({
+      nom:      document.getElementById(`mis_${i}_nom`).value,
+      remarque: document.getElementById(`mis_${i}_remarque`).value,
+      heures:   document.getElementById(`mis_${i}_heures`).value,
+    });
+    i++;
+  }
+  return JSON.stringify(rows, null, 2);
+}
+
+async function doMissionsAutoSave() {
+  const ts = new Date().toLocaleString("fr-FR");
+  try {
+    await saveJsonToGitHub(GH_MISSIONS_FILE, buildMissionsJson(), `Missions — ${ts}`);
+    showToast("✓ Sauvegardé");
+  } catch (e) {
+    showToast("✗ GitHub : " + e.message);
+  }
+}
+
+function saveMissionsField(el) {
+  localStorage.setItem(SK + el.id, el.value);
+  if (el.tagName === "SELECT") el.classList.toggle("filled", !!el.value);
+  scheduleMissionsAutoSave();
+}
+
 /* ── Vue Portfolio ────────────────────────────────────────────────────── */
 const PF_LEVELS = ["mmi1", "mmi2_init", "mmi2_alt", "mmi3_init", "mmi3_alt"];
 const PF_DEFAULT_TEACHERS = { mmi1: 3, mmi2_init: 2, mmi2_alt: 2, mmi3_init: 2, mmi3_alt: 2 };
@@ -140,6 +180,10 @@ function makeOptions(list, selectedVal) {
   return list.map(([v, l]) =>
     `<option value="${v}"${v === selectedVal ? " selected" : ""}>${l}</option>`
   ).join("");
+}
+
+function escapeAttr(str) {
+  return String(str).replace(/&/g, "&amp;").replace(/"/g, "&quot;");
 }
 
 function renderPortfolio(root, pfData, horairesData, enseignants, orgData) {
@@ -227,6 +271,66 @@ function renderPortfolio(root, pfData, horairesData, enseignants, orgData) {
     </div>`;
 }
 
+/* ── Vue Missions ─────────────────────────────────────────────────────── */
+async function renderMissions(root) {
+  root.innerHTML = `<div style="padding:3rem;text-align:center;color:#6b7280;">Chargement…</div>`;
+  try {
+    const [enseignants, missionsData] = await Promise.all([
+      fetchGHJson("repartition/data/enseignants.json"),
+      fetchGHJson(GH_MISSIONS_FILE).catch(() => []),
+    ]);
+
+    const nomList = [["", "— Sélectionner —"]].concat(
+      [...enseignants]
+        .sort((a, b) => a.id.localeCompare(b.id, "fr"))
+        .map(e => [e.id, `${e.nom} ${e.prenom}`])
+    );
+
+    const heuresList = [["", "—"]].concat(
+      Array.from({ length: 11 }, (_, i) => [String(i), String(i)])
+    );
+
+    const saved = Array.isArray(missionsData) ? missionsData : [];
+    const N = Math.max(MISSIONS_ROWS, saved.length);
+
+    const misRows = Array.from({ length: N }, (_, i) => {
+      const row         = saved[i] || {};
+      const savedNom      = row.nom      || localStorage.getItem(SK + `mis_${i}_nom`)      || "";
+      const savedRemarque = row.remarque || localStorage.getItem(SK + `mis_${i}_remarque`) || "";
+      const savedHeures   = row.heures   || localStorage.getItem(SK + `mis_${i}_heures`)   || "";
+      return `
+        <tr class="${i % 2 === 0 ? "group-even" : "group-odd"}">
+          <td><select class="mis-sel${savedNom ? " filled" : ""}" id="mis_${i}_nom" onchange="saveMissionsField(this)">${makeOptions(nomList, savedNom)}</select></td>
+          <td><input type="text" class="mis-txt" id="mis_${i}_remarque" value="${escapeAttr(savedRemarque)}" oninput="saveMissionsField(this)" placeholder="Remarque…"></td>
+          <td style="text-align:center;"><select class="mis-sel${savedHeures ? " filled" : ""}" id="mis_${i}_heures" onchange="saveMissionsField(this)">${makeOptions(heuresList, savedHeures)}</select></td>
+        </tr>`;
+    }).join("");
+
+    root.innerHTML = `
+      <div class="page-header">
+        <h1>Missions</h1>
+      </div>
+      <div>
+        <p class="subtitle">Missions enseignants</p>
+        <div class="table-wrapper">
+          <table class="ressources-table">
+            <thead>
+              <tr>
+                <th>Nom</th>
+                <th>Remarque</th>
+                <th style="text-align:center;">Heures</th>
+              </tr>
+            </thead>
+            <tbody>${misRows}</tbody>
+          </table>
+        </div>
+      </div>`;
+  } catch (e) {
+    root.innerHTML = `<div class="alert alert-danger" style="margin-top:1rem;">
+      Erreur de chargement : ${e.message}</div>`;
+  }
+}
+
 /* ── Rendu principal ──────────────────────────────────────────────────── */
 async function renderView(view) {
   const root = document.getElementById("app-root");
@@ -244,6 +348,8 @@ async function renderView(view) {
       root.innerHTML = `<div class="alert alert-danger" style="margin-top:1rem;">
         Erreur de chargement : ${e.message}</div>`;
     }
+  } else if (view === "missions") {
+    await renderMissions(root);
   }
 }
 

@@ -27,7 +27,7 @@
 .reh-total-row td { border-top: 2px solid #1e3a5f; background: #f1f5f9; font-size: 14px; }
 .reh-total-row td:last-child { color: #064e3b; }
 
-.org-sel {
+.org-sel, .mis-sel {
   background: #f8fafc;
   border: 1px solid #d1d5db;
   border-radius: 6px;
@@ -39,5 +39,20 @@
   font-family: inherit;
   width: 100%;
 }
-.org-sel:hover, .org-sel:focus { border-color: #3b82f6; outline: none; }
-.org-sel.filled { border-color: rgba(59,130,246,0.4); color: #1e3a8a; }
+.org-sel:hover, .org-sel:focus,
+.mis-sel:hover, .mis-sel:focus { border-color: #3b82f6; outline: none; }
+.org-sel.filled, .mis-sel.filled { border-color: rgba(59,130,246,0.4); color: #1e3a8a; }
+
+.mis-txt {
+  background: #f8fafc;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  color: #374151;
+  padding: 5px 8px;
+  font-size: 12px;
+  font-family: inherit;
+  width: 100%;
+  transition: border-color 0.15s;
+  box-sizing: border-box;
+}
+.mis-txt:hover, .mis-txt:focus { border-color: #3b82f6; outline: none; }
