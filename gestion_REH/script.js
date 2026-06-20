@@ -101,6 +101,9 @@ function saveOrgSel(el) {
 
 /* ── Auto-save missions ───────────────────────────────────────────────── */
 let _autoSaveMissionsTimer = null;
+let _miState      = [];
+let _miNomList    = [];
+let _miHeuresList = [];
 
 function scheduleMissionsAutoSave() {
   clearTimeout(_autoSaveMissionsTimer);
@@ -134,6 +137,54 @@ async function doMissionsAutoSave() {
 function saveMissionsField(el) {
   localStorage.setItem(SK + el.id, el.value);
   if (el.tagName === "SELECT") el.classList.toggle("filled", !!el.value);
+  scheduleMissionsAutoSave();
+}
+
+function syncMiStateFromDom() {
+  _miState = [];
+  let i = 0;
+  while (document.getElementById(`mis_${i}_nom`) !== null) {
+    _miState.push({
+      nom:      document.getElementById(`mis_${i}_nom`).value,
+      remarque: document.getElementById(`mis_${i}_remarque`).value,
+      heures:   document.getElementById(`mis_${i}_heures`).value,
+    });
+    i++;
+  }
+}
+
+function buildMisRow(i, row) {
+  const savedNom      = row.nom      || "";
+  const savedRemarque = row.remarque || "";
+  const savedHeures   = row.heures   || "";
+  return `
+    <tr class="${i % 2 === 0 ? "group-even" : "group-odd"}">
+      <td><select class="mis-sel${savedNom ? " filled" : ""}" id="mis_${i}_nom" onchange="saveMissionsField(this)">${makeOptions(_miNomList, savedNom)}</select></td>
+      <td><input type="text" class="mis-txt" id="mis_${i}_remarque" value="${escapeAttr(savedRemarque)}" oninput="saveMissionsField(this)" placeholder="Mission…"></td>
+      <td style="text-align:center;"><select class="mis-sel${savedHeures ? " filled" : ""}" id="mis_${i}_heures" onchange="saveMissionsField(this)">${makeOptions(_miHeuresList, savedHeures)}</select></td>
+      <td style="white-space:nowrap; padding:4px 8px; text-align:center;">
+        <button class="btn-add-subrow" onclick="addMissionRow(${i})" title="Ajouter une ligne après">+</button>
+        <button class="btn-remove-subrow" onclick="removeMissionRow(${i})" title="Supprimer cette ligne" style="margin-left:4px;">×</button>
+      </td>
+    </tr>`;
+}
+
+function rebuildMisTable() {
+  const tbody = document.getElementById("mis-tbody");
+  if (tbody) tbody.innerHTML = _miState.map((row, i) => buildMisRow(i, row)).join("");
+}
+
+function addMissionRow(afterIndex) {
+  syncMiStateFromDom();
+  _miState.splice(afterIndex + 1, 0, { nom: "", remarque: "", heures: "" });
+  rebuildMisTable();
+  scheduleMissionsAutoSave();
+}
+
+function removeMissionRow(i) {
+  syncMiStateFromDom();
+  _miState.splice(i, 1);
+  rebuildMisTable();
   scheduleMissionsAutoSave();
 }
 
@@ -338,31 +389,19 @@ async function renderMissions(root) {
       fetchGHJson(GH_MISSIONS_FILE).catch(() => []),
     ]);
 
-    const nomList = [["", "— Sélectionner —"]].concat(
+    _miNomList = [["", "— Sélectionner —"]].concat(
       [...enseignants]
         .sort((a, b) => a.id.localeCompare(b.id, "fr"))
         .map(e => [e.id, `${e.nom} ${e.prenom}`])
     );
 
-    const heuresList = [["", "—"]].concat(
+    _miHeuresList = [["", "—"]].concat(
       Array.from({ length: 11 }, (_, i) => [String(i), String(i)])
     );
 
-    const saved = Array.isArray(missionsData) ? missionsData : [];
-    const N = Math.max(MISSIONS_ROWS, saved.length);
+    _miState = Array.isArray(missionsData) ? missionsData : [];
 
-    const misRows = Array.from({ length: N }, (_, i) => {
-      const row         = saved[i] || {};
-      const savedNom      = row.nom      || localStorage.getItem(SK + `mis_${i}_nom`)      || "";
-      const savedRemarque = row.remarque || localStorage.getItem(SK + `mis_${i}_remarque`) || "";
-      const savedHeures   = row.heures   || localStorage.getItem(SK + `mis_${i}_heures`)   || "";
-      return `
-        <tr class="${i % 2 === 0 ? "group-even" : "group-odd"}">
-          <td><select class="mis-sel${savedNom ? " filled" : ""}" id="mis_${i}_nom" onchange="saveMissionsField(this)">${makeOptions(nomList, savedNom)}</select></td>
-          <td><input type="text" class="mis-txt" id="mis_${i}_remarque" value="${escapeAttr(savedRemarque)}" oninput="saveMissionsField(this)" placeholder="Mission…"></td>
-          <td style="text-align:center;"><select class="mis-sel${savedHeures ? " filled" : ""}" id="mis_${i}_heures" onchange="saveMissionsField(this)">${makeOptions(heuresList, savedHeures)}</select></td>
-        </tr>`;
-    }).join("");
+    const misRows = _miState.map((row, i) => buildMisRow(i, row)).join("");
 
     root.innerHTML = `
       <div class="page-header">
@@ -377,10 +416,14 @@ async function renderMissions(root) {
                 <th style="width:200px;">Nom</th>
                 <th>Missions</th>
                 <th style="width:1%; white-space:nowrap; text-align:center;">Heures</th>
+                <th style="width:1%;"></th>
               </tr>
             </thead>
-            <tbody>${misRows}</tbody>
+            <tbody id="mis-tbody">${misRows}</tbody>
           </table>
+        </div>
+        <div style="margin-top:0.6rem;">
+          <button class="btn-add-subrow" onclick="addMissionRow(_miState.length - 1)" title="Ajouter une ligne">+</button>
         </div>
       </div>`;
   } catch (e) {
