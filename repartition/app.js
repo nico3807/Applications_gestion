@@ -3267,11 +3267,49 @@ function renderPilotage(root) {
 
   const fmt = (n) => (n % 1 === 0 ? n : n.toFixed(2).replace(/\.?0+$/, ""));
 
+  const budgetRows = SEMESTRES.map((sem, i) => `
+          <tr class="${i % 2 === 0 ? "group-even" : "group-odd"}">
+            <td><span class="badge-semestre" data-sem="${sem}">${sem}</span></td>
+            <td class="pilotage-h-val"></td><td class="pilotage-h-val"></td><td class="pilotage-h-val"></td>
+            <td class="pilotage-h-val"></td><td class="pilotage-h-val"></td><td class="pilotage-h-val"></td>
+            <td class="pilotage-h-val"></td><td class="pilotage-h-val"></td><td class="pilotage-h-val"></td>
+            <td class="pilotage-h-val"></td><td class="pilotage-h-val"></td><td class="pilotage-h-val"></td>
+            <td class="pilotage-h-val"></td><td class="pilotage-h-val"></td>
+          </tr>`).join("");
+
   let html = `
     <div class="page-header">
       <h1>Pilotage</h1>
       <p class="subtitle">Volumes horaires agrégés par semestre (répartition effectuée)</p>
     </div>
+
+    <h2 class="pilotage-section-title">Budget maquette</h2>
+    <div class="table-wrapper">
+      <table class="ressources-table pilotage-table pilotage-budget-table">
+        <thead>
+          <tr>
+            <th class="pilotage-sem-col">Semestre</th>
+            <th class="pilotage-budget-col">CM /<br><small>étudiant</small></th>
+            <th class="pilotage-budget-col">TD /<br><small>étudiant</small></th>
+            <th class="pilotage-budget-col">TP /<br><small>étudiant</small></th>
+            <th class="pilotage-budget-col">Projets NE</th>
+            <th class="pilotage-budget-col">Projet E<br><small>(TD)</small></th>
+            <th class="pilotage-budget-col">Volume horaire Total</th>
+            <th class="pilotage-budget-col">Coût total EQTD</th>
+            <th class="pilotage-budget-col">nb TD</th>
+            <th class="pilotage-budget-col">nb TP</th>
+            <th class="pilotage-budget-col">CM total</th>
+            <th class="pilotage-budget-col">TD total</th>
+            <th class="pilotage-budget-col">TP total</th>
+            <th class="pilotage-budget-col">Projet E total</th>
+            <th class="pilotage-budget-col">Total EQTD<br><small>sans projet E</small></th>
+          </tr>
+        </thead>
+        <tbody>${budgetRows}</tbody>
+      </table>
+    </div>
+
+    <h2 class="pilotage-section-title">Budget HEURES POSEES</h2>
     <div class="table-wrapper">
       <table class="ressources-table pilotage-table">
         <thead>
