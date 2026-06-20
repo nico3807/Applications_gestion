@@ -3271,21 +3271,31 @@ function renderPilotage(root) {
   const budgetRows = SEMESTRES.map((sem, i) => {
     const aff = APP_DATA.affectations[sem] || {};
     const maq = APP_DATA.maquette_overrides[sem] || {};
-    let cmFinal = 0, tdFinal = 0, tpFinal = 0;
+    let cmFinal = 0, tdFinal = 0, tpFinal = 0, nbTD = 0, nbTP = 0;
     Object.keys(aff).forEach(res => {
       const m = maq[res] || {};
       cmFinal += parseFloat(m.cm_final) || 0;
       tdFinal += parseFloat(m.td_final) || 0;
       tpFinal += parseFloat(m.tp_final) || 0;
+      const data = aff[res];
+      [data, ...(data.subrows || [])].forEach(r => {
+        nbTD += parseInt(r.grpe_td) || 0;
+        nbTP += parseInt(r.grpe_tp) || 0;
+      });
     });
+    const volHorTotal = cmFinal + tdFinal + tpFinal; // + Projets NE + Projet E quand remplis
     return `
           <tr class="${i % 2 === 0 ? "group-even" : "group-odd"}">
             <td><span class="badge-semestre" data-sem="${sem}">${sem}</span></td>
             <td class="pilotage-h-val">${fmtB(cmFinal)}</td>
             <td class="pilotage-h-val">${fmtB(tdFinal)}</td>
             <td class="pilotage-h-val">${fmtB(tpFinal)}</td>
-            <td class="pilotage-h-val"></td><td class="pilotage-h-val"></td><td class="pilotage-h-val"></td>
-            <td class="pilotage-h-val"></td><td class="pilotage-h-val"></td><td class="pilotage-h-val"></td>
+            <td class="pilotage-h-val"></td>
+            <td class="pilotage-h-val"></td>
+            <td class="pilotage-h-val">${fmtB(volHorTotal)}</td>
+            <td class="pilotage-h-val"></td>
+            <td class="pilotage-h-val">${fmtB(nbTD)}</td>
+            <td class="pilotage-h-val">${fmtB(nbTP)}</td>
             <td class="pilotage-h-val"></td><td class="pilotage-h-val"></td><td class="pilotage-h-val"></td>
             <td class="pilotage-h-val"></td><td class="pilotage-h-val"></td>
           </tr>`;
