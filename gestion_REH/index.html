@@ -92,31 +92,57 @@
       }
 
       /* ── Vue Portfolio ────────────────────────────────────────────────── */
-      // Les deux apps partagent le même préfixe localStorage (sout_v1_), donc
-      // donnees_pf.json contient aussi des clés issues de l'app stages. On
-      // soustrait les clés présentes dans donnees_stages.json pour n'obtenir
-      // que les affectations purement portfolio.
-      function extractJuryKeys(data) {
-        const JURY_KEY = /^.+_\d+_\d+_\d+$/;
-        return new Set(
-          Object.entries(data)
-            .filter(([k, v]) => v && !k.startsWith("_") && !k.includes("_tuteur") && JURY_KEY.test(k))
-            .map(([k]) => k)
-        );
+      // donnees_pf.json est contaminé par les données stages (même préfixe
+      // localStorage sout_v1_). On utilise horaires_pf.json pour reconstruire
+      // exactement les clés que l'app portfolio génère (même logique que
+      // renderJuries() dans app_pf.js), puis on lit seulement celles-ci.
+      const PF_LEVELS = ["mmi1", "mmi2_init", "mmi2_alt", "mmi3_init", "mmi3_alt"];
+      const PF_DEFAULT_TEACHERS = { mmi1: 3, mmi2_init: 2, mmi2_alt: 2, mmi3_init: 2, mmi3_alt: 2 };
+
+      function buildValidPortfolioKeys(horaires) {
+        const validKeys = new Set();
+        for (const level of PF_LEVELS) {
+          const teacherCount = parseInt(horaires[`${level}_teacher_count`]) || PF_DEFAULT_TEACHERS[level] || 2;
+
+          // Dates de section dans l'ordre (reproduit la logique de renderJuries)
+          const sectionDates = [];
+          for (let i = 1; i <= 20; i++) {
+            const d = horaires[`${level}_date${i}`];
+            if (d === undefined) break;
+            if (!sectionDates.includes(d)) sectionDates.push(d);
+          }
+          if (sectionDates.length === 0) continue;
+
+          // Groupement des jurys par section
+          const sectionJuries = {};
+          for (let n = 1; n <= 200; n++) {
+            const juryDate = horaires[`${level}_jury${n}_date`];
+            if (juryDate === undefined) break;
+            let si = sectionDates.indexOf(juryDate);
+            if (si === -1) si = Math.max(0, sectionDates.length - 1);
+            if (!sectionJuries[si]) sectionJuries[si] = [];
+            sectionJuries[si].push(n);
+          }
+
+          // Génération des clés exactes : ${level}_${si}_${pos}_${t}
+          for (let si = 0; si < sectionDates.length; si++) {
+            const juries = sectionJuries[si] || [];
+            juries.forEach((_, pos) => {
+              for (let t = 0; t < teacherCount; t++) {
+                validKeys.add(`${level}_${si}_${pos}_${t}`);
+              }
+            });
+          }
+        }
+        return validKeys;
       }
 
-      function renderPortfolio(root, pfData, stagesData) {
-        const validTeachers = new Set(pfData._enseignants || []);
-        // Clés jury dans stages → à exclure du comptage portfolio
-        const stagesKeys = extractJuryKeys(stagesData);
-
+      function renderPortfolio(root, pfData, horairesData) {
+        const validKeys = buildValidPortfolioKeys(horairesData);
         const counts = {};
-        for (const [key, val] of Object.entries(pfData)) {
-          if (!val || key.startsWith("_")) continue;
-          if (key.includes("_tuteur")) continue;
-          if (!validTeachers.has(val)) continue;
-          if (stagesKeys.has(key)) continue; // clé provenant des stages
-          counts[val] = (counts[val] || 0) + 1;
+        for (const key of validKeys) {
+          const val = pfData[key];
+          if (val) counts[val] = (counts[val] || 0) + 1;
         }
 
         const rows = Object.entries(counts)
@@ -164,11 +190,11 @@
         if (view === "portfolio") {
           root.innerHTML = `<div style="padding:3rem;text-align:center;color:#6b7280;">Chargement…</div>`;
           try {
-            const [pfData, stagesData] = await Promise.all([
+            const [pfData, horairesData] = await Promise.all([
               fetchGHJson("soutenances_portfolio/donnees_pf.json"),
-              fetchGHJson("soutenances_stages/donnees_stages.json"),
+              fetchGHJson("soutenances_portfolio/horaires_pf.json"),
             ]);
-            renderPortfolio(root, pfData, stagesData);
+            renderPortfolio(root, pfData, horairesData);
           } catch (e) {
             root.innerHTML = `<div class="alert alert-danger" style="margin-top:1rem;">
               Erreur de chargement : ${e.message}</div>`;
