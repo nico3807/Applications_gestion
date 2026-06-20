@@ -121,7 +121,7 @@
         root.innerHTML = `
           <div class="page-header">
             <h1>Portfolio</h1>
-            <p class="subtitle">REH Portfolio — participation aux jurys de soutenances stages</p>
+            <p class="subtitle">REH Portfolio — participation aux jurys de soutenances portfolio</p>
           </div>
           <div class="table-wrapper reh-table">
             <table class="ressources-table">
@@ -150,7 +150,7 @@
         if (view === "portfolio") {
           root.innerHTML = `<div style="padding:3rem;text-align:center;color:#6b7280;">Chargement…</div>`;
           try {
-            const data = await fetchGHJson("soutenances_stages/donnees_stages.json");
+            const data = await fetchGHJson("soutenances_portfolio/donnees_pf.json");
             renderPortfolio(root, data);
           } catch (e) {
             root.innerHTML = `<div class="alert alert-danger" style="margin-top:1rem;">
