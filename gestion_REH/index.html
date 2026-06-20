@@ -92,16 +92,14 @@
       }
 
       /* ── Vue Portfolio ────────────────────────────────────────────────── */
-      // Clés de jury : ${level}_${si}_${pos}_${teacherIdx} → ex: mmi1_0_0_1
-      // On exclut : clés commençant par "_", contenant "_tuteur" ou "_rendu_"
-      const JURY_KEY = /^.+_\d+_\d+_\d+$/;
-
       function renderPortfolio(root, data) {
+        // Seuls les noms présents dans _enseignants comptent comme membres de jury
+        const validTeachers = new Set(data._enseignants || []);
         const counts = {};
         for (const [key, val] of Object.entries(data)) {
           if (!val || key.startsWith("_")) continue;
-          if (!JURY_KEY.test(key)) continue;
-          if (key.includes("_tuteur") || key.includes("_rendu_")) continue;
+          if (key.includes("_tuteur")) continue; // exclure les tuteurs de stage
+          if (!validTeachers.has(val)) continue;  // seules les valeurs = nom d'enseignant
           counts[val] = (counts[val] || 0) + 1;
         }
 
