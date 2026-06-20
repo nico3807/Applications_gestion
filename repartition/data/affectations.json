@@ -1679,6 +1679,14 @@
           "tp": 3,
           "grpe_td": 1,
           "grpe_tp": 2
+        },
+        {
+          "enseignant": "THEROND Emmanuel",
+          "cm": 0,
+          "td": 0,
+          "tp": 9,
+          "grpe_tp": 2,
+          "grpe_td": 1
         }
       ],
       "responsable": "",
@@ -1727,7 +1735,7 @@
           "grpe_tp": 2
         },
         {
-          "enseignant": "",
+          "enseignant": "LOJDI Illyasse",
           "cm": 0,
           "td": 0,
           "tp": 12,
