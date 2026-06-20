@@ -1533,14 +1533,68 @@ th.pilotage-total-col small {
 }
 
 /* ── Responsive ── */
+/* ── Bouton hamburger (caché sur desktop) ── */
+#menu-toggle {
+  display: none;
+  background: none;
+  border: 1.5px solid rgba(255, 255, 255, 0.5);
+  color: #fff;
+  cursor: pointer;
+  padding: 5px 10px;
+  border-radius: 6px;
+  font-size: 20px;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
 @media (max-width: 768px) {
   header {
-    padding: 0 1rem;
+    padding: 0 0.75rem;
   }
   .header-inner {
     height: auto;
-    padding: 0.5rem 0;
+    min-height: 50px;
+    padding: 8px 0;
     gap: 0.5rem;
+    flex-wrap: wrap;
+  }
+  .site-title {
+    flex: 1;
+    min-width: 0;
+  }
+  #auth-badge {
+    display: none !important;
+  }
+  #menu-toggle {
+    display: block;
+  }
+  nav {
+    display: none;
+    width: 100%;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 2px;
+    padding: 4px 0 8px;
+    overflow: visible;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+  }
+  nav.open {
+    display: flex;
+  }
+  .nav-link {
+    padding: 10px 14px;
+    display: block;
+    white-space: nowrap;
+  }
+  .nav-link-services,
+  .nav-link-admin {
+    margin-left: 0;
+  }
+  .nav-link-archive {
+    margin-left: 0 !important;
+    text-align: left !important;
+    line-height: 1.4 !important;
   }
   main {
     padding: 1rem;
