@@ -3293,7 +3293,9 @@ function renderPilotage(root) {
             <td class="pilotage-h-val"></td>
             <td class="pilotage-h-val">${fmtB(nbTD)}</td>
             <td class="pilotage-h-val">${fmtB(nbTP)}</td>
-            <td class="pilotage-h-val"></td><td class="pilotage-h-val"></td><td class="pilotage-h-val"></td>
+            <td class="pilotage-h-val">${fmtB(cmFinal)}</td>
+            <td class="pilotage-h-val">${fmtB(tdFinal * nbTD)}</td>
+            <td class="pilotage-h-val">${fmtB(tpFinal * nbTP)}</td>
             <td class="pilotage-h-val"></td><td class="pilotage-h-val"></td>
           </tr>`;
   }).join("");
