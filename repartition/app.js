@@ -3267,15 +3267,29 @@ function renderPilotage(root) {
 
   const fmt = (n) => (n % 1 === 0 ? n : n.toFixed(2).replace(/\.?0+$/, ""));
 
-  const budgetRows = SEMESTRES.map((sem, i) => `
+  const fmtB = (n) => n === 0 ? "" : (n % 1 === 0 ? String(n) : n.toFixed(2).replace(/\.?0+$/, ""));
+  const budgetRows = SEMESTRES.map((sem, i) => {
+    const aff = APP_DATA.affectations[sem] || {};
+    const maq = APP_DATA.maquette_overrides[sem] || {};
+    let cmFinal = 0, tdFinal = 0, tpFinal = 0;
+    Object.keys(aff).forEach(res => {
+      const m = maq[res] || {};
+      cmFinal += parseFloat(m.cm_final) || 0;
+      tdFinal += parseFloat(m.td_final) || 0;
+      tpFinal += parseFloat(m.tp_final) || 0;
+    });
+    return `
           <tr class="${i % 2 === 0 ? "group-even" : "group-odd"}">
             <td><span class="badge-semestre" data-sem="${sem}">${sem}</span></td>
-            <td class="pilotage-h-val"></td><td class="pilotage-h-val"></td><td class="pilotage-h-val"></td>
+            <td class="pilotage-h-val">${fmtB(cmFinal)}</td>
+            <td class="pilotage-h-val">${fmtB(tdFinal)}</td>
+            <td class="pilotage-h-val">${fmtB(tpFinal)}</td>
             <td class="pilotage-h-val"></td><td class="pilotage-h-val"></td><td class="pilotage-h-val"></td>
             <td class="pilotage-h-val"></td><td class="pilotage-h-val"></td><td class="pilotage-h-val"></td>
             <td class="pilotage-h-val"></td><td class="pilotage-h-val"></td><td class="pilotage-h-val"></td>
             <td class="pilotage-h-val"></td><td class="pilotage-h-val"></td>
-          </tr>`).join("");
+          </tr>`;
+  }).join("");
 
   let html = `
     <div class="page-header">
