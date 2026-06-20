@@ -162,9 +162,8 @@ function buildMisRow(i, row) {
       <td><select class="mis-sel${savedNom ? " filled" : ""}" id="mis_${i}_nom" onchange="saveMissionsField(this)">${makeOptions(_miNomList, savedNom)}</select></td>
       <td><input type="text" class="mis-txt" id="mis_${i}_remarque" value="${escapeAttr(savedRemarque)}" oninput="saveMissionsField(this)" placeholder="Mission…"></td>
       <td style="text-align:center;"><select class="mis-sel${savedHeures ? " filled" : ""}" id="mis_${i}_heures" onchange="saveMissionsField(this)">${makeOptions(_miHeuresList, savedHeures)}</select></td>
-      <td style="white-space:nowrap; padding:4px 8px; text-align:center;">
-        <button class="btn-add-subrow" onclick="addMissionRow(${i})" title="Ajouter une ligne après">+</button>
-        <button class="btn-remove-subrow" onclick="removeMissionRow(${i})" title="Supprimer cette ligne" style="margin-left:4px;">×</button>
+      <td style="padding:4px 8px; text-align:center;">
+        <button class="btn-remove-subrow" onclick="removeMissionRow(${i})" title="Supprimer cette ligne">×</button>
       </td>
     </tr>`;
 }
