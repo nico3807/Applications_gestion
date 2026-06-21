@@ -9,6 +9,7 @@ const GH_ORG_FILE      = "gestion_REH/orga_pf.json";
 const GH_MISSIONS_FILE = "gestion_REH/missions.json";
 const GH_AUTRE_FILE       = "gestion_REH/autre.json";
 const GH_PARCOURSUP_FILE  = "gestion_REH/parcoursup.json";
+const GH_SAE_FILE         = "gestion_REH/sae_reh.json";
 const SK = "reh_v1_";
 const MISSIONS_ROWS = 10;
 
@@ -392,31 +393,145 @@ function renderPortfolio(root, pfData, horairesData, enseignants, orgData) {
     </div>`;
 }
 
+/* ── Auto-save SAÉ ────────────────────────────────────────────────────── */
+let _autoSaveSaeTimer = null;
+let _saeState   = [];
+let _saeNomList = [];
+
+function scheduleSaeAutoSave() {
+  clearTimeout(_autoSaveSaeTimer);
+  _autoSaveSaeTimer = setTimeout(doSaeAutoSave, 1800);
+}
+
+function buildSaeJson() {
+  const rows = [];
+  let i = 0;
+  while (document.getElementById(`sae_${i}_nom`) !== null) {
+    rows.push({
+      nom:    document.getElementById(`sae_${i}_nom`).value,
+      nbre:   _saeState[i] ? _saeState[i].nbre : 0,
+      heures: document.getElementById(`sae_${i}_heures`).value,
+    });
+    i++;
+  }
+  return JSON.stringify(rows, null, 2);
+}
+
+async function doSaeAutoSave() {
+  const ts = new Date().toLocaleString("fr-FR");
+  try {
+    await saveJsonToGitHub(GH_SAE_FILE, buildSaeJson(), `SAÉ REH — ${ts}`);
+    showToast("✓ Sauvegardé");
+  } catch (e) {
+    showToast("✗ GitHub : " + e.message);
+  }
+}
+
+function updateSaeTotal() {
+  let sumNbre = 0, sumHeures = 0;
+  _saeState.forEach((r, i) => {
+    sumNbre += r.nbre || 0;
+    sumHeures += parseInt((document.getElementById(`sae_${i}_heures`) || {}).value, 10) || 0;
+  });
+  const elN = document.getElementById("sae-total-nbre");
+  const elH = document.getElementById("sae-total-heures");
+  if (elN) elN.textContent = sumNbre;
+  if (elH) elH.textContent = sumHeures;
+}
+
+function saveSaeField(el) {
+  localStorage.setItem(SK + el.id, el.value);
+  if (el.tagName === "SELECT") el.classList.toggle("filled", !!el.value);
+  updateSaeTotal();
+  scheduleSaeAutoSave();
+}
+
+function syncSaeStateFromDom() {
+  const next = [];
+  let i = 0;
+  while (document.getElementById(`sae_${i}_nom`) !== null) {
+    next.push({
+      nom:    document.getElementById(`sae_${i}_nom`).value,
+      nbre:   _saeState[i] ? _saeState[i].nbre : 0,
+      heures: document.getElementById(`sae_${i}_heures`).value,
+    });
+    i++;
+  }
+  _saeState = next;
+}
+
+function buildSaeRow(i, row) {
+  const savedNom    = row.nom || "";
+  const savedHeures = row.heures !== "" && row.heures !== undefined
+    ? String(row.heures)
+    : String((row.nbre || 0) * 2);
+  const heuresList = [["", "—"]].concat(
+    Array.from({ length: 31 }, (_, j) => [String(j), String(j)])
+  );
+  return `
+    <tr class="${i % 2 === 0 ? "group-even" : "group-odd"}">
+      <td><select class="mis-sel${savedNom ? " filled" : ""}" id="sae_${i}_nom" onchange="saveSaeField(this)">${makeOptions(_saeNomList, savedNom)}</select></td>
+      <td style="text-align:center;">${row.nbre || 0}</td>
+      <td style="text-align:center;"><select class="mis-sel${savedHeures ? " filled" : ""}" id="sae_${i}_heures" onchange="saveSaeField(this)">${makeOptions(heuresList, savedHeures)}</select></td>
+      <td style="padding:4px 8px; text-align:center;">
+        <button class="btn-remove-subrow" onclick="removeSaeRow(${i})" title="Supprimer cette ligne">×</button>
+      </td>
+    </tr>`;
+}
+
+function rebuildSaeTable() {
+  const tbody = document.getElementById("sae-tbody");
+  if (tbody) tbody.innerHTML = _saeState.map((row, i) => buildSaeRow(i, row)).join("");
+  updateSaeTotal();
+}
+
+function addSaeRow() {
+  syncSaeStateFromDom();
+  _saeState.push({ nom: "", nbre: 0, heures: "" });
+  rebuildSaeTable();
+  scheduleSaeAutoSave();
+}
+
+function removeSaeRow(i) {
+  syncSaeStateFromDom();
+  _saeState.splice(i, 1);
+  rebuildSaeTable();
+  scheduleSaeAutoSave();
+}
+
 /* ── Vue SAÉ ──────────────────────────────────────────────────────────── */
 async function renderSAE(root) {
   root.innerHTML = `<div style="padding:3rem;text-align:center;color:#6b7280;">Chargement…</div>`;
   try {
-    const saeData = await fetchGHJson("repartition/data/sae_data.json");
+    const [saeData, enseignants, saeRehData] = await Promise.all([
+      fetchGHJson("repartition/data/sae_data.json"),
+      fetchGHJson("repartition/data/enseignants.json"),
+      fetchGHJson(GH_SAE_FILE).catch(() => []),
+    ]);
 
-    const counts = {};
-    for (const sem of saeData.semestres) {
-      const list = saeData.sae[sem] || [];
-      for (const sae of list) {
-        const resp = (sae.responsable || "").trim();
-        if (resp) counts[resp] = (counts[resp] || 0) + 1;
+    _saeNomList = [["", "— Sélectionner —"]].concat(
+      [...enseignants]
+        .sort((a, b) => a.id.localeCompare(b.id, "fr"))
+        .map(e => [e.id, `${e.nom} ${e.prenom}`])
+    );
+
+    const saved = Array.isArray(saeRehData) && saeRehData.length > 0 ? saeRehData : null;
+    if (saved) {
+      _saeState = saved;
+    } else {
+      const counts = {};
+      for (const sem of saeData.semestres) {
+        for (const sae of (saeData.sae[sem] || [])) {
+          const resp = (sae.responsable || "").trim();
+          if (resp) counts[resp] = (counts[resp] || 0) + 1;
+        }
       }
+      _saeState = Object.entries(counts)
+        .sort(([a], [b]) => a.localeCompare(b, "fr"))
+        .map(([nom, nbre]) => ({ nom, nbre, heures: String(nbre * 2) }));
     }
 
-    const rows = Object.entries(counts).sort(([a], [b]) => a.localeCompare(b, "fr"));
-    const totalSae  = rows.reduce((s, [, n]) => s + n, 0);
-    const totalREH  = totalSae * 2;
-
-    const rehRows = rows.map(([nom, nbre], i) => `
-      <tr class="${i % 2 === 0 ? "group-even" : "group-odd"}">
-        <td>${nom}</td>
-        <td><strong>${nbre}</strong></td>
-        <td><strong>${nbre * 2}</strong></td>
-      </tr>`).join("");
+    const saeRows = _saeState.map((row, i) => buildSaeRow(i, row)).join("");
 
     root.innerHTML = `
       <div class="page-header">
@@ -424,26 +539,32 @@ async function renderSAE(root) {
       </div>
       <div>
         <p class="subtitle">REH SAÉ — responsabilité des Situations d'Apprentissage et d'Évaluation</p>
-        <div class="table-wrapper reh-table">
-          <table class="ressources-table">
+        <div class="table-wrapper">
+          <table class="ressources-table mis-table">
             <thead>
               <tr>
-                <th>Nom</th>
-                <th>Nombre de SAÉ</th>
-                <th>Heures REH</th>
+                <th style="width:200px;">Nom</th>
+                <th style="width:110px; text-align:center;">Nombre de SAÉ</th>
+                <th style="width:90px; text-align:center;">Heures REH</th>
+                <th style="width:40px;"></th>
               </tr>
             </thead>
-            <tbody>${rehRows}</tbody>
+            <tbody id="sae-tbody">${saeRows}</tbody>
             <tfoot>
               <tr class="reh-total-row">
                 <td><strong>Total</strong></td>
-                <td><strong>${totalSae}</strong></td>
-                <td><strong>${totalREH}</strong></td>
+                <td style="text-align:center;"><strong id="sae-total-nbre">0</strong></td>
+                <td style="text-align:center;"><strong id="sae-total-heures">0</strong></td>
+                <td></td>
               </tr>
             </tfoot>
           </table>
         </div>
+        <div style="margin-top:0.6rem;">
+          <button class="btn-add-subrow" onclick="addSaeRow()" title="Ajouter une ligne">+</button>
+        </div>
       </div>`;
+    updateSaeTotal();
   } catch (e) {
     root.innerHTML = `<div class="alert alert-danger" style="margin-top:1rem;">
       Erreur de chargement : ${e.message}</div>`;
@@ -832,10 +953,11 @@ async function renderParcoursup(root) {
 async function renderRecap(root) {
   root.innerHTML = `<div style="padding:3rem;text-align:center;color:#6b7280;">Chargement…</div>`;
   try {
-    const [pfData, horairesData, saeData, orgData, missionsData, autreData, psData] = await Promise.all([
+    const [pfData, horairesData, saeData, saeRehData, orgData, missionsData, autreData, psData] = await Promise.all([
       fetchGHJson("soutenances_portfolio/donnees_pf.json"),
       fetchGHJson("soutenances_portfolio/horaires_pf.json"),
       fetchGHJson("repartition/data/sae_data.json"),
+      fetchGHJson(GH_SAE_FILE).catch(() => []),
       fetchGHJson(GH_ORG_FILE).catch(() => ({})),
       fetchGHJson(GH_MISSIONS_FILE).catch(() => []),
       fetchGHJson(GH_AUTRE_FILE).catch(() => []),
@@ -865,15 +987,22 @@ async function renderRecap(root) {
     const orgTotal = orgRows.reduce((s, r) => s + (parseInt(r.val, 10) || 0), 0);
 
     // ── REH SAÉ ────────────────────────────────────────────────────────
-    const saeCounts = {};
-    for (const sem of saeData.semestres) {
-      for (const sae of (saeData.sae[sem] || [])) {
-        const resp = (sae.responsable || "").trim();
-        if (resp) saeCounts[resp] = (saeCounts[resp] || 0) + 1;
+    let saeRows;
+    if (Array.isArray(saeRehData) && saeRehData.length > 0) {
+      saeRows = saeRehData.filter(r => r.nom);
+    } else {
+      const saeCounts = {};
+      for (const sem of saeData.semestres) {
+        for (const sae of (saeData.sae[sem] || [])) {
+          const resp = (sae.responsable || "").trim();
+          if (resp) saeCounts[resp] = (saeCounts[resp] || 0) + 1;
+        }
       }
+      saeRows = Object.entries(saeCounts)
+        .sort(([a], [b]) => a.localeCompare(b, "fr"))
+        .map(([nom, nbre]) => ({ nom, nbre, heures: String(nbre * 2) }));
     }
-    const saeRows  = Object.entries(saeCounts).sort(([a], [b]) => a.localeCompare(b, "fr"));
-    const saeTotal = saeRows.reduce((s, [, n]) => s + n, 0);
+    const saeTotal = saeRows.reduce((s, r) => s + (r.nbre || 0), 0);
 
     // ── Missions ──────────────────────────────────────────────────────
     const miRows  = Array.isArray(missionsData) ? missionsData.filter(r => r.nom) : [];
@@ -900,7 +1029,7 @@ async function renderRecap(root) {
     };
     juryRows.forEach(([nom, n]) => add(nom, n * 3));
     orgRows.forEach(r => add(r.nom, parseInt(r.val, 10) || 0));
-    saeRows.forEach(([nom, n]) => add(nom, n * 2));
+    saeRows.forEach(r => add(r.nom, parseInt(r.heures !== "" && r.heures !== undefined ? r.heures : (r.nbre||0)*2, 10) || 0));
     miRows.forEach(r => add(r.nom, parseInt(r.heures, 10) || 0));
     autRows.forEach(r => add(r.nom, parseInt(r.heures, 10) || 0));
     const totalRows  = Object.entries(totals).sort(([a], [b]) => a.localeCompare(b, "fr"));
@@ -947,11 +1076,13 @@ async function renderRecap(root) {
           <div class="table-wrapper reh-table">
             <table class="ressources-table">
               <thead><tr><th>Nom</th><th>Nombre de SAÉ</th><th>Heures REH</th></tr></thead>
-              <tbody>${saeRows.map(([nom, n], i) => row(i,
-                `<td>${escapeHtml(nom)}</td><td><strong>${n}</strong></td><td><strong>${n * 2}</strong></td>`
+              <tbody>${saeRows.map((r, i) => row(i,
+                `<td>${escapeHtml(r.nom)}</td><td><strong>${r.nbre || 0}</strong></td><td><strong>${r.heures !== undefined && r.heures !== "" ? r.heures : (r.nbre || 0) * 2}</strong></td>`
               )).join("")}</tbody>
               <tfoot><tr class="reh-total-row">
-                <td><strong>Total</strong></td><td><strong>${saeTotal}</strong></td><td><strong>${saeTotal * 2}</strong></td>
+                <td><strong>Total</strong></td>
+                <td><strong>${saeTotal}</strong></td>
+                <td><strong>${saeRows.reduce((s, r) => s + (parseInt(r.heures !== "" ? r.heures : (r.nbre||0)*2, 10) || 0), 0)}</strong></td>
               </tr></tfoot>
             </table>
           </div>
