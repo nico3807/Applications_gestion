@@ -13,6 +13,8 @@ const GH_SAE_FILE         = "gestion_REH/sae_reh.json";
 const SK = "reh_v1_";
 const MISSIONS_ROWS = 10;
 
+let _recapData = null;
+
 /* ── Navigation ──────────────────────────────────────────────────────── */
 function navigate(view) {
   document.querySelectorAll(".nav-link").forEach(l => l.classList.remove("active"));
@@ -949,6 +951,130 @@ async function renderParcoursup(root) {
   }
 }
 
+/* ── Export XLSX récapitulatif ────────────────────────────────────────── */
+function _rehXlsxCell(value, style) {
+  return { v: value, t: typeof value === "number" ? "n" : "s", s: style };
+}
+
+function _rehXlsxSheet(headers, dataRows, totalRow, colWidths) {
+  const S_HDR = {
+    font:      { name: "Arial", bold: true, sz: 11, color: { rgb: "FFFFFF" } },
+    fill:      { patternType: "solid", fgColor: { rgb: "1E3A5F" } },
+    alignment: { horizontal: "center", vertical: "center", wrapText: true },
+    border:    { bottom: { style: "thin", color: { rgb: "AAAAAA" } } },
+  };
+  const S_EVEN = {
+    font:      { name: "Arial", sz: 10 },
+    fill:      { patternType: "solid", fgColor: { rgb: "F0F4FB" } },
+    alignment: { vertical: "top", wrapText: true },
+  };
+  const S_ODD = {
+    font:      { name: "Arial", sz: 10 },
+    fill:      { patternType: "solid", fgColor: { rgb: "FFFFFF" } },
+    alignment: { vertical: "top", wrapText: true },
+  };
+  const S_TOT = {
+    font:      { name: "Arial", bold: true, sz: 10 },
+    fill:      { patternType: "solid", fgColor: { rgb: "E8EEF8" } },
+    border:    { top: { style: "thin", color: { rgb: "1E3A5F" } } },
+    alignment: { vertical: "center" },
+  };
+  const S_TOT_NUM = {
+    font:      { name: "Arial", bold: true, sz: 10, color: { rgb: "064E3B" } },
+    fill:      { patternType: "solid", fgColor: { rgb: "E8EEF8" } },
+    border:    { top: { style: "thin", color: { rgb: "1E3A5F" } } },
+    alignment: { horizontal: "center", vertical: "center" },
+  };
+
+  const aoa = [
+    headers.map(h => _rehXlsxCell(h, S_HDR)),
+    ...dataRows.map((row, i) => row.map(v => _rehXlsxCell(v, i % 2 === 0 ? S_EVEN : S_ODD))),
+    totalRow.map(v => _rehXlsxCell(v, typeof v === "number" ? S_TOT_NUM : S_TOT)),
+  ];
+  const ws = XLSX.utils.aoa_to_sheet(aoa, { cellStyles: true });
+  ws["!cols"]   = colWidths;
+  ws["!freeze"] = { xSplit: 0, ySplit: 1 };
+  return ws;
+}
+
+function exportRecapXLSX() {
+  if (typeof XLSX === "undefined") { alert("Bibliothèque XLSX non chargée."); return; }
+  if (!_recapData) { alert("Veuillez d'abord charger la page Récapitulatif."); return; }
+
+  const { juryRows, juryTotal, orgRows, orgTotal, saeRows, miRows, miTotal,
+          autRows, autTotal, psRows, psTotal, totalRows, names, grandTotal } = _recapData;
+
+  const saeREHFor = r => parseInt(r.heures !== "" && r.heures !== undefined ? r.heures : (r.nbre || 0) * 2, 10) || 0;
+  const nameFor = k => {
+    const all = [...names[k]].sort((a, b) => a.localeCompare(b, "fr"));
+    const full = all.filter(n => n.includes(" "));
+    const cands = full.length > 0 ? full : all;
+    const deduped = cands.filter(n => !cands.some(o => o !== n && o.startsWith(n + " ")));
+    return (deduped.length > 0 ? deduped : cands).join(", ");
+  };
+
+  const wb = XLSX.utils.book_new();
+
+  XLSX.utils.book_append_sheet(wb,
+    _rehXlsxSheet(
+      ["Nom", "Nbre de jurys", "REH Portfolio"],
+      juryRows.map(([nom, n]) => [nom, n, n * 3]),
+      ["Total", juryTotal, juryTotal * 3],
+      [{ wch: 30 }, { wch: 14 }, { wch: 14 }]
+    ), "REH Portfolio");
+
+  XLSX.utils.book_append_sheet(wb,
+    _rehXlsxSheet(
+      ["Nom", "Nb"],
+      orgRows.map(r => [r.nom, parseInt(r.val, 10) || 0]),
+      ["Total", orgTotal],
+      [{ wch: 30 }, { wch: 10 }]
+    ), "Organisation portfolio");
+
+  const saeRehTotal = saeRows.reduce((s, r) => s + saeREHFor(r), 0);
+  XLSX.utils.book_append_sheet(wb,
+    _rehXlsxSheet(
+      ["Nom", "Nombre de SAÉ", "Heures REH"],
+      saeRows.map(r => [r.nom, r.nbre || 0, saeREHFor(r)]),
+      ["Total", saeRows.reduce((s, r) => s + (r.nbre || 0), 0), saeRehTotal],
+      [{ wch: 30 }, { wch: 14 }, { wch: 12 }]
+    ), "REH SAÉ");
+
+  XLSX.utils.book_append_sheet(wb,
+    _rehXlsxSheet(
+      ["Nom", "Missions", "Heures"],
+      miRows.map(r => [r.nom, r.remarque || "", parseInt(r.heures, 10) || 0]),
+      ["Total", "", miTotal],
+      [{ wch: 30 }, { wch: 50 }, { wch: 10 }]
+    ), "Missions");
+
+  XLSX.utils.book_append_sheet(wb,
+    _rehXlsxSheet(
+      ["Nom", "Autre", "Heures"],
+      autRows.map(r => [r.nom, r.autre || "", parseInt(r.heures, 10) || 0]),
+      ["Total", "", autTotal],
+      [{ wch: 30 }, { wch: 50 }, { wch: 10 }]
+    ), "Autre");
+
+  XLSX.utils.book_append_sheet(wb,
+    _rehXlsxSheet(
+      ["Nom", "Total REH Portfolio"],
+      totalRows.map(([k, h]) => [nameFor(k), h]),
+      ["Total", grandTotal],
+      [{ wch: 35 }, { wch: 18 }]
+    ), "Total REH Portfolio");
+
+  XLSX.utils.book_append_sheet(wb,
+    _rehXlsxSheet(
+      ["Nom", "Heures"],
+      psRows.map(r => [r.nom, parseInt(r.heures, 10) || 0]),
+      ["Total", psTotal],
+      [{ wch: 30 }, { wch: 10 }]
+    ), "Parcoursup");
+
+  XLSX.writeFile(wb, "recap_REH.xlsx");
+}
+
 /* ── Vue Récapitulatif ────────────────────────────────────────────────── */
 async function renderRecap(root) {
   root.innerHTML = `<div style="padding:3rem;text-align:center;color:#6b7280;">Chargement…</div>`;
@@ -1035,10 +1161,17 @@ async function renderRecap(root) {
     const totalRows  = Object.entries(totals).filter(([, h]) => h > 0).sort(([a], [b]) => a.localeCompare(b, "fr"));
     const grandTotal = totalRows.reduce((s, [, h]) => s + h, 0);
 
+    _recapData = { juryRows, juryTotal, orgRows, orgTotal, saeRows,
+                   miRows, miTotal, autRows, autTotal, psRows, psTotal,
+                   totalRows, names, grandTotal };
+
     const row = (i, cells) => `<tr class="${i % 2 === 0 ? "group-even" : "group-odd"}">${cells}</tr>`;
 
     root.innerHTML = `
       <div class="page-header"><h1>Récapitulatif</h1></div>
+      <div style="margin-bottom:1.2rem;">
+        <button class="btn-pdf-action" onclick="exportRecapXLSX()">⬇ Exporter XLSX</button>
+      </div>
       <div style="display:flex;flex-wrap:wrap;gap:2rem;align-items:flex-start;">
 
         <div>
