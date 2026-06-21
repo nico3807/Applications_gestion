@@ -16585,5 +16585,140 @@
     "description": "S3 / R3.09 | Création et design interactif (UI) / enseignant",
     "prev": "",
     "next": "LOJDI Illyasse"
+  },
+  {
+    "date": "21/06/2026",
+    "heure": "13:45:08",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S3 / R3.09 | Création et design interactif (UI) / td",
+    "prev": "0",
+    "next": "0.5"
+  },
+  {
+    "date": "21/06/2026",
+    "heure": "13:45:08",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S3 / R3.09 | Création et design interactif (UI) / td",
+    "prev": "0.5",
+    "next": "1"
+  },
+  {
+    "date": "21/06/2026",
+    "heure": "13:45:08",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S3 / R3.09 | Création et design interactif (UI) / td",
+    "prev": "1",
+    "next": "1.5"
+  },
+  {
+    "date": "21/06/2026",
+    "heure": "13:45:10",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S3 / R3.09 | Création et design interactif (UI) / tp",
+    "prev": "0",
+    "next": "0.5"
+  },
+  {
+    "date": "21/06/2026",
+    "heure": "13:45:10",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S3 / R3.09 | Création et design interactif (UI) / tp",
+    "prev": "0.5",
+    "next": "1"
+  },
+  {
+    "date": "21/06/2026",
+    "heure": "13:45:11",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S3 / R3.09 | Création et design interactif (UI) / tp",
+    "prev": "1",
+    "next": "1.5"
+  },
+  {
+    "date": "21/06/2026",
+    "heure": "13:45:11",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S3 / R3.09 | Création et design interactif (UI) / tp",
+    "prev": "1.5",
+    "next": "2"
+  },
+  {
+    "date": "21/06/2026",
+    "heure": "13:45:11",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S3 / R3.09 | Création et design interactif (UI) / tp",
+    "prev": "2",
+    "next": "2.5"
+  },
+  {
+    "date": "21/06/2026",
+    "heure": "13:45:11",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S3 / R3.09 | Création et design interactif (UI) / tp",
+    "prev": "2.5",
+    "next": "3"
+  },
+  {
+    "date": "21/06/2026",
+    "heure": "13:45:12",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S3 / R3.09 | Création et design interactif (UI) / tp",
+    "prev": "3",
+    "next": "3.5"
+  },
+  {
+    "date": "21/06/2026",
+    "heure": "13:45:12",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S3 / R3.09 | Création et design interactif (UI) / tp",
+    "prev": "3.5",
+    "next": "4"
+  },
+  {
+    "date": "21/06/2026",
+    "heure": "13:45:12",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S3 / R3.09 | Création et design interactif (UI) / tp",
+    "prev": "4",
+    "next": "4.5"
+  },
+  {
+    "date": "21/06/2026",
+    "heure": "13:45:13",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S3 / R3.09 | Création et design interactif (UI) / tp",
+    "prev": "4.5",
+    "next": "5"
+  },
+  {
+    "date": "21/06/2026",
+    "heure": "13:45:13",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S3 / R3.09 | Création et design interactif (UI) / tp",
+    "prev": "5",
+    "next": "5.5"
+  },
+  {
+    "date": "21/06/2026",
+    "heure": "13:45:14",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S3 / R3.09 | Création et design interactif (UI) / tp",
+    "prev": "5.5",
+    "next": "6"
   }
 ]
