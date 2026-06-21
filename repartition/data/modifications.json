@@ -16855,5 +16855,32 @@
     "description": "S3 / R3.09 | Création et design interactif (UI) / sous-groupe 1 / td",
     "prev": "3.5",
     "next": "3"
+  },
+  {
+    "date": "21/06/2026",
+    "heure": "13:46:33",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S3 / R3.09 | Création et design interactif (UI) / sous-groupe 1 / cm",
+    "prev": "1.5",
+    "next": "1"
+  },
+  {
+    "date": "21/06/2026",
+    "heure": "13:46:34",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S3 / R3.09 | Création et design interactif (UI) / sous-groupe 1 / cm",
+    "prev": "1",
+    "next": "0.5"
+  },
+  {
+    "date": "21/06/2026",
+    "heure": "13:46:34",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S3 / R3.09 | Création et design interactif (UI) / sous-groupe 1 / cm",
+    "prev": "0.5",
+    "next": "0"
   }
 ]
