@@ -889,8 +889,15 @@ async function renderRecap(root) {
 
     // ── Grand total par enseignant ─────────────────────────────────────
     const totals = {};
+    const names  = {};
     const lastName = nom => nom.trim().split(/\s+/)[0];
-    const add = (nom, h) => { if (nom) { const k = lastName(nom); totals[k] = (totals[k] || 0) + h; } };
+    const add = (nom, h) => {
+      if (!nom) return;
+      const k = lastName(nom);
+      totals[k] = (totals[k] || 0) + h;
+      if (!names[k]) names[k] = new Set();
+      names[k].add(nom.trim());
+    };
     juryRows.forEach(([nom, n]) => add(nom, n * 3));
     orgRows.forEach(r => add(r.nom, parseInt(r.val, 10) || 0));
     saeRows.forEach(([nom, n]) => add(nom, n * 2));
@@ -985,8 +992,8 @@ async function renderRecap(root) {
           <div class="table-wrapper reh-table">
             <table class="ressources-table">
               <thead><tr><th>Nom</th><th style="text-align:center;">Total</th></tr></thead>
-              <tbody>${totalRows.map(([nom, h], i) => row(i,
-                `<td>${escapeHtml(nom)}</td><td style="text-align:center;"><strong>${h}</strong></td>`
+              <tbody>${totalRows.map(([k, h], i) => row(i,
+                `<td>${[...names[k]].sort((a, b) => a.localeCompare(b, "fr")).map(escapeHtml).join("<br>")}</td><td style="text-align:center;"><strong>${h}</strong></td>`
               )).join("")}</tbody>
               <tfoot><tr class="reh-total-row">
                 <td><strong>Total</strong></td><td style="text-align:center;"><strong>${grandTotal}</strong></td>
