@@ -298,6 +298,10 @@ function escapeAttr(str) {
   return String(str).replace(/&/g, "&amp;").replace(/"/g, "&quot;");
 }
 
+function escapeHtml(str) {
+  return String(str).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+}
+
 function renderPortfolio(root, pfData, horairesData, enseignants, orgData) {
   // ── Tableau REH Portfolio ────────────────────────────────────────────
   const validKeys = buildValidPortfolioKeys(horairesData);
@@ -824,6 +828,174 @@ async function renderParcoursup(root) {
   }
 }
 
+/* ── Vue Récapitulatif ────────────────────────────────────────────────── */
+async function renderRecap(root) {
+  root.innerHTML = `<div style="padding:3rem;text-align:center;color:#6b7280;">Chargement…</div>`;
+  try {
+    const [pfData, horairesData, saeData, orgData, missionsData, autreData] = await Promise.all([
+      fetchGHJson("soutenances_portfolio/donnees_pf.json"),
+      fetchGHJson("soutenances_portfolio/horaires_pf.json"),
+      fetchGHJson("repartition/data/sae_data.json"),
+      fetchGHJson(GH_ORG_FILE).catch(() => ({})),
+      fetchGHJson(GH_MISSIONS_FILE).catch(() => []),
+      fetchGHJson(GH_AUTRE_FILE).catch(() => []),
+    ]);
+
+    // ── REH Portfolio (jury) ───────────────────────────────────────────
+    const validKeys = buildValidPortfolioKeys(horairesData);
+    const juryCounts = {};
+    for (const key of validKeys) {
+      const val = pfData[key];
+      if (val) juryCounts[val] = (juryCounts[val] || 0) + 1;
+    }
+    const juryRows   = Object.entries(juryCounts).sort(([a], [b]) => a.localeCompare(b, "fr"));
+    const juryTotal  = juryRows.reduce((s, [, n]) => s + n, 0);
+
+    // ── Organisation portfolio ─────────────────────────────────────────
+    let maxOrgIdx = -1;
+    Object.keys(orgData).forEach(key => {
+      const m = key.match(/^org_(\d+)_/);
+      if (m) maxOrgIdx = Math.max(maxOrgIdx, parseInt(m[1]));
+    });
+    const orgRows = Array.from({ length: maxOrgIdx + 1 }, (_, i) => ({
+      nom: orgData[`org_${i}_nom`] || "",
+      val: orgData[`org_${i}_val`] || "",
+    })).filter(r => r.nom);
+    const orgTotal = orgRows.reduce((s, r) => s + (parseInt(r.val, 10) || 0), 0);
+
+    // ── REH SAÉ ────────────────────────────────────────────────────────
+    const saeCounts = {};
+    for (const sem of saeData.semestres) {
+      for (const sae of (saeData.sae[sem] || [])) {
+        const resp = (sae.responsable || "").trim();
+        if (resp) saeCounts[resp] = (saeCounts[resp] || 0) + 1;
+      }
+    }
+    const saeRows  = Object.entries(saeCounts).sort(([a], [b]) => a.localeCompare(b, "fr"));
+    const saeTotal = saeRows.reduce((s, [, n]) => s + n, 0);
+
+    // ── Missions ──────────────────────────────────────────────────────
+    const miRows  = Array.isArray(missionsData) ? missionsData.filter(r => r.nom) : [];
+    const miTotal = miRows.reduce((s, r) => s + (parseInt(r.heures, 10) || 0), 0);
+
+    // ── Autre ─────────────────────────────────────────────────────────
+    const autRows  = Array.isArray(autreData) ? autreData.filter(r => r.nom) : [];
+    const autTotal = autRows.reduce((s, r) => s + (parseInt(r.heures, 10) || 0), 0);
+
+    // ── Grand total par enseignant ─────────────────────────────────────
+    const totals = {};
+    const add = (nom, h) => { if (nom) totals[nom] = (totals[nom] || 0) + h; };
+    juryRows.forEach(([nom, n]) => add(nom, n * 3));
+    orgRows.forEach(r => add(r.nom, parseInt(r.val, 10) || 0));
+    saeRows.forEach(([nom, n]) => add(nom, n * 2));
+    miRows.forEach(r => add(r.nom, parseInt(r.heures, 10) || 0));
+    autRows.forEach(r => add(r.nom, parseInt(r.heures, 10) || 0));
+    const totalRows  = Object.entries(totals).sort(([a], [b]) => a.localeCompare(b, "fr"));
+    const grandTotal = totalRows.reduce((s, [, h]) => s + h, 0);
+
+    const row = (i, cells) => `<tr class="${i % 2 === 0 ? "group-even" : "group-odd"}">${cells}</tr>`;
+
+    root.innerHTML = `
+      <div class="page-header"><h1>Récapitulatif</h1></div>
+      <div style="display:flex;flex-direction:column;gap:2rem;">
+
+        <div>
+          <p class="subtitle">REH Portfolio — participation aux jurys de soutenances portfolio</p>
+          <div class="table-wrapper reh-table">
+            <table class="ressources-table">
+              <thead><tr><th>Nom</th><th>Nbre de jurys</th><th>REH Portfolio</th></tr></thead>
+              <tbody>${juryRows.map(([nom, n], i) => row(i,
+                `<td>${escapeHtml(nom)}</td><td><strong>${n}</strong></td><td><strong>${n * 3}</strong></td>`
+              )).join("")}</tbody>
+              <tfoot><tr class="reh-total-row">
+                <td><strong>Total</strong></td><td><strong>${juryTotal}</strong></td><td><strong>${juryTotal * 3}</strong></td>
+              </tr></tfoot>
+            </table>
+          </div>
+        </div>
+
+        <div>
+          <p class="subtitle">Organisation portfolio</p>
+          <div class="table-wrapper reh-table">
+            <table class="ressources-table">
+              <thead><tr><th>Nom</th><th style="text-align:center;">Nb</th></tr></thead>
+              <tbody>${orgRows.map((r, i) => row(i,
+                `<td>${escapeHtml(r.nom)}</td><td style="text-align:center;"><strong>${r.val || 0}</strong></td>`
+              )).join("")}</tbody>
+              <tfoot><tr class="reh-total-row">
+                <td><strong>Total</strong></td><td style="text-align:center;"><strong>${orgTotal}</strong></td>
+              </tr></tfoot>
+            </table>
+          </div>
+        </div>
+
+        <div>
+          <p class="subtitle">REH SAÉ — responsabilité des Situations d'Apprentissage et d'Évaluation</p>
+          <div class="table-wrapper reh-table">
+            <table class="ressources-table">
+              <thead><tr><th>Nom</th><th>Nombre de SAÉ</th><th>Heures REH</th></tr></thead>
+              <tbody>${saeRows.map(([nom, n], i) => row(i,
+                `<td>${escapeHtml(nom)}</td><td><strong>${n}</strong></td><td><strong>${n * 2}</strong></td>`
+              )).join("")}</tbody>
+              <tfoot><tr class="reh-total-row">
+                <td><strong>Total</strong></td><td><strong>${saeTotal}</strong></td><td><strong>${saeTotal * 2}</strong></td>
+              </tr></tfoot>
+            </table>
+          </div>
+        </div>
+
+        <div>
+          <p class="subtitle">Missions enseignants</p>
+          <div class="table-wrapper reh-table">
+            <table class="ressources-table">
+              <thead><tr><th>Nom</th><th>Missions</th><th style="text-align:center;">Heures</th></tr></thead>
+              <tbody>${miRows.map((r, i) => row(i,
+                `<td>${escapeHtml(r.nom)}</td><td>${escapeHtml(r.remarque || "")}</td><td style="text-align:center;"><strong>${r.heures || 0}</strong></td>`
+              )).join("")}</tbody>
+              <tfoot><tr class="reh-total-row">
+                <td><strong>Total</strong></td><td></td><td style="text-align:center;"><strong>${miTotal}</strong></td>
+              </tr></tfoot>
+            </table>
+          </div>
+        </div>
+
+        <div>
+          <p class="subtitle">Autre — enseignants</p>
+          <div class="table-wrapper reh-table">
+            <table class="ressources-table">
+              <thead><tr><th>Nom</th><th>Autre</th><th style="text-align:center;">Heures</th></tr></thead>
+              <tbody>${autRows.map((r, i) => row(i,
+                `<td>${escapeHtml(r.nom)}</td><td>${escapeHtml(r.autre || "")}</td><td style="text-align:center;"><strong>${r.heures || 0}</strong></td>`
+              )).join("")}</tbody>
+              <tfoot><tr class="reh-total-row">
+                <td><strong>Total</strong></td><td></td><td style="text-align:center;"><strong>${autTotal}</strong></td>
+              </tr></tfoot>
+            </table>
+          </div>
+        </div>
+
+        <div>
+          <p class="subtitle">Total REH par enseignant</p>
+          <div class="table-wrapper reh-table">
+            <table class="ressources-table">
+              <thead><tr><th>Nom</th><th style="text-align:center;">Total</th></tr></thead>
+              <tbody>${totalRows.map(([nom, h], i) => row(i,
+                `<td>${escapeHtml(nom)}</td><td style="text-align:center;"><strong>${h}</strong></td>`
+              )).join("")}</tbody>
+              <tfoot><tr class="reh-total-row">
+                <td><strong>Total</strong></td><td style="text-align:center;"><strong>${grandTotal}</strong></td>
+              </tr></tfoot>
+            </table>
+          </div>
+        </div>
+
+      </div>`;
+  } catch (e) {
+    root.innerHTML = `<div class="alert alert-danger" style="margin-top:1rem;">
+      Erreur de chargement : ${e.message}</div>`;
+  }
+}
+
 /* ── Rendu principal ──────────────────────────────────────────────────── */
 async function renderView(view) {
   const root = document.getElementById("app-root");
@@ -849,6 +1021,8 @@ async function renderView(view) {
     await renderAutre(root);
   } else if (view === "parcoursup") {
     await renderParcoursup(root);
+  } else if (view === "recapitulatif") {
+    await renderRecap(root);
   }
 }
 
