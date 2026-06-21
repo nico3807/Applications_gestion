@@ -870,9 +870,6 @@ function buildPsRow(i, row) {
     <tr class="${i % 2 === 0 ? "group-even" : "group-odd"}">
       <td><select class="mis-sel${savedNom ? " filled" : ""}" id="ps_${i}_nom" onchange="saveParcoursupField(this)">${makeOptions(_psNomList, savedNom)}</select></td>
       <td style="text-align:center;"><select class="mis-sel${savedHeures ? " filled" : ""}" id="ps_${i}_heures" onchange="saveParcoursupField(this)">${makeOptions(psHeuresList, savedHeures)}</select></td>
-      <td style="padding:4px 8px; text-align:center;">
-        <button class="btn-remove-subrow" onclick="removePsRow(${i})" title="Supprimer cette ligne">×</button>
-      </td>
     </tr>`;
 }
 
@@ -927,7 +924,6 @@ async function renderParcoursup(root) {
               <tr>
                 <th style="width:200px;">Nom</th>
                 <th style="width:70px; text-align:center;">Heures</th>
-                <th style="width:40px;"></th>
               </tr>
             </thead>
             <tbody id="ps-tbody">${psRows}</tbody>
@@ -935,7 +931,6 @@ async function renderParcoursup(root) {
               <tr class="reh-total-row">
                 <td><strong>Total</strong></td>
                 <td style="text-align:center;"><strong id="ps-total">0</strong></td>
-                <td></td>
               </tr>
             </tfoot>
           </table>
