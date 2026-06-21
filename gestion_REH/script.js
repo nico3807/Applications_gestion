@@ -1124,7 +1124,7 @@ async function renderRecap(root) {
             <table class="ressources-table">
               <thead><tr><th>Nom</th><th style="text-align:center;">Total</th></tr></thead>
               <tbody>${totalRows.map(([k, h], i) => row(i,
-                `<td>${(() => { const all = [...names[k]].sort((a, b) => a.localeCompare(b, "fr")); const full = all.filter(n => n.includes(" ")); return (full.length > 0 ? full : all).map(escapeHtml).join("<br>"); })()}</td><td style="text-align:center;"><strong>${h}</strong></td>`
+                `<td>${(() => { const all = [...names[k]].sort((a, b) => a.localeCompare(b, "fr")); const full = all.filter(n => n.includes(" ")); const candidates = full.length > 0 ? full : all; const deduped = candidates.filter(n => !candidates.some(o => o !== n && o.startsWith(n + " "))); return (deduped.length > 0 ? deduped : candidates).map(escapeHtml).join("<br>"); })()}</td><td style="text-align:center;"><strong>${h}</strong></td>`
               )).join("")}</tbody>
               <tfoot><tr class="reh-total-row">
                 <td><strong>Total</strong></td><td style="text-align:center;"><strong>${grandTotal}</strong></td>
