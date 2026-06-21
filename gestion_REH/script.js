@@ -7,7 +7,8 @@ const GH_REPO   = "Applications_gestion";
 const GH_BRANCH = "main";
 const GH_ORG_FILE      = "gestion_REH/orga_pf.json";
 const GH_MISSIONS_FILE = "gestion_REH/missions.json";
-const GH_AUTRE_FILE    = "gestion_REH/autre.json";
+const GH_AUTRE_FILE       = "gestion_REH/autre.json";
+const GH_PARCOURSUP_FILE  = "gestion_REH/parcoursup.json";
 const SK = "reh_v1_";
 const MISSIONS_ROWS = 10;
 
@@ -625,6 +626,139 @@ async function renderMissions(root) {
   }
 }
 
+/* ── Auto-save parcoursup ────────────────────────────────────────────── */
+let _autoSaveParcoursupTimer = null;
+let _psState   = [];
+let _psNomList = [];
+
+function scheduleParcoursupAutoSave() {
+  clearTimeout(_autoSaveParcoursupTimer);
+  _autoSaveParcoursupTimer = setTimeout(doParcoursupAutoSave, 1800);
+}
+
+function buildParcoursupJson() {
+  const rows = [];
+  let i = 0;
+  while (document.getElementById(`ps_${i}_nom`) !== null) {
+    rows.push({
+      nom:    document.getElementById(`ps_${i}_nom`).value,
+      heures: document.getElementById(`ps_${i}_heures`).value,
+    });
+    i++;
+  }
+  return JSON.stringify(rows, null, 2);
+}
+
+async function doParcoursupAutoSave() {
+  const ts = new Date().toLocaleString("fr-FR");
+  try {
+    await saveJsonToGitHub(GH_PARCOURSUP_FILE, buildParcoursupJson(), `Parcoursup — ${ts}`);
+    showToast("✓ Sauvegardé");
+  } catch (e) {
+    showToast("✗ GitHub : " + e.message);
+  }
+}
+
+function saveParcoursupField(el) {
+  localStorage.setItem(SK + el.id, el.value);
+  if (el.tagName === "SELECT") el.classList.toggle("filled", !!el.value);
+  scheduleParcoursupAutoSave();
+}
+
+function syncPsStateFromDom() {
+  _psState = [];
+  let i = 0;
+  while (document.getElementById(`ps_${i}_nom`) !== null) {
+    _psState.push({
+      nom:    document.getElementById(`ps_${i}_nom`).value,
+      heures: document.getElementById(`ps_${i}_heures`).value,
+    });
+    i++;
+  }
+}
+
+function buildPsRow(i, row) {
+  const savedNom    = row.nom    || "";
+  const savedHeures = row.heures || "";
+  const psHeuresList = [["", "—"]].concat(
+    Array.from({ length: 20 }, (_, j) => [String(j + 1), String(j + 1)])
+  );
+  return `
+    <tr class="${i % 2 === 0 ? "group-even" : "group-odd"}">
+      <td><select class="mis-sel${savedNom ? " filled" : ""}" id="ps_${i}_nom" onchange="saveParcoursupField(this)">${makeOptions(_psNomList, savedNom)}</select></td>
+      <td style="text-align:center;"><select class="mis-sel${savedHeures ? " filled" : ""}" id="ps_${i}_heures" onchange="saveParcoursupField(this)">${makeOptions(psHeuresList, savedHeures)}</select></td>
+      <td style="padding:4px 8px; text-align:center;">
+        <button class="btn-remove-subrow" onclick="removePsRow(${i})" title="Supprimer cette ligne">×</button>
+      </td>
+    </tr>`;
+}
+
+function rebuildPsTable() {
+  const tbody = document.getElementById("ps-tbody");
+  if (tbody) tbody.innerHTML = _psState.map((row, i) => buildPsRow(i, row)).join("");
+}
+
+function addPsRow() {
+  syncPsStateFromDom();
+  _psState.push({ nom: "", heures: "" });
+  rebuildPsTable();
+  scheduleParcoursupAutoSave();
+}
+
+function removePsRow(i) {
+  syncPsStateFromDom();
+  _psState.splice(i, 1);
+  rebuildPsTable();
+  scheduleParcoursupAutoSave();
+}
+
+/* ── Vue Parcoursup ───────────────────────────────────────────────────── */
+async function renderParcoursup(root) {
+  root.innerHTML = `<div style="padding:3rem;text-align:center;color:#6b7280;">Chargement…</div>`;
+  try {
+    const [enseignants, psData] = await Promise.all([
+      fetchGHJson("repartition/data/enseignants.json"),
+      fetchGHJson(GH_PARCOURSUP_FILE).catch(() => []),
+    ]);
+
+    _psNomList = [["", "— Sélectionner —"]].concat(
+      [...enseignants]
+        .sort((a, b) => a.id.localeCompare(b.id, "fr"))
+        .map(e => [e.id, `${e.nom} ${e.prenom}`])
+    );
+
+    _psState = Array.isArray(psData) ? psData : [];
+
+    const psRows = _psState.map((row, i) => buildPsRow(i, row)).join("");
+
+    root.innerHTML = `
+      <div class="page-header">
+        <h1>Parcoursup</h1>
+      </div>
+      <div>
+        <p class="subtitle">Gestion parcoursup</p>
+        <div class="table-wrapper">
+          <table class="ressources-table mis-table">
+            <thead>
+              <tr>
+                <th style="width:200px;">Nom</th>
+                <th style="width:70px; text-align:center;">Heures</th>
+                <th style="width:40px;"></th>
+              </tr>
+            </thead>
+            <tbody id="ps-tbody">${psRows}</tbody>
+          </table>
+        </div>
+        <div style="margin-top:0.6rem;">
+          <button class="btn-add-subrow" onclick="addPsRow()" title="Ajouter une ligne">+</button>
+        </div>
+      </div>`;
+  } catch (e) {
+    root.innerHTML = `<div class="alert alert-danger" style="margin-top:1rem;">
+      Erreur de chargement : ${e.message}</div>`;
+  }
+}
+
 /* ── Rendu principal ──────────────────────────────────────────────────── */
 async function renderView(view) {
   const root = document.getElementById("app-root");
@@ -648,6 +782,8 @@ async function renderView(view) {
     await renderMissions(root);
   } else if (view === "autre") {
     await renderAutre(root);
+  } else if (view === "parcoursup") {
+    await renderParcoursup(root);
   }
 }
 
