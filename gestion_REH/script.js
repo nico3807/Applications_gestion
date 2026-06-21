@@ -183,9 +183,21 @@ async function doMissionsAutoSave() {
   }
 }
 
+function updateMiTotal() {
+  let sum = 0;
+  let i = 0;
+  while (document.getElementById(`mis_${i}_heures`) !== null) {
+    sum += parseInt(document.getElementById(`mis_${i}_heures`).value, 10) || 0;
+    i++;
+  }
+  const el = document.getElementById("mis-total");
+  if (el) el.textContent = sum;
+}
+
 function saveMissionsField(el) {
   localStorage.setItem(SK + el.id, el.value);
   if (el.tagName === "SELECT") el.classList.toggle("filled", !!el.value);
+  updateMiTotal();
   scheduleMissionsAutoSave();
 }
 
@@ -220,6 +232,7 @@ function buildMisRow(i, row) {
 function rebuildMisTable() {
   const tbody = document.getElementById("mis-tbody");
   if (tbody) tbody.innerHTML = _miState.map((row, i) => buildMisRow(i, row)).join("");
+  updateMiTotal();
 }
 
 function addMissionRow(afterIndex) {
@@ -636,12 +649,21 @@ async function renderMissions(root) {
               </tr>
             </thead>
             <tbody id="mis-tbody">${misRows}</tbody>
+            <tfoot>
+              <tr class="reh-total-row">
+                <td><strong>Total</strong></td>
+                <td></td>
+                <td style="text-align:center;"><strong id="mis-total">0</strong></td>
+                <td></td>
+              </tr>
+            </tfoot>
           </table>
         </div>
         <div style="margin-top:0.6rem;">
           <button class="btn-add-subrow" onclick="addMissionRow(_miState.length - 1)" title="Ajouter une ligne">+</button>
         </div>
       </div>`;
+    updateMiTotal();
   } catch (e) {
     root.innerHTML = `<div class="alert alert-danger" style="margin-top:1rem;">
       Erreur de chargement : ${e.message}</div>`;
