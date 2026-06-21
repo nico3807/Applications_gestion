@@ -889,7 +889,8 @@ async function renderRecap(root) {
 
     // ── Grand total par enseignant ─────────────────────────────────────
     const totals = {};
-    const add = (nom, h) => { if (nom) totals[nom] = (totals[nom] || 0) + h; };
+    const lastName = nom => nom.trim().split(/\s+/)[0];
+    const add = (nom, h) => { if (nom) { const k = lastName(nom); totals[k] = (totals[k] || 0) + h; } };
     juryRows.forEach(([nom, n]) => add(nom, n * 3));
     orgRows.forEach(r => add(r.nom, parseInt(r.val, 10) || 0));
     saeRows.forEach(([nom, n]) => add(nom, n * 2));
