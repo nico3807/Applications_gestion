@@ -1,0 +1,52 @@
+[
+  {
+    "nom": "BLANCO Sandy",
+    "nbre": 2,
+    "heures": "4"
+  },
+  {
+    "nom": "DARTIES Benoit",
+    "nbre": 4,
+    "heures": "8"
+  },
+  {
+    "nom": "DE VELDER Sophie",
+    "nbre": 1,
+    "heures": "2"
+  },
+  {
+    "nom": "JAECKLE Luc",
+    "nbre": 1,
+    "heures": "0"
+  },
+  {
+    "nom": "LAGIEWKA Arnaud",
+    "nbre": 1,
+    "heures": "2"
+  },
+  {
+    "nom": "MAURIN Nicolas",
+    "nbre": 2,
+    "heures": "4"
+  },
+  {
+    "nom": "PELISSIER Chrysta",
+    "nbre": 1,
+    "heures": "2"
+  },
+  {
+    "nom": "SURRIBAS Caroline",
+    "nbre": 4,
+    "heures": "8"
+  },
+  {
+    "nom": "THEROND Emmanuel",
+    "nbre": 2,
+    "heures": "4"
+  },
+  {
+    "nom": "TOURNIE Laetitia",
+    "nbre": 1,
+    "heures": "2"
+  }
+]
