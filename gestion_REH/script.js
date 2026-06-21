@@ -1240,7 +1240,7 @@ async function renderRecap(root) {
           <p class="subtitle">Autre — enseignants</p>
           <div class="table-wrapper reh-table">
             <table class="ressources-table">
-              <thead><tr><th>Nom</th><th>Autre</th><th style="text-align:center;">Heures</th></tr></thead>
+              <thead><tr><th>Nom</th><th>Nature</th><th style="text-align:center;">Heures</th></tr></thead>
               <tbody>${autRows.map((r, i) => row(i,
                 `<td>${escapeHtml(r.nom)}</td><td>${escapeHtml(r.autre || "")}</td><td style="text-align:center;"><strong>${r.heures || 0}</strong></td>`
               )).join("")}</tbody>
