@@ -1172,7 +1172,7 @@ async function renderRecap(root) {
       <div style="margin-bottom:1.2rem;">
         <button class="btn-pdf-action" onclick="exportRecapXLSX()">⬇ Exporter XLSX</button>
       </div>
-      <div style="display:flex;flex-wrap:wrap;gap:2rem;align-items:flex-start;">
+      <div style="display:flex;flex-wrap:wrap;gap:2rem;align-items:center;">
 
         <div>
           <p class="subtitle">REH Portfolio — participation aux jurys de soutenances portfolio</p>
