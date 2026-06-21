@@ -896,7 +896,6 @@ async function renderRecap(root) {
     saeRows.forEach(([nom, n]) => add(nom, n * 2));
     miRows.forEach(r => add(r.nom, parseInt(r.heures, 10) || 0));
     autRows.forEach(r => add(r.nom, parseInt(r.heures, 10) || 0));
-    psRows.forEach(r => add(r.nom, parseInt(r.heures, 10) || 0));
     const totalRows  = Object.entries(totals).sort(([a], [b]) => a.localeCompare(b, "fr"));
     const grandTotal = totalRows.reduce((s, [, h]) => s + h, 0);
 
@@ -982,21 +981,6 @@ async function renderRecap(root) {
         </div>
 
         <div>
-          <p class="subtitle">Gestion parcoursup</p>
-          <div class="table-wrapper reh-table">
-            <table class="ressources-table">
-              <thead><tr><th>Nom</th><th style="text-align:center;">Heures</th></tr></thead>
-              <tbody>${psRows.map((r, i) => row(i,
-                `<td>${escapeHtml(r.nom)}</td><td style="text-align:center;"><strong>${r.heures || 0}</strong></td>`
-              )).join("")}</tbody>
-              <tfoot><tr class="reh-total-row">
-                <td><strong>Total</strong></td><td style="text-align:center;"><strong>${psTotal}</strong></td>
-              </tr></tfoot>
-            </table>
-          </div>
-        </div>
-
-        <div>
           <p class="subtitle">Total REH par enseignant</p>
           <div class="table-wrapper reh-table">
             <table class="ressources-table">
@@ -1006,6 +990,21 @@ async function renderRecap(root) {
               )).join("")}</tbody>
               <tfoot><tr class="reh-total-row">
                 <td><strong>Total</strong></td><td style="text-align:center;"><strong>${grandTotal}</strong></td>
+              </tr></tfoot>
+            </table>
+          </div>
+        </div>
+
+        <div>
+          <p class="subtitle">Gestion parcoursup</p>
+          <div class="table-wrapper reh-table">
+            <table class="ressources-table">
+              <thead><tr><th>Nom</th><th style="text-align:center;">Heures</th></tr></thead>
+              <tbody>${psRows.map((r, i) => row(i,
+                `<td>${escapeHtml(r.nom)}</td><td style="text-align:center;"><strong>${r.heures || 0}</strong></td>`
+              )).join("")}</tbody>
+              <tfoot><tr class="reh-total-row">
+                <td><strong>Total</strong></td><td style="text-align:center;"><strong>${psTotal}</strong></td>
               </tr></tfoot>
             </table>
           </div>
