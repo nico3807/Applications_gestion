@@ -44,7 +44,7 @@
 .org-sel.filled, .mis-sel.filled { border-color: rgba(59,130,246,0.4); color: #1e3a8a; }
 
 .mis-table {
-  width: auto;
+  width: max-content;
   table-layout: fixed;
 }
 
