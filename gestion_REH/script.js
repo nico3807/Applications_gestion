@@ -1119,7 +1119,7 @@ async function renderRecap(root) {
         </div>
 
         <div>
-          <p class="subtitle">Total REH par enseignant</p>
+          <p class="subtitle">Total REH Portfolio par enseignant</p>
           <div class="table-wrapper reh-table">
             <table class="ressources-table">
               <thead><tr><th>Nom</th><th style="text-align:center;">Total</th></tr></thead>
