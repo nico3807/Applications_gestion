@@ -1032,7 +1032,7 @@ async function renderRecap(root) {
     saeRows.forEach(r => add(r.nom, parseInt(r.heures !== "" && r.heures !== undefined ? r.heures : (r.nbre||0)*2, 10) || 0));
     miRows.forEach(r => add(r.nom, parseInt(r.heures, 10) || 0));
     autRows.forEach(r => add(r.nom, parseInt(r.heures, 10) || 0));
-    const totalRows  = Object.entries(totals).sort(([a], [b]) => a.localeCompare(b, "fr"));
+    const totalRows  = Object.entries(totals).filter(([, h]) => h > 0).sort(([a], [b]) => a.localeCompare(b, "fr"));
     const grandTotal = totalRows.reduce((s, [, h]) => s + h, 0);
 
     const row = (i, cells) => `<tr class="${i % 2 === 0 ? "group-even" : "group-odd"}">${cells}</tr>`;
