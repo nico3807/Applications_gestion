@@ -709,7 +709,7 @@ async function renderAutre(root) {
             <thead>
               <tr>
                 <th style="width:200px;">Nom</th>
-                <th style="width:350px;">Autre</th>
+                <th style="width:350px;">Nature</th>
                 <th style="width:70px; text-align:center;">Heures</th>
                 <th style="width:40px;"></th>
               </tr>
