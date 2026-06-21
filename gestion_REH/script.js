@@ -1039,7 +1039,7 @@ async function renderRecap(root) {
 
     root.innerHTML = `
       <div class="page-header"><h1>Récapitulatif</h1></div>
-      <div style="display:flex;flex-direction:column;gap:2rem;">
+      <div style="display:flex;flex-wrap:wrap;gap:2rem;align-items:flex-start;">
 
         <div>
           <p class="subtitle">REH Portfolio — participation aux jurys de soutenances portfolio</p>
