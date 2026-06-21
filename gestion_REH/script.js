@@ -7,6 +7,7 @@ const GH_REPO   = "Applications_gestion";
 const GH_BRANCH = "main";
 const GH_ORG_FILE      = "gestion_REH/orga_pf.json";
 const GH_MISSIONS_FILE = "gestion_REH/missions.json";
+const GH_AUTRE_FILE    = "gestion_REH/autre.json";
 const SK = "reh_v1_";
 const MISSIONS_ROWS = 10;
 
@@ -431,6 +432,147 @@ async function renderSAE(root) {
   }
 }
 
+/* ── Auto-save autre ─────────────────────────────────────────────────── */
+let _autoSaveAutreTimer = null;
+let _autState      = [];
+let _autNomList    = [];
+let _autHeuresList = [];
+
+function scheduleAutreAutoSave() {
+  clearTimeout(_autoSaveAutreTimer);
+  _autoSaveAutreTimer = setTimeout(doAutreAutoSave, 1800);
+}
+
+function buildAutreJson() {
+  const rows = [];
+  let i = 0;
+  while (document.getElementById(`aut_${i}_nom`) !== null) {
+    rows.push({
+      nom:     document.getElementById(`aut_${i}_nom`).value,
+      autre:   document.getElementById(`aut_${i}_autre`).value,
+      heures:  document.getElementById(`aut_${i}_heures`).value,
+    });
+    i++;
+  }
+  return JSON.stringify(rows, null, 2);
+}
+
+async function doAutreAutoSave() {
+  const ts = new Date().toLocaleString("fr-FR");
+  try {
+    await saveJsonToGitHub(GH_AUTRE_FILE, buildAutreJson(), `Autre — ${ts}`);
+    showToast("✓ Sauvegardé");
+  } catch (e) {
+    showToast("✗ GitHub : " + e.message);
+  }
+}
+
+function saveAutreField(el) {
+  localStorage.setItem(SK + el.id, el.value);
+  if (el.tagName === "SELECT") el.classList.toggle("filled", !!el.value);
+  scheduleAutreAutoSave();
+}
+
+function syncAutStateFromDom() {
+  _autState = [];
+  let i = 0;
+  while (document.getElementById(`aut_${i}_nom`) !== null) {
+    _autState.push({
+      nom:    document.getElementById(`aut_${i}_nom`).value,
+      autre:  document.getElementById(`aut_${i}_autre`).value,
+      heures: document.getElementById(`aut_${i}_heures`).value,
+    });
+    i++;
+  }
+}
+
+function buildAutRow(i, row) {
+  const savedNom    = row.nom    || "";
+  const savedAutre  = row.autre  || "";
+  const savedHeures = row.heures || "";
+  return `
+    <tr class="${i % 2 === 0 ? "group-even" : "group-odd"}">
+      <td><select class="mis-sel${savedNom ? " filled" : ""}" id="aut_${i}_nom" onchange="saveAutreField(this)">${makeOptions(_autNomList, savedNom)}</select></td>
+      <td><input type="text" class="mis-txt" id="aut_${i}_autre" value="${escapeAttr(savedAutre)}" oninput="saveAutreField(this)" placeholder="Autre…"></td>
+      <td style="text-align:center;"><select class="mis-sel${savedHeures ? " filled" : ""}" id="aut_${i}_heures" onchange="saveAutreField(this)">${makeOptions(_autHeuresList, savedHeures)}</select></td>
+      <td style="padding:4px 8px; text-align:center;">
+        <button class="btn-remove-subrow" onclick="removeAutreRow(${i})" title="Supprimer cette ligne">×</button>
+      </td>
+    </tr>`;
+}
+
+function rebuildAutreTable() {
+  const tbody = document.getElementById("aut-tbody");
+  if (tbody) tbody.innerHTML = _autState.map((row, i) => buildAutRow(i, row)).join("");
+}
+
+function addAutreRow() {
+  syncAutStateFromDom();
+  _autState.push({ nom: "", autre: "", heures: "" });
+  rebuildAutreTable();
+  scheduleAutreAutoSave();
+}
+
+function removeAutreRow(i) {
+  syncAutStateFromDom();
+  _autState.splice(i, 1);
+  rebuildAutreTable();
+  scheduleAutreAutoSave();
+}
+
+/* ── Vue Autre ────────────────────────────────────────────────────────── */
+async function renderAutre(root) {
+  root.innerHTML = `<div style="padding:3rem;text-align:center;color:#6b7280;">Chargement…</div>`;
+  try {
+    const [enseignants, autreData] = await Promise.all([
+      fetchGHJson("repartition/data/enseignants.json"),
+      fetchGHJson(GH_AUTRE_FILE).catch(() => []),
+    ]);
+
+    _autNomList = [["", "— Sélectionner —"]].concat(
+      [...enseignants]
+        .sort((a, b) => a.id.localeCompare(b.id, "fr"))
+        .map(e => [e.id, `${e.nom} ${e.prenom}`])
+    );
+
+    _autHeuresList = [["", "—"]].concat(
+      Array.from({ length: 11 }, (_, i) => [String(i), String(i)])
+    );
+
+    const saved = Array.isArray(autreData) ? autreData : [];
+    _autState = saved.length > 0 ? saved : [{ nom: "", autre: "", heures: "" }];
+
+    const autRows = _autState.map((row, i) => buildAutRow(i, row)).join("");
+
+    root.innerHTML = `
+      <div class="page-header">
+        <h1>Autre</h1>
+      </div>
+      <div>
+        <p class="subtitle">Autre — enseignants</p>
+        <div class="table-wrapper">
+          <table class="ressources-table mis-table">
+            <thead>
+              <tr>
+                <th style="width:200px;">Nom</th>
+                <th style="width:350px;">Autre</th>
+                <th style="width:70px; text-align:center;">Heures</th>
+                <th style="width:40px;"></th>
+              </tr>
+            </thead>
+            <tbody id="aut-tbody">${autRows}</tbody>
+          </table>
+        </div>
+        <div style="margin-top:0.6rem;">
+          <button class="btn-add-subrow" onclick="addAutreRow()" title="Ajouter une ligne">+</button>
+        </div>
+      </div>`;
+  } catch (e) {
+    root.innerHTML = `<div class="alert alert-danger" style="margin-top:1rem;">
+      Erreur de chargement : ${e.message}</div>`;
+  }
+}
+
 /* ── Vue Missions ─────────────────────────────────────────────────────── */
 async function renderMissions(root) {
   root.innerHTML = `<div style="padding:3rem;text-align:center;color:#6b7280;">Chargement…</div>`;
@@ -504,6 +646,8 @@ async function renderView(view) {
     await renderSAE(root);
   } else if (view === "missions") {
     await renderMissions(root);
+  } else if (view === "autre") {
+    await renderAutre(root);
   }
 }
 
