@@ -468,9 +468,21 @@ async function doAutreAutoSave() {
   }
 }
 
+function updateAutTotal() {
+  let sum = 0;
+  let i = 0;
+  while (document.getElementById(`aut_${i}_heures`) !== null) {
+    sum += parseInt(document.getElementById(`aut_${i}_heures`).value, 10) || 0;
+    i++;
+  }
+  const el = document.getElementById("aut-total");
+  if (el) el.textContent = sum;
+}
+
 function saveAutreField(el) {
   localStorage.setItem(SK + el.id, el.value);
   if (el.tagName === "SELECT") el.classList.toggle("filled", !!el.value);
+  updateAutTotal();
   scheduleAutreAutoSave();
 }
 
@@ -505,6 +517,7 @@ function buildAutRow(i, row) {
 function rebuildAutreTable() {
   const tbody = document.getElementById("aut-tbody");
   if (tbody) tbody.innerHTML = _autState.map((row, i) => buildAutRow(i, row)).join("");
+  updateAutTotal();
 }
 
 function addAutreRow() {
@@ -562,12 +575,21 @@ async function renderAutre(root) {
               </tr>
             </thead>
             <tbody id="aut-tbody">${autRows}</tbody>
+            <tfoot>
+              <tr class="reh-total-row">
+                <td><strong>Total</strong></td>
+                <td></td>
+                <td style="text-align:center;"><strong id="aut-total">0</strong></td>
+                <td></td>
+              </tr>
+            </tfoot>
           </table>
         </div>
         <div style="margin-top:0.6rem;">
           <button class="btn-add-subrow" onclick="addAutreRow()" title="Ajouter une ligne">+</button>
         </div>
       </div>`;
+    updateAutTotal();
   } catch (e) {
     root.innerHTML = `<div class="alert alert-danger" style="margin-top:1rem;">
       Erreur de chargement : ${e.message}</div>`;
@@ -659,9 +681,21 @@ async function doParcoursupAutoSave() {
   }
 }
 
+function updatePsTotal() {
+  let sum = 0;
+  let i = 0;
+  while (document.getElementById(`ps_${i}_heures`) !== null) {
+    sum += parseInt(document.getElementById(`ps_${i}_heures`).value, 10) || 0;
+    i++;
+  }
+  const el = document.getElementById("ps-total");
+  if (el) el.textContent = sum;
+}
+
 function saveParcoursupField(el) {
   localStorage.setItem(SK + el.id, el.value);
   if (el.tagName === "SELECT") el.classList.toggle("filled", !!el.value);
+  updatePsTotal();
   scheduleParcoursupAutoSave();
 }
 
@@ -696,6 +730,7 @@ function buildPsRow(i, row) {
 function rebuildPsTable() {
   const tbody = document.getElementById("ps-tbody");
   if (tbody) tbody.innerHTML = _psState.map((row, i) => buildPsRow(i, row)).join("");
+  updatePsTotal();
 }
 
 function addPsRow() {
@@ -747,12 +782,20 @@ async function renderParcoursup(root) {
               </tr>
             </thead>
             <tbody id="ps-tbody">${psRows}</tbody>
+            <tfoot>
+              <tr class="reh-total-row">
+                <td><strong>Total</strong></td>
+                <td style="text-align:center;"><strong id="ps-total">0</strong></td>
+                <td></td>
+              </tr>
+            </tfoot>
           </table>
         </div>
         <div style="margin-top:0.6rem;">
           <button class="btn-add-subrow" onclick="addPsRow()" title="Ajouter une ligne">+</button>
         </div>
       </div>`;
+    updatePsTotal();
   } catch (e) {
     root.innerHTML = `<div class="alert alert-danger" style="margin-top:1rem;">
       Erreur de chargement : ${e.message}</div>`;
