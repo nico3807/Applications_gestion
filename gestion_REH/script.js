@@ -69,6 +69,9 @@ async function saveJsonToGitHub(path, jsonStr, message) {
 
 /* ── Auto-save organisation ──────────────────────────────────────────── */
 let _autoSaveTimer = null;
+let _orgState   = [];
+let _orgNomList = [];
+let _orgValList = [];
 
 function scheduleAutoSave() {
   clearTimeout(_autoSaveTimer);
@@ -96,6 +99,50 @@ async function doAutoSave() {
 function saveOrgSel(el) {
   localStorage.setItem(SK + el.id, el.value);
   el.classList.toggle("filled", !!el.value);
+  scheduleAutoSave();
+}
+
+function syncOrgStateFromDom() {
+  _orgState = [];
+  let i = 0;
+  while (document.getElementById(`org_${i}_nom`) !== null) {
+    _orgState.push({
+      nom: document.getElementById(`org_${i}_nom`).value,
+      val: document.getElementById(`org_${i}_val`).value,
+    });
+    i++;
+  }
+}
+
+function buildOrgRow(i, row) {
+  const savedNom = row.nom || "";
+  const savedVal = row.val || "";
+  return `
+    <tr class="${i % 2 === 0 ? "group-even" : "group-odd"}">
+      <td><select class="org-sel${savedNom ? " filled" : ""}" id="org_${i}_nom" onchange="saveOrgSel(this)">${makeOptions(_orgNomList, savedNom)}</select></td>
+      <td style="text-align:center;"><select class="org-sel${savedVal ? " filled" : ""}" id="org_${i}_val" onchange="saveOrgSel(this)">${makeOptions(_orgValList, savedVal)}</select></td>
+      <td style="padding:4px 8px; text-align:center;">
+        <button class="btn-remove-subrow" onclick="removeOrgRow(${i})" title="Supprimer cette ligne">×</button>
+      </td>
+    </tr>`;
+}
+
+function rebuildOrgTable() {
+  const tbody = document.getElementById("org-tbody");
+  if (tbody) tbody.innerHTML = _orgState.map((row, i) => buildOrgRow(i, row)).join("");
+}
+
+function addOrgRow() {
+  syncOrgStateFromDom();
+  _orgState.push({ nom: "", val: "" });
+  rebuildOrgTable();
+  scheduleAutoSave();
+}
+
+function removeOrgRow(i) {
+  syncOrgStateFromDom();
+  _orgState.splice(i, 1);
+  rebuildOrgTable();
   scheduleAutoSave();
 }
 
@@ -257,25 +304,26 @@ function renderPortfolio(root, pfData, horairesData, enseignants, orgData) {
     </tr>`).join("");
 
   // ── Tableau Organisation portfolio ──────────────────────────────────
-  const nomList = [["", "— Sélectionner —"]].concat(
-    enseignants
+  _orgNomList = [["", "— Sélectionner —"]].concat(
+    [...enseignants]
       .sort((a, b) => a.id.localeCompare(b.id, "fr"))
       .map(e => [e.id, `${e.nom} ${e.prenom}`])
   );
-  const valList = [["", "—"]].concat(
+  _orgValList = [["", "—"]].concat(
     Array.from({ length: 6 }, (_, i) => [String(i), String(i)])
   );
 
-  const N = rows.length;
-  const orgRows = Array.from({ length: N }, (_, i) => {
-    const savedNom = orgData[`org_${i}_nom`] || localStorage.getItem(SK + `org_${i}_nom`) || "";
-    const savedVal = orgData[`org_${i}_val`] || localStorage.getItem(SK + `org_${i}_val`) || "";
-    return `
-      <tr class="${i % 2 === 0 ? "group-even" : "group-odd"}">
-        <td><select class="org-sel${savedNom ? " filled" : ""}" id="org_${i}_nom" onchange="saveOrgSel(this)">${makeOptions(nomList, savedNom)}</select></td>
-        <td style="text-align:center;"><select class="org-sel${savedVal ? " filled" : ""}" id="org_${i}_val" onchange="saveOrgSel(this)">${makeOptions(valList, savedVal)}</select></td>
-      </tr>`;
-  }).join("");
+  let maxOrgIdx = -1;
+  Object.keys(orgData).forEach(key => {
+    const m = key.match(/^org_(\d+)_/);
+    if (m) maxOrgIdx = Math.max(maxOrgIdx, parseInt(m[1]));
+  });
+  _orgState = Array.from({ length: maxOrgIdx + 1 }, (_, i) => ({
+    nom: orgData[`org_${i}_nom`] || localStorage.getItem(SK + `org_${i}_nom`) || "",
+    val: orgData[`org_${i}_val`] || localStorage.getItem(SK + `org_${i}_val`) || "",
+  }));
+
+  const orgRows = _orgState.map((row, i) => buildOrgRow(i, row)).join("");
 
   root.innerHTML = `
     <div class="page-header">
@@ -312,10 +360,14 @@ function renderPortfolio(root, pfData, horairesData, enseignants, orgData) {
               <tr>
                 <th>Nom</th>
                 <th style="text-align:center;">Nb</th>
+                <th style="width:1%;"></th>
               </tr>
             </thead>
-            <tbody>${orgRows}</tbody>
+            <tbody id="org-tbody">${orgRows}</tbody>
           </table>
+        </div>
+        <div style="margin-top:0.6rem;">
+          <button class="btn-add-subrow" onclick="addOrgRow()" title="Ajouter une ligne">+</button>
         </div>
       </div>
     </div>`;
