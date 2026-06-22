@@ -16963,5 +16963,14 @@
     "description": "S3 / R3.15 | Représentation et traitement de l'information / sous-groupe 1 / grpe_tp",
     "prev": "4",
     "next": "2"
+  },
+  {
+    "date": "22/06/2026",
+    "heure": "09:51:37",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S3 / R3.15 | Représentation et traitement de l'information / sous-groupe 3 / enseignant",
+    "prev": "",
+    "next": "ESCAIG Sylvie"
   }
 ]
