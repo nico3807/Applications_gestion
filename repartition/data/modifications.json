@@ -16891,5 +16891,14 @@
     "description": "Modification SOLDEVILA Loren",
     "prev": "SOLDEVILA Loren — Vacataire, dû:187, max:—",
     "next": "SOLDEVILA Lauren — Vacataire, dû:187, max:—"
+  },
+  {
+    "date": "22/06/2026",
+    "heure": "08:27:26",
+    "utilisateur": "nicolas.maurin",
+    "type": "SAÉ",
+    "description": "Responsable SAÉ 3.03 | Concevoir des visualisations de données pour le web et un support animé (S3)",
+    "prev": "LAGIEWKA Arnaud",
+    "next": "THEROND Emmanuel"
   }
 ]
