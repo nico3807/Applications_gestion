@@ -17107,5 +17107,14 @@
     "description": "S3 / R3.15 | Représentation et traitement de l'information / sous-groupe 3 / grpe_tp",
     "prev": "",
     "next": "2"
+  },
+  {
+    "date": "22/06/2026",
+    "heure": "09:52:41",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S3 / R3.15 | Représentation et traitement de l'information / sous-groupe 2 / tp",
+    "prev": "6",
+    "next": "4.5"
   }
 ]
