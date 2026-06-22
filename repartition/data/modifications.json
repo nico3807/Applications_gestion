@@ -16954,5 +16954,14 @@
     "description": "S3 / R3.08 | Écriture multimédia et narration / sous-groupe 1 / tp",
     "prev": "0.5",
     "next": "0"
+  },
+  {
+    "date": "22/06/2026",
+    "heure": "09:51:18",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S3 / R3.15 | Représentation et traitement de l'information / sous-groupe 1 / grpe_tp",
+    "prev": "4",
+    "next": "2"
   }
 ]
