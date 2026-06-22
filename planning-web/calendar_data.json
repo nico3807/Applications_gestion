@@ -4,11 +4,15 @@
       "day": 1,
       "weekday": "Tu",
       "events": {
-        "MMI1": "Rentrée 09h30",
-        "MMI2-crea": "Rentrée 11h",
-        "MMI2-Dev": "Rentrée 11h",
-        "MMI2-App": "Rentrée 11h",
-        "Réunion": "Réunion équipe rentrée"
+        "Réunion": "Réunion équipe rentrée",
+        "MMI3-crea": "Rentrée 09h30",
+        "MMI3-Dev": "Rentrée 09h30",
+        "MMI3-App": "Rentrée 09h30",
+        "MMI1": "Rentrée 11h",
+        "MMI2-crea": "Rentrée 09h30",
+        "MMI2-Dev": "Rentrée 09h30",
+        "MMI2-App": "Rentrée 09h30",
+        "Autre": "Activités d’intégration (13h30-17h)"
       }
     },
     {
@@ -20,9 +24,6 @@
       "day": 3,
       "weekday": "Th",
       "events": {
-        "MMI3-crea": "Rentrée 11h",
-        "MMI3-Dev": "Rentrée 11h",
-        "MMI3-App": "Rentrée 11h",
         "Réunion": "Grand jury"
       }
     },
@@ -570,7 +571,7 @@
       "events": {
         "MMI2-App": "Entreprise S04",
         "MMI2-Dev": "SAÉ 3.02 | Produire des contenus pour une communication plurimédia",
-        "MMI2-crea": "SAÉ 3.02 | Produire des contenus pour une communication plurimédia"
+        "MMI2-crea": "SAÉ 3.02 | Produire des contenus pour une communication plurimédia (Sandy)"
       },
       "week": 47
     },
@@ -580,7 +581,7 @@
       "events": {
         "MMI2-App": "Entreprise S04",
         "MMI2-Dev": "SAÉ 3.02 | Produire des contenus pour une communication plurimédia",
-        "MMI2-crea": "SAÉ 3.02 | Produire des contenus pour une communication plurimédia"
+        "MMI2-crea": "SAÉ 3.02 | Produire des contenus pour une communication plurimédia (Sandy)"
       }
     },
     {
@@ -589,7 +590,7 @@
       "events": {
         "MMI2-App": "Entreprise S04",
         "MMI2-Dev": "SAÉ 3.02 | Produire des contenus pour une communication plurimédia",
-        "MMI2-crea": "SAÉ 3.02 | Produire des contenus pour une communication plurimédia"
+        "MMI2-crea": "SAÉ 3.02 | Produire des contenus pour une communication plurimédia (Sandy)"
       }
     },
     {
@@ -598,7 +599,7 @@
       "events": {
         "MMI2-App": "Entreprise S04",
         "MMI2-Dev": "SAÉ 3.02 | Produire des contenus pour une communication plurimédia",
-        "MMI2-crea": "SAÉ 3.02 | Produire des contenus pour une communication plurimédia"
+        "MMI2-crea": "SAÉ 3.02 | Produire des contenus pour une communication plurimédia (Sandy)"
       }
     },
     {
@@ -607,7 +608,7 @@
       "events": {
         "MMI2-App": "Entreprise S04",
         "MMI2-Dev": "SAÉ 3.02 | Produire des contenus pour une communication plurimédia",
-        "MMI2-crea": "SAÉ 3.02 | Produire des contenus pour une communication plurimédia"
+        "MMI2-crea": "SAÉ 3.02 | Produire des contenus pour une communication plurimédia (Sandy)"
       }
     },
     {
@@ -1052,7 +1053,7 @@
         "MMI2-Dev": "SAÉ 3.03 | Concevoir des visualisations de données pour le web et un support animé",
         "Autre": "Vœux de l'IUT + 15 ans de l'IUT",
         "MMI1": "SAÉ 1.06 | Gérer un projet de communication numérique",
-        "MMI2-crea": "SAÉ 3.02 | Produire des contenus pour une communication plurimédia"
+        "MMI2-crea": "SAÉ 3.02 | Produire des contenus pour une communication plurimédia (Caroline)"
       },
       "week": 3
     },
@@ -1064,7 +1065,7 @@
         "MMI2-Dev": "SAÉ 3.03 | Concevoir des visualisations de données pour le web et un support animé",
         "Autre": "15 ans de l'IUT",
         "MMI1": "SAÉ 1.06 | Gérer un projet de communication numérique",
-        "MMI2-crea": "SAÉ 3.02 | Produire des contenus pour une communication plurimédia"
+        "MMI2-crea": "SAÉ 3.02 | Produire des contenus pour une communication plurimédia (Caroline)"
       }
     },
     {
@@ -1075,7 +1076,7 @@
         "MMI2-Dev": "SAÉ 3.03 | Concevoir des visualisations de données pour le web et un support animé",
         "Autre": "15 ans de l'IUT",
         "MMI1": "SAÉ 1.06 | Gérer un projet de communication numérique",
-        "MMI2-crea": "SAÉ 3.02 | Produire des contenus pour une communication plurimédia"
+        "MMI2-crea": "SAÉ 3.02 | Produire des contenus pour une communication plurimédia (Caroline)"
       }
     },
     {
@@ -1086,7 +1087,7 @@
         "MMI2-Dev": "SAÉ 3.03 | Concevoir des visualisations de données pour le web et un support animé",
         "Autre": "15 ans de l'IUT",
         "MMI1": "SAÉ 1.06 | Gérer un projet de communication numérique",
-        "MMI2-crea": "SAÉ 3.02 | Produire des contenus pour une communication plurimédia"
+        "MMI2-crea": "SAÉ 3.02 | Produire des contenus pour une communication plurimédia (Caroline)"
       }
     },
     {
@@ -1097,7 +1098,7 @@
         "MMI2-Dev": "SAÉ 3.03 | Concevoir des visualisations de données pour le web et un support animé",
         "Autre": "15 ans de l'IUT",
         "MMI1": "SAÉ 1.06 | Gérer un projet de communication numérique",
-        "MMI2-crea": "SAÉ 3.02 | Produire des contenus pour une communication plurimédia"
+        "MMI2-crea": "SAÉ 3.02 | Produire des contenus pour une communication plurimédia (Caroline)"
       }
     },
     {
