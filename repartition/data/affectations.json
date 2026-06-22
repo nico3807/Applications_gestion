@@ -2299,7 +2299,8 @@
           "enseignant": "ESCAIG Sylvie",
           "cm": 0,
           "td": 0,
-          "tp": 6
+          "tp": 6,
+          "grpe_tp": 2
         }
       ],
       "responsable": "",
