@@ -16882,5 +16882,14 @@
     "description": "S3 / R3.09 | Création et design interactif (UI) / sous-groupe 1 / cm",
     "prev": "0.5",
     "next": "0"
+  },
+  {
+    "date": "22/06/2026",
+    "heure": "08:27:01",
+    "utilisateur": "nicolas.maurin",
+    "type": "Enseignants",
+    "description": "Modification SOLDEVILA Loren",
+    "prev": "SOLDEVILA Loren — Vacataire, dû:187, max:—",
+    "next": "SOLDEVILA Lauren — Vacataire, dû:187, max:—"
   }
 ]
