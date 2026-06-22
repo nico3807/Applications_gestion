@@ -1802,6 +1802,12 @@
           "cm": 0,
           "td": 15,
           "tp": 0
+        },
+        {
+          "enseignant": "",
+          "cm": 0,
+          "td": 0,
+          "tp": 0
         }
       ],
       "responsable": "",
@@ -2291,7 +2297,7 @@
           "enseignant": "MORICEAU Maryvonne",
           "cm": 0,
           "td": 4.5,
-          "tp": 4.5,
+          "tp": 6,
           "grpe_td": 2,
           "grpe_tp": 4
         },
@@ -2299,8 +2305,7 @@
           "enseignant": "ESCAIG Sylvie",
           "cm": 0,
           "td": 0,
-          "tp": 6,
-          "grpe_tp": 2
+          "tp": 0
         }
       ],
       "responsable": "",
