@@ -17062,5 +17062,32 @@
     "description": "S5 dev / SAÉ 5D.01 | Développer pour le web / sous-groupe 2 / td",
     "prev": "20.5",
     "next": "24"
+  },
+  {
+    "date": "22/06/2026",
+    "heure": "10:41:03",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S3 / R3.09 | Création et design interactif (UI) / tp",
+    "prev": "6",
+    "next": "6.5"
+  },
+  {
+    "date": "22/06/2026",
+    "heure": "10:41:03",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S3 / R3.09 | Création et design interactif (UI) / tp",
+    "prev": "6.5",
+    "next": "7"
+  },
+  {
+    "date": "22/06/2026",
+    "heure": "10:41:03",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S3 / R3.09 | Création et design interactif (UI) / tp",
+    "prev": "7",
+    "next": "7.5"
   }
 ]
