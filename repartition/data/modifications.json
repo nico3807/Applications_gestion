@@ -17314,5 +17314,32 @@
     "description": "S3 / R3.09 | Création et design interactif (UI) / sous-groupe 1 / tp",
     "prev": "5.5",
     "next": "6"
+  },
+  {
+    "date": "23/06/2026",
+    "heure": "09:17:05",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S4 crea / R4.Crea.03 | Design d'expérience / td",
+    "prev": "3",
+    "next": "2.5"
+  },
+  {
+    "date": "23/06/2026",
+    "heure": "09:17:05",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S4 crea / R4.Crea.03 | Design d'expérience / td",
+    "prev": "2.5",
+    "next": "2"
+  },
+  {
+    "date": "23/06/2026",
+    "heure": "09:17:06",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S4 crea / R4.Crea.03 | Design d'expérience / td",
+    "prev": "2",
+    "next": "1.5"
   }
 ]
