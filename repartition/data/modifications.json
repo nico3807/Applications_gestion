@@ -17341,5 +17341,14 @@
     "description": "S4 crea / R4.Crea.03 | Design d'expérience / td",
     "prev": "2",
     "next": "1.5"
+  },
+  {
+    "date": "23/06/2026",
+    "heure": "16:53:13",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S2 / SAÉ 2.04 | Construire sa présence en ligne / td",
+    "prev": "12",
+    "next": "0"
   }
 ]
