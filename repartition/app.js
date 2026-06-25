@@ -2259,8 +2259,8 @@ function renderEnseignants(root) {
       </button>
     </div>
   </div>`;
-  // Calcul des heures Parcours (S4–S6 crea/dev uniquement)
-  const _PARCOURS_LIST = ["S4 crea", "S4 dev", "S5 crea", "S5 dev", "S6 crea", "S6 dev"];
+  // Calcul des heures Parcours (S3–S6)
+  const _PARCOURS_LIST = ["S3", "S4 crea", "S4 dev", "S5 crea", "S5 dev", "S6 crea", "S6 dev"];
   const totalsParc = {};
   const totalsParc_bySem = {};
   _PARCOURS_LIST.forEach((sem) => {
@@ -2358,7 +2358,7 @@ function renderEnseignants(root) {
   const pctBg = pctVac < 25 ? "#fef2f2" : "#f0fdf4";
   const pctBorder = pctVac < 25 ? "#fecaca" : "#bbf7d0";
 
-  // Calcul du pourcentage de vacataires (Parcours S4–S6)
+  // Calcul du pourcentage de vacataires (Parcours S3–S6)
   let heuresPermanentsParc = 0, heuresCEVParc = 0, heuresVacSimplesParc = 0;
   Object.keys(totalsParc).forEach((id) => {
     const e = ensMapStat[id];
@@ -2386,7 +2386,7 @@ function renderEnseignants(root) {
     });
     parcoursStats[sem] = { tit: perm + cev, vac: vacS, total: perm + cev + vacS };
   });
-  parcoursStats["Tout"] = { tit: heuresPermanentsParc + heuresCEVParc, vac: heuresVacSimplesParc, total: grandTotalParc };
+  parcoursStats["S3 à S6"] = { tit: heuresPermanentsParc + heuresCEVParc, vac: heuresVacSimplesParc, total: grandTotalParc };
   window._parcoursStatsData = parcoursStats;
 
   html += `<div style="display:flex; justify-content:center; gap:2rem; flex-wrap:wrap; margin-top:2rem">
@@ -2402,7 +2402,7 @@ function renderEnseignants(root) {
     <div id="parcours-pct-card" class="form-card" style="max-width:340px; background:${pctBgParc}; border-color:${pctBorderParc}">
         <h3 style="margin-bottom:.75rem; color:#1e3a5f">Pourcentage de vacataires Parcours</h3>
         <div style="display:flex; gap:4px; flex-wrap:wrap; margin-bottom:.75rem;">
-          ${["Tout", ..._PARCOURS_LIST].map(s => `<button class="sem-btn parcours-tag${s === "Tout" ? " active" : ""}" style="font-size:11px;padding:2px 8px;" onclick="_switchParcours('${s}')">${s}</button>`).join("")}
+          ${["S3 à S6", ..._PARCOURS_LIST].map(s => `<button class="sem-btn parcours-tag${s === "S3 à S6" ? " active" : ""}" style="font-size:11px;padding:2px 8px;" onclick="_switchParcours('${s}')">${s}</button>`).join("")}
         </div>
         <div id="parcours-pct-val" style="font-size:3rem; font-weight:800; color:${pctColorParc}; text-align:center; line-height:1; margin-bottom:1.25rem">${pctVacParc.toFixed(1)}<span style="font-size:1.5rem">%</span></div>
         <div style="font-size:13px; color:#374151; display:flex; flex-direction:column; gap:6px; border-top:1px solid ${pctBorderParc}; padding-top:1rem">
