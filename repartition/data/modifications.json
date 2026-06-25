@@ -17350,5 +17350,14 @@
     "description": "S2 / SAÉ 2.04 | Construire sa présence en ligne / td",
     "prev": "12",
     "next": "0"
+  },
+  {
+    "date": "25/06/2026",
+    "heure": "13:34:42",
+    "utilisateur": "nicolas.maurin",
+    "type": "Enseignants",
+    "description": "Ajout",
+    "prev": "—",
+    "next": "WALLEZ Guillaume"
   }
 ]
