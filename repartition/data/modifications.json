@@ -17395,5 +17395,14 @@
     "description": "S2 / R2.19 | Projet Personnel et Professionnel / sous-groupe 4 / td",
     "prev": "0",
     "next": "1.5"
+  },
+  {
+    "date": "25/06/2026",
+    "heure": "14:08:57",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S4 crea / R4.Crea.03 | Design d'expérience / enseignant",
+    "prev": "RAMPON Candice",
+    "next": "WALLEZ Guillaume"
   }
 ]
