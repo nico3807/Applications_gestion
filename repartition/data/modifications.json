@@ -17422,5 +17422,23 @@
     "description": "S5 crea / R5.Crea.07 | Ecriture Multimédia et narration / tp",
     "prev": "13.5",
     "next": "15"
+  },
+  {
+    "date": "25/06/2026",
+    "heure": "14:18:46",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S5 crea / SAÉ 5.Crea.01 | Créer par/pour le numérique / sous-groupe 3 / td",
+    "prev": "18",
+    "next": "26"
+  },
+  {
+    "date": "25/06/2026",
+    "heure": "14:18:47",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S5 crea / SAÉ 5.Crea.01 | Créer par/pour le numérique / sous-groupe 2 / td",
+    "prev": "3",
+    "next": "26"
   }
 ]
