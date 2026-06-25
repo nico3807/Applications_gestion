@@ -17377,5 +17377,14 @@
     "description": "S4 crea / R4.Crea.04 | Expression, communication / enseignant",
     "prev": "THEROND Emmanuel",
     "next": "MARTINEZ Jonathan"
+  },
+  {
+    "date": "25/06/2026",
+    "heure": "14:07:15",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S2 / R2.19 | Projet Personnel et Professionnel / sous-groupe 4 / enseignant",
+    "prev": "",
+    "next": "MARTINEZ Jonathan"
   }
 ]
