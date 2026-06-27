@@ -78,16 +78,7 @@
       "cm": 6,
       "td": 12,
       "tp": 0,
-      "subrows": [
-        {
-          "enseignant": "THEROND Emmanuel",
-          "cm": 0,
-          "td": 0,
-          "tp": 0,
-          "grpe_td": 2,
-          "grpe_tp": 4
-        }
-      ],
+      "subrows": [],
       "responsable": "",
       "grpe_td": 2,
       "grpe_tp": 4
