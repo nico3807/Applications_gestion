@@ -17575,5 +17575,14 @@
     "description": "S6 crea / R6.Crea.01 | Entrepreunariat / td",
     "prev": "15.5",
     "next": "15"
+  },
+  {
+    "date": "27/06/2026",
+    "heure": "16:07:06",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S1 / SAÉ 1.01 | Auditer une communication numérique / sous-groupe 2 / enseignant",
+    "prev": "THEROND Emmanuel",
+    "next": "ESCAIG Sylvie"
   }
 ]
