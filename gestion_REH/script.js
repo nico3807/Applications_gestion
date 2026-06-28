@@ -997,7 +997,37 @@ function _rehXlsxSheet(headers, dataRows, totalRow, colWidths) {
   return ws;
 }
 
-function exportRecapXLSX() {
+function showExportModal() {
+  if (typeof XLSX === "undefined") { alert("Bibliothèque XLSX non chargée."); return; }
+  if (!_recapData) { alert("Veuillez d'abord charger la page Récapitulatif."); return; }
+  const existing = document.getElementById("xlsx-export-modal");
+  if (existing) existing.remove();
+  const modal = document.createElement("div");
+  modal.id = "xlsx-export-modal";
+  modal.style.cssText = "position:fixed;inset:0;background:rgba(0,0,0,0.4);z-index:3000;display:flex;align-items:center;justify-content:center;";
+  modal.innerHTML = `
+    <div class="form-card" style="max-width:360px;width:90%;padding:2rem;">
+      <h3 style="margin-bottom:1.5rem;color:#1e3a5f;text-align:center;">Exporter en XLSX</h3>
+      <div style="display:flex;flex-direction:column;gap:0.75rem;">
+        <button class="btn-pdf-action" style="width:100%;justify-content:center;"
+          onclick="document.getElementById('xlsx-export-modal').remove();exportRecapXLSXComplet()">
+          Récapitulatif complet
+        </button>
+        <button class="btn-pdf-action" style="width:100%;justify-content:center;"
+          onclick="document.getElementById('xlsx-export-modal').remove();exportRecapXLSXParEnseignant()">
+          Récapitulatif par enseignant
+        </button>
+        <button style="width:100%;padding:8px;border:1px solid #d1d5db;border-radius:6px;background:#fff;cursor:pointer;font-family:inherit;font-size:13px;margin-top:4px;"
+          onclick="document.getElementById('xlsx-export-modal').remove()">
+          Annuler
+        </button>
+      </div>
+    </div>`;
+  modal.addEventListener("click", e => { if (e.target === modal) modal.remove(); });
+  document.body.appendChild(modal);
+}
+
+function exportRecapXLSXComplet() {
   if (typeof XLSX === "undefined") { alert("Bibliothèque XLSX non chargée."); return; }
   if (!_recapData) { alert("Veuillez d'abord charger la page Récapitulatif."); return; }
 
@@ -1073,6 +1103,63 @@ function exportRecapXLSX() {
     ), "Parcoursup");
 
   XLSX.writeFile(wb, "recap_REH.xlsx");
+}
+
+function exportRecapXLSXParEnseignant() {
+  if (typeof XLSX === "undefined") { alert("Bibliothèque XLSX non chargée."); return; }
+  if (!_recapData) { alert("Veuillez d'abord charger la page Récapitulatif."); return; }
+
+  const { juryRows, orgRows, saeRows, miRows, autRows, psRows, totalRows, names } = _recapData;
+
+  const saeREHFor = r => parseInt(r.heures !== "" && r.heures !== undefined ? r.heures : (r.nbre || 0) * 2, 10) || 0;
+  const lastNameOf = nom => nom.trim().split(/\s+/)[0];
+  const nameFor = k => {
+    const all = [...names[k]].sort((a, b) => a.localeCompare(b, "fr"));
+    const full = all.filter(n => n.includes(" "));
+    const cands = full.length > 0 ? full : all;
+    const deduped = cands.filter(n => !cands.some(o => o !== n && o.startsWith(n + " ")));
+    return (deduped.length > 0 ? deduped : cands).join(", ");
+  };
+
+  const wb = XLSX.utils.book_new();
+  const usedNames = {};
+
+  for (const [k, total] of totalRows) {
+    const rows = [];
+
+    juryRows.filter(([nom]) => lastNameOf(nom) === k).forEach(([, n]) => {
+      rows.push(["REH Portfolio (jurys)", `${n} jury${n > 1 ? "s" : ""}`, n * 3]);
+    });
+    orgRows.filter(r => lastNameOf(r.nom) === k).forEach(r => {
+      rows.push(["Organisation portfolio", "", parseInt(r.val, 10) || 0]);
+    });
+    saeRows.filter(r => lastNameOf(r.nom) === k).forEach(r => {
+      rows.push(["REH SAÉ", `${r.nbre || 0} SAÉ`, saeREHFor(r)]);
+    });
+    miRows.filter(r => lastNameOf(r.nom) === k).forEach(r => {
+      rows.push(["Mission", r.remarque || "", parseInt(r.heures, 10) || 0]);
+    });
+    autRows.filter(r => lastNameOf(r.nom) === k).forEach(r => {
+      rows.push(["Autre", r.autre || "", parseInt(r.heures, 10) || 0]);
+    });
+    psRows.filter(r => lastNameOf(r.nom) === k).forEach(r => {
+      rows.push(["Parcoursup", "", parseInt(r.heures, 10) || 0]);
+    });
+
+    let sheetName = nameFor(k).substring(0, 31);
+    if (usedNames[sheetName]) { sheetName = sheetName.substring(0, 29) + "_" + (++usedNames[sheetName]); }
+    else { usedNames[sheetName] = 1; }
+
+    XLSX.utils.book_append_sheet(wb,
+      _rehXlsxSheet(
+        ["Type de mission", "Détail", "Heures REH"],
+        rows,
+        ["Total REH", "", total],
+        [{ wch: 28 }, { wch: 45 }, { wch: 12 }]
+      ), sheetName);
+  }
+
+  XLSX.writeFile(wb, "recap_REH_par_enseignant.xlsx");
 }
 
 /* ── Vue Récapitulatif ────────────────────────────────────────────────── */
@@ -1170,7 +1257,7 @@ async function renderRecap(root) {
     root.innerHTML = `
       <div class="page-header"><h1>Récapitulatif</h1></div>
       <div style="margin-bottom:1.2rem;">
-        <button class="btn-pdf-action" onclick="exportRecapXLSX()">⬇ Exporter XLSX</button>
+        <button class="btn-pdf-action" onclick="showExportModal()">⬇ Exporter XLSX</button>
       </div>
       <div style="display:flex;flex-wrap:wrap;gap:2rem;align-items:center;">
 
