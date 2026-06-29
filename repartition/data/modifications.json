@@ -17584,5 +17584,41 @@
     "description": "S1 / SAÉ 1.01 | Auditer une communication numérique / sous-groupe 2 / enseignant",
     "prev": "THEROND Emmanuel",
     "next": "ESCAIG Sylvie"
+  },
+  {
+    "date": "29/06/2026",
+    "heure": "14:26:59",
+    "utilisateur": "nicolas.maurin",
+    "type": "SAÉ",
+    "description": "Suppression — S4 dev",
+    "prev": "SAÉ 4.DWeb-DI.04 | Apprentis : Interface, contenus et visualisation",
+    "next": "—"
+  },
+  {
+    "date": "29/06/2026",
+    "heure": "14:27:30",
+    "utilisateur": "nicolas.maurin",
+    "type": "SAÉ",
+    "description": "Suppression — S5 dev",
+    "prev": "SAÉ 5D.03 | Concevoir un dispositif interactif",
+    "next": "—"
+  },
+  {
+    "date": "29/06/2026",
+    "heure": "14:27:35",
+    "utilisateur": "nicolas.maurin",
+    "type": "SAÉ",
+    "description": "Suppression — S5 dev",
+    "prev": "SAÉ 5D.02 | SAE Management",
+    "next": "—"
+  },
+  {
+    "date": "29/06/2026",
+    "heure": "14:27:37",
+    "utilisateur": "nicolas.maurin",
+    "type": "SAÉ",
+    "description": "Suppression — S5 dev",
+    "prev": "SAÉ 5D.04 | Integration d'un LLM",
+    "next": "—"
   }
 ]
