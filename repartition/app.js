@@ -3970,6 +3970,21 @@ window.showSouhaitsRecap = function () {
               padding:4px 12px;cursor:pointer;font-size:13px;color:#374151;">✕ Fermer</button>
         </div>
       </div>
+      ${AUTH.canWrite() ? (() => {
+        const opts = Object.entries(_LOGIN_TO_NOM)
+          .sort(([, a], [, b]) => a.localeCompare(b, "fr"))
+          .map(([login, nom]) => `<option value="${esc(login)}">${esc(nom)}</option>`)
+          .join("");
+        return `<div style="padding:8px 20px;border-bottom:1px solid #e5e7eb;display:flex;
+          gap:8px;align-items:center;flex-shrink:0;flex-wrap:wrap;">
+          <span style="font-size:12px;font-weight:600;color:#374151;white-space:nowrap;">Export par enseignant :</span>
+          <select id="souhaits-recap-ens-select" style="flex:1;min-width:180px;padding:4px 8px;
+            border:1.5px solid #d1d5db;border-radius:6px;font-size:13px;color:#374151;">
+            ${opts}
+          </select>
+          <button class="btn-pdf-action" onclick="exportOneEnseignantSouhaitsXLSX()">⬇ Exporter</button>
+        </div>`;
+      })() : ""}
       <div style="overflow-y:auto;padding:16px 20px;">${sections}</div>
     </div>`;
   modal.addEventListener("click", (e) => {
@@ -4351,12 +4366,18 @@ window.exportAllSouhaitsXLSX = async function () {
   XLSX.writeFile(wb, filename);
 };
 
-window.exportOneEnseignantSouhaitsXLSX = function () {
+window.exportOneEnseignantSouhaitsXLSX = async function () {
   if (typeof XLSX === "undefined") { alert("Bibliothèque XLSX non chargée."); return; }
 
-  const select = document.getElementById("all-souhaits-ens-select");
+  const select = document.getElementById("all-souhaits-ens-select")
+    || document.getElementById("souhaits-recap-ens-select");
   if (!select) return;
   const login = select.value;
+
+  if (!_allSouhaitsData[login]) {
+    _allSouhaitsData = await _loadAllSouhaits();
+  }
+
   const d = _allSouhaitsData[login];
   if (!d) { showToast("Aucun souhait pour cet enseignant."); return; }
 
