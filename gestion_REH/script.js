@@ -332,7 +332,7 @@ function renderPortfolio(root, pfData, horairesData, enseignants, orgData) {
       .map(e => [e.id, `${e.nom} ${e.prenom}`])
   );
   _orgValList = [["", "—"]].concat(
-    Array.from({ length: 6 }, (_, i) => [String(i), String(i)])
+    Array.from({ length: 11 }, (_, i) => [String(i), String(i)])
   );
 
   let maxOrgIdx = -1;
