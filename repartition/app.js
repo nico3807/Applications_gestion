@@ -872,6 +872,7 @@ function _buildServicesData() {
   SEMESTRES.forEach((sem) => {
     const sem_data = APP_DATA.affectations[sem] || {};
     Object.keys(sem_data).forEach((res) => {
+      if (res.toLowerCase().includes("portfolio")) return;
       const data = sem_data[res];
       const entries = [
         { enseignant: data.enseignant, cm: data.cm, td: data.td, tp: data.tp },
@@ -2033,6 +2034,7 @@ function renderServices(root) {
   SEMESTRES.forEach((sem) => {
     const sem_data = APP_DATA.affectations[sem] || {};
     Object.keys(sem_data).forEach((res) => {
+      if (res.toLowerCase().includes("portfolio")) return;
       const data = sem_data[res];
       const entries = [
         { enseignant: data.enseignant, cm: data.cm, td: data.td, tp: data.tp },
@@ -2200,6 +2202,7 @@ function renderEnseignants(root) {
   SEMESTRES.forEach((sem) => {
     const sem_data = APP_DATA.affectations[sem] || {};
     Object.keys(sem_data).forEach((res) => {
+      if (res.toLowerCase().includes("portfolio")) return;
       const data = sem_data[res];
       const entries = [
         { enseignant: data.enseignant, cm: data.cm, td: data.td, tp: data.tp },
@@ -3764,6 +3767,7 @@ const _LOGIN_TO_NOM = {
 
 let _souhaitsFilter = "S1";
 let _allSouhaitsFilter = "Tout";
+let _allSouhaitsData = {};
 
 function _souhaitNom() {
   return _LOGIN_TO_NOM[AUTH.user()] || AUTH.user();
@@ -4047,6 +4051,21 @@ window.showSouhaitsRecap = function () {
               padding:4px 12px;cursor:pointer;font-size:13px;color:#374151;">✕ Fermer</button>
         </div>
       </div>
+      ${AUTH.canWrite() ? (() => {
+        const opts = Object.entries(_LOGIN_TO_NOM)
+          .sort(([, a], [, b]) => a.localeCompare(b, "fr"))
+          .map(([login, nom]) => `<option value="${esc(login)}">${esc(nom)}</option>`)
+          .join("");
+        return `<div style="padding:8px 20px;border-bottom:1px solid #e5e7eb;display:flex;
+          gap:8px;align-items:center;flex-shrink:0;flex-wrap:wrap;">
+          <span style="font-size:12px;font-weight:600;color:#374151;white-space:nowrap;">Export par enseignant :</span>
+          <select id="souhaits-recap-ens-select" style="flex:1;min-width:180px;padding:4px 8px;
+            border:1.5px solid #d1d5db;border-radius:6px;font-size:13px;color:#374151;">
+            ${opts}
+          </select>
+          <button class="btn-pdf-action" onclick="exportOneEnseignantSouhaitsXLSX()">⬇ Exporter</button>
+        </div>`;
+      })() : ""}
       <div style="overflow-y:auto;padding:16px 20px;">${sections}</div>
     </div>`;
   modal.addEventListener("click", (e) => {
@@ -4125,6 +4144,7 @@ window.showAllSouhaitsRecap = async function () {
   if (!AUTH.canWrite()) return;
 
   const all = await _loadAllSouhaits();
+  _allSouhaitsData = all;
   const logins = Object.keys(all);
   if (!logins.length) {
     showToast("Aucun souhait enregistré pour l'instant.");
@@ -4226,6 +4246,13 @@ window.showAllSouhaitsRecap = async function () {
         font-size:12px;font-weight:600;cursor:pointer;white-space:nowrap;">${s}</button>`
   ).join("");
 
+  const sortedLoginsByNom = [...logins].sort((a, b) =>
+    (all[a].nom || a).localeCompare(all[b].nom || b, "fr")
+  );
+  const ensOptions = sortedLoginsByNom
+    .map(login => `<option value="${esc(login)}">${esc(all[login].nom || login)}</option>`)
+    .join("");
+
   const modal = document.createElement("div");
   modal.id = "all-souhaits-modal";
   modal.style.cssText =
@@ -4249,6 +4276,15 @@ window.showAllSouhaitsRecap = async function () {
       <div style="padding:10px 20px;border-bottom:1px solid #e5e7eb;display:flex;
         gap:6px;flex-wrap:wrap;flex-shrink:0;">
         ${filterBtns}
+      </div>
+      <div style="padding:8px 20px;border-bottom:1px solid #e5e7eb;display:flex;
+        gap:8px;align-items:center;flex-shrink:0;flex-wrap:wrap;">
+        <span style="font-size:12px;font-weight:600;color:#374151;white-space:nowrap;">Export par enseignant :</span>
+        <select id="all-souhaits-ens-select" style="flex:1;min-width:180px;padding:4px 8px;
+          border:1.5px solid #d1d5db;border-radius:6px;font-size:13px;color:#374151;">
+          ${ensOptions}
+        </select>
+        <button class="btn-pdf-action" onclick="exportOneEnseignantSouhaitsXLSX()">⬇ Exporter</button>
       </div>
       <div style="overflow-y:auto;padding:16px 20px;">${sections}</div>
     </div>`;
@@ -4409,6 +4445,51 @@ window.exportAllSouhaitsXLSX = async function () {
     ? "souhaits_tous_enseignants.xlsx"
     : `souhaits_${_allSouhaitsFilter.replace(/\s+/g, "_")}.xlsx`;
   XLSX.writeFile(wb, filename);
+};
+
+window.exportOneEnseignantSouhaitsXLSX = async function () {
+  if (typeof XLSX === "undefined") { alert("Bibliothèque XLSX non chargée."); return; }
+
+  const select = document.getElementById("all-souhaits-ens-select")
+    || document.getElementById("souhaits-recap-ens-select");
+  if (!select) return;
+  const login = select.value;
+
+  if (!_allSouhaitsData[login]) {
+    _allSouhaitsData = await _loadAllSouhaits();
+  }
+
+  const d = _allSouhaitsData[login];
+  if (!d) { showToast("Aucun souhait pour cet enseignant."); return; }
+
+  const nom = d.nom || login;
+  const souhaits = d.souhaits || {};
+
+  const dataRows = [];
+  SEMESTRES.forEach((sem) => {
+    const codes = souhaits[sem] || [];
+    if (!codes.length) return;
+    const saeList = APP_DATA.sae?.sae?.[sem] || [];
+    codes.forEach((code) => {
+      const isSae = !!saeList.find((s) => s.code === code);
+      dataRows.push([sem, code, isSae ? "SAÉ" : "Ressource"]);
+    });
+  });
+
+  if (!dataRows.length) {
+    showToast("Aucun souhait pour cet enseignant.");
+    return;
+  }
+
+  const ws = _xlsxBuildSheet(
+    ["Semestre", "Code / Intitulé", "Type"],
+    dataRows,
+    [{ wch: 14 }, { wch: 52 }, { wch: 12 }]
+  );
+
+  const wb = XLSX.utils.book_new();
+  XLSX.utils.book_append_sheet(wb, ws, nom.substring(0, 31));
+  XLSX.writeFile(wb, `souhaits_${nom.replace(/[\s.]/g, "_")}.xlsx`);
 };
 
 document.addEventListener("DOMContentLoaded", async () => {
