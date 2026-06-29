@@ -664,6 +664,14 @@
           "tp": 10.5,
           "grpe_td": 2,
           "grpe_tp": 4
+        },
+        {
+          "enseignant": "THEROND Emmanuel",
+          "cm": 0,
+          "td": 0,
+          "tp": 0,
+          "grpe_td": 2,
+          "grpe_tp": 4
         }
       ],
       "responsable": "",
@@ -1407,7 +1415,7 @@
     "PORTFOLIO | Portfolio-Parcours Création Numérique": {
       "enseignant": "BLANCO Sandy",
       "cm": 0,
-      "td": 4.5,
+      "td": 3,
       "tp": 0,
       "subrows": [
         {
@@ -2157,6 +2165,14 @@
           "cm": 0,
           "td": 0,
           "tp": 10.5,
+          "grpe_td": 2,
+          "grpe_tp": 4
+        },
+        {
+          "enseignant": "THEROND Emmanuel",
+          "cm": 0,
+          "td": 0,
+          "tp": 0,
           "grpe_td": 2,
           "grpe_tp": 4
         }
