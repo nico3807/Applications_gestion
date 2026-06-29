@@ -287,7 +287,7 @@ const CFG_LEVELS = {
 };
 const CFG_MAX_JURIES = 8;
 const CFG_MAX_CRENEAUX = 8;
-const CFG_MAX_TEACHERS = 5;
+const CFG_MAX_TEACHERS = 10;
 
 function parseJuryDate(str) {
   str = (str || "").trim();
