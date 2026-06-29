@@ -1015,7 +1015,7 @@ function _exportServicesXLSX(targetEns) {
 
   sortedEns.forEach((ens) => {
     const rows = par_enseignant[ens] || [];
-    let totalCM = 0, totalTD = 0, totalTP = 0;
+    let totalCM = 0, totalTD = 0, totalTP = 0, serviceTotal = 0;
 
     const aoa = [["Semestre", "Ressource / SAÉ", "CM", "TD", "TP"].map((h) => _xlsxCell(h, S_HDR))];
 
@@ -1026,6 +1026,10 @@ function _exportServicesXLSX(targetEns) {
       totalCM += r.cm * c.cm;
       totalTD += r.td * c.td;
       totalTP += r.tp * c.tp;
+      const isS123 = _SEM_S1S3.has((r.semestre.match(/^S\d/) || [""])[0]);
+      serviceTotal += isS123
+        ? r.cm * 1.5 + r.td * 2 + r.tp * 4
+        : r.td * 1 + r.tp * 2;
       aoa.push([
         _xlsxCell(r.semestre, mkSemStyle(r.semestre, even)),
         _xlsxCell(r.ressource, s),
@@ -1035,8 +1039,15 @@ function _exportServicesXLSX(targetEns) {
       ]);
     });
 
-    /* Ligne vide + ligne TOTAL (valeurs pondérées en EqTD) */
+    /* Ligne vide + ligne Total service + ligne TOTAL EqTD */
     aoa.push(Array(5).fill(_xlsxCell("", S_BLANK)));
+    aoa.push([
+      _xlsxCell("", S_TOT_LBL),
+      _xlsxCell("Total service", S_TOT_LBL),
+      _xlsxCell(Math.round(serviceTotal * 10) / 10, S_TOT_NUM),
+      _xlsxCell("", S_TOT_NUM),
+      _xlsxCell("", S_TOT_NUM),
+    ]);
     aoa.push([
       _xlsxCell("", S_TOT_LBL),
       _xlsxCell("TOTAL EqTD", S_TOT_LBL),
@@ -1046,6 +1057,9 @@ function _exportServicesXLSX(targetEns) {
     ]);
 
     const ws = XLSX.utils.aoa_to_sheet(aoa, { cellStyles: true });
+    /* Fusionner les colonnes CM-TD-TP sur la ligne "Total service" */
+    const totSvcRowIdx = rows.length + 2; // header(0) + données(1..n) + vide(n+1) + totSvc(n+2)
+    ws["!merges"] = [{ s: { r: totSvcRowIdx, c: 2 }, e: { r: totSvcRowIdx, c: 4 } }];
     ws["!cols"]   = COL_WIDTHS;
     ws["!freeze"] = { xSplit: 0, ySplit: 1 };
     XLSX.utils.book_append_sheet(wb, ws, ens.substring(0, 31));
