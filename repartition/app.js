@@ -1418,14 +1418,21 @@ function renderSemestre(root, sem) {
 
     /* Totaux CM/TD/TP de la ressource (ligne principale + sous-groupes) */
     let resCM = parseFloat(data.cm) || 0;
-    let resTD = parseFloat(data.td) || 0;
-    let resTP = parseFloat(data.tp) || 0;
+    let sumTDxGrpe = (parseFloat(data.td) || 0) * (parseFloat(data.grpe_td) || 0);
+    let sumGrpeTD = parseFloat(data.grpe_td) || 0;
+    let sumTPxGrpe = (parseFloat(data.tp) || 0) * (parseFloat(data.grpe_tp) || 0);
+    let sumGrpeTP = parseFloat(data.grpe_tp) || 0;
     if (data.subrows)
       data.subrows.forEach((s) => {
         resCM += parseFloat(s.cm) || 0;
-        resTD += parseFloat(s.td) || 0;
-        resTP += parseFloat(s.tp) || 0;
+        sumTDxGrpe += (parseFloat(s.td) || 0) * (parseFloat(s.grpe_td) || 0);
+        sumGrpeTD += parseFloat(s.grpe_td) || 0;
+        sumTPxGrpe += (parseFloat(s.tp) || 0) * (parseFloat(s.grpe_tp) || 0);
+        sumGrpeTP += parseFloat(s.grpe_tp) || 0;
       });
+    /* Total / étudiant pondéré : Σ(valeur × nbre grpe) / Σ(nbre grpe) */
+    const resTD = sumGrpeTD > 0 ? sumTDxGrpe / sumGrpeTD : 0;
+    const resTP = sumGrpeTP > 0 ? sumTPxGrpe / sumGrpeTP : 0;
     const fmtR = (n) => (n % 1 === 0 ? n : parseFloat(n.toFixed(2)));
 
     const _ecartStyle = (v, m) => {
