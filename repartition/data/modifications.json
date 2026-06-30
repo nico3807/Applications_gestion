@@ -17683,5 +17683,14 @@
     "description": "S1 / R1.02 | Anglais renforcé - Espagnol / sous-groupe 1 / grpe_tp",
     "prev": "1",
     "next": "0"
+  },
+  {
+    "date": "30/06/2026",
+    "heure": "16:12:13",
+    "utilisateur": "nicolas.maurin",
+    "type": "Répartition",
+    "description": "S1 / R1.14 | Représentation et traitement de l'information / grpe_tp",
+    "prev": "4",
+    "next": "3"
   }
 ]
