@@ -17719,5 +17719,14 @@
     "description": "S1 / R1.02 | Anglais renforcé - Espagnol / sous-groupe 1 / tp",
     "prev": "0",
     "next": "4.5"
+  },
+  {
+    "date": "30/06/2026",
+    "heure": "16:58:22",
+    "utilisateur": "nicolas.maurin",
+    "type": "Répartition",
+    "description": "S2 / R2.13 | Développement Web / sous-groupe 2 / enseignant",
+    "prev": "",
+    "next": "ESCAIG Sylvie"
   }
 ]
