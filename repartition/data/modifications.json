@@ -17728,5 +17728,14 @@
     "description": "S2 / R2.13 | Développement Web / sous-groupe 2 / enseignant",
     "prev": "",
     "next": "ESCAIG Sylvie"
+  },
+  {
+    "date": "30/06/2026",
+    "heure": "16:58:46",
+    "utilisateur": "nicolas.maurin",
+    "type": "Répartition",
+    "description": "S2 / R2.13 | Développement Web / grpe_tp",
+    "prev": "4",
+    "next": "2"
   }
 ]
