@@ -1427,17 +1427,18 @@ function renderSemestre(root, sem) {
         _tpEntries.push({ v: parseFloat(s.tp) || 0, g: parseFloat(s.grpe_tp) || 0 });
       });
     /* Total / étudiant :
-       - si toutes les lignes ont le même nombre de groupes : somme simple (ancien calcul)
+       - si chaque ligne a le même nombre de groupes TD que de groupes TP :
+         somme simple (ancien calcul)
        - sinon : moyenne pondérée par le nombre de groupes Σ(valeur×grpe)/Σ(grpe) */
-    const _resTotal = (entries) => {
-      const sameGrpe = entries.every((e) => e.g === entries[0].g);
-      if (sameGrpe) return entries.reduce((s, e) => s + e.v, 0);
+    const _sameGrpeCount = _tdEntries.every((e, i) => e.g === _tpEntries[i].g);
+    const _sumCalc = (entries) => entries.reduce((s, e) => s + e.v, 0);
+    const _weightedCalc = (entries) => {
       const sumGrpe = entries.reduce((s, e) => s + e.g, 0);
       const sumVG = entries.reduce((s, e) => s + e.v * e.g, 0);
       return sumGrpe > 0 ? sumVG / sumGrpe : 0;
     };
-    const resTD = _resTotal(_tdEntries);
-    const resTP = _resTotal(_tpEntries);
+    const resTD = _sameGrpeCount ? _sumCalc(_tdEntries) : _weightedCalc(_tdEntries);
+    const resTP = _sameGrpeCount ? _sumCalc(_tpEntries) : _weightedCalc(_tpEntries);
     const fmtR = (n) => (n % 1 === 0 ? n : parseFloat(n.toFixed(2)));
 
     const _ecartStyle = (v, m) => {
