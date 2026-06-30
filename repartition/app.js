@@ -1418,21 +1418,26 @@ function renderSemestre(root, sem) {
 
     /* Totaux CM/TD/TP de la ressource (ligne principale + sous-groupes) */
     let resCM = parseFloat(data.cm) || 0;
-    let sumTDxGrpe = (parseFloat(data.td) || 0) * (parseFloat(data.grpe_td) || 0);
-    let sumGrpeTD = parseFloat(data.grpe_td) || 0;
-    let sumTPxGrpe = (parseFloat(data.tp) || 0) * (parseFloat(data.grpe_tp) || 0);
-    let sumGrpeTP = parseFloat(data.grpe_tp) || 0;
+    const _tdEntries = [{ v: parseFloat(data.td) || 0, g: parseFloat(data.grpe_td) || 0 }];
+    const _tpEntries = [{ v: parseFloat(data.tp) || 0, g: parseFloat(data.grpe_tp) || 0 }];
     if (data.subrows)
       data.subrows.forEach((s) => {
         resCM += parseFloat(s.cm) || 0;
-        sumTDxGrpe += (parseFloat(s.td) || 0) * (parseFloat(s.grpe_td) || 0);
-        sumGrpeTD += parseFloat(s.grpe_td) || 0;
-        sumTPxGrpe += (parseFloat(s.tp) || 0) * (parseFloat(s.grpe_tp) || 0);
-        sumGrpeTP += parseFloat(s.grpe_tp) || 0;
+        _tdEntries.push({ v: parseFloat(s.td) || 0, g: parseFloat(s.grpe_td) || 0 });
+        _tpEntries.push({ v: parseFloat(s.tp) || 0, g: parseFloat(s.grpe_tp) || 0 });
       });
-    /* Total / étudiant pondéré : Σ(valeur × nbre grpe) / Σ(nbre grpe) */
-    const resTD = sumGrpeTD > 0 ? sumTDxGrpe / sumGrpeTD : 0;
-    const resTP = sumGrpeTP > 0 ? sumTPxGrpe / sumGrpeTP : 0;
+    /* Total / étudiant :
+       - si toutes les lignes ont le même nombre de groupes : somme simple (ancien calcul)
+       - sinon : moyenne pondérée par le nombre de groupes Σ(valeur×grpe)/Σ(grpe) */
+    const _resTotal = (entries) => {
+      const sameGrpe = entries.every((e) => e.g === entries[0].g);
+      if (sameGrpe) return entries.reduce((s, e) => s + e.v, 0);
+      const sumGrpe = entries.reduce((s, e) => s + e.g, 0);
+      const sumVG = entries.reduce((s, e) => s + e.v * e.g, 0);
+      return sumGrpe > 0 ? sumVG / sumGrpe : 0;
+    };
+    const resTD = _resTotal(_tdEntries);
+    const resTP = _resTotal(_tpEntries);
     const fmtR = (n) => (n % 1 === 0 ? n : parseFloat(n.toFixed(2)));
 
     const _ecartStyle = (v, m) => {
