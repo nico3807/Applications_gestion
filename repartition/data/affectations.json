@@ -703,7 +703,8 @@
           "enseignant": "ESCAIG Sylvie",
           "cm": 0,
           "td": 0,
-          "tp": 0
+          "tp": 0,
+          "grpe_tp": 2
         }
       ],
       "responsable": "DARTIES Benoit",
