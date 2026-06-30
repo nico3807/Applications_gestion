@@ -17791,5 +17791,14 @@
     "description": "S2 / R2.19 | Projet Personnel et Professionnel / sous-groupe 4 / td",
     "prev": "1.5",
     "next": "0"
+  },
+  {
+    "date": "30/06/2026",
+    "heure": "17:31:04",
+    "utilisateur": "nicolas.maurin",
+    "type": "Répartition",
+    "description": "S3 / R3.02 | Anglais renforcé - Espagnol / sous-groupe 1 / td",
+    "prev": "0",
+    "next": "4.5"
   }
 ]
