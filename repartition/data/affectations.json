@@ -727,16 +727,7 @@
       "cm": 3,
       "td": 1.5,
       "tp": 10.5,
-      "subrows": [
-        {
-          "enseignant": "DARTIES Benoit",
-          "cm": 0,
-          "td": 0,
-          "tp": 4.5,
-          "grpe_td": 2,
-          "grpe_tp": 4
-        }
-      ],
+      "subrows": [],
       "responsable": "MAURIN Nicolas",
       "grpe_td": 2,
       "grpe_tp": 4
