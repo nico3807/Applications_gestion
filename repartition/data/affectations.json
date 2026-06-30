@@ -244,7 +244,7 @@
       ],
       "responsable": "",
       "grpe_td": 2,
-      "grpe_tp": 4
+      "grpe_tp": 3
     },
     "R1.15 | Gestion de projet": {
       "enseignant": "TOURNIE Laetitia",
@@ -426,7 +426,7 @@
           "td": 0,
           "tp": 0,
           "grpe_td": 0,
-          "grpe_tp": 1
+          "grpe_tp": "0"
         }
       ],
       "responsable": "",
