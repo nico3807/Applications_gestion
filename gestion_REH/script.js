@@ -959,7 +959,7 @@ function _rehXlsxCell(value, style) {
   return { v: value, t: typeof value === "number" ? "n" : "s", s: style };
 }
 
-function _rehXlsxSheet(headers, dataRows, totalRow, colWidths) {
+function _rehXlsxSheet(headers, dataRows, totalRow, colWidths, colAlignments) {
   const S_HDR = {
     font:      { name: "Arial", bold: true, sz: 11, color: { rgb: "FFFFFF" } },
     fill:      { patternType: "solid", fgColor: { rgb: "1E3A5F" } },
@@ -989,9 +989,15 @@ function _rehXlsxSheet(headers, dataRows, totalRow, colWidths) {
     alignment: { horizontal: "center", vertical: "center" },
   };
 
+  const _cellStyle = (base, ci) => {
+    const h = colAlignments && colAlignments[ci];
+    if (!h || h === "left") return base;
+    return Object.assign({}, base, { alignment: Object.assign({}, base.alignment, { horizontal: h }) });
+  };
+
   const aoa = [
     headers.map(h => _rehXlsxCell(h, S_HDR)),
-    ...dataRows.map((row, i) => row.map(v => _rehXlsxCell(v, i % 2 === 0 ? S_EVEN : S_ODD))),
+    ...dataRows.map((row, i) => row.map((v, ci) => _rehXlsxCell(v, _cellStyle(i % 2 === 0 ? S_EVEN : S_ODD, ci)))),
     totalRow.map(v => _rehXlsxCell(v, typeof v === "number" ? S_TOT_NUM : S_TOT)),
   ];
   const ws = XLSX.utils.aoa_to_sheet(aoa, { cellStyles: true });
@@ -1127,7 +1133,7 @@ function exportRecapXLSXParEnseignant() {
   const wb = XLSX.utils.book_new();
   const usedNames = {};
 
-  for (const [k, total] of totalRows) {
+  for (const [k, baseTotal] of totalRows) {
     const rows = [];
 
     juryRows.filter(([nom]) => lastNameOf(nom) === k).forEach(([, n]) => {
@@ -1145,9 +1151,13 @@ function exportRecapXLSXParEnseignant() {
     autRows.filter(r => lastNameOf(r.nom) === k).forEach(r => {
       rows.push(["Autre", r.autre || "", parseInt(r.heures, 10) || 0]);
     });
+    let psTotal = 0;
     psRows.filter(r => lastNameOf(r.nom) === k).forEach(r => {
-      rows.push(["Parcoursup", "", parseInt(r.heures, 10) || 0]);
+      const h = parseFloat(r.heures) || 0;
+      psTotal += h;
+      rows.push(["Parcoursup", "", h]);
     });
+    const total = baseTotal + psTotal;
 
     let sheetName = nameFor(k).substring(0, 31);
     if (usedNames[sheetName]) { sheetName = sheetName.substring(0, 29) + "_" + (++usedNames[sheetName]); }
@@ -1158,7 +1168,8 @@ function exportRecapXLSXParEnseignant() {
         ["Type de mission", "Détail", "Heures REH"],
         rows,
         ["Total REH", "", total],
-        [{ wch: 28 }, { wch: 45 }, { wch: 12 }]
+        [{ wch: 28 }, { wch: 45 }, { wch: 12 }],
+        ["left", "left", "center"]
       ), sheetName);
   }
 
