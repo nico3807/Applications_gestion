@@ -17854,5 +17854,23 @@
     "description": "Suppression — S5 dev",
     "prev": "SAÉ 5D.04 | Integration d'un LLM",
     "next": "—"
+  },
+  {
+    "date": "01/07/2026",
+    "heure": "08:50:58",
+    "utilisateur": "nicolas.maurin",
+    "type": "SAÉ",
+    "description": "Suppression — S5 crea",
+    "prev": "SAÉ 5.Crea.02 | SAE Management",
+    "next": "—"
+  },
+  {
+    "date": "01/07/2026",
+    "heure": "08:51:00",
+    "utilisateur": "nicolas.maurin",
+    "type": "SAÉ",
+    "description": "Suppression — S5 crea",
+    "prev": "SAÉ 5.Crea.03 | SAE Conception d'interface",
+    "next": "—"
   }
 ]
