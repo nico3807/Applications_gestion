@@ -17890,5 +17890,32 @@
     "description": "Suppression — S4 crea",
     "prev": "SAÉ 4.Crea.03 | SAE langues",
     "next": "—"
+  },
+  {
+    "date": "01/07/2026",
+    "heure": "15:00:30",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S1 / SAÉ 1.02 | Concevoir une recommandation de communication numérique / cm",
+    "prev": "1.5",
+    "next": "2"
+  },
+  {
+    "date": "01/07/2026",
+    "heure": "15:00:31",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S1 / SAÉ 1.02 | Concevoir une recommandation de communication numérique / cm",
+    "prev": "2",
+    "next": "2.5"
+  },
+  {
+    "date": "01/07/2026",
+    "heure": "15:00:31",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S1 / SAÉ 1.02 | Concevoir une recommandation de communication numérique / cm",
+    "prev": "2.5",
+    "next": "3"
   }
 ]
