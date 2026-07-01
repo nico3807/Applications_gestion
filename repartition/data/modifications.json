@@ -17827,5 +17827,32 @@
     "description": "S3 / R3.12 | Développement Front et intégration / tp",
     "prev": "13.5",
     "next": "13.5"
+  },
+  {
+    "date": "01/07/2026",
+    "heure": "08:50:26",
+    "utilisateur": "nicolas.maurin",
+    "type": "SAÉ",
+    "description": "Suppression — S5 dev",
+    "prev": "SAÉ 5D.02 | SAE Management",
+    "next": "—"
+  },
+  {
+    "date": "01/07/2026",
+    "heure": "08:50:28",
+    "utilisateur": "nicolas.maurin",
+    "type": "SAÉ",
+    "description": "Suppression — S5 dev",
+    "prev": "SAÉ 5D.03 | Concevoir un dispositif interactif",
+    "next": "—"
+  },
+  {
+    "date": "01/07/2026",
+    "heure": "08:50:30",
+    "utilisateur": "nicolas.maurin",
+    "type": "SAÉ",
+    "description": "Suppression — S5 dev",
+    "prev": "SAÉ 5D.04 | Integration d'un LLM",
+    "next": "—"
   }
 ]
