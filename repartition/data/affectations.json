@@ -323,14 +323,14 @@
     "SAÉ 1.02 | Concevoir une recommandation de communication numérique": {
       "enseignant": "JAECKLE Luc",
       "cm": 3,
-      "td": 6,
+      "td": 8,
       "tp": 0,
       "subrows": [
         {
           "enseignant": "RAMPON Candice",
           "cm": 0,
           "td": 6,
-          "tp": 4.5,
+          "tp": 3,
           "grpe_td": 2,
           "grpe_tp": 4
         }
