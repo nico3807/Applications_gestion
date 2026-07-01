@@ -864,7 +864,10 @@ function buildPsRow(i, row) {
   const savedNom    = row.nom    || "";
   const savedHeures = row.heures || "";
   const psHeuresList = [["", "—"]].concat(
-    Array.from({ length: 20 }, (_, j) => [String(j + 1), String(j + 1)])
+    Array.from({ length: 30 }, (_, j) => {
+      const v = (j + 1) * 0.5;
+      return [String(v), String(v)];
+    })
   );
   return `
     <tr class="${i % 2 === 0 ? "group-even" : "group-odd"}">
