@@ -17953,5 +17953,32 @@
     "description": "S1 / SAÉ 1.02 | Concevoir une recommandation de communication numérique / td",
     "prev": "7.5",
     "next": "8"
+  },
+  {
+    "date": "01/07/2026",
+    "heure": "15:02:10",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S1 / SAÉ 1.02 | Concevoir une recommandation de communication numérique / sous-groupe 1 / tp",
+    "prev": "4.5",
+    "next": "4"
+  },
+  {
+    "date": "01/07/2026",
+    "heure": "15:02:11",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S1 / SAÉ 1.02 | Concevoir une recommandation de communication numérique / sous-groupe 1 / tp",
+    "prev": "4",
+    "next": "3.5"
+  },
+  {
+    "date": "01/07/2026",
+    "heure": "15:02:11",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S1 / SAÉ 1.02 | Concevoir une recommandation de communication numérique / sous-groupe 1 / tp",
+    "prev": "3.5",
+    "next": "3"
   }
 ]
