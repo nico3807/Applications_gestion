@@ -1162,95 +1162,105 @@ function exportRecapXLSXParEnseignant() {
   XLSX.writeFile(wb, "recap_REH_par_enseignant.xlsx");
 }
 
+/* ── Chargement données récapitulatif (partagé) ───────────────────────── */
+async function _ensureRecapData() {
+  if (_recapData) return _recapData;
+  const [pfData, horairesData, saeData, saeRehData, orgData, missionsData, autreData, psData] = await Promise.all([
+    fetchGHJson("soutenances_portfolio/donnees_pf.json"),
+    fetchGHJson("soutenances_portfolio/horaires_pf.json"),
+    fetchGHJson("repartition/data/sae_data.json"),
+    fetchGHJson(GH_SAE_FILE).catch(() => []),
+    fetchGHJson(GH_ORG_FILE).catch(() => ({})),
+    fetchGHJson(GH_MISSIONS_FILE).catch(() => []),
+    fetchGHJson(GH_AUTRE_FILE).catch(() => []),
+    fetchGHJson(GH_PARCOURSUP_FILE).catch(() => []),
+  ]);
+
+  // ── REH Portfolio (jury) ─────────────────────────────────────────────
+  const validKeys = buildValidPortfolioKeys(horairesData);
+  const juryCounts = {};
+  for (const key of validKeys) {
+    const val = pfData[key];
+    if (val) juryCounts[val] = (juryCounts[val] || 0) + 1;
+  }
+  const juryRows  = Object.entries(juryCounts).sort(([a], [b]) => a.localeCompare(b, "fr"));
+  const juryTotal = juryRows.reduce((s, [, n]) => s + n, 0);
+
+  // ── Organisation portfolio ───────────────────────────────────────────
+  let maxOrgIdx = -1;
+  Object.keys(orgData).forEach(key => {
+    const m = key.match(/^org_(\d+)_/);
+    if (m) maxOrgIdx = Math.max(maxOrgIdx, parseInt(m[1]));
+  });
+  const orgRows = Array.from({ length: maxOrgIdx + 1 }, (_, i) => ({
+    nom: orgData[`org_${i}_nom`] || "",
+    val: orgData[`org_${i}_val`] || "",
+  })).filter(r => r.nom);
+  const orgTotal = orgRows.reduce((s, r) => s + (parseInt(r.val, 10) || 0), 0);
+
+  // ── REH SAÉ ──────────────────────────────────────────────────────────
+  let saeRows;
+  if (Array.isArray(saeRehData) && saeRehData.length > 0) {
+    saeRows = saeRehData.filter(r => r.nom);
+  } else {
+    const saeCounts = {};
+    for (const sem of saeData.semestres) {
+      for (const sae of (saeData.sae[sem] || [])) {
+        const resp = (sae.responsable || "").trim();
+        if (resp) saeCounts[resp] = (saeCounts[resp] || 0) + 1;
+      }
+    }
+    saeRows = Object.entries(saeCounts)
+      .sort(([a], [b]) => a.localeCompare(b, "fr"))
+      .map(([nom, nbre]) => ({ nom, nbre, heures: String(nbre * 2) }));
+  }
+  const saeTotal = saeRows.reduce((s, r) => s + (r.nbre || 0), 0);
+
+  // ── Missions ─────────────────────────────────────────────────────────
+  const miRows  = Array.isArray(missionsData) ? missionsData.filter(r => r.nom) : [];
+  const miTotal = miRows.reduce((s, r) => s + (parseInt(r.heures, 10) || 0), 0);
+
+  // ── Autre ────────────────────────────────────────────────────────────
+  const autRows  = Array.isArray(autreData) ? autreData.filter(r => r.nom) : [];
+  const autTotal = autRows.reduce((s, r) => s + (parseInt(r.heures, 10) || 0), 0);
+
+  // ── Parcoursup ───────────────────────────────────────────────────────
+  const psRows  = Array.isArray(psData) ? psData.filter(r => r.nom) : [];
+  const psTotal = psRows.reduce((s, r) => s + (parseInt(r.heures, 10) || 0), 0);
+
+  // ── Grand total par enseignant ────────────────────────────────────────
+  const totals = {};
+  const names  = {};
+  const lastName = nom => nom.trim().split(/\s+/)[0];
+  const add = (nom, h) => {
+    if (!nom) return;
+    const k = lastName(nom);
+    totals[k] = (totals[k] || 0) + h;
+    if (!names[k]) names[k] = new Set();
+    names[k].add(nom.trim());
+  };
+  juryRows.forEach(([nom, n]) => add(nom, n * 3));
+  orgRows.forEach(r => add(r.nom, parseInt(r.val, 10) || 0));
+  saeRows.forEach(r => add(r.nom, parseInt(r.heures !== "" && r.heures !== undefined ? r.heures : (r.nbre||0)*2, 10) || 0));
+  miRows.forEach(r => add(r.nom, parseInt(r.heures, 10) || 0));
+  autRows.forEach(r => add(r.nom, parseInt(r.heures, 10) || 0));
+  const totalRows  = Object.entries(totals).filter(([, h]) => h > 0).sort(([a], [b]) => a.localeCompare(b, "fr"));
+  const grandTotal = totalRows.reduce((s, [, h]) => s + h, 0);
+
+  _recapData = { juryRows, juryTotal, orgRows, orgTotal, saeRows, saeTotal,
+                 miRows, miTotal, autRows, autTotal, psRows, psTotal,
+                 totalRows, names, grandTotal };
+  return _recapData;
+}
+
 /* ── Vue Récapitulatif ────────────────────────────────────────────────── */
 async function renderRecap(root) {
   root.innerHTML = `<div style="padding:3rem;text-align:center;color:#6b7280;">Chargement…</div>`;
   try {
-    const [pfData, horairesData, saeData, saeRehData, orgData, missionsData, autreData, psData] = await Promise.all([
-      fetchGHJson("soutenances_portfolio/donnees_pf.json"),
-      fetchGHJson("soutenances_portfolio/horaires_pf.json"),
-      fetchGHJson("repartition/data/sae_data.json"),
-      fetchGHJson(GH_SAE_FILE).catch(() => []),
-      fetchGHJson(GH_ORG_FILE).catch(() => ({})),
-      fetchGHJson(GH_MISSIONS_FILE).catch(() => []),
-      fetchGHJson(GH_AUTRE_FILE).catch(() => []),
-      fetchGHJson(GH_PARCOURSUP_FILE).catch(() => []),
-    ]);
-
-    // ── REH Portfolio (jury) ───────────────────────────────────────────
-    const validKeys = buildValidPortfolioKeys(horairesData);
-    const juryCounts = {};
-    for (const key of validKeys) {
-      const val = pfData[key];
-      if (val) juryCounts[val] = (juryCounts[val] || 0) + 1;
-    }
-    const juryRows   = Object.entries(juryCounts).sort(([a], [b]) => a.localeCompare(b, "fr"));
-    const juryTotal  = juryRows.reduce((s, [, n]) => s + n, 0);
-
-    // ── Organisation portfolio ─────────────────────────────────────────
-    let maxOrgIdx = -1;
-    Object.keys(orgData).forEach(key => {
-      const m = key.match(/^org_(\d+)_/);
-      if (m) maxOrgIdx = Math.max(maxOrgIdx, parseInt(m[1]));
-    });
-    const orgRows = Array.from({ length: maxOrgIdx + 1 }, (_, i) => ({
-      nom: orgData[`org_${i}_nom`] || "",
-      val: orgData[`org_${i}_val`] || "",
-    })).filter(r => r.nom);
-    const orgTotal = orgRows.reduce((s, r) => s + (parseInt(r.val, 10) || 0), 0);
-
-    // ── REH SAÉ ────────────────────────────────────────────────────────
-    let saeRows;
-    if (Array.isArray(saeRehData) && saeRehData.length > 0) {
-      saeRows = saeRehData.filter(r => r.nom);
-    } else {
-      const saeCounts = {};
-      for (const sem of saeData.semestres) {
-        for (const sae of (saeData.sae[sem] || [])) {
-          const resp = (sae.responsable || "").trim();
-          if (resp) saeCounts[resp] = (saeCounts[resp] || 0) + 1;
-        }
-      }
-      saeRows = Object.entries(saeCounts)
-        .sort(([a], [b]) => a.localeCompare(b, "fr"))
-        .map(([nom, nbre]) => ({ nom, nbre, heures: String(nbre * 2) }));
-    }
-    const saeTotal = saeRows.reduce((s, r) => s + (r.nbre || 0), 0);
-
-    // ── Missions ──────────────────────────────────────────────────────
-    const miRows  = Array.isArray(missionsData) ? missionsData.filter(r => r.nom) : [];
-    const miTotal = miRows.reduce((s, r) => s + (parseInt(r.heures, 10) || 0), 0);
-
-    // ── Autre ─────────────────────────────────────────────────────────
-    const autRows  = Array.isArray(autreData) ? autreData.filter(r => r.nom) : [];
-    const autTotal = autRows.reduce((s, r) => s + (parseInt(r.heures, 10) || 0), 0);
-
-    // ── Parcoursup ────────────────────────────────────────────────────
-    const psRows  = Array.isArray(psData) ? psData.filter(r => r.nom) : [];
-    const psTotal = psRows.reduce((s, r) => s + (parseInt(r.heures, 10) || 0), 0);
-
-    // ── Grand total par enseignant ─────────────────────────────────────
-    const totals = {};
-    const names  = {};
-    const lastName = nom => nom.trim().split(/\s+/)[0];
-    const add = (nom, h) => {
-      if (!nom) return;
-      const k = lastName(nom);
-      totals[k] = (totals[k] || 0) + h;
-      if (!names[k]) names[k] = new Set();
-      names[k].add(nom.trim());
-    };
-    juryRows.forEach(([nom, n]) => add(nom, n * 3));
-    orgRows.forEach(r => add(r.nom, parseInt(r.val, 10) || 0));
-    saeRows.forEach(r => add(r.nom, parseInt(r.heures !== "" && r.heures !== undefined ? r.heures : (r.nbre||0)*2, 10) || 0));
-    miRows.forEach(r => add(r.nom, parseInt(r.heures, 10) || 0));
-    autRows.forEach(r => add(r.nom, parseInt(r.heures, 10) || 0));
-    const totalRows  = Object.entries(totals).filter(([, h]) => h > 0).sort(([a], [b]) => a.localeCompare(b, "fr"));
-    const grandTotal = totalRows.reduce((s, [, h]) => s + h, 0);
-
-    _recapData = { juryRows, juryTotal, orgRows, orgTotal, saeRows,
-                   miRows, miTotal, autRows, autTotal, psRows, psTotal,
-                   totalRows, names, grandTotal };
+    _recapData = null; // toujours recharger depuis la source
+    const { juryRows, juryTotal, orgRows, orgTotal, saeRows, saeTotal,
+            miRows, miTotal, autRows, autTotal, psRows, psTotal,
+            totalRows, names, grandTotal } = await _ensureRecapData();
 
     const row = (i, cells) => `<tr class="${i % 2 === 0 ? "group-even" : "group-odd"}">${cells}</tr>`;
 
@@ -1375,6 +1385,60 @@ async function renderRecap(root) {
   }
 }
 
+/* ── Vue Visualisation REH ────────────────────────────────────────────── */
+async function renderVisualisation(root) {
+  root.innerHTML = `<div style="padding:3rem;text-align:center;color:#6b7280;">Chargement…</div>`;
+  try {
+    const { totalRows, names, grandTotal, psRows, psTotal } = await _ensureRecapData();
+
+    const row = (i, cells) => `<tr class="${i % 2 === 0 ? "group-even" : "group-odd"}">${cells}</tr>`;
+
+    const renderName = (k) => {
+      const all = [...names[k]].sort((a, b) => a.localeCompare(b, "fr"));
+      const full = all.filter(n => n.includes(" "));
+      const candidates = full.length > 0 ? full : all;
+      const deduped = candidates.filter(n => !candidates.some(o => o !== n && o.startsWith(n + " ")));
+      return (deduped.length > 0 ? deduped : candidates).map(escapeHtml).join("<br>");
+    };
+
+    root.innerHTML = `
+      <div class="page-header"><h1>Visualisation REH</h1></div>
+
+      <div style="margin-bottom:2rem;">
+        <p class="subtitle">Total REH Portfolio par enseignant</p>
+        <div class="table-wrapper reh-table">
+          <table class="ressources-table">
+            <thead><tr><th>Nom</th><th style="text-align:center;">Total</th></tr></thead>
+            <tbody>${totalRows.map(([k, h], i) => row(i,
+              `<td>${renderName(k)}</td><td style="text-align:center;"><strong>${h}</strong></td>`
+            )).join("")}</tbody>
+            <tfoot><tr class="reh-total-row">
+              <td><strong>Total</strong></td><td style="text-align:center;"><strong>${grandTotal}</strong></td>
+            </tr></tfoot>
+          </table>
+        </div>
+      </div>
+
+      <div>
+        <p class="subtitle">Gestion Parcoursup</p>
+        <div class="table-wrapper reh-table">
+          <table class="ressources-table">
+            <thead><tr><th>Nom</th><th style="text-align:center;">Heures</th></tr></thead>
+            <tbody>${psRows.map((r, i) => row(i,
+              `<td>${escapeHtml(r.nom)}</td><td style="text-align:center;"><strong>${r.heures || 0}</strong></td>`
+            )).join("")}</tbody>
+            <tfoot><tr class="reh-total-row">
+              <td><strong>Total</strong></td><td style="text-align:center;"><strong>${psTotal}</strong></td>
+            </tr></tfoot>
+          </table>
+        </div>
+      </div>`;
+  } catch (e) {
+    root.innerHTML = `<div class="alert alert-danger" style="margin-top:1rem;">
+      Erreur de chargement : ${e.message}</div>`;
+  }
+}
+
 /* ── Rendu principal ──────────────────────────────────────────────────── */
 async function renderView(view) {
   const root = document.getElementById("app-root");
@@ -1402,6 +1466,8 @@ async function renderView(view) {
     await renderParcoursup(root);
   } else if (view === "recapitulatif") {
     await renderRecap(root);
+  } else if (view === "visualisation") {
+    await renderVisualisation(root);
   }
 }
 
