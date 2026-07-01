@@ -17872,5 +17872,14 @@
     "description": "Suppression — S5 crea",
     "prev": "SAÉ 5.Crea.03 | SAE Conception d'interface",
     "next": "—"
+  },
+  {
+    "date": "01/07/2026",
+    "heure": "08:51:48",
+    "utilisateur": "nicolas.maurin",
+    "type": "SAÉ",
+    "description": "Suppression — S4 dev",
+    "prev": "SAÉ 4.DWeb-DI.04 | Apprentis : Interface, contenus et visualisation",
+    "next": "—"
   }
 ]
