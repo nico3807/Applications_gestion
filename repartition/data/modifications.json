@@ -18025,5 +18025,14 @@
     "description": "S3 / R3.17 | Economie, gestion et droit du numérique / sous-groupe 1 / cm",
     "prev": "3",
     "next": "0"
+  },
+  {
+    "date": "02/07/2026",
+    "heure": "21:54:50",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S3 / R3.17 | Economie, gestion et droit du numérique / sous-groupe 1 / td",
+    "prev": "4.5",
+    "next": "0"
   }
 ]
