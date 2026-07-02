@@ -1,5 +1,21 @@
 <?php
-header('Content-Type: application/json');
+session_set_cookie_params([
+    'lifetime' => 28800,
+    'path'     => '/',
+    'secure'   => true,
+    'httponly' => true,
+    'samesite' => 'Lax',
+]);
+ini_set('session.gc_maxlifetime', 28800);
+session_start();
+header('Content-Type: application/json; charset=utf-8');
+
+// Accès réservé aux utilisateurs authentifiés (anti-abus : envoi d'emails).
+if (!isset($_SESSION['user'])) {
+    http_response_code(401);
+    echo json_encode(["status" => "error", "message" => "Authentification requise."]);
+    exit;
+}
 
 // Vérification que la requête est bien en POST
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
