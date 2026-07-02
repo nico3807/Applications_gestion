@@ -18034,5 +18034,59 @@
     "description": "S3 / R3.17 | Economie, gestion et droit du numérique / sous-groupe 1 / td",
     "prev": "4.5",
     "next": "0"
+  },
+  {
+    "date": "02/07/2026",
+    "heure": "21:56:14",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S3 / R3.17 | Economie, gestion et droit du numérique / cm",
+    "prev": "4.5",
+    "next": "5"
+  },
+  {
+    "date": "02/07/2026",
+    "heure": "21:56:14",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S3 / R3.17 | Economie, gestion et droit du numérique / cm",
+    "prev": "5",
+    "next": "5.5"
+  },
+  {
+    "date": "02/07/2026",
+    "heure": "21:56:15",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S3 / R3.17 | Economie, gestion et droit du numérique / cm",
+    "prev": "5.5",
+    "next": "6"
+  },
+  {
+    "date": "02/07/2026",
+    "heure": "21:56:15",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S3 / R3.17 | Economie, gestion et droit du numérique / cm",
+    "prev": "6",
+    "next": "6.5"
+  },
+  {
+    "date": "02/07/2026",
+    "heure": "21:56:15",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S3 / R3.17 | Economie, gestion et droit du numérique / cm",
+    "prev": "6.5",
+    "next": "7"
+  },
+  {
+    "date": "02/07/2026",
+    "heure": "21:56:16",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S3 / R3.17 | Economie, gestion et droit du numérique / cm",
+    "prev": "7",
+    "next": "7.5"
   }
 ]
