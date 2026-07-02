@@ -18187,5 +18187,86 @@
     "description": "S3 / R3.03 | Design d'expérience / sous-groupe 1 / tp",
     "prev": "4.5",
     "next": "0"
+  },
+  {
+    "date": "02/07/2026",
+    "heure": "21:57:21",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S3 / R3.03 | Design d'expérience / sous-groupe 1 / td",
+    "prev": "4.5",
+    "next": "4"
+  },
+  {
+    "date": "02/07/2026",
+    "heure": "21:57:22",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S3 / R3.03 | Design d'expérience / sous-groupe 1 / td",
+    "prev": "4",
+    "next": "3.5"
+  },
+  {
+    "date": "02/07/2026",
+    "heure": "21:57:22",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S3 / R3.03 | Design d'expérience / sous-groupe 1 / td",
+    "prev": "3.5",
+    "next": "3"
+  },
+  {
+    "date": "02/07/2026",
+    "heure": "21:57:23",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S3 / R3.03 | Design d'expérience / sous-groupe 1 / td",
+    "prev": "3",
+    "next": "2.5"
+  },
+  {
+    "date": "02/07/2026",
+    "heure": "21:57:23",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S3 / R3.03 | Design d'expérience / sous-groupe 1 / td",
+    "prev": "2.5",
+    "next": "2"
+  },
+  {
+    "date": "02/07/2026",
+    "heure": "21:57:23",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S3 / R3.03 | Design d'expérience / sous-groupe 1 / td",
+    "prev": "2",
+    "next": "1.5"
+  },
+  {
+    "date": "02/07/2026",
+    "heure": "21:57:24",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S3 / R3.03 | Design d'expérience / sous-groupe 1 / td",
+    "prev": "1.5",
+    "next": "1"
+  },
+  {
+    "date": "02/07/2026",
+    "heure": "21:57:24",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S3 / R3.03 | Design d'expérience / sous-groupe 1 / td",
+    "prev": "1",
+    "next": "0.5"
+  },
+  {
+    "date": "02/07/2026",
+    "heure": "21:57:24",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S3 / R3.03 | Design d'expérience / sous-groupe 1 / td",
+    "prev": "0.5",
+    "next": "0"
   }
 ]
