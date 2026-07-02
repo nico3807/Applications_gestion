@@ -1134,7 +1134,7 @@
       "grpe_tp": 2
     },
     "R4.Crea.08 | Ecriture multimédia et narration": {
-      "enseignant": "JAECKLE Luc",
+      "enseignant": "DE VELDER Sophie",
       "cm": 0,
       "td": 10.5,
       "tp": 0,
@@ -2025,14 +2025,14 @@
     "R3.07 | Expression, communication et rhétorique": {
       "enseignant": "JAECKLE Luc",
       "cm": 0,
-      "td": 9,
-      "tp": 6,
+      "td": 4.5,
+      "tp": 3,
       "subrows": [
         {
           "enseignant": "DE VELDER Sophie",
           "cm": 0,
-          "td": 0,
-          "tp": 0,
+          "td": 4.5,
+          "tp": 3,
           "grpe_td": 2,
           "grpe_tp": 4
         }
@@ -2219,14 +2219,14 @@
     },
     "R3.17 | Economie, gestion et droit du numérique": {
       "enseignant": "GIMENO Charline",
-      "cm": 7.5,
-      "td": 7.5,
+      "cm": 4.5,
+      "td": 3,
       "tp": 0,
       "subrows": [
         {
           "enseignant": "DE VELDER Sophie",
-          "cm": 0,
-          "td": 0,
+          "cm": 3,
+          "td": 4.5,
           "tp": 0,
           "grpe_td": 2,
           "grpe_tp": 4
