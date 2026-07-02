@@ -352,6 +352,12 @@
           "tp": 0,
           "grpe_td": 2,
           "grpe_tp": 4
+        },
+        {
+          "enseignant": "",
+          "cm": 0,
+          "td": 0,
+          "tp": 0
         }
       ],
       "responsable": "",
