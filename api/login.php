@@ -67,7 +67,15 @@ foreach ($users as $u) {
     if ($u['login'] === $login) { $user = $u; break; }
 }
 
-if (!$user || !password_verify($h, $user['h'])) {
+/* Anti-énumération : on exécute toujours un password_verify (même si le
+   compte n'existe pas) contre un hash factice, pour que le temps de réponse
+   ne révèle pas l'existence du login. */
+$dummyHash = '$2y$10$usesomesillystringforsalttoc0mparepasswordtimingXXXXXXXXe';
+$valid = $user
+    ? password_verify($h, $user['h'])
+    : (password_verify($h, $dummyHash) && false);
+
+if (!$valid) {
     if (isset($attempts[$ip])) {
         $attempts[$ip]['count']++;
     } else {
@@ -83,6 +91,9 @@ if (!$user || !password_verify($h, $user['h'])) {
 // Connexion réussie : on efface le compteur d'échecs de cette IP
 unset($attempts[$ip]);
 saveAttempts($attemptsFile, $attempts);
+
+// Anti-fixation de session : nouvel identifiant de session à l'authentification
+session_regenerate_id(true);
 
 $_SESSION['user'] = [
     'login'          => $user['login'],

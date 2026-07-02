@@ -16,12 +16,28 @@ if (!isset($_SESSION['user'])) {
     exit;
 }
 
+// Plafond de taille du corps (anti-DoS disque) : 256 Ko largement suffisant
+// pour des souhaits.
+$raw = file_get_contents('php://input', false, null, 0, 256 * 1024 + 1);
+if (strlen($raw) > 256 * 1024) {
+    http_response_code(413);
+    echo json_encode(['error' => 'Données trop volumineuses']);
+    exit;
+}
+
 // Lecture du corps JSON
-$body = json_decode(file_get_contents('php://input'), true);
+$body = json_decode($raw, true);
 
 if (!$body || !isset($body['login']) || !isset($body['data'])) {
     http_response_code(400);
     echo json_encode(['error' => 'Paramètres manquants (login, data)']);
+    exit;
+}
+
+// data doit être une structure JSON (objet ou tableau), pas une valeur scalaire
+if (!is_array($body['data'])) {
+    http_response_code(400);
+    echo json_encode(['error' => 'Format de données invalide']);
     exit;
 }
 

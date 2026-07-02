@@ -1,0 +1,19 @@
+# En-têtes de sécurité HTTP (Apache + mod_headers).
+# Sur nginx, ajouter les directives add_header équivalentes dans la conf serveur.
+<IfModule mod_headers.c>
+    # Empêche l'interprétation MIME abusive (protège contre certains XSS).
+    Header always set X-Content-Type-Options "nosniff"
+    # Interdit l'affichage du site dans une iframe tierce (clickjacking).
+    Header always set X-Frame-Options "SAMEORIGIN"
+    # Limite les informations de provenance envoyées aux sites tiers.
+    Header always set Referrer-Policy "strict-origin-when-cross-origin"
+    # Réduit la surface d'API navigateur disponible.
+    Header always set Permissions-Policy "geolocation=(), microphone=(), camera=()"
+    # Force HTTPS pendant 1 an (le site est servi en HTTPS — cookies 'secure').
+    Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains"
+</IfModule>
+
+# NB : une Content-Security-Policy stricte n'est pas activée ici car les
+# applications utilisent massivement des gestionnaires inline (onclick) et des
+# styles inline, incompatibles avec une CSP sans 'unsafe-inline'. La mettre en
+# place proprement nécessite de refactorer ces inline handlers (travail à part).
