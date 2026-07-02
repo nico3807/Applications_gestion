@@ -340,7 +340,7 @@
       "grpe_tp": 4
     },
     "SAÉ 1.03 | Produire les éléments d'une communication visuelle": {
-      "enseignant": "SELIGHINI Valérie",
+      "enseignant": "SURRIBAS Caroline",
       "cm": 1.5,
       "td": 6,
       "tp": 3,
@@ -349,6 +349,14 @@
           "enseignant": "THEROND Emmanuel",
           "cm": 0,
           "td": 1.5,
+          "tp": 0,
+          "grpe_td": 2,
+          "grpe_tp": 4
+        },
+        {
+          "enseignant": "SELIGHINI Valérie",
+          "cm": 0,
+          "td": 0,
           "tp": 0,
           "grpe_td": 2,
           "grpe_tp": 4
