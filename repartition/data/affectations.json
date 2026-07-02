@@ -340,9 +340,9 @@
       "grpe_tp": 4
     },
     "SAÉ 1.03 | Produire les éléments d'une communication visuelle": {
-      "enseignant": "SELIGHINI Valérie",
-      "cm": 0,
-      "td": 7.5,
+      "enseignant": "SURRIBAS Caroline",
+      "cm": 1.5,
+      "td": 6,
       "tp": 3,
       "subrows": [],
       "responsable": "",
@@ -852,7 +852,7 @@
       "grpe_tp": 4
     },
     "SAÉ 2.04 | Construire sa présence en ligne": {
-      "enseignant": "DARTIES Benoit",
+      "enseignant": "DE VELDER Sophie",
       "cm": 0,
       "td": 0,
       "tp": 0,
@@ -1330,6 +1330,12 @@
           "tp": 0,
           "grpe_td": 1,
           "grpe_tp": 2
+        },
+        {
+          "enseignant": "",
+          "cm": 0,
+          "td": 0,
+          "tp": 0
         }
       ],
       "responsable": "",
