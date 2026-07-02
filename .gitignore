@@ -2,3 +2,10 @@ a_faire.docx
 api/data/users.json
 api/data/login_attempts.json
 api/data/github_token.json
+api/data/deplacement_demandes.json
+
+# Ancien fichier d'utilisateurs (hashes) — ne doit jamais être committé
+users_extra.json
+
+# Données runtime héritées (non utilisées ; vraies données dans api/data/)
+deplacement_cours/data/demandes.json
