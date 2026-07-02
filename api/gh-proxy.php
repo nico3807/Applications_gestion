@@ -38,6 +38,23 @@ if ($method !== 'GET') {
         echo json_encode(['error' => 'Accès en écriture requis']);
         exit;
     }
+
+    /* ── Durcissement anti-RCE ──────────────────────────────────────────────
+       Ce proxy ne doit JAMAIS servir à écrire du code source ni à toucher aux
+       répertoires système : chaque push sur `main` est auto-déployé sur le
+       serveur (git reset --hard). Sans cette barrière, un simple compte en
+       écriture pourrait pousser un webshell .php ou modifier login.php.
+       On restreint donc l'écriture aux fichiers de DONNÉES (.json) des
+       applications, hors des dossiers d'infrastructure. */
+    $reqPath = (string) ($_GET['path'] ?? '');
+    $ext     = strtolower(pathinfo($reqPath, PATHINFO_EXTENSION));
+    $topDir  = strtolower(explode('/', $reqPath)[0] ?? '');
+    $blockedTop = ['api', '.github', '.git'];
+    if ($reqPath === '' || $reqPath[0] === '.' || $ext !== 'json' || in_array($topDir, $blockedTop, true)) {
+        http_response_code(403);
+        echo json_encode(['error' => 'Écriture autorisée uniquement sur les fichiers de données (.json) des applications']);
+        exit;
+    }
 }
 
 const GH_OWNER  = 'nico3807';
