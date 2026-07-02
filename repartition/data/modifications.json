@@ -18016,5 +18016,14 @@
     "description": "S3 / R3.10 | Culture artistique / cm",
     "prev": "10",
     "next": "10.5"
+  },
+  {
+    "date": "02/07/2026",
+    "heure": "21:54:44",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S3 / R3.17 | Economie, gestion et droit du numérique / sous-groupe 1 / cm",
+    "prev": "3",
+    "next": "0"
   }
 ]
