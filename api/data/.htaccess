@@ -1,0 +1,14 @@
+# Interdit tout accès HTTP direct à ce répertoire.
+# Il contient des données sensibles (users.json avec hashes, github_token.json,
+# login_attempts.json, deplacement_demandes.json) qui ne doivent JAMAIS être
+# servies au navigateur — elles ne sont lues que côté serveur (PHP).
+#
+# Apache 2.4+
+<IfModule mod_authz_core.c>
+    Require all denied
+</IfModule>
+# Apache 2.2
+<IfModule !mod_authz_core.c>
+    Order allow,deny
+    Deny from all
+</IfModule>
