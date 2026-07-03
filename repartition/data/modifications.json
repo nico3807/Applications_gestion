@@ -18268,5 +18268,14 @@
     "description": "S3 / R3.03 | Design d'expérience / sous-groupe 1 / td",
     "prev": "0.5",
     "next": "0"
+  },
+  {
+    "date": "03/07/2026",
+    "heure": "09:44:34",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.02 | Management et Assurance Qualité / enseignant",
+    "prev": "PIEDEVACHE Magalie",
+    "next": ""
   }
 ]
