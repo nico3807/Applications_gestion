@@ -18304,5 +18304,14 @@
     "description": "S5 crea / R5.Crea.04 | PPP / enseignant",
     "prev": "",
     "next": "PIEDEVACHE Magalie"
+  },
+  {
+    "date": "03/07/2026",
+    "heure": "14:59:26",
+    "utilisateur": "damien.marill",
+    "type": "Répartition",
+    "description": "S6 dev / R6.DWeb-DI.03 | Fonctionnement des IA / enseignant",
+    "prev": "",
+    "next": "MAURIN Nicolas"
   }
 ]
