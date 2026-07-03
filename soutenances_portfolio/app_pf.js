@@ -853,13 +853,13 @@ async function loadHoraires() {
       return;
     }
   } catch {
-    /* file:// or server error — try raw GitHub */
+    /* file:// ou erreur serveur — on tente via le proxy GitHub (token serveur,
+       fonctionne aussi en dépôt privé) */
   }
   try {
-    const rawUrl = `https://raw.githubusercontent.com/${GH_OWNER}/${GH_REPO}/${GH_BRANCH}/soutenances_portfolio/horaires_pf.json`;
-    const resp = await fetch(rawUrl, { cache: "no-store" });
-    if (resp.ok) {
-      const data = await resp.json();
+    const text = await fetchGHJson("soutenances_portfolio/horaires_pf.json");
+    if (text) {
+      const data = JSON.parse(text);
       APP_CONFIG.horaires = data;
       renderJuries(PAGE_ID);
       applyHoraires(data);
