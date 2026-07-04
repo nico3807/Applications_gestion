@@ -18322,5 +18322,32 @@
     "description": "Modification SELIGHINI Valérie",
     "prev": "SELIGHINI Valérie — Vacataire (CEV), dû:—, max:187",
     "next": "SELIGHINI Valérie — Vacataire, dû:—, max:187"
+  },
+  {
+    "date": "04/07/2026",
+    "heure": "10:19:08",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S2 / R2.18 | Économie, gestion et droit du numérique / td",
+    "prev": "6",
+    "next": "6.5"
+  },
+  {
+    "date": "04/07/2026",
+    "heure": "10:19:08",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S2 / R2.18 | Économie, gestion et droit du numérique / td",
+    "prev": "6.5",
+    "next": "7"
+  },
+  {
+    "date": "04/07/2026",
+    "heure": "10:19:09",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S2 / R2.18 | Économie, gestion et droit du numérique / td",
+    "prev": "7",
+    "next": "7.5"
   }
 ]
