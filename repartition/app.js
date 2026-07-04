@@ -2420,6 +2420,20 @@ function renderEnseignants(root) {
     parcoursStats[sem] = { tit: perm + cev, vac: vacS, total: perm + cev + vacS };
   });
   parcoursStats["S3 à S6"] = { tit: heuresPermanentsParc + heuresCEVParc, vac: heuresVacSimplesParc, total: grandTotalParc };
+
+  // Agrégats par filière : Créa (S4/S5/S6 crea) et DevWeb (S4/S5/S6 dev)
+  const _sumSems = (sems) => {
+    let tit = 0, vac = 0, total = 0;
+    sems.forEach((sem) => {
+      const s = parcoursStats[sem];
+      if (!s) return;
+      tit += s.tit; vac += s.vac; total += s.total;
+    });
+    return { tit, vac, total };
+  };
+  parcoursStats["Créa"]   = _sumSems(["S4 crea", "S5 crea", "S6 crea"]);
+  parcoursStats["DevWeb"] = _sumSems(["S4 dev", "S5 dev", "S6 dev"]);
+
   window._parcoursStatsData = parcoursStats;
 
   html += `<div style="display:flex; justify-content:center; gap:2rem; flex-wrap:wrap; margin-top:2rem">
@@ -2435,7 +2449,7 @@ function renderEnseignants(root) {
     <div id="parcours-pct-card" class="form-card" style="max-width:340px; background:${pctBgParc}; border-color:${pctBorderParc}">
         <h3 style="margin-bottom:.75rem; color:#1e3a5f">Pourcentage de vacataires Parcours</h3>
         <div style="display:flex; gap:4px; flex-wrap:wrap; margin-bottom:.75rem;">
-          ${["S3 à S6", ..._PARCOURS_LIST].map(s => `<button class="sem-btn parcours-tag${s === "S3 à S6" ? " active" : ""}" style="font-size:11px;padding:2px 8px;" onclick="_switchParcours('${s}')">${s}</button>`).join("")}
+          ${["S3 à S6", "Créa", "DevWeb", ..._PARCOURS_LIST].map(s => `<button class="sem-btn parcours-tag${s === "S3 à S6" ? " active" : ""}" style="font-size:11px;padding:2px 8px;" onclick="_switchParcours('${s}')">${s}</button>`).join("")}
         </div>
         <div id="parcours-pct-val" style="font-size:3rem; font-weight:800; color:${pctColorParc}; text-align:center; line-height:1; margin-bottom:1.25rem">${pctVacParc.toFixed(1)}<span style="font-size:1.5rem">%</span></div>
         <div style="font-size:13px; color:#374151; display:flex; flex-direction:column; gap:6px; border-top:1px solid ${pctBorderParc}; padding-top:1rem">
