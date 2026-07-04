@@ -18619,5 +18619,14 @@
     "description": "S2 / R2.18 | Économie, gestion et droit du numérique / sous-groupe 1 / td",
     "prev": "6.5",
     "next": "6"
+  },
+  {
+    "date": "04/07/2026",
+    "heure": "10:46:44",
+    "utilisateur": "nicolas.maurin",
+    "type": "Répartition",
+    "description": "S2 / R2.18 | Économie, gestion et droit du numérique / sous-groupe 1 / grpe_td",
+    "prev": "0",
+    "next": "2"
   }
 ]
