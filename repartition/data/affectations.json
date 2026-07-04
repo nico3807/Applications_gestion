@@ -2211,14 +2211,7 @@
       "cm": 7.5,
       "td": 7.5,
       "tp": 0,
-      "subrows": [
-        {
-          "enseignant": "DE VELDER Sophie",
-          "cm": 0,
-          "td": 0,
-          "tp": 0
-        }
-      ],
+      "subrows": [],
       "responsable": "",
       "grpe_td": 2,
       "grpe_tp": 4
