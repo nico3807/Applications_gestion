@@ -18349,5 +18349,32 @@
     "description": "S2 / R2.18 | Économie, gestion et droit du numérique / td",
     "prev": "7",
     "next": "7.5"
+  },
+  {
+    "date": "04/07/2026",
+    "heure": "10:21:49",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S2 / R2.18 | Économie, gestion et droit du numérique / sous-groupe 1 / td",
+    "prev": "0",
+    "next": "-0.5"
+  },
+  {
+    "date": "04/07/2026",
+    "heure": "10:21:50",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S2 / R2.18 | Économie, gestion et droit du numérique / sous-groupe 1 / td",
+    "prev": "-0.5",
+    "next": "-1"
+  },
+  {
+    "date": "04/07/2026",
+    "heure": "10:21:50",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S2 / R2.18 | Économie, gestion et droit du numérique / sous-groupe 1 / td",
+    "prev": "-1",
+    "next": "-1.5"
   }
 ]
