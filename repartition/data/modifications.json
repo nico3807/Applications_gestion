@@ -18637,5 +18637,14 @@
     "description": "S2 / R2.18 | Économie, gestion et droit du numérique / sous-groupe 1 / grpe_tp",
     "prev": "0",
     "next": "4"
+  },
+  {
+    "date": "04/07/2026",
+    "heure": "13:13:01",
+    "utilisateur": "damien.marill",
+    "type": "Répartition",
+    "description": "S4 dev / R4.DWeb-DI.03 |  Design d'expérience / sous-groupe 1 / enseignant",
+    "prev": "LAGIEWKA Arnaud",
+    "next": ""
   }
 ]
