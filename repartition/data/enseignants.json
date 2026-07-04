@@ -328,7 +328,7 @@
     "service_du": null,
     "service_max": 187,
     "is_vac": true,
-    "is_cev": true
+    "is_cev": false
   },
   {
     "id": "SOLDEVILA Lauren",
