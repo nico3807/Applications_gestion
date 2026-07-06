@@ -1685,13 +1685,15 @@
           "enseignant": "MARILL Damien",
           "cm": 0,
           "td": 30,
-          "tp": 0
+          "tp": 0,
+          "grpe_td": 1
         },
         {
           "enseignant": "SURRIBAS Caroline",
           "cm": 0,
           "td": 24,
-          "tp": 0
+          "tp": 0,
+          "grpe_td": 1
         },
         {
           "enseignant": "AZE Jérome",
