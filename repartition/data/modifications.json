@@ -18709,5 +18709,23 @@
     "description": "S5 dev / SAÉ 5D.01 | Développer pour le web / sous-groupe 3 / grpe_td",
     "prev": "",
     "next": "1"
+  },
+  {
+    "date": "06/07/2026",
+    "heure": "09:26:43",
+    "utilisateur": "nicolas.maurin",
+    "type": "Répartition",
+    "description": "S5 dev / SAÉ 5D.01 | Développer pour le web / sous-groupe 1 / grpe_tp",
+    "prev": "",
+    "next": "2"
+  },
+  {
+    "date": "06/07/2026",
+    "heure": "09:26:51",
+    "utilisateur": "nicolas.maurin",
+    "type": "Répartition",
+    "description": "S5 dev / SAÉ 5D.01 | Développer pour le web / sous-groupe 2 / grpe_tp",
+    "prev": "",
+    "next": "2"
   }
 ]
