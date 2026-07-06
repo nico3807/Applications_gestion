@@ -1723,7 +1723,8 @@
           "enseignant": "LOJDI Illyasse",
           "cm": 0,
           "td": 6,
-          "tp": 0
+          "tp": 0,
+          "grpe_td": 1
         }
       ],
       "responsable": "",
