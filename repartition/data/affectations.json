@@ -1705,7 +1705,8 @@
           "enseignant": "DI PIERRO Davide",
           "cm": 0,
           "td": 15,
-          "tp": 0
+          "tp": 0,
+          "grpe_td": 1
         },
         {
           "enseignant": "MAURIN Nicolas",
