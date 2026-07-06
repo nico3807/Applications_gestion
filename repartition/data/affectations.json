@@ -1686,14 +1686,16 @@
           "cm": 0,
           "td": 30,
           "tp": 0,
-          "grpe_td": 1
+          "grpe_td": 1,
+          "grpe_tp": 2
         },
         {
           "enseignant": "SURRIBAS Caroline",
           "cm": 0,
           "td": 24,
           "tp": 0,
-          "grpe_td": 1
+          "grpe_td": 1,
+          "grpe_tp": 2
         },
         {
           "enseignant": "AZE Jérome",
