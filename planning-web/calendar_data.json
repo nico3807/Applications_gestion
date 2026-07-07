@@ -1369,7 +1369,7 @@
         "MMI3-App": "Entreprise S14",
         "MMI3-crea": "Stage",
         "MMI3-Dev": "Stage",
-        "MMI1": "SAÉ 2.04 | Construire sa présence en ligne"
+        "MMI1": "SAÉ 2.04 | Construire sa présence en ligne (1/2)"
       },
       "week": 8
     },
@@ -1380,7 +1380,7 @@
         "MMI3-App": "Entreprise S14",
         "MMI3-crea": "Stage",
         "MMI3-Dev": "Stage",
-        "MMI1": "SAÉ 2.04 | Construire sa présence en ligne"
+        "MMI1": "SAÉ 2.04 | Construire sa présence en ligne (1/2)"
       }
     },
     {
@@ -1390,7 +1390,7 @@
         "MMI3-App": "Entreprise S14",
         "MMI3-crea": "Stage",
         "MMI3-Dev": "Stage",
-        "MMI1": "SAÉ 2.04 | Construire sa présence en ligne"
+        "MMI1": "SAÉ 2.04 | Construire sa présence en ligne (1/2)"
       }
     },
     {
@@ -1400,7 +1400,7 @@
         "MMI3-App": "Entreprise S14",
         "MMI3-crea": "Stage",
         "MMI3-Dev": "Stage",
-        "MMI1": "SAÉ 2.04 | Construire sa présence en ligne"
+        "MMI1": "SAÉ 2.04 | Construire sa présence en ligne (1/2)"
       }
     },
     {
@@ -1411,7 +1411,7 @@
         "MMI3-crea": "Stage",
         "MMI3-Dev": "Stage",
         "JPO": "JPO Demain Samedi 27",
-        "MMI1": "SAÉ 2.04 | Construire sa présence en ligne"
+        "MMI1": "SAÉ 2.04 | Construire sa présence en ligne (1/2)"
       }
     },
     {
@@ -1562,7 +1562,8 @@
         "MMI2-App": "Entreprise S12",
         "MMI3-App": "Entreprise S17",
         "MMI3-crea": "Stage",
-        "MMI3-Dev": "Stage"
+        "MMI3-Dev": "Stage",
+        "MMI1": "SAÉ 2.04 | Construire sa présence en ligne (2/2)"
       },
       "week": 11
     },
@@ -1573,7 +1574,8 @@
         "MMI2-App": "Entreprise S12",
         "MMI3-App": "Entreprise S17",
         "MMI3-crea": "Stage",
-        "MMI3-Dev": "Stage"
+        "MMI3-Dev": "Stage",
+        "MMI1": "SAÉ 2.04 | Construire sa présence en ligne (2/2)"
       }
     },
     {
@@ -1583,7 +1585,8 @@
         "MMI2-App": "Entreprise S12",
         "MMI3-App": "Entreprise S17",
         "MMI3-crea": "Stage",
-        "MMI3-Dev": "Stage"
+        "MMI3-Dev": "Stage",
+        "MMI1": "SAÉ 2.04 | Construire sa présence en ligne (2/2)"
       }
     },
     {
@@ -1593,7 +1596,8 @@
         "MMI2-App": "Entreprise S12",
         "MMI3-App": "Entreprise S17",
         "MMI3-crea": "Stage",
-        "MMI3-Dev": "Stage"
+        "MMI3-Dev": "Stage",
+        "MMI1": "SAÉ 2.04 | Construire sa présence en ligne (2/2)"
       }
     },
     {
@@ -1603,7 +1607,8 @@
         "MMI2-App": "Entreprise S12",
         "MMI3-App": "Entreprise S17",
         "MMI3-crea": "Stage",
-        "MMI3-Dev": "Stage"
+        "MMI3-Dev": "Stage",
+        "MMI1": "SAÉ 2.04 | Construire sa présence en ligne (2/2)"
       }
     },
     {
@@ -1626,8 +1631,7 @@
       "events": {
         "MMI3-App": "Entreprise S18",
         "MMI3-crea": "Stage",
-        "MMI3-Dev": "Stage",
-        "MMI1": "SAÉ 2.02 | Concevoir un produit ou un service et sa communication"
+        "MMI3-Dev": "Stage"
       },
       "week": 12
     },
@@ -1638,7 +1642,7 @@
         "MMI3-App": "Entreprise S18",
         "MMI3-crea": "Stage",
         "MMI3-Dev": "Stage",
-        "MMI1": "SAÉ 2.02 | Concevoir un produit ou un service et sa communication"
+        "Autre": "SAÉ 2.98 | Hackathon"
       }
     },
     {
@@ -1648,7 +1652,7 @@
         "MMI3-App": "Entreprise S18",
         "MMI3-crea": "Stage",
         "MMI3-Dev": "Stage",
-        "MMI1": "SAÉ 2.02 | Concevoir un produit ou un service et sa communication"
+        "Autre": "SAÉ 2.98 | Hackathon"
       }
     },
     {
@@ -1658,7 +1662,7 @@
         "MMI3-App": "Entreprise S18",
         "MMI3-crea": "Stage",
         "MMI3-Dev": "Stage",
-        "MMI1": "SAÉ 2.02 | Concevoir un produit ou un service et sa communication"
+        "Autre": "SAÉ 2.98 | Hackathon"
       }
     },
     {
@@ -1668,7 +1672,7 @@
         "MMI3-App": "Entreprise S18",
         "MMI3-crea": "Stage",
         "MMI3-Dev": "Stage",
-        "MMI1": "SAÉ 2.02 | Concevoir un produit ou un service et sa communication"
+        "Autre": "SAÉ 2.98 | Hackathon"
       }
     },
     {
@@ -1768,7 +1772,7 @@
         "MMI2-Dev": "Stage",
         "MMI3-crea": "Stage",
         "MMI3-Dev": "Stage",
-        "MMI1": "SAÉ 2.02 | Concevoir un produit ou un service et sa communication"
+        "MMI1": "SAÉ 2.02 | Concevoir un produit ou un service et sa communication (1/2)"
       },
       "week": 14
     },
@@ -1997,7 +2001,7 @@
         "MMI3-App": "Entreprise S23",
         "MMI2-crea": "Stage",
         "MMI2-Dev": "Stage",
-        "MMI1": "SAÉ 2.04 | Construire sa présence en ligne"
+        "MMI1": "SAÉ 2.02 | Concevoir un produit ou un service et sa communication (2/2)"
       },
       "week": 17
     },
@@ -2009,7 +2013,7 @@
         "MMI3-App": "Entreprise S23",
         "MMI2-crea": "Stage",
         "MMI2-Dev": "Stage",
-        "MMI1": "SAÉ 2.04 | Construire sa présence en ligne"
+        "MMI1": "SAÉ 2.02 | Concevoir un produit ou un service et sa communication (2/2)"
       }
     },
     {
@@ -2020,7 +2024,7 @@
         "MMI3-App": "Entreprise S23",
         "MMI2-crea": "Stage",
         "MMI2-Dev": "Stage",
-        "MMI1": "SAÉ 2.04 | Construire sa présence en ligne"
+        "MMI1": "SAÉ 2.02 | Concevoir un produit ou un service et sa communication (2/2)"
       }
     },
     {
@@ -2031,7 +2035,7 @@
         "MMI3-App": "Entreprise S23",
         "MMI2-crea": "Stage",
         "MMI2-Dev": "Stage",
-        "MMI1": "SAÉ 2.04 | Construire sa présence en ligne"
+        "MMI1": "SAÉ 2.02 | Concevoir un produit ou un service et sa communication (2/2)"
       }
     },
     {
@@ -2042,7 +2046,7 @@
         "MMI3-App": "Entreprise S23",
         "MMI2-crea": "Stage",
         "MMI2-Dev": "Stage",
-        "MMI1": "SAÉ 2.04 | Construire sa présence en ligne"
+        "MMI1": "SAÉ 2.02 | Concevoir un produit ou un service et sa communication (2/2)"
       }
     }
   ],
