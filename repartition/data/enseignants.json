@@ -118,6 +118,15 @@
     "service_max": null
   },
   {
+    "id": "GAYOUT Maud",
+    "nom": "GAYOUT",
+    "prenom": "Maud",
+    "is_vac": true,
+    "is_cev": false,
+    "service_du": null,
+    "service_max": 187
+  },
+  {
     "id": "GIMENO Charline",
     "nom": "GIMENO",
     "prenom": "Charline",
