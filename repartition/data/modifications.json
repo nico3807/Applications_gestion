@@ -18808,5 +18808,14 @@
     "description": "S5 crea / R5.Crea.02 | Management et Assurance Qualité / td",
     "prev": "10.5",
     "next": "15"
+  },
+  {
+    "date": "07/07/2026",
+    "heure": "20:13:29",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.02 | Management et Assurance Qualité / tp",
+    "prev": "4.5",
+    "next": "0"
   }
 ]
