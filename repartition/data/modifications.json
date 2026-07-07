@@ -18790,5 +18790,14 @@
     "description": "S4 dev / R4.DWeb-DI.03 |  Design d'expérience / sous-groupe 1 / tp",
     "prev": "1.5",
     "next": "3"
+  },
+  {
+    "date": "07/07/2026",
+    "heure": "15:37:41",
+    "utilisateur": "nicolas.maurin",
+    "type": "Enseignants",
+    "description": "Ajout",
+    "prev": "—",
+    "next": "GAYOUT Maud"
   }
 ]
