@@ -18916,5 +18916,32 @@
     "description": "S5 crea / SAÉ 5.Crea.01 | Créer par/pour le numérique / sous-groupe 3 / td",
     "prev": "24",
     "next": "24"
+  },
+  {
+    "date": "08/07/2026",
+    "heure": "12:25:21",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S5 crea / SAÉ 5.Crea.01 | Créer par/pour le numérique / sous-groupe 3 / td",
+    "prev": "24",
+    "next": "21"
+  },
+  {
+    "date": "08/07/2026",
+    "heure": "12:25:23",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S5 crea / SAÉ 5.Crea.01 | Créer par/pour le numérique / sous-groupe 2 / td",
+    "prev": "24",
+    "next": "21"
+  },
+  {
+    "date": "08/07/2026",
+    "heure": "12:25:24",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S5 crea / SAÉ 5.Crea.01 | Créer par/pour le numérique / sous-groupe 1 / td",
+    "prev": "24",
+    "next": "21"
   }
 ]
