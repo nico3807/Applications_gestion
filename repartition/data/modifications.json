@@ -18817,5 +18817,14 @@
     "description": "S5 crea / R5.Crea.02 | Management et Assurance Qualité / tp",
     "prev": "4.5",
     "next": "0"
+  },
+  {
+    "date": "08/07/2026",
+    "heure": "09:25:20",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.02 | Management et Assurance Qualité / enseignant",
+    "prev": "PIEDEVACHE Magalie",
+    "next": "GAYOUT Maud"
   }
 ]
