@@ -18880,5 +18880,14 @@
     "description": "S5 crea / SAÉ 5.Crea.01 | Créer par/pour le numérique / sous-groupe 3 / td",
     "prev": "26",
     "next": "25.5"
+  },
+  {
+    "date": "08/07/2026",
+    "heure": "12:24:36",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S5 crea / SAÉ 5.Crea.01 | Créer par/pour le numérique / sous-groupe 3 / td",
+    "prev": "25.5",
+    "next": "24"
   }
 ]
