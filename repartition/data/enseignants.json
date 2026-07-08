@@ -42,6 +42,15 @@
     "is_vac": false
   },
   {
+    "id": "BOSO Nicolas",
+    "nom": "BOSO",
+    "prenom": "Nicolas",
+    "is_vac": true,
+    "is_cev": true,
+    "service_du": null,
+    "service_max": 187
+  },
+  {
     "id": "CALLET Caroline",
     "nom": "CALLET",
     "prenom": "Caroline",
