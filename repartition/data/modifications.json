@@ -18835,5 +18835,14 @@
     "description": "Ajout",
     "prev": "—",
     "next": "BOSO Nicolas"
+  },
+  {
+    "date": "08/07/2026",
+    "heure": "10:23:22",
+    "utilisateur": "damien.marill",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.02 | Management et Assurance Qualité / enseignant",
+    "prev": "PIEDEVACHE Magalie",
+    "next": "GAYOUT Maud"
   }
 ]
