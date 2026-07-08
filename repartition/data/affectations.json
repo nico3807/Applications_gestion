@@ -1149,7 +1149,7 @@
       "enseignant": "THEROND Emmanuel",
       "cm": 0,
       "td": 19.5,
-      "tp": 6,
+      "tp": 3,
       "subrows": [
         {
           "enseignant": "BERNARD William",
@@ -1163,7 +1163,7 @@
           "enseignant": "BLANCO Sandy",
           "cm": 0,
           "td": 6,
-          "tp": 0
+          "tp": 3
         }
       ],
       "responsable": "",
