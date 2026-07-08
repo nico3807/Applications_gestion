@@ -18853,5 +18853,32 @@
     "description": "S5 dev / SAÉ 5D.01 | Développer pour le web / enseignant",
     "prev": "PIEDEVACHE Magalie",
     "next": "GAYOUT Maud"
+  },
+  {
+    "date": "08/07/2026",
+    "heure": "12:24:26",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S5 crea / SAÉ 5.Crea.01 | Créer par/pour le numérique / sous-groupe 3 / td",
+    "prev": "27",
+    "next": "26.5"
+  },
+  {
+    "date": "08/07/2026",
+    "heure": "12:24:27",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S5 crea / SAÉ 5.Crea.01 | Créer par/pour le numérique / sous-groupe 3 / td",
+    "prev": "26.5",
+    "next": "26"
+  },
+  {
+    "date": "08/07/2026",
+    "heure": "12:24:27",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S5 crea / SAÉ 5.Crea.01 | Créer par/pour le numérique / sous-groupe 3 / td",
+    "prev": "26",
+    "next": "25.5"
   }
 ]
