@@ -18826,5 +18826,14 @@
     "description": "S5 crea / R5.Crea.02 | Management et Assurance Qualité / enseignant",
     "prev": "PIEDEVACHE Magalie",
     "next": "GAYOUT Maud"
+  },
+  {
+    "date": "08/07/2026",
+    "heure": "10:21:23",
+    "utilisateur": "damien.marill",
+    "type": "Enseignants",
+    "description": "Ajout",
+    "prev": "—",
+    "next": "BOSO Nicolas"
   }
 ]
