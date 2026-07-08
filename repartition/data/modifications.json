@@ -18844,5 +18844,14 @@
     "description": "S5 dev / R5.DWeb-DI.02 | Management et Assurance Qualité / enseignant",
     "prev": "PIEDEVACHE Magalie",
     "next": "GAYOUT Maud"
+  },
+  {
+    "date": "08/07/2026",
+    "heure": "10:23:35",
+    "utilisateur": "damien.marill",
+    "type": "Répartition",
+    "description": "S5 dev / SAÉ 5D.01 | Développer pour le web / enseignant",
+    "prev": "PIEDEVACHE Magalie",
+    "next": "GAYOUT Maud"
   }
 ]
