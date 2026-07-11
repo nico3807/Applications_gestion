@@ -1798,13 +1798,13 @@
     "R4.DWeb-DI.03 |  Design d'expérience": {
       "enseignant": "RAMPON Candice",
       "cm": 0,
-      "td": 4.5,
+      "td": 3,
       "tp": 3,
       "subrows": [
         {
           "enseignant": "",
           "cm": 0,
-          "td": 4.5,
+          "td": 6,
           "tp": 3,
           "grpe_td": 1,
           "grpe_tp": 2
