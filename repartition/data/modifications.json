@@ -19150,5 +19150,41 @@
     "description": "S5 dev / R5.DWeb-DI.08 | Hébergement et cybersécurité / sous-groupe 1 / td",
     "prev": "4.5",
     "next": "3"
+  },
+  {
+    "date": "13/07/2026",
+    "heure": "20:52:44",
+    "utilisateur": "damien.marill",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.08 | Hébergement et cybersécurité / sous-groupe 1 / td",
+    "prev": "3",
+    "next": "3.5"
+  },
+  {
+    "date": "13/07/2026",
+    "heure": "20:52:44",
+    "utilisateur": "damien.marill",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.08 | Hébergement et cybersécurité / sous-groupe 1 / td",
+    "prev": "3.5",
+    "next": "4"
+  },
+  {
+    "date": "13/07/2026",
+    "heure": "20:52:44",
+    "utilisateur": "damien.marill",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.08 | Hébergement et cybersécurité / sous-groupe 1 / td",
+    "prev": "4",
+    "next": "4.5"
+  },
+  {
+    "date": "13/07/2026",
+    "heure": "20:52:46",
+    "utilisateur": "damien.marill",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.08 | Hébergement et cybersécurité / sous-groupe 1 / grpe_td",
+    "prev": "",
+    "next": "1"
   }
 ]
