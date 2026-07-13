@@ -1737,6 +1737,12 @@
           "tp": 0,
           "grpe_td": 1,
           "grpe_tp": 2
+        },
+        {
+          "enseignant": "",
+          "cm": 0,
+          "td": 0,
+          "tp": 0
         }
       ],
       "responsable": "",
