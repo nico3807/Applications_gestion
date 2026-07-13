@@ -19249,5 +19249,41 @@
     "description": "S5 dev / R5.DWeb-DI.06 | Développement back avancé / sous-groupe 1 / td",
     "prev": "19.5",
     "next": "20"
+  },
+  {
+    "date": "13/07/2026",
+    "heure": "21:04:42",
+    "utilisateur": "damien.marill",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.06 | Développement back avancé / sous-groupe 1 / td",
+    "prev": "20",
+    "next": "19.5"
+  },
+  {
+    "date": "13/07/2026",
+    "heure": "21:04:43",
+    "utilisateur": "damien.marill",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.06 | Développement back avancé / sous-groupe 1 / td",
+    "prev": "19.5",
+    "next": "19"
+  },
+  {
+    "date": "13/07/2026",
+    "heure": "21:04:43",
+    "utilisateur": "damien.marill",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.06 | Développement back avancé / sous-groupe 1 / td",
+    "prev": "19",
+    "next": "18.5"
+  },
+  {
+    "date": "13/07/2026",
+    "heure": "21:04:43",
+    "utilisateur": "damien.marill",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.06 | Développement back avancé / sous-groupe 1 / td",
+    "prev": "18.5",
+    "next": "18"
   }
 ]
