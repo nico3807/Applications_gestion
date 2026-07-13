@@ -19321,5 +19321,14 @@
     "description": "S5 dev / SAÉ 5D.01 | Développer pour le web / sous-groupe 1 / td",
     "prev": "30",
     "next": "24"
+  },
+  {
+    "date": "13/07/2026",
+    "heure": "21:13:00",
+    "utilisateur": "damien.marill",
+    "type": "Répartition",
+    "description": "S5 dev / SAÉ 5D.01 | Développer pour le web / sous-groupe 2 / td",
+    "prev": "24",
+    "next": "21"
   }
 ]
