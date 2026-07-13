@@ -19429,5 +19429,14 @@
     "description": "S4 dev / R4.DWeb-DI.05 | Création et design interactif / enseignant",
     "prev": "",
     "next": "MAURIN Nicolas"
+  },
+  {
+    "date": "13/07/2026",
+    "heure": "21:19:59",
+    "utilisateur": "damien.marill",
+    "type": "Répartition",
+    "description": "S4 dev / R4.DWeb-DI.07 | Développement back / enseignant",
+    "prev": "",
+    "next": "DARTIES Benoit"
   }
 ]
