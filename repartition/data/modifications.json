@@ -19474,5 +19474,14 @@
     "description": "S2 / R2.12 | Intégration / sous-groupe 1 / enseignant",
     "prev": "DI PIERRO Davide",
     "next": "THEROND Emmanuel"
+  },
+  {
+    "date": "13/07/2026",
+    "heure": "21:24:34",
+    "utilisateur": "damien.marill",
+    "type": "Répartition",
+    "description": "S2 / R2.12 | Intégration / sous-groupe 1 / td",
+    "prev": "0",
+    "next": "1.5"
   }
 ]
