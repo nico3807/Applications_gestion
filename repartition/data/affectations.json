@@ -1441,9 +1441,9 @@
       "tp": 3,
       "subrows": [
         {
-          "enseignant": "",
+          "enseignant": "BOSO Nicolas",
           "cm": 0,
-          "td": 0,
+          "td": 0.5,
           "tp": 0
         }
       ],
