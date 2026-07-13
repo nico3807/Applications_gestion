@@ -19069,5 +19069,14 @@
     "description": "S6 dev / R6.DWeb-DI.02 | Développement Web et dispositif interactif / sous-groupe 1 / enseignant",
     "prev": "",
     "next": "BOSO Nicolas"
+  },
+  {
+    "date": "13/07/2026",
+    "heure": "20:50:13",
+    "utilisateur": "damien.marill",
+    "type": "Répartition",
+    "description": "S6 dev / R6.DWeb-DI.02 | Développement Web et dispositif interactif / sous-groupe 1 / td",
+    "prev": "0",
+    "next": "0.5"
   }
 ]
