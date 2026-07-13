@@ -19087,5 +19087,23 @@
     "description": "S6 dev / R6.DWeb-DI.02 | Développement Web et dispositif interactif / sous-groupe 1 / td",
     "prev": "0.5",
     "next": "12"
+  },
+  {
+    "date": "13/07/2026",
+    "heure": "20:50:25",
+    "utilisateur": "damien.marill",
+    "type": "Répartition",
+    "description": "S6 dev / R6.DWeb-DI.02 | Développement Web et dispositif interactif / sous-groupe 1 / tp",
+    "prev": "0",
+    "next": "3"
+  },
+  {
+    "date": "13/07/2026",
+    "heure": "20:51:41",
+    "utilisateur": "damien.marill",
+    "type": "Répartition",
+    "description": "S4 dev / R4.DWeb-DI.08 | Déploiement de services / enseignant",
+    "prev": "WILLEMS Eric",
+    "next": "BOSO Nicolas"
   }
 ]
