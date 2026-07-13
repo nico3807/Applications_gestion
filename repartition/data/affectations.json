@@ -1664,8 +1664,9 @@
         {
           "enseignant": "BOSO Nicolas",
           "cm": 0,
-          "td": 4,
-          "tp": 15
+          "td": 4.5,
+          "tp": 15,
+          "grpe_td": 1
         }
       ],
       "responsable": "",
