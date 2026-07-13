@@ -1666,7 +1666,8 @@
           "cm": 0,
           "td": 4.5,
           "tp": 15,
-          "grpe_td": 1
+          "grpe_td": 1,
+          "grpe_tp": 2
         }
       ],
       "responsable": "",
