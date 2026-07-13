@@ -19105,5 +19105,14 @@
     "description": "S4 dev / R4.DWeb-DI.08 | Déploiement de services / enseignant",
     "prev": "WILLEMS Eric",
     "next": "BOSO Nicolas"
+  },
+  {
+    "date": "13/07/2026",
+    "heure": "20:51:54",
+    "utilisateur": "damien.marill",
+    "type": "Répartition",
+    "description": "S5 dev / R5.DWeb-DI.08 | Hébergement et cybersécurité / sous-groupe 1 / enseignant",
+    "prev": "",
+    "next": "BOSO Nicolas"
   }
 ]
