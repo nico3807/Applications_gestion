@@ -19438,5 +19438,23 @@
     "description": "S4 dev / R4.DWeb-DI.07 | Développement back / enseignant",
     "prev": "",
     "next": "DARTIES Benoit"
+  },
+  {
+    "date": "13/07/2026",
+    "heure": "21:20:34",
+    "utilisateur": "damien.marill",
+    "type": "Répartition",
+    "description": "S6 dev / R6.DWeb-DI.02 | Développement Web et dispositif interactif / sous-groupe 1 / grpe_td",
+    "prev": "",
+    "next": "1"
+  },
+  {
+    "date": "13/07/2026",
+    "heure": "21:20:35",
+    "utilisateur": "damien.marill",
+    "type": "Répartition",
+    "description": "S6 dev / R6.DWeb-DI.02 | Développement Web et dispositif interactif / sous-groupe 1 / grpe_tp",
+    "prev": "",
+    "next": "2"
   }
 ]
