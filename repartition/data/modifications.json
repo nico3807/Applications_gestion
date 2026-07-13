@@ -19465,5 +19465,14 @@
     "description": "S6 dev / R6.DWeb-DI.02 | Développement Web et dispositif interactif / sous-groupe 1 / td",
     "prev": "12",
     "next": "21"
+  },
+  {
+    "date": "13/07/2026",
+    "heure": "21:24:28",
+    "utilisateur": "damien.marill",
+    "type": "Répartition",
+    "description": "S2 / R2.12 | Intégration / sous-groupe 1 / enseignant",
+    "prev": "DI PIERRO Davide",
+    "next": "THEROND Emmanuel"
   }
 ]
