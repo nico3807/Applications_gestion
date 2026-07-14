@@ -19573,5 +19573,14 @@
     "description": "S6 dev / R6.DWeb-DI.02 | Développement Web et dispositif interactif / td",
     "prev": "12",
     "next": "15"
+  },
+  {
+    "date": "14/07/2026",
+    "heure": "19:36:44",
+    "utilisateur": "nicolas.maurin",
+    "type": "Répartition",
+    "description": "S1 / R1.02 | Anglais renforcé - Espagnol / sous-groupe 1 / grpe_td",
+    "prev": "0",
+    "next": "1"
   }
 ]
