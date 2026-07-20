@@ -19744,5 +19744,68 @@
     "description": "S3 / R3.05 | Stratégies de communication et marketing / cm",
     "prev": "9",
     "next": "9.5"
+  },
+  {
+    "date": "20/07/2026",
+    "heure": "14:00:55",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S3 / R3.05 | Stratégies de communication et marketing / cm",
+    "prev": "9.5",
+    "next": "9"
+  },
+  {
+    "date": "20/07/2026",
+    "heure": "14:01:24",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S3 / R3.05 | Stratégies de communication et marketing / td",
+    "prev": "3",
+    "next": "3.5"
+  },
+  {
+    "date": "20/07/2026",
+    "heure": "14:01:24",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S3 / R3.05 | Stratégies de communication et marketing / td",
+    "prev": "3.5",
+    "next": "4"
+  },
+  {
+    "date": "20/07/2026",
+    "heure": "14:01:24",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S3 / R3.05 | Stratégies de communication et marketing / td",
+    "prev": "4",
+    "next": "4.5"
+  },
+  {
+    "date": "20/07/2026",
+    "heure": "14:01:24",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S3 / R3.05 | Stratégies de communication et marketing / td",
+    "prev": "4.5",
+    "next": "5"
+  },
+  {
+    "date": "20/07/2026",
+    "heure": "14:01:25",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S3 / R3.05 | Stratégies de communication et marketing / td",
+    "prev": "5",
+    "next": "5.5"
+  },
+  {
+    "date": "20/07/2026",
+    "heure": "14:01:25",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S3 / R3.05 | Stratégies de communication et marketing / td",
+    "prev": "5.5",
+    "next": "6"
   }
 ]
