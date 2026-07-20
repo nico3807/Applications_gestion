@@ -575,18 +575,9 @@
     "R2.07 | Écriture multimédia et narration": {
       "enseignant": "JAECKLE Luc",
       "cm": 1.5,
-      "td": 7,
+      "td": 6.5,
       "tp": 10.5,
-      "subrows": [
-        {
-          "enseignant": "RAMPON Candice",
-          "cm": 0,
-          "td": 4.5,
-          "tp": 6,
-          "grpe_td": 2,
-          "grpe_tp": 4
-        }
-      ],
+      "subrows": [],
       "responsable": "BLANCO Sandy",
       "grpe_td": 2,
       "grpe_tp": 4
