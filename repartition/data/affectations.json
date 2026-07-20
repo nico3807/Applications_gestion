@@ -2009,16 +2009,7 @@
       "cm": 9,
       "td": 3,
       "tp": 0,
-      "subrows": [
-        {
-          "enseignant": "RAMPON Candice",
-          "cm": 4.5,
-          "td": 3,
-          "tp": 0,
-          "grpe_td": 2,
-          "grpe_tp": 4
-        }
-      ],
+      "subrows": [],
       "responsable": "",
       "grpe_td": 2,
       "grpe_tp": 4
