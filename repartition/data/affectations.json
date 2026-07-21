@@ -1971,16 +1971,7 @@
       "cm": 3,
       "td": 4.5,
       "tp": 4.5,
-      "subrows": [
-        {
-          "enseignant": "DE VELDER Sophie",
-          "cm": 3,
-          "td": 4.5,
-          "tp": 4.5,
-          "grpe_td": 2,
-          "grpe_tp": 4
-        }
-      ],
+      "subrows": [],
       "responsable": "",
       "grpe_td": 2,
       "grpe_tp": 4
