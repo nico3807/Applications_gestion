@@ -30,7 +30,7 @@
     "nom": "BELHOUT",
     "prenom": "Maëva",
     "is_vac": true,
-    "is_cev": true,
+    "is_cev": false,
     "service_du": null,
     "service_max": 187
   },
