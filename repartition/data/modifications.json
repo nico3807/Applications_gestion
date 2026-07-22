@@ -20032,5 +20032,14 @@
     "description": "S3 / R3.03 | Design d'expérience / enseignant",
     "prev": "RAMPON Candice",
     "next": "DE VELDER Sophie"
+  },
+  {
+    "date": "22/07/2026",
+    "heure": "16:55:40",
+    "utilisateur": "nicolas.maurin",
+    "type": "Enseignants",
+    "description": "Ajout",
+    "prev": "—",
+    "next": "BELHOUT Maëva"
   }
 ]
