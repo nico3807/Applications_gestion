@@ -20086,5 +20086,23 @@
     "description": "S2 / R2.03 | Ergonomie et Accessibilité / sous-groupe 1 / tp",
     "prev": "0",
     "next": "10.5"
+  },
+  {
+    "date": "28/07/2026",
+    "heure": "08:19:38",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S2 / R2.03 | Ergonomie et Accessibilité / sous-groupe 1 / grpe_td",
+    "prev": "",
+    "next": "2"
+  },
+  {
+    "date": "28/07/2026",
+    "heure": "08:19:41",
+    "utilisateur": "chrysta.pelissier",
+    "type": "Répartition",
+    "description": "S2 / R2.03 | Ergonomie et Accessibilité / sous-groupe 1 / grpe_tp",
+    "prev": "",
+    "next": "4"
   }
 ]
