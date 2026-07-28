@@ -508,20 +508,11 @@
       "grpe_tp": 4
     },
     "R2.03 | Ergonomie et Accessibilité": {
-      "enseignant": "PELISSIER Chrysta",
+      "enseignant": "WALLEZ Guillaume",
       "cm": 0,
       "td": 4.5,
       "tp": 10.5,
-      "subrows": [
-        {
-          "enseignant": "WALLEZ Guillaume",
-          "cm": 0,
-          "td": 4.5,
-          "tp": 10.5,
-          "grpe_td": 2,
-          "grpe_tp": 4
-        }
-      ],
+      "subrows": [],
       "responsable": "PELISSIER Chrysta",
       "grpe_td": 2,
       "grpe_tp": 4
