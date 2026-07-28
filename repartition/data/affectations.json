@@ -517,7 +517,9 @@
           "enseignant": "WALLEZ Guillaume",
           "cm": 0,
           "td": 4.5,
-          "tp": 10.5
+          "tp": 10.5,
+          "grpe_td": 2,
+          "grpe_tp": 4
         }
       ],
       "responsable": "PELISSIER Chrysta",
