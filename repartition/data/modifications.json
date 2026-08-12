@@ -20113,5 +20113,14 @@
     "description": "S2 / R2.03 | Ergonomie et Accessibilité / enseignant",
     "prev": "PELISSIER Chrysta",
     "next": "WALLEZ Guillaume"
+  },
+  {
+    "date": "12/08/2026",
+    "heure": "17:22:25",
+    "utilisateur": "nicolas.maurin",
+    "type": "Enseignants",
+    "description": "Ajout",
+    "prev": "—",
+    "next": "DUPONT Flavyen"
   }
 ]
