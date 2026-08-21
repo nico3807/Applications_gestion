@@ -20131,5 +20131,14 @@
     "description": "S5 crea / R5.Crea.07 | Ecriture Multimédia et narration / sous-groupe 2 / enseignant",
     "prev": "",
     "next": "DUPONT Flavyen"
+  },
+  {
+    "date": "21/08/2026",
+    "heure": "14:21:36",
+    "utilisateur": "emmanuel.therond",
+    "type": "Répartition",
+    "description": "S5 crea / R5.Crea.06 | Création numérique / sous-groupe 2 / grpe_td",
+    "prev": "",
+    "next": "1"
   }
 ]
